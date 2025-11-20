@@ -155,18 +155,65 @@
         {
           "m_SEID" : 10130001,
           "m_SEStrID" : "COND_KINGDOM_PRAY_NOVA_BURST_01_01",
-          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_RATE_HEAL_GIVE",
           "m_BuffLifeTurn" : 0,
           "Stats" : 
           [
             {
-              "NKM_STAT_TYPE_RATE" : 4000
+              "NKM_STAT_TYPE_RATE" : 1500
             }
           ],
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10140001,
+          "SEGroupID" : 101422,
+          "SEOrderList" : 11,
+          "m_SEStrID" : "COND_NIGHTMARE_REAPER_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 5000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10150001,
+          "m_SEStrID" : "COND_STELLAR_THIEF_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10180001,
+          "SEGroupID" : 101822,
+          "SEOrderList" : 11,
+          "m_SEStrID" : "COND_INCOGNITA_FLOWER_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DEFENSE_INCREASE",
+          "m_BuffLifeTurn" : 3,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
             "m_fActiveRate" : 10000
           }
         },
@@ -198,6 +245,38 @@
           [
             {
               "NKM_STAT_TYPE_RATE" : 3000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10230001,
+          "SEGroupID" : 102331,
+          "SEOrderList" : 11,
+          "m_SEStrID" : "COND_SAINTESS_DEMON_NOVA_BURST_01_01",
+          "m_fBuffActiveRate" : 10000,
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_ATTACK_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END"
+          }
+        },
+        {
+          "m_SEID" : 10240001,
+          "m_SEStrID" : "COND_SAINTESS_ELF_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_HEAL_GIVE",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
             }
           ],
           "m_Condition" : 
@@ -260,6 +339,42 @@
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10420001,
+          "m_SEStrID" : "COND_CONSTRUCT_BOMB_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_TRUE_DAMAGE",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_VALUE" : 1
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10490001,
+          "m_SEStrID" : "COND_INDEPENDENT_DRAGON_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
             "m_fActiveRate" : 10000
           }
         },

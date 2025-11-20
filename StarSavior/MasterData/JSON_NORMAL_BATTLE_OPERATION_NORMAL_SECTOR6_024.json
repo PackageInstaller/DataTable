@@ -4,47 +4,25 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_01",//주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_MOON"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_01",
+            "UnitStrId": "NKM_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_OPERATION_01",//저주의 경멸자
             "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
             "ChangeAdjustType": "NUAT_MOON"
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_01",//주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_MOON"
           }

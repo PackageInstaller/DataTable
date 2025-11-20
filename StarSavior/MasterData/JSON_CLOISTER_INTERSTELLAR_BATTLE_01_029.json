@@ -4,25 +4,42 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_VOIDMAID_SHIELD_BLACK_CLOISTER_INTERSTELLAR_03", //모방자 : 메이드
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", // 경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_03", //은둔자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SPLINTER_BLACK_ELITE_CLOISTER_INTERSTELLAR_02", // 심연의 주시자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_VOIDMAID_SHIELD_BLACK_CLOISTER_INTERSTELLAR_03", //모방자 : 메이드
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", // 경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -30,24 +47,39 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_03", //은둔자
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_JELLY_BLACK_CLOISTER_INTERSTELLAR_02", // 예언자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_CLOISTER_INTERSTELLAR_03", //업화의 추적자
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_CLOISTER_INTERSTELLAR_02",  // 침묵의 은둔자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_03", //은둔자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_JELLY_BLACK_CLOISTER_INTERSTELLAR_02", // 예언자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

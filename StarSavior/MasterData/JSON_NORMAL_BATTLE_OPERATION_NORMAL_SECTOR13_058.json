@@ -7,20 +7,20 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_05",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_OPERATION_04", // 안식자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_04", //추적자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_05",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_OPERATION_04", // 안식자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           }
@@ -31,13 +31,13 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_04", // 추적자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_ELITEBONE_BLACK_ELITE_MU_OPERATION_13", // 맹목의 전파자(강화)
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
@@ -45,7 +45,7 @@
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_04",// 추적자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           }

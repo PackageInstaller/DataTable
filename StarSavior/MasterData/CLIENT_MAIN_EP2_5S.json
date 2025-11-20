@@ -1,0 +1,567 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_5S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…루나라는 사람을 알고 있냐고?",
+      "UnitTalk_JPN": "…ルナって人を知ってるかって？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_001.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아, 물론 알고 있지.",
+      "UnitTalk_JPN": "はぁ、もちろん知ってるわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_002.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "어떤 사람인지, 지금 어디 있는지 알려줄 수 있어?",
+      "UnitTalk_JPN": "どんな人なのか、今どこにいるのか教えてほしいの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…어떤 사람이냐고?",
+      "UnitTalk_JPN": "…どんな人かって？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_003.wav"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "벨은 두꺼운 책 두께의 종이 다발을 들어서 우리 앞에 내려놓았다.",
+      "UnitTalk_JPN": "ベルは分厚い本のような紙束を、私たちの前に置いた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "이게 뭔지 알아?",
+      "UnitTalk_JPN": "これ、何か分かる？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_004.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "그 여자가 맡은 의뢰 관련으로 들어온 불만 민원서류야.",
+      "UnitTalk_JPN": "ぜんぶ、あの女が受けた依頼に対しての苦情よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_005.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "예를 들어…",
+      "UnitTalk_JPN": "例えば…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_006.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "<color=#F7BE45>[평야 지역 마수 퇴치를 의뢰받았다고 찾아와서는 식사와 숙박만 3일간 제공받고 아무 일도 하지 않음]</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>「平野の魔獣退治の仕事を依頼した時、宿と食事を3日間も提供させたくせに、結局何もしなかった」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_007.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "<color=#F7BE45>[보존 식량의 배송을 의뢰했으나 모두 깨져서 도착함]</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>「非常食の配送を依頼したが、すべて破損した状態で届いた」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_008.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "<color=#F7BE45>[몇 개는 중간에 빼먹은 흔적 있음]</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>「そのうち、いくつかは食べたような痕跡があった」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_009.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…더 읽어줄까?",
+      "UnitTalk_JPN": "…もっと知りたい？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_010.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아니… 충분한 것 같아.",
+      "UnitTalk_JPN": "ううん…もう十分よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "역시 사기꾼이 맞았어! 한시라도 빨리 잡아서 감옥에 넣어버리자!",
+      "UnitTalk_JPN": "やっぱりペテン師だったわね！一刻も早く捕まえて、牢屋にぶち込んであげましょう！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "전적으로 동의.",
+      "UnitTalk_JPN": "完全に同意。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이 정도로 문제를 일으키는데…",
+          "JumpAnchorStringId_JPN": "こんなに問題を起こしてるのに…"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떻게 의뢰를 계속 받을 수 있는 거지?",
+          "JumpAnchorStringId_JPN": "どうして救援者をやっていられるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "으음, 그건…",
+      "UnitTalk_JPN": "うーん、それは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_011.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "…결과적으로는 다 잘 끝나는 경우가 많아서라고 해야 할…까?",
+      "UnitTalk_JPN": "…結果的には丸く収まることが多いから、かしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_012.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응? 무슨 말이야?",
+      "UnitTalk_JPN": "え？どういう意味？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "아무것도 안 하고 3일 동안 놀고먹었다는 평야 지역 마수 퇴치.",
+      "UnitTalk_JPN": "たとえば…何もせずに3日間遊んでいた、平野の魔獣退治。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_013.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "쫓아낸 다음 날, 강한 돌풍이 불어닥쳐서 마수들의 서식지가 타격을 입었지.",
+      "UnitTalk_JPN": "追い出した次の日、激しい強風が吹いて魔獣の巣が壊滅したの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_014.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "결과적으로 마수들이 다른 서식지를 찾아 떠나버려서, 의뢰자는 더 이상 크게 문제를 삼지 않고 넘어가기로 했어.",
+      "UnitTalk_JPN": "それで魔獣がどこかへ行っちゃったから、依頼者は水に流すことにしたらしいわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_015.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "모두 깨져서 도착한 보존 식량의 일…",
+      "UnitTalk_JPN": "ぜんぶ破損して届いた非常食の件は…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_016.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "알고 보니 제조 과정에 상한 재료가 들어가서, 어차피 모두 폐기했어야 했다나 봐.",
+      "UnitTalk_JPN": "製造される時に傷んだ材料が使われてたことが分かって、ぜんぶ破棄しないといけなくなったの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_017.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "제대로 배송이 완료되었으면 그 사이에 누군가가 먹고 탈이 났을지도 모르지.",
+      "UnitTalk_JPN": "もしちゃんと届いていたら、誰かが食べてお腹を壊していたかもしれないわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_018.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "…그래서 이 건 역시, 크게 문제 삼지 않고 넘어가기로 되었어.",
+      "UnitTalk_JPN": "…それでこの件もやっぱり、大きな問題にはならなかった。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_019.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…이 여자의 의뢰 컴플레인은, 거의 대부분 이런 식이야.",
+      "UnitTalk_JPN": "…この女への苦情は、だいたい全部こんな感じよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_020.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그건… 운이 정말 좋다고 해야 하나? 아니면…",
+      "UnitTalk_JPN": "それは…運がいいって言うべきなのかしら？それとも…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "자칭 라비스타 최고의 예언자라고 했지.",
+          "JumpAnchorStringId_JPN": "自称、ラビスターでNo.1の予言者だったな？"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그렇게 될 거라는 걸 미리 알고 있어서 그랬다고?",
+      "UnitTalk_JPN": "…結末が分かっていたから、そうしたってこと？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "자기 말대로 잘 맞는 점쟁이인지 뭔지는 나도 몰라. 관심 없어.",
+      "UnitTalk_JPN": "本人が言うように、よく当たる占い師なのかどうかは知らない。興味もないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_021.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "하지만 매번 이런 식으로 문제를 일으키니까 우리 쪽에서도 의뢰를 맡기기 싫었는데…",
+      "UnitTalk_JPN": "毎回こんな風に問題を起こすから、私たちも依頼するのが嫌だったのよ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_022.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "단순 문제가 아니라 사기라는 범죄를 저질렀다니, 마침 잘 됐어.",
+      "UnitTalk_JPN": "でも今回は、問題どころか詐欺っていう犯罪を犯したんだから…ちょうどよかったわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_023.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이번에 잡히면 내게 데려와 줘.",
+      "UnitTalk_JPN": "捕まえたら、私のところに連れてきて。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_024.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "우리 본가 저택 지하 던전에 가둬 버릴 테니까.",
+      "UnitTalk_JPN": "家の地下ダンジョンに閉じ込めてやるんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_025.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 게 왜 저택 지하에 있는 건데?",
+          "JumpAnchorStringId_JPN": "なんで家の地下にそんなものがあるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응? 지하 던전 정도야 흔하지 않나?",
+      "UnitTalk_JPN": "え？地下ダンジョンぐらい、普通じゃないの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "우리 집에도 있는데…",
+      "UnitTalk_JPN": "わたしの家にもあるけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무튼, 맡겨둬!",
+      "UnitTalk_JPN": "とにかく、任せて！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그럼… 이 사람 지금 어디 있는지, 혹시 알고 있어?",
+      "UnitTalk_JPN": "この人がどこにいるのか、知ってたりする？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "사는 곳은 나도 몰라. 하지만…",
+      "UnitTalk_JPN": "住んでるところは知らない。でも…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_026.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "…있을 만한 곳은 알고 있지.",
+      "UnitTalk_JPN": "…いそうなところなら分かる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_027.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "들리는 소문에 의하면, 대부분의 시간을 거기서 보낸다고 하니까.",
+      "UnitTalk_JPN": "噂によると、ほとんどの時間をそこで過ごしてるみたいよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_028.wav"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "거기가 어디지?",
+          "JumpAnchorStringId_JPN": "そこって、どこなんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "NOA 시내에 있는…",
+      "UnitTalk_JPN": "NOAの街にある…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_029.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "카지노.",
+      "UnitTalk_JPN": "カジノ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_MAID_BELL_030.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…카지노-?!",
+      "UnitTalk_JPN": "…カジノ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_5_UNIT_S_VOYAGER_STRANIS_011.wav"
+    }
+  ]
+}

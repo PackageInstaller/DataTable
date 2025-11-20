@@ -1,0 +1,82 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님이 함께 해주셔서 해낼 수 있었어요.",
+      "UnitTalk_JPN": "団長さまが一緒にいてくださったからこそ、やり遂げられました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "몸을 움직였으니, 무사히 잠들 수 있을 거예요.",
+      "UnitTalk_JPN": "体を動かしたので、ぐっすりと眠れるはずです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "혹시나 흥분이 가라앉지 않아서… 잠들기 힘들더라도 걱정하지 마세요.",
+      "UnitTalk_JPN": "もし興奮が収まらず…寝つきが悪くても心配いりませんよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오늘밤도, 제가 좋은 꿈을 선물해 드릴 거니까요.",
+      "UnitTalk_JPN": "今夜も、わたしが素敵な夢をプレゼントしますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "천진하게 웃어오는 세이라를 데리고 함께 돌아갔다.",
+      "UnitTalk_JPN": "無邪気に笑いかけてくるセイラと一緒に帰った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_REQUEST_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

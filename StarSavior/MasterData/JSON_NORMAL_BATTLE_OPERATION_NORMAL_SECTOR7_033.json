@@ -5,48 +5,30 @@
     "Waves": [
       {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
-        "TeamBSpawnList": [ 
-          {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          }
-        ]
-      },
-      {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_02",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_02", //업화의 처단자
+            "IsElite": true,
             "SpecialSkillAvailable": true,
-            "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -2000,    
+              "NST_NV_RATE_TURN_SPEED" : 2500            
+            }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_02", //업화의 처단자
+            "IsElite": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -2000,    
+              "NST_NV_RATE_TURN_SPEED" : 2500            
+            }
           }
         ]
       }

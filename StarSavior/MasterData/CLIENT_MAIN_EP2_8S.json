@@ -1,0 +1,613 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_8S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_STARDUST_FORTRESS_1.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…여기라고?",
+      "UnitTalk_JPN": "ここなの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "스마일 언니의 흔적이 남은 곳이?",
+      "UnitTalk_JPN": "スマイルのお姉さんの手がかりが残された場所って。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "아, 몇 번을 말해?!",
+      "UnitTalk_JPN": "もう、何回言わせるのよ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "저기 저 요새 안쪽에 신탁이 내려왔다니까!",
+      "UnitTalk_JPN": "あの要塞の奥だってお告げを受けたんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사기꾼 말을 믿을 수가 있어야지.",
+      "UnitTalk_JPN": "ペテン師の言うことなんて、信じられないのよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "갸아아악! 예언자라고! 예언자!",
+      "UnitTalk_JPN": "あーーもう！予言者だって！予・言・者！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기가 어디지?",
+          "JumpAnchorStringId_JPN": "…で、ここは何なんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "별부스러기 요새.",
+      "UnitTalk_JPN": "星屑の要塞。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "NOA 외곽지의 고대 유적들 중 하나.",
+      "UnitTalk_JPN": "NOA郊外にある、古代遺跡のひとつ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>[별의 심장]</color>이라는 유물이 보관된 장소로 알려짐.",
+      "UnitTalk_JPN": "<color=#F7BE45>「星の心臓」</color>という秘宝が保管される場所として知られている。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "별의 심장?",
+          "JumpAnchorStringId_JPN": "星の心臓？"
+        }
+      ]
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "별의 힘을 가진 희귀 보석으로 추정.",
+      "UnitTalk_JPN": "星の力を持つ、希少な鉱物と推定。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "주변 환경에 긍정적 영향 전파. 주요 보존 문화재로 지정.",
+      "UnitTalk_JPN": "周囲の環境に好影響を及ぼすため、文化財として保護されている。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "요약하면 꽤 중요한 시설이라는 거군.",
+      "UnitTalk_JPN": "つまり、かなり重要な施設ということだな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런데 그런 곳에 왜 저런… 괴물들이 어슬렁거리는 걸까?",
+      "UnitTalk_JPN": "しかし、そんな場所になぜ…怪物がうろついているんだ？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "저건… 약탈자들이잖아?",
+      "UnitTalk_JPN": "あれは…レイダーね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "약탈자?",
+          "JumpAnchorStringId_JPN": "レイダー？"
+        }
+      ]
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응, 초원이나 숲에서 흔히 볼 수 있는 소형 마수들이야.",
+      "UnitTalk_JPN": "うん。草原や森でよく見られる、小型の魔獣よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "고향에 있을 때도 몇 번 상대한 적 있어.",
+      "UnitTalk_JPN": "故郷にいた時、何度か相手をしたことがあるわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "매년 겨울마다 주변 영지의 병사들과 함께 토벌 작전을 진행했었지.",
+      "UnitTalk_JPN": "毎年冬になると、近くの領地の兵士たちと協力して、討伐作戦を行っていたの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "위험한 녀석들인가?",
+          "JumpAnchorStringId_JPN": "危険なのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "족장을 제외하면 그다지 강한 녀석들은 아냐.",
+      "UnitTalk_JPN": "族長を除けば、そこまで手強い相手じゃないわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "대신 붙잡히면 꽤 험한 짓을 당한다고 들었어.",
+      "UnitTalk_JPN": "その代わり…やつらに捕まれば、かなりむごいことをされるそうよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "험한 짓이라니?",
+          "JumpAnchorStringId_JPN": "むごいこと…？"
+        }
+      ]
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "설마… 그건가?",
+      "UnitTalk_JPN": "まさか…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런 끔찍한 짓을…",
+      "UnitTalk_JPN": "命を…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "신발을 벗기고 발을 간지럽히거나 얼굴에 낙서를 한다든가…?",
+      "UnitTalk_JPN": "靴を脱がせて足裏をくすぐってきたり、顔に落書きされたり…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "이상한 춤 같은 걸 추게 하기도 하고… 아무튼 그렇대.",
+      "UnitTalk_JPN": "変な踊りを踊らされたり…そんな感じらしいわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…그렇군.",
+          "JumpAnchorStringId_JPN": "…そうか。"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "의외로 착한 녀석들일지도 모르겠다.",
+      "UnitTalk_JPN": "意外と優しい魔獣なのかもしれない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_03.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "족장! 족장! 큰일이다!",
+      "UnitTalk_JPN": "族長！族長！大変だ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_RAIDER_001.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "무슨 일이냐?! 호들갑 떨지 마라 멍청한 놈!",
+      "UnitTalk_JPN": "ええい騒ぐな、このバカ物！何事だ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_001.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "UnitTalk_KOR": "침입자다! 침입자가 들어왔다!",
+      "UnitTalk_JPN": "侵入者！侵入者が入ってきた！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_RAIDER_002.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "침입자라고…?",
+      "UnitTalk_JPN": "何だと…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_002.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitNameString": [
+        "SI_RAIDER_INFERIOR"
+      ],
+      "UnitTalk_KOR": "그렇다! 침입자가 동족들을 뚫고 이쪽으로 오고 있다!",
+      "UnitTalk_JPN": "侵入者が仲間をやっつけながら、こっちに来ている！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_RAIDER_003.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_003.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_DAGGER_GREEN",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "족장이여! 이것은 중대하다!",
+      "UnitTalk_JPN": "族長！大変だ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_001.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "우리가 침입자들을 막지 못하면 계약을 위반한 것이 된다!",
+      "UnitTalk_JPN": "侵入者を止められなかったら、契約違反…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_002.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "그러면 <color=#F7BE45>[고용주]</color>가 약속한 보상을 지급하지 않을 것이다!",
+      "UnitTalk_JPN": "そうなったら<color=#F7BE45>「雇用主」</color>は、約束の報酬を払わないはずだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_003.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "보상이 없다면… 부족원들에게 뜨거운 목욕물을 공급하는 것도 불가능하다!",
+      "UnitTalk_JPN": "報酬がないと…部族のみんなに温かい風呂を準備することもできない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_004.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "부족의 삶의 질을 올리겠다는 대의가 무너질 것이다!",
+      "UnitTalk_JPN": "部族の生活水準を上げるという使命が！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_005.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "그 누구도…",
+      "UnitTalk_JPN": "何人たりとも…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_004.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "나, 크룬나둔의 것을 빼앗을 수 없다!",
+      "UnitTalk_JPN": "このクルンナドゥン様の物を奪うことは許さない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_005.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "비켜라! 쓸모없는 것들!",
+      "UnitTalk_JPN": "どけ！役立たず共め！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_006.wav"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "내가 직접 놈들을 상대하겠다!",
+      "UnitTalk_JPN": "我が直接相手をしてやろう！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_007.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "오오! 위대한 족장 크룬나둔에게 영광 있으라!",
+      "UnitTalk_JPN": "おぉ！偉大な族長、クルンナドゥンに栄光あれ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_006.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitTalk_KOR": "나, 키리야스! 영원히 족장을 따르겠다!",
+      "UnitTalk_JPN": "オレ、キリヤス！族長にずっとついていく！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_007.wav"
+    }
+  ]
+}

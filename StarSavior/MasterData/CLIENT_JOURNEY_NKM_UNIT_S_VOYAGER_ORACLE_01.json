@@ -20,7 +20,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "아스트로 생텀을 나와 훈련장에 도착했지만, 만나기로 한 여정 단원의 모습이 보이지 않았다.",
-      "UnitTalk_JPN": "アストロ・サンクタムを出て訓練場に着いたものの、約束をしていた団員の姿は見えなかった。",
+      "UnitTalk_JPN": "アストロ・サンクタムを出て訓練場に着いたものの、約束をしていた団員の姿はなかった。",
       "TalkTime": 0.03
     },
     {
@@ -129,12 +129,12 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "네가 오늘 만나기로 한 여정 단원이야?",
-          "JumpAnchorStringId_JPN": "君が今日、約束してた旅の団員かな？"
+          "JumpAnchorStringId_JPN": "約束してた旅の団員かな？"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "그런데 저 뒤에 누가 쫓아오는 것 같은데…",
-          "JumpAnchorStringId_JPN": "でも、後ろから誰か追ってきてるみたいだけど…"
+          "JumpAnchorStringId_JPN": "後ろから誰か追ってきてるみたいだけど…"
         }
       ]
     },
@@ -181,7 +181,7 @@
       "CameraOffsetTime": "FA",
       "UnitPos": "POS3",
       "UnitTalk_KOR": "자자, 들어가자! 어서~!",
-      "UnitTalk_JPN": "さぁさぁ、中に入ろ！はやく～！",
+      "UnitTalk_JPN": "さぁさぁ、中に入っちゃお！はやく～！",
       "TalkTime": 0.03
     },
     {
@@ -191,7 +191,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "붉은 옷을 입은 소녀에게 이끌려서 훈련장 안으로 들어갔다.",
-      "UnitTalk_JPN": "赤い服を着た少女に導かれ、訓練場の中に入った。",
+      "UnitTalk_JPN": "赤い服を着た少女に導かれ、中に入った。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -345,7 +345,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitTalk_KOR": "아하하, 신경 쓰지 마, 신경 쓰지 마.",
-      "UnitTalk_JPN": "あはは、気にしない気にしないっ。",
+      "UnitTalk_JPN": "アハハ、気にしない気にしないっ。",
       "TalkTime": 0.03
     },
     {
@@ -356,7 +356,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitTalk_KOR": "그냥 약간의 오해와 사고가 있었던 것뿐-",
-      "UnitTalk_JPN": "ちょいとした誤解とハプニングがねー",
+      "UnitTalk_JPN": "ちょっとした誤解とハプニングが──",
       "TalkTime": 0.03
     },
     {
@@ -377,7 +377,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_BRAWL.wav",
       "UnitTalk_KOR": "훈련장 문 너머 왠지 어수선한 분위기가 점점 커지고 있었다.",
-      "UnitTalk_JPN": "訓練場の扉の向こうが、さらに騒がしくなってきた。",
+      "UnitTalk_JPN": "扉の向こうが、さらに騒がしくなってきた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -388,7 +388,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "무언가 불만을 말하는 목소리가 하나둘… 많아지고 있었다.",
-      "UnitTalk_JPN": "何か不満を訴える声が…大きくなってるみたいだ。",
+      "UnitTalk_JPN": "何か不満を訴える声が…大きくなっているようだ。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -413,7 +413,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "…무슨 일이지?",
-          "JumpAnchorStringId_JPN": "…なんだろう？"
+          "JumpAnchorStringId_JPN": "…何事だ？"
         }
       ]
     },
@@ -425,7 +425,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitTalk_KOR": "다, 단장-! 잠깐 잠깐-! 그거 열면 안-!",
-      "UnitTalk_JPN": "だ、だんちょー！待って待ってー！そこは開けちゃダー",
+      "UnitTalk_JPN": "だ、だんちょー！待って待って！そこは開けちゃダ──",
       "TalkTime": 0.03
     },
     {
@@ -540,7 +540,7 @@
         "SI_LOANSHARK_B"
       ],
       "UnitTalk_KOR": "도망갈 수 있으리라 생각했나!",
-      "UnitTalk_JPN": "逃げられるとでも思ったか？",
+      "UnitTalk_JPN": "逃げられるとでも思った？",
       "TalkTime": 0.03
     },
     {
@@ -910,7 +910,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "미안해, 단장.",
-      "UnitTalk_JPN": "ごめんね、団長。",
+      "UnitTalk_JPN": "ゴメンね、団長。",
       "TalkTime": 0.03
     },
     {
@@ -921,7 +921,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitTalk_KOR": "내가 책임지고 사람들을 진정시킬게.",
-      "UnitTalk_JPN": "ルナが責任をもって、みんなを静かにさせるよ。",
+      "UnitTalk_JPN": "ルナが責任をもって、みんなを落ち着かせるよ。",
       "TalkTime": 0.03
     },
     {
@@ -986,7 +986,7 @@
       "StartBgmFileName": "EMPTY.mp3",
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_07.wav",
       "UnitTalk_KOR": "루나는 무릎을 훈련장 바닥에 꿇었다.",
-      "UnitTalk_JPN": "ルナは訓練場の床にひざまずいた。",
+      "UnitTalk_JPN": "ルナは床にひざまずいた。",
       "TalkTime": 0.03
     },
     {
@@ -1072,7 +1072,7 @@
         "SI_LUNA"
       ],
       "UnitTalk_KOR": "하지만 중요한 것은 결코 여러분의 돈을 떼어먹지 않겠다는 저의 꺾이지 않는 마음이라고 생각합니다.",
-      "UnitTalk_JPN": "しかし大事なのは…みなさんのお金を踏み倒すつもりはないという、私の気持ちだと思います。",
+      "UnitTalk_JPN": "しかし大事なのは…皆さんのお金を踏み倒すつもりはないという、私の気持ちだと思います。",
       "TalkTime": 0.03
     },
     {
@@ -1239,7 +1239,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND_02.wav",
       "UnitTalk_KOR": "차가운 바람이 훈련장에 모인 사람들을 훑고 지나갔다.",
-      "UnitTalk_JPN": "冷たい風が、訓練場に集まった人々の間を吹き抜けた。",
+      "UnitTalk_JPN": "冷たい風が、人々の間を吹き抜けた。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -1250,7 +1250,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "난 방금 내가 들은 말이 무슨 뜻인지 이해가 되지 않아서 굳어 있었다.",
-      "UnitTalk_JPN": "私は、今聞いた言葉を理解できずに固まっていた。",
+      "UnitTalk_JPN": "私は、ルナの言葉を理解できずに固まっていた。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -1265,7 +1265,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "…뭐?",
-          "JumpAnchorStringId_JPN": "…なんですと？"
+          "JumpAnchorStringId_JPN": "…なんて？"
         }
       ]
     },
@@ -1300,7 +1300,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "빚의 보증이라니?",
-      "UnitTalk_JPN": "借金の保証って？",
+      "UnitTalk_JPN": "借金の保証だと？",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -1311,7 +1311,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "그게 대체 무슨 의미지? 내가 생각하고 있는 그거 맞나?",
-      "UnitTalk_JPN": "一体どういう意味だろう？言葉通り、あの保証のこと…？",
+      "UnitTalk_JPN": "一体どういう意味だ？言葉通り、あの保証のことなのか…？",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -1322,7 +1322,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "루나가 만약 돈을 갚지 않으면 내가 갚아야 한다는, 그런 의미의…?",
-      "UnitTalk_JPN": "ルナがもしお金を返さなかったら、私が返すことになるっていう…？",
+      "UnitTalk_JPN": "ルナがもしお金を返さなかったら、私が返すことになるという…？",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -1336,7 +1336,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "…마",
-          "JumpAnchorStringId_JPN": "…そ"
+          "JumpAnchorStringId_JPN": "そ…"
         },
         {
           "Uid": 2,
@@ -1367,7 +1367,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "사람에겐 절대 해서는 안 되는 일이라는 게 있어-!",
-          "JumpAnchorStringId_JPN": "人としてこんなことしちゃダメだよ！"
+          "JumpAnchorStringId_JPN": "人としてこんなことしちゃダメだ！"
         }
       ]
     },
@@ -1438,12 +1438,12 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "멋대로 날 이상한 사람으로 만들지 마!",
-          "JumpAnchorStringId_JPN": "勝手に変な人扱いしないでよ！"
+          "JumpAnchorStringId_JPN": "勝手に変な人扱いするな！"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "그나저나 대체 빚이 얼마 길래?",
-          "JumpAnchorStringId_JPN": "そもそも、いくら借金してるの？"
+          "JumpAnchorStringId_JPN": "そもそも、いくら借金してるんだ？"
         }
       ]
     },
@@ -1517,7 +1517,7 @@
       "WaitTime": 0.0,
       "CameraOffset": "TRIPLE_1",
       "UnitTalk_KOR": "바로 그게 <color=#F7BE45>나락으로 빠져들어가는 길의 시작이라는 것</color>을, 그때의 나는 알지 못했다.",
-      "UnitTalk_JPN": "それが<color=#F7BE45>地獄への第一歩ということ</color>を、その時の私は知らずにいた。",
+      "UnitTalk_JPN": "それが<color=#F7BE45>地獄への第一歩</color>ということを、その時の私は知らずにいた。",
       "TalkTime": 0.03
     },
     {
@@ -1546,7 +1546,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "여정 단장… 그러니까 보이저 구원단의 단장이 보증인이 되어준다고?",
-      "UnitTalk_JPN": "旅の団長…つまり、ボイジャー救援団の団長が、保証人になってくれるのか？",
+      "UnitTalk_JPN": "旅の団長…つまり、ボイジャー救援団の団長が保証人になってくれるのか？",
       "TalkTime": 0.03
     },
     {
@@ -1576,7 +1576,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그러니까 저 분홍머리 여자가 사라지기라도 하면, 단장님이 빚을 갚아준다는 거지?",
-      "UnitTalk_JPN": "あのピンク髪の女が行方をくらませたりでもしたら、団長が借金を返してくれるってことだろ？",
+      "UnitTalk_JPN": "ピンク髪の女が行方をくらませたりでもしたら、団長が借金を返してくれるってことだろ？",
       "TalkTime": 0.03
     },
     {
@@ -1601,7 +1601,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "모두들 내가 빚 보증인이 된 것을 납득한 것으로 보였다. 그러니까… 나만 빼고 말이다.",
-      "UnitTalk_JPN": "皆、私が保証人になることを納得してるみたいだ。…私を除いて、だけど。",
+      "UnitTalk_JPN": "皆、私が保証人になることで納得したようだ。…私を除いて、だが。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -1637,7 +1637,7 @@
       "WaitTime": 0.0,
       "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
       "UnitTalk_KOR": "소란을 일으키던 사람들은 하나둘 캔들 스퀘어를 떠났다.",
-      "UnitTalk_JPN": "騒ぎ立てていた人々は、1人2人とキャンドル・スクエアを去っていった。",
+      "UnitTalk_JPN": "騒ぎ立てていた人々は、一人二人とキャンドル・スクエアを去っていった。",
       "TalkTime": 0.03
     },
     {
@@ -1647,7 +1647,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "남은 것은 나를 안쓰러운 눈으로 바라보는 클레어와, 어딘지 모르게 산뜻한 표정의 루나뿐이었다.",
-      "UnitTalk_JPN": "残ったのは…私を可哀そうな目で見つめるクレアと、どこかすっきりとした表情のルナだけだった。",
+      "UnitTalk_JPN": "残ったのは…私を可哀そうな目で見つめるクレアと、どこかスッキリとした表情のルナだけだった。",
       "TalkTime": 0.03
     },
     {
@@ -1690,7 +1690,7 @@
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "자, 어때? 내가 말한 대로 책임지고 처리했지?",
-      "UnitTalk_JPN": "ねぇ、どうだった？ルナが言った通り、責任取って場を収めたでしょ？",
+      "UnitTalk_JPN": "ねぇ、どうだった？言った通り、責任取って場を収めたでしょ？",
       "TalkTime": 0.03
     },
     {
@@ -1703,12 +1703,12 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "네가 뭘 책임졌다는 건데?!",
-          "JumpAnchorStringId_JPN": "何の責任も取ってないよね！？"
+          "JumpAnchorStringId_JPN": "何の責任も取ってないだろ！？"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "전부 나한테 떠넘겼잖아?!",
-          "JumpAnchorStringId_JPN": "ぜんぶ私に押し付けただけなんだけど！？"
+          "JumpAnchorStringId_JPN": "ぜんぶ私に押し付けただけだ！"
         }
       ]
     },
@@ -1732,7 +1732,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitTalk_KOR": "나 열심히 할 테니까! 너무 걱정하지 말고!",
-      "UnitTalk_JPN": "ルナ、一生懸命やるから！そんなに心配しないで！",
+      "UnitTalk_JPN": "アタシ、一生懸命やるから！そんなに心配しないでよ！",
       "TalkTime": 0.03
     },
     {
@@ -1750,7 +1750,7 @@
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "대체 어쩌다 빚을 진 거야…?",
-          "JumpAnchorStringId_JPN": "なんで借金があるの…？"
+          "JumpAnchorStringId_JPN": "なんで借金があるんだ…？"
         }
       ]
     },
@@ -1763,7 +1763,7 @@
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "아~ 그건-",
-      "UnitTalk_JPN": "あ～、それはー",
+      "UnitTalk_JPN": "あ～、それは──",
       "TalkTime": 0.03
     },
     {
@@ -1803,7 +1803,7 @@
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "도박이라는 소리잖아!",
-          "JumpAnchorStringId_JPN": "ギャンブルってことだよね！"
+          "JumpAnchorStringId_JPN": "ギャンブルってことだな！"
         }
       ]
     },
@@ -1816,7 +1816,7 @@
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "아하하, 앞으로의 1년은 단장에게 배팅할 생각이니까!",
-      "UnitTalk_JPN": "あはは、これから一年は団長にベットするつもりだからっ！",
+      "UnitTalk_JPN": "アハハ、これから一年は団長にベットするつもりだからっ！",
       "TalkTime": 0.03
     },
     {

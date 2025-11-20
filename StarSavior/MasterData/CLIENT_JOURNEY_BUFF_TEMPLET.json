@@ -395,6 +395,19 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 18,
+          "JourneyBuffId" : 180,
+          "JourneyBuffStrId" : "SWEET_TASTE",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_180",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_181",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_ARCANAPOINT_BONUS.png",
+          "JourneyBuffType" : "JBT_TS_UP",
+          "JourneyBuffValue" : 3000,
+          "TurnCount" : 5,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "JourneyBuffGroup" : 20,
           "JourneyBuffId" : 201,
           "JourneyBuffStrId" : "UNIQUE_BURNOUT",
@@ -407,15 +420,67 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 21,
+          "JourneyBuffId" : 211,
+          "JourneyBuffStrId" : "UNIQUE_MUSCLE_INJURY",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_211",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_211",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_POWER_TRAINING_DOWN.png",
+          "JourneyBuffType" : "JBT_POWER_TRAINING_EXP_DOWN",
+          "JourneyBuffValue" : 1000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 22,
+          "JourneyBuffId" : 221,
+          "JourneyBuffStrId" : "UNIQUE_SURFEIT",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_221",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_221",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_POWER_TRAINING_DOWN.png",
+          "JourneyBuffType" : "JBT_POWER_TRAINING_DOWN",
+          "JourneyBuffValue" : 1000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : false
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "JourneyBuffGroup" : 30,
           "JourneyBuffId" : 301,
-          "JourneyBuffStrId" : "UNIQUE_BUNOUT",
+          "JourneyBuffStrId" : "UNIQUE_INDOMITABLE_SPIRIT",
           "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_301",
           "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_301",
-          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_POTENPOINT_BONUS.png",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_ENDURANCE_TRAINING_UP.png",
           "JourneyBuffType" : "JBT_ENDURANCE_TRAINING_UP",
           "JourneyBuffValue" : 2000,
           "TurnCount" : 3,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 30,
+          "JourneyBuffId" : 302,
+          "JourneyBuffStrId" : "UNIQUE_KEEN_EYE",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_302",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_302",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_FOCUS_TRAINING_UP.png",
+          "JourneyBuffType" : "JBT_FOCUS_TRAINING_UP",
+          "JourneyBuffValue" : 1000,
+          "TurnCount" : 3,
+          "JourneyBuffPositive" : true
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "JourneyBuffGroup" : 31,
+          "JourneyBuffId" : 311,
+          "JourneyBuffStrId" : "UNIQUE_NUTRITIOUS_FOOD",
+          "JourneyBuffName" : "SI_JOURNEY_BUFFE_NAME_311",
+          "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_311",
+          "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_HEALTH_TRAINING_UP.png",
+          "JourneyBuffType" : "JBT_HEALTH_TRAINING_EXP_UP",
+          "JourneyBuffValue" : 1000,
+          "TurnCount" : 5,
           "JourneyBuffPositive" : true
         },
         {
@@ -540,7 +605,7 @@
           "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_10401",
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_POWER_TRAINING_DOWN.png",
           "JourneyBuffType" : "JBT_POWER_TRAINING_DOWN",
-          "JourneyBuffValue" : 500,
+          "JourneyBuffValue" : 2000,
           "TurnCount" : 5,
           "JourneyBuffPositive" : false
         },
@@ -553,7 +618,7 @@
           "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_11001",
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_HEALTH_TRAINING_DOWN.png",
           "JourneyBuffType" : "JBT_HEALTH_TRAINING_DOWN",
-          "JourneyBuffValue" : 500,
+          "JourneyBuffValue" : 2000,
           "TurnCount" : 5,
           "JourneyBuffPositive" : false
         },
@@ -566,7 +631,7 @@
           "JourneyBuffDesc" : "SI_JOURNEY_BUFFE_DESC_21001",
           "JourneyBuffIcon" : "ICON_JOURNEY_BUFF_ENDURANCE_TRAINING_DOWN.png",
           "JourneyBuffType" : "JBT_ENDURANCE_TRAINING_DOWN",
-          "JourneyBuffValue" : 500,
+          "JourneyBuffValue" : 2000,
           "TurnCount" : 5,
           "JourneyBuffPositive" : false
         }

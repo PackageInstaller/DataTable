@@ -33,21 +33,17 @@
       },
       {
         "StateName": "USN_DYING",
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_04.wav"
-              }
-            ]
-          }
-        ],
         "SoundEvents": [
           {
             "EventFrame": 0,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE_04.wav"
             ]
           },
           {
@@ -99,6 +95,12 @@
             ]
           },
           {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 42,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_ORB_BLACK_HIT.wav"
@@ -108,16 +110,6 @@
             "EventFrame": 53,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
-            ]
-          }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 30,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
-              }
             ]
           }
         ]
@@ -155,6 +147,12 @@
             ]
           },
           {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE_02.wav"
+            ]
+          },
+          {
             "EventFrame": 15,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_ORB_BLACK_SPELL_DARK_03.wav"
@@ -170,16 +168,6 @@
             "EventFrame": 70,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
-            ]
-          }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_02.wav"
-              }
             ]
           }
         ]
@@ -215,6 +203,12 @@
         ],
         "SoundEvents": [
           {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE_02.wav"
+            ]
+          },
+          {
             "EventFrame": 10,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_ORB_BLACK_BODYFALL.wav"
@@ -248,16 +242,6 @@
             "EventFrame": 105,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
-            ]
-          }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_02.wav"
-              }
             ]
           }
         ]

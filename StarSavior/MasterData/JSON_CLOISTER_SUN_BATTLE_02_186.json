@@ -7,22 +7,36 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_06",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_05",  // 경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_06",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SPLINTER_BLACK_ELITE_CLOISTER_05", // 심연의 주시자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_06",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_05",  // 경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -31,23 +45,35 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_06",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_05",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_CLOISTER_06",
+            "UnitStrId": "NKM_UNIT_MON_SPOTTER_ELITERING_BLACK_ELITE_CLOISTER_05",  // 잔상의 감시자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_06",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_05",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

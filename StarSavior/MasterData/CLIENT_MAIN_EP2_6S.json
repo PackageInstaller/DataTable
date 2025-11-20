@@ -1,0 +1,1503 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_6S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_LOBBY.png"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "자, 다들 칩을 걸어 주시기 바랍니다.",
+      "UnitTalk_JPN": "さぁ、皆さん。チップをベットしてください。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_DEALER_001.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "좋아! 이번에야말로 감이 왔어!",
+      "UnitTalk_JPN": "よしっ！今度こそうまくいくはず！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "이 한판으로 내가 하늘에 서겠다!",
+      "UnitTalk_JPN": "この一勝負で、アタシが天に立つ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "적색 판의 14번! 남은 금액 전부! 올인!",
+      "UnitTalk_JPN": "赤の14番に！有り金ぜんぶ！オールイン！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "그… 괜찮겠소? 아가씨.",
+      "UnitTalk_JPN": "おい…大丈夫か？お嬢ちゃん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_001.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "내가 참견할 일은 아니지만 아까부터 다섯 게임이나 연패 중인데…",
+      "UnitTalk_JPN": "俺が言うことじゃねぇが、さっきから5ゲーム連続で負けてるだろ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_002.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "응? 하하, 괜찮아, 괜찮아!",
+      "UnitTalk_JPN": "アハハッ、大丈夫大丈夫！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "원래 도박이란 건 조금 잃어줘야 그 흐름을 탈 수 있는 거거든!",
+      "UnitTalk_JPN": "ギャンブルってのは、ちょっと負けてから勝つ流れが来るってものよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "일종의 제물 같은 거지, 응.",
+      "UnitTalk_JPN": "だからこれまでの負けは投資ってことで、うん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "진짜 게임은 이제부터 시작이야!",
+      "UnitTalk_JPN": "本当のゲームは、ここからってわけ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "그, 그렇소?",
+      "UnitTalk_JPN": "そ、そうか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_003.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "하지만 조금 잃었다기엔 너무…",
+      "UnitTalk_JPN": "ちょっとじゃ済まないぐらい負けてるようだが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_004.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "하하, 이 친구 뭘 모르는군!",
+      "UnitTalk_JPN": "ははっ、あんたは何も知らないんだな！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_001.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "걱정하지 않아도 돼. 저 아가씨는…",
+      "UnitTalk_JPN": "心配しなくても大丈夫さ。あのお嬢さんは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_002.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "매일매일 여기에 와서 속옷까지 탈탈 털리고 가는 게 일상이거든!",
+      "UnitTalk_JPN": "毎日ここにきて、下着まで取られて帰るのがオチなんだぜ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_003.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "빠직…!",
+      "UnitTalk_JPN": "ピキッ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "뭐요?!",
+      "UnitTalk_JPN": "そうなのか…！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_005.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "어차피 그동안 잃은 금액이 너무 커서 이기든 지든 회수는 무리야.",
+      "UnitTalk_JPN": "今までに失った金額が大きすぎて、たとえ勝っても回収はできないさ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_004.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "그리고 오늘도 평소처럼 몽땅 잃고 끝나겠지. ",
+      "UnitTalk_JPN": "今日も、いつも通り全部失って帰るはずだよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_005.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "빠직빠직…!",
+      "UnitTalk_JPN": "ピキピキッ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "그럼 더 문제 아니요?",
+      "UnitTalk_JPN": "いや、それだと余計にやばいんじゃないか…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_006.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "어허, 무슨 소릴?",
+      "UnitTalk_JPN": "おいおい、何を言ってるんだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_006.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "저 아가씨는 프로야.",
+      "UnitTalk_JPN": "あのお嬢さんはプロだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_007.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "우리 같은 도박꾼들은 돈을 따기 위해 게임을 하지.",
+      "UnitTalk_JPN": "私たちのようなギャンブラーは、儲けるためにゲームをするだろう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_008.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "하지만 저 아가씨는…",
+      "UnitTalk_JPN": "しかし、あのお嬢さんは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_009.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "게임 자체를 즐기기 위해 게임을 한다고!",
+      "UnitTalk_JPN": "ゲーム自体を楽しむために、ゲームをしているのさ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_010.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "저 아가씨에게 칩 같은 건 그저 게임 이용료일 뿐이야!",
+      "UnitTalk_JPN": "あのお嬢さんにとって、チップはゲームのプレイ代に過ぎないんだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_011.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "그러니 걱정을 하는 건 저 아가씨에 대한 모독이라고!",
+      "UnitTalk_JPN": "野暮な心配をするのは、むしろお嬢さんに失礼だよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_012.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "빠직빠직빠직…!!",
+      "UnitTalk_JPN": "カッチーン…！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "뭐가 뭔지… 알 듯하기도 하고 모를 듯하기도 하고…",
+      "UnitTalk_JPN": "何だか…分かるような、分からないような…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_007.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "자자, 긴장 풀고 즐기기나 해.",
+      "UnitTalk_JPN": "さぁさぁ、緊張せずに楽しむんだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_013.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "여기서 관전 포인트는 빈털터리가 된 저 아가씨가 무슨 꼴을 당하느냐지.",
+      "UnitTalk_JPN": "見どころは、一文無しになったお嬢さんがどんな目に遭うかってところさ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_014.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "지난달에는 빌려 쓴 칩을 갚지 못해서 일주일 동안 카지노 식당의 웨이트리스로 일했었거든.",
+      "UnitTalk_JPN": "先月は借りたチップを返せずに、一週間カジノのレストランで働くことになったんだぜ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_015.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "이번엔 무슨 아르바이트를 할지 기대되는데?",
+      "UnitTalk_JPN": "今回はどんなアルバイトをすることになるのか、楽しみだな。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_016.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "시끄러워! 이 망할 아저씨들아!",
+      "UnitTalk_JPN": "うるさーい！このあんぽんたんども！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_011.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "누가 빈털터리라는 거야!",
+      "UnitTalk_JPN": "誰が一文無しよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_012.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_03.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "이번에야말로 이 카지노의 칩을 모조리 따서 제일 쓸모없고 비싼 곳에서 흥청망청 써버릴 거야!",
+      "UnitTalk_JPN": "今度こそカジノのチップを根こそぎ勝ち取って、無駄に高い店でパーッと使ってやるんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_013.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "딜러! 돌려!",
+      "UnitTalk_JPN": "ディーラー！回して！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_014.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_COIN_03.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "네, 적색 판의 14번. 남은 금액 전부. 확인했습니다.",
+      "UnitTalk_JPN": "はい、赤の14番。オールイン。確認しました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_DEALER_002.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MACHINE.wav",
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "룰렛, 돌립니다.",
+      "UnitTalk_JPN": "回します。ノー、モア、ベッツ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_DEALER_003.wav"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH_SWORD_66.wav",
+      "UnitTalk_KOR": "바람이 느껴진다.",
+      "UnitTalk_JPN": "風を感じる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_015.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아니, 이것은 바람이 아니야. ",
+      "UnitTalk_JPN": "ううん、風じゃないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_016.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이것은 흐름.",
+      "UnitTalk_JPN": "これは流れよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_017.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그래. 흐름이 나를 휘감고 있어. 흐름이 나를 이끌고 있어!",
+      "UnitTalk_JPN": "そう、流れがアタシを包み込んでる。流れがアタシを導いてるの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_018.wav"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 그것이 멈추는 곳은…!",
+      "UnitTalk_JPN": "そして、それが止まるところは…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_019.wav",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.01,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.01
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "흑의 6.",
+      "UnitTalk_JPN": "黒の6番。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_DEALER_004.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "플레이어의 패배입니다.",
+      "UnitTalk_JPN": "プレイヤーの負けです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_DEALER_005.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_020.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "흐름은 개뿔!! 비슷하지도 않잖아!!!",
+      "UnitTalk_JPN": "流れはどこいったの！？全然違うじゃない！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_021.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_008.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "거 보라고. 내가 뭐랬나?",
+      "UnitTalk_JPN": "ほら、言った通りだろう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_017.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "중력을 거스르는 건 어리석은 일이지.",
+      "UnitTalk_JPN": "重力に逆らおうとするのは、愚かなことさ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_018.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "저 아가씨가 돈을 잃는 건… 중력 같은 법칙이라는 뜻이군.",
+      "UnitTalk_JPN": "あのお嬢ちゃんが金を失うってのは…重力みてぇな法則だったんだな。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_009.wav"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "그래, 그거야! 이제야 말이 좀 통하네, 형씨.",
+      "UnitTalk_JPN": "そう、そういうことだよ！いやー、やっと分かってくれたか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_019.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "시끄러워!!",
+      "UnitTalk_JPN": "うるさいってばー！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_022.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "…가진 칩을 모두 잃으셨군요.",
+      "UnitTalk_JPN": "…すべてのチップを使ってしまいましたね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_DEALER_006.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CASINO_DEALER"
+      ],
+      "UnitTalk_KOR": "어떻게 하시겠습니까?",
+      "UnitTalk_JPN": "どうされますか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_DEALER_007.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그…",
+      "UnitTalk_JPN": "えっと…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_023.wav"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "헤헤, 조금만 빌려주면 안 될까?",
+      "UnitTalk_JPN": "えへへ…ちょっとだけ貸してくれない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_024.wav"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "딱 30분 안에 따서 갚을…",
+      "UnitTalk_JPN": "30分で10倍に…いえ、100倍にして返すから…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_025.wav"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "콰당탕!",
+      "UnitTalk_JPN": "ドンッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뭐, 뭐야?",
+      "UnitTalk_JPN": "な、なに？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_026.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "어라…? 너희들은 뭐야? 왠지 낯이 익은데…",
+      "UnitTalk_JPN": "あれ…？キミたち、どこかで見かけたような…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_027.wav"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "이 사기꾼! 여기 있었구나!",
+      "UnitTalk_JPN": "このペテン師！本当にカジノにいたのね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "엥?",
+      "UnitTalk_JPN": "えっ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_010.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "何だ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_020.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…히익?!",
+      "UnitTalk_JPN": "…ヒーッ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_028.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "스마일! 네 공방 보증금을 훔쳐 간 사기꾼.",
+      "UnitTalk_JPN": "スマイル！あなたの工房の保証金を盗ったペテン師…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_002.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "저기 저 여자 맞지?!",
+      "UnitTalk_JPN": "あの女で合ってるでしょ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_003.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitTalk_KOR": "안면 비교 검토 완료.",
+      "UnitTalk_JPN": "人相比較、完了。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_SMILE_001.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SMILE"
+      ],
+      "UnitTalk_KOR": "동일 인물일 가능성 99.97%",
+      "UnitTalk_JPN": "同一人物の可能性、99.97%",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_SMILE_002.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "사, 사기꾼이라니… 하하… 그게 무슨 소리일까?",
+      "UnitTalk_JPN": "ぺ、ペテン師って…ハハ…どういうこと？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_029.wav"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "사소한 오해가 있을지도…",
+      "UnitTalk_JPN": "ちょっと誤解があるのかなー…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_030.wav"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitQuickSet": true,
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "그런 변명 따윈 안 통해!",
+      "UnitTalk_JPN": "そんな言い訳は通じないわよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "넌 지금 한 소녀의 희망과 미래를 망쳐버린 거라고!",
+      "UnitTalk_JPN": "一人の少女の希望と未来を壊したんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "당장 훔쳐 간 의뢰금을 돌려줘!",
+      "UnitTalk_JPN": "今すぐ、盗んだお金を返してちょうだい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_GAMBLER"
+      ],
+      "UnitTalk_KOR": "뭐, 언젠가 이런 일이 벌어질 거라고 예상은 했었지.",
+      "UnitTalk_JPN": "まぁ、いつかこんなことが起きるだろうとは思っていたさ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GAMBLER_021.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SPECTATOR"
+      ],
+      "UnitTalk_KOR": "어린 아가씨가 무슨 돈으로 도박을 하나 했더니… 저런 몹쓸 짓을…",
+      "UnitTalk_JPN": "若いお嬢ちゃんがあんなに金を持ってるのはおかしいと思ってたけどよ…ひどいことを…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_NPC_NOA_GALLERY_011.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "자, 잠깐! 사기꾼에 도둑이라니…! 동의할 수 없어!",
+      "UnitTalk_JPN": "ちょ、ちょっと待って！ペテン師って…！納得できないんだけど！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_031.wav"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_032.wav"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아니, 30%까지는 동의할게! 하지만 그 이상은 동의 못 해!",
+      "UnitTalk_JPN": "いや、疑われる理由は分かるよ？30％くらい。…でも、アタシは潔白なの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_033.wav"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그리고 너, 노란 모자 꼬마!",
+      "UnitTalk_JPN": "そこの黄色のちびっこ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_034.wav"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "본인 이름, 스마일.",
+      "UnitTalk_JPN": "私の名前、スマイル。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "의뢰주의 이름 정도는 기억하길 희망.",
+      "UnitTalk_JPN": "依頼主の名前くらい、覚えておくのが常識。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아무튼!",
+      "UnitTalk_JPN": "とにかく！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_035.wav"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "난 사기 따윈 친 적 없어!",
+      "UnitTalk_JPN": "アタシは悪いことなんてしてない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_036.wav"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "이 몸은 라비스타 최고의 예언자!",
+      "UnitTalk_JPN": "このルナ様は、ラビスターNo.1予言者！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_037.wav"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "무려 달의 지팡이를 물려받은 몸이라고!",
+      "UnitTalk_JPN": "なんと、月の杖を受け継ぎし者よ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_038.wav"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "달의 지팡인지 뭔지 알 게 뭐야! 들어본 적도 없어!",
+      "UnitTalk_JPN": "月の杖って何なのよ！聞いたこともないわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "이익…! 무식해서 자랑이다!",
+      "UnitTalk_JPN": "もう…！無知を自慢するんじゃないの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_039.wav"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그리고 예언자라면서 카드나 룰렛은 왜 하나도 못 맞추는 건데?",
+      "UnitTalk_JPN": "それに、予言者だったらどうしてカードやルーレットを当てられないのよ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "들어보니까 하는 게임마다 깨진다면서?",
+      "UnitTalk_JPN": "全部のゲームで負けてるんでしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그거야말로 네가 사기꾼이라는 결정적 증거라고!",
+      "UnitTalk_JPN": "それこそ、ペテン師だっていう決定的な証拠じゃない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FIRE_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "이… 이이익!!",
+      "UnitTalk_JPN": "キ…キィーーッ！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_040.wav"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "예언자의 직업 정신을 우습게 보지 마!",
+      "UnitTalk_JPN": "予言者のプロ意識を舐めないでくれる！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_041.wav"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "신성한 도박의 결과를 예언 따위로 더럽히는 짓은 규칙 위반이라고!",
+      "UnitTalk_JPN": "神聖なギャンブルの結果を、予言なんかで汚すのはルール違反なんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_042.wav"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "알 수 없는 미래를 향해 뻗어 있는 흔들 다리…",
+      "UnitTalk_JPN": "見えない未来へとつながった、不安定に揺れる吊り橋…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_043.wav"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "밟으면 부서질 수도 있는 발판 위를 한 걸음씩 내디딜 때 뿜어져 나오는 그 희열…",
+      "UnitTalk_JPN": "踏めば崩れ落ちそうな足場を、一歩ずつ進むたびに込み上げてくるあのスリル…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_044.wav"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…그걸 미리 알아버리면 무슨 재미로 도박을 하는데?",
+      "UnitTalk_JPN": "…事前に未来を知っちゃったら、何のためにギャンブルをするっていうのよ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_045.wav"
+    },
+    {
+      "Uid": 135,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 136,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "뇌내 신경 물질 수용체계에 이상이 있음이 의심됨.",
+      "UnitTalk_JPN": "脳内の神経伝達物質受容体に異常が発生している恐れあり。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이제 됐으니까 의뢰금이나 돌려줘!",
+      "UnitTalk_JPN": "とにかく、依頼金を返して！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "설마 벌써 다 써버리진 않았겠지?",
+      "UnitTalk_JPN": "まさか、全部使っちゃったんじゃないでしょうね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_046.wav"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "지, 진짜?",
+      "UnitTalk_JPN": "ほ、本当なの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "그… 돈이라는 게… 원래 돌고 도는 거고…",
+      "UnitTalk_JPN": "だって…金は天下の回りものって言うし…だから、手元にあったら使うのは当然のことで…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_047.wav"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "자본주의 경제 시스템의 원리랄까…",
+      "UnitTalk_JPN": "資本主義的経済システムの原理というか…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_048.wav"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무튼 미안.",
+      "UnitTalk_JPN": "とにかく、ごめんね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_049.wav"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "원래 예언이라는 게 맘에 드는 내용만 나오고 그러는 게 아니거든.",
+      "UnitTalk_JPN": "予言って、いい結果だけが出る訳じゃないんだよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_050.wav"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그리고 복채는 원칙적으로 환불 금지라서 나도 어쩔 수가 없네.",
+      "UnitTalk_JPN": "それに、占いの料金は返金できないルールなの。ルナがどうにかできる訳でもないし…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_051.wav"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 안녕! 만나서 반가웠고 다신 만나지 말자!",
+      "UnitTalk_JPN": "それじゃ、バイバーイ！会えて嬉しかったけど、もう会わないことを願ってるよー！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_052.wav"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "굳이 만나고 싶다면 다음 생애쯤에 보는 걸로~!",
+      "UnitTalk_JPN": "もし会うなら、来世でねーっ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_ORACLE_053.wav"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "어딜 도망가! 거기 서!",
+      "UnitTalk_JPN": "どこ行くのよ！待ちなさい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_6_UNIT_S_VOYAGER_STRANIS_016.wav"
+    }
+  ]
+}

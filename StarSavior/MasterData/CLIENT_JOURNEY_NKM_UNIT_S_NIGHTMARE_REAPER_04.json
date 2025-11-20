@@ -1,0 +1,1252 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_04",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_04",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라와의 훈련이 계속되던 어느 날.",
+      "UnitTalk_JPN": "セイラとのトレーニングが続いていたある日。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "NOA가 궁금하다는 세이라를 데리고 거리를 걷게 되었다.",
+      "UnitTalk_JPN": "NOAに興味があるというセイラを連れて街を歩くことになった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "이곳이 NOA… 너무 신기해요.",
+      "UnitTalk_JPN": "ここがNOA…すごく不思議です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게 신나?",
+          "JumpAnchorStringId_JPN": "そんなに嬉しい？"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "네. 많은 사람들이 섞여 살고, 다양한 꿈들이 생겼다가 사라지는 도시…",
+      "UnitTalk_JPN": "はい。たくさんの人々が混ざり合って暮らし、様々な夢が生まれては消えていく街…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "언젠가 한 번쯤은… 꼭 와보고 싶었거든요.",
+      "UnitTalk_JPN": "いつか一度は…必ず来てみたかったのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제가 꿈꾸던 모습 그대로예요.",
+      "UnitTalk_JPN": "わたしが夢見ていた姿そのものですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여정 단원으로 오게 돼서 기뻐요… 데려와 주셔서 감사해요, 단장님.",
+      "UnitTalk_JPN": "旅の団員として来られて嬉しいです…連れてきてくださってありがとうございます、団長さま。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 200,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "세이라는 정말 기쁘다는 듯이 내 손을 맞잡아왔다.",
+      "UnitTalk_JPN": "セイラは本当に嬉しそうに、私の手を握ってきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 손은 여전히 깃털처럼 가볍고, 적당히 시원해서 아무리 봐도 사람이라는 실감이 나지 않았다.",
+      "UnitTalk_JPN": "その手は相変わらず羽のように軽く、程よく冷たくて、やはり人間だという実感は湧かなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러고 보니 그때도…",
+      "UnitTalk_JPN": "そういえばあの時も…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 202,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "CutsceneClear": "CLEARALL",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 205,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER"
+    },
+    {
+      "Uid": 203,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "저는… 여정을 시작하는 이 순간을 줄곧 기다려 왔어요.",
+      "UnitTalk_JPN": "わたしは…旅を始めるこの瞬間を、ずっと待ち望んでいました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…분명 처음 만난 날도 손을 맞잡은 채 그렇게 말했었다.",
+      "UnitTalk_JPN": "…初めて会った日も、手を握りながらそう言っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 206,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 207,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "POS9_2X",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS9",
+      "AutoHighlight": "DARK",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 208,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "내 손을 잡은 채 환하게 웃고 있는 세이라의 얼굴을 보고 있자니 왠지 얼굴이 달아올라서, 화제를 돌리기로 했다.",
+      "UnitTalk_JPN": "私の手を握ったまま明るく笑うセイラを見ていると、なんだか顔が熱くなってきた。話題を変えよう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "세이라는, 어쩌다가 여정에 참가하게 됐어?",
+          "JumpAnchorStringId_JPN": "セイラは、どうして旅に参加しようと思ったんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "여정에 참여한… 이유요?",
+      "UnitTalk_JPN": "旅に参加した…理由ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "으음… 그건…",
+      "UnitTalk_JPN": "うーん…それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "강해질 필요가 있기 때문이에요.",
+      "UnitTalk_JPN": "強くなる必要があるからです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "저에게는…",
+      "UnitTalk_JPN": "わたしには…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "별의 구원자의 힘이… <color=#F7BE45>필요</color>해요.",
+      "UnitTalk_JPN": "星の救援者の力が… <color=#F7BE45>必要</color>なのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>강해지고 싶다</color>는 말이 세이라의 입에서 나올 것이라고는 생각지 못했다.",
+      "UnitTalk_JPN": "<color=#F7BE45>強くなりたい</color>という言葉が、セイラの口から出てくるとは思わなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러나 단순하게 강한 힘을 갈망한다는 것이 아니라, 반드시 필요로 한다는 세이라의 말에서…",
+      "UnitTalk_JPN": "しかし、単純に強い力を望んでいる訳ではなく、必要だと言うセイラの言葉から…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩐지 결연한 의지가 느껴졌다.",
+      "UnitTalk_JPN": "強い意志が感じられた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 그렇게 큰 힘이 필요해?",
+          "JumpAnchorStringId_JPN": "どうして力が必要なの？"
+        }
+      ]
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…다른 사람과 어울리기엔… 제가 너무 약하니까요.",
+      "UnitTalk_JPN": "…他の人と関わるには…わたしが弱すぎるからです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "짧은 기간이지만, 그동안 봐왔던 세이라가 유달리 약해 보이지는 않았는데… 무슨 문제가 있는 걸까?",
+      "UnitTalk_JPN": "短い期間ではあるものの、これまでセイラが弱々しく見えたことはない…何か問題があるのだろうか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼, 큰 힘을 얻게 되면 그걸로 뭘 할 거야?",
+          "JumpAnchorStringId_JPN": "じゃあ、星の救援者の力で何をするつもり？"
+        }
+      ]
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "큰 힘을 얻게 되면… 그렇게 되면…",
+      "UnitTalk_JPN": "わたしは…力を得られたら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…NOA에서 살고 싶어요.",
+      "UnitTalk_JPN": "…NOAで暮らしたいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "친구도 사귀어 보고…",
+      "UnitTalk_JPN": "お友達も作って…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단골 가게도, 만들고 싶어요.",
+      "UnitTalk_JPN": "行きつけのお店も、できたら嬉しいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 건… 지금부터 해도 되는 일 아냐?",
+          "JumpAnchorStringId_JPN": "それって…今からでもできることじゃない？"
+        }
+      ]
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라는 대답 없이 미소 짓기만 할 뿐이었다.",
+      "UnitTalk_JPN": "セイラは答えずに、微笑むだけだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitTalk_KOR": "그때-",
+      "UnitTalk_JPN": "その時──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "오빠, 같이 가…!",
+      "UnitTalk_JPN": "おにいちゃん、待って…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아야…!",
+      "UnitTalk_JPN": "あっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_01.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "털썩-",
+      "UnitTalk_JPN": "ドサッ──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_3",
+      "UnitTalk_KOR": "그때, 세이라의 곁으로 달려가던 여자아이가 넘어졌다.",
+      "UnitTalk_JPN": "セイラの方に走って来ていた少女が転んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 239,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 240,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_NIGHTMARE_REAPER_01.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 241,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.8,
+      "StartBgmFileName": "MUSIC_CUTSCENE_15.mp3"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "괜찮아? 아프겠다…",
+      "UnitTalk_JPN": "大丈夫かな？痛いよね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "아파아아…",
+      "UnitTalk_JPN": "痛いよぉ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 151,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitTalk_KOR": "흐이잉…",
+      "UnitTalk_JPN": "ふぇぇん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라가 얼른 가서 아이의 손을 잡고 일으켜 줬지만, 아이의 울음은 멈출 기미를 보이지 않았다.",
+      "UnitTalk_JPN": "セイラはすぐに駆け寄り、少女の手を取って立たせてあげたが、なかなか泣き止みそうになかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitTalk_KOR": "아픈 건 멀리 날아갈 거야.",
+      "UnitTalk_JPN": "痛いの痛いの飛んでいけ、してあげるね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "내가 이 나비에 실어서 날려 보낼게.",
+      "UnitTalk_JPN": "わたしがこの蝶に乗せて、痛みを飛ばしてあげるから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그러니까 괜찮아… 뚝.",
+      "UnitTalk_JPN": "だから大丈夫…ね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitTalk_KOR": "흐이잉… 흑…",
+      "UnitTalk_JPN": "うぇぇん…ヒック…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "자, 봐. 나비가 날아갔어.",
+      "UnitTalk_JPN": "ほら、見て。蝶が飛んでいったわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitTalk_KOR": "이제 하나도 안 아프지?",
+      "UnitTalk_JPN": "もう痛くないでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라가 손끝의 나비를 날려 보내는 시늉을 했다.",
+      "UnitTalk_JPN": "セイラは、指先で蝶を飛ばす仕草をした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 220,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…우와아… 응…! 이제 안 아파.",
+      "UnitTalk_JPN": "…わぁ…うん…！もう痛くない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "고마워, 예쁜 언니!",
+      "UnitTalk_JPN": "ありがとう、キレイなおねえちゃん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 235,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.8
+    },
+    {
+      "Uid": 237,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_DOWNTOWN.png",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_3"
+    },
+    {
+      "Uid": 238,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeOutTime": 0.8
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "넘어졌던 아이가 씩씩하게 무릎을 털며 다시 달려 나갈 준비를 했다.",
+      "UnitTalk_JPN": "転んだ子は元気よく膝を払い、再び走り出す準備をした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 210,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…あれ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그런데 언니, 우리 본 적 있지 않아?",
+      "UnitTalk_JPN": "そういえばおねえちゃん、会ったことあるよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitTalk_KOR": "분명 본 적 있는데. 저번에 나, 무서운 꿈 꿨을 때…",
+      "UnitTalk_JPN": "絶対会ったことあるよ。この前、あたし、怖い夢を見たとき…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "꿈에서 괴물이 나왔는데, 이 언니가 쫓아줬-",
+      "UnitTalk_JPN": "夢に怪物が出てきたんだけど、おねえちゃんが追い払って──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 224,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 230,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_CHILDBROHTER"
+      ],
+      "UnitTalk_KOR": "야아- 빨리 와!",
+      "UnitTalk_JPN": "おーい！はやく来いよー！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 오빠가 부르네…",
+      "UnitTalk_JPN": "あっ、おにいちゃんが呼んでる…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 226,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE",
+      "UnitNameString": [
+        "SI_CHILDGIRL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "나 그럼 가볼게! 다음에 봐!",
+      "UnitTalk_JPN": "じゃあね！バイバイ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 211,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CHILD_FEMALE"
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_03.wav",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아이는 손을 몇 번 흔들어 작별 인사를 하더니, 부름이 들려온 곳으로 힘차게 달려갔다.",
+      "UnitTalk_JPN": "子どもは何度か手を振り別れの挨拶をすると、呼ばれた方へと勢いよく走って行った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 228,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "EmotionEffect": "THINK2",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라는 그 작은 뒷모습을 그립다는 듯, 가만히 좇고 있었다.",
+      "UnitTalk_JPN": "セイラはその小さな後ろ姿を懐かしむかのように、じっと見つめていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "세이라, 방금 아이가 한 말은…",
+          "JumpAnchorStringId_JPN": "セイラ、あの子が言ってたことって…"
+        }
+      ]
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "…사람들은 매일 꿈을 꿔요.",
+      "UnitTalk_JPN": "…人は、毎日夢を見ます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그리고 그 속엔 즐거움과 슬픔, 그리고 그리움 같은 감정들이 잔뜩 담겨 있어요…",
+      "UnitTalk_JPN": "そして夢には、喜びや悲しみ、懐かしさといった感情がたくさん詰まっています…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "그런데도 사람들은 꿈에서 깨어나면… 대부분을 기억하지 못해요.",
+      "UnitTalk_JPN": "しかし人は、夢から覚めると…ほとんどを覚えていません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 177,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그렇게 많은 감정들이 담겨있는데도요…",
+      "UnitTalk_JPN": "あれほど多くの感情が詰まっているのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하지만… 눈을 뜨면 꿈은 곧 잊히기 마련이에요.",
+      "UnitTalk_JPN": "夢はすぐに忘れられてしまうものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그게… <color=#F7BE45>꿈의 존재</color>니까요.",
+      "UnitTalk_JPN": "それが…<color=#F7BE45>夢というもの</color>ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 212,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 213,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 214,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라와 헤어져서 숙소로 돌아오던 중이었다.",
+      "UnitTalk_JPN": "セイラと別れ、宿へと戻る時だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이봐, 형씨. 잠깐 시간 괜찮나?",
+      "UnitTalk_JPN": "おい、そこの兄ちゃん。ちょっと時間いいか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "수상한 행색의 남자가 길을 막아섰다.",
+      "UnitTalk_JPN": "怪しげな風貌の男が道を塞いだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 일이지?",
+          "JumpAnchorStringId_JPN": "何だ？"
+        }
+      ]
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "거참. 너무 무섭게 보지 말라고. 이래 봬도 사람들에게 도움이 되는 일을 하고 있는 사람이니까.",
+      "UnitTalk_JPN": "いやいや、そんなに怖がらないでくれよ。こう見えても、人の役に立つ仕事をしてんだぜ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도움이 되는 일…?",
+          "JumpAnchorStringId_JPN": "役に立つ仕事…？"
+        }
+      ]
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "난 <color=#F7BE45>몽마</color>를 사냥하는 헌터야. 오래전부터 몽마를 찾아다니고 있지.",
+      "UnitTalk_JPN": "俺は<color=#F7BE45>夢魔</color>を狩るハンターだ。昔から夢魔を探し回ってる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitTalk_KOR": "최근에 이곳, NOA 근처에서 몽마의 소문을 들어서 말야…",
+      "UnitTalk_JPN": "最近NOAの辺りで、夢魔の噂を聞いたんだよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitTalk_KOR": "…혹시 짐작 가는 거 없나?",
+      "UnitTalk_JPN": "…何か心当たりはないか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 190,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "사소한 거라도 좋아.",
+      "UnitTalk_JPN": "些細なことでも構わない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…모르겠는데.",
+          "JumpAnchorStringId_JPN": "…分からないな。"
+        }
+      ]
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "몽마가 나타난다는 소문이 돌기 시작한 건 여정이라는 게 시작된 이후…",
+      "UnitTalk_JPN": "夢魔が現れるという噂が流れ始めたのは、旅が始まってから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitTalk_KOR": "캔들 스퀘어라는 곳 주변으로 이미 몽마의 영향이 끼치기 시작했다는 건 이미 알고 있어.",
+      "UnitTalk_JPN": "キャンドル・スクエアって場所の辺りは、すでに夢魔の影響が及んでることは知ってるさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…주변에 수상하게 생각되는 사람, 없었나?",
+      "UnitTalk_JPN": "…周りに怪しい人物は、いないか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 195,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "몰라.",
+          "JumpAnchorStringId_JPN": "知らない。"
+        }
+      ]
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…흥, 알겠어. 뭐, 아직은 잘 모를 수도 있으니까…",
+      "UnitTalk_JPN": "…フン、分かった。まぁ、今はまだハッキリしてないからな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_W",
+      "UnitNameString": [
+        "SI_HUNTER"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "혹시나 의심되는 사람이 있다면 이쪽으로 연락 줘.",
+      "UnitTalk_JPN": "もし疑わしい人物がいたら、ここに連絡してくれ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "<color=#F7BE45>몽마</color>를 사냥한다는 헌터는 대충 휘갈긴 주소가 적힌 쪽지 한 장을 건넨 후 자리를 떴다.",
+      "UnitTalk_JPN": "<color=#F7BE45>夢魔</color>狩りのハンターは、殴り書きされた住所が書かれたメモを一枚残して去って行った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 199,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "구겨서 버릴까 하다가, 일단은 주머니에 넣어두기로 했다.",
+      "UnitTalk_JPN": "くしゃくしゃにして捨てようかと思ったが、とりあえずポケットに入れておくことにした。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 231,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 232,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_BAND_BASS_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

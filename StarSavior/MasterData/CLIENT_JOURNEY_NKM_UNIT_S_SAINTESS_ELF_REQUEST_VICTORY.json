@@ -1,0 +1,118 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_ELF_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "성공했어요, 단장님!",
+      "UnitTalk_JPN": "成功しました、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "전부 가프님의 은덕이예요!",
+      "UnitTalk_JPN": "すべてはガプ様のおかげです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "가프님도 도와주셨지만...",
+          "JumpAnchorStringId_JPN": "ガプ様も助けてくれたけど…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "너도 열심히 했어!",
+          "JumpAnchorStringId_JPN": "エリサもよくやったよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "네에?! 아, 안 돼요, 단장님!",
+      "UnitTalk_JPN": "はいぃ！？い、いけません、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "일개 성녀에게 그런 마음은… 오, 오만과 욕망으로 빠지는 지름길이니까요!",
+      "UnitTalk_JPN": "ちっぽけな聖女にそんな感情は…ご、傲慢と欲に溺れる近道ですよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "아아… 하지만...",
+      "UnitTalk_JPN": "あぁ…ですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "단장님의 칭찬... 한번 더 듣는 것 정도는...",
+      "UnitTalk_JPN": "団長からのお褒めの言葉を…もう一度聞くぐらいなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "가프님도 용서해 주시겠죠...?",
+      "UnitTalk_JPN": "ガプ様も許してくださるでしょうか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "혼란에 빠진 엘리사를 진정시켜서 함께 돌아갔다.",
+      "UnitTalk_JPN": "取り乱したエリサを落ち着かせて、一緒に宿へと戻った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "AutoHighlight": "ON"
+    }
+  ]
+}

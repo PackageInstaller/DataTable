@@ -1,0 +1,269 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_BOMB_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_VOYAGER_STRANIS_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "거, 거짓말…! 페트라가 실패라니?!",
+      "UnitTalk_JPN": "ウ、ウソ…！ペトラが失敗だなんて！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "분명 페트라의 귀여움으로 어떻게든 되는 게 정상이잖아 응?!",
+      "UnitTalk_JPN": "ペトラの可愛さでも、どうにもならないってこと！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "우우우… 말도 안 돼…",
+      "UnitTalk_JPN": "うぅ…こんなのありえないもん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다음에 더 잘 해내면 돼.",
+          "JumpAnchorStringId_JPN": "次はうまくやればいいよ。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "활력 포션을 건네준다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "으응… 알겠어.",
+      "UnitTalk_JPN": "うぅん…分かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그래도 단장이 그렇게까지 말해주니까, 기운이 나는걸♪",
+      "UnitTalk_JPN": "団長がそんな風に言ってくれると、元気が出るよ♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "좋아♡ 다음 의뢰는 보란 듯이 성공해 주겠어. 페트라, 약속해!",
+      "UnitTalk_JPN": "よし♡次の依頼は、絶対に成功させてみせる。ペトラ、約束するからね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "기운을 차린 페트라와 약속을 한 후, 숙소로 돌아갔다.",
+      "UnitTalk_JPN": "元気を取り戻したペトラと約束を交わした後、宿に戻った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 52,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "설마 페트라의 귀여움이 부족했다든가…?\r\n",
+      "UnitTalk_JPN": "まさか、ペトラの可愛さが足りなかったとか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…에이, 말도 안 돼. 응. 말도 안 되지…",
+      "UnitTalk_JPN": "…えー、ありえない。うん、ありえないよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그치만… 설마… 진짜…?",
+      "UnitTalk_JPN": "でも…もしかしたら…本当に…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…안 되겠어. 지금 당장 쇼핑하러 가서, 페트라의 귀여움을 올려줄 아이템을…",
+      "UnitTalk_JPN": "…ダメダメ。今すぐ買い物に行って、ペトラの可愛さを上げてくれるアイテムを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그대로 쇼핑을 하러 가려는 페트라를 잡아 끌고 숙소로 돌아갔다.",
+      "UnitTalk_JPN": "そのまま買い物に行こうとするペトラを引きずり、宿へと戻った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 62,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응…? 뭐야, 단장?",
+      "UnitTalk_JPN": "んー、なになに？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "활력 포션이잖아? 이거, 페트라를 위한 거야?",
+      "UnitTalk_JPN": "あれ、活力ポーションじゃない？ペトラにくれるの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "정말, 이렇게 따뜻한 남자라면 페트라, 결혼해버릴 수밖에 없다구?",
+      "UnitTalk_JPN": "もぉ～。こんなに優しい人なら…ペトラ、結婚するしかないじゃん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "조금만 기다려! 단장이 준 활력 포션을 다 마시고 나면, 결혼해 줄 테니까♡",
+      "UnitTalk_JPN": "ちょっと待ってて！全部飲み終わったら、結婚してあげるから♡",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "활력 포션을 마신 페트라는 기운을 차린 듯하다.",
+      "UnitTalk_JPN": "活力ポーションを飲んだペトラは、元気を取り戻したようだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_REQUEST_DEFEAT",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

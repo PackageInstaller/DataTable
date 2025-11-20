@@ -517,7 +517,8 @@
       "Uid": 58,
       "WaitClick": false,
       "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_AGANON_DOWNTOWN.png"
+      "BgFileName": "ILLUST_BG_AGANON_DOWNTOWN.png",
+      "VideoDependsOnText": false
     },
     {
       "Uid": 120,
@@ -940,7 +941,7 @@
         "SI_CONSTRUCT_WORKER_A"
       ],
       "UnitTalk_KOR": "음…",
-      "UnitTalk_JPN": "うむむ…",
+      "UnitTalk_JPN": "うーん…",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -1187,7 +1188,8 @@
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "뭐, 그런가.",
       "UnitTalk_JPN": "ま、そうだな。",
-      "TalkTime": 0.03
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
     },
     {
       "Uid": 8,

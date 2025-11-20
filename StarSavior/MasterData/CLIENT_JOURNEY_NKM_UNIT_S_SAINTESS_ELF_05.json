@@ -1,0 +1,980 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_ELF_05",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정의 나날이 계속되던 어느 날.",
+      "UnitTalk_JPN": "旅を続けていた、ある日。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…퇴마 의식?",
+          "JumpAnchorStringId_JPN": "…悪魔祓いの儀式？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "모노리스 교단은 그런 것도 하는 거야?",
+          "JumpAnchorStringId_JPN": "モノリス教団はそんなこともするのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "네…!",
+      "UnitTalk_JPN": "はい…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "가프님은 에라와 버그, 그리고 온갖 악한 것들로부터 인간을 지켜주셨죠…",
+      "UnitTalk_JPN": "ガプ様はエラやバグ、そしてあらゆる悪しきものからお守りくださいました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "유물은 가프님의 육신. 그러니 당연히 성스러운 파마와 해주의 힘이 깃들어 있어요.",
+      "UnitTalk_JPN": "遺物はガプ様の御身。ですから、聖なる破魔と解呪の力が宿っているのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그런 의식을 하는 구마사제 분들은 따로 있지만…",
+      "UnitTalk_JPN": "そのような儀式を行う、悪魔祓い担当の司祭様は別にいらっしゃいますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "저, 저도 성물의 힘을 빌린다면 어느 정도는… 가능할… 거예요…!",
+      "UnitTalk_JPN": "わ、私も、聖遺物の力を借りれば、ある程度は…できる…はずです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "우선 이걸 몸에 붙여주세요…!",
+      "UnitTalk_JPN": "まず、これを体に貼ってください…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이게 뭐야?",
+          "JumpAnchorStringId_JPN": "何これ？"
+        }
+      ]
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "에라와 버그가 내뿜는 사악한 기운은 닿기만 해도 병에 걸릴 수 있어요.",
+      "UnitTalk_JPN": "エラとバグが放つ邪悪な気は、触れただけで病になってしまう可能性があります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이 성스러운 유물은 그런 사악한 기운을 막아주죠.",
+      "UnitTalk_JPN": "この聖なる遺物は、邪悪な気を防いでくれるのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사는 내 옷에 조그만 금속제의 씰 같은 것을 붙였다.",
+      "UnitTalk_JPN": "エリサは私の服に、小さな金属製のシールのようなものを貼り付けた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "굉장히 닳아 있는 표면이지만, 아주 약간이나마 <color=#F7BE45>전자파 차단</color>이라고 쓰인 글자가 보이는 것 같기도…",
+      "UnitTalk_JPN": "かなりすり減っているが、 <color=#F7BE45>電磁波遮断</color>と書かれた文字が見えたような…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그, 그렇구나.",
+          "JumpAnchorStringId_JPN": "そ、そうなんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그리고 이건 저희 교단의 성수, 육각수예요.",
+      "UnitTalk_JPN": "そしてこれは…モノリス教団の聖水、六角水です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "해주와 정화에 탁월한 효과가 있다고 해요.",
+      "UnitTalk_JPN": "解呪と浄化に、すごい効果があると言われています。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이걸 이렇게, 분무기에 넣어두고…",
+      "UnitTalk_JPN": "これをこうして、霧吹きに入れておいて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그리고 여기, 이 발판 위에 서주실래요?",
+      "UnitTalk_JPN": "次に、この踏み台の上に立っていただけますか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이 발판은 위의 공기를 음이온으로 바꿔줘요. 음이온은 삿된 존재에게 치명적이죠.",
+      "UnitTalk_JPN": "この踏み台は、上の空気をマイナスイオンに変えてくれます。マイナスイオンは邪悪な存在にとって致命的ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "제, 제가 이해가 되게 잘 설명했나요?",
+      "UnitTalk_JPN": "わ、私の説明で理解できましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아마도…?",
+          "JumpAnchorStringId_JPN": "たぶん…？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "네, 그러면…!",
+      "UnitTalk_JPN": "はい、それでは…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_SAINTESS_ELF_02.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_21.wav",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "엘리사는 분무기를 든 반대손으로 대뜸 철퇴를 꺼내들어 겨눴다!",
+      "UnitTalk_JPN": "エリサが突然、杖を構えた！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.6,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitTalk_KOR": "스, 슬슬 정체를 드러내세요오!",
+      "UnitTalk_JPN": "そ、そろそろ正体を現してくださぁい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나였어?!",
+          "JumpAnchorStringId_JPN": "悪魔って私のことだったのか！？"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "네, 다, 단장님이예요!",
+      "UnitTalk_JPN": "はい、だ、団長です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "만약… 만약 단장님이 에라라면!",
+      "UnitTalk_JPN": "もし…もし団長がエラなら！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.6,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "제 손으로 직접 정화시키는 것이… 제가 드릴 수 있는 마지막 자비…!",
+      "UnitTalk_JPN": "この手で浄化することが…私にできる最後の慈悲…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그러니 얌전히…",
+      "UnitTalk_JPN": "ですから、大人しく…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.8,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitTalk_KOR": "신의 철퇴를… 받으세요오!",
+      "UnitTalk_JPN": "神の鉄槌を…受けるのですぅぅ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWOOSH_34.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "엘리사는 눈을 질끈 감은 채 달려들었다.",
+      "UnitTalk_JPN": "エリサは目をぎゅっと閉じ、飛びかかってきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_05.wav",
+      "UnitTalk_KOR": "조용히 옆으로 물러서자, 달려오던 엘리사는 그대로 벽과 충돌해 쓰러졌다.",
+      "UnitTalk_JPN": "静かに横に避けると、エリサはそのまま壁にぶつかって倒れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ELISHA"
+      ],
+      "UnitTalk_KOR": "아야야...",
+      "UnitTalk_JPN": "いたた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괘, 괜찮아...?",
+          "JumpAnchorStringId_JPN": "だ、大丈夫…？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "갑자기 왜 그러는 거야?!",
+          "JumpAnchorStringId_JPN": "急にどうしたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "왜 그러냐뇨… 왜 그러냐뇨…!",
+      "UnitTalk_JPN": "それは…それはですね…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "단장님을 보면 제 심장이 자꾸 뛰고 목이 메는걸요!",
+      "UnitTalk_JPN": "団長を見るとドキドキして、苦しいんです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "단장님 주변만 이상하게 뽀얗게 보이고, 갑자기 시간이 느려지는 것 같고!",
+      "UnitTalk_JPN": "団長の周りだけ妙に白く見えて、時がゆっくり流れるようで！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "기도 시간에도…! 예배를 드리는 중에도…!",
+      "UnitTalk_JPN": "祈りの時間にも…！礼拝を捧げている最中にも…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "가프님의 복된 모습이 아니라… 단장님의 얼굴이… 자꾸 생각난다구요…!",
+      "UnitTalk_JPN": "祝福されたガプ様のお姿ではなく…団長の顔が…ずっと浮かんでくるんです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그, 그런데도 단장님이 어떻게 에라가 아니라고 말할 수 있죠?!",
+      "UnitTalk_JPN": "そ、それでも団長が、エラではないとおっしゃるのですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그, 그, 그만 정체를 드러내세요!!",
+      "UnitTalk_JPN": "そ、そ、そろそろ正体を現すのです！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이, 일단 철퇴는 좀 치우고 말할까?!",
+          "JumpAnchorStringId_JPN": "と、とりあえずろうそくの火を消そうか！？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "네가 다칠까봐 그래!",
+          "JumpAnchorStringId_JPN": "エリサが怪我したら困る！"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아아, 또, 또 달콤하고도 잔혹한 속삭임이…!",
+      "UnitTalk_JPN": "あぁ、また甘くて残酷なささやきが…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "하, 하지만… 여기서 멈췄다간 아무것도 이루지 못한 채 끝나버려요…!",
+      "UnitTalk_JPN": "で、でも…ここで止めてしまったら、何も成し遂げられないまま終わってしまいます…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잠시 실례!",
+          "JumpAnchorStringId_JPN": "ちょっと失礼！"
+        }
+      ]
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사의 손에서 분무기를 낚아챘다.",
+      "UnitTalk_JPN": "エリサの手から霧吹きをひったくった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "앗, 다, 단장님?!",
+      "UnitTalk_JPN": "あっ、だ、団長！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그건 악마에게 닿으면 타들어가는...!",
+      "UnitTalk_JPN": "それは悪魔に触れると、焼けただれて──！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DRINKING.wav",
+      "UnitTalk_KOR": "분무기의 뚜껑을 딴 후, 안의 내용물을 그대로 한 번에 마셨다.",
+      "UnitTalk_JPN": "霧吹きの蓋を外し、中身を一気飲みした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아.",
+      "UnitTalk_JPN": "あっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…아무 일, 없지?",
+          "JumpAnchorStringId_JPN": "…何も、起こらなかっただろう？"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "음이온 결계 위에서도 아무 반응 없고…",
+      "UnitTalk_JPN": "マイナスイオン結界の上でも、何の反応もありませんし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "입에서 연기를 내뿜으시거나… 하지도 않고…",
+      "UnitTalk_JPN": "口から煙を吐いたりも…しませんでした…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "그렇다는 건… 역시 단장님은 악마가 아니라는 뜻이네요…",
+      "UnitTalk_JPN": "ということは…やっぱり、団長は悪魔ではないということですね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "오해가 풀렸다면 다행이야.",
+          "JumpAnchorStringId_JPN": "誤解が解けてよかった。"
+        }
+      ]
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "네에…",
+      "UnitTalk_JPN": "はいぃ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "죄송합니다, 단장님…",
+      "UnitTalk_JPN": "すみません、団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하지만 그건 또 어디서 들은 거야?",
+          "JumpAnchorStringId_JPN": "誰にそんなことを言われたんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그게요…",
+      "UnitTalk_JPN": "それが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "또 휩쓸렸구나…",
+          "JumpAnchorStringId_JPN": "また流されたのか…"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "휘, 휩쓸린 건가요?!",
+      "UnitTalk_JPN": "わ、私、流されたのですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "사실 전…",
+      "UnitTalk_JPN": "実は、私…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "단장님이 어째서 저 같은 걸 칭찬하시는지… 이해가 잘 가지 않아서…",
+      "UnitTalk_JPN": "団長がどうして私のことを褒めてくださるのか…理解できなくて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그래서 에라의 속삭임이라 하니까 그만…",
+      "UnitTalk_JPN": "それはエラのささやきだと言われて、つい…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "엘리사는 한참을 고개를 숙이고 웅크리고 있었다.",
+      "UnitTalk_JPN": "エリサはうずくまってしまった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 또 자책으로 끝나게 되는가 싶었지만…",
+      "UnitTalk_JPN": "そして、また自責で終わるのかと思ったが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다시 고개를 든 엘리사의 표정은, 이전과는 달리 강한 각오 같은 것이 서려 있었다.",
+      "UnitTalk_JPN": "再び顔を上げたエリサの表情には、強い覚悟のようなものが宿っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "저… 단장님께 폐가 되고 싶진 않아요.",
+      "UnitTalk_JPN": "私…団長にご迷惑をおかけしたくはありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "이런 저를 버리고… 새로운 저로 거듭나고 싶어요…!",
+      "UnitTalk_JPN": "こんな自分は捨てて…新しい私へと生まれ変わりたいです…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래! 내가 도와줄게!",
+          "JumpAnchorStringId_JPN": "よし！私が手伝うよ！"
+        }
+      ]
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다행히, 여정을 진행하며 해왔던 노력들이 헛되지는 않았던 모양이다.",
+      "UnitTalk_JPN": "幸い、旅を続ける中で重ねてきた努力は、無駄ではなかったようだ。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…그리고 한 번에 입에 털어넣은 육각수 때문인지, 그 뒤로 이틀 동안 배앓이가 계속되었다.",
+      "UnitTalk_JPN": "そして…一気に飲み干した六角水のせいか、二日間腹痛が続いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "다시는 성분을 알 수 없는 액체를 마시지 않겠다고 맹세했다…",
+      "UnitTalk_JPN": "二度と成分のわからない液体は飲むまいと誓った…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_KNUCKLE_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

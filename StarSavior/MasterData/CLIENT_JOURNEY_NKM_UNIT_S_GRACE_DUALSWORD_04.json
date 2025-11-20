@@ -21,7 +21,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "아침부터 서신을 하나 받았다.",
-      "UnitTalk_JPN": "朝から一通の手紙が届いた。",
+      "UnitTalk_JPN": "朝、一通の手紙を受け取った。",
       "TalkTime": 0.03
     },
     {
@@ -31,7 +31,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "고급스러운 편지지에는 에핀델이 오늘 하루 자리를 비운다고 적혀 있었다.",
-      "UnitTalk_JPN": "高級感のある便箋には、エピンデルが今日一日留守にすると書かれていた。",
+      "UnitTalk_JPN": "高級感のある便箋には、エピンデルが一日留守にすることが書かれていた。",
       "TalkTime": 0.03
     },
     {
@@ -41,7 +41,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "사유는 개인 사정.",
-      "UnitTalk_JPN": "理由は私事都合。",
+      "UnitTalk_JPN": "理由は、私用のため。",
       "TalkTime": 0.03
     },
     {
@@ -80,7 +80,7 @@
       "UnitMotion": "SERIOUS",
       "UnitPos": "POS3",
       "UnitTalk_KOR": " 예, 저도 비슷한 편지를 받긴 했습니다만…",
-      "UnitTalk_JPN": "はい、私にも同じような手紙が届きましたが…",
+      "UnitTalk_JPN": "私にも同じような手紙が届きましたが…",
       "TalkTime": 0.03
     },
     {
@@ -92,7 +92,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 아침부터 지금까지 숙소에서 나간 인원은 확인하지 못했습니다.",
-      "UnitTalk_JPN": "朝から今まで、宿から出た人はいません。",
+      "UnitTalk_JPN": "本日、宿から出た方は確認できていません。",
       "TalkTime": 0.03
     },
     {
@@ -106,7 +106,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "정보 고마워.",
-          "JumpAnchorStringId_JPN": "そうか、ありがとう。"
+          "JumpAnchorStringId_JPN": "そっか、ありがとう。"
         }
       ]
     },
@@ -119,7 +119,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "EmotionEffect": "THINK",
       "UnitTalk_KOR": "그런데 저…",
-      "UnitTalk_JPN": "しかし、団長…",
+      "UnitTalk_JPN": "ところで、団長。",
       "TalkTime": 0.03
     },
     {
@@ -130,7 +130,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitTalk_KOR": "아침 청소 중 에핀델 님의 방문 앞을 지났었습니다.",
-      "UnitTalk_JPN": "朝の掃除中に、エピンデル様の部屋の前を通り過ぎたのですが…",
+      "UnitTalk_JPN": "今朝、掃除をしながらエピンデル様の部屋の前を通り過ぎたのですが…",
       "TalkTime": 0.03
     },
     {
@@ -143,7 +143,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "그 때 기침 소리… 같은 걸 들었던 것 같습니다만…",
-      "UnitTalk_JPN": "そのとき、咳をする音…のようなのが聞こえたような気がします。",
+      "UnitTalk_JPN": "その時、咳をする音…が聞こえたような気がします。",
       "TalkTime": 0.03
     },
     {
@@ -169,7 +169,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "네, 하지만 방문을 두드렸을 때 대답은 없었습니다.",
-      "UnitTalk_JPN": "はい、でもドアをノックしても返事はありませんでした。",
+      "UnitTalk_JPN": "はい。ですが、ノックをしても返事はありませんでした。",
       "TalkTime": 0.03
     },
     {
@@ -181,7 +181,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "잘못 들은 것일 수도 있지만, 일단 말씀은 드리는 게 좋을 것 같아서요.",
-      "UnitTalk_JPN": "聞き間違いかもしれませんが、一応報告させていただきました。",
+      "UnitTalk_JPN": "聞き間違いかもしれませんが、お伝えしておいた方が良いかと思いまして。",
       "TalkTime": 0.03
     },
     {
@@ -243,7 +243,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "인기척은 없었지만, 문 앞에 서서 조용히 기다리고 있자니…",
-      "UnitTalk_JPN": "人気はないようだが、ドア前に立って静かに待っていると…",
+      "UnitTalk_JPN": "人気はないが、ドアの前に立って静かにしていると…",
       "TalkTime": 0.03
     },
     {
@@ -256,7 +256,7 @@
         "SI_UNKNOWN"
       ],
       "UnitTalk_KOR": "…콜록.",
-      "UnitTalk_JPN": "ゲホッ…",
+      "UnitTalk_JPN": "ゲホッゲホッ…",
       "TalkTime": 0.03
     },
     {
@@ -333,7 +333,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "자, 잠깐, 머, 멋대로 들어오지…! ",
-      "UnitTalk_JPN": "ま、待ってください！勝手にっ…！",
+      "UnitTalk_JPN": "お、お待ちください！勝手にっ…！",
       "TalkTime": 0.03
     },
     {
@@ -368,7 +368,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 모든 침묵이 허락은 아니라는 걸 굳이 상기시켜 드려야 할까요?",
-      "UnitTalk_JPN": "返事をしなかったらからといって必ずしも許可になるわけではないということを、団長はご存じないのですか？",
+      "UnitTalk_JPN": "返事をしなかったからといって、勝手に入って良いことにはなりません。",
       "TalkTime": 0.03
     },
     {
@@ -395,7 +395,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "USN_UI_TOUCH",
       "UnitTalk_KOR": " 보시다시피 멀쩡해요.",
-      "UnitTalk_JPN": "ご覧の通り問題ありません。",
+      "UnitTalk_JPN": "この通り、何の問題もございません。",
       "TalkTime": 0.03
     },
     {
@@ -408,7 +408,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "얼굴이 새빨간데?",
-          "JumpAnchorStringId_JPN": "顔が赤いけど？"
+          "JumpAnchorStringId_JPN": "顔が真っ赤だけど？"
         }
       ]
     },
@@ -434,7 +434,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "침대 시트도 푹 젖었고.",
-          "JumpAnchorStringId_JPN": "シーツも濡れてる。"
+          "JumpAnchorStringId_JPN": "シーツも汗で濡れてる。"
         }
       ]
     },
@@ -459,7 +459,7 @@
       "BgCrashTime": 0.2,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " …콜록.",
-      "UnitTalk_JPN": "ゲホッ…",
+      "UnitTalk_JPN": "ゴホッ…",
       "TalkTime": 0.03
     },
     {
@@ -495,7 +495,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "불덩어리잖아.",
-          "JumpAnchorStringId_JPN": "ものすごく熱いよ？"
+          "JumpAnchorStringId_JPN": "かなりの高熱だな。"
         }
       ]
     },
@@ -521,7 +521,7 @@
       "CameraOffset": "TWIN_6",
       "UnitMotion": "USN_UI_TOUCH",
       "UnitTalk_KOR": " …하아, 인정하겠습니다. 자기관리에 실패했어요.",
-      "UnitTalk_JPN": "…はぁ、認めます。自己管理に失敗しました。",
+      "UnitTalk_JPN": "…はぁ、認めます。自己管理ができていませんでした。",
       "TalkTime": 0.03
     },
     {
@@ -533,7 +533,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": " 귀하께 들킬 정도일 줄은 몰랐는데, 이래서야 보라매의 이름이 울겠네요.",
-      "UnitTalk_JPN": "まさか団長にバレるとは思いませんでしたが…これではオルランの若鷹の名が泣いてしまいますね。",
+      "UnitTalk_JPN": "まさか団長に知られてしまうとは思いませんでしたが…若鷹の名に恥ずべきことです。",
       "TalkTime": 0.03
     },
     {
@@ -546,7 +546,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "왜 나한테 들키면 안 되는데?",
-          "JumpAnchorStringId_JPN": "どうしてバレたくなかったの？"
+          "JumpAnchorStringId_JPN": "どうして隠そうとしたんだ？"
         }
       ]
     },
@@ -581,7 +581,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "깔끔하고 살풍경했다.",
-      "UnitTalk_JPN": "すっきりとしていて、殺風景な部屋だ。",
+      "UnitTalk_JPN": "綺麗で、殺風景な部屋だ。",
       "TalkTime": 0.03
     },
     {
@@ -594,7 +594,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "편지도, 주변 정리도 다 네가 한 거지?",
-          "JumpAnchorStringId_JPN": "手紙も、部屋の片付けも全部自分でやってるんだろ？"
+          "JumpAnchorStringId_JPN": "手紙も、部屋の片付けも全部自分でやったんだろう？"
         }
       ]
     },
@@ -608,7 +608,7 @@
       "CameraOffset": "TWIN_6",
       "EmotionEffect": "QMARK",
       "UnitTalk_KOR": "그게 무슨 상관이죠?",
-      "UnitTalk_JPN": "それが何の関係があるんですか？",
+      "UnitTalk_JPN": "それがどうしましたか？",
       "TalkTime": 0.03
     },
     {
@@ -621,7 +621,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "명문 귀족가의 따님이잖아.",
-          "JumpAnchorStringId_JPN": "君は名門貴族のお嬢さんじゃないか。"
+          "JumpAnchorStringId_JPN": "名門貴族の令嬢だよな？"
         }
       ]
     },
@@ -635,7 +635,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "왜 아픈데도 다 혼자 하는 거야?",
-          "JumpAnchorStringId_JPN": "どうして具合が悪いのに、一人で我慢しようとするの？"
+          "JumpAnchorStringId_JPN": "具合が悪いのに、なんで一人でやるんだ？"
         }
       ]
     },
@@ -661,7 +661,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " …매는 언제나 홀로 날죠.",
-      "UnitTalk_JPN": "……鷹はいつでも一人で飛ぶのです。",
+      "UnitTalk_JPN": "……鷹は、いつでも一羽で飛ぶのです。",
       "TalkTime": 0.03
     },
     {
@@ -683,7 +683,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 하늘의 제왕이 굳이 무리에 끼어들 필요가 없으니까요.",
-      "UnitTalk_JPN": "天の帝王が、群れをなす必要はありませんから。",
+      "UnitTalk_JPN": "空の帝王が、群れをなす必要はありませんから。",
       "TalkTime": 0.03
     },
     {
@@ -723,7 +723,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "하지만 지금은 아픈 아이를 몰아붙일 때가 아니다.",
-      "UnitTalk_JPN": "しかし、病気の子を問い詰めても仕方がない。",
+      "UnitTalk_JPN": "だが、体調が悪いエピンデルを問い詰める時ではない。",
       "TalkTime": 0.03
     },
     {
@@ -749,7 +749,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 네?",
-      "UnitTalk_JPN": "えっ？",
+      "UnitTalk_JPN": "はい？",
       "TalkTime": 0.03
     },
     {
@@ -760,7 +760,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 아뇨, 시장기가 없어서…",
-      "UnitTalk_JPN": "いいえ、あまり食欲がなくて…",
+      "UnitTalk_JPN": "いえ、あまり食欲がなくて…",
       "TalkTime": 0.03
     },
     {
@@ -771,7 +771,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 네? 포타주요? 그걸 어디서…?",
-      "UnitTalk_JPN": "ポタージュですか？そんなもの、どこから…",
+      "UnitTalk_JPN": "はい？ポタージュですか？そんなもの、どこに…",
       "TalkTime": 0.03
     },
     {
@@ -783,7 +783,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": " …직접 만드실 거라고요?",
-      "UnitTalk_JPN": "…団長がお作りになったんですか？",
+      "UnitTalk_JPN": "…団長が作ってくださるのですか？",
       "TalkTime": 0.03
     },
     {
@@ -810,7 +810,7 @@
       "CameraOffset": "ONE_3",
       "CameraOffsetTime": "NR",
       "UnitTalk_KOR": " 네? 자, 잠깐만요, 밀지 마- ",
-      "UnitTalk_JPN": "はい？ちょ、ちょっと！押さないで…",
+      "UnitTalk_JPN": "はい？ちょ、ちょっと！押さないで──",
       "TalkTime": 0.03
     },
     {
@@ -852,7 +852,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "난 함께 사냥하는 매를 본 적이 있어.",
-          "JumpAnchorStringId_JPN": "私は、仲間と狩りをする鷹を見たことがあるよ。"
+          "JumpAnchorStringId_JPN": "私は、仲間と狩りをする鷹を見たことあるよ。"
         }
       ]
     },
@@ -893,7 +893,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "싸우지도 않고 함께 하늘을 맴돌더라.",
-          "JumpAnchorStringId_JPN": "争うこともなく、一緒に飛んでいた。"
+          "JumpAnchorStringId_JPN": "争うことなく、一緒に空を飛んでた。"
         }
       ]
     },
@@ -918,7 +918,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "같이 다닌다고 딱히 약하거나 초라해 보이진 않았어.",
-          "JumpAnchorStringId_JPN": "仲間といたって、弱かったり、みすぼらしく見えたりはしなかった。"
+          "JumpAnchorStringId_JPN": "一緒に行動しても、みすぼらしく見えたりしなかった。"
         }
       ]
     },
@@ -932,7 +932,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "그 정도 핑계로는 안 돼?",
-          "JumpAnchorStringId_JPN": "この程度では、君の気持ちは変わらないかな？"
+          "JumpAnchorStringId_JPN": "この程度じゃ、気持ちは変わらないかな？"
         }
       ]
     },
@@ -955,7 +955,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": "될 리가 있나요.",
-      "UnitTalk_JPN": "変わるはずないでしょ？",
+      "UnitTalk_JPN": "変わるはずありません。",
       "TalkTime": 0.03
     },
     {
@@ -966,7 +966,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": "귀하께서 보신 건…",
-      "UnitTalk_JPN": "団長が見たのは…",
+      "UnitTalk_JPN": "貴殿が見たのは…",
       "TalkTime": 0.03
     },
     {
@@ -992,7 +992,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " …아닙니다. 아무것도.",
-      "UnitTalk_JPN": "…いいえ、何でもありません。",
+      "UnitTalk_JPN": "…いえ、何でもありません。",
       "TalkTime": 0.03
     },
     {
@@ -1003,7 +1003,7 @@
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARUNIT",
       "UnitTalk_KOR": "에핀델은 더 말하지 않고 얌전히 누웠다.",
-      "UnitTalk_JPN": "エピンデルはそれ以上何も言わず、おとなしく横になった。",
+      "UnitTalk_JPN": "エピンデルはそれ以上何も言わず、横になった。",
       "TalkTime": 0.03
     },
     {
@@ -1013,7 +1013,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "고분고분해진 에핀델을 간호하며 하루를 보냈다.",
-      "UnitTalk_JPN": "その後は、おとなしくなったエピンデルを看病しながら一日を過ごした。",
+      "UnitTalk_JPN": "その後…おとなしくなったエピンデルを看病しながら一日を過ごした。",
       "TalkTime": 0.03
     },
     {

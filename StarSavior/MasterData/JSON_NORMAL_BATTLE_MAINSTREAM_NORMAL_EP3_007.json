@@ -7,10 +7,34 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_MAINSTORY_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_KINGDOM_SHIELDER_BOSS_CUBE_01", // 큐브 팰리스 보스_아세라 처럼 생긴애
+            "UnitStrId": "NKM_UNIT_MON_DRONE_WOODPECKER_BLACK_MAINSTORY_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          },
+          {
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_DRONE_SPARROW_BLACK_MAINSTORY_03",
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_CHAOS"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03",
             "IsBoss": true,
-            "AllSkillAvailable": true
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
           }
         ]
       }

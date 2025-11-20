@@ -4,40 +4,17 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_03", //은둔자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_03", //주시자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_03", //은둔자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_03", //주시자
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_03", //경멸자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_OPERATION_03", //침묵의 은둔자
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_03", //업화의 추적자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
@@ -45,7 +22,7 @@
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_03", //주시자
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_03", //경멸자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
           }

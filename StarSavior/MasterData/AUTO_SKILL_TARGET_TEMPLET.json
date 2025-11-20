@@ -50,7 +50,7 @@
 
     ///////////////////////////////공용////////////////////////////////////
     {
-      "Id": 1, //타겟 지정 기본 규칙(위에서부터 순차적으로 체크 진행)
+      "Id": 1, //타겟 지정 기본 규칙(위에서부터 순차적으로 체크 진행)(디폴트 값)
       "TargetCondition": {
         "IsNotInvincible": true,    //무적X 대상 체크(무적이 아닌 유닛부터 체크)
         "IsBoss": true,           //보스 대상 체크(보스인 유닛부터 체크)
@@ -196,10 +196,32 @@
         "IsAllyOneNotSelf" : true,
         "IsHighAtk" : true //공격력이 가장 높은 유닛 체크
       }
+    },    
+    // {
+    //   "Id": 24, // 자신을 제외한 별 속성 유닛 중 생명력이 가장 높은 유닛 우선 타겟 지정
+    //   "TargetCondition": {        
+    //     "IsAdjustType": "NUAT_STAR",
+    //     "IsAllyOneNotSelf": true,
+    //     "IsHighHpRate": true,
+    //     "IsHighMaxHp": true,
+    //   }
+    // },
+    {
+      "Id": 25, // 태양 속성 유닛 중 공격력이 가장 높은 유닛 우선 타겟 지정
+      "TargetCondition": { 
+      "IsAdjustType": "NUAT_SUN",
+      "IsHighAtk": true
+      }
     },
     ///////////////////////////////몬스터////////////////////////////////////    
     {
-      "Id": 1001, //타겟 지정 몬스터 기본 규칙
+      "Id": 1000, //타겟 지정 일반 몬스터 기본 규칙
+      "TargetCondition": {
+        "FrontLineTargetRate": 8000 //전위 80% 확률로 체크
+      }
+    },
+    {
+      "Id": 1001, //타겟 지정 보스 몬스터 기본 규칙(디폴트 값)
       "TargetCondition": {
         "FrontLineTargetRate": 8000, //전위 80% 확률로 체크
         "DefenderTargetRate" : 8000 //디펜더 80% 확률로 체크
@@ -218,9 +240,11 @@
       }
     },
     {
-      "Id": 1004, //특정 디버프 보유 유닛 타겟 지정(공허징벌자)
+      "Id": 1004, //특정 디버프 보유 유닛 타겟 지정(공허목도자)
       "TargetCondition": {
-        "IsSpecificBuff" : ["BI_PUNISHER_SWORD_1"] //낙인 디버프 보유 유닛 체크
+        "IsSpecificBuff" : ["BI_PUNISHER_SWORD_1"], //낙인 디버프 보유 유닛 체크
+        "FrontLineTargetRate": 8000, //전위 80% 확률로 체크
+        "DefenderTargetRate" : 8000 //디펜더 80% 확률로 체크
       }
     },
     {
@@ -250,10 +274,15 @@
     {
       "Id": 1009, //보호막 상태가 아닌 유닛 타겟 지정(모굴루스)
       "TargetCondition": {
-        "IsNotSpecificBuff" : ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1"] // 보호막 상태가 아닌 유닛 체크
+        "IsNotSpecificBuff" : ["BI_BARRIER","BI_BARRIER_CAN_NOT_DISPEL","BI_FALLEN_DUALSWORD_1","BI_MOTIVATOR_HANDS_1", "BI_LAST_VALKYRIE_1"] // 보호막 상태가 아닌 유닛 체크
       }
     },
-
+    {
+      "Id": 1010, //부활한 유닛 타겟 지정(엘리사)
+      "TargetCondition": {
+        "IsNotSpecificBuff" : ["BI_SAINTESS_ELF_2"] // 고유 버프가 아닌 유닛 체크
+      }
+    },
     ///////////////////////////////플블 유닛 전용(고유 버프)////////////////////////////////////
     ////예시
     // {

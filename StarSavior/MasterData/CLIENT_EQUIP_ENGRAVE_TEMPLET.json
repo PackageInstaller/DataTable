@@ -3,5 +3,25 @@
     "$comment": "name: EQUIP/EQUIP_ENGRAVE_TEMPLET",
     "_Version": 0,
     "Data": [
+        {
+          "EquipTier" : 1,
+          "EngraveReqItem" : 
+          [
+            {
+              "EngraveReqItemId" : 101,
+              "EngraveReqItemValue" : 10000
+            }
+          ]
+        },
+        {
+          "EquipTier" : 2,
+          "EngraveReqItem" : 
+          [
+            {
+              "EngraveReqItemId" : 101,
+              "EngraveReqItemValue" : 20000
+            }
+          ]
+        }
     ]
 }

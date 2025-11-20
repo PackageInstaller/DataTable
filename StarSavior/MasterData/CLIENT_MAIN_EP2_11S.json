@@ -1,0 +1,495 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_11S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CINEMA_MAIN_EP2_11S.mp4"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STARDUST_FORTRESS_2.png",
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WIND_BLOW_04.wav",
+      "UnitTalk_KOR": "온몸이 얼어붙을 것 같은, 익숙한 추위가 느껴졌다.",
+      "UnitTalk_JPN": "全身が凍りつくような、何度も感じたことのある寒さ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68_BLACK"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.2
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "간신히 눈을 뜨자 그 앞에는 검은 기류에 휩싸인 <color=#F7BE45>[68호]</color>의 모습이 보였다.",
+      "UnitTalk_JPN": "何とか目を開けると、そこには黒い気流に包まれた<color=#F7BE45>「68号」</color>の姿があった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "이 추위는…?!",
+      "UnitTalk_JPN": "この寒さは…！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "고, 공허체?",
+      "UnitTalk_JPN": "<r=ヴォイドボーン>空虚体</r>…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "갑자기 저딴 게 나타난다고?",
+      "UnitTalk_JPN": "なんであんなのが出てくるの…！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "…진짜 공허체는 아님.",
+      "UnitTalk_JPN": "…本物の空虚体じゃない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_012.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "인위적인 장치로 공허의 힘을 소환하여 대상에 부여한, 일시적 현상으로 추정.",
+      "UnitTalk_JPN": "人為的な装置で<r=ヴォイド>空虚</r>の力を呼び覚まし、対象に付与した一時的な現象だと推測。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_013.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그거나 그거나! 위험하다는 건 마찬가지잖아?!",
+      "UnitTalk_JPN": "とにかく！危険だってことには変わりないんでしょ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여기 모인 얼치기 구원자들이 어떻게 해볼 상대가 아니야.",
+      "UnitTalk_JPN": "ここにいる素人同然の救援者に、どうにかできる相手じゃないの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_011.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "자, 아직 늦지 않았으니까 도망치자!",
+      "UnitTalk_JPN": "ほら、まだ間に合うから逃げよう！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_012.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "지금 도망치면 대흉 점괘가 그냥 흉 정도로 낮아질지도 몰라!",
+      "UnitTalk_JPN": "今逃げたら、大凶も凶ぐらいまでマシになるかもしれないんだよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_013.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "아니.",
+      "UnitTalk_JPN": "逃げたりなんてしないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "너! 아직도 그런 허세를…!",
+      "UnitTalk_JPN": "また無意味に強がって…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_014.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그게 아니야. 나도 상대가 위험하다는 건 알아.",
+      "UnitTalk_JPN": "そうじゃないの。わたしも、危険な相手だってことは分かってる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 우리 쪽엔 <color=#F7BE45>[단장]</color> 이 있어.",
+      "UnitTalk_JPN": "でも、わたしたちには<color=#F7BE45>「団長」</color>がいるわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…나?",
+          "JumpAnchorStringId_JPN": "…私か？"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "응. 단장.",
+      "UnitTalk_JPN": "うん、団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "바로 얼마 전에도 훨씬 더 강한 공허체들과 싸웠잖아.",
+      "UnitTalk_JPN": "この前、もっと強い空虚体と戦ったじゃない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그리고 살아남았지.",
+      "UnitTalk_JPN": "そして、生き残った。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "생각해 보면 말도 안 되는 일이었어.",
+      "UnitTalk_JPN": "今思えば、ありえないことだったわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "보통의 구원자들은 처음 공허체를 만나면 제정신을 차리는 것조차 어려우니까.",
+      "UnitTalk_JPN": "普通の救援者なら…初めて空虚体に出くわした時、正気を保つことすら難しいんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 우리가 싸울 수 있었던 건… 전부 단장이 도와줬기 때문이야.",
+      "UnitTalk_JPN": "わたしたちが戦えたのは…ぜんぶ、団長のおかげよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "에엥…? 이 별 특징 없어 보이는 것 같은 청년이?",
+      "UnitTalk_JPN": "こ、この何の変哲もない青二才君が…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_015.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "다들 자신감을 가져!",
+      "UnitTalk_JPN": "みんな、自信を持つのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "평범해 보일 수도 있지만 단장은 유능한 지휘관이야.",
+      "UnitTalk_JPN": "平凡に見えるかもしれないけど、団長は優秀な指揮官よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "단장의 지휘를 제대로 따른다면… 저 정도의 상대는 분명 이길 수 있어!",
+      "UnitTalk_JPN": "団長の指揮にちゃんと従えば…あれくらいの相手、きっと勝てるはずよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 반드시 네 언니의 <color=#F7BE45>[단서]</color>를 찾아내자.",
+      "UnitTalk_JPN": "そして、必ずお姉さんの<color=#F7BE45>「手掛かり」</color>を見つけましょう。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "알겠지, 스마일?!",
+      "UnitTalk_JPN": "分かった、スマイル！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "…응!",
+      "UnitTalk_JPN": "…うん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_014.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "사기꾼… 아니, 예언자 루나. 너도 일단 맡은 의뢰는 확실히 끝내는 게 좋지 않아?",
+      "UnitTalk_JPN": "ペテン師…じゃなくて、予言者のルナ。あなたも受けた依頼はちゃんと終わらせた方がいいでしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그러니까 도와줘. 함께 이 의뢰를 마칠 수 있게.",
+      "UnitTalk_JPN": "だから、手伝って。一緒にこの依頼を終わらせるのよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "으… 이런 일에 휘말리는 건 내 방침이 아닌데…",
+      "UnitTalk_JPN": "うぅ…どうしてこんなことに…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_016.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "어쩔 수 없지. 지휘인지 뭔지, 맘대로 해보라고!",
+      "UnitTalk_JPN": "仕方ないわね。指示だろうが何だろうが、好きにしなさい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_017.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "정말 위험해지면 난 도망칠 테니까 너무 믿지는 말고!",
+      "UnitTalk_JPN": "本当に危険な状況になったら、アタシは逃げるから！あんまり信用しすぎないでよね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_018.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "좋아. 그럼 간다!",
+      "UnitTalk_JPN": "よし。それじゃあ、行くわよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "전투 준비!",
+      "UnitTalk_JPN": "戦闘準備！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_11S_UNIT_S_VOYAGER_STRANIS_019.wav"
+    }
+  ]
+}

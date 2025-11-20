@@ -1,0 +1,90 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INDEPENDENT_DRAGON_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "벌써 끝난 것이냐?",
+      "UnitTalk_JPN": "もう終わったのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "의뢰라고 하길래 조금은 기대했는데 별거 아니었구나.",
+      "UnitTalk_JPN": "依頼と言うから、少し期待したのじゃが…大したことないのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "아니면 여가 너무 강한 건가?",
+      "UnitTalk_JPN": "それとも、余が強すぎるのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "어느 쪽이 되었든 이야깃거리조차 못 되겠어.",
+      "UnitTalk_JPN": "どちらにせよ、話の種にもならぬのじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "수고했어.",
+          "JumpAnchorStringId_JPN": "お疲れ様。"
+        }
+      ]
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "수고라고 할 것도 없었느니라.",
+      "UnitTalk_JPN": "労わられる程のことではないぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "돌아가도록 하자꾸나.",
+      "UnitTalk_JPN": "さて、帰ろうかのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT"
+    }
+  ]
+}

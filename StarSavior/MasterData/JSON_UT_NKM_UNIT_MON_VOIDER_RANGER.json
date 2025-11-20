@@ -33,21 +33,17 @@
       },
       {
         "StateName": "USN_DYING",
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_04.wav"
-              }
-            ]
-          }
-        ],
         "SoundEvents": [
           {
             "EventFrame": 0,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE_04.wav"
             ]
           },
           {
@@ -87,6 +83,12 @@
         ],
         "SoundEvents": [
           {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 5,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_GUN_BLACK_SPELL_DARK.wav"
@@ -102,16 +104,6 @@
             "EventFrame": 55,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
-            ]
-          }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
-              }
             ]
           }
         ]
@@ -151,6 +143,12 @@
             ]
           },
           {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE_02.wav"
+            ]
+          },
+          {
             "EventFrame": 12,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_GUN_BLACK_HIT_02.wav"
@@ -172,16 +170,6 @@
             "EventFrame": 90,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_MOVEMENT.wav"
-            ]
-          }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_02.wav"
-              }
             ]
           }
         ]

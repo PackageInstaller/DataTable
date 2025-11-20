@@ -629,7 +629,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 1050431,
           "m_SEStrID" : "CHARM_1050431",
-          "m_SEDesc" : "SI_CHARM_DESC_1050221",
+          "m_SEDesc" : "SI_CHARM_DESC_1050431",
           "SubShowSELog" : true,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_CHARM_1050431",
@@ -835,7 +835,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 50000061,
           "m_SEStrID" : "CHARM_50000061",
-          "m_SEDesc" : "SI_CHARM_DESC_1050221",
+          "m_SEDesc" : "SI_CHARM_DESC_50000061",
           "SubShowSELog" : true,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_NV_RATE_TURN_SPEED_INFINITE",
@@ -857,7 +857,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 50000071,
           "m_SEStrID" : "CHARM_50000071",
-          "m_SEDesc" : "SI_CHARM_DESC_1050371",
+          "m_SEDesc" : "SI_CHARM_DESC_50000071",
           "SubShowSELog" : true,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_NV_RATE_ATK_INFINITE",
@@ -879,7 +879,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 50000081,
           "m_SEStrID" : "CHARM_50000081",
-          "m_SEDesc" : "SI_CHARM_DESC_1050381",
+          "m_SEDesc" : "SI_CHARM_DESC_50000081",
           "SubShowSELog" : true,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_NV_RATE_HP_INFINITE",
@@ -901,7 +901,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 50000091,
           "m_SEStrID" : "CHARM_50000091",
-          "m_SEDesc" : "SI_CHARM_DESC_1050361",
+          "m_SEDesc" : "SI_CHARM_DESC_50000091",
           "SubShowSELog" : true,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_RATE_EFFECT_HIT_INFINITE",
@@ -987,182 +987,6 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000131,
-          "m_SEStrID" : "CHARM_50000131",
-          "m_SEDesc" : "SI_CHARM_DESC_50000011",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_ATK_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000141,
-          "m_SEStrID" : "CHARM_50000141",
-          "m_SEDesc" : "SI_CHARM_DESC_50000021",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_HP_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000151,
-          "m_SEStrID" : "CHARM_50000151",
-          "m_SEDesc" : "SI_CHARM_DESC_50000031",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_DEF_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000161,
-          "m_SEStrID" : "CHARM_50000161",
-          "m_SEDesc" : "SI_CHARM_DESC_50000161",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_NV_RATE_TURN_SPEED_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000171,
-          "m_SEStrID" : "CHARM_50000171",
-          "m_SEDesc" : "SI_CHARM_DESC_50000171",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP_SKILL_ENEMY_ONE_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000181,
-          "m_SEStrID" : "CHARM_50000181",
-          "m_SEDesc" : "SI_CHARM_DESC_50000181",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP_SKILL_ENEMY_ALL_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000191,
-          "m_SEStrID" : "CHARM_50000191",
-          "m_SEDesc" : "SI_CHARM_DESC_50000191",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_REDUCE_SKILL_ENEMY_ONE_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50000201,
-          "m_SEStrID" : "CHARM_50000201",
-          "m_SEDesc" : "SI_CHARM_DESC_50000201",
-          "SubShowSELog" : true,
-          "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_REDUCE_SKILL_ENEMY_ALL_INFINITE",
-          "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 0,
-          "Stats" : 
-          [
-            {
-              "NKM_STAT_TYPE_RATE" : 1000
-            }
-          ],
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_BATTLE_START",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 50110011,
           "m_SEStrID" : "CHARM_50110011",
           "m_SEDesc" : "SI_CHARM_DESC_50110011",
@@ -1171,7 +995,7 @@
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
           "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "SpeedGaugeRate" : 2000,
           "m_Condition" : 
           {
@@ -1189,7 +1013,7 @@
           "m_BuffTargetType" : "NSETT_TARGET",
           "m_BuffStrID" : "BI_SPEED_DECREASE",
           "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -1208,7 +1032,7 @@
           "SeCoolTurn" : 0,
           "BarrierTargetType" : "NSETT_SELF",
           "BarrierStatType" : "NST_ATK",
-          "BarrierRate" : 5000,
+          "BarrierRate" : 3000,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_WAVE_START",
@@ -1221,7 +1045,7 @@
           "m_SEStrID" : "CHARM_50110081",
           "m_SEDesc" : "SI_CHARM_DESC_50110081",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2007,
+          "SkillConditionId" : 2105,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_SPECIAL_COOL_TURN_DOWN",
           "m_BuffLifeTurn" : 0,
@@ -1239,15 +1063,14 @@
           "m_SEStrID" : "CHARM_50110091",
           "m_SEDesc" : "SI_CHARM_DESC_50110091",
           "SubShowSELog" : true,
-          "SkillConditionId" : 35000,
+          "SkillConditionId" : 4001,
           "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_HYPER_COOL_TURN_DOWN",
+          "m_BuffStrID" : "BI_EXTRA_TURN",
           "m_BuffLifeTurn" : 0,
           "SeCoolTurn" : 0,
-          "SkillCoolturnDownValue" : 1,
           "m_Condition" : 
           {
-            "m_ActiveType" : "NSEAT_DAMAGE_END",
+            "m_ActiveType" : "NSEAT_SKILL_END",
             "m_fActiveRate" : 10000
           }
         },
@@ -1261,7 +1084,7 @@
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_BUFF_TURN_INCREASE",
           "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "BuffTurnChangeValue" : 1,
           "m_Condition" : 
           {
@@ -1296,8 +1119,7 @@
           "m_SEDesc" : "SI_CHARM_DESC_50110131",
           "SubShowSELog" : true,
           "SkillConditionId" : 35000,
-          "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
-          "AutoTargetId" : 17,
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
           "m_BuffStrID" : "BI_ADD_DAMAGE_3",
           "m_BuffLifeTurn" : 0,
           "SeCoolTurn" : 0,
@@ -1364,7 +1186,7 @@
           "SeCoolTurn" : 3,
           "HealTargetType" : "NSETT_SELF",
           "HealStatType" : "NST_ATK",
-          "HealRate" : 7000,
+          "HealRate" : 3000,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_TURN_START",
@@ -1381,7 +1203,7 @@
           "m_BuffTargetType" : "NSETT_ENEMY_ALL",
           "m_BuffStrID" : "BI_ADD_DAMAGE_3",
           "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "AddDamageTargetType" : "NSETT_SELF",
           "AddDamageStatType" : "NST_HP",
           "AddDamageRate" : 500,
@@ -1401,7 +1223,7 @@
           "m_BuffTargetType" : "NSETT_TARGET",
           "m_BuffStrID" : "BI_POISON",
           "m_BuffLifeTurn" : 2,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -1418,7 +1240,7 @@
           "m_BuffTargetType" : "NSETT_TARGET",
           "m_BuffStrID" : "BI_POISON",
           "m_BuffLifeTurn" : 2,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -1507,7 +1329,7 @@
           "m_BuffTargetType" : "NSETT_TARGET",
           "m_BuffStrID" : "BI_SPEED_GAUGE_DOWN",
           "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "SpeedGaugeRate" : 3000,
           "m_Condition" : 
           {
@@ -1546,7 +1368,7 @@
           "SeCoolTurn" : 0,
           "HealTargetType" : "NSETT_SELF",
           "HealStatType" : "NST_ATK",
-          "HealRate" : 7000,
+          "HealRate" : 3000,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -1795,7 +1617,7 @@
           "SeCoolTurn" : 0,
           "BarrierTargetType" : "NSETT_SELF",
           "BarrierStatType" : "NST_ATK",
-          "BarrierRate" : 10000,
+          "BarrierRate" : 3000,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -1872,7 +1694,7 @@
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_CRITICAL_CHANCE_INCREASE",
           "m_BuffLifeTurn" : 1,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -1889,7 +1711,7 @@
           "m_BuffTargetType" : "NSETT_ENEMY_ALL",
           "m_BuffStrID" : "BI_ADD_DAMAGE_3",
           "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "AddDamageTargetType" : "NSETT_SELF",
           "AddDamageStatType" : "NST_HP",
           "AddDamageRate" : 500,
@@ -2185,14 +2007,14 @@
           "m_SEStrID" : "CHARM_50610011",
           "m_SEDesc" : "SI_CHARM_DESC_50610011",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2000,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_BARRIER",
           "m_BuffLifeTurn" : 2,
           "SeCoolTurn" : 1,
           "BarrierTargetType" : "NSETT_SELF",
           "BarrierStatType" : "NST_ATK",
-          "BarrierRate" : 2000,
+          "BarrierRate" : 1500,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -2205,14 +2027,14 @@
           "m_SEStrID" : "CHARM_50610021",
           "m_SEDesc" : "SI_CHARM_DESC_50610021",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2000,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_HEAL",
           "m_BuffLifeTurn" : 0,
           "SeCoolTurn" : 3,
           "HealTargetType" : "NSETT_SELF",
           "HealStatType" : "NST_ATK",
-          "HealRate" : 5500,
+          "HealRate" : 3000,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -2250,7 +2072,7 @@
           "SeCoolTurn" : 0,
           "BarrierTargetType" : "NSETT_SELF",
           "BarrierStatType" : "NST_ATK",
-          "BarrierRate" : 7000,
+          "BarrierRate" : 1500,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_DAMAGE_END",
@@ -2280,11 +2102,11 @@
           "m_SEStrID" : "CHARM_50620011",
           "m_SEDesc" : "SI_CHARM_DESC_50620011",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2000,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_TARGET",
           "m_BuffStrID" : "BI_POISON",
           "m_BuffLifeTurn" : 2,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -2302,7 +2124,7 @@
           "AutoTargetId" : 16,
           "m_BuffStrID" : "BI_ADD_DAMAGE_1",
           "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "AddDamageTargetType" : "NSETT_SELF",
           "AddDamageStatType" : "NST_HP",
           "AddDamageRate" : 500,
@@ -2338,7 +2160,7 @@
           "m_SEStrID" : "CHARM_50620041",
           "m_SEDesc" : "SI_CHARM_DESC_50620041",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2001,
+          "SkillConditionId" : 8002,
           "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
           "AutoTargetId" : 11,
           "m_BuffStrID" : "BI_POISON",
@@ -2356,11 +2178,11 @@
           "m_SEStrID" : "CHARM_50620042",
           "m_SEDesc" : "SI_CHARM_DESC_50620042",
           "SubShowSELog" : false,
-          "SkillConditionId" : 2010,
+          "SkillConditionId" : 38003,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
           "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 1,
+          "SeCoolTurn" : 0,
           "SpeedGaugeRate" : 3000,
           "m_Condition" : 
           {
@@ -2391,7 +2213,7 @@
           "m_SEStrID" : "CHARM_50620052",
           "m_SEDesc" : "SI_CHARM_DESC_50620052",
           "SubShowSELog" : false,
-          "SkillConditionId" : 2010,
+          "SkillConditionId" : 38003,
           "m_BuffTargetType" : "NSETT_TARGET",
           "m_BuffStrID" : "BI_ADD_DAMAGE_6",
           "m_BuffLifeTurn" : 0,
@@ -2410,7 +2232,7 @@
           "m_SEID" : 50620061,
           "m_SEStrID" : "CHARM_50620061",
           "m_SEDesc" : "SI_CHARM_DESC_50620061",
-          "SubShowSELog" : false,
+          "SubShowSELog" : true,
           "SkillConditionId" : 4004,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_CHARM_50620061",
@@ -2427,8 +2249,8 @@
           "m_SEID" : 50620062,
           "m_SEStrID" : "CHARM_50620062",
           "m_SEDesc" : "SI_CHARM_DESC_50620062",
-          "SubShowSELog" : true,
-          "SkillConditionId" : 52013,
+          "SubShowSELog" : false,
+          "SkillConditionId" : 38002,
           "m_BuffTargetType" : "NSETT_TARGET",
           "m_BuffStrID" : "BI_ADD_DAMAGE_7",
           "m_BuffLifeTurn" : 0,
@@ -2436,6 +2258,25 @@
           "AddDamageTargetType" : "NSETT_SELF",
           "AddDamageStatType" : "NST_HP",
           "AddDamageRate" : 500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 50620063,
+          "m_SEStrID" : "CHARM_50620063",
+          "m_SEDesc" : "SI_CHARM_DESC_50620063",
+          "SubShowSELog" : false,
+          "SkillConditionId" : 38002,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "SeCoolTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "DeleteSpecificBuffStrId" : "BI_CHARM_50620061",
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",
@@ -2465,29 +2306,8 @@
           "m_SEID" : 50620072,
           "m_SEStrID" : "CHARM_50620072",
           "m_SEDesc" : "SI_CHARM_DESC_50620072",
-          "SubShowSELog" : false,
-          "SkillConditionId" : 32102,
-          "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
-          "AutoTargetId" : 20,
-          "m_BuffStrID" : "BI_ADD_DAMAGE_8",
-          "m_BuffLifeTurn" : 0,
-          "SeCoolTurn" : 0,
-          "AddDamageTargetType" : "NSETT_SELF",
-          "AddDamageStatType" : "NST_HP",
-          "AddDamageRate" : 500,
-          "m_Condition" : 
-          {
-            "m_ActiveType" : "NSEAT_SKILL_END",
-            "m_fActiveRate" : 10000
-          }
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "m_SEID" : 50620073,
-          "m_SEStrID" : "CHARM_50620073",
-          "m_SEDesc" : "SI_CHARM_DESC_50620073",
-          "SubShowSELog" : false,
-          "SkillConditionId" : 54001,
+          "SubShowSELog" : true,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_AUTO_ENEMY",
           "AutoTargetId" : 20,
           "m_BuffStrID" : "BI_ADD_DAMAGE_8",
@@ -2508,7 +2328,7 @@
           "m_SEStrID" : "CHARM_50620081",
           "m_SEDesc" : "SI_CHARM_DESC_50620081",
           "SubShowSELog" : true,
-          "SkillConditionId" : 1125,
+          "SkillConditionId" : 7601,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_SUPER_ARMOR_DAMAGE",
           "m_BuffLifeTurn" : 0,
@@ -2701,7 +2521,7 @@
           "m_SEStrID" : "CHARM_50630051",
           "m_SEDesc" : "SI_CHARM_DESC_50630051",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2000,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_SPECIAL_COOL_TURN_DOWN",
           "m_BuffLifeTurn" : 0,
@@ -2790,7 +2610,7 @@
           "m_SEStrID" : "CHARM_50640031",
           "m_SEDesc" : "SI_CHARM_DESC_50640031",
           "SubShowSELog" : true,
-          "SkillConditionId" : 1000,
+          "SkillConditionId" : 7601,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
           "m_BuffLifeTurn" : 0,
@@ -2813,7 +2633,7 @@
           "m_SEStrID" : "CHARM_50640032",
           "m_SEDesc" : "SI_CHARM_DESC_50640032",
           "SubShowSELog" : false,
-          "SkillConditionId" : 1000,
+          "SkillConditionId" : 7601,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_VAMPIRISM",
           "m_BuffLifeTurn" : 0,
@@ -2890,7 +2710,7 @@
           "m_SEStrID" : "CHARM_50640061",
           "m_SEDesc" : "SI_CHARM_DESC_50640061",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2000,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
           "AutoTargetId" : 4,
           "m_BuffStrID" : "BI_CHARM_50640061",
@@ -2911,7 +2731,7 @@
           "m_SEStrID" : "CHARM_50640062",
           "m_SEDesc" : "SI_CHARM_DESC_50640062",
           "SubShowSELog" : false,
-          "SkillConditionId" : 2000,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
           "AutoTargetId" : 4,
           "m_BuffStrID" : "BI_CHARM_50640062",
@@ -2932,7 +2752,7 @@
           "m_SEStrID" : "CHARM_50640063",
           "m_SEDesc" : "SI_CHARM_DESC_50640063",
           "SubShowSELog" : false,
-          "SkillConditionId" : 2000,
+          "SkillConditionId" : 8001,
           "m_BuffTargetType" : "NSETT_AUTO_ENEMY_ONE",
           "AutoTargetId" : 4,
           "m_BuffStrID" : "BI_CHARM_50640063",
@@ -3214,7 +3034,7 @@
           "m_SEStrID" : "CHARM_6300001",
           "m_SEDesc" : "SI_CHARM_DESC_63000011",
           "SubShowSELog" : true,
-          "SkillConditionId" : 2002,
+          "SkillConditionId" : 8003,
           "m_BuffTargetType" : "NSETT_SELF",
           "m_BuffStrID" : "BI_CUBE_ROCKET_BOARD_1",
           "m_BuffLifeTurn" : 1,
@@ -3384,7 +3204,7 @@
           "SubShowSELog" : true,
           "SkillConditionId" : 1115,
           "m_BuffTargetType" : "NSETT_SELF",
-          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_REDUCE",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
           "m_BuffLifeTurn" : 0,
           "SeCoolTurn" : 0,
           "Stats" : 
@@ -3410,6 +3230,103 @@
           "m_BuffStrID" : "BI_DEBUFFBAN",
           "m_BuffLifeTurn" : 1,
           "SeCoolTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "CT_CUBE_PALACE_STEP_5",
+          "m_SEID" : 6500001,
+          "m_SEStrID" : "CHARM_6500001",
+          "m_SEDesc" : "SI_CHARM_DESC_65000011",
+          "SubShowSELog" : true,
+          "SkillConditionId" : 8003,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SeCoolTurn" : 0,
+          "SpeedGaugeRate" : 1500,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "CT_CUBE_PALACE_STEP_5",
+          "m_SEID" : 6500002,
+          "m_SEStrID" : "CHARM_6500002",
+          "m_SEDesc" : "SI_CHARM_DESC_65000021",
+          "SubShowSELog" : true,
+          "SkillConditionId" : 5513,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_REDUCE",
+          "m_BuffLifeTurn" : 0,
+          "SeCoolTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_DAMAGE_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "CT_CUBE_PALACE_STEP_5",
+          "m_SEID" : 6500003,
+          "m_SEStrID" : "CHARM_6500003",
+          "m_SEDesc" : "SI_CHARM_DESC_65000031",
+          "SubShowSELog" : true,
+          "SkillConditionId" : 2001,
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_DELETEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "SeCoolTurn" : 0,
+          "BuffDeleteCount" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "CT_CUBE_PALACE_STEP_5",
+          "m_SEID" : 6500004,
+          "m_SEStrID" : "CHARM_6500004",
+          "m_SEDesc" : "SI_CHARM_DESC_65000041",
+          "SubShowSELog" : true,
+          "SkillConditionId" : 8003,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BARRIER",
+          "m_BuffLifeTurn" : 2,
+          "SeCoolTurn" : 0,
+          "BarrierTargetType" : "NSETT_SELF",
+          "BarrierStatType" : "NST_ATK",
+          "BarrierRate" : 5000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "CT_CUBE_PALACE_STEP_5",
+          "m_SEID" : 6500005,
+          "m_SEStrID" : "CHARM_6500005",
+          "m_SEDesc" : "SI_CHARM_DESC_65000051",
+          "SubShowSELog" : true,
+          "SkillConditionId" : 2002,
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_DELETEBUFF",
+          "m_BuffLifeTurn" : 0,
+          "SeCoolTurn" : 0,
+          "BuffDeleteCount" : 2,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_SKILL_END",

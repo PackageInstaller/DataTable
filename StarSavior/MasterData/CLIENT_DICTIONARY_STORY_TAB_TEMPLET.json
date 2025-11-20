@@ -10,11 +10,11 @@
           "UnlockValue" : 1001000001,
           "OrderList" : 0,
           "StoryTabName" : "SI_END_OF_THE_STARLIGHT",
-          "StoryTabSubName" : "SI_EPISODE_NUMBER@@0",
+          "StoryTabSubName" : "SI_BATTLE_TAB_DESC_MAIN_STORY_NORMAL_0",
           "StoryTabTitleImg" : "PF_TITLE_MS_EP_00.prefab",
-          "StoryTabThumbnail" : "T_MS_BG_S_VOYAGER_STRANIS.png",
-          "StoryTabPrefab" : "MS_BG_S_VOYAGER_STRANIS.prefab",
-          "StoryTabListPrefab" : "L_MS_BG_S_VOYAGER_STRANIS.prefab",
+          "StoryTabThumbnail" : "T_MS_BG_S_EP_00.png",
+          "StoryTabPrefab" : "MS_BG_S_EP_00.prefab",
+          "StoryTabListPrefab" : "L_MS_BG_S_EP_00.prefab",
           "StoryGroupId" : 1000001
         },
         {
@@ -24,12 +24,40 @@
           "UnlockValue" : 1001001001,
           "OrderList" : 1,
           "StoryTabName" : "SI_LAVISTAR",
-          "StoryTabSubName" : "SI_EPISODE_NUMBER@@1",
+          "StoryTabSubName" : "SI_BATTLE_TAB_DESC_MAIN_STORY_NORMAL_1",
           "StoryTabTitleImg" : "PF_TITLE_MS_EP_01.prefab",
           "StoryTabThumbnail" : "T_MS_BG_S_EP_01.png",
           "StoryTabPrefab" : "MS_BG_S_EP_01.prefab",
           "StoryTabListPrefab" : "L_MS_BG_S_EP_01.prefab",
           "StoryGroupId" : 1001001
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryTabId" : 1002001,
+          "StoryTabType" : "STT_MAIN_STORY",
+          "UnlockValue" : 1001002001,
+          "OrderList" : 2,
+          "StoryTabName" : "SI_HAPPY_SMILE",
+          "StoryTabSubName" : "SI_BATTLE_TAB_DESC_MAIN_STORY_NORMAL_2",
+          "StoryTabTitleImg" : "PF_TITLE_MS_EP_02.prefab",
+          "StoryTabThumbnail" : "T_MS_BG_S_EP_02.png",
+          "StoryTabPrefab" : "MS_BG_S_EP_02.prefab",
+          "StoryTabListPrefab" : "L_MS_BG_S_EP_02.prefab",
+          "StoryGroupId" : 1002001
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryTabId" : 1003001,
+          "StoryTabType" : "STT_MAIN_STORY",
+          "UnlockValue" : 1001003001,
+          "OrderList" : 3,
+          "StoryTabName" : "SI_MONOLITH_CHURCH",
+          "StoryTabSubName" : "SI_BATTLE_TAB_DESC_MAIN_STORY_NORMAL_3",
+          "StoryTabTitleImg" : "PF_TITLE_MS_EP_03.prefab",
+          "StoryTabThumbnail" : "T_MS_BG_S_EP_03.png",
+          "StoryTabPrefab" : "MS_BG_S_EP_03.prefab",
+          "StoryTabListPrefab" : "L_MS_BG_S_EP_03.prefab",
+          "StoryGroupId" : 1003001
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -43,19 +71,6 @@
           "StoryTabPrefab" : "MS_BG_ACV_SUBCULTURE.prefab",
           "StoryTabListPrefab" : "L_MS_BG_ACV_SUBCULTURE.prefab",
           "StoryGroupId" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "StoryTabId" : 2,
-          "StoryTabType" : "STT_JOURNEY_SCENARIO_STORY",
-          "UnlockValue" : 1,
-          "OrderList" : 1,
-          "StoryTabName" : "SI_VOYAGER_CORPS",
-          "StoryTabSubName" : "SI_PATHFINDER_OF_STARLIGHT",
-          "StoryTabThumbnail" : "T_MS_BG_ACV_SUBCULTURE.png",
-          "StoryTabPrefab" : "MS_BG_ACV_SUBCULTURE.prefab",
-          "StoryTabListPrefab" : "L_MS_BG_ACV_SUBCULTURE.prefab",
-          "StoryGroupId" : 2
         }
     ]
 }

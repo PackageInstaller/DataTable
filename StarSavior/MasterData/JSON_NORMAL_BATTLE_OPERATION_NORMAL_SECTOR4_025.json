@@ -8,34 +8,14 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_MINION_OPERATION_01", //추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_00",
-            "IsElite": true,
-            "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          }
-        ]
-      },
-      {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3500,
+              "NST_NV_RATE_HP": -3500,
+              "NST_TURN_SPEED" : -25
+            }
           },
           {
             "SpawnPosIndex": 2,
@@ -43,13 +23,23 @@
             "IsBoss": true,
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3500,
+              "NST_NV_RATE_HP": -3000,
+              "NST_TURN_SPEED" : -25
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_MINION_OPERATION_01", //추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3500,
+              "NST_NV_RATE_HP": -3500,
+              "NST_TURN_SPEED" : -25
+            }
           }
         ]
       }

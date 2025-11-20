@@ -15,7 +15,7 @@
             ]
           }
         ]
-      },
+      }
     ],
     "BattleStates": [
       {
@@ -606,15 +606,15 @@
             ]
           },
           {
-            "EventFrame": 162,
+            "EventFrame": 167,
             "listSoundName": [
-              "SFX_BATTLE_COMMON_CHIME_03.wav"
+              "SFX_BT_UNIT_S_EASTERN_OWL_HIT.wav"
             ]
           },
           {
-            "EventFrame": 167,
+            "EventFrame": 172,
             "listSoundName": [
-              "SFX_BATTLE_COMMON_HIT_48.wav"
+              "SFX_BATTLE_COMMON_CHIME_03.wav"
             ]
           },
           {
@@ -725,6 +725,12 @@
             "ShowUnitHudOnSelf": true,
             "ShowOnMyTeam": true,
             "FormationMyTeam": "SFT_OWL_HYPER_01"
+          },
+          {
+            "AnimTime": false,
+            "EventFrame": 239,
+            "ShowOffMyTeamVfx": false,
+            "ShowOnMyTeamVfx": true
           }
         ],
         "HealEvent": {

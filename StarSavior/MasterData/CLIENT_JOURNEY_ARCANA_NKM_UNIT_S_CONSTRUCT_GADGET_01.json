@@ -1,0 +1,890 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_TRAIN_STATION.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3"
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "볼일이 있어 기차역에 들를 때의 일이었다.",
+      "UnitTalk_JPN": "用事があり、駅に立ち寄った時のことだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "…잘할 수 있어?",
+      "UnitTalk_JPN": "…やれそうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "응. 힘낼게.",
+      "UnitTalk_JPN": "うん。頑張る。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아니, 힘내는 게 아니라… 후우…",
+      "UnitTalk_JPN": "いや、頑張るだけじゃ…ふぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "페트라 녀석, 어디로 사라진 거야. 대체.",
+      "UnitTalk_JPN": "ペトラのやつ、一体どこに行っちまったんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "본인이 봐주겠다고 약속했으면서… 일손이 부족해서 나도 못 봐주는데 큰일났네.",
+      "UnitTalk_JPN": "あいつが任せとけって言ってたくせに…人手不足でワシも見てやれねぇし、困ったな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "플라티나 익스프레스의 일거리는 보수가 큰데…!",
+      "UnitTalk_JPN": "プラチナエクスプレスの線路補修はいい金になるってのに…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "ONE_7",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "마르실.",
+      "UnitTalk_JPN": "マルシル。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…아앙?",
+      "UnitTalk_JPN": "…あぁん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "믿어줘.",
+      "UnitTalk_JPN": "信じて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "나, 똑바로 작업할게. 마르실한테 배웠으니까.",
+      "UnitTalk_JPN": "わたし、ちゃんと作業できる。マルシルが教えてくれたから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "…핫.",
+      "UnitTalk_JPN": "…はっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "하핫! 자신감 넘치는 대답이구만!",
+      "UnitTalk_JPN": "ははっ！自信満々じゃねぇか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그래! 인턴이지만 내가 가르쳐 줬으니까. 똑바로 할 수 있겠지.",
+      "UnitTalk_JPN": "よっしゃ！インターンとはいえ、ワシが教えたんだ。ちゃんとやれるよな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "응. 시작할게.",
+      "UnitTalk_JPN": "うん。作業開始。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitQuickSet": true,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "잠깐만?! 공구 없이 작업하면 어떡하냐!? 그보다 보통 맨손으로 철로가 들리냐!?",
+      "UnitTalk_JPN": "おいおい！！工具もねぇのに、どうやって作業するつもりだよ！？っつーか、素手で線路を持ち上げれる訳ねぇだろ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "다른 것보다 안전 장비 똑바로 착용 안 해?! 이 자식아!",
+      "UnitTalk_JPN": "てめぇ！まずは保護具をちゃんと着けろよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "TWIN_2",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "스파이크… 삽… 장갑…",
+      "UnitTalk_JPN": "スパイク…ハンドブレーカー…シャベル…手袋…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "준비, 끝. 응.",
+      "UnitTalk_JPN": "準備完了。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그런데 어디서부터 작업하라 그랬지?",
+      "UnitTalk_JPN": "どこから作業するように言ってたっけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "……",
+      "UnitTalk_JPN": "……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "돌려놓는 건 쉬우니까. 끝내고 나중에 다시 물어보자. 응.",
+      "UnitTalk_JPN": "元に戻すのは簡単。終わらせた後にまた聞こう。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "거기, 너.",
+      "UnitTalk_JPN": "そこのお前。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…그 철로, 교체하고 있는 거야?",
+      "UnitTalk_JPN": "…そのレール、交換しているのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "응, 마르실에게 배웠어.",
+      "UnitTalk_JPN": "うん、マルシルが教えてくれたよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "그래서 작업하고 있어.",
+      "UnitTalk_JPN": "だから作業している。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "네가 하는 일이니 나하고는 상관없지만…",
+      "UnitTalk_JPN": "お前の仕事だし、私とは無関係だが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "레일 밑에 깔고 있는 침목, 간격이 모두 제각각이잖아.",
+      "UnitTalk_JPN": "レールの下に敷いている枕木、間隔がバラバラじゃないか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "여기는 각도도 틀어졌고.",
+      "UnitTalk_JPN": "ここは角度もズレてる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "열차 출발과 동시에 탈선을 일으킬 생각이 아니라면 제대로 두는 게 좋을 거야.",
+      "UnitTalk_JPN": "列車が出ると同時に脱線させるつもりでなければ、きちんと配置しておくべきだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "틀어졌어? 똑바로 놓았다고 생각했는데…",
+      "UnitTalk_JPN": "ズレた？ちゃんと置いたと思ったけど…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "대충 눈으로 보고 놓고 있잖아. 이런 건 먼저 가이드 표시를 해두고 해야지.",
+      "UnitTalk_JPN": "適当に目で見て置いてるだけだろう。こういうのは最初に目印をつけてからやらないと。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "맞아! 마르실도 그렇게 얘기했었어.",
+      "UnitTalk_JPN": "そうだ！マルシルもそう言ってた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "철도에 대해 잘 아네. 플라티나 익스프레스 직원이야?",
+      "UnitTalk_JPN": "鉄道について詳しいんだな。プラチナエクスプレスで働いているのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…아냐.",
+      "UnitTalk_JPN": "…ちがう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 매니아야?",
+      "UnitTalk_JPN": "じゃあマニアなの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…뭐?",
+      "UnitTalk_JPN": "…なに？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "페트라가 그랬어, 철도 매니아들이 있다고.",
+      "UnitTalk_JPN": "ペトラがいってた。鉄道マニアがいるって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하루 종일 열차랑 철로를 보는 사람들이라고 그랬어.",
+      "UnitTalk_JPN": "一日中、列車とレールを眺めている人たちって言ってた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "하아… 역시 말 걸지 말 걸 그랬나.",
+      "UnitTalk_JPN": "はぁ…やっぱ話しかけるべきじゃなかったか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "난 그냥 구경꾼이야. 쓸데없이 참견했네.",
+      "UnitTalk_JPN": "私はただの見物人だよ。邪魔したな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그럼 난 이만.",
+      "UnitTalk_JPN": "では、私はこれで。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "네가 봐주면 실수 줄어들어.",
+      "UnitTalk_JPN": "お前が見てくれるとミスが減る。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "철로가 제대로 놓이는지 계속 구경해 줘. 끝나면 튀김 사줄게, 응.",
+      "UnitTalk_JPN": "レールがちゃんと置かれるか見ていてくれ。終わったら天ぷら、買ってあげる。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…튀김 같은 건 필요 없어.",
+      "UnitTalk_JPN": "…天ぷらなんていらんぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "혹시 튀김을 먹으면 몸이 아파져? 가끔 그런 사람 있으니까, 응.",
+      "UnitTalk_JPN": "もし天ぷらを食べたら体が痛くなるとか？たまにそういう人いるから、うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "끈질기네.",
+      "UnitTalk_JPN": "しつこいな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 내가 직접 튀겨줄 수도 있어. 튀김 못 먹는 사람도 반드시 먹어, 응.",
+      "UnitTalk_JPN": "じゃあ、わたしが揚げてもいいよ。天ぷらが苦手な人も必ず食べる、うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "튀김은 흥미 없다고 내가 말했…!",
+      "UnitTalk_JPN": "天ぷらには興味ないと言ってるじゃないかっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…하아.",
+      "UnitTalk_JPN": "…はぁ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "…됐어. 네 말대로 계속 구경할 테니 네 일이나 해.",
+      "UnitTalk_JPN": "…まあいい。お前の言う通り見物してやるから、仕事を続けろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "응! 도와줘서 고마워!",
+      "UnitTalk_JPN": "うん！手伝ってくれてありがとう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "역시, 튀김은 훌륭해!",
+      "UnitTalk_JPN": "やっぱり、天ぷらはすごい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "튀김 때문이 아냐! 멍청하게 공사한 철로 때문에 사고 나는 꼴을 보기 싫어서-!",
+      "UnitTalk_JPN": "天ぷらのせいじゃないって！バカな工事でレール事故を見たくないんだっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응?",
+      "UnitTalk_JPN": "うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "단장? 왜 여기 있어?",
+      "UnitTalk_JPN": "団長、なんでここにいる？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "현장에 일반인이 들어오면 안 돼. 내가 앞에 진입 금지 입간판…",
+      "UnitTalk_JPN": "一般人は現場に入っちゃだめ。ここに立入禁止の看板が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitTalk_KOR": "아.",
+      "UnitTalk_JPN": "あ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "설치하는 거, 깜빡했다.",
+      "UnitTalk_JPN": "置くの、忘れてた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…에데, 안색이 안 좋아 보여.",
+          "JumpAnchorStringId_JPN": "…エデ、顔色が悪いぞ。"
+        }
+      ]
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…말 걸지 마.",
+      "UnitTalk_JPN": "…話しかけるな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "CameraOffset": "DEFAULT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_GADGET_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color></color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45>[CHARACTER_NAME]</color></color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

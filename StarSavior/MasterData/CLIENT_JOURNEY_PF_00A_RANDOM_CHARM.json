@@ -18,7 +18,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "캔들 스퀘어의 의뢰 게시판을 살펴보는데, 희한한 의뢰서가 붙어 있었다.",
-      "UnitTalk_JPN": "キャンドル・スクエアの依頼掲示板を見てみると、奇妙な依頼書が貼ってあった。",
+      "UnitTalk_JPN": "キャンドル・スクエアの依頼掲示板を見てみると、妙な依頼書が貼られていた。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -27,7 +27,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "영화 <color=#F7BE45>열세 번째 공허체 13</color>의 초회 관람 특전을 찾는다는 내용이었다.",
-      "UnitTalk_JPN": "映画<color=#F7BE45>13番目の空虚体</color>の初回上映特典を探しているという内容だった。",
+      "UnitTalk_JPN": "映画<color=#F7BE45>13番目の<r=ヴォイドボーン>空虚体</r></color>の初回上映特典を探しているという内容だ。",
       "TalkTime": 0.03
     },
     {
@@ -57,7 +57,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "그러고 보니, 이전 휴일에 본 영화가 떠올랐다…",
-      "UnitTalk_JPN": "そういえば、前の休日に観た映画を思い出した…",
+      "UnitTalk_JPN": "そういえば、休日にその映画を観たな…",
       "TalkTime": 0.03
     },
     {
@@ -110,7 +110,7 @@
       ],
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "오, 어서 오십시오. 여정 단장님.",
-      "UnitTalk_JPN": "お、いらっしゃいませ。旅の団長。",
+      "UnitTalk_JPN": "おお、いらっしゃいましたか。",
       "TalkTime": 0.03
     },
     {
@@ -123,7 +123,7 @@
       ],
       "CameraOffsetTime": "NR",
       "UnitTalk_KOR": "이야기는 들었습니다. <color=#F7BE45>열세 번째 공허체 13</color>의 초회 관람 특전 포스터를 가지고 계신다지요?",
-      "UnitTalk_JPN": "話は聞いております。<color=#F7BE45>13番目の空虚体</color>の初回上映特典ポスターをお持ちだと？",
+      "UnitTalk_JPN": "話は伺っております。<color=#F7BE45>13番目の空虚体</color>の初回上映特典ポスターをお持ちだと？",
       "TalkTime": 0.03
     },
     {
@@ -137,7 +137,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그럼 갑작스러우시겠지만… 물건을 확인해 봐도 되겠습니까?",
-      "UnitTalk_JPN": "では、突然で恐縮ですが…お品物を確認させていただいてもよろしいでしょうか？",
+      "UnitTalk_JPN": "では、突然で恐縮ですが…品物を確認させていただいてもよろしいですか？",
       "TalkTime": 0.03
     },
     {
@@ -148,7 +148,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "얼마든지.",
-          "JumpAnchorStringId_JPN": "いくらでも。"
+          "JumpAnchorStringId_JPN": "もちろんだ。"
         }
       ]
     },
@@ -171,7 +171,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "호오… 보관은 잘 되어 있었군요.",
-      "UnitTalk_JPN": "ほう…保管はしっかりされていたようですね。",
+      "UnitTalk_JPN": "ほう…しっかり保管されていたようですね。",
       "TalkTime": 0.03
     },
     {
@@ -184,7 +184,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "상태가 굉장히 좋습니다. 만족스럽네요.",
-      "UnitTalk_JPN": "状態が非常に良好です。満足です。",
+      "UnitTalk_JPN": "状態が非常に良い。大満足です。",
       "TalkTime": 0.03
     },
     {
@@ -194,7 +194,7 @@
       "CameraOffset": "TWIN_2",
       "CameraOffsetTime": "NR",
       "UnitTalk_KOR": "<color=#F7BE45>[여정]</color> 때문에 바빠서 건드리지 않은 것이 오히려 좋게 작용한 모양이다…",
-      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>のせいで忙しくて手をつけなかったことが、かえって良い方向に働いたようだ…",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>のせいで、忙しくて触らなかったことがかえって良かったようだ。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -211,7 +211,7 @@
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "영화를 보는 편이 빠르지 않아?",
-          "JumpAnchorStringId_JPN": "映画を見た方が早いんじゃない？"
+          "JumpAnchorStringId_JPN": "映画を見た方が早いんじゃないか？"
         }
       ]
     },
@@ -224,7 +224,7 @@
         "SI_COLLECTOR_MAN"
       ],
       "UnitTalk_KOR": "물론 봤습니다. 27회차 정도.",
-      "UnitTalk_JPN": "もちろん観ました。27回くらい。",
+      "UnitTalk_JPN": "もちろん観ましたよ、それも27回ほど。",
       "TalkTime": 0.03
     },
     {
@@ -237,7 +237,7 @@
       ],
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "문제는 중요한 출장 때문에 개봉 첫 주 관람을 놓쳤다는 겁니다.",
-      "UnitTalk_JPN": "問題は重要な出張のため、公開初週の鑑賞を逃してしまったことです。",
+      "UnitTalk_JPN": "問題は…重要な出張のため、公開初週の鑑賞を逃したということです。",
       "TalkTime": 0.03
     },
     {
@@ -250,7 +250,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그래서 말입니다만, 이 포스터를 제 수집품 중 하나와 바꾸면 어떠십니까?",
-      "UnitTalk_JPN": "そこでですが、このポスターを私のコレクションの一つと交換しませんか？",
+      "UnitTalk_JPN": "そこでですが、このポスターを私のコレクションと交換していただけませんか？",
       "TalkTime": 0.03
     },
     {
@@ -262,7 +262,7 @@
         "SI_COLLECTOR_MAN"
       ],
       "UnitTalk_KOR": "그동안 <color=#F7BE45>열세 번째 공허체</color> 시리즈의 특전은 하나도 놓치지 않았거든요.",
-      "UnitTalk_JPN": "これまで<color=#F7BE45>13番目の空虚体</color>シリーズの特典は一つも逃していませんから。",
+      "UnitTalk_JPN": "これまで、<color=#F7BE45>13番目の空虚体</color>シリーズの特典は一つも逃していないのです。",
       "TalkTime": 0.03
     },
     {
@@ -275,7 +275,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "이것만 제외하면 말입니다.",
-      "UnitTalk_JPN": "これだけは除いて、ですが。",
+      "UnitTalk_JPN": "初回上映特典は除いて、ですが。",
       "TalkTime": 0.03
     },
     {
@@ -291,7 +291,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "남자의 수집품 중에서는 신기한 기운이 느껴지는 물건도 있다.",
-      "UnitTalk_JPN": "男の収集品の中には、不思議な気が感じられる物もある。",
+      "UnitTalk_JPN": "男のコレクションの中には、不思議な気が感じられる物もある。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -317,7 +317,7 @@
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "거래하고 싶은 마음은 없다.",
-          "JumpAnchorStringId_JPN": "取引したい気持ちはない。",
+          "JumpAnchorStringId_JPN": "取引する気はない。",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -333,7 +333,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "좋습니다. 그럼 이 전시실에 원하시는 게 있습니까?",
-      "UnitTalk_JPN": "結構です。では、この展示室に何かお望みのものはありますか？",
+      "UnitTalk_JPN": "良いでしょう。では、この展示室にご希望のものはありますか？",
       "TalkTime": 0.03
     },
     {
@@ -358,7 +358,7 @@
         "SI_COLLECTOR_MAN"
       ],
       "UnitTalk_KOR": "알겠습니다. 단장님의 뜻이 그러시다면.",
-      "UnitTalk_JPN": "承知いたしました。館長のご意向ならば。",
+      "UnitTalk_JPN": "承知いたしました。団長様のご意向であれば。",
       "TalkTime": 0.03
     },
     {
@@ -371,7 +371,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "흔쾌히 수락해 주셔서 감사합니다. 살펴 가십시오.",
-      "UnitTalk_JPN": "快く承諾いただき感謝します。どうぞご覧ください。",
+      "UnitTalk_JPN": "快く承諾いただき、ありがとうございます。どうぞご確認ください。",
       "TalkTime": 0.03
     },
     {
@@ -410,7 +410,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "제안은 매력적이지만, <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 보낸 시간을 기리는 물건이었다.",
-      "UnitTalk_JPN": "提案は魅力的だが、<color=#F7BE45>[CHARACTER_NAME]</color>と共に過ごした時間を称える品だった。",
+      "UnitTalk_JPN": "提案は魅力的だったが、<color=#F7BE45>[CHARACTER_NAME]</color>と共に過ごした時間を記念する物だった。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -444,7 +444,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "괜찮습니다. 어떤 마음인지 이해가 되거든요.",
-      "UnitTalk_JPN": "構いません。お気持ちはよく分かりますから。",
+      "UnitTalk_JPN": "もちろん構いません。お気持ちはよく分かりますから。",
       "TalkTime": 0.03
     },
     {
@@ -456,7 +456,7 @@
         "SI_COLLECTOR_MAN"
       ],
       "UnitTalk_KOR": "제가 <color=#F7BE45>열세 번째 공허체</color> 시리즈에 빠진 것도, 어머니와 처음으로 보러 간 영화이기 때문이었으니까요.",
-      "UnitTalk_JPN": "私が<color=#F7BE45>13番目の空虚体</color>シリーズにハマったのも、母と初めて観に行った映画だったからです。",
+      "UnitTalk_JPN": "私が<color=#F7BE45>13番目の空虚体</color>シリーズにハマったのも、母と初めて観に行った映画だったからでしてね。",
       "TalkTime": 0.03
     },
     {
@@ -469,7 +469,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "물론 그걸 계기로 시리즈의 매력에 푹 빠지기는 했습니다만.",
-      "UnitTalk_JPN": "もちろんそれをきっかけにシリーズの魅力にすっかりハマってしまいましたが。",
+      "UnitTalk_JPN": "それをきっかけに、シリーズの魅力にのめり込むことになったのですよ。",
       "TalkTime": 0.03
     },
     {
@@ -481,7 +481,7 @@
         "SI_COLLECTOR_MAN"
       ],
       "UnitTalk_KOR": "단장님께서도 이번 기회에 부디 이 시리즈를 사랑해 주시면 좋겠군요.",
-      "UnitTalk_JPN": "団長も、この機会にぜひこのシリーズを愛していただければと思います。",
+      "UnitTalk_JPN": "団長様もこれを機に、このシリーズを愛していただければ嬉しい限りです。",
       "TalkTime": 0.03
     },
     {
@@ -519,7 +519,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "돌아가면서 <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 당시 봤던 영화에 대해 즐겁게 이야기를 나눴다.",
-      "UnitTalk_JPN": "順番に<color=#F7BE45>[CHARACTER_NAME]</color>と当時見た映画について楽しく話した。",
+      "UnitTalk_JPN": "帰り道、<color=#F7BE45>[CHARACTER_NAME]</color>と一緒に見た映画について楽しく語り合った。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     }

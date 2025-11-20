@@ -4,62 +4,30 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_00",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_00",//경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN",
-            "AddStatData": {
-              "NST_NV_RATE_ATK": -3000,
-              "NST_NV_RATE_HP": -3000
-            }
+            "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_00", //재앙의 숭배자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "IsBoss": true,
             "ChangeAdjustType": "NUAT_SUN",
+            "IsBoss": true,
             "AddStatData": {
-              "NST_NV_RATE_ATK": -3000,
-              "NST_NV_RATE_HP": -3000
+              "NST_NV_RATE_HP": -2000
             }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_00",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_00",//경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN",
-            "AddStatData": {
-              "NST_NV_RATE_ATK": -3000,
-              "NST_NV_RATE_HP": -3000
-            }
+            "ChangeAdjustType": "NUAT_SUN"
           }
         ]
       }

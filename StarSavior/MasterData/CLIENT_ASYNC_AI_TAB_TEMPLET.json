@@ -9,6 +9,22 @@
           "OrderList" : 0,
           "AiTabName" : "SI_BEGINNER",
           "PvpTeamGroupId" : 2001
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpAiTabId" : 200,
+          "OrderList" : 1,
+          "AiTabName" : "SI_EXPERT",
+          "PvpTeamGroupId" : 2002,
+          "AiWinRewardBonusValue" : 2
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "PvpAiTabId" : 300,
+          "OrderList" : 2,
+          "AiTabName" : "SI_VETERAN",
+          "PvpTeamGroupId" : 2003,
+          "AiWinRewardBonusValue" : 4
         }
     ]
 }

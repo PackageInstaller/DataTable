@@ -33,7 +33,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_RED",
       "UnitTalk_KOR": "모노리스 교단의 사제님께서 방문하셨습니다.",
-      "UnitTalk_JPN": "モノリス教団の司祭様がご来訪です。",
+      "UnitTalk_JPN": "モノリス教団の司祭様がお見えになっています。",
       "TalkTime": 0.03
     },
     {
@@ -42,7 +42,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_CANDLE_MAID_RED",
       "UnitTalk_KOR": "단장님께 드릴 이야기가 있다고 하셔서요.",
-      "UnitTalk_JPN": "団長に申し上げたいことがあるとのことです。",
+      "UnitTalk_JPN": "団長にお話したいことがあるようでして…",
       "TalkTime": 0.03
     },
     {
@@ -55,7 +55,7 @@
       ],
       "CameraOffset": "TWIN_2",
       "UnitTalk_KOR": "이렇게 불쑥 찾아와서 죄송합니다, 단장님.",
-      "UnitTalk_JPN": "突然お邪魔して申し訳ありません、団長。",
+      "UnitTalk_JPN": "突然お邪魔して申し訳ありません、団長様。",
       "TalkTime": 0.03
     },
     {
@@ -67,7 +67,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "오늘 온 이유는 다름이 아니라, 가지고 계신 <color=#F7BE45>[정체불명의 유물]</color> 때문입니다.",
-      "UnitTalk_JPN": "本日お伺いした理由は、他ならぬ、お持ちの<color=#F7BE45>「正体不明の遺物」</color>のためです。",
+      "UnitTalk_JPN": "本日お伺いしたのは、お持ちの<color=#F7BE45>「正体不明の遺物」</color>のためです。",
       "TalkTime": 0.03
     },
     {
@@ -80,7 +80,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "괜찮으시다면 그 유물을 저희에게 판매해 주시지 않겠습니까?",
-      "UnitTalk_JPN": "よろしければ、その遺物を当方に売却していただけませんか？",
+      "UnitTalk_JPN": "よろしければ、その遺物を我々に売却してはいただけませんか？",
       "TalkTime": 0.03
     },
     {
@@ -92,7 +92,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "물론 보상은 만족스럽게 드리겠습니다.",
-      "UnitTalk_JPN": "もちろん、満足いただける報酬をお支払いいたします。",
+      "UnitTalk_JPN": "もちろん、ご満足いただける報酬をお支払いいたします。",
       "TalkTime": 0.03
     },
     {
@@ -103,13 +103,13 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "교단에 유물을 매매한다.",
-          "JumpAnchorStringId_JPN": "教団に遺物を売買する。",
+          "JumpAnchorStringId_JPN": "教団に遺物を売る。",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "가지고 있어 보자.",
-          "JumpAnchorStringId_JPN": "持ってみよう。",
+          "JumpAnchorStringId_JPN": "いや、私が持っておこう。",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -125,7 +125,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "허허, 흔쾌히 승낙해 주셔서 감사합니다.",
-      "UnitTalk_JPN": "はは、快く承諾いただきありがとうございます。",
+      "UnitTalk_JPN": "ハハッ、快く承諾いただきありがとうございます。",
       "TalkTime": 0.03
     },
     {
@@ -148,7 +148,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "왜 이런 물건을 사들이는지 모르겠다…. 그런 표정이시군요.",
-      "UnitTalk_JPN": "なぜこんな物を買い集めるのか分からない…そういうお顔ですね。",
+      "UnitTalk_JPN": "どうしてこのような物を買い取るのか分からない…といった表情をされておりますな。",
       "TalkTime": 0.03
     },
     {
@@ -175,7 +175,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "실은 교단 내부에서 이 유물이 <color=#F7BE45>성유물</color>일지도 모른다는 추측이 있었습니다.",
-      "UnitTalk_JPN": "実は教団内部では、この遺物が<color=#F7BE45>聖遺物</color>かもしれないという推測がありました。",
+      "UnitTalk_JPN": "実は教団内部で、この遺物が<color=#F7BE45>聖遺物</color>かもしれないという話が出ているのです。",
       "TalkTime": 0.03
     },
     {
@@ -188,7 +188,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "저희 교리에 대해서는 알고 계신지요?",
-      "UnitTalk_JPN": "私たちの教義についてはご存知でしょうか？",
+      "UnitTalk_JPN": "我々の教義についてはご存知でしょうか？",
       "TalkTime": 0.03
     },
     {
@@ -200,7 +200,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "저희가 믿는 마신 가프님은 본래 강철로 이루어진 몸을 지니셨다고 합니다.",
-      "UnitTalk_JPN": "私たちが信じる魔神ガフ様は、もともと鋼鉄でできた体をお持ちだったそうです。",
+      "UnitTalk_JPN": "我々が信仰する魔神ガプ様は、もともと鋼鉄でできた体をお持ちだったそうです。",
       "TalkTime": 0.03
     },
     {
@@ -212,7 +212,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "그리고 언젠가 올 재림의 때를 대비해, 그 몸을 여러 개로 나누어 곳곳에 숨겨 두셨다고 전해지죠.",
-      "UnitTalk_JPN": "そしていつか訪れる再臨の時を見据え、その体をいくつかに分けて各地に隠されたと伝えられています。",
+      "UnitTalk_JPN": "そして、いつか訪れる再臨の時を見据え…その体をいくつかに分けて各地に隠されたと伝えられています。",
       "TalkTime": 0.03
     },
     {
@@ -225,7 +225,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "이 유물도 그중 하나, 즉 <color=#F7BE45>성유물</color>일지도 모릅니다.",
-      "UnitTalk_JPN": "この遺物もその一つ、つまり<color=#F7BE45>聖遺物</color>かもしれません。",
+      "UnitTalk_JPN": "この遺物もその一つ、つまり<color=#F7BE45>聖遺物</color>かもしれないという事です。",
       "TalkTime": 0.03
     },
     {
@@ -237,7 +237,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "대교구에 보내서 철저하게 검증해 봐야겠지만요.",
-      "UnitTalk_JPN": "大教区に送って徹底的に検証してみるべきでしょうが。",
+      "UnitTalk_JPN": "大教区に送り、徹底的に検証いたしましょう。",
       "TalkTime": 0.03
     },
     {
@@ -250,7 +250,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그럼 저는 이만 물러가겠습니다.",
-      "UnitTalk_JPN": "それでは、私はこれで失礼いたします。",
+      "UnitTalk_JPN": "それでは、私はこれにて失礼いたします。",
       "TalkTime": 0.03
     },
     {
@@ -262,7 +262,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "앞으로의 <color=#F7BE45>[여정]</color>도 부디 무사히 끝마치시길 바랍니다.",
-      "UnitTalk_JPN": "今後の<color=#F7BE45>「救援の旅」</color>も、どうか無事に終えられますように。",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>を、どうかご無事に終えられますように。",
       "TalkTime": 0.03
     },
     {
@@ -290,7 +290,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그 유물에서 좋은 기운이 느껴지신다고요? …그렇군요.",
-      "UnitTalk_JPN": "その遺物から良い気が感じられるとおっしゃるのですか？…なるほど。",
+      "UnitTalk_JPN": "その遺物から良い気が感じられると…？なるほど。",
       "TalkTime": 0.03
     },
     {
@@ -303,7 +303,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "죄송합니다. 저희가 그만 실례되는 제안을 드렸습니다.",
-      "UnitTalk_JPN": "申し訳ありません。私どもが失礼な提案をしてしまいました。",
+      "UnitTalk_JPN": "申し訳ありません。我々が大変失礼な提案をしてしまいました。",
       "TalkTime": 0.03
     },
     {
@@ -315,7 +315,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "단장님께 도움이 되고 있다면 유물은 이미 자기 쓰임새를 찾은 셈이지요.",
-      "UnitTalk_JPN": "団長のお役に立っているのなら、遺物はすでに自らの役目を果たしたと言えるでしょう。",
+      "UnitTalk_JPN": "団長様のお役に立っているのなら、遺物はすでに自らの役目を見つけたということですね。",
       "TalkTime": 0.03
     },
     {
@@ -342,7 +342,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그럼 저는 이만 물러가겠습니다.",
-      "UnitTalk_JPN": "それでは、私はこれで失礼いたします。",
+      "UnitTalk_JPN": "それでは、私はこれにて失礼いたします。",
       "TalkTime": 0.03
     },
     {
@@ -354,7 +354,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "앞으로의 <color=#F7BE45>[여정]</color>도 부디 무사히 끝마치시길 바랍니다.",
-      "UnitTalk_JPN": "今後の<color=#F7BE45>「救援の旅」</color>も、どうか無事に終えられますように。",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>を、どうかご無事に終えられますように。",
       "TalkTime": 0.03
     }
   ]

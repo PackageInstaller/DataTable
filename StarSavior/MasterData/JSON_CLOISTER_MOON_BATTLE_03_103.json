@@ -8,21 +8,36 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_04",  // 처단자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_04",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_04",  // 처단자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           }
         ]
       },
@@ -31,23 +46,29 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_04",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_ELITEBONE_BLACK_ELITE_CLOISTER_04", // 맹목의 전파자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "IsElite": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_04",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_ELITEBONE_BLACK_ELITE_CLOISTER_04", // 맹목의 전파자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsElite": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           }
         ]
       }

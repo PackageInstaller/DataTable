@@ -4,48 +4,25 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_05",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_05",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_05",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_05",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MINION_OPERATION_04", // 주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_EXCEED_EYES_BLACK_BOSS_OP_13", // 공허초월자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_CHAOS" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_ORDER" //서브 속성 타입※※※※※※※※※※※※
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_05",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_MINION_OPERATION_04", // 주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           }

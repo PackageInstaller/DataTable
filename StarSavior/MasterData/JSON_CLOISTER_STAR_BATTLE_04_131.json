@@ -4,25 +4,39 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_05",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_04",  // 주시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_05",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_CLOISTER_04", // 망자의 처단자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_05",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_04",  // 주시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -30,24 +44,36 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_05",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WANDERER_PRICKLE_BLACK_CLOISTER_04",  // 배회자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_CLOISTER_05",
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_CLOISTER_04",  // 업화의 추적자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "IsBoss": true, 
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_05",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WANDERER_PRICKLE_BLACK_CLOISTER_04",  // 배회자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

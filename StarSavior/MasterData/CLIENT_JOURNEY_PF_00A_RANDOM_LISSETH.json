@@ -24,7 +24,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 아포칼립스 상단을 찾았는데….",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>とアポカリプス商会を見つけたんだけど…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>とアポカリプス商会にやって来たが…",
       "TalkTime": 0.03
     },
     {
@@ -38,7 +38,7 @@
       "UnitMotion": "SMILE",
       "UnitPos": "POS6",
       "UnitTalk_KOR": "오른쪽~ 왼쪽~ 원하시는 상자를 골라 보세요!",
-      "UnitTalk_JPN": "右～左～お好きな箱を選んでください！",
+      "UnitTalk_JPN": "右か左か、お好きな箱を選んでくださ～い！",
       "TalkTime": 0.03
     },
     {
@@ -47,7 +47,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitTalk_KOR": "오래된 주화! 그리고 NOA에서 협찬해 주신 특별한 상품까지!",
-      "UnitTalk_JPN": "古い硬貨！そしてNOA様からご提供いただいた特別商品まで！",
+      "UnitTalk_JPN": "古のコインに！NOAから提供された特別な品まで！",
       "TalkTime": 0.03
     },
     {
@@ -57,7 +57,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "푸짐한 경품이 준비되어 있어요! 추첨권이 있다면 지금 바로 도전해 보세요!",
-      "UnitTalk_JPN": "豪華な景品が用意されています！抽選券をお持ちの方は今すぐ挑戦してみてください！",
+      "UnitTalk_JPN": "豪華な景品が用意されています！抽選券をお持ちの方は、今すぐ挑戦してみてください！",
       "TalkTime": 0.03
     },
     {
@@ -99,7 +99,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "네. 어떻게 해야 고객을 더 많이 모을 수 있을지 고민해 봤거든요.",
-      "UnitTalk_JPN": "はい。どうすればもっと多くのお客様を集められるか考えてみたんです。",
+      "UnitTalk_JPN": "はい。どうすればお客様をもっと集められるか、考えてみたんです。",
       "TalkTime": 0.03
     },
     {
@@ -109,7 +109,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그래서 경품 추첨 행사를 기획해 봤어요!",
-      "UnitTalk_JPN": "それで景品抽選イベントを企画してみたんです！",
+      "UnitTalk_JPN": "それで、景品抽選イベントを企画してみたという訳です！",
       "TalkTime": 0.03
     },
     {
@@ -119,7 +119,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "CameraOffsetTime": "NR",
       "UnitTalk_KOR": "손님도 해 보실래요? 원하시는 상자에 추첨권을 넣으면 자동으로 추첨이 돼요.",
-      "UnitTalk_JPN": "お客様もいかがですか？ご希望の箱に抽選券を入れると、自動的に抽選が行われます。",
+      "UnitTalk_JPN": "お客様もいかがですか？ご希望の箱に抽選券を入れると、自動的に抽選が行われるんですよ。",
       "TalkTime": 0.03
     },
     {
@@ -152,7 +152,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "그렇다면…",
-      "UnitTalk_JPN": "では…",
+      "UnitTalk_JPN": "だったら…",
       "TalkTime": 0.03
     },
     {
@@ -163,13 +163,13 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "추첨권을 왼쪽 상자에 넣는다.",
-          "JumpAnchorStringId_JPN": "抽選券を左の箱に入れる。",
+          "JumpAnchorStringId_JPN": "左の箱に抽選券を入れる。",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "추첨권을 오른쪽 상자에 넣는다.",
-          "JumpAnchorStringId_JPN": "抽選券を右の箱に入れる。",
+          "JumpAnchorStringId_JPN": "右の箱に抽選券を入れる。",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         },
         {
@@ -186,7 +186,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "이건 우리의 행운을 평가할 기회다.",
-      "UnitTalk_JPN": "これは我々の幸運を試す機会だ。",
+      "UnitTalk_JPN": "これは私たちの運を試す機会だ。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -216,7 +216,7 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "좋아요! 두구두구두구~",
-      "UnitTalk_JPN": "よし！ドクンドクンドクン～",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
       "TalkTime": 0.03
     },
     {
@@ -233,7 +233,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
       "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니….",
-      "UnitTalk_JPN": "抽選券を入れた箱の中から歯車が回る音が聞こえたかと思うと…",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -280,7 +280,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "와아…!",
-      "UnitTalk_JPN": "わあ…！",
+      "UnitTalk_JPN": "わぁ…！",
       "TalkTime": 0.03
     },
     {
@@ -297,7 +297,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "축하드려요, 손님! 단번에 당첨되셨네요!",
-      "UnitTalk_JPN": "おめでとうございます、お客様！一発で当選されました！",
+      "UnitTalk_JPN": "おめでとうございます、お客様！一発で当選されましたね！",
       "TalkTime": 0.03
     },
     {
@@ -306,7 +306,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitTalk_KOR": "당첨 상품은 오래된 주화예요.",
-      "UnitTalk_JPN": "当選商品は古い硬貨です。",
+      "UnitTalk_JPN": "景品は、古のコインです。",
       "TalkTime": 0.03
     },
     {
@@ -316,7 +316,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": "그럼 앞으로도 저희 아포칼립스 상단에 많은 사랑 부탁드릴게요!",
-      "UnitTalk_JPN": "それではこれからも、私たちアポカリプス商会をどうぞよろしくお願いいたします！",
+      "UnitTalk_JPN": "それではこれからも、アポカリプス商会をどうぞよろしくお願いします！",
       "TalkTime": 0.03
     },
     {
@@ -345,7 +345,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "…그날, 주머니가 무거워졌지만 발걸음은 평소보다 가벼웠다.",
-      "UnitTalk_JPN": "…あの日、ポケットは重くなったが、足取りは普段より軽やかだった。",
+      "UnitTalk_JPN": "…ポケットは重くなったが、足取りはいつもより軽かった。",
       "TalkTime": 0.03
     },
     {
@@ -353,7 +353,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "이 행운, 틀림없이 앞으로의 여정이 순탄하리라는 전조다!",
-      "UnitTalk_JPN": "この幸運は、間違いなくこれからの旅が順風満帆になる前兆だ！",
+      "UnitTalk_JPN": "この幸運は、間違いなくこれからの旅が順調に進む前兆だ！",
       "TalkTime": 0.03
     },
     {
@@ -397,7 +397,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "이건 우리의 행운을 평가할 기회다.",
-      "UnitTalk_JPN": "これは我々の幸運を試す機会だ。",
+      "UnitTalk_JPN": "これは私たちの運を試す機会だ。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -427,7 +427,7 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "좋아요! 두구두구두구~",
-      "UnitTalk_JPN": "よし！ドクンドクンドクン～",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
       "TalkTime": 0.03
     },
     {
@@ -444,7 +444,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
       "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니….",
-      "UnitTalk_JPN": "抽選券を入れた箱の中から歯車が回る音が聞こえたかと思うと…",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -501,7 +501,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "하지만 너무 실망하지 마세요, 손님!",
-      "UnitTalk_JPN": "でも、あまりがっかりしないでくださいね、お客様！",
+      "UnitTalk_JPN": "でも、あまりガッカリしないでくださいね！",
       "TalkTime": 0.03
     },
     {
@@ -510,7 +510,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitTalk_KOR": "다음에는 꼭 당첨되실 수 있을 거예요!",
-      "UnitTalk_JPN": "次はきっと当選できるはずですよ！",
+      "UnitTalk_JPN": "次はきっと当選できますよ！",
       "TalkTime": 0.03
     },
     {
@@ -527,7 +527,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "앗…! 이렇게 말하면 주최자로서 공정성이 없는 걸까요…. 우으으….",
-      "UnitTalk_JPN": "あっ…！こう言うと主催者として公平性に欠けるのでしょうか…ううう…",
+      "UnitTalk_JPN": "あっ…！こんなことを言うのは、主催者として公平性に欠けるのでしょうか…ううぅ…",
       "TalkTime": 0.03
     },
     {
@@ -556,7 +556,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "고뇌에 빠진 리세트를 달래 주고 숙소로 돌아갔다.",
-      "UnitTalk_JPN": "苦悩に沈むリセットを慰め、宿へ戻った。",
+      "UnitTalk_JPN": "苦悩に陥ったリセットを慰め、宿へと戻った。",
       "TalkTime": 0.03
     },
     {
@@ -628,7 +628,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "이건 우리의 직감을 시험할 기회다.",
-      "UnitTalk_JPN": "これは我々の直感を試す機会だ。",
+      "UnitTalk_JPN": "これは私たちの直感を試す機会だ。",
       "TalkTime": 0.03
     },
     {
@@ -649,7 +649,7 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "좋아요! 두구두구두구~",
-      "UnitTalk_JPN": "よし！ドクンドクンドクン～",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
       "TalkTime": 0.03
     },
     {
@@ -681,7 +681,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
       "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니…",
-      "UnitTalk_JPN": "くじ券を入れた箱の中から歯車が回る音が聞こえたかと思うと…",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
       "TalkTime": 0.03
     },
     {
@@ -728,7 +728,7 @@
       "UnitMotion": "SMILE",
       "UnitPos": "POS6",
       "UnitTalk_KOR": "축하드려요, 손님! 단번에 당첨되셨네요!",
-      "UnitTalk_JPN": "おめでとうございます、お客様！一発で当選されました！",
+      "UnitTalk_JPN": "おめでとうございます、お客様！一発で当選されましたね！",
       "TalkTime": 0.03
     },
     {
@@ -737,7 +737,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitTalk_KOR": "이건 특별상인 <color=#F7BE45>별빛의 정수</color>예요.",
-      "UnitTalk_JPN": "これは特別賞の<color=#F7BE45>星の精髄</color>です。",
+      "UnitTalk_JPN": "これは特別賞の<color=#F7BE45>星光の結晶</color>です。",
       "TalkTime": 0.03
     },
     {
@@ -746,7 +746,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitTalk_KOR": "구원자님들의 잠재력을 끌어올릴 수 있다고 들었어요!",
-      "UnitTalk_JPN": "救援者たちの潜在能力を引き上げることができると聞いています！",
+      "UnitTalk_JPN": "救援者の潜在能力を引き出すことができるそうです！",
       "TalkTime": 0.03
     },
     {
@@ -771,7 +771,7 @@
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_LIGHT_03.wav",
       "UnitPos": "POS1",
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>의 손에 닿은 보석이 빛의 입자로 변해 녹아들었다.",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>の手に触れた宝石が光の粒子へと変わり、溶け込んだ。",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>の手に触れた宝石が、光の粒子へと変わり溶け込んだ。",
       "TalkTime": 0.03
     },
     {
@@ -789,7 +789,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "CameraOffsetTime": "NR",
       "UnitTalk_KOR": "와아…! 바로 효과가 나타났나 봐요!",
-      "UnitTalk_JPN": "わあ…！すぐに効果が出たようですね！",
+      "UnitTalk_JPN": "わぁ…！すぐに効果が出たようですね！",
       "TalkTime": 0.03
     },
     {
@@ -799,7 +799,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그럼 앞으로도 저희 아포칼립스 상단에 많은 사랑 부탁드릴게요!",
-      "UnitTalk_JPN": "それではこれからも、私たちアポカリプス商会をどうぞよろしくお願いいたします！",
+      "UnitTalk_JPN": "それではこれからも、アポカリプス商会をどうぞよろしくお願いします！",
       "TalkTime": 0.03
     },
     {
@@ -828,7 +828,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "…그날, <color=#F7BE45>[CHARACTER_NAME]</color>(와)과 직감의 힘에 대해 이야기를 나눴다.",
-      "UnitTalk_JPN": "…あの日、<color=#F7BE45>[CHARACTER_NAME]</color>は直感の力について語り合った。",
+      "UnitTalk_JPN": "…<color=#F7BE45>[CHARACTER_NAME]</color>と、直感の力について語り合った。",
       "TalkTime": 0.03
     },
     {
@@ -836,7 +836,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "이 행운, 틀림없이 앞으로의 여정이 순탄하리라는 전조다!",
-      "UnitTalk_JPN": "この幸運は、間違いなくこれからの旅が順風満帆になる前兆だ！",
+      "UnitTalk_JPN": "この幸運は、間違いなくこれからの旅が順調に進む前兆だ！",
       "TalkTime": 0.03
     },
     {
@@ -899,7 +899,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "이건 우리의 직감을 시험할 기회다.",
-      "UnitTalk_JPN": "これは我々の直感を試す機会だ。",
+      "UnitTalk_JPN": "これは私たちの直感を試す機会だ。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -921,7 +921,7 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "좋아요! 두구두구두구~",
-      "UnitTalk_JPN": "よし！ドクンドクンドクン～",
+      "UnitTalk_JPN": "よぉし！ドゥルルルル～…",
       "TalkTime": 0.03
     },
     {
@@ -953,7 +953,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_03.wav",
       "UnitTalk_KOR": "추첨권을 넣은 상자 안에서 톱니바퀴 돌아가는 소리가 들리더니…",
-      "UnitTalk_JPN": "くじ券を入れた箱の中から歯車が回る音が聞こえたかと思うと…",
+      "UnitTalk_JPN": "抽選券を入れた箱の中から、歯車が回る音が聞こえたかと思うと…",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -1009,7 +1009,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그래도 다음 기회가 있을 테니까요!",
-      "UnitTalk_JPN": "でも次があるさ！",
+      "UnitTalk_JPN": "でも、次がありますから！",
       "TalkTime": 0.03
     },
     {
@@ -1019,7 +1019,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "USN_UI_REST_START",
       "UnitTalk_KOR": "직접 보지는 못했지만 분명 아슬아슬했을 거예요!",
-      "UnitTalk_JPN": "直接は見ていないけれど、きっと危なかったに違いない！",
+      "UnitTalk_JPN": "直接見てはいませんが、きっと惜しかったと思います！",
       "TalkTime": 0.03
     },
     {
@@ -1048,7 +1048,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "리세트의 위로를 뒤로 하고 숙소로 돌아갔다.",
-      "UnitTalk_JPN": "リセットの慰めを後にして宿へ戻った。",
+      "UnitTalk_JPN": "リセットの慰めを後に、宿へと戻った。",
       "TalkTime": 0.03
     },
     {
@@ -1056,7 +1056,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 앞으로는 신중한 자세를 취하기로 했다...",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と今後は慎重な姿勢を取ることにした…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と、今後は慎重な姿勢を取ることにした…",
       "TalkTime": 0.03
     },
     {
@@ -1122,7 +1122,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitQuickSet": true,
       "UnitTalk_KOR": "추첨권이 없으시다니…",
-      "UnitTalk_JPN": "抽選券がないとは…",
+      "UnitTalk_JPN": "抽選券をお持ちでないなんて…",
       "TalkTime": 0.03
     },
     {
@@ -1132,7 +1132,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_SHOP",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "으으…. 아쉽지만 원칙은 지켜야 하니까요!",
-      "UnitTalk_JPN": "うう…残念ですが、原則は守らなければなりません！",
+      "UnitTalk_JPN": "うぅ…残念ですが、ルールは守らなければなりません！",
       "TalkTime": 0.03
     },
     {
@@ -1150,7 +1150,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "괜찮아.",
-          "JumpAnchorStringId_JPN": "大丈夫。"
+          "JumpAnchorStringId_JPN": "大丈夫だ。"
         },
         {
           "Uid": 2,
@@ -1167,7 +1167,7 @@
       "UnitMotion": "NORMAL",
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "네! 언제든 찾아와 주세요, 손님!",
-      "UnitTalk_JPN": "はい！いつでもお越しください、お客様！",
+      "UnitTalk_JPN": "はい！いつでもお越しくださいね、お客様！",
       "TalkTime": 0.03
     },
     {

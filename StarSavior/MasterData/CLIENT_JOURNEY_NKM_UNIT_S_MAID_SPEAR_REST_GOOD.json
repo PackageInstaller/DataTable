@@ -52,7 +52,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "흠흠… 별건 아니지만… 어제는 평소보다 푹 잠들었습니다.",
-      "UnitTalk_JPN": "あの…たいしたことではありませんが…昨日はいつもより良く眠れたのです。",
+      "UnitTalk_JPN": "コホン…たいしたことではありませんが…昨日はいつもより良く眠れたのです。",
       "TalkTime": 0.03
     },
     {
@@ -96,6 +96,8 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
       "AutoHighlight": "LIGHT"
     }
   ]

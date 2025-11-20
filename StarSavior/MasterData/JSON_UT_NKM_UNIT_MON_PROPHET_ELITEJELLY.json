@@ -17,7 +17,7 @@
           {
             "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_INFO.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_FOCUS_INFO_READY.wav"
             ]
           }
         ]
@@ -26,23 +26,36 @@
         "StateName": "USN_START",
         "SoundEvents": [
           {
-            "EventFrame": 9,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_MUTATE.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_START.wav"
             ]
           }
         ]
       },
       {
         "StateName": "USN_ATTACK",
+        "NonAttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 10,
+            "ReActType": "",
+            "CameraCrashGap": 0.05,
+            "CameraCrashTime": 1.7,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
         "AttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 57,
+            "EventFrame": 60,
             "ReActType": "NRT_DAMAGE_A",
-            // "StopTimeDef": 0.15,
-            // "CameraCrashGap": 0.2,
-            // "CameraCrashTime": 0.4,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.5,
             "EffectData": {
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
@@ -51,21 +64,15 @@
         ],
         "SoundEvents": [
           {
-            "EventFrame": 16,
+            "EventFrame": 8,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_ATK.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_ATK.wav"
             ]
           },
           {
-            "EventFrame": 43,
+            "EventFrame": 61,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_ATK_02.wav"
-            ]
-          },
-          {
-            "EventFrame": 52,
-            "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_ATK_03.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_ATK_02.wav"
             ]
           }
         ]
@@ -75,10 +82,10 @@
         "AttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 47,
+            "EventFrame": 65,
             "ReActType": "NRT_DAMAGE_A",
-            // "CameraCrashGap": 0.1,
-            // "CameraCrashTime": 0.3,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.5,
             "EffectData": {
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
@@ -87,15 +94,21 @@
         ],
         "SoundEvents": [
           {
-            "EventFrame": 10,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_SPECIAL.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_SPECIAL_ATTACK.wav"
             ]
           },
           {
-            "EventFrame": 41,
+            "EventFrame": 38,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_SPECIAL_02.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_SPECIAL_ATTACK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 66,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_SPECIAL_ATTACK_03.wav"
             ]
           }
         ]
@@ -104,8 +117,9 @@
         "StateName": "USN_HYPER",
         "UseInternalCamera": false,
         "UseEnemyTargetCamera": true,
-        // "ZoomBlurMaxTime": 0,
-        // "ZoomBlurTime": 2.5,
+        "PlayNextCineCamFrame": 38,
+        "ZoomBlurMaxTime": 0,
+        "ZoomBlurTime": 2.5,
         "StartUnitShow": {
           "ShowOffMyTeam": true,
           "FormationMyTeam": "SFT_CENTER_TARGET_ENEMY",
@@ -120,22 +134,24 @@
             // "CameraCrashGap": 0.5,
             // "CameraCrashTime": 0.5,
             "EffectData": {
-              "EffectName": "VFX_HIT_UNIT_MON_WIZARD_HALO_BLACK_HYPER.prefab",
+              "EffectName": "VFX_HIT_UNIT_MON_PROPHET_ELITEJELLY_HYP_HIT.prefab",
               "EffectHeight": "BVH_BODY"
-            }
+            },
+            "ReAttackCount": 2,
+            "ReAttackGap": 0.1
           }
         ],
         "SoundEvents": [
           {
-            "EventFrame": 6,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_HYPER.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_HYPER_ATTACK.wav"
             ]
           },
           {
-            "EventFrame": 46,
+            "EventFrame": 49,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_HYPER_02.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_HYPER_ATTACK_02.wav"
             ]
           }
         ]
@@ -144,21 +160,15 @@
         "StateName": "USN_DYING",
         "SoundEvents": [
           {
-            "EventFrame": 3,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_MUTATE_08.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_DYING.wav"
             ]
           },
           {
-            "EventFrame": 4,
+            "EventFrame": 30,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_VOICE_03.wav"
-            ]
-          },
-          {
-            "EventFrame": 22,
-            "listSoundName": [
-              "SFX_BATTLE_COMMON_DIE.wav"
+              "SFX_BT_UNIT_MON_PROPHET_ELITEJELLY_DYING_02.wav"
             ]
           }
         ]

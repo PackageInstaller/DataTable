@@ -4,25 +4,45 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_INTERSTELLAR_03", //수집자
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_INTERSTELLAR_02", // 추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_INTERSTELLAR_03", //은둔자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_ELITEWORM_BLACK_ELITE_CLOISTER_INTERSTELLAR_02", // 번뇌의 숙고자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_INTERSTELLAR_03", //수집자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_INTERSTELLAR_02", // 추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           }
         ]
       },
@@ -30,24 +50,43 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_INTERSTELLAR_03", //수집자
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_02",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_CLOISTER_INTERSTELLAR_03", //재앙의 숭배자
+            "UnitStrId": "NKM_UNIT_MON_BELLWETHER_MANE_BLACK_BOSS_CLOISTER_INTERSTELLAR_02", // 공허선도자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_SUN" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1500,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -3000,
+              "NST_TURN_SPEED" : -20
+            }
+
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_INTERSTELLAR_03", //수집자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_02",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           }
         ]
       }

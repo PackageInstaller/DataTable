@@ -1,0 +1,702 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "ILLUST_BG_ASTRO_SANCTUM.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_21.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_2.wav"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "0.09803922"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "단장님!",
+      "UnitTalk_JPN": "団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장님, 뭐하시는 거예요! 지금 서류가 이만큼이나 밀려 있다구요?!",
+      "UnitTalk_JPN": "団長、何をしているんですか！？書類がこんなにも溜まっているというのに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "리사가 가리킨 곳을 보자, 그 말대로 서류가 잔뜩 쌓여 있었다.",
+      "UnitTalk_JPN": "リサが指差した場所を見ると、言葉通り書類が山積みになっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님, 얼른 해치우지 않으면 저 서류가 단장님을 덮쳐올 거예요!",
+      "UnitTalk_JPN": "早く片付けないと、あの書類が団長に襲いかかりますよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EARTHQUAKE_07.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "우르르-",
+      "UnitTalk_JPN": "ドドドー",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리사의 말이 끝나기가 무섭게 서류가 와르르 쏟아지더니, 수십만장이 이쪽을 향해 파도쳐서 오기 시작했다.",
+      "UnitTalk_JPN": "リサがそう言うと書類は崩れ落ち、数十万枚もの書類がこちらに向かって波のように押し寄せてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사, 살려줘!",
+          "JumpAnchorStringId_JPN": "た、助けて！"
+        }
+      ]
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_01.wav",
+      "UnitTalk_KOR": "달리다가 발에 서류가 감겨 넘어지자, 결국 눈을 질끈 감았지만…",
+      "UnitTalk_JPN": "駆けだした足に書類が絡まって転び、思わず目をぎゅっと閉じたが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그럼에도 불구하고 서류의 파도들이 계속해서 밀려들어 오는 게 똑똑히 보였다.",
+      "UnitTalk_JPN": "それでもなお、書類の波が押し寄せてくるのがはっきりと見えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장님 얼른요!",
+      "UnitTalk_JPN": "団長、早く！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장님!",
+      "UnitTalk_JPN": "団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "서류에 파묻혀 사람이 잠겨가는데도 리사는 계속해서 호통을…",
+      "UnitTalk_JPN": "書類に人が飲み込まれていくというのに、リサは相変わらず怒鳴り続けて…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "단장님.",
+      "UnitTalk_JPN": "団長さま。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…응?",
+          "JumpAnchorStringId_JPN": "…うん？"
+        }
+      ]
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "한결 부드러워진 목소리에 의아함이 들었다.",
+      "UnitTalk_JPN": "一段と柔らかくなった声に、いぶかしさを覚えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "눈을 뜨세요, 단장님.",
+      "UnitTalk_JPN": "目を開けてください、団長さま。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 목소리는… 리사가 아니라…",
+      "UnitTalk_JPN": "この声は…リサじゃない…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "괜찮아요. 전부 꿈이니까.",
+      "UnitTalk_JPN": "大丈夫です。すべて夢ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_NIGHT.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_05.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "힘겹게 눈꺼풀을 들어올렸다.",
+      "UnitTalk_JPN": "重いまぶたをこじ開けた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어둑한 밤하늘 위로 푸른 달빛이 내렸다.",
+      "UnitTalk_JPN": "薄暗い夜空に、青い月明かりが降り注いでいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitTalk_KOR": "짠. 눈을 뜨니까 전부 사라졌죠?",
+      "UnitTalk_JPN": "ほら。目を開けたら、すべて消えたでしょう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT.png",
+      "BgChangeTime": 1.0
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…그리고 세이라가 침대에 누운 나를 내려다보고 있었다.",
+      "UnitTalk_JPN": "…そして、セイラがベッドに横たわる私を見下ろしていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "악몽은 사실 아무것도 아니에요.",
+      "UnitTalk_JPN": "悪夢なんて、実は何でもないのです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여름밤이 너무 더워서, 겨울밤이 너무 추워서.",
+      "UnitTalk_JPN": "夏の夜は暑すぎるから。冬の夜は寒すぎるから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "다들 그런 사소하고 당연한 이유로도 나쁜 꿈을 꿔요.",
+      "UnitTalk_JPN": "そんな些細な理由で、悪い夢を見るものです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 <color=#F7BE45>꿈은 깨고 나면 끝</color>.",
+      "UnitTalk_JPN": "ですが、<color=#F7BE45>夢は覚めたら終わり</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "눈을 맞춰오는 세이라의 이름을 부르려고 했지만, 어째서인지 목소리가 나오지 않았다.",
+      "UnitTalk_JPN": "目を合わせてくるセイラの名前を呼ぼうとしたが、なぜか声が出なかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "방금까지 꾸셨던 나쁜 꿈은 제가 가져 갈게요.",
+      "UnitTalk_JPN": "先ほどまで見ていた悪夢は、わたしがもらって行きますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "땀방울이 맺힌 이마에 시원할 정도로 서늘한 손바닥이 닿았다.",
+      "UnitTalk_JPN": "汗ばんだ額に、ひんやりと心地よい手のひらが触れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "지금부터 다시, 좋은 꿈을 꾸실 수 있게요.",
+      "UnitTalk_JPN": "今からは、良い夢を見られるように。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "가볍게 닿아오는 손가락이 가만가만 이마에 들러붙은 머리칼을 정리해 준다.",
+      "UnitTalk_JPN": "軽く触れた指が、額に張り付いた髪をそっと整えてくれる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0.09803922"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 손길에 정신이 아득해진다…",
+      "UnitTalk_JPN": "その感触に意識が遠のく…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SEIRA"
+      ],
+      "UnitTalk_KOR": "그럼 내일 아침에 봬요, 단장님.",
+      "UnitTalk_JPN": "では、明日の朝にお会いしましょうね。団長さま。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5,
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아침…?",
+          "JumpAnchorStringId_JPN": "朝…？"
+        }
+      ]
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "눈을 감은 지 얼마되지 않은 것 같은데 그새 아침이 밝아 있었다.",
+      "UnitTalk_JPN": "目を閉じてからあまり経っていない気がするが、いつの間にか夜が明けていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩐지 개운한 몸을 풀며 침대에서 몸을 일으켰다.",
+      "UnitTalk_JPN": "スッキリした身体を伸ばし、ベッドから起き上がった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋은 아침이에요, 단장님.",
+      "UnitTalk_JPN": "おはようございます、団長さま。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "간밤동안 좋은 꿈 꾸셨나요?",
+      "UnitTalk_JPN": "昨夜は良い夢を見られましたか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…꿈?",
+          "JumpAnchorStringId_JPN": "…夢？"
+        }
+      ]
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "평소와 다름없이 훈련을 시작하려던 찰나, 세이라에게서 묘한 기시감이 느껴졌다.",
+      "UnitTalk_JPN": "いつも通りトレーニングを始めようとした瞬間、セイラから妙な既視感を感じた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "세이라, 우리 혹시…",
+          "JumpAnchorStringId_JPN": "セイラ…"
+        }
+      ]
+    },
+    {
+      "Uid": 135,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어제 저녁에… 만난 적 있어?",
+          "JumpAnchorStringId_JPN": "昨日の夜…会ったっけ？"
+        }
+      ]
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "어제 저녁이요?",
+      "UnitTalk_JPN": "昨日の夜ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "음… 글쎄요. 꿈에서 만났으려나요?",
+      "UnitTalk_JPN": "うーん…どうでしょう。夢で会ったのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…갑자기 느껴진 기시감은, 단순한 착각이었던 모양이다.",
+      "UnitTalk_JPN": "…単なる勘違いだったようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 2.5,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "SL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>꿈은 깨면 끝</color>…",
+      "UnitTalk_JPN": "<color=#F7BE45>夢は覚めたら終わり</color>…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "…그러니까 기억하지 못하셔도 이상할 것 없어요.",
+      "UnitTalk_JPN": "…ですから、覚えていなくても不思議ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라의 미소에서, 쓸쓸함이 느껴지는 것은 왜일까.",
+      "UnitTalk_JPN": "セイラの微笑みから、寂しさが感じられるのは何故だろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "원인을 알 수 없는 기시감을 뒤로 하고, 훈련을 시작했다.",
+      "UnitTalk_JPN": "不可解な既視感を振り払い、トレーニングを始めた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_BAND_BASS_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

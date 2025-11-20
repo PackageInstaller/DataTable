@@ -46,21 +46,17 @@
       },
       {
         "StateName": "USN_DYING",
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_04.wav"
-              }
-            ]
-          }
-        ],
         "SoundEvents": [
           {
             "EventFrame": 0,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE_04.wav"
             ]
           },
           {
@@ -122,6 +118,12 @@
             ]
           },
           {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 12,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
@@ -167,16 +169,6 @@
             "EventFrame": 132,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
-            ]
-          }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
-              }
             ]
           }
         ]
@@ -276,6 +268,12 @@
             ]
           },
           {
+            "EventFrame": 147,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE_05.wav"
+            ]
+          },
+          {
             "EventFrame": 180,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
@@ -299,18 +297,7 @@
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 147,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE_05.wav"
-              }
-            
-            ]
-          }
-        ],
+        ]
       },
       {
         "StateName": "USN_HYPER",
@@ -389,6 +376,12 @@
             ]
           },
           {
+            "EventFrame": 135,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 154,
             "listSoundName": [
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_WHOOSH.wav"
@@ -412,17 +405,7 @@
               "SFX_BT_UNIT_MON_VOIDER_SHIELD_BLACK_BODYFALL_02.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 135,
-                "VoiceName": "SFX_BT_UNIT_MON_VOIDER_VOICE.wav"
-              }
-            ]
-          }
-        ],
+        ]
       }
     ]
   }

@@ -6,44 +6,50 @@
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 1,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC",
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@100",
           "EffectActiveTurn" : 13,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL1_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 2,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC_01",
-          "EffectActiveTurn" : 23,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@150",
+          "EffectActiveTurn" : 25,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL2_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 3,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC_02",
-          "EffectActiveTurn" : 32,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@200",
+          "EffectActiveTurn" : 36,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL3_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 4,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC_03",
-          "EffectActiveTurn" : 40,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@250",
+          "EffectActiveTurn" : 46,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL4_01"]
         },
         {
           "SuddenDeathGroupId" : 101,
           "SuddenDeathLevel" : 5,
-          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC_04",
-          "EffectActiveTurn" : 47,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@300",
+          "EffectActiveTurn" : 56,
           "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL5_01"]
+        },
+        {
+          "SuddenDeathGroupId" : 101,
+          "SuddenDeathLevel" : 6,
+          "SuddenDeathDesc" : "SI_PVP_ASYNC_DEATH_LEVEL_DESC@@400",
+          "EffectActiveTurn" : 66,
+          "ATeamBattleEffectList" : ["BATTLE_EFFECT_PVP_ASYNC_A_LEVEL6_01"]
         },
         {
           "SuddenDeathGroupId" : 201,
           "SuddenDeathLevel" : 1,
           "SuddenDeathDesc" : "SI_PVP_RANK_DEATH_LEVEL_DESC",
-          "EndLevelTurn" : 13,
-          "AllTeamBattleEffectList" : ["BATTLE_EFFECT_PVP_RANK_ALL_LEVEL1_01", "BATTLE_EFFECT_PVP_RANK_ALL_LEVEL1_02"]
+          "EndLevelTurn" : 13
         },
         {
           "SuddenDeathGroupId" : 201,

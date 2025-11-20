@@ -771,6 +771,14 @@
             "EventMoveTarget": "NEMT_CENTER"
           }
         ],
+        "ScaleEvents": [
+          {
+            "AnimTime" : true,
+            "EventFrame": 200,
+            "ScaleTargetRaid" : true, 
+            "ScaleFactor" : 0.15
+          }
+        ],
         "NonAttackEvents": [
           {
             "AnimTime": true,

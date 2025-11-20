@@ -7,61 +7,61 @@
           "SkillLevelGroupID" : 1000001,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE1_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE1_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE1_01"]
         },
         {
           "SkillLevelGroupID" : 1000002,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE2_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE2_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE2_01"]
         },
         {
           "SkillLevelGroupID" : 1000003,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE3_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE3_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE3_01"]
         },
         {
           "SkillLevelGroupID" : 1000004,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE4_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE4_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE4_01"]
         },
         {
           "SkillLevelGroupID" : 1000005,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE5_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE5_01", "COND_MON_COMMON_PASSIVE5_02", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE5_01", "COND_MON_COMMON_PASSIVE5_02"]
         },
         {
           "SkillLevelGroupID" : 1000006,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE6_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE6_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE6_01"]
         },
         {
           "SkillLevelGroupID" : 1000007,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE7_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE7_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE7_01"]
         },
         {
           "SkillLevelGroupID" : 1000008,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE8_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE8_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE8_01"]
         },
         {
           "SkillLevelGroupID" : 1000009,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE9_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE9_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE9_01"]
         },
         {
           "SkillLevelGroupID" : 1000010,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_COMMON_PASSIVE10_DESC",
-          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE10_01", "COND_MON_COMMON_PASSIVE_EFFECT_01"]
+          "SkillLevelSE" : ["COND_MON_COMMON_PASSIVE10_01"]
         },
         {
           "SkillLevelGroupID" : 1100011,
@@ -590,7 +590,7 @@
         {
           "SkillLevelGroupID" : 1100404,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_SPOTTER_RING_SPECIAL_DESC",
+          "SkillLevelDesc" : "MON_SPOTTER_RING_PASSIVE_DESC",
           "SkillLevelSE" : ["COND_MON_SPOTTER_RING_PASSIVE_01"]
         },
         {
@@ -616,6 +616,18 @@
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_CONSIDER_WORM_SPECIAL_DESC",
           "SkillLevelSE" : ["COND_MON_CONSIDER_WORM_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 1100431,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HOODLUM_TORCH_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_HOODLUM_TORCH_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 1100432,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HOODLUM_TORCH_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_HOODLUM_TORCH_SPECIAL_01"]
         },
         {
           "SkillLevelGroupID" : 1200011,
@@ -998,7 +1010,7 @@
         {
           "SkillLevelGroupID" : 1200214,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_SPOTTER_ELITERING_HYPER_DESC",
+          "SkillLevelDesc" : "MON_SPOTTER_ELITERING_PASSIVE_DESC",
           "SkillLevelSE" : ["COND_MON_SPOTTER_ELITERING_PASSIVE_01", "COND_MON_SPOTTER_ELITERING_PASSIVE_02"]
         },
         {
@@ -1971,7 +1983,7 @@
           "SkillLevelGroupID" : 1300343,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_TUNER_CROWN_BOSS_HYPER_DESC",
-          "SkillLevelSE" : ["COND_MON_TUNER_CROWN_BOSS_HYPER_01", "COND_MON_TUNER_CROWN_BOSS_HYPER_02", "COND_MON_TUNER_CROWN_BOSS_HYPER_03"]
+          "SkillLevelSE" : ["COND_MON_TUNER_CROWN_BOSS_HYPER_02", "COND_MON_TUNER_CROWN_BOSS_HYPER_03"]
         },
         {
           "SkillLevelGroupID" : 1300344,
@@ -2173,9 +2185,172 @@
           "SkillLevelSE" : ["COND_NKM_UNIT_MON_PLUMP_HAMMER_BOSS_PASSIVE2_01"]
         },
         {
+          "SkillLevelGroupID" : 1300411,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_EXCEED_UNSEAL_BOSS_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_EXCEED_UNSEAL_BOSS_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 1300412,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_EXCEED_UNSEAL_BOSS_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_EXCEED_UNSEAL_BOSS_SPECIAL_01", "COND_MON_EXCEED_UNSEAL_BOSS_SPECIAL_02", "COND_MON_EXCEED_UNSEAL_BOSS_SPECIAL_03"]
+        },
+        {
+          "SkillLevelGroupID" : 1300413,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_EXCEED_UNSEAL_BOSS_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_EXCEED_UNSEAL_BOSS_HYPER_01", "COND_MON_EXCEED_UNSEAL_BOSS_HYPER_02", "COND_MON_EXCEED_UNSEAL_BOSS_HYPER_03", "COND_MON_EXCEED_UNSEAL_BOSS_HYPER_04", "COND_MON_EXCEED_UNSEAL_BOSS_HYPER_05", "COND_MON_EXCEED_UNSEAL_BOSS_HYPER_06", "COND_MON_EXCEED_UNSEAL_BOSS_HYPER_07"]
+        },
+        {
+          "SkillLevelGroupID" : 1300414,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_EXCEED_UNSEAL_BOSS_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 1300415,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_EXCEED_UNSEAL_BOSS_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_01", "COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_02", "COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_03", "COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_04", "COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_05", "COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_06", "COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_07", "COND_MON_EXCEED_UNSEAL_BOSS_PASSIVE2_08"]
+        },
+        {
+          "SkillLevelGroupID" : 1300421,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BELLWETHER_HORN_BOSS_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_ATTACK_01", "COND_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_ATTACK_02"]
+        },
+        {
+          "SkillLevelGroupID" : 1300422,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BELLWETHER_HORN_BOSS_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_SPECIAL_01"]
+        },
+        {
+          "SkillLevelGroupID" : 1300423,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BELLWETHER_HORN_BOSS_HYPER_DESC",
+          "SkillLevelSE" : ["COND_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_HYPER_01", "COND_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 1300424,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BELLWETHER_HORN_BOSS_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 1300425,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BELLWETHER_HORN_BOSS_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_NKM_UNIT_MON_BELLWETHER_HORN_BOSS_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300011,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300012,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_SPECIAL_01", "COND_MON_BODYGUARD_HANDS_BOSS_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 3300013,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_HYPER_01", "COND_MON_BODYGUARD_HANDS_BOSS_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 3300014,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300015,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300016,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_PASSIVE3_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_PASSIVE3_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300041,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_CARBONPUNK_LORD_BOSS_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_CARBONPUNK_LORD_BOSS_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300042,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_CARBONPUNK_LORD_BOSS_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_CARBONPUNK_LORD_BOSS_SPECIAL_01", "COND_MON_CARBONPUNK_LORD_BOSS_SPECIAL_02", "COND_MON_CARBONPUNK_LORD_BOSS_SPECIAL_03"]
+        },
+        {
+          "SkillLevelGroupID" : 3300043,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_CARBONPUNK_LORD_BOSS_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_CARBONPUNK_LORD_BOSS_HYPER_01", "COND_MON_CARBONPUNK_LORD_BOSS_HYPER_02", "COND_MON_CARBONPUNK_LORD_BOSS_HYPER_03", "COND_MON_CARBONPUNK_LORD_BOSS_HYPER_04"]
+        },
+        {
+          "SkillLevelGroupID" : 3300044,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_CARBONPUNK_LORD_BOSS_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_CARBONPUNK_LORD_BOSS_PASSIVE1_01", "COND_MON_CARBONPUNK_LORD_BOSS_PASSIVE1_02"]
+        },
+        {
+          "SkillLevelGroupID" : 3300045,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_CARBONPUNK_LORD_BOSS_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_CARBONPUNK_LORD_BOSS_PASSIVE2_01", "COND_MON_CARBONPUNK_LORD_BOSS_PASSIVE2_02", "COND_MON_CARBONPUNK_LORD_BOSS_PASSIVE2_03"]
+        },
+        {
+          "SkillLevelGroupID" : 3300051,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_CHALLENGE_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300052,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_CHALLENGE_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_SPECIAL_01", "COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 3300053,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_CHALLENGE_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_HYPER_01", "COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_HYPER_02", "COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_HYPER_03"]
+        },
+        {
+          "SkillLevelGroupID" : 3300054,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_CHALLENGE_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300055,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_CHALLENGE_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 3300056,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_BODYGUARD_HANDS_BOSS_CHALLENGE_PASSIVE3_DESC",
+          "SkillLevelSE" : ["COND_MON_BODYGUARD_HANDS_BOSS_CHALLENGE_PASSIVE3_01"]
+        },
+        {
           "SkillLevelGroupID" : 2000011,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "VOYAGER_STRANIS_TUTORIAL_00_ATTACK_DESC"
+          "SkillLevelDesc" : "VOYAGER_STRANIS_TUTORIAL_00_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_STRANIS_TUTORIAL_00_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000012,
@@ -2192,7 +2367,8 @@
         {
           "SkillLevelGroupID" : 2000021,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "VOYAGER_SMILE_TUTORIAL_00_ATTACK_DESC"
+          "SkillLevelDesc" : "VOYAGER_SMILE_TUTORIAL_00_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_SMILE_TUTORIAL_00_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000022,
@@ -2209,7 +2385,8 @@
         {
           "SkillLevelGroupID" : 2000031,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "VOYAGER_ORACLE_TUTORIAL_00_ATTACK_DESC"
+          "SkillLevelDesc" : "VOYAGER_ORACLE_TUTORIAL_00_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_ORACLE_TUTORIAL_00_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000032,
@@ -2226,7 +2403,8 @@
         {
           "SkillLevelGroupID" : 2000041,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "VOYAGER_STRANIS_MAINSTORY_00_ATTACK_DESC"
+          "SkillLevelDesc" : "VOYAGER_STRANIS_MAINSTORY_00_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_STRANIS_MAINSTORY_00_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000042,
@@ -2243,7 +2421,8 @@
         {
           "SkillLevelGroupID" : 2000051,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "VOYAGER_SMILE_MAINSTORY_00_ATTACK_DESC"
+          "SkillLevelDesc" : "VOYAGER_SMILE_MAINSTORY_00_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_SMILE_MAINSTORY_00_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000052,
@@ -2260,7 +2439,8 @@
         {
           "SkillLevelGroupID" : 2000061,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "VOYAGER_ORACLE_MAINSTORY_00_ATTACK_DESC"
+          "SkillLevelDesc" : "VOYAGER_ORACLE_MAINSTORY_00_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_ORACLE_MAINSTORY_00_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000062,
@@ -2277,7 +2457,8 @@
         {
           "SkillLevelGroupID" : 2000071,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "VOYAGER_GUNBLADE_SWORD_ATTACK_DESC"
+          "SkillLevelDesc" : "VOYAGER_GUNBLADE_SWORD_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_GUNBLADE_SWORD_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000072,
@@ -2288,7 +2469,8 @@
         {
           "SkillLevelGroupID" : 2000081,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "STAR_PLAYER_ATTACK_DESC"
+          "SkillLevelDesc" : "STAR_PLAYER_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_STAR_PLAYER_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 2000082,
@@ -2349,6 +2531,24 @@
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MAID_BELL_TUTORIAL_01_PASSIVE_DESC",
           "SkillLevelSE" : ["COND_MON_MAID_BELL_TUTORIAL_01_PASSIVE_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2200021,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "NKM_UNIT_MON_SAINTESS_ELF_MAINSTORY_03_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_ELF_MAINSTORY_03_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2200022,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "NKM_UNIT_MON_SAINTESS_ELF_MAINSTORY_03_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_ELF_MAINSTORY_03_SPECIAL_01_01", "COND_MON_SAINTESS_ELF_MAINSTORY_03_SPECIAL_01_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2200023,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "NKM_UNIT_MON_SAINTESS_ELF_MAINSTORY_03_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_ELF_MAINSTORY_03_HYPER_01_01", "COND_MON_SAINTESS_ELF_MAINSTORY_03_HYPER_01_02"]
         },
         {
           "SkillLevelGroupID" : 2300011,
@@ -2561,6 +2761,185 @@
           "SkillLevelSE" : ["COND_MON_APOSTLE_GILLE_BOSS_MAINSTORY_01_PASSIVE2_01", "COND_MON_APOSTLE_GILLE_BOSS_MAINSTORY_01_PASSIVE2_02", "COND_MON_APOSTLE_GILLE_BOSS_MAINSTORY_01_PASSIVE2_03"]
         },
         {
+          "SkillLevelGroupID" : 2300081,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_MAINSTORY_02_ATTACK_DESC"
+        },
+        {
+          "SkillLevelGroupID" : 2300082,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_MAINSTORY_02_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_MAINSTORY_02_SPECIAL"]
+        },
+        {
+          "SkillLevelGroupID" : 2300083,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_MAINSTORY_02_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_MAINSTORY_02_HYPER"]
+        },
+        {
+          "SkillLevelGroupID" : 2300084,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_MAINSTORY_02_UNIQUE_PASSIVE_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_MAINSTORY_02_UNIQUE_PASSIVE"]
+        },
+        {
+          "SkillLevelGroupID" : 2300085,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_MAINSTORY_01_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_MAINSTORY_02_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300091,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300092,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_SPECIAL_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300093,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_HYPER_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300094,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300095,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_PEACE_BOSS_MAINSTORY_01_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_PEACE_BOSS_MAINSTORY_02_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300101,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_MAD_BOSS_MAINSTORY_02_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300102,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_MAD_BOSS_MAINSTORY_02_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_SPECIAL_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300103,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_MAD_BOSS_MAINSTORY_02_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_HYPER_01", "COND_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2300104,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_MAD_BOSS_MAINSTORY_02_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300105,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_HAPPY68_MAD_BOSS_MAINSTORY_01_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_HAPPY68_MAD_BOSS_MAINSTORY_02_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300201,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_STELLAR_THIEF_BOSS_MAINSTORY_03_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300202,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_STELLAR_THIEF_BOSS_MAINSTORY_03_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_SPECIAL_01", "COND_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2300203,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_STELLAR_THIEF_BOSS_MAINSTORY_03_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_HYPER_01", "COND_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2300204,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_STELLAR_THIEF_BOSS_MAINSTORY_03_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300205,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_STELLAR_THIEF_BOSS_MAINSTORY_03_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_STELLAR_THIEF_BOSS_MAINSTORY_03_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300301,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_SAINTESS_DEMON_MAINSTORY_03_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_DEMON_MAINSTORY_03_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300302,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_SAINTESS_DEMON_MAINSTORY_03_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_DEMON_MAINSTORY_03_SPECIAL_01_01", "COND_MON_SAINTESS_DEMON_MAINSTORY_03_SPECIAL_01_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2300303,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_SAINTESS_DEMON_MAINSTORY_03_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_DEMON_MAINSTORY_03_HYPER_01_01", "COND_MON_SAINTESS_DEMON_MAINSTORY_03_HYPER_01_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2300304,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_SAINTESS_DEMON_MAINSTORY_03_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_DEMON_MAINSTORY_03_PASSIVE1_01_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300305,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_SAINTESS_DEMON_MAINSTORY_03_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_SAINTESS_DEMON_MAINSTORY_03_PASSIVE1_02_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300401,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_STRANIS_BOSS_MAINSTORY_03_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300402,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_STRANIS_BOSS_MAINSTORY_03_SPECIAL_01", "COND_VOYAGER_STRANIS_BOSS_MAINSTORY_03_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2300403,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_HYPER_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_STRANIS_BOSS_MAINSTORY_03_HYPER_01", "COND_VOYAGER_STRANIS_BOSS_MAINSTORY_03_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 2300404,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_STRANIS_BOSS_MAINSTORY_03_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 2300405,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_MAINSTORY_03_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_VOYAGER_STRANIS_BOSS_MAINSTORY_03_PASSIVE2_01"]
+        },
+        {
           "SkillLevelGroupID" : 9100011,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_01_ATTACK_DESC",
@@ -2615,6 +2994,60 @@
           "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_06_PASSIVE1_01", "COND_ARCHON_SPEAR_EQUIP3_06_PASSIVE1_02", "COND_ARCHON_SPEAR_EQUIP3_06_PASSIVE1_03"]
         },
         {
+          "SkillLevelGroupID" : 9100041,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_07_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_07_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9100042,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_07_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_07_SPECIAL_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9100044,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_07_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_07_PASSIVE1_01", "COND_ARCHON_SPEAR_EQUIP3_07_PASSIVE1_02", "COND_ARCHON_SPEAR_EQUIP3_07_PASSIVE1_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9100051,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_08_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_08_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9100052,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_08_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_08_SPECIAL_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9100054,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_08_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_08_PASSIVE1_01", "COND_ARCHON_SPEAR_EQUIP3_08_PASSIVE1_02", "COND_ARCHON_SPEAR_EQUIP3_08_PASSIVE1_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9100061,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_09_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_09_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9100062,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_09_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_09_SPECIAL_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9100064,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_ARCHON_SPEAR_EQUIP3_09_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_ARCHON_SPEAR_EQUIP3_09_PASSIVE1_01", "COND_ARCHON_SPEAR_EQUIP3_09_PASSIVE1_02", "COND_ARCHON_SPEAR_EQUIP3_09_PASSIVE1_03"]
+        },
+        {
           "SkillLevelGroupID" : 9300011,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_01_ATTACK_DESC",
@@ -2624,7 +3057,7 @@
           "SkillLevelGroupID" : 9300012,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_DESC",
-          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_03"]
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_03"]
         },
         {
           "SkillLevelGroupID" : 9300013,
@@ -2642,13 +3075,67 @@
           "SkillLevelGroupID" : 9300015,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_DESC",
-          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_03", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_04"]
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_01"]
         },
         {
-          "SkillLevelGroupID" : 9300025,
+          "SkillLevelGroupID" : 9300031,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_05_PASSIVE2_DESC",
-          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_03", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE2_04", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_05_PASSIVE2_01"]
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_07_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_ATTACK_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_ATTACK_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_07_ATTACK_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300033,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_07_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_HYPER_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_HYPER_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_07_HYPER_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300035,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_07_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_07_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300042,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_08_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_08_SPECIAL_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300044,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_08_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_08_PASSIVE1_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE1_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300055,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_09_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_09_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300061,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_10_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_ATTACK_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_ATTACK_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_10_ATTACK_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300062,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_10_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_SPECIAL_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_10_SPECIAL_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300063,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_10_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_HYPER_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_HYPER_02", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_10_HYPER_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300064,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOTIVATOR_HANDS_BOSS_EQUIP1_10_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MOTIVATOR_HANDS_BOSS_EQUIP1_10_PASSIVE1_01", "COND_MOTIVATOR_HANDS_BOSS_EQUIP1_01_PASSIVE1_02"]
         },
         {
           "SkillLevelGroupID" : 9300071,
@@ -2683,32 +3170,152 @@
         {
           "SkillLevelGroupID" : 9300081,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_05_ATTACK_DESC",
-          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_05_ATTACK_01"]
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_06_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_06_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 9300082,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_05_SPECIAL_DESC",
-          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_05_SPECIAL_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_SPECIAL_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_SPECIAL_03"]
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_06_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_06_SPECIAL_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_SPECIAL_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_SPECIAL_03"]
         },
         {
           "SkillLevelGroupID" : 9300083,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_05_HYPER_DESC",
-          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_05_HYPER_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_HYPER_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_HYPER_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_HYPER_04"]
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_06_HYPER_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_06_HYPER_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_HYPER_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_HYPER_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_HYPER_04"]
         },
         {
           "SkillLevelGroupID" : 9300084,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_05_PASSIVE1_DESC",
-          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_05_PASSIVE1_01"]
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_06_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_06_PASSIVE1_01"]
         },
         {
           "SkillLevelGroupID" : 9300085,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_05_PASSIVE2_DESC",
-          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_05_PASSIVE2_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_PASSIVE2_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_PASSIVE2_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_05_PASSIVE2_04"]
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_06_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_06_PASSIVE2_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_PASSIVE2_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_PASSIVE2_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_06_PASSIVE2_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300091,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_07_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_07_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300092,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_07_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_07_SPECIAL_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_SPECIAL_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_SPECIAL_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300093,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_07_HYPER_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_07_HYPER_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_HYPER_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_HYPER_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_HYPER_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300094,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_07_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_07_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300095,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_07_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_07_PASSIVE2_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_PASSIVE2_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_PASSIVE2_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_07_PASSIVE2_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300101,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_08_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_08_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300102,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_08_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_08_SPECIAL_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_SPECIAL_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_SPECIAL_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_SPECIAL_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300103,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_08_HYPER_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_08_HYPER_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_HYPER_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_HYPER_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_HYPER_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300104,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_08_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_08_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300105,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_08_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_08_PASSIVE2_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_PASSIVE2_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_PASSIVE2_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_08_PASSIVE2_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300111,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_09_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_09_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300112,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_09_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_09_SPECIAL_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_SPECIAL_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_SPECIAL_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_SPECIAL_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300113,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_09_HYPER_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_09_HYPER_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_HYPER_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_HYPER_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_HYPER_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300114,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_09_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_09_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300115,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_09_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_09_PASSIVE2_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_PASSIVE2_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_PASSIVE2_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_09_PASSIVE2_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300121,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_10_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_10_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300122,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_10_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_10_SPECIAL_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_SPECIAL_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_SPECIAL_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_SPECIAL_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300123,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_10_HYPER_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_10_HYPER_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_HYPER_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_HYPER_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_HYPER_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300124,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_10_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_10_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300125,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WENDIGO_SNOW_BOSS_EQUIP2_10_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_WENDIGO_SNOW_BOSS_EQUIP2_10_PASSIVE2_01", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_PASSIVE2_02", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_PASSIVE2_03", "COND_WENDIGO_SNOW_BOSS_EQUIP2_10_PASSIVE2_04"]
         },
         {
           "SkillLevelGroupID" : 9300131,
@@ -2859,6 +3466,156 @@
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_05_PASSIVE2_DESC",
           "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_05_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300181,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_06_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_06_ATTACK_01", "COND_PERSES_SWORD_BOSS_EQUIP3_06_ATTACK_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300182,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_06_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_06_SPECIAL_01", "COND_PERSES_SWORD_BOSS_EQUIP3_06_SPECIAL_02", "COND_PERSES_SWORD_BOSS_EQUIP3_06_SPECIAL_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300183,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_06_HYPER_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_06_HYPER_01", "COND_PERSES_SWORD_BOSS_EQUIP3_06_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300184,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_06_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_06_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300185,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_06_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_06_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300191,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_07_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_07_ATTACK_01", "COND_PERSES_SWORD_BOSS_EQUIP3_07_ATTACK_02", "COND_PERSES_SWORD_BOSS_EQUIP3_07_ATTACK_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300192,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_07_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_07_SPECIAL_01", "COND_PERSES_SWORD_BOSS_EQUIP3_07_SPECIAL_02", "COND_PERSES_SWORD_BOSS_EQUIP3_07_SPECIAL_03", "COND_PERSES_SWORD_BOSS_EQUIP3_07_SPECIAL_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300193,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_07_HYPER_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_07_HYPER_01", "COND_PERSES_SWORD_BOSS_EQUIP3_07_HYPER_02", "COND_PERSES_SWORD_BOSS_EQUIP3_07_HYPER_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300194,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_07_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_07_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300195,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_07_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_07_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300201,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_08_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_08_ATTACK_01", "COND_PERSES_SWORD_BOSS_EQUIP3_08_ATTACK_02", "COND_PERSES_SWORD_BOSS_EQUIP3_08_ATTACK_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300202,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_08_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_08_SPECIAL_01", "COND_PERSES_SWORD_BOSS_EQUIP3_08_SPECIAL_02", "COND_PERSES_SWORD_BOSS_EQUIP3_08_SPECIAL_03", "COND_PERSES_SWORD_BOSS_EQUIP3_08_SPECIAL_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300203,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_08_HYPER_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_08_HYPER_01", "COND_PERSES_SWORD_BOSS_EQUIP3_08_HYPER_02", "COND_PERSES_SWORD_BOSS_EQUIP3_08_HYPER_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300204,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_08_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_08_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300205,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_08_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_08_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300211,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_09_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_09_ATTACK_01", "COND_PERSES_SWORD_BOSS_EQUIP3_09_ATTACK_02", "COND_PERSES_SWORD_BOSS_EQUIP3_09_ATTACK_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300212,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_09_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_09_SPECIAL_01", "COND_PERSES_SWORD_BOSS_EQUIP3_09_SPECIAL_02", "COND_PERSES_SWORD_BOSS_EQUIP3_09_SPECIAL_03", "COND_PERSES_SWORD_BOSS_EQUIP3_09_SPECIAL_04"]
+        },
+        {
+          "SkillLevelGroupID" : 9300213,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_09_HYPER_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_09_HYPER_01", "COND_PERSES_SWORD_BOSS_EQUIP3_09_HYPER_02", "COND_PERSES_SWORD_BOSS_EQUIP3_09_HYPER_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300214,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_09_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_09_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300215,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_PERSES_SWORD_BOSS_EQUIP3_09_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_PERSES_SWORD_BOSS_EQUIP3_09_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300231,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300232,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_SPECIAL_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_SPECIAL_02", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_SPECIAL_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300233,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_HYPER_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300234,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_PASSIVE1_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_PASSIVE1_02", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_PASSIVE1_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300235,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_PASSIVE2_01"]
         },
         {
           "SkillLevelGroupID" : 9300251,
@@ -3077,181 +3834,415 @@
           "SkillLevelSE" : ["COND_MON_CONSTRUCT_GADGET_BOSS_CUBE_03_PASSIVE3_01"]
         },
         {
+          "SkillLevelGroupID" : 9300311,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_ROD_BOSS_CUBE_04_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_ROD_BOSS_CUBE_04_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300312,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_ROD_BOSS_CUBE_04_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_ROD_BOSS_CUBE_04_SPECIAL_01", "COND_MON_WEST_ROD_BOSS_CUBE_04_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300313,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_ROD_BOSS_CUBE_04_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_ROD_BOSS_CUBE_04_HYPER_01", "COND_MON_WEST_ROD_BOSS_CUBE_04_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300314,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_ROD_BOSS_CUBE_04_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_ROD_BOSS_CUBE_04_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300315,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_ROD_BOSS_CUBE_04_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_ROD_BOSS_CUBE_04_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300316,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_ROD_BOSS_CUBE_04_PASSIVE3_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_ROD_BOSS_CUBE_04_PASSIVE3_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300321,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_BEAMSWORD_BOSS_CUBE_04_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300322,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_BEAMSWORD_BOSS_CUBE_04_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_SPECIAL_01", "COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300323,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_BEAMSWORD_BOSS_CUBE_04_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_HYPER_01", "COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300324,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_BEAMSWORD_BOSS_CUBE_04_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300325,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_BEAMSWORD_BOSS_CUBE_04_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300326,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_WEST_BEAMSWORD_BOSS_CUBE_04_PASSIVE3_DESC",
+          "SkillLevelSE" : ["COND_MON_WEST_BEAMSWORD_BOSS_CUBE_04_PASSIVE3_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300331,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_CUBE_05_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300332,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_CUBE_05_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_SPECIAL_01", "COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300333,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_CUBE_05_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_HYPER_01", "COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300334,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_CUBE_05_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300335,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_CUBE_05_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300336,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_STRANIS_BOSS_CUBE_05_PASSIVE3_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_STRANIS_BOSS_CUBE_05_PASSIVE3_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300341,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_BOSS_CUBE_05_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300342,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_BOSS_CUBE_05_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_SPECIAL_01", "COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300343,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_BOSS_CUBE_05_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_HYPER_01", "COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300344,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_BOSS_CUBE_05_PASSIVE1_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300345,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_BOSS_CUBE_05_PASSIVE2_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_PASSIVE2_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300346,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_VOYAGER_ORACLE_BOSS_CUBE_05_PASSIVE3_DESC",
+          "SkillLevelSE" : ["COND_MON_VOYAGER_ORACLE_BOSS_CUBE_05_PASSIVE3_01"]
+        },
+        {
           "SkillLevelGroupID" : 9300351,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_ATTACK_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_ATTACK_01"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 9300352,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_SPECIAL_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_SPECIAL_02"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_SPECIAL_02", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_SPECIAL_03"]
         },
         {
           "SkillLevelGroupID" : 9300353,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_HYPER_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_HYPER_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_HYPER_02"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_HYPER_01", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_HYPER_02"]
         },
         {
           "SkillLevelGroupID" : 9300354,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_PASSIVE_01_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_PASSIVE1_01"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_PASSIVE_01_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_PASSIVE1_01"]
         },
         {
           "SkillLevelGroupID" : 9300355,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_PASSIVE_02_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_PASSIVE2_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_PASSIVE2_02", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_01_PASSIVE2_03"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_PASSIVE_02_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_01_PASSIVE2_01"]
         },
         {
           "SkillLevelGroupID" : 9300361,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_ATTACK_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_ATTACK_01"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 9300362,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_SPECIAL_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_SPECIAL_02"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_SPECIAL_02", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_SPECIAL_03"]
         },
         {
           "SkillLevelGroupID" : 9300363,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_HYPER_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_HYPER_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_HYPER_02"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_HYPER_01", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_HYPER_02"]
         },
         {
           "SkillLevelGroupID" : 9300364,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_PASSIVE_01_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_PASSIVE1_01"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_PASSIVE_01_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_PASSIVE1_01"]
         },
         {
           "SkillLevelGroupID" : 9300365,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_PASSIVE_02_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_PASSIVE2_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_PASSIVE2_02", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_02_PASSIVE2_03"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_PASSIVE_02_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_02_PASSIVE2_01"]
         },
         {
           "SkillLevelGroupID" : 9300371,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_ATTACK_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_ATTACK_01"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_ATTACK_01"]
         },
         {
           "SkillLevelGroupID" : 9300372,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_SPECIAL_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_SPECIAL_02"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_SPECIAL_02", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_SPECIAL_03"]
         },
         {
           "SkillLevelGroupID" : 9300373,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_HYPER_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_HYPER_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_HYPER_02"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_HYPER_01", "COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_HYPER_02"]
         },
         {
           "SkillLevelGroupID" : 9300374,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_PASSIVE_01_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_PASSIVE1_01"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_PASSIVE_01_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_PASSIVE1_01"]
         },
         {
           "SkillLevelGroupID" : 9300375,
           "SkillLevelValue" : 1,
-          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_PASSIVE_02_DESC",
-          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_PASSIVE2_01", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_PASSIVE2_02", "COND_MON_DEMORAIGIS_CORE_BLACK_BOSS_COSMO_03_PASSIVE2_03"]
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_PASSIVE_02_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_LIGHT_BOSS_COSMO_03_PASSIVE2_01"]
         },
         {
           "SkillLevelGroupID" : 9300381,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300382,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300383,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_HYPER_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300384,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_PASSIVE_01_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300385,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_PASSIVE_02_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_PASSIVE2_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_PASSIVE2_02", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_01_PASSIVE2_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300391,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300392,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300393,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_HYPER_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300394,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_PASSIVE_01_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300395,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_PASSIVE_02_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_PASSIVE2_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_PASSIVE2_02", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_02_PASSIVE2_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300401,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_ATTACK_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_ATTACK_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300402,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_SPECIAL_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_SPECIAL_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_SPECIAL_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300403,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_HYPER_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_HYPER_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_HYPER_02"]
+        },
+        {
+          "SkillLevelGroupID" : 9300404,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_PASSIVE_01_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_PASSIVE1_01"]
+        },
+        {
+          "SkillLevelGroupID" : 9300405,
+          "SkillLevelValue" : 1,
+          "SkillLevelDesc" : "MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_PASSIVE_02_DESC",
+          "SkillLevelSE" : ["COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_PASSIVE2_01", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_PASSIVE2_02", "COND_MON_DEMORAIGIS_CORE_DARK_BOSS_COSMO_03_PASSIVE2_03"]
+        },
+        {
+          "SkillLevelGroupID" : 9300411,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_ATTACK_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_ATTACK_01"]
         },
         {
-          "SkillLevelGroupID" : 9300382,
+          "SkillLevelGroupID" : 9300412,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_SPECIAL_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_SPECIAL_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_SPECIAL_02"]
         },
         {
-          "SkillLevelGroupID" : 9300383,
+          "SkillLevelGroupID" : 9300413,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_HYPER_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_HYPER_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_HYPER_02"]
         },
         {
-          "SkillLevelGroupID" : 9300384,
+          "SkillLevelGroupID" : 9300414,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_PASSIVE_01_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_PASSIVE1_01"]
         },
         {
-          "SkillLevelGroupID" : 9300385,
+          "SkillLevelGroupID" : 9300415,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_PASSIVE_02_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_01_PASSIVE2_01"]
         },
         {
-          "SkillLevelGroupID" : 9300391,
+          "SkillLevelGroupID" : 9300421,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_ATTACK_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_ATTACK_01"]
         },
         {
-          "SkillLevelGroupID" : 9300392,
+          "SkillLevelGroupID" : 9300422,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_SPECIAL_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_SPECIAL_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_SPECIAL_02"]
         },
         {
-          "SkillLevelGroupID" : 9300393,
+          "SkillLevelGroupID" : 9300423,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_HYPER_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_HYPER_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_HYPER_02"]
         },
         {
-          "SkillLevelGroupID" : 9300394,
+          "SkillLevelGroupID" : 9300424,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_PASSIVE_01_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_PASSIVE1_01"]
         },
         {
-          "SkillLevelGroupID" : 9300395,
+          "SkillLevelGroupID" : 9300425,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_PASSIVE_02_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_02_PASSIVE2_01"]
         },
         {
-          "SkillLevelGroupID" : 9300401,
+          "SkillLevelGroupID" : 9300431,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_ATTACK_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_ATTACK_01"]
         },
         {
-          "SkillLevelGroupID" : 9300402,
+          "SkillLevelGroupID" : 9300432,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_SPECIAL_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_SPECIAL_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_SPECIAL_02"]
         },
         {
-          "SkillLevelGroupID" : 9300403,
+          "SkillLevelGroupID" : 9300433,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_HYPER_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_HYPER_01", "COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_HYPER_02"]
         },
         {
-          "SkillLevelGroupID" : 9300404,
+          "SkillLevelGroupID" : 9300434,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_PASSIVE_01_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_PASSIVE1_01"]
         },
         {
-          "SkillLevelGroupID" : 9300405,
+          "SkillLevelGroupID" : 9300435,
           "SkillLevelValue" : 1,
           "SkillLevelDesc" : "MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_PASSIVE_02_DESC",
           "SkillLevelSE" : ["COND_MON_MOGULUS_CROWN_BLACK_BOSS_COSMO_03_PASSIVE2_01"]

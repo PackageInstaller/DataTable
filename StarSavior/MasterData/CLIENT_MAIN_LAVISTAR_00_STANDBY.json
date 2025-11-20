@@ -6,22 +6,14 @@
     {
       "Uid": 161,
       "WaitClick": false,
-      "WaitTime": 0.0,
+      "WaitTime": 1.0,
       "BgFileName": "ILLUST_BG_BLACK.png",
       "StartBgmFileName": "EMPTY.mp3"
-    },
-    {
-      "Uid": 162,
-      "WaitClick": false,
-      "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_WHITE.png",
-      "BgChangeTime": 1.0
     },
     {
       "Uid": 1,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "EndBgmFileName": "MUSIC_CUTSCENE_01.mp3",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -79,9 +71,41 @@
       "TalkTime": 0.03
     },
     {
+      "Uid": 176,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.5
+    },
+    {
+      "Uid": 174,
+      "WaitClick": false,
+      "WaitTime": 0.25,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.25,
+      "BgFileName": "CINEMA_MAIN_EP1_1S.mp4",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
       "Uid": 8,
       "WaitClick": false,
-      "WaitTime": 0.5,
+      "WaitTime": 0.0,
       "BgFadeInStartCol": [
         "0",
         "0",
@@ -100,6 +124,7 @@
       "Uid": 165,
       "WaitClick": true,
       "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
       "UnitTalk_KOR": "어둠 속 너머로 희미하게 남겨진 소녀의 목소리를 향해 외쳐봤지만, 목소리는 나오지 않았다.",
       "UnitTalk_JPN": "暗闇の中、少女の声の残響に向かって叫ぼうとしたが、声は出なかった。",
       "TalkTime": 0.03
@@ -263,7 +288,7 @@
       "Uid": 23,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "내 옆으로 커다란 소리를 내며 아슬아슬하게 트럭 한 대가 비껴 지나간 상황이었다.",
+      "UnitTalk_KOR": "내 옆으로 커다란 소리를 내며 아슬아슬하게 트럭 한 대가 비껴간 상황이었다.",
       "UnitTalk_JPN": "次の瞬間、トラックが猛烈な勢いで私の横スレスレを通り過ぎていった。",
       "TalkTime": 0.03
     },
@@ -916,7 +941,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
       "UnitMotion": "SERIOUS",
-      "UnitTalk_KOR": "안되겠다. 잠깐 어디라도 앉는 게 좋겠어.",
+      "UnitTalk_KOR": "안 되겠다. 잠깐 어디라도 앉는 게 좋겠어.",
       "UnitTalk_JPN": "ダメだわ。しばらく座ってた方がよさそうね。",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_LAVISTAR_00_UNIT_S_VOYAGER_STRANIS_024.wav"
@@ -1052,7 +1077,7 @@
       "Uid": 84,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "기억의 대부분이 뿌연 안개 속에 쌓인 것처럼 명확하지 않았다.",
+      "UnitTalk_KOR": "기억의 대부분이 뿌연 안개에 싸인 것처럼 명확하지 않았다.",
       "UnitTalk_JPN": "記憶のほとんどは、霧に覆われたようにおぼろげだった。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
@@ -1248,7 +1273,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
-      "UnitTalk_KOR": "아, 아니다. 아까 그 골목으로 들어갔어야 했던 것 같은데…",
+      "UnitTalk_KOR": "아, 아니다. 아까 그 골목으로 들어가야 했던 것 같은데…",
       "UnitTalk_JPN": "あっ、違うわ。さっきの路地に入らなきゃいけなかったんだ…",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_LAVISTAR_00_UNIT_S_VOYAGER_STRANIS_038.wav"

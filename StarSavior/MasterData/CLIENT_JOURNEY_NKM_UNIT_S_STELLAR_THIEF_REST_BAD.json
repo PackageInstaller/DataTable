@@ -1,0 +1,233 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으으… ",
+      "UnitTalk_JPN": "うぅ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "으으으… ",
+      "UnitTalk_JPN": "うぅぅ… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "눈가가 퀭하네. 제대로 못잤어?",
+          "JumpAnchorStringId_JPN": "クマができてる。ちゃんと眠れなかったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "응… ",
+      "UnitTalk_JPN": "うん… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "어젯밤에는… 공원 벤치에서 잤거든. ",
+      "UnitTalk_JPN": "昨日は…公園のベンチで寝たんだ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "휴우. 온 몸이 뻐근해서 제대로 움직일 수가 없네",
+      "UnitTalk_JPN": "ふぅ。全身が痛くて、ちゃんと動けそうにないな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "야외 노숙?!",
+          "JumpAnchorStringId_JPN": "野宿したの！？"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "크읏…! 어쩔 수 없었단 말이야.",
+      "UnitTalk_JPN": "くぅっ…！仕方なかったんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "돈을 다 써서 묵고 있던 호텔에서 쫓겨나 버렸는걸. ",
+      "UnitTalk_JPN": "金を全部使っちまって、泊まってたホテルから追い出されたんだよ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "나쁜 놈들. 외상이 밀렸다고 피도 눈물도 없이 내쫓다니!",
+      "UnitTalk_JPN": "血も涙もない奴め。ツケてた分を払えなかったからって、追い出していいのか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…얼마나 밀렸길래?",
+          "JumpAnchorStringId_JPN": "…どれくらいツケてたの？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "…한 달 정도?",
+      "UnitTalk_JPN": "…一か月ぐらい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "어쩌다 그렇게 됐냐고? ",
+      "UnitTalk_JPN": "なんでツケてたのかって？ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "흐음. 숙박비 내는 걸 까맣게 잊고 전부 써버렸거든.",
+      "UnitTalk_JPN": "ふむ。宿泊費のことをすっかり忘れて、全部使っちまったんだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "으으… 그건 별로 중요한 게 아니야.",
+      "UnitTalk_JPN": "うぅ…そんなことは重要じゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "단장, 돈 좀 빌려줄래? 금방 갚을 테니까…!",
+      "UnitTalk_JPN": "団長、金を貸してくれねぇか？すぐに返すから…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "제대로 휴식을 취하지 못한 탓인지, 트리쉬는 하루 종일 기운이 없어보였다.",
+      "UnitTalk_JPN": "しっかり休めなかったせいか、トリッシュは一日中元気がなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

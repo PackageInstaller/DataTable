@@ -1185,10 +1185,51 @@
       ]
     },
     {
+      "Uid": 221,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_DETECTIVE_WATSON_02.png"
+    },
+    {
+      "Uid": 224,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
       "Uid": 188,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1201,7 +1242,6 @@
       "Uid": 189,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1213,7 +1253,6 @@
       "Uid": 190,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1238,7 +1277,6 @@
       "Uid": 192,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1251,7 +1289,6 @@
       "Uid": 193,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1273,7 +1310,6 @@
       "Uid": 195,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1286,7 +1322,6 @@
       "Uid": 196,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1298,7 +1333,6 @@
       "Uid": 197,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
@@ -1311,13 +1345,48 @@
       "Uid": 198,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON_NONE",
       "UnitNameString": [
         "SI_UNKNOWN"
       ],
       "UnitTalk_KOR": "앞으로도 릴리를 잘 부탁할게.",
       "UnitTalk_JPN": "これからもリリーをよろしく頼むよ。",
       "TalkTime": 0.03
+    },
+    {
+      "Uid": 226,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 225,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2_NIGHT.png"
+    },
+    {
+      "Uid": 227,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.7
     },
     {
       "Uid": 199,

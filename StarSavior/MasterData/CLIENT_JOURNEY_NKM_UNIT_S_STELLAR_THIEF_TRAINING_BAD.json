@@ -1,0 +1,425 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아야야… 아팟!",
+      "UnitTalk_JPN": "いてて…痛ぁっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "하으… 다리 찢어질 뻔 했네… ",
+      "UnitTalk_JPN": "はぅ…股が裂けるかと思った… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으, 으응? 동작이 과하니까 미끄러진 거라고?",
+      "UnitTalk_JPN": "う、うーん？動きが大げさだから滑ったんだって言うのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "괜히 까불다가 넘어지는 게 더 멋이 없다고…?!?!",
+      "UnitTalk_JPN": "調子に乗っておいてコケるのが一番クールじゃないって…！？！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "…아, 아닌데? 원래 여기서 스트레칭 하려고 그랬는데?",
+      "UnitTalk_JPN": "…ち、違うぞ？ここでストレッチをしてただけなんだが？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "여기까지 하고 쉬자.",
+          "JumpAnchorStringId_JPN": "今日はここまでにして休もう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "…그러면 계속 할까?",
+          "JumpAnchorStringId_JPN": "…だったら、続けてみる？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "활력 포션을 건네준다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "으음… 쉬자고? 좋아. ",
+      "UnitTalk_JPN": "うむ…休むのか？いいぞ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "일류 헌터 특! ",
+      "UnitTalk_JPN": "一流ハンターたる者！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "쉴 때는 확실히 쉼…!",
+      "UnitTalk_JPN": "休む時は、しっかり休むべし…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼, 낮잠이나 한숨 자볼까…?",
+      "UnitTalk_JPN": "そうだ、昼寝でもするか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "트리쉬는 기지개를 켜며 훈련장을 빠져나갔다. ",
+      "UnitTalk_JPN": "トリッシュは背伸びをしながら訓練場を出た。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "칫… 뭐야, 못 믿는거야?",
+      "UnitTalk_JPN": "チッ…何だよ、オレを信じられないのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "진짜 넘어진 거 아니라니까…?!",
+      "UnitTalk_JPN": "本当にコケたんじゃないんだぞ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "뭐, 쉬자고 말하니까 여기까지 하긴 하겠지만 말이야…",
+      "UnitTalk_JPN": "まぁ、休もうってんならここまでにするけどさ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "트리쉬는 불만스럽게 팔짱을 끼며 투덜거렸다. ",
+      "UnitTalk_JPN": "トリッシュは不満げに腕を組み、ぐずぐずと文句を言った。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좋았어, 그렇게 나와야지!",
+      "UnitTalk_JPN": "よっしゃ、そうこなきゃ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "자, 단장은 거기 앉아서 딱 보고 있으라고.",
+      "UnitTalk_JPN": "さぁ、団長はそこで座って見てろよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "이 트리쉬님이 기가막힌 신기술을 보여줄 테니까!",
+      "UnitTalk_JPN": "このトリッシュ様が、とんでもない新技を見せてやるからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기운을 되찾은 트리쉬는 나머지 훈련을 큰 문제없이 끝마쳤다.",
+      "UnitTalk_JPN": "元気を取り戻したトリッシュは、残りのトレーニングをそつなくこなした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다, 당연하지! ",
+      "UnitTalk_JPN": "あ、当たり前だ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "일류 헌터 특! ",
+      "UnitTalk_JPN": "一流ハンターたる者！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "작은 부상 정도로 쉽게 포기하지 않음!",
+      "UnitTalk_JPN": "軽い負傷ぐらいで諦めたりしない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "부상? 스트레칭이라며…?",
+          "JumpAnchorStringId_JPN": "負傷？ただのストレッチじゃなかったの…？"
+        }
+      ]
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…! 크읏! 마, 말 실수야!",
+      "UnitTalk_JPN": "…！くぅっ！い、言い間違えだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "자, 얼른 훈련 계속하자. ",
+      "UnitTalk_JPN": "さぁ、はやくトレーニングを再開するぞ。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무렇지 않은 척하지만, 한쪽 다리가 불편해 보이는데… 괜찮을까?",
+      "UnitTalk_JPN": "何ともないフリをしているが、片足が辛そうだ…大丈夫かな？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오, 활력 포션이잖아?",
+      "UnitTalk_JPN": "おぉ、活力ポーションだな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "사양 않고, 잘 마실게! ",
+      "UnitTalk_JPN": "遠慮なくいただくぞ！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "크으으…!",
+      "UnitTalk_JPN": "くぅぅ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후우… 좀 살 것 같네.",
+      "UnitTalk_JPN": "ふぅ…生き返ったぜ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "트리쉬의 표정이 한결 나아진 것 같다.",
+      "UnitTalk_JPN": "トリッシュの顔色がかなり良くなった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

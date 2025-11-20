@@ -4,25 +4,45 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_INTERSTELLAR_03", //처단자
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_INTERSTELLAR_03", // 추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_03", //포식자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_ELITEJELLY_BLACK_ELITE_CLOISTER_INTERSTELLAR_03", // 망각의 예언자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_INTERSTELLAR_03", //처단자
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_INTERSTELLAR_03", // 추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           }
         ]
       },
@@ -31,23 +51,41 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_03", //포식자
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_JELLY_BLACK_CLOISTER_INTERSTELLAR_03",  // 예언자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_CLOAKING_CLAW_BOSS_CI_04", //공허수확자
+            "UnitStrId": "NKM_UNIT_MON_PUNISHER_HANDS_BLACK_BOSS_CLOISTER_INTERSTELLAR_03", // 공허징벌자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1500,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -3000
+            }
+
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_03", //포식자
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_JELLY_BLACK_CLOISTER_INTERSTELLAR_03",  // 예언자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
+
           }
         ]
       }

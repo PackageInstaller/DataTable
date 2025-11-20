@@ -4,25 +4,42 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_WORM_BLACK_CLOISTER_01", // 숙고자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_CLOISTER_03",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_CLOISTER_01", // 침묵의 은둔자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_WORM_BLACK_CLOISTER_01", // 숙고자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       },
@@ -30,24 +47,39 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_01",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_BELLWETHER_MANE_BLACK_BOSS_CM_02",
+            "UnitStrId": "NKM_UNIT_MON_COHESION_FLOWER_BLACK_BOSS_CLOISTER_01", // 공허응집자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -4000,
+              "NST_NV_RATE_HP": -4000,
+              "NST_NV_RATE_DEF": -4000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_01",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       }

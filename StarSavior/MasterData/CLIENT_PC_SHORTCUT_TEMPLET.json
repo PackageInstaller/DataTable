@@ -1,0 +1,481 @@
+﻿{
+    "$schema" :"../../../../../DataSchema/Exported.jsonc",
+    "$comment": "name: PC_SHORTCUT_TEMPLET",
+    "_Version": 0,
+    "Data": [
+        {
+          "HotkeyType" : "System",
+          "EventType" : "Mute",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "M"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Confirm",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Enter"
+            },
+
+            {
+              "KeyBind" : "NumpadEnter"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Chat",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Enter"
+            },
+
+            {
+              "KeyBind" : "NumpadEnter"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Escape",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Escape"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Space",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Space"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "First",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit1"
+            },
+
+            {
+              "KeyBind" : "Numpad1"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Second",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit2"
+            },
+
+            {
+              "KeyBind" : "Numpad2"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Third",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit3"
+            },
+
+            {
+              "KeyBind" : "Numpad3"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Fourth",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit4"
+            },
+
+            {
+              "KeyBind" : "Numpad4"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Fifth",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit5"
+            },
+
+            {
+              "KeyBind" : "Numpad5"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Sixth",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit6"
+            },
+
+            {
+              "KeyBind" : "Numpad6"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Seventh",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit7"
+            },
+
+            {
+              "KeyBind" : "Numpad7"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Eighth",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit8"
+            },
+
+            {
+              "KeyBind" : "Numpad8"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Ninth",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Digit9"
+            },
+
+            {
+              "KeyBind" : "Numpad9"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Up",
+          "Repeat" : true,
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "UpArrow"
+            },
+
+            {
+              "KeyBind" : "W"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Down",
+          "Repeat" : true,
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "DownArrow"
+            },
+
+            {
+              "KeyBind" : "S"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Left",
+          "Repeat" : true,
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "LeftArrow"
+            },
+
+            {
+              "KeyBind" : "A"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Right",
+          "Repeat" : true,
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "RightArrow"
+            },
+
+            {
+              "KeyBind" : "D"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Log",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Backquote"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "CloseLog",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "DownArrow"
+            },
+
+            {
+              "KeyBind" : "S"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "SetAuto",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Z"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Option",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "X"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Calender",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Q"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "UnitInfo",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "C"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Poten",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "S"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Deck",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "P"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "UI",
+          "EventType" : "Inven",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "I"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "Skill_1",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Q"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "Skill_2",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "W"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "Skill_3",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "E"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "UseSkill",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Space"
+            },
+
+            {
+              "KeyBind" : "Enter"
+            },
+
+            {
+              "KeyBind" : "NumpadEnter"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "NovaBurst",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "V"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "OrbitalArray",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "R"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "ScreenTouch",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Space"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "Auto",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "Z"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "Speed2x",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "X"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "ShowSequence",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "C"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "PreviousUnit",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "LeftArrow"
+            },
+
+            {
+              "KeyBind" : "A"
+            }
+          ]
+        },
+        {
+          "HotkeyType" : "Battle",
+          "EventType" : "NextUnit",
+          "KeyBinds" : 
+          [
+            {
+              "KeyBind" : "RightArrow"
+            },
+
+            {
+              "KeyBind" : "D"
+            }
+          ]
+        }
+    ]
+}

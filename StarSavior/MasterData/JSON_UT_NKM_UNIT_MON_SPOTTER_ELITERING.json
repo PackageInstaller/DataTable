@@ -2,20 +2,36 @@
   "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
   "_Version": 5,
   "Data": {
-    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_SAVIOR.txt",
-    //"UnitHudHeight": 3.9,
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
+    "UnitHudHeight": 3.3,
     "BuffEffectPosition": {
-      //"HEAD": 3.5,
-      //"BODY": 1
+      "HEAD": 3,
+      "BODY": 1.7
     },
     "UnitBuffEffectScale": 1.4,
     "UiStates": [],
     "BattleStates": [
       {
         "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_FOCUS_INFO_READY.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_START.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_ATTACK",
@@ -24,13 +40,26 @@
             "AnimTime": true,
             "EventFrame": 24,
             "ReActType": "NRT_DAMAGE_A",
-            //"CameraCrashGap": 0.1,
-            //"CameraCrashTime": 0.3,
-            //"ReAttackCount": 4,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
             "EffectData": {
               "EffectName": "VFX_HIT_CMN_00.prefab",
               "EffectHeight": "BVH_BODY"
             }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 21,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_ATK_02.wav"
+            ]
           }
         ]
       },
@@ -39,7 +68,7 @@
         "UseInternalCamera": false,
         "UseEnemyTargetCamera": true,
         "EndFadeOut": true,
-        "PlayNextCineCamFrame": 60,
+        "PlayNextCineCamFrame": 40,
         "ZoomBlurMaxTime": 0,
         "ZoomBlurTime": 2.5,
         "StartUnitShow": {
@@ -53,18 +82,45 @@
             "AnimTime": true,
             "EventFrame": 57,
             "ReActType": "NRT_DAMAGE_A",
-            //"CameraCrashGap": 0.2,
-            //"CameraCrashTime": 0.4,
-            //"ReAttackCount": 4,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.4,
             "EffectData": {
               "EffectName": "VFX_HIT_CMN_00.prefab",
               "EffectHeight": "BVH_BODY"
             }
           }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_SPECIAL_ATK.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_SPECIAL_ATK_02.wav"
+            ]
+          }
         ]
       },
       {
         "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 20,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_SPOTTER_ELITERING_DYING_02.wav"
+            ]
+          }
+        ]
       }
     ]
   }

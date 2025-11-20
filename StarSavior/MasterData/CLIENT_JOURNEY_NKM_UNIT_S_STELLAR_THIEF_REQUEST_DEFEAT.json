@@ -1,0 +1,261 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "실패… ",
+      "UnitTalk_JPN": "失敗か… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "크읏…! ",
+      "UnitTalk_JPN": "くぅっ…！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "실패는… 멋있지 않아… ",
+      "UnitTalk_JPN": "失敗は…クールじゃない… ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "풀 죽지 말고 기운 내.",
+          "JumpAnchorStringId_JPN": "しょんぼりしてないで、元気出して。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "이거 마시고 힘내.",
+          "JumpAnchorStringId_JPN": "これ飲んで頑張ろう。",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "풀이 죽었다고? 내가?",
+      "UnitTalk_JPN": "しょんぼり？オレがか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "후후… 일류 헌터 특!",
+      "UnitTalk_JPN": "ふふっ…一流ハンターたる者！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "성공할 때까지 포기하지 않고 재도전함!",
+      "UnitTalk_JPN": "成功するまで諦めず、再挑戦すべし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "트리쉬는 그새 실패의 아쉬움을 털어냈는지 시원한 미소를 지었다.",
+      "UnitTalk_JPN": "トリッシュは失敗の悔しさを振り払ったのか、清々しい笑顔を見せた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "읏… 풀이 죽었다니, 그게 더 멋없잖아…!",
+      "UnitTalk_JPN": "うっ…しょんぼりなんてクールじゃねぇ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "일류 헌터 특!",
+      "UnitTalk_JPN": "一流ハンターたる者！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "고작 한번의 패배에 기죽지 않음!",
+      "UnitTalk_JPN": "たった一度の失敗でくじけたりしない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래. 다음엔 더 잘하면 되지 뭐!",
+      "UnitTalk_JPN": "そうだ。次また上手くやればいいんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "괜찮아, 괜찮아!",
+      "UnitTalk_JPN": "大丈夫、大丈夫！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말과는 달리 트리쉬의 얼굴엔 아쉬움이 가득해 보인다. ",
+      "UnitTalk_JPN": "言葉とは裏腹に、トリッシュの顔には悔しさが滲んでいた。 ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "활력 포션이구나?",
+      "UnitTalk_JPN": "活力ポーションか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "흐아… 확실히 기운이 좀 나네. ",
+      "UnitTalk_JPN": "ふぁ…確かに元気が出るな。 ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "고마워 단장. ",
+      "UnitTalk_JPN": "ありがとな、団長！ ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "다음엔 내가 사줄 테니까!",
+      "UnitTalk_JPN": "次はオレが奢ってやるからな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REQUEST_DEFEAT",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "활력 포션을 마신 트리쉬는 기운을 어느정도 되찾은 것 같다.",
+      "UnitTalk_JPN": "活力ポーションを飲んだトリッシュは、少し元気を取り戻したようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

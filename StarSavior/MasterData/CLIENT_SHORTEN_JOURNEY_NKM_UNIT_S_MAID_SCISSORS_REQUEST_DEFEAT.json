@@ -10,7 +10,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "CURRENT_TOWN_CANDLE",
-      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "ANGRY"
     },
     {
@@ -20,7 +20,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰를 실패한 <color=#F7BE45>[CHARACTER_NAME]</color>(은)는 분해 보인다.",
-      "UnitTalk_JPN": "依頼を失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は落ち込んでいるようだ。",
+      "UnitTalk_JPN": "依頼を失敗した<color=#F7BE45>[CHARACTER_NAME]</color>は悔しそうだ。",
       "TalkTime": 0.03
     },
     {
@@ -51,7 +51,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SERIOUS"
     },
     {
@@ -71,7 +71,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SAD"
     },
     {
@@ -91,7 +91,7 @@
       "JumpAnchorInfo": "JUMPANCHOR_2",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitStrId": "CURRENT_CHARACTER",
       "UnitMotion": "SMILE"
     },
     {

@@ -22,7 +22,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 해변을 걷고 있을 때…",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と海辺を歩いているとき…",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と海辺を歩いていると…",
       "TalkTime": 0.03
     },
     {
@@ -35,7 +35,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "처음 보는 얼굴들이네? 혹시 관광객?",
-      "UnitTalk_JPN": "初めて見る顔だな？もしかして観光客？",
+      "UnitTalk_JPN": "初めて見る顔ね？観光に来たのかしら？",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -49,7 +49,7 @@
         "SI_FLORA_PEOPLE_B"
       ],
       "UnitTalk_KOR": "아까 우리가 비치발리볼하던 걸 구경하던데, 경기에 관심 있어?",
-      "UnitTalk_JPN": "さっき私たちがビーチバレーしてたのを見てたけど、試合に興味ある？",
+      "UnitTalk_JPN": "さっきアタシたちがビーチバレーしてるのを見てたけど、試合に興味ある？",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -63,7 +63,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "대회에 참가할래? 신청비도 무료고 굉장히 즐거워!",
-      "UnitTalk_JPN": "大会に参加しない？参加費も無料だし、すごく楽しいよ！",
+      "UnitTalk_JPN": "大会に参加してみない？参加費も無料だし、すごく楽しいのよ！",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -75,7 +75,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "CURRENT_CHARACTER",
       "UnitTalk_KOR": "[EVENT_FIXED_FLORA_01_01]",
-      "UnitTalk_JPN": "「EVENT_FIXED_FLORA_01_01」",
+      "UnitTalk_JPN": "[EVENT_FIXED_FLORA_01_01]",
       "TalkTime": 0.03
     },
     {
@@ -85,7 +85,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 대회에 참가하고 싶은 것 같다…!",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は大会に参加したいみたい…！",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は大会に参加したいようだ…！",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -99,7 +99,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "좋아. 그럼 갑작스럽겠지만 예선 시작이다!",
-      "UnitTalk_JPN": "よし。じゃあ急にだけど予選開始だ！",
+      "UnitTalk_JPN": "じゃあ、早速だけど予選開始よ！",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -113,7 +113,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "빨라!",
-          "JumpAnchorStringId_JPN": "早く！"
+          "JumpAnchorStringId_JPN": "もう！？"
         }
       ]
     },
@@ -127,7 +127,7 @@
         "SI_FLORA_PEOPLE_B"
       ],
       "UnitTalk_KOR": "그야 이쪽이 더 서프라이즈 같아서 재밌는걸.",
-      "UnitTalk_JPN": "いや、こっちの方がサプライズっぽくて面白いんだ。",
+      "UnitTalk_JPN": "サプライズ感があっていいでしょ？",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -141,7 +141,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "선공은 양보할게! 너희들의 실력을 보여 줘!",
-      "UnitTalk_JPN": "先攻は譲るよ！君たちの実力を見せてくれ！",
+      "UnitTalk_JPN": "先攻は譲るわ！あなたたちの実力を見せてちょうだい！",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -163,7 +163,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "그렇다면…",
-      "UnitTalk_JPN": "では…",
+      "UnitTalk_JPN": "だったら…",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -183,13 +183,13 @@
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "우리 팀의 강점을 활용한다.",
-          "JumpAnchorStringId_JPN": "我々のチームの強みを活用する。",
+          "JumpAnchorStringId_JPN": "私たちの強みを活かそう。",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         },
         {
           "Uid": 3,
           "JumpAnchorStringId_KOR": "기세로 밀어붙인다.",
-          "JumpAnchorStringId_JPN": "勢いで押し切る。",
+          "JumpAnchorStringId_JPN": "気合で押し切ろう。",
           "JumpAnchorId": "REWARD_ANCHOR_3"
         },
         {
@@ -228,7 +228,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 적의 빈틈을 집중 공략했다!",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と共に敵の隙を集中攻撃した！",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と共に、敵の隙を集中攻撃した！",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -277,7 +277,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "우와, 순식간에 져 버렸어~",
-      "UnitTalk_JPN": "うわっ、あっという間に負けてしまった～",
+      "UnitTalk_JPN": "あら、あっという間に負けてしまったわ。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -291,7 +291,7 @@
         "SI_FLORA_PEOPLE_B"
       ],
       "UnitTalk_KOR": "실력이 대단하네. 다음 경기는 우리도 응원하러 갈게.",
-      "UnitTalk_JPN": "実力がすごいね。次の試合は私たちも応援に行くよ。",
+      "UnitTalk_JPN": "すごい実力だね。次はアタシたちも応援に行くよ。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -302,7 +302,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "어느새 주위에 모여든 사람들과 함께 흥겨운 노래를 들을 수 있었다.",
-      "UnitTalk_JPN": "いつの間にか周囲に集まった人々と共に賑やかな歌を聴くことができた。",
+      "UnitTalk_JPN": "いつの間にか周りに集まった人たちの、楽しげな歌声が聞こえてきた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -400,7 +400,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "굉장했어. 한 몸인 것처럼 호흡이 잘 맞더라.",
-      "UnitTalk_JPN": "すごかった。まるで一体であるかのように息がぴったり合っていた。",
+      "UnitTalk_JPN": "すごいじゃない。まさに一心同体だったわ。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -414,7 +414,7 @@
         "SI_FLORA_PEOPLE_B"
       ],
       "UnitTalk_KOR": "응. 다음 대회 때는 우리도 더 노력하자.",
-      "UnitTalk_JPN": "うん。次の大会では、私たちももっと頑張ろう。",
+      "UnitTalk_JPN": "次の大会では、アタシたちももっと頑張らないと。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -425,7 +425,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "뛰어난 협동심을 발휘해 예선전을 통과했다!",
-      "UnitTalk_JPN": "卓越したチームワークを発揮して予選を突破した！",
+      "UnitTalk_JPN": "チームワークを発揮して、予選を突破した！",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -465,7 +465,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 쉬지 않고 코트를 뛰어다녔다!",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と一緒に休むことなくコートを駆け回った！",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と共に、休むことなくコートを走り回った！",
       "TalkTime": 0.03
     },
     {
@@ -513,7 +513,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "지칠 줄 모르는 체력이네. 아직도 심장이 두근거려…",
-      "UnitTalk_JPN": "疲れを知らない体力だな。まだ心臓がドキドキしてる…",
+      "UnitTalk_JPN": "疲れ知らずの体力ね。私はまだ心臓がドキドキしてるわ…",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -527,7 +527,7 @@
         "SI_FLORA_PEOPLE_B"
       ],
       "UnitTalk_KOR": "야자 음료수가 있는데 한 번 마셔 볼래? 갈증이 금방 사라질 거야.",
-      "UnitTalk_JPN": "ヤシジュースがあるけど、飲んでみる？喉の渇きがすぐに癒えるよ。",
+      "UnitTalk_JPN": "ココナッツジュース、飲んでみる？喉の渇きがすぐに治まるよ。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -548,7 +548,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 꾸준히 단련한 체력으로 예선전을 통과했다!",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と鍛え抜いた体力で予選を突破した！",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>と共に、地道に鍛えてきた体力で予選を通過した！",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -586,7 +586,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "…<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 마지막까지 최선을 다했다!",
-      "UnitTalk_JPN": "…<color=#F7BE45>[CHARACTER_NAME]</color>と最後まで全力で戦った！",
+      "UnitTalk_JPN": "…<color=#F7BE45>[CHARACTER_NAME]</color>と共に、最後まで全力で戦った！",
       "TalkTime": 0.03
     },
     {
@@ -634,7 +634,7 @@
         "SI_FLORA_PEOPLE_A"
       ],
       "UnitTalk_KOR": "이렇게 승부욕이 넘치는 애들은 처음 봐…!",
-      "UnitTalk_JPN": "こんなに勝負欲が溢れる子は初めてだ…！",
+      "UnitTalk_JPN": "こんなに負けず嫌いな子は初めてよ…！",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -648,7 +648,7 @@
         "SI_FLORA_PEOPLE_B"
       ],
       "UnitTalk_KOR": "대단해. 비치 발리볼에 이 정도로 진심이라니…",
-      "UnitTalk_JPN": "すごい。ビーチバレーにここまで本気だなんて…",
+      "UnitTalk_JPN": "すごいよ。ビーチバレーにここまで本気だなんて…",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },

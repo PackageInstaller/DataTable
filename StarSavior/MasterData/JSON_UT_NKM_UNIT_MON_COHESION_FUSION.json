@@ -13,13 +13,61 @@
     },
     "BattleStates": [
       {
-        "StateName": "USN_ASTAND_FOCUS_INFO_READY"
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_FOCUS_INFO_READY.wav"
+            ]
+          }
+        ]
       },
       {
-        "StateName": "USN_START_FOCUS"
+        "StateName": "USN_START_FOCUS",
+        "SoundEvents": [
+          {
+            "EventFrame": 13,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 72,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 115,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 122,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_VOICE_02.wav"
+            ]
+          }
+        ]
       },
       {
-        "StateName": "USN_START"
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SEPLL_DARK.wav"
+            ]
+          },
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_VOICE.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_ATTACK",
@@ -44,7 +92,7 @@
               "EffectHeight": "BVH_BODY"
             }
           },
-                    {
+          {
             "AnimTime": true,
             "EventFrame": 61,
             "ReActType": "NRT_DAMAGE_A",
@@ -56,6 +104,38 @@
               "EffectName": "VFX_HIT_CMN_00.prefab",
               "EffectHeight": "BVH_BODY"
             }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 12,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DAKR_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 13,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_HIT.wav"
+            ]
+          },
+          {
+            "EventFrame": 61,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_HIT_02.wav"
+            ]
           }
         ]
       },
@@ -79,6 +159,44 @@
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
             }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 40,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 82,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 84,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 129,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_HIT_03.wav"
+            ]
           }
         ]
       },
@@ -111,10 +229,92 @@
               "EffectHeight": "BVH_BODY"
             }
           }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_11.wav"
+            ]
+          },
+          {
+            "EventFrame": 69,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 95,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_13.wav"
+            ]
+          },
+          {
+            "EventFrame": 143,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_VOICE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 159,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_14.wav"
+            ]
+          },
+          {
+            "EventFrame": 175,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_HIT_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 194,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_15.wav"
+            ]
+          }
         ]
       },
       {
-        "StateName": "USN_DYING"
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_VOICE_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_16.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_17.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_BODYFALL.wav"
+            ]
+          },
+          {
+            "EventFrame": 54,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_COHESION_FUSION_BLACK_SPELL_DARK_18.wav"
+            ]
+          }
+        ]
       }
     ]
   }

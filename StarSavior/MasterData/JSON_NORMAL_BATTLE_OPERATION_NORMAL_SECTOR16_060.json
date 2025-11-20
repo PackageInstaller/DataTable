@@ -4,50 +4,27 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_06",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_06",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_06",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_06",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_MINION_OPERATION_04", // 모방자 기사
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_OPERATION_06",
+            "UnitStrId": "NKM_UNIT_MON_COHESION_FUSION_BLACK_BOSS_OP_16", //공허 융합자 //발급핋요
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_06",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_MINION_OPERATION_04", // 모방자 기사
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           }
         ]
       }

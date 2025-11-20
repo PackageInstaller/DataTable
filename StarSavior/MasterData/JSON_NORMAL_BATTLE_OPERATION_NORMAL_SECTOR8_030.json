@@ -4,49 +4,42 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_MINION_OPERATION_02", //모방자 기사
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_TURN_SPEED" : -15
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_FALLEN_DUALSWORD_BLACK_BOSS_OPERATION_02",
-            "AllSkillAvailable": true,
+            "UnitStrId": "NKM_UNIT_MON_FALLEN_DUALSWORD_BLACK_BOSS_OPERATION_02", //공허 몰락자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_ORDER"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_TURN_SPEED" : -15
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_MINION_OPERATION_02", //모방자 기사
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_TURN_SPEED" : -15
+            }
           }
         ]
       }

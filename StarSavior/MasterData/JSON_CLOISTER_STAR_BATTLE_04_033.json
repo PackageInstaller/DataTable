@@ -7,22 +7,37 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_02",  // 주시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_WORM_BLACK_CLOISTER_02",  // 숙고자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_02",  // 주시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       },
@@ -30,24 +45,30 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_CLOISTER_03",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_ELITEWORM_BLACK_ELITE_CLOISTER_02", // 번뇌의 숙고자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "IsElite": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_03",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_ELITEWORM_BLACK_ELITE_CLOISTER_02", // 번뇌의 숙고자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsElite": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       }

@@ -1,0 +1,396 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_8E",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_STARDUST_FORTRESS_1.png"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_04.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "무, 물러서지 마라!",
+      "UnitTalk_JPN": "ひ、退くんじゃない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_008.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "내 시체를 밟고서라도! ",
+      "UnitTalk_JPN": "我の死体を踏み越えてでも！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_009.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_BOSS",
+      "UnitNameString": [
+        "SI_RAIDER_KRUNNADUN"
+      ],
+      "UnitTalk_KOR": "부족원들의 청결하고 위생적인 생활을 지켜야 한다!",
+      "UnitTalk_JPN": "部族がいつでも風呂に入れる生活を守らなければならん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_CHIEFTAIN_010.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "조, 족장! 때로는 한발 물러서는 것도 용기다!",
+      "UnitTalk_JPN": "ぞ、族長！引き下がるのも勇気だ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_008.wav"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MON_RAIDER_CROSSBOW_BLUE",
+      "UnitNameString": [
+        "SI_RAIDER_KIRIYASU"
+      ],
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "다들! 족장을 업어라! 퇴각이다!",
+      "UnitTalk_JPN": "みんな！族長を抱えろ！撤退するぞ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_MONSTER_SUBCHEIF_009.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "휴우…",
+      "UnitTalk_JPN": "ふう…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "역시 그다지 강한 녀석들은 아니네.",
+      "UnitTalk_JPN": "やっぱり、そんなに強い敵じゃなかったわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "요새에 진입한 후로 엄청나게 몰려들더니 이제야 끝났나 봐.",
+      "UnitTalk_JPN": "すごい数だったから、ちょっとびっくりしたけど…完全に追い払えたわよね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "광범위 스캔 완료. 약탈자 무리의 전반적 퇴각을 확인.",
+      "UnitTalk_JPN": "広範囲のスキャン完了。レイダーの退却を確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_006.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "족장을 쓰러트린 것이 주요 원인으로 추측.",
+      "UnitTalk_JPN": "族長を倒したことが、主な理由と推測。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_007.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아, 그러고 보니 마지막에 달려든 녀석 덩치가 엄청 컸었지.",
+      "UnitTalk_JPN": "そういえば、最後に突撃してきた敵、かなり大きかったわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그 녀석이 족장이었나 보네.",
+      "UnitTalk_JPN": "あいつが族長だったってことね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "아니, 니들 말이야!",
+      "UnitTalk_JPN": "ちょっと、キミたちさぁ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "보자 보자 해도 답답해서 못 봐주겠네!",
+      "UnitTalk_JPN": "もう、見てられないんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "상대를 쓰러트렸으면 끝장을 내든가 해야지!",
+      "UnitTalk_JPN": "相手を倒したら、とどめを刺さなきゃダメでしょ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "왜 그냥 도망치도록 놔둔 거야?",
+      "UnitTalk_JPN": "なんでそのまま逃がしちゃうわけ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "그러게.",
+      "UnitTalk_JPN": "そうね…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "어떤 사기꾼도 붙잡은 김에 끝장을 봤어야 하는데. 그치?",
+      "UnitTalk_JPN": "じゃあ、ペテン師も捕まえたついでにとどめを刺しておくべきだったかしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그건 전혀 다른 이야기지!",
+      "UnitTalk_JPN": "そ、それとこれとは話が違うじゃん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "사기꾼. 뻔뻔함.",
+      "UnitTalk_JPN": "ペテン師。図々しい。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_SMILE_008.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "애초에 약탈자 녀석들은 그리 나쁜 녀석들이 아냐.",
+      "UnitTalk_JPN": "そもそも、レイダーはそんなに悪い魔獣じゃないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_019.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "온수 목욕에 집착하는 것만 빼면 거래를 하거나 일꾼으로 고용하기도 한다고.",
+      "UnitTalk_JPN": "温かいお風呂に執着することを除けば…取引をしたり、働き手として雇うこともできるんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_020.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "고향에서 토벌 작전을 할 때도 혼내서 쫓아내는 정도였어.",
+      "UnitTalk_JPN": "故郷で討伐作戦をする時も、懲らしめて追い出す程度だったのよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_021.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그러니 굳이 끝을 볼 필요는 없다는 이야기야. 알겠어?",
+      "UnitTalk_JPN": "だから、わざわざとどめを刺す必要はないってこと。分かったかしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_022.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "흥, 귀하게 자란 부잣집 아가씨가 할 법한 생각이네.",
+      "UnitTalk_JPN": "フンッ！お嬢様育ちだね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그렇게 물렁하게 굴다가 언젠간 쓴맛을 볼 거라고.",
+      "UnitTalk_JPN": "そんな甘い考え方じゃ、いつか痛い目を見ることになるんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "암! 그렇고말고!",
+      "UnitTalk_JPN": "うん、絶対そうなるんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_011.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그것도 예언이야?",
+      "UnitTalk_JPN": "それも予言なの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_023.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "복채도 안 받았는데 무슨 예언이야.",
+      "UnitTalk_JPN": "お金も払ってないんだから、予言なんてしてあげる訳ないでしょ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_012.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이건 그냥 사회생활 선배의 조언 같은 거지. 새겨들으라고.",
+      "UnitTalk_JPN": "これは人生の先輩としてのアドバイスだよ。ちゃんと覚えておくように！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_013.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "음, 확실히 많은 <color=#F7BE45>[경험]</color>이 있을 것 같긴 하네. 참고할게.",
+      "UnitTalk_JPN": "確かに、色んな<color=#F7BE45>「経験」</color>をしてそうね。参考にするわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_STRANIS_024.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…왜 내가 기분이 나빠지지?",
+      "UnitTalk_JPN": "…なんか、いい気持ちしないんだけど。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_8_UNIT_S_VOYAGER_ORACLE_014.wav"
+    }
+  ]
+}

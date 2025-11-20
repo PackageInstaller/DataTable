@@ -95,21 +95,17 @@
             }
           }
         ],
-        "VoiceSeries": [
-         {
-           "DataList": [
-              {
-                "EventFrame": 8,
-               "VoiceName": "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE.wav"
-              }
-           ]
-         }
-       ],
         "SoundEvents": [
             {
               "EventFrame": 0,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_07.wav"
+              ]
+            },
+            {
+              "EventFrame": 8,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE.wav"
               ]
             },
             {
@@ -159,6 +155,12 @@
          }
        ],
         "SoundEvents": [
+          {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_02.wav"
+              ]
+            },
             {
               "EventFrame": 3,
               "listSoundName": [
@@ -222,6 +224,12 @@
               ]
             },
             {
+              "EventFrame": 16,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_03.wav"
+              ]
+            },
+            {
               "EventFrame": 54,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_12.wav"
@@ -268,21 +276,17 @@
       {
         "StateName": "USN_DYING",
         "DyingDissolveStartTime": 1.16,
-        "VoiceSeries": [
-         {
-           "DataList": [
-              {
-                "EventFrame": 6,
-               "VoiceName": "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_04.wav"
-              }
-           ]
-         }
-       ],
         "SoundEvents": [
             {
               "EventFrame": 0,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_SPELL_DARK_17.wav"
+              ]
+            },
+            {
+              "EventFrame": 6,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_TUNER_CROWN_BLACK_VOICE_04.wav"
               ]
             },
             {

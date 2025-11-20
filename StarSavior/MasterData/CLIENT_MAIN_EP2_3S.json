@@ -1,0 +1,1585 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_3S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "자아… 그러면 뭘 해야 할까?",
+          "JumpAnchorStringId_JPN": "さて…何から始めればいいんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "UnitTalk_KOR": "잘은 모르겠지만 구원자를 훈련시키는 게 내 임무라고 했었지.",
+      "UnitTalk_JPN": "よく分からないが、救援者を鍛える私の任務だそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러면 일단 훈련장이나 기구가 있는지를 알아봐야겠다.",
+      "UnitTalk_JPN": "となれば、まずはトレーニングに使う器具や場所がどこにあるのか確認しないとな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 151,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png"
+    },
+    {
+      "Uid": 149,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "오! 훈련장 말이냐?!",
+      "UnitTalk_JPN": "おっ！訓練場か！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_001.wav"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "물론 대여 가능하다! 인간!",
+      "UnitTalk_JPN": "もちろん使えるのだ、人間よ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_002.wav"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이 뿔 달린 소녀의 이름은 스칼렛.",
+      "UnitTalk_JPN": "この角を生やした少女の名前はスカーレット。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어에서 장비 및 장소 대여를 담당하고 있다고 한다.",
+      "UnitTalk_JPN": "キャンドル・スクエアで備品や場所の貸し出しを担当しているそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러면 대여를 하고 싶은데…",
+          "JumpAnchorStringId_JPN": "それなら、貸し出しをお願いしたいんだが…"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "좋은 생각이구나! 인간!",
+      "UnitTalk_JPN": "いい考えなのだ！人間よ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_003.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "훌륭한 구원자가 되려면 평소에 땀을 흘리며 흙바닥을 굴러야 하는 법이지!",
+      "UnitTalk_JPN": "立派な救援者になるには、普段から汗水を流して泥まみれにならないとな！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_004.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "잠시만 기다리거라. 여기 어딘가에 가격표가 있었는데…",
+      "UnitTalk_JPN": "少し待つのだ。この辺に料金表があったはず…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_005.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "가격표…?",
+          "JumpAnchorStringId_JPN": "料金表？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "오, 여기에 있구나!",
+      "UnitTalk_JPN": "おっ、あったのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_006.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "훈련장만 빌리면 대충… 이 정도.",
+      "UnitTalk_JPN": "訓練場の貸し出しなら…これくらいの値段なのだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_007.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "훈련 장비까지 한꺼번에 빌리면 할인도 가능하다는구나!",
+      "UnitTalk_JPN": "訓練に必要な物を一緒に借りれば、割引もあるのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_008.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "돈을 받아?!",
+          "JumpAnchorStringId_JPN": "お金が必要なのか！？"
+        }
+      ]
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "그야 당연하지! 인간 세상에 공짜가 어디 있겠느냐?!",
+      "UnitTalk_JPN": "当たり前なのだ！この世にタダで手に入るものなんて一つもないぞ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_009.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "위대한 용족인 이 몸도 그 정도는 알고 있느니라!",
+      "UnitTalk_JPN": "偉大な竜族であるわがはいも、それぐらいは知っているのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_010.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세상을 구하기 위한 준비를 하라면서 돈을 받는 건 무슨 생각일까?",
+      "UnitTalk_JPN": "世界を救うための準備をしろと言いながら、お金を取るなんてどういうつもりだ…？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "생각할수록 부당하기 짝이 없지만 내가 빈털터리라는 사실은 변하지 않는다.",
+      "UnitTalk_JPN": "どう考えても理不尽極まりないが、私が一文無しだという事実は変わらない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러고 보니 분명 아세라가 부잣집 딸이라고 했던 것 같은데…",
+      "UnitTalk_JPN": "そういえば、確かアセラは金持ちの娘だと言ってたはずだが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응? 왜 그래, 단장?",
+      "UnitTalk_JPN": "…ん？どうしたの、団長？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아니, 그런 쓰레기 같은 짓은 생각도 하지 말자.",
+      "UnitTalk_JPN": "いや、アセラに頼るのは駄目だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 녀석은 내가 책임져야 할 단원이다.",
+      "UnitTalk_JPN": "彼女は、私が面倒を見なければならない団員なのだから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "혹시… 아르바이트 같은 건 없나?",
+          "JumpAnchorStringId_JPN": "…アルバイトとかって、あるのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "아르바이트?",
+      "UnitTalk_JPN": "アルバイト？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_011.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "글쎄, 그런 건 잘 모르겠는데…",
+      "UnitTalk_JPN": "それはよく分からぬが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_012.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "혹시 수중에 돈이 모자라는 게냐?",
+      "UnitTalk_JPN": "ひょっとして、お金に困っているのか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_013.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으음. 이제 막 창설한 구원단이다 보니…",
+          "JumpAnchorStringId_JPN": "創設したばかりの救援団だからな…"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "역시 그런 거였냐?!",
+      "UnitTalk_JPN": "なんと…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_014.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "옛날 생각이 나는구나.",
+      "UnitTalk_JPN": "昔のことを思い出すのだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_015.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "이 몸도 인간 세상에 처음 내려왔을 때, 무일푼이라 고생을 많이 했었지.",
+      "UnitTalk_JPN": "わがはいも人間の世界に初めて降り立った時、お金がなくて苦労したのだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_016.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "캔들 스퀘어에 취직하기 전에는 한 달 동안 물만 마신 적도 있다! 하하하!",
+      "UnitTalk_JPN": "キャンドル・スクエアに就職するまでは、一か月水だけで生活したこともあるからな！フハハ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_017.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "과연 용족.",
+      "UnitTalk_JPN": "やはり竜族…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "사람이라면 죽었다. 분명…",
+      "UnitTalk_JPN": "人だったら死んでいた。確実に…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 너희들의 모습을 보니 남 일 같지 않구나.",
+      "UnitTalk_JPN": "とにかくお主たちを見ていると、他人事とは思えないのだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_018.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "자 이리 가까이 오거라.",
+      "UnitTalk_JPN": "ほら、耳を貸すのだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_019.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "원래 이러면 안 되긴 하지만…",
+      "UnitTalk_JPN": "本来なら、こんなことしちゃいけないが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_020.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "처음이기도 하니 몰래 공짜로 처리해 주도록 하겠다.",
+      "UnitTalk_JPN": "初めてだし、特別にタダで貸してやるのだ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_021.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정말이야? 고마워!",
+          "JumpAnchorStringId_JPN": "本当か？ありがとう！"
+        }
+      ]
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "소, 소리는 낮추거라!",
+      "UnitTalk_JPN": "こ、声が大きいのだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_022.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그 녀석이 듣기라도 하면…!",
+      "UnitTalk_JPN": "あやつに聞かれでもしたら…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_023.wav"
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "스칼렛!",
+      "UnitTalk_JPN": "スカーレット！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_001.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "히이익!!",
+      "UnitTalk_JPN": "ヒィーーッ！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_024.wav"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "제가 몇 번이나 경고했었죠?",
+      "UnitTalk_JPN": "何度も注意したでしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_002.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "캔들 스퀘어의 공식 가격을 멋대로 깎아주면 안 된다고요.",
+      "UnitTalk_JPN": "キャンドル・スクエアの正規価格から、勝手に値引いてはいけません。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_003.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하, 하지만 이 녀석들 돈이 없다지 않느냐…",
+      "UnitTalk_JPN": "し、しかし、こやつらはお金がないというのだ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_025.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "제법 근성도 있어 보이는 녀석들이니 이 정도는 대충 처리해도…",
+      "UnitTalk_JPN": "根性もありそうだし、これぐらいサービスしてやっても…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_026.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "대충이라니요!",
+      "UnitTalk_JPN": "これぐらいですって…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_004.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "히이익!",
+      "UnitTalk_JPN": "ヒーーッ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_027.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "우리가 받는 훈련장 대여 비용은 이미 최소한의 유지관리비 정도입니다.",
+      "UnitTalk_JPN": "訓練場の貸し出し費用は、施設の維持管理に最低限必要な金額です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_005.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이것도 받지 않으려면 먼저 스칼렛이 매일 해치우는 부식과 팬케이크부터 없애 버리도록 하죠!",
+      "UnitTalk_JPN": "勝手に値引きするというのなら、その補填としてスカーレットが毎日食べているパンケーキを抜きにしましょうか！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_006.wav"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "어, 어찌 그런 끔찍한 말을…?!",
+      "UnitTalk_JPN": "ど、どうしてそんなむごいことを言うのだ！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_028.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "클레어가 구워 주는 팬케이크가 없으면 이 몸은 배가 고파 쓰러질지도 모른다!",
+      "UnitTalk_JPN": "クレアが焼いてくれるパンケーキがないと、わがはいはお腹が減って倒れてしまうのだ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_029.wav"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SCISSORS",
+      "UnitTalk_KOR": "그것만은 제발 참아다오…!",
+      "UnitTalk_JPN": "だからそれだけはご勘弁を…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SCISSORS_030.wav"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "스칼렛은 눈물을 찔끔 흘리며 한참이나 클레어에게 혼났다.",
+      "UnitTalk_JPN": "スカーレットは涙をポロポロと流しながら、クレアにこっぴどく叱られていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "후우… 그래서 돈이 부족하시다고요.",
+      "UnitTalk_JPN": "…ところで、お金が足りないのですね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_007.wav"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저도 도와드리고는 싶지만 규정은 규정이라 곤란합니다.",
+      "UnitTalk_JPN": "私も力になりたい気持ちは山々ですが、規則は規則ですので。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_008.wav"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "대신 <color=#F7BE45>[의뢰]</color>를 해 보는 건 어떨까요?",
+      "UnitTalk_JPN": "その代わり、<color=#F7BE45>「依頼」</color>を受けてみるのはいかがですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_009.wav"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "의뢰?",
+          "JumpAnchorStringId_JPN": "依頼？"
+        }
+      ]
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "네, 사실 구원단의 활동은 이쪽이 일반적이긴 하죠.",
+      "UnitTalk_JPN": "はい。それが救援団の主な活動ですので。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_010.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "캔들 스퀘어에 등록된 다양한 의뢰를 맡아 해결하고 보상을 수령할 수 있습니다.",
+      "UnitTalk_JPN": "キャンドル・スクエアに登録された様々な依頼を受け、解決することで報酬を得ることができます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_011.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아, 그런 건가. 익숙한 시스템이다.",
+      "UnitTalk_JPN": "なるほど、そういうことか。よくあるシステムだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "첫 의뢰라니! 벌써 가슴이 두근거리는걸?",
+      "UnitTalk_JPN": "初めての依頼だなんて！もう胸がドキドキするわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "드디어 우리의 전설이 시작되는 거야, 단장!",
+      "UnitTalk_JPN": "ついにわたしたちの伝説が始まるのよ、団長！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어디 보자, 적당한 의뢰가…",
+      "UnitTalk_JPN": "さて、お二人にちょうど良い依頼は…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_012.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "여기에 있군요.",
+      "UnitTalk_JPN": "こちらですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_013.wav"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "한 번 보시겠어요?",
+      "UnitTalk_JPN": "一度、ご覧になられますか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_MAID_SPEAR_014.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "얼른 읽어봐!",
+      "UnitTalk_JPN": "はやく読んでみて！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "고대 유적의 마물 처치? NOA에 숨어든 첩자 색출? 서부 재난 지대 원정?",
+      "UnitTalk_JPN": "古代遺跡の魔獣退治？NOAに潜むスパイの捜査？それとも西部被災地への遠征かしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "분명 엄청난 모험이 우릴 기다리고 있겠지?!",
+      "UnitTalk_JPN": "きっと、すごい冒険がわたしたちを待っているはずよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "흥분해서 떠드는 아세라를 뒤로 하고 의뢰서의 제목을 확인했다.",
+      "UnitTalk_JPN": "興奮して騒ぐアセラを横目に、私は依頼書の題名を確認した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…사기꾼 검거?",
+          "JumpAnchorStringId_JPN": "…ペテン師の逮捕依頼？"
+        }
+      ]
+    },
+    {
+      "Uid": 157,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 156,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitTalk_KOR": "의뢰인을 만나기 위해 아세라와 함께 시내에서 벗어나 외곽 지역으로 향했다.",
+      "UnitTalk_JPN": "依頼人に会うため、NOAを離れて郊外へと向かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "많은 통행인들로 가득했던 커다란 도로는 점점 좁아졌고 마주치는 사람들의 수도 뜸해졌다.",
+      "UnitTalk_JPN": "広い道に多くの通行人で賑わっていた市街地とは異なり、道幅は徐々に狭くなり、行き交う人々の数も減っていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "햇빛조차 들어오지 않을 정도로 어두운 골목길 끝에서야 우리는 목적지에 도착할 수 있었다.",
+      "UnitTalk_JPN": "日の光すら届かないような暗い路地の突き当たりで、ようやく目的地にたどり着くことができた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>[해피 스마일 공방]</color>. 이 공방의 주인이 의뢰자야.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ハッピースマイル工房」</color>。この工房の主人が、依頼人よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "아세라와 나는 말없이 눈앞의 건물을 바라보았다.",
+      "UnitTalk_JPN": "アセラと私は、静かに目の前の建物を見つめた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "전선부터 톱니바퀴 같은 각종 기계 장치가 담쟁이덩굴처럼 외벽을 둘러싸고 건물 전체를 뒤덮고 있었다.",
+      "UnitTalk_JPN": "電線をはじめ、歯車のような機械装置がツタのように外壁を伝い、建物全体を覆っている。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아하하, 가게가 굉장히… 개성적이네.",
+      "UnitTalk_JPN": "あはは、すごく…個性的なお店ね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "기계들이 덕지덕지 붙어있는 출입구를 열어야 할지 말아야 할지 고민하고 있을 때였다.",
+      "UnitTalk_JPN": "出入口には機械が所狭しと並べられている。ドアを開けるかどうか迷っていた時―",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitTalk_KOR": "문 옆의 기계 더미가 부스럭부스럭 움직이더니, 그 사이에서 웃는 얼굴이 그려진 가면을 쓴 조그만 고양이 두 마리가 몸을 일으켰다.",
+      "UnitTalk_JPN": "ドア横にある機械の山の後ろから、笑った仮面を被った小さな猫が二匹、現れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "꺄, 꺄악! 깜짝이야!",
+      "UnitTalk_JPN": "きゃーっ！び、びっくりしたわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이게 뭐야, 고양이…?",
+      "UnitTalk_JPN": "この子たち、何なの？猫…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "자세히 보니 옆구리에는 커다란 재봉 흔적이 길게 이어져 있었다.",
+      "UnitTalk_JPN": "よく見ると、脇腹には大きな縫い目がある。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…인형이잖아?",
+          "JumpAnchorStringId_JPN": "…ぬいぐるみのようだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "인형…? 움직이는데?",
+      "UnitTalk_JPN": "ぬいぐるみ…？動いているのに？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "두 마리의 고양이 인형은 조금 어색한 걸음으로 다가와 아세라 앞에 섰다.",
+      "UnitTalk_JPN": "二匹のぬいぐるみは、少しぎこちない足取りでアセラの前に立った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 158,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "차렷! 열중쉬엇!",
+      "UnitTalk_JPN": "気をつけ！休め！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_A_001.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitNameString": [
+        "SI_DOLL_B"
+      ],
+      "UnitTalk_KOR": "차렷!",
+      "UnitTalk_JPN": "気をつけ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_B_001.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "오늘의 첫 번째 손님! 환영!",
+      "UnitTalk_JPN": "今日初めてのお客様！歓迎！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_A_002.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_B"
+      ],
+      "UnitTalk_KOR": "환영! 오늘의 첫 번째 손님!",
+      "UnitTalk_JPN": "歓迎！今日初めてのお客様！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_B_002.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "어…?",
+      "UnitTalk_JPN": "えっ…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "환영해 줘서… 고마워?",
+      "UnitTalk_JPN": "歓迎してくれてるの…？あ、ありがとう…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "다음 중 원하는 업무를 고르세요!",
+      "UnitTalk_JPN": "次の中から、希望するものを選んでください！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_A_003.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_B"
+      ],
+      "UnitTalk_KOR": "1번, 제작 의뢰! ",
+      "UnitTalk_JPN": "1番、制作依頼！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_B_003.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_B"
+      ],
+      "UnitTalk_KOR": "2번, 수리 의뢰!",
+      "UnitTalk_JPN": "2番、修理依頼！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_B_004.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "3번, 유머 감상!",
+      "UnitTalk_JPN": "3番、お笑い鑑賞！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_A_004.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그러니까… 우린 여기 공방 주인을 만나러 왔는데…",
+      "UnitTalk_JPN": "えっと…わたしたちは、この工房の主人に会いに来たんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "다음 중 원하는 업무를 고르세요!",
+      "UnitTalk_JPN": "次の中から、希望するものを選んでください！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_A_003.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "1번, 제작 의뢰! ",
+      "UnitTalk_JPN": "1番、制作依頼！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_B_003.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_B"
+      ],
+      "UnitTalk_KOR": "2번, 수리 의뢰!",
+      "UnitTalk_JPN": "2番、修理依頼！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_B_004.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "3번, 유머 감상!",
+      "UnitTalk_JPN": "3番、お笑い鑑賞！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_A_004.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "1… 1번?",
+      "UnitTalk_JPN": "…1番？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_A"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_A_008.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_DOLL_B"
+      ],
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_B_006.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "틀린 답인가 본데?",
+          "JumpAnchorStringId_JPN": "この答えには反応しないようだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그, 그럼… 3번?",
+      "UnitTalk_JPN": "じ、じゃあ…3番？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 164,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5,
+      "BgFileName": "CINEMA_MAIN_EP2_3S.mp4",
+      "VideoDependsOnText": false,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "VideoDependsOnText": false,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE"
+    },
+    {
+      "Uid": 160,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "다시 질문. 손님맞이용 냐옹봇 1호와 2호의 개그는, 재밌었어?",
+      "UnitTalk_JPN": "もう一度確認。お客様用ネコロボ1号、2号のギャグは面白かった？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "재밌었다면 어느 정도 재밌었는지 상세한 피드백을 요청.",
+      "UnitTalk_JPN": "面白かったなら、どれぐらい面白かったのか、詳しいフィードバックを要請する。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "어… 피드백?",
+      "UnitTalk_JPN": "あー…フィードバック？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_020.wav"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "전달된 피드백은 냐옹봇의 개그 패턴을 수정하고 발전하는 데 사용됨.",
+      "UnitTalk_JPN": "フィードバックは、ネコロボのギャグパターンの修正、発展させるのに使用。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "노란 옷을 입은 소녀는 기묘한 말투와 함께 빼곡히 평가 문항이 적혀 있는 종이를 나눠주었다.",
+      "UnitTalk_JPN": "黄色い服を着た少女は、評価項目がびっしりと書かれた紙を手渡してきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "어떤 부분이 가장 재밌었습니까?",
+      "UnitTalk_JPN": "…「どの部分がおもしろかったですか？」",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_021.wav"
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "처음 시작부터 웃음이 터지기 시작한 시간은 대략 몇 초입니까?",
+      "UnitTalk_JPN": "「笑い始めるまでにかかった時間はおおよそ何秒ぐらいですか？」",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_022.wav"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그리고 또… 자, 잠깐!",
+      "UnitTalk_JPN": "ちょ、ちょっと待って！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_023.wav"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이거 질문이 50개도 넘잖아! 이걸 다 써야 해?",
+      "UnitTalk_JPN": "これ、質問が50個以上あるじゃない！全部書かなきゃいけないの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_024.wav"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "…협력을 부탁함.",
+      "UnitTalk_JPN": "…協力求む。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_006.wav"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "설문 작성을 완료하면 해피 스마일 공방에서 쓸 수 있는 2.5% 할인권을 증정.",
+      "UnitTalk_JPN": "アンケートに答えると、ハッピースマイル工房で使える2.5％割引券をプレゼント。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_007.wav"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "또한 수리 의뢰 한 번은 무료로 서비스를…",
+      "UnitTalk_JPN": "さらに、修理1回無料サービスを…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_008.wav"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리는 의뢰를 하러 온 게 아니라…",
+          "JumpAnchorStringId_JPN": "待ってくれ。私たちは依頼しに来たんじゃなくて…"
+        }
+      ]
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "의뢰를 해결하기 위해 왔어.",
+          "JumpAnchorStringId_JPN": "依頼を解決しに来たんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그, 그래!",
+      "UnitTalk_JPN": "そ、そうよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_025.wav"
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그러니까… 네가 사기꾼 검거를 의뢰한 사람 맞지?",
+      "UnitTalk_JPN": "えっと…あなたがペテン師の逮捕を依頼した人でしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_026.wav"
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>[해피 스마일 공방]</color>의 주인인…",
+      "UnitTalk_JPN": "<color=#F7BE45>「ハッピースマイル工房」</color>の主人…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_027.wav"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "<color=#F7BE45>[스마일]</color>.",
+      "UnitTalk_JPN": "<color=#F7BE45>「スマイル」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_STRANIS_028.wav"
+    },
+    {
+      "Uid": 162,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS"
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_009.wav"
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…긍정.",
+      "UnitTalk_JPN": "…肯定。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_3_UNIT_S_VOYAGER_SMILE_010.wav"
+    }
+  ]
+}

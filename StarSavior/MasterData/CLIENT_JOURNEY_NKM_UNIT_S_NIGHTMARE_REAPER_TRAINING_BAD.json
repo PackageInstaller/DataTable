@@ -1,0 +1,459 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgCrash": 0.75,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_BATTLE_COMMON_POP.wav"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "앗… 죄송해요, 단장님…",
+      "UnitTalk_JPN": "あっ…ごめんなさい、団長さま…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "나비가 날아갈 것만 같아서 저도 모르게…",
+      "UnitTalk_JPN": "蝶が飛んでいきそうで、思わず…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "다시 해봐도 될까요? 이번엔 정말 실망시키지 않을게요…",
+      "UnitTalk_JPN": "もう一度挑戦してもよろしいですか？今度こそ、がっかりさせませんから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나비도 휴식이 필요한가 봐.",
+          "JumpAnchorStringId_JPN": "蝶も休息が必要なのかも。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그럼 다시 해볼래?",
+          "JumpAnchorStringId_JPN": "じゃあ、もう一回やってみる？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "활력 포션을 건넨다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…나비도 지쳤던 걸까요?",
+      "UnitTalk_JPN": "…蝶もお疲れだったのでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러니까 오늘은 무리하지 말고 쉬자.",
+          "JumpAnchorStringId_JPN": "だから、今日は無理しないで休もう。"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼, 단장님의 말씀을 따를게요.",
+      "UnitTalk_JPN": "では、団長さまのお言葉に従います。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "다음엔 정말 제대로 해낼 테니까요.",
+      "UnitTalk_JPN": "次は必ず、やり遂げますから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "다음을 위해 심기일전하는 세이라를 데리고 훈련장을 빠져나왔다.",
+      "UnitTalk_JPN": "次に向けて意気込むセイラを連れて、訓練場を後にした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 98,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네…? 하지만 나비는 제 손 위에서 계속 쉬고 있었는데요…",
+      "UnitTalk_JPN": "はい…？ですが、蝶はわたしの手でずっと休んでいましたし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래도 무리하지 않고 쉬는 편이 나아.",
+          "JumpAnchorStringId_JPN": "それでも、無理せず休んだ方が良い。"
+        }
+      ]
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "으음…",
+      "UnitTalk_JPN": "うーん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…네. 단장님 말씀을 따를게요…",
+      "UnitTalk_JPN": "分かりました。団長さまのお言葉に従います…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "어쩐지 하고 싶은 말이 있는 듯한 세이라를 데리고 훈련장을 빠져나왔다.",
+      "UnitTalk_JPN": "どうも言いたいことがある様子のセイラを連れて、訓練場を後にした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 105,
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그래도 될까요?",
+      "UnitTalk_JPN": "そうしてもよろしいですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…이번엔 믿어주신 만큼… 절대 실망시키지 않을게요.",
+      "UnitTalk_JPN": "…信じてくださった分…絶対に失望させません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "저, 꿈에서 몇 번이고 연습했던 종목이거든요.",
+      "UnitTalk_JPN": "夢の中で、何度も練習した種目なんです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그러니까… 제대로 해낼게요.",
+      "UnitTalk_JPN": "だから…ちゃんとやり遂げます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "열의를 불태운 세이라는 오늘의 훈련을 끝까지 해냈다.",
+      "UnitTalk_JPN": "熱意に燃えたセイラは、トレーニングを最後までやり切った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 110,
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 되나요?",
+      "UnitTalk_JPN": "そうしてもよろしいですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그럼… 믿어주신 단장님을 떠올리며 다시 한번…",
+      "UnitTalk_JPN": "では…信じてくださった団長さまのことを想いながら、もう一度…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗…!",
+      "UnitTalk_JPN": "あっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_01.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "죄송해요… 또 다시 실수를…",
+      "UnitTalk_JPN": "すみません…またミスを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "두 번째 기회를 이렇게 날리다니… 바보 같아…",
+      "UnitTalk_JPN": "二度目のチャンスを、こんな風に無駄にするなんて…わたしったら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "세이라는 잔뜩 풀이 죽은 채로 훈련을 이어나갔다…",
+      "UnitTalk_JPN": "セイラはすっかり意気消沈したまま、トレーニングを続けた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 118,
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "활력 포션…",
+      "UnitTalk_JPN": "活力ポーション…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "절 위한 건가요…?",
+      "UnitTalk_JPN": "わたしのために…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "감사합니다. 정말… 기뻐요.",
+      "UnitTalk_JPN": "ありがとうございます。本当に…嬉しいです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "사소한 게 아니에요. 단장님의 마음이 느껴지는걸요.",
+      "UnitTalk_JPN": "大したことない、ではありませんよ。団長さまの気持ちが伝わってきました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "활력 포션을 건네 받은 세이라는 이전의 활력을 되찾은 듯했다!",
+      "UnitTalk_JPN": "活力ポーションを受け取ったセイラは、元気を取り戻したようだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
+    }
+  ]
+}

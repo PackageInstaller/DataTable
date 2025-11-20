@@ -45,7 +45,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "처음 <color=#F7BE45>[여정]</color>을 시작했을 때 낯설어하시던 모습이 생각나는데...",
-      "UnitTalk_JPN": "<color=#F7BE45>「旅」</color>を始めた頃の、戸惑っていた姿を思い出します…",
+      "UnitTalk_JPN": "<color=#F7BE45>「旅」</color>を始めた頃の、不慣れで戸惑っていた姿を思い出します…",
       "TalkTime": 0.03
     },
     {
@@ -68,7 +68,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "뭐, 저처럼 유능한 연락관이 붙어 있으니 당연한 결과겠죠.",
-      "UnitTalk_JPN": "まぁ、私のような有能な連絡官がついているのですから、当然の結果でしょう。",
+      "UnitTalk_JPN": "まぁ、私のような有能な連絡官がついているのですから。当然の結果でしょう。",
       "TalkTime": 0.03
     },
     {
@@ -90,7 +90,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "앞으로의 <color=#F7BE45>[여정]</color>에도 최선을 다해 주세요.",
-      "UnitTalk_JPN": "これからも、<color=#F7BE45>「救援の旅」</color>にもご尽力くださいね。",
+      "UnitTalk_JPN": "これからも<color=#F7BE45>「救援の旅」</color>にご尽力くださいね。",
       "TalkTime": 0.03
     },
     {
@@ -134,7 +134,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
-      "UnitTalk_KOR": "사소한 오해일 수도, 서로의 입장차이 때문일 수도 있지만...",
+      "UnitTalk_KOR": "사소한 오해일 수도, 서로의 입장 차이 때문일 수도 있지만...",
       "UnitTalk_JPN": "その理由は、些細な誤解かもしれないし、お互いの立場の違いかもしれない…",
       "TalkTime": 0.03
     },
@@ -192,7 +192,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "인간은 마수나 공허체보다 전술적으로 훨씬 더 치밀하고 교활하니까요.",
-      "UnitTalk_JPN": "人間は魔獣や空虚体よりも、戦術的にはずっと緻密で狡猾ですから。",
+      "UnitTalk_JPN": "人間は魔獣や<r=ヴォイドボーン>空虚体</r>よりも、戦術的にずっと緻密で狡猾ですから。",
       "TalkTime": 0.03
     },
     {
@@ -253,7 +253,7 @@
         "SI_CHARLES"
       ],
       "UnitTalk_KOR": "귀, 귀공이 여정 단장 <color=#F7BE45>[PLAYER_NAME]</color>이시오?",
-      "UnitTalk_JPN": "き、貴殿が旅の団長、<color=#F7BE45>「PLAYER_NAME」</color>か？",
+      "UnitTalk_JPN": "き、貴殿が旅の団長、<color=#F7BE45>[PLAYER_NAME]</color>か？",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -264,8 +264,10 @@
       "WaitClick": false,
       "WaitTime": -1.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
       "UnitMotion": "ANGRY",
-      "UnitPos": "POS3"
+      "UnitPos": "POS4"
     },
     {
       "Uid": 24,
@@ -275,21 +277,17 @@
       "WaitTime": -1.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
       "UnitMotion": "SAD",
-      "UnitPos": "POS4"
+      "UnitPos": "POS5"
     },
     {
-      "Uid": 25,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
+      "Uid": 91,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "CameraOffset": "TWIN_3",
-      "CameraOffsetTime": "NR",
       "JumpAnchorData": [
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "귀... 귀공?",
-          "JumpAnchorStringId_JPN": "き…貴公？"
+          "JumpAnchorStringId_JPN": "き、貴殿？"
         }
       ]
     },
@@ -351,7 +349,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "귀공과 귀 여정 단원의- 여정 진행에- 한 줄기 뙤약볕이 되어-...",
-      "UnitTalk_JPN": "貴殿と貴団員の旅にとって、一筋の光となり…",
+      "UnitTalk_JPN": "貴殿と貴団員の旅に、我が一筋の光となり…",
       "TalkTime": 0.03
     },
     {
@@ -398,7 +396,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "...카, 카르멘, 도와줘!",
-      "UnitTalk_JPN": "…カ、カルメン、助けて！",
+      "UnitTalk_JPN": "…カ、カルメン、助けてぇ！",
       "TalkTime": 0.03
     },
     {
@@ -410,7 +408,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "알리시아님으로부터 여정의 경쟁 평가전 상대가 되어 달라는 이야기를 듣고 왔어요.",
-      "UnitTalk_JPN": "アリシア様から、対人試験の相手になるようにとご指示を受け、こちらにやって来ました。",
+      "UnitTalk_JPN": "アリシア様から対人試験の相手になるようにとご指示を受け、こちらに参りました。",
       "TalkTime": 0.03
     },
     {
@@ -434,7 +432,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "그, 그 정도로만 얘기하면 되는 거였어...?",
-      "UnitTalk_JPN": "そ、それだけ言えばよかったのか…？",
+      "UnitTalk_JPN": "そ、それだけで良かったのか…?",
       "TalkTime": 0.03
     },
     {
@@ -457,7 +455,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
       "UnitTalk_KOR": "너무 어려운 말을 생각하지 않아도 된다니까 그러네요.",
-      "UnitTalk_JPN": "難しい言葉は考えなくても良いんです。",
+      "UnitTalk_JPN": "難しい言葉は考えなくて良いのです。",
       "TalkTime": 0.03
     },
     {
@@ -468,7 +466,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitTalk_KOR": "하, 하지만 기사단장으로서 공식적인 업무이기도 하고...",
-      "UnitTalk_JPN": "で、でも、騎士団長としての公式な仕事でもあるし…",
+      "UnitTalk_JPN": "で、でも、騎士団長としての公的な仕事でもあるし…",
       "TalkTime": 0.03
     },
     {
@@ -491,7 +489,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "우우... 기사단장으로서 멋진 모습을 보이려면 어떤 멋진 말을 해야 할지...",
-      "UnitTalk_JPN": "うう…騎士団長としてカッコいい姿を見せるには、どんな立派な言葉を言えばいいのか…",
+      "UnitTalk_JPN": "うぅ…騎士団長としてカッコいい姿を見せるには、立派なことを言わないとと思って…",
       "TalkTime": 0.03
     },
     {
@@ -514,7 +512,7 @@
       "BgCrash": 0.5,
       "BgCrashTime": 0.3,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
-      "CameraOffset": "ONE_3",
+      "CameraOffset": "ONE_4",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "또 망쳐버렸어-!",
       "UnitTalk_JPN": "また台無しにしちゃったぁー！",
@@ -527,24 +525,26 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
-      "CameraOffset": "TWIN_3",
+      "CameraOffset": "TWIN_4",
       "CameraOffsetTime": "NR",
       "UnitMotion": "SERIOUS",
       "EmotionEffect": "STRESS",
       "UnitTalk_KOR": "하아... 그냥 평범하게 이야기하면 된다구요.",
-      "UnitTalk_JPN": "ふぅ…普通に話せばいいんですよ。",
+      "UnitTalk_JPN": "ふぅ…普通に話せばいいのですよ。",
       "TalkTime": 0.03
     },
     {
       "Uid": 46,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
-      "WaitClick": false,
-      "WaitTime": -1.0,
-      "CutsceneClear": "CLEARALL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_1",
       "CameraOffsetTime": "NR",
       "UnitMotion": "SURPRISE",
       "UnitQuickSet": true,
+      "UnitPos": "POS6",
       "UnitTalk_KOR": "아... 벌써 도착해 계셨네요.",
       "UnitTalk_JPN": "あっ…もう到着されていたようですね。",
       "TalkTime": 0.03
@@ -557,10 +557,8 @@
       "WaitTime": 0.0,
       "StartBgmFileName": "EMPTY.mp3",
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
-      "CameraOffset": "TWIN_6",
       "UnitMotion": "NORMAL",
       "UnitQuickSet": true,
-      "UnitPos": "POS3",
       "UnitTalk_KOR": "이분들이 바로 이번 <color=#F7BE45>[경쟁 평가전]</color>의 상대.",
       "UnitTalk_JPN": "この方々が、今回の<color=#F7BE45>「対人試験」</color>のお相手…",
       "TalkTime": 0.03
@@ -607,7 +605,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "북부 지방의 험준한 산맥에 맞닿아 있는 곳입니다.",
-      "UnitTalk_JPN": "北部地方の険しい山脈に接しているんですよ。",
+      "UnitTalk_JPN": "北部地方の険しい山脈に面しているんですよ。",
       "TalkTime": 0.03
     },
     {
@@ -619,7 +617,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "산맥을 넘은 곳에는 NOA 근교와는 비교도 할 수 없을 정도로 많은 마수들이 무리를 지어 터를 잡고 있고…",
-      "UnitTalk_JPN": "山脈の向こうには、NOA近郊とは比べものにならないほど多くの魔獣が、群れを成して棲みついており…",
+      "UnitTalk_JPN": "山脈の向こうには、NOA近郊とは比べものにならないほど多くの魔獣が群れを成しており…",
       "TalkTime": 0.03
     },
     {
@@ -630,7 +628,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "워낙 수가 많다 보니, 인간들이 사는 국경선 안쪽까지 진출을 노리고 있습니다.",
-      "UnitTalk_JPN": "あまりにも数が多いため、人間が住む国境線を超えて進出しようとしています。",
+      "UnitTalk_JPN": "あまりにも数が多いため、人間が住む国境線の内側まで進出を狙っているんです。",
       "TalkTime": 0.03
     },
     {
@@ -641,7 +639,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "구원단의 의뢰로 해결이 가능한 NOA와는 다르게, 모나스티르는 국가적인 역량을 동원해서 마수들의 세력과 싸우고 있어요.",
-      "UnitTalk_JPN": "救援団の依頼で解決できるNOAとは異なり、モナスティルは国家的な力を動員して、魔獣の勢力と戦っています。",
+      "UnitTalk_JPN": "救援団の依頼で解決できるNOAとは異なり、モナスティルは国家的な力を動員して魔獣の勢力と戦っています。",
       "TalkTime": 0.03
     },
     {
@@ -653,7 +651,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그 선봉에 있는 것이 바로 여기 계신 모나스티르 기사단이지요.",
-      "UnitTalk_JPN": "その先頭に立っているのが、まさにモナスティル騎士団です。",
+      "UnitTalk_JPN": "その先頭に立っているのが、まさにモナスティル騎士団だという訳です。",
       "TalkTime": 0.03
     },
     {
@@ -689,7 +687,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "아까 이야기한 수많은 실전을 거쳐온 베테랑 구원자의 자격에 이분들만큼 어울리는 분들은 없을 거예요.",
-      "UnitTalk_JPN": "先ほどお話した「数多くの実戦を経験してきたベテラン救援者」という資格に、西部奪還隊ほどふさわしい方はいません。",
+      "UnitTalk_JPN": "先ほどお話した「数多くの実戦を経験してきたベテラン救援者」という資格に、モナスティル騎士団ほどふさわしい方はいません。",
       "TalkTime": 0.03
     },
     {
@@ -700,17 +698,8 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "그렇기에 이번 평가전의 상대로 알리시아님이 내정하셨습니다.",
-      "UnitTalk_JPN": "そのため、今回の試験の相手として、アリシア様が指定されました。",
+      "UnitTalk_JPN": "そのため、今回の試験の相手としてアリシア様が指定されました。",
       "TalkTime": 0.03
-    },
-    {
-      "Uid": 60,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
-      "WaitClick": false,
-      "WaitTime": 0.0,
-      "CutsceneClear": "CLEARALL",
-      "UnitQuickSet": true
     },
     {
       "Uid": 61,
@@ -720,7 +709,7 @@
       "WaitTime": -1.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
       "UnitMotion": "NORMAL",
-      "UnitPos": "POS4"
+      "UnitPos": "POS5"
     },
     {
       "Uid": 62,
@@ -730,7 +719,7 @@
       "WaitTime": -1.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "NORMAL",
-      "UnitPos": "POS3"
+      "UnitPos": "POS4"
     },
     {
       "Uid": 63,
@@ -739,10 +728,10 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
-      "CameraOffset": "TWIN_3",
+      "CameraOffset": "TWIN_4",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "우와- 그렇게 멋지게 이야기해 주시니 어쩐지 부끄럽네요...!",
-      "UnitTalk_JPN": "うわー、そんな風に言われちゃうと、なんだか照れちゃいますね…！",
+      "UnitTalk_JPN": "うわー、そんな風に言われるとなんだか照れちゃいますね…！",
       "TalkTime": 0.03
     },
     {
@@ -754,7 +743,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "치, 칭찬을 이렇게 눈앞에서 들은 적은 처음이라... 어쩐지 얼굴이 화끈거리는데...",
-      "UnitTalk_JPN": "め、目の前でこんなに褒められるのは初めてで…なんだか顔が火照ってきました…",
+      "UnitTalk_JPN": "め、目の前でこんなに褒められるのは初めてで…なんだか顔が熱くなってきました…",
       "TalkTime": 0.03
     },
     {
@@ -800,7 +789,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_SHIELDER",
       "UnitMotion": "USN_UI_REST_START",
       "UnitTalk_KOR": "익숙하게 싸워왔던 전장의 형태나, 전술도 다를 테니까...",
-      "UnitTalk_JPN": "慣れ親しんだ戦場や戦術も異なるでしょうから…",
+      "UnitTalk_JPN": "慣れている戦場や戦術も異なるでしょうから…",
       "TalkTime": 0.03
     },
     {
@@ -878,7 +867,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "SURPRISE",
-      "UnitTalk_KOR": "앗- 아앗! 그러고보니!",
+      "UnitTalk_KOR": "앗- 아앗! 그러고 보니!",
       "UnitTalk_JPN": "あっ…ああっ！そう言われてみれば！",
       "TalkTime": 0.03
     },
@@ -890,7 +879,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitTalk_KOR": "...그렇게 멋진 사람으로 소개받은 적은 처음이라...",
-      "UnitTalk_JPN": "…素敵な人として紹介されたのは初めてで…",
+      "UnitTalk_JPN": "…あんな風に素敵な人として紹介されたのは初めてで…",
       "TalkTime": 0.03
     },
     {
@@ -901,7 +890,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitTalk_KOR": "나도 모르게 마음을 푹 놔버렸나봐...",
-      "UnitTalk_JPN": "つい気が緩んじゃったのかな…",
+      "UnitTalk_JPN": "つい気が緩んじゃったみたい…",
       "TalkTime": 0.03
     },
     {
@@ -949,26 +938,17 @@
       "TalkTime": 0.03
     },
     {
-      "Uid": 82,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
-      "WaitClick": false,
-      "WaitTime": 0.0,
-      "CutsceneClear": "CLEARALL",
-      "UnitQuickSet": true
-    },
-    {
       "Uid": 83,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_PF_23B_NOA_STANDBY",
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
-      "CameraOffset": "TWIN_6",
+      "CameraOffset": "TWIN_1",
       "UnitMotion": "NORMAL",
-      "UnitPos": "POS3",
+      "UnitPos": "POS6",
       "UnitTalk_KOR": "자, 서로 인사는 잘 마치셨죠?",
-      "UnitTalk_JPN": "挨拶は済みましたか？",
+      "UnitTalk_JPN": "さぁ、挨拶は済みましたか？",
       "TalkTime": 0.03
     },
     {
@@ -980,7 +960,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "승리하려면 최선을 다해야 하겠어요.",
-      "UnitTalk_JPN": "勝利するためには、最善を尽くさないと。",
+      "UnitTalk_JPN": "勝利するためには、最善を尽くさなければなりません。",
       "TalkTime": 0.03
     },
     {
@@ -991,7 +971,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "사람 좋게만 보일지 몰라도, 모나스티르 기사단은 철저한 실력 위주의 편성으로 유명하니까요.",
-      "UnitTalk_JPN": "人当たりが良さそうに見えるかもしれませんが、モナスティル騎士団は徹底した実力主義で有名ですからね。",
+      "UnitTalk_JPN": "人柄が良さそうに見えるかもしれませんが、モナスティル騎士団は徹底した実力主義で有名ですからね。",
       "TalkTime": 0.03
     },
     {
@@ -1012,7 +992,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
-      "CameraOffset": "ONE_3",
+      "CameraOffset": "ONE_6",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "오늘부터 특훈입니다! 단장님!",
       "UnitTalk_JPN": "今日から特訓ですよ！団長！",

@@ -8,43 +8,21 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_01", //처단자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          }
-        ]
-      },
-      {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_01",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_OPERATION_01", //망자의 처단자
             "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_01",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_01", //처단자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }

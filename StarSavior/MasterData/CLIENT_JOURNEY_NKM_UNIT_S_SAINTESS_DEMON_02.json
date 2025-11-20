@@ -1,0 +1,2008 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뮤리엘은 걱정과 달리 문제를 일으키지 않았다.",
+      "UnitTalk_JPN": "心配とは裏腹に、ミュリエルは問題を起こさなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아니, 오히려 이상할 만큼 친절했다.",
+      "UnitTalk_JPN": "いや、むしろ怪しいほどに優しかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_GROUND.png"
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "단장, 훈련하면서 땀을 너무 많이 흘린 거 아냐?",
+      "UnitTalk_JPN": "団長、訓練でかなり汗かいたんじゃない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "자, 여기 앉아 봐. 내가 손수건 안 챙겨 왔으면 어쩔 뻔했어.",
+      "UnitTalk_JPN": "さぁさぁ、ここに座って。うちがハンカチ持ってなかったらどうするつもりだったの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "쉬는 동안 무기는 나한테 맡기고.",
+      "UnitTalk_JPN": "休んでる間、武器はうちに任せて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뭐? 그냥 세수하고 오겠다고?",
+      "UnitTalk_JPN": "なに？顔を洗ってくるからいいって？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "하급 서열 성녀들이 날 응원한다고 음식을 보내 줬어!",
+      "UnitTalk_JPN": "序列の低い聖女たちが、うちのこと応援して食べものを用意してくれたのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "단장도 같이 먹자. 나 혼자 먹기엔 너무 많거든.",
+      "UnitTalk_JPN": "団長も一緒に食べるでしょ？うち一人じゃ食べきれないし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "무기는 내가 들고 있을 테니까…",
+      "UnitTalk_JPN": "武器はうちが持っておいてあげるから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "응? 방금 식사했다고?",
+      "UnitTalk_JPN": "えっ？ごはん食べたところなの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "EmotionEffect": "STRESS"
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REST.png"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이건 아무래도…",
+      "UnitTalk_JPN": "これは、どう考えても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "단장, 요새 어깨가 많이 뭉쳤지?",
+      "UnitTalk_JPN": "団長、最近肩凝ってるでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "그런 단장을 위해 오늘은 내가 직접 어깨를 풀어 줄게.",
+      "UnitTalk_JPN": "そんな団長のために、うちがマッサージしてあげるわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…무슨 꿍꿍이야?",
+          "JumpAnchorStringId_JPN": "…何を企んでるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "다, 단장도 참~ 동료끼리 꿍꿍이라니~",
+      "UnitTalk_JPN": "だ、団長ってば、もう～仲間なのに企むだなんて～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "자, 어서 여기 앉아. 사양하지 말고.",
+      "UnitTalk_JPN": "さぁ、早くここに座ってちょうだい。遠慮はいらないってば。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "소파에 앉자 뮤리엘이 어깨를 꾹꾹 주물러 준다.",
+      "UnitTalk_JPN": "ソファに座ると、ミュリエルが肩をもんでくれた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "어때, 시원하지?",
+      "UnitTalk_JPN": "どう、気持ちいいでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "기도하러 오던 할머니들 안마해 주면서 단련된 솜씨라구.",
+      "UnitTalk_JPN": "お祈りしに来るおばあさんにマッサージしてあげながら、腕を磨いたのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "수상쩍은 행동은 둘째치고 안마 솜씨는 자랑할 만했다.",
+      "UnitTalk_JPN": "怪しい行動はさておき、マッサージの腕は確かだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "어깨가 많이 뭉쳤네. 이런 무거운 걸 매일 메고 다니니까 그렇지.",
+      "UnitTalk_JPN": "肩がだいぶ凝ってるわ。きっとこんな重いものを毎日背負ってるせいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "자자, 스타피어서는 잠~깐 여기 내려 놓으시고~ 놓으시고~",
+      "UnitTalk_JPN": "さぁさぁ、スターピアサーは一旦ここに置いて～くださいな～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH.wav",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "칼자루를 잡으려는 뮤리엘을 피해 일어섰다.",
+      "UnitTalk_JPN": "剣の柄を掴もうとするミュリエルを避け、立ち上がった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "에엑! 왜… 왜! 거의 다 됐는데…!",
+      "UnitTalk_JPN": "ええっ！なんで…なんでなの！あとちょっとだったのに…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이 검 이름은 어떻게 아는 거야?",
+          "JumpAnchorStringId_JPN": "この剣の名前、なんで知ってるの？"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "그그그그글쎄? 며칠 전에 들었던 것 같기도 하고…",
+      "UnitTalk_JPN": "さささささぁね？何日か前に聞いたような…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에이, 그리고 그런 게 뭐가 중요해. 잠깐 만지는 거 가지고.",
+      "UnitTalk_JPN": "もう、そんなことでどうしたのよ。ちょっと触ろうとしただけじゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "설마 훔쳐 갈까 봐 의심하는 거야? 우리 사이가 어떤 사이인데~",
+      "UnitTalk_JPN": "まさか、うちが盗むかもって疑ってるの？うちらはそんな仲じゃないじゃ～ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "사기 미수범과 피해자 사이?",
+          "JumpAnchorStringId_JPN": "詐欺未遂犯と、被害者の仲…？"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FALL_DOWN_05.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "너, 너무해, 단장…",
+      "UnitTalk_JPN": "ひ、ひどいわ団長…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "내가 요즘 단장을 챙겨 주느라 얼마나 애썼는데…",
+      "UnitTalk_JPN": "うちが最近、団長を労わろうとどれだけ努力してると思ってるのよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "그런 나한테 칼 하나도 못 맡긴다는 거야?",
+      "UnitTalk_JPN": "そんなうちに、剣ひとつも預けられないわけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.75,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_IMPACT_05.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아아! 죄송해요, 가프님!",
+      "UnitTalk_JPN": "あぁ、申し訳ございませんガプ様！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "당신의 종은 가장 가까운 동료에게도 신뢰 받지 못하는 자입니다!",
+      "UnitTalk_JPN": "あなた様のしもべは、身近な仲間にさえも信じてもらえない者です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ]
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내버려 두면 하루 종일 이러고 있을 모양이다.",
+      "UnitTalk_JPN": "放っておけば、一日中こうしているだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠어. 잠깐만이야.",
+          "JumpAnchorStringId_JPN": "分かった。ちょっとだけだぞ。"
+        }
+      ]
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "…정말? 정말 만지게 해 주는 거 맞지?",
+      "UnitTalk_JPN": "…本当に？本当に触らせてくれるの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래. 잠깐 기다려.",
+          "JumpAnchorStringId_JPN": "うん、ちょっと待ってて。"
+        }
+      ]
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_DRAW_05.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "오오, 오오오…!",
+      "UnitTalk_JPN": "おぉ、おおぉ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "경전에서 나온 묘사랑 똑같아…",
+      "UnitTalk_JPN": "聖書で見た絵と同じね…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "이것이 교단의 대성물! 스타피어서…!",
+      "UnitTalk_JPN": "これが教団の大聖遺物！スターピアサー…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "대성녀로 가는 특급 티켓답게 정말 황홀한 자태야…!",
+      "UnitTalk_JPN": "大聖女行きの特急チケットらしく、うっとりするような見た目ね…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "특급 티켓?",
+          "JumpAnchorStringId_JPN": "特急チケット？"
+        }
+      ]
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장, 나한테 갑자기 아~주 좋은 생각이 떠올랐거든?",
+      "UnitTalk_JPN": "団長。突然、す～っごくいい考えが浮かんだのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_FOOTSTEP_HIGHHEELS_03.wav",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "스타피어서를 품에 안은 채, 뮤리엘이 슬금슬금 뒷걸음질쳤다.",
+      "UnitTalk_JPN": "スターピアサーを抱いたまま、ミュリエルはこそこそと後ずさりをしている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "가프님을 믿지 않는 단장은 죽으면 프랙탈 지옥에 떨어져서 끔찍한 최후를 맞이하겠지…",
+      "UnitTalk_JPN": "ガプ様を信じない団長は…死んだらフラクタル地獄に落ちて、おぞましい最期を迎えることになるのよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "그러니까 내가 단장을 대신해서 용서를 빌고 가프님의 은혜를 받아와 줄게!",
+      "UnitTalk_JPN": "だから…うちが団長の代わりに赦しを請いて、ガプ様の恩恵を受けてきてあげる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "대신에 스타피어서는 우리 교단에 기부한 셈 치라구!",
+      "UnitTalk_JPN": "その代わり、スターピアサーは教団に寄付したと思うことね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_05.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "야, 거기 서!",
+          "JumpAnchorStringId_JPN": "あっ、待て！"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "꺄하하하하! 신난다! 오늘부터 내가 대성녀야!",
+      "UnitTalk_JPN": "きゃはははは！やったわ！今日からうちが大聖女よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "안녕, NOA! 안녕, 단장!",
+      "UnitTalk_JPN": "さらば、NOA！さらば、団長！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "높으신 분이 돼서 다시 돌아올게! 그동안 잘 지내!",
+      "UnitTalk_JPN": "高い身分になってまた戻ってくるわ！それまで元気にしてなさい！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_WHOOSH_11.wav",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "하지만 얼마 못 가 스타피어서에 연결된 분실방지용 줄이 팽팽하게 당겨지고,",
+      "UnitTalk_JPN": "しかし、スターピアサーの紛失防止用ストラップがピンと張ると…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뮤리엘은 연극 배우처럼 공중을 날아 성대하게 계단을 굴렀다.",
+      "UnitTalk_JPN": "ミュリエルは舞台女優のように空中を舞い、派手に階段を転げ落ちた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "갸아악!",
+      "UnitTalk_JPN": "ぎゃーっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgCrash": 0.75,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION_19.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "요즘 자꾸 눈독을 들이길래 분실방지용 줄을 달아 뒀는데, 정답이었다.",
+      "UnitTalk_JPN": "最近どうも狙われてる気がして…紛失防止用ストラップをつけておいて正解だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "멋지게 공중을 날아 엉덩이부터 낙하한 뮤리엘.",
+      "UnitTalk_JPN": "華麗に空中を舞い、おしりから着地したミュリエル。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "계단을 내려가 보니 충격에 굳어서 그 자세 그대로 움직이지 못하고 있었다.",
+      "UnitTalk_JPN": "階段を降りてみると…ミュリエルはショックのあまり、着地した姿勢のまま動けずにいた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "으으… 어… 엉덩이…",
+      "UnitTalk_JPN": "うぅ…お、おしり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "엉덩이가… 흐응, 흐아앙… 아, 아파…",
+      "UnitTalk_JPN": "おしりが…ふ、ふぇぇん…い、痛いわ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도둑질하려다 천벌 받은 거야.",
+          "JumpAnchorStringId_JPN": "盗もうとしたから、天罰が下ったんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "도둑질이라니! 잠깐 빌리려고 했을 뿐이라구!",
+      "UnitTalk_JPN": "盗むだなんて！ちょっと借りようとしただけじゃないの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "단장이야말로 동료를 못 믿고 함정을 설치해 두다니 최악이야!",
+      "UnitTalk_JPN": "団長こそ、仲間を信じずにワナをかけるなんて最悪よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "이 좀생이! 비겁자! 사기꾼! 우우우!",
+      "UnitTalk_JPN": "このケチ！卑怯者！詐欺師！ううぅ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "전부 내가 하고 싶은 말이다!",
+          "JumpAnchorStringId_JPN": "それはこっちのセリフですけど！"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_18.mp3",
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "현행범으로 붙잡힌 뮤리엘에게 무릎 꿇고 손들기를 시켰다.",
+      "UnitTalk_JPN": "現行犯で捕まえたミュリエルに、水の入ったバケツを持って立たせた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으으, 팔 아파… 못 견디겠어…",
+      "UnitTalk_JPN": "うぅ、腕が…もう耐えられない…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "앞으로 단장이 아침마다 새똥에 맞게 해 달라고 매일 세 번씩 기도할래…",
+      "UnitTalk_JPN": "団長が毎朝鳥のフンに当たりますようにって、毎日3回ずつお祈りしてやる…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떤 신이 그런 소원을 들어 주냐.",
+          "JumpAnchorStringId_JPN": "そんな願いは叶えてくれないだろ。"
+        }
+      ]
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "들어주실 거야… 성녀인 내가 하는 기도니까…",
+      "UnitTalk_JPN": "叶えてくれるわよ…聖女のうちがお祈りするんだから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "116번이라며?",
+          "JumpAnchorStringId_JPN": "序列116番じゃなかった？"
+        }
+      ]
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지, 지금이야 그렇지! 하지만 난 반드시 대성녀가 될 거야!",
+      "UnitTalk_JPN": "い、今はそうかもしれないけど！うちは必ず大聖女になるのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "대성녀가 돼서 할 일도 철저하게 준비 중이라구!",
+      "UnitTalk_JPN": "大聖女になってからやることも、しっかり準備中なんだから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "설레발이 너무 심하잖아.",
+          "JumpAnchorStringId_JPN": "気が早すぎるよ。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그보다 벼락 먼저 맞지 않을까?",
+          "JumpAnchorStringId_JPN": "その前にバチが当たるんじゃない？"
+        }
+      ]
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "끔찍한 소리 하지 마! 그러다 진짜로 벼락 맞으면 단장이 책임져 줄 거야?",
+      "UnitTalk_JPN": "縁起でもないこと言わないでよ！本当にバチが当たったらどうしてくれるのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "뭣보다 난 면죄부도 꼬박꼬박 사 모으고 기도도 매일 드리는걸.",
+      "UnitTalk_JPN": "うちはちゃんと免罪符を買い集めて、お祈りも毎日してるんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "이 정도면 괜찮지 않을까?",
+      "UnitTalk_JPN": "ここまでしてるんだし、大丈夫でしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나한테 물어 봤자…",
+          "JumpAnchorStringId_JPN": "私に聞かれても…"
+        }
+      ]
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "몰라! 몰라!",
+      "UnitTalk_JPN": "もー、どうしてくれるのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "단장이 벼락 어쩌고 하니까 괜히 나만 무서워지잖아. 전부 단장 책임이야.",
+      "UnitTalk_JPN": "団長がバチとか何とか言うから、怖くなってきたじゃない。ぜんぶ団長のせいなんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그러니까아! 스타피어서 좀 빌려 주라, 응?!",
+      "UnitTalk_JPN": "だからぁ！スターピアサーちょっとだけ貸してよ？ね！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 기적의 논리는 어디서 튀어나온 걸까.",
+      "UnitTalk_JPN": "このとんでもない論理は、一体どこから出てくるのだろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜 그렇게 이 칼을 탐내는 거야?",
+          "JumpAnchorStringId_JPN": "なんでこの剣が欲しいの？"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "어차피 네가 다루지도 못할 텐데.",
+          "JumpAnchorStringId_JPN": "どうせミュリエルには扱えないのに。"
+        }
+      ]
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "윽… 그, 그건…",
+      "UnitTalk_JPN": "うっ…そ、それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건?",
+          "JumpAnchorStringId_JPN": "それは？"
+        }
+      ]
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "좀 쉬고 나서 말해 주면 안 될까? 팔이랑 다리가 너무 저려서…",
+      "UnitTalk_JPN": "ちょっと休んでからでもいい？腕と足がしびれちゃって…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "30분 추가.",
+          "JumpAnchorStringId_JPN": "30分延長。"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.75,
+      "BgCrashTime": 0.5,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "으아아아앙! 이 악당! 불신자! 웬수!",
+      "UnitTalk_JPN": "うわぁぁぁん！この人でなし！不信心者！バカ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뮤리엘에 따르면, 모노리스 교단은 성물이라는 특수한 물건을 수집하고 다닌다.",
+      "UnitTalk_JPN": "ミュリエルによれば、モノリス教団は聖遺物という特殊なものを集めているらしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "교리에서 성물은 그들의 신인 가프에게서 떨어져 나온 파편이라고 가르치기 때문이다.",
+      "UnitTalk_JPN": "教理では、聖遺物は神であるガプ様から出た欠片だと教えているそうだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 단장이 가진 칼은 대성물 중의 대성물이야.",
+      "UnitTalk_JPN": "で、団長が持ってる剣が大聖遺物のひとつなのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "스타피어서는 깊은 잠에 빠진 가프님을 다시 깨울 수 있는 열쇠라고 전해져 내려오거든.",
+      "UnitTalk_JPN": "スターピアサーは、深い眠りについたガプ様を起こすためのカギだって伝えられてるわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그것만 있으면 대성녀 자리는 확정이지!",
+      "UnitTalk_JPN": "それさえあれば、大聖女の座も確定よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게 대성녀가 되고 싶어?",
+          "JumpAnchorStringId_JPN": "そんなに大聖女になりたいのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼. 싫어하는 게 오히려 바보지.",
+      "UnitTalk_JPN": "もちろんよ。なりたくない方がおかしいわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "앉아서 발만 까딱거려도 다들 날 숭배할 텐데!",
+      "UnitTalk_JPN": "座って足をちょろっと動かすだけで、みんながうちを崇拝するのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "역시나 아주 세속적인 이유였다.",
+      "UnitTalk_JPN": "やっぱり、ろくでもない理由だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…아니. 잠깐.",
+      "UnitTalk_JPN": "…ということは。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러니까…",
+          "JumpAnchorStringId_JPN": "つまり…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "떠받들어지고 싶어서 참가한 거다?",
+          "JumpAnchorStringId_JPN": "崇められたくて旅に参加したってこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "응. 여정이라고 해 봤자 어차피 이름만 거창한 테스트일 거잖아.",
+      "UnitTalk_JPN": "そうよ。旅って言っても、名前が大げさなだけの試験じゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "완주는 못 해도 여정에 도전했다는 경력만 얻으면 된다 이거지~",
+      "UnitTalk_JPN": "クリアはできなくても、旅に挑戦したって経歴だけゲットできればいいのよ～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…단장? 표정이 왜 그래?",
+      "UnitTalk_JPN": "…団長？どうしたの、その顔？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_SKY_BLUE.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "시간을 들여 뮤리엘에게 여정의 시련에 대해 얘기해 줬다.",
+      "UnitTalk_JPN": "時間をかけて、ミュリエルに旅の試験について話した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게 쉬우면 왜 통과한 사람이 없겠냐, 잘못하면 죽을 수도 있다, 기타등등….",
+      "UnitTalk_JPN": "クリアした人がいないのにそんな簡単な訳がない、何かあれば死ぬかもしれない、などなど…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REST.png",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "에에엑! 그런 야만적인 시험이 아직까지 세상에 존재한다고?!",
+      "UnitTalk_JPN": "ぐげっ！そんな野蛮な試験が、まだこの世にあるって言うの！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "참여는 무슨 생각으로 한 거야?",
+          "JumpAnchorStringId_JPN": "一体、どういうつもりで参加したの？"
+        }
+      ]
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "NOA가 주최하니까 천문학 시험 같은 건 줄 알았지!",
+      "UnitTalk_JPN": "NOA主催だし、天文学の試験とかだと思ったわよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "별자리 그리기라거나…",
+      "UnitTalk_JPN": "星座を描いたりとか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "하나도 모르고 참여했다는 거잖아…",
+          "JumpAnchorStringId_JPN": "まったく知らずに参加したってことか…"
+        }
+      ]
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "으으…",
+      "UnitTalk_JPN": "うぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.75,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WHOOSH.wav",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "으아아아앙! 싫어! 죽는 건 무섭다구우우우!",
+      "UnitTalk_JPN": "うわぁぁぁん！イヤよ！死ぬの怖いよぉぉぉ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "살려 주라, 단장! 난 남들한테 오냐오냐 받으면서 백 살 넘게 살고 싶단 말이야아!",
+      "UnitTalk_JPN": "助けて、団長！うちはみんなからチヤホヤされながら100歳超えるまで生きたいのよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 여정을 포기하겠다고?",
+          "JumpAnchorStringId_JPN": "なら、旅を諦めるってこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "안 돼! 시련을 거치기도 전에 포기해 버리면 겁쟁이라고 성녀 안 시켜 줄 거야!",
+      "UnitTalk_JPN": "それはダメ！試験を受ける前に諦めたら、腰抜けだって聖女を辞めさせられちゃうわ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "UnitTalk_KOR": "단장, 나 좀 살려 줘! 응?! 뭐든지 할 테니까!!",
+      "UnitTalk_JPN": "団長、うちのこと助けてよ！ね！？何でもするから！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐 이런 성가신 녀석이 다 있어?!",
+          "JumpAnchorStringId_JPN": "なんて手のかかる子なんだ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 뮤리엘을 이대로 놔뒀다간 여정 완수는 꿈도 꿀 수 없다.",
+      "UnitTalk_JPN": "でも…ミュリエルをこのまま放っておけば、旅をクリアするなんて夢のまた夢だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 151,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "적어도 겁쟁이 기질을 바꿀 만한 대책이 필요하다…",
+      "UnitTalk_JPN": "少なくとも、怖がりな性格を変えるための対策が必要そうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "특단의 대책이.",
+      "UnitTalk_JPN": "それも、特段の対策が。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_02",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS3"
+    }
+  ]
+}

@@ -10,7 +10,12 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_02",
             "ChangeAdjustType": "NUAT_SUN",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
@@ -18,13 +23,23 @@
             "IsElite": true,
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_02",
             "ChangeAdjustType": "NUAT_SUN",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -35,21 +50,36 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_02",
             "ChangeAdjustType": "NUAT_SUN",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VETERAN_SHIELD_GOLD_BOSS_DAILY_MATERIAL_02",
+            "UnitStrId": "NKM_UNIT_MON_VETERAN_SHIELD_GOLD_BOSS_DAILY_02",
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "ChangeAdjustType": "NUAT_SUN",
-            "IsBoss": true
+            "IsBoss": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_KNIGHT_SHIELD_RED_DAILY_02",
             "ChangeAdjustType": "NUAT_SUN",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

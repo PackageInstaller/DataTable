@@ -231,7 +231,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
       "UnitTalk_KOR": "내 마법이 빗나갔기 때문에 결과적으로 우리가 승리할 수 있었던 거라고.",
-      "UnitTalk_JPN": "私の魔法が外れたからこそ、巡り巡って勝機を見出す事ができたの！",
+      "UnitTalk_JPN": "アタシの魔法が外れたからこそ、巡り巡って勝機を見出す事ができたの！",
       "TalkTime": 0.03,
       "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_004.wav"
     },
@@ -486,50 +486,16 @@
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
       "WaitClick": false,
-      "WaitTime": 0.0,
-      "BgFileName": "DRAMA_GAIN_STAR_POWER.prefab",
-      "CutsceneClear": "CLEARUNIT",
-      "TalkTime": 0.03
-    },
-    {
-      "Uid": 40,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
-      "WaitClick": false,
-      "WaitTime": 0.6,
+      "WaitTime": 0.25,
       "BgFadeOutCol": [
         "0",
         "0",
         "0",
         "0"
       ],
-      "BgFadeOutTime": 0.6,
-      "TalkTime": 0.03,
-      "BgEase": "InQuart"
-    },
-    {
-      "Uid": 41,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
-      "WaitClick": false,
-      "WaitTime": 4.0,
-      "TalkTime": 0.03
-    },
-    {
-      "Uid": 42,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
-      "WaitClick": false,
-      "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_WHITE.png",
-      "TalkTime": 0.03
-    },
-    {
-      "Uid": 43,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
-      "WaitClick": false,
-      "WaitTime": 0.0,
+      "BgFadeOutTime": 0.25,
+      "BgFileName": "CINEMA_TUTO_2E.mp4",
+      "CutsceneClear": "CLEARUNIT",
       "TalkTime": 0.03
     },
     {
@@ -590,7 +556,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
-      "UnitTalk_KOR": "엄청난 힘의 격류가... 몸 속으로 흘러 들어오고 있어.",
+      "UnitTalk_KOR": "엄청난 힘의 격류가... 몸속으로 흘러 들어오고 있어.",
       "UnitTalk_JPN": "ものすごい力が…体の中に流れ込んで来る。",
       "TalkTime": 0.03,
       "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_STRANIS_009.wav"
@@ -914,7 +880,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
-      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>을 졸업한 여러분들을 위해 큰 축하행사가 준비되어 있답니다.",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>을 졸업한 여러분들을 위해 큰 축하 행사가 준비되어 있답니다.",
       "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>を成し得た皆さんのために、祝いのパーティーが用意されてますよ。",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_019.wav"
@@ -1115,7 +1081,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
-      "UnitTalk_KOR": "거기서 뭐해? 멍하니 서서.",
+      "UnitTalk_KOR": "거기서 뭐 해? 멍하니 서서.",
       "UnitTalk_JPN": "どうしたの？ぼっーと突っ立って。",
       "TalkTime": 0.03,
       "TalkVoice": "JOURNEY_TUTO_VOYAGER_02_UNIT_S_VOYAGER_ORACLE_016.wav"
@@ -1489,7 +1455,7 @@
       "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "기억도, 힘도, 심지어 너 자신 마저도.",
+      "UnitTalk_KOR": "기억도, 힘도, 심지어 너 자신마저도.",
       "UnitTalk_JPN": "記憶も、力も…ひいてはあなた自身すら。",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_TUTO_02_NPC_NOA_ALICIA_005.wav"
@@ -1696,7 +1662,7 @@
       "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "…궤도 수정 완료",
+      "UnitTalk_KOR": "…궤도 수정 완료.",
       "UnitTalk_JPN": "…軌道修正完了。",
       "TalkTime": 0.03
     },
@@ -2079,7 +2045,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "또한 설립자이신 제 1관측사 알리시아님의 뜻에 따라 <color=#F7BE45>[별의 구원자 계승 시험]</color>.",
-      "UnitTalk_JPN": "設立者であられる第一観測師アリシア様のご意向により、\n本機関は<color=#F7BE45>「星の救援者を継承する試験」</color>。",
+      "UnitTalk_JPN": "設立者であられる第一観測士アリシア様のご意向により、\n本機関は<color=#F7BE45>「星の救援者を継承する試験」</color>。",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_037.wav"
     },
@@ -2210,7 +2176,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
-      "UnitTalk_KOR": "<color=#F7BE45>[별의 구원자]</color>의 힘을 계승 받기 위한 1년 간의 자격 시험.",
+      "UnitTalk_KOR": "<color=#F7BE45>[별의 구원자]</color>의 힘을 계승 받기 위한 1년 간의 자격시험.",
       "UnitTalk_JPN": "<color=#F7BE45>「星の救援者」</color>の力を受け継ぐため、1年間行われる資格試験。",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_044.wav"
@@ -2298,7 +2264,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
-      "UnitTalk_KOR": "당연히 그 동안 수많은 구원자들이 <color=#F7BE45>[여정]</color>에 도전했답니다.",
+      "UnitTalk_KOR": "당연히 그동안 수많은 구원자들이 <color=#F7BE45>[여정]</color>에 도전했답니다.",
       "UnitTalk_JPN": "だからそれから、無数の救援者が<color=#F7BE45>「救援の旅」</color>に挑みました。",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_051.wav"
@@ -2353,7 +2319,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "재능 있는 구원자를 발굴하고 체계적인 훈련과 관리를 통해 그 잠재력을 일깨워 줄 전문가.",
-      "UnitTalk_JPN": "才気あふれる救援者を発掘し、適切な指導よって潜在能力を開花させる専門家…",
+      "UnitTalk_JPN": "才気あふれる救援者を発掘し、適切な訓練と管理によって潜在能力を開花させる専門家…",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_054.wav"
     },
@@ -2683,7 +2649,7 @@
         "SI_LISA"
       ],
       "UnitMotion": "SERIOUS",
-      "UnitTalk_KOR": "그리고… 한가지 더 전달드릴 물건이 있습니다.",
+      "UnitTalk_KOR": "그리고… 한 가지 더 전달 드릴 물건이 있습니다.",
       "UnitTalk_JPN": "それと…もう一つお渡しする物があります。",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_TUTO_02_NPC_NOA_LISA_071.wav"
@@ -2747,7 +2713,7 @@
       "CutsceneStrId": "JOURNEY_TUTO_VOYAGER_02_NOA_BATTLE_VICTORY",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "그녀의 말 대로 내 손은 익숙하게 <color=#F7BE45>[잠금]</color>을 해제하고 검을 뽑아낼 수 있었다.",
+      "UnitTalk_KOR": "그녀의 말대로 내 손은 익숙하게 <color=#F7BE45>[잠금]</color>을 해제하고 검을 뽑아낼 수 있었다.",
       "UnitTalk_JPN": "まるで元から知っていたかのように…私は<color=#F7BE45>「ロック」</color>を解除して剣を抜いた。",
       "TalkTime": 0.03
     },

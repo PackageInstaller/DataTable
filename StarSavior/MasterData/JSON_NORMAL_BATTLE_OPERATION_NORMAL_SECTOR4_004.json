@@ -7,45 +7,22 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          }
-        ]
-      },
-      {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_OPERATION_00", //망자의 처단자
+            "ChangeAdjustType": "NUAT_STAR",
             "IsBoss": true,
             "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_STAR"
+            "HyperSkillAvailable": false
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_00",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           }

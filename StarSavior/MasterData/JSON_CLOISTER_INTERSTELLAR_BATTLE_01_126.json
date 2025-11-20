@@ -4,25 +4,39 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_05",  // 경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_06", //포식자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SPLINTER_BLACK_ELITE_CLOISTER_INTERSTELLAR_05", // 심연의 주시자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_05",  // 경멸자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -31,23 +45,35 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_05",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_CLOISTER_INTERSTELLAR_06", //살육의 포식자
+            "UnitStrId": "NKM_UNIT_MON_SPOTTER_ELITERING_BLACK_ELITE_CLOISTER_INTERSTELLAR_05",  // 잔상의 감시자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_SUN" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_INTERSTELLAR_06", //모방자 : 기사
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_05",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

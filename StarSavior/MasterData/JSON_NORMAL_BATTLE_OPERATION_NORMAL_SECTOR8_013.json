@@ -7,20 +7,20 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_02", //포식자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }
@@ -31,20 +31,21 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_MU_OPERATION_08",//살육의 포식자(죽음의 추격자)
             "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }

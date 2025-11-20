@@ -111,7 +111,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "읏차!",
-      "UnitTalk_JPN": "おっと！",
+      "UnitTalk_JPN": "えいやっ！",
       "TalkTime": 0.03
     },
     {
@@ -442,7 +442,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_KNIGHT",
       "UnitTalk_KOR": "으음?",
-      "UnitTalk_JPN": "んん？",
+      "UnitTalk_JPN": "うーん？",
       "TalkTime": 0.03
     },
     {
@@ -529,7 +529,7 @@
       "CameraOffset": "POS3_2X",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "오오…",
-      "UnitTalk_JPN": "おお…",
+      "UnitTalk_JPN": "おぉ…",
       "TalkTime": 0.03
     },
     {
@@ -605,7 +605,7 @@
       "CameraOffset": "POS3_2X",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "으음…!",
-      "UnitTalk_JPN": "んー…！",
+      "UnitTalk_JPN": "うーん…！",
       "TalkTime": 0.03
     },
     {
@@ -810,7 +810,8 @@
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "VideoDependsOnText": false,
       "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
     },
     {
@@ -1152,7 +1153,8 @@
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "VideoDependsOnText": false,
       "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
       "CutsceneClear": "CLEARALL"
     },
@@ -1496,7 +1498,8 @@
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_SAINTESS_DEMON_03",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_LIBRARY.png"
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
+      "VideoDependsOnText": false
     },
     {
       "Uid": 127,
@@ -1978,6 +1981,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "더 이상 묵과할 수 없겠군요. 대교구에 꼭 알리도록 하겠습니다.",
+      "UnitTalk_JPN": "これ以上は黙っていられません。本山に報告しておきます。",
       "TalkTime": 0.03
     },
     {

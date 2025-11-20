@@ -775,8 +775,20 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_06",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "CutsceneClear": "CLEARTEXT",
-      "UnitPos": "POS5",
+      "CutsceneClear": "CLEARALL",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_MAID_SCISSORS_05",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
       "AutoHighlight": "LIGHT"
     }
   ]

@@ -1,0 +1,773 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_10S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_STARDUST_FORTRESS_1.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_12.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "저게… 별의 심장인가?",
+      "UnitTalk_JPN": "あれが…星の心臓かしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "동화책 삽화로는 봤지만 실물은 처음이야.",
+      "UnitTalk_JPN": "絵本では見たことあるけど、実物は初めてだわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "예쁘네…",
+      "UnitTalk_JPN": "綺麗ね…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "동화책?",
+          "JumpAnchorStringId_JPN": "絵本？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "응? 도, 동화책?",
+      "UnitTalk_JPN": "あっ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "하하… 동화책이라니 무슨 소리일까?",
+      "UnitTalk_JPN": "だ、誰が絵本なんて言ったのかしら？私が読んでいたのは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그, 그러니까 내 말은… 역사책! 역사책에서 봤다는 뜻이었어.",
+      "UnitTalk_JPN": "その、つまり…歴史の本！歴史の本で見たことがあるって言ったの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "한가한 소리 하지 말고 주변이나 잘 살펴.",
+      "UnitTalk_JPN": "のんきなこと言ってないで、周りをちゃんと見ないと。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "어디서 뭐가 튀어나올지 모른다고!",
+      "UnitTalk_JPN": "どこから何が飛び出してくるのか分からないんだよ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그걸 알려줘야 <color=#F7BE45>[예언자]</color>인 거 아냐?",
+      "UnitTalk_JPN": "それを教えてくれるのが<color=#F7BE45>「予言者」</color>の仕事なんじゃないの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "이 아가씨가 사회생활 경험이 없어서 그런지 뭘 모르시네.",
+      "UnitTalk_JPN": "このお嬢様…社会経験がないから何も分かってないのね…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "원래 예언이란 건 애매모호하고 두리뭉실한 게 기본이라고.",
+      "UnitTalk_JPN": "予言ってものは本来、曖昧でぼんやりしたものなんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "단서라는 건 어디에 있지?",
+          "JumpAnchorStringId_JPN": "手掛かりはどこにあるんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "저기.",
+      "UnitTalk_JPN": "あそこ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "저쪽에 누군가가 있음.",
+      "UnitTalk_JPN": "あそこに、誰かいる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "뭐? 어디에…?",
+      "UnitTalk_JPN": "本当？どこに…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 66,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartBgmFileName": "MUSIC_CUTSCENE_03.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "…침입자 확인.",
+      "UnitTalk_JPN": "…侵入者、確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_001.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "예상대로 약탈자들은 쓸모가 없음.",
+      "UnitTalk_JPN": "予想通り、レイダーは役立たず。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_002.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "고작해야 방해꾼들을 막아달라는 임무도 실패.",
+      "UnitTalk_JPN": "たかが侵入者を阻止する任務に失敗。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_003.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "차후 약탈자들의 평가 등급 하향 조정 필요.",
+      "UnitTalk_JPN": "今後、レイダーの評価ランクを下方修正する必要あり。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_004.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "저건… 너랑 똑같이 생겼는데? 스마일.",
+      "UnitTalk_JPN": "あれは…スマイル、あなたにそっくりね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "조금 분위기가 다르긴 하지만… 설마 저 사람이 네 언니야?",
+      "UnitTalk_JPN": "ちょっと雰囲気が違うけど…まさか、あの人がお姉さんなの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…아니.",
+      "UnitTalk_JPN": "…違う。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "저건 언니가 아님.",
+      "UnitTalk_JPN": "あれは姉さんじゃない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "…식별 가능한 인원 존재.",
+      "UnitTalk_JPN": "…識別可能な個体が存在。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_005.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>[실패작]</color>으로 확인.",
+      "UnitTalk_JPN": "<color=#F7BE45>「失敗作」</color>と確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_006.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "실패작이 왜 이곳에 온 것인지 원인 파악 필요.",
+      "UnitTalk_JPN": "失敗作がなぜここまで来たのか、原因の把握が必要。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_007.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "실패작?",
+      "UnitTalk_JPN": "失敗作？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "지금 우리에게 한 말이야?",
+      "UnitTalk_JPN": "今、私たちに向かって言ったの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이봐, 넌 누구야?",
+      "UnitTalk_JPN": "ねぇ、あなたは誰なの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "우린 의뢰를 받아 여기 <color=#F7BE45>[스마일]</color>의 언니를 찾으러 왔어.",
+      "UnitTalk_JPN": "わたしたちは依頼を受けて、<color=#F7BE45>スマイル</color>のお姉さんを探しにきたの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "혹시 뭔가 아는 게 있으면 알려줄 수 있을까?",
+      "UnitTalk_JPN": "何か知ってることがあれば、教えてくれない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "…나는 <color=#F7BE45>[레디메이드 해피 68호]</color>.",
+      "UnitTalk_JPN": "…私は<color=#F7BE45>「レディメイド・ハッピー68号」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_008.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_HAPPY68_PEACE"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>[1호]</color>의 명령에 따라 <color=#F7BE45>[별의 심장 침식]</color> 임무를 수행 중.",
+      "UnitTalk_JPN": "<color=#F7BE45>「1号」</color>の命令に従い<color=#F7BE45>「星の心臓浸食」</color>任務を遂行中。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_009.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_HAPPY68_PEACE"
+      ],
+      "UnitTalk_KOR": "실패작과 침입자들에 의한 임무 실패 가능성 증가 확인.",
+      "UnitTalk_JPN": "失敗作と侵入者による任務失敗率の上昇を確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_010.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_HAPPY68_PEACE"
+      ],
+      "UnitTalk_KOR": "교전 규칙 재확인.",
+      "UnitTalk_JPN": "交戦ルールを再確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_011.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_HAPPY68_PEACE"
+      ],
+      "UnitTalk_KOR": "실패작. 조우 시 말살.",
+      "UnitTalk_JPN": "失敗作。遭遇時、抹殺。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_012.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_HAPPY68_PEACE"
+      ],
+      "UnitTalk_KOR": "침입자. 조우 시 말살.",
+      "UnitTalk_JPN": "侵入者。遭遇時、抹殺。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_013.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_HAPPY68_PEACE"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>[1호]</color>의 정보를 노리는 추적자. 조우 시… 말살.",
+      "UnitTalk_JPN": "<color=#F7BE45>「1号」</color>の情報を狙う追跡者。遭遇時…抹殺。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_014.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "EndBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_HAPPY68",
+      "UnitNameString": [
+        "SI_HAPPY68_PEACE"
+      ],
+      "UnitTalk_KOR": "전원, 말살 처리 개시.",
+      "UnitTalk_JPN": "全員、抹殺処理開始。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_CLONE_015.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "피해!",
+          "JumpAnchorStringId_JPN": "避けろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "나는 급히 아세라와 함께 바닥을 굴렀다.",
+      "UnitTalk_JPN": "私は、咄嗟にアセラを庇いながら床に転がった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.6,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EXPLOSION_02.wav",
+      "UnitTalk_KOR": "콰아앙!!",
+      "UnitTalk_JPN": "どっかーん！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "다, 단장?",
+      "UnitTalk_JPN": "だ、団長？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "지금 무슨 일이 일어난 거야?",
+      "UnitTalk_JPN": "今、何が起こったの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10S_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "무슨 일은 무슨 일이야? 저 녀석이 우릴 다 죽이려고 하잖아!",
+      "UnitTalk_JPN": "見ればわかるでしょ！あいつが、アタシたちを殺そうとしたのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "내가 이럴 줄 알았지!",
+      "UnitTalk_JPN": "こんなことだと思ったわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그래서 관두자고 했는데!",
+      "UnitTalk_JPN": "だからやめておこうって言ったのに！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "언니가…",
+      "UnitTalk_JPN": "姉さんが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_006.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…언니가 날 말살하라고 했다고?",
+      "UnitTalk_JPN": "…姉さんが、私を抹殺するように言った？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_007.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "정신 차려! 스마일!",
+          "JumpAnchorStringId_JPN": "しっかりしろ！スマイル！"
+        }
+      ]
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…!",
+      "UnitTalk_JPN": "…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_008.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어떤 일이 있어도 언니를 보고 싶다고 했지?",
+          "JumpAnchorStringId_JPN": "何があっても、お姉さんに会いたいんだろう？"
+        }
+      ]
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…응.",
+      "UnitTalk_JPN": "…うん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_009.wav"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 일어나. 언젠가 네 언니에게 직접 물어볼 수 있게.",
+          "JumpAnchorStringId_JPN": "なら立ち上がるんだ。お姉さんと直接話をするためにも…！"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "저 <color=#F7BE45>[68호]</color>라는 녀석이 스마일의 언니와 어떤 관계인지, 왜 우리를 공격하려는 것인지는 모른다.",
+      "UnitTalk_JPN": "あの<color=#F7BE45>「68号」</color>という存在が、スマイルのお姉さんとどんな関係があるのか…なぜ私たちを攻撃してくるのかは分からない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 정보가 부족하다고 해서 상대의 말에 휘둘릴 필요는 없다.",
+      "UnitTalk_JPN": "しかし…何も分からないからこそ、相手の言葉に振り回されてはならない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일이 만나고 싶어 한 건 저 <color=#F7BE45>[68호]</color> 인지 뭔지가 아니라 그녀의 <color=#F7BE45>[언니]</color> 이니까.",
+      "UnitTalk_JPN": "スマイルが会いたがっているのは、あの<color=#F7BE45>「68号」</color>ではなく、<color=#F7BE45>「お姉さん」</color>なのだから。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "궁금한 것이 있다면… 언젠가 언니를 만나 물어보면 된다.",
+      "UnitTalk_JPN": "お姉さんに会って真実を確認するためにも…ここで絶望している場合じゃない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_010.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "응!",
+      "UnitTalk_JPN": "うん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_10_UNIT_S_VOYAGER_SMILE_011.wav"
+    }
+  ]
+}

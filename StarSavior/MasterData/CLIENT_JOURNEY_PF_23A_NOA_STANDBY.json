@@ -46,7 +46,7 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "후후, 괜찮아 보이시네요.",
-      "UnitTalk_JPN": "ふふっ、元気そうですね。",
+      "UnitTalk_JPN": "ふふっ、お元気そうですね。",
       "TalkTime": 0.03,
       "TalkAppend": true
     },
@@ -59,7 +59,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "처음 <color=#F7BE45>[여정]</color>을 시작했을 때 낯설어하시던 모습이 생각나는데…",
-      "UnitTalk_JPN": "<color=#F7BE45>「旅」</color>を始めた頃の、戸惑っていた姿を思い出します…",
+      "UnitTalk_JPN": "<color=#F7BE45>「旅」</color>を始めた頃の、不慣れで戸惑っていた姿を思い出します…",
       "TalkTime": 0.03
     },
     {
@@ -83,7 +83,7 @@
       "UnitMotion": "SPECIAL",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "뭐, 저처럼 유능한 연락관이 붙어 있으니 당연한 결과겠죠.",
-      "UnitTalk_JPN": "まぁ、私のような有能な連絡官がついているのですから、当然の結果でしょう。",
+      "UnitTalk_JPN": "まぁ、私のような有能な連絡官がついているのですから。当然の結果でしょう。",
       "TalkTime": 0.03
     },
     {
@@ -106,7 +106,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "앞으로의 <color=#F7BE45>[여정]</color>에도 최선을 다해 주세요.",
-      "UnitTalk_JPN": "これからも、<color=#F7BE45>「救援の旅」</color>にもご尽力くださいね。",
+      "UnitTalk_JPN": "これからも<color=#F7BE45>「救援の旅」</color>にご尽力くださいね。",
       "TalkTime": 0.03
     },
     {
@@ -150,7 +150,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
-      "UnitTalk_KOR": "사소한 오해일 수도, 서로의 입장차이 때문일 수도…",
+      "UnitTalk_KOR": "사소한 오해일 수도, 서로의 입장 차이 때문일 수도…",
       "UnitTalk_JPN": "その理由は、些細な誤解かもしれないし、お互いの立場の違いかもしれない…",
       "TalkTime": 0.03
     },
@@ -208,7 +208,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "인간은 마수나 공허체보다 전술적으로 훨씬 더 치밀하고 교활하니까요.",
-      "UnitTalk_JPN": "人間は魔獣や空虚体よりも、戦術的にはずっと緻密で狡猾ですから。",
+      "UnitTalk_JPN": "人間は魔獣や<r=ヴォイドボーン>空虚体</r>よりも、戦術的にずっと緻密で狡猾ですから。",
       "TalkTime": 0.03
     },
     {
@@ -265,7 +265,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
       "UnitTalk_KOR": "어머~ 귀여운 친구들이네요. 안녕?",
-      "UnitTalk_JPN": "あら〜、かわいいい子たちですね。こんにちは。",
+      "UnitTalk_JPN": "あら〜、かわいい子たちですね。こんにちは。",
       "TalkTime": 0.03
     },
     {
@@ -300,7 +300,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
       "UnitTalk_KOR": "NOA에 온 게 얼마 만인지… 이럴 때라도 잔뜩 먹어둬야죠.",
-      "UnitTalk_JPN": "NOAに来るのは、いつぶりかしら…こういう時に、たっぷり食べておかないと。",
+      "UnitTalk_JPN": "NOAに来るのはいつぶりかな…こういう時にたっぷり食べておかないと。",
       "TalkTime": 0.03
     },
     {
@@ -311,7 +311,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitTalk_KOR": "놀러 온 관광객 같은 나사 빠진 소리는 삼가라, 리디아.",
-      "UnitTalk_JPN": "リディア。観光客のような、気の抜けたことを言うな。",
+      "UnitTalk_JPN": "リディア。観光客のような気の抜けたことを言うな。",
       "TalkTime": 0.03
     },
     {
@@ -475,7 +475,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": " 서부 재난 지대는 공허의 별 강림 이후로 사람이 살 수 없는 땅이 되어 버렸어요.",
-      "UnitTalk_JPN": " 西部被災地は…空虚の星の降臨以降、人が住める地ではなくなってしまいました。",
+      "UnitTalk_JPN": " 西部被災地は…<r=ヴォイドスター>空虚の星</r>の降臨以降、人が住める地ではなくなってしまいました。",
       "TalkTime": 0.03
     },
     {
@@ -498,7 +498,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": " 그러한 공격이 대륙 중앙으로 침투하지 못하게 방벽 요새 <color=#F7BE45>[레이븐 월]</color>에서 막아내고 있죠.",
-      "UnitTalk_JPN": " そうした攻撃が大陸中央に及ばないよう、防壁要塞<color=#F7BE45>「レイヴン・ウォール」</color>が食い止めているのです。",
+      "UnitTalk_JPN": " そうした攻撃が大陸中央に及ばないよう、防壁要塞である<color=#F7BE45>「レイヴン・ウォール」</color>が食い止めているのです。",
       "TalkTime": 0.03
     },
     {
@@ -547,7 +547,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 네, 중앙 대륙의 모두가 빚을 지고 있다고 해도 과언이 아니죠.",
-      "UnitTalk_JPN": " はい。中央大陸の誰もが、西部奪還隊に借りがあると言っても過言ではないほどです。",
+      "UnitTalk_JPN": " はい。中央大陸の誰もが、西部奪還隊に借りがあると言っても過言ではありません。",
       "TalkTime": 0.03
     },
     {
@@ -559,7 +559,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "아까 이야기한 수많은 실전을 거쳐온 베테랑 구원자의 자격에 이분들만큼 어울리는 분들은 없을 거예요.",
-      "UnitTalk_JPN": "先ほどお話した「数多くの実戦を経験してきたベテラン救援者」という資格に、西部奪還隊ほどふさわしい方はいません。",
+      "UnitTalk_JPN": "先ほどお話した「数多くの実戦を経験してきたベテラン救援者」という資格に、西部奪還隊ほどふさわしい方はいませんよ。",
       "TalkTime": 0.03
     },
     {
@@ -571,7 +571,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그렇기에 이번 평가전의 상대로 알리시아님이 내정하셨습니다.",
-      "UnitTalk_JPN": "そのため、今回の試験の相手として、アリシア様が指定されました。",
+      "UnitTalk_JPN": "そのため、今回の試験の相手としてアリシア様が指定されました。",
       "TalkTime": 0.03
     },
     {
@@ -607,7 +607,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitTalk_KOR": "마음 같아서는 여기서 당장 빠르게 결판을 내고, 서부로 돌아가고 싶으니까.",
-      "UnitTalk_JPN": "ここでさっさと決着をつけ、西部へ戻りたいぐらいだ。",
+      "UnitTalk_JPN": "ここで速やかに決着をつけ、西部へ戻りたいぐらいだ。",
       "TalkTime": 0.03
     },
     {
@@ -618,7 +618,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitTalk_KOR": "거기 연락관이 설명한 대로 지금도 서부에서는 공허체들의 위협이 계속되고 있어.",
-      "UnitTalk_JPN": "そこの連絡官が説明した通り、今も西部では空虚体の脅威が続いている。",
+      "UnitTalk_JPN": "そこの連絡官が説明した通り、今も西部では<r=ヴォイドボーン>空虚体</r>の脅威が続いている。",
       "TalkTime": 0.03
     },
     {
@@ -796,7 +796,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitTalk_KOR": "매일매일 마들렌이나 푸딩 같은 걸 먹으러 다니는 놈들의 뒷바라지를 해야 한다니…!",
-      "UnitTalk_JPN": "毎日マドレーヌやプリンを食べ歩く奴らの面倒を、我が見なければならないとは…！",
+      "UnitTalk_JPN": "毎日マドレーヌやプリンを食べ歩く者の面倒を、我が見なければならないとは…！",
       "TalkTime": 0.03
     },
     {
@@ -809,12 +809,12 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "우리도 여정을 위한 각오는 진지해.",
-          "JumpAnchorStringId_JPN": "我々も旅への覚悟は本気だ。"
+          "JumpAnchorStringId_JPN": "私たちも覚悟はできてる。"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "우습게 보면 곤란해.",
-          "JumpAnchorStringId_JPN": "舐めてかからないことだな。"
+          "JumpAnchorStringId_JPN": "舐めてかかられちゃ困るな。"
         }
       ]
     },
@@ -827,7 +827,7 @@
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "흥, 말만큼의 실력이 있다면 인정해 주지.",
-      "UnitTalk_JPN": "フン。口先だけではなく、実力があるなら認めてやろう。",
+      "UnitTalk_JPN": "フン。言葉に見合う実力があるのなら、認めてやろう。",
       "TalkTime": 0.03
     },
     {
@@ -838,7 +838,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitTalk_KOR": "그것 역시, 강한 자가 가져간다, 라는 결과에 부합하니까.",
-      "UnitTalk_JPN": "「強者が手に入れるべき」という結果に合致するからな。",
+      "UnitTalk_JPN": "「強者が手に入れるべき」という結果に合致するからだ。",
       "TalkTime": 0.03
     },
     {
@@ -884,7 +884,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
       "UnitTalk_KOR": "대장은 좀 더 긴장감을 푸는 게 좋다니까요.",
-      "UnitTalk_JPN": "隊長はもう少し、リラックスした方がいいですよ。",
+      "UnitTalk_JPN": "隊長はもう少しリラックスした方がいいですよ。",
       "TalkTime": 0.03
     },
     {
@@ -894,7 +894,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
-      "UnitTalk_KOR": "리디아! 그런 솜사탕 같이 무른 생각은…!",
+      "UnitTalk_KOR": "리디아! 그런 솜사탕같이 무른 생각은…!",
       "UnitTalk_JPN": "リディア！そんな綿あめのような甘い考えは…！",
       "TalkTime": 0.03
     },
@@ -951,7 +951,7 @@
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": "…뭐, 뭐?!",
-      "UnitTalk_JPN": "…な、なぬっ！？",
+      "UnitTalk_JPN": "…な、何だとっ！？",
       "TalkTime": 0.03
     },
     {
@@ -962,7 +962,7 @@
       "WaitTime": 0.0,
       "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
-      "UnitTalk_KOR": "무, 무슨 소리냐! 그런 나약한 음식들에 내가 왜 관심을 가질거라 생각하지!",
+      "UnitTalk_KOR": "무, 무슨 소리냐! 그런 나약한 음식들에 내가 왜 관심을 가질 거라 생각하지!",
       "UnitTalk_JPN": "な、何を言っているのだ！そんな軟弱な食べ物に、我が興味を持つとでも思ったか！",
       "TalkTime": 0.03
     },
@@ -989,7 +989,7 @@
       "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "아- 여정 단장님도 눈치챘나 보네요.",
-      "UnitTalk_JPN": "あ～、団長さんも気づいたようですね。",
+      "UnitTalk_JPN": "あ～、団長さんも気づいちゃいましたか。",
       "TalkTime": 0.03
     },
     {
@@ -1052,7 +1052,7 @@
       "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "어쩔 수 없죠. 그럼 돌아가는 길에 어딜 들려볼까요?",
-      "UnitTalk_JPN": "仕方ないですね。じゃあ、帰り道にどこに寄りますか？",
+      "UnitTalk_JPN": "仕方ないですね。じゃあ、帰りにどこに寄ります？",
       "TalkTime": 0.03
     },
     {
@@ -1063,7 +1063,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_ROD",
       "UnitTalk_KOR": " 일단 아이스크림부터 시작해서, 찻집이랑, 화로구이…",
-      "UnitTalk_JPN": " まずはアイスクリームから始めて、喫茶店とか、炭火焼きとか…",
+      "UnitTalk_JPN": " まずはアイスクリームから食べて、カフェとか、炭火焼きとか…",
       "TalkTime": 0.03
     },
     {
@@ -1074,7 +1074,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitTalk_KOR": "시끄러워, 저녁은 전투식량이다.",
-      "UnitTalk_JPN": "口を慎め、夕食は戦闘糧食だ。",
+      "UnitTalk_JPN": "口を慎め。夕食は戦闘糧食だ。",
       "TalkTime": 0.03
     },
     {
@@ -1087,7 +1087,7 @@
       "UnitMotion": "SURPRISE",
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "네?!",
-      "UnitTalk_JPN": "はい！？",
+      "UnitTalk_JPN": "ええっ！？",
       "TalkTime": 0.03
     },
     {
@@ -1114,7 +1114,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_WEST_BEAMSWORD",
       "UnitTalk_KOR": "NOA에 있는 동안은 계속 긴장감을 유지하며 서부에서 가져온 전투식량으로 식사한다!",
-      "UnitTalk_JPN": "NOAにいる間も緊張感を保つため、西部から持参した戦闘糧食を食べる！",
+      "UnitTalk_JPN": "NOAにいる間も緊張感を保つため、西部から持参した戦闘糧食を食べねばならぬ！",
       "TalkTime": 0.03
     },
     {
@@ -1227,7 +1227,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": " 승리하려면 최선을 다해야 하겠어요.",
-      "UnitTalk_JPN": " 勝利するためには、最善を尽くさないと。",
+      "UnitTalk_JPN": " 勝利するためには、最善を尽くさなければなりません。",
       "TalkTime": 0.03
     },
     {
@@ -1249,7 +1249,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": " <color=#F7BE45>[서부 탈환대]</color>는 라비스타 전체에서도 수위를 다투는 강력한 구원단이니까요.",
-      "UnitTalk_JPN": " <color=#F7BE45>「西部奪還隊」</color>は、ラビスターでもトップクラスの強力な救援団ですから。",
+      "UnitTalk_JPN": " <color=#F7BE45>「西部奪還隊」</color>は、ラビスターでもトップクラスの救援団ですから。",
       "TalkTime": 0.03
     },
     {

@@ -1,0 +1,400 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_TRAINING",
+      "StartBgmFileName": "MUSIC_REQUEST_FAILED.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "사소한 실수였어.",
+      "UnitTalk_JPN": "些細なミスだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "훈련이 시간 낭비라는 생각은 지금도 변함없지만…",
+      "UnitTalk_JPN": "トレーニングが時間の無駄だという考えは、今も変わらないが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…흥.",
+      "UnitTalk_JPN": "…フン。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뭐해? 준비해.",
+      "UnitTalk_JPN": "何してる？準備しろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "다시 해야지.",
+      "UnitTalk_JPN": "再開するぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니야, 오늘은 이만 쉬자.",
+          "JumpAnchorStringId_JPN": "いや、今日はもう休もう。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "그럼 한 번 더 해볼까?",
+          "JumpAnchorStringId_JPN": "じゃあ、もう一回やってみる？",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        },
+        {
+          "Uid": 3,
+          "JumpAnchorStringId_KOR": "활력 포션을 건넨다.",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
+          "JumpAnchorId": "REWARD_ANCHOR_3"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…그런 판단이라면.",
+      "UnitTalk_JPN": "そう判断したなら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "어쩔 수 없네. 마음대로 해.",
+      "UnitTalk_JPN": "仕方ないな。好きにしろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그늘 아래에서 에데와 함께 조용한 휴식을 취했다.",
+      "UnitTalk_JPN": "木陰で、エデと静かに休んだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "하아…",
+      "UnitTalk_JPN": "はぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "…됐어.",
+      "UnitTalk_JPN": "…もういい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "어차피 전부 무의미하니까…",
+      "UnitTalk_JPN": "どうせ、すべて無意味だ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "에데의 뒷모습에서 어쩐지 쓸쓸함이 느껴졌다.",
+      "UnitTalk_JPN": "エデの後ろ姿から、寂しさが感じられた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_SUCCESS",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "당연한 걸 묻지 마.",
+      "UnitTalk_JPN": "当然のことを聞くな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "…따라와.",
+      "UnitTalk_JPN": "…ついて来い。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "훈련장으로 돌아가는 에데의 발걸음에서 차가운 분노가 느껴진다.",
+      "UnitTalk_JPN": "訓練場へ戻っていくエデの足取りから、冷たい怒りが感じられた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_2_FAIL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그런 미적지근한 태도가 실수를 부르는 거야.",
+      "UnitTalk_JPN": "そういう生ぬるい態度がミスを招く。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "이렇게 말해도 소용없겠지. 마음대로 해.",
+      "UnitTalk_JPN": "こんなことを言っても無駄だろうな。好きにしろ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "훈련장으로 향하는 발걸음이 왠지 기운 없어 보인다.",
+      "UnitTalk_JPN": "訓練場へ向かう足取りが、力なく見えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.1,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "JumpAnchorInfo": "JUMPANCHOR_3",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "꽤나 비싼 물건이네.",
+      "UnitTalk_JPN": "ずいぶんと高価な品だな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…날 위해 준비했다고?",
+      "UnitTalk_JPN": "…私のために用意した、だと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitTalk_KOR": "흥. 얼마 되지도 않는 지원금으로 이런 걸 살 여유가 있어?",
+      "UnitTalk_JPN": "フン。大した額でもない支援金で、こんなものを買う余裕があるのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "…다음부터는 그냥 나한테 사달라고 말해.",
+      "UnitTalk_JPN": "…次からは、買ってほしいと素直に言うことだな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "이건…",
+      "UnitTalk_JPN": "まぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INCOGNITA_FLOWER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "기왕 준비해 준 거니까 사양하지는 않겠어.",
+      "UnitTalk_JPN": "せっかく用意してくれたものだ。遠慮はしないでおく。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_TRAINING_BAD",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "활력 포션을 마신 후, 에데의 표정은 한결 부드러워졌다.",
+      "UnitTalk_JPN": "活力ポーションを飲んだ後、エデの表情は幾分穏やかになった。",
+      "TalkTime": 0.03
+    }
+  ]
+}

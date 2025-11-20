@@ -1,0 +1,1612 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP3_5S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "현상금 받으러 왔습니다!",
+      "UnitTalk_JPN": "賞金を受け取りに来たぞ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_001.wav"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "오, 트리쉬? 이번에도 빨리 왔네.",
+      "UnitTalk_JPN": "おっ、トリッシュじゃない。今回も早かったわね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_001.wav"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "일류 헌터 특! 신속 해결!",
+      "UnitTalk_JPN": "一流ハンターたる者！依頼は迅速に解決するべし！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_002.wav"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitTalk_KOR": "…그 이상한 말투도 여전하고 말이지.",
+      "UnitTalk_JPN": "…その変な口癖も相変わらずというか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_002.wav"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무튼 도적들은 어디 있어? 밖에 묶어 놨나?",
+      "UnitTalk_JPN": "とにかく、捕まえた盗賊はどこにいるの？外に縛っておいたのかしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_003.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "여기 있잖아, 여기.",
+      "UnitTalk_JPN": "ここにいるぞ、ここに。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_003.wav"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "어디에 있다는 거야… 응?!\t",
+      "UnitTalk_JPN": "どこにいるって言うのよ…ええっ！？\t",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_004.wav"
+    },
+    {
+      "Uid": 278,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "죄송합니다! 죄송합니다! 죄송합니다! 죄송합니다! 죄송합니다! 죄송합니다!",
+      "UnitTalk_JPN": "すみません！すみません！すみません！すみません！すみません！すみません！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_001.wav"
+    },
+    {
+      "Uid": 279,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "흐어어엉!!",
+      "UnitTalk_JPN": "ふぇーーーん！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_002.wav"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "CameraOffset": "ONE_4",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "히이익!!",
+      "UnitTalk_JPN": "ヒィーーッ！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_005.wav"
+    },
+    {
+      "Uid": 248,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 267,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "너 설마… 모노리스 교단 사제를 납치한 거야?!",
+      "UnitTalk_JPN": "あなた、まさか…モノリス教団の修道女を拉致したの！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_006.wav"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "평소에도 <color=#F7BE45>[일류 헌터 특]</color>이니 뭐니, 튀고 싶어서 안달을 하더니…",
+      "UnitTalk_JPN": "普段から<color=#F7BE45>「一流ハンターたる者」</color>とか何とか言って、目立つために必死だったみたいだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_007.wav"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "드디어 선을 넘어 버렸구나!",
+      "UnitTalk_JPN": "とうとうやっちゃったわね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_008.wav"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitTalk_KOR": "미안하지만 인신매매범은 협회에서 제명이야!",
+      "UnitTalk_JPN": "悪いけど、人さらいするような輩は協会から除名よ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_009.wav"
+    },
+    {
+      "Uid": 268,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "누가 인신매매범이라는 거야?!",
+      "UnitTalk_JPN": "誰が人さらいだ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_004.wav"
+    },
+    {
+      "Uid": 280,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이건 그러니까…",
+      "UnitTalk_JPN": "これは、つまりだな…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_005.wav"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "의뢰주가 장난을 친 것 같아.",
+          "JumpAnchorStringId_JPN": "依頼主のイタズラだったらしい。"
+        }
+      ]
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "네? 그럴 리가… ",
+      "UnitTalk_JPN": "はい？そんな訳が…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_010.wav"
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "분명 모노리스 교단의 성녀분들이 낸 의뢰라고요.",
+      "UnitTalk_JPN": "ま、間違いなくモノリス教団の聖女による依頼のはず。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_011.wav"
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitTalk_KOR": "교단 쪽에 신원증명도 받았는데…",
+      "UnitTalk_JPN": "教団側から、身元証明も受けたのに…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_012.wav"
+    },
+    {
+      "Uid": 237,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 234,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 238,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 자초지종을 설명했다.",
+      "UnitTalk_JPN": "私は事の経緯を説明した。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 236,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 240,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 239,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그런 일이 있었군요…",
+      "UnitTalk_JPN": "そのような事が…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_013.wav"
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "저희 협회원이 피해를 끼쳐드려 정말 죄송합니다.",
+      "UnitTalk_JPN": "我々の協会員がご迷惑をおかけしてしまい、申し訳ございませんでした。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_014.wav"
+    },
+    {
+      "Uid": 141,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitTalk_KOR": "보상은 협회 차원에서 충분히 해드리겠습니다.",
+      "UnitTalk_JPN": "協会のほうで十分に補償させていただきます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_015.wav"
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_1",
+      "UnitNameString": [
+        "SI_ASELLUS_RECEPTION"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "하지만 교단의 성녀가 협회에 가짜 의뢰를 접수하다니!",
+      "UnitTalk_JPN": "しかし、教団の聖女が協会に偽の依頼を出すとは！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_NPC_ASELLUS_OFFICER_016.wav"
+    },
+    {
+      "Uid": 289,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 294,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 288,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5,
+      "BgFileName": "CINEMA_MAIN_EP3_5S.mp4",
+      "VideoDependsOnText": false
+    },
+    {
+      "Uid": 291,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0
+    },
+    {
+      "Uid": 290,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "VideoDependsOnText": false,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 293,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 292,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "그러니까 제발… 용서해 주세요…",
+      "UnitTalk_JPN": "だ、だから…どうか赦してください…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_007.wav"
+    },
+    {
+      "Uid": 154,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "다시는 안 그럴 테니까…",
+      "UnitTalk_JPN": "もう二度としませんから…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_008.wav"
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…",
+          "JumpAnchorStringId_JPN": "…"
+        }
+      ]
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇게 억지 부린다고 될 일이겠어?",
+      "UnitTalk_JPN": "そんな駄々をこねても、どうにもならないぞ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_006.wav"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아셀루스 헌터 협회 특!",
+      "UnitTalk_JPN": "アセルス協会と言えば！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_007.wav"
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "규정 준수 철저! 이에는 이, 눈에는 눈으로…",
+      "UnitTalk_JPN": "ルールは徹底遵守！目には目を、歯には歯を…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_008.wav"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아, 한 번만 용서해 줄게.",
+          "JumpAnchorStringId_JPN": "よし、今回だけは許してあげるとしよう。"
+        }
+      ]
+    },
+    {
+      "Uid": 160,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…엥?",
+      "UnitTalk_JPN": "…えっ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_STELLAR_THIEF_009.wav"
+    },
+    {
+      "Uid": 285,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "지… 진짜로?",
+      "UnitTalk_JPN": "ほ…ほんとに？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_009.wav"
+    },
+    {
+      "Uid": 162,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래, 진짜로.",
+          "JumpAnchorStringId_JPN": "本当だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 286,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 163,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "진짜? 진짜? 진짜? 진짜? 진짜? 진짜?",
+      "UnitTalk_JPN": "ほんとに？ほんとに？ほんとに？ほんとに？ほんとに？ほんと？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_010.wav"
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "한번 말했으면 무르기 없기! 무르기 없기! 무르기 없기!",
+      "UnitTalk_JPN": "もう撤回できないわよ？一度言っちゃったら二言はないんだから！約束だから！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_011.wav"
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "거짓말이면 가프님의 영원한 저주 286종 세트가 10배 중첩으로 떨어질 거야!",
+      "UnitTalk_JPN": "約束破ったら、ガプ様の永遠の呪い286種セットが10倍になって降りかかるんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_012.wav"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알았으니까 그만 해.",
+          "JumpAnchorStringId_JPN": "分かったからもうやめるんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "어… 으응.",
+      "UnitTalk_JPN": "あ、うん…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_013.wav"
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "이, 이럴 수가…",
+      "UnitTalk_JPN": "そ、そんな…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_004.wav"
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "뮤리엘 님의 비열하고 잔혹하며 쪼잔한 음모에 직접 당하고서도 용서하다니…",
+      "UnitTalk_JPN": "ミュリエル様の卑劣で残酷でケチくさい陰謀の被害に遭っても、赦してくださるなんて…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_005.wav"
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitNameString": [
+        "SI_MUIREAL"
+      ],
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "누, 누가 쪼잔하다는 거야…?",
+      "UnitTalk_JPN": "だ、誰がケチくさいって…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_014.wav"
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "어떻게 그럴 수가 있죠?!",
+      "UnitTalk_JPN": "なんて心が広いのでしょうか…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_006.wav"
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어쩌면 저는 큰 오해를 하고 있었던 것일지도 몰라요.",
+      "UnitTalk_JPN": "もしかすると、私は大きな誤解をしていたのかもしれません。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_007.wav"
+    },
+    {
+      "Uid": 251,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "저분이야말로 교주님께서 말씀하셨던… 재림 성자일지도…?",
+      "UnitTalk_JPN": "この方こそ、教祖様がおっしゃっていた…再臨の聖者なのかも…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_008.wav"
+    },
+    {
+      "Uid": 174,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_5",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS5",
+      "UnitTalk_KOR": "아무리 그래도 너무 쉽게 용서해 주는 거 아냐?",
+      "UnitTalk_JPN": "こんな簡単に許しちゃっていいの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 175,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이런 일일수록 원칙대로 처리해야 하는 법이라고.",
+      "UnitTalk_JPN": "こういう時こそルール通りに処理しなくちゃいけないんじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 253,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF"
+    },
+    {
+      "Uid": 176,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라의 말도 일리가 있다.",
+      "UnitTalk_JPN": "アセラの言う事も一理ある。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 254,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 177,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 크게 피해를 본 것도 없는데 밥줄을 끊는 건 너무한 일이 아닐까?",
+      "UnitTalk_JPN": "しかし、大きな被害があった訳でもないのに、教団を追放されるほどの罰を与えるのはやりすぎではないだろうか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 178,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무튼 보상금도 받았고 말이지.",
+      "UnitTalk_JPN": "協会から補償金ももらえることだし、大目に見てやろう。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "차암, 단장도 너무 무르다니까.",
+      "UnitTalk_JPN": "もう、団長は甘すぎるんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하지만 그런 점이 또 단장의 장점이라고 생각해.",
+      "UnitTalk_JPN": "…でも、そういうところも団長の魅力ね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 181,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 슬슬 돌아갈까?",
+      "UnitTalk_JPN": "それじゃあ、そろそろ戻ろっか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 182,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "그래! 오늘은 너무 피곤한 날이었어.",
+      "UnitTalk_JPN": "そうしよー！今日はすっごく疲れちゃった。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 183,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "얼른 들어가서 쉬자고.",
+      "UnitTalk_JPN": "早く帰って、休まないとね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "쉬긴 뭘 쉬어! 오늘은 야간 훈련이야!",
+      "UnitTalk_JPN": "休んでる暇はないわ！今日は夜まで特訓なんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 185,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "에엑?!",
+      "UnitTalk_JPN": "えぇーっ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 186,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "내가 얼마나 열심히 싸웠는데?!",
+      "UnitTalk_JPN": "アタシがどれだけ一生懸命戦ったと思ってるの！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 281,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 187,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "루나, 싸우는 동안 나무 뒤에서 응원만 했음.",
+      "UnitTalk_JPN": "ルナは戦闘中、後ろの方で応援だけしてた。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 188,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "내가 봄.",
+      "UnitTalk_JPN": "この目で見た。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 275,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 276,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 277,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 189,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "우리는 그렇게 티격태격하며 캔들 스퀘어로 돌아갔다.",
+      "UnitTalk_JPN": "いつも通り口喧嘩をしながら、私たちはキャンドル・スクエアに戻った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 245,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 261,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BLACK.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 262,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 287,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만… 이때까지만 해도 나는 모르고 있었다.",
+      "UnitTalk_JPN": "しかし…私はこの時、まだ何も知らなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어설픈 자비심이 어떤 재앙이 되어 돌아오게 될 것인지를…",
+      "UnitTalk_JPN": "中途半端な慈悲が、どのような災いとなって返ってくるのかを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 264,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 265,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_COMMON_CORRIDOR_DOOR 1.png",
+      "CutsceneClear": "CLEARTEXT"
+    },
+    {
+      "Uid": 255,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_2"
+    },
+    {
+      "Uid": 256,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 247,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "뮤, 뮤리엘 님…",
+      "UnitTalk_JPN": "ミュ、ミュリエル様…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_009.wav"
+    },
+    {
+      "Uid": 193,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_015.wav"
+    },
+    {
+      "Uid": 194,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "다들 떠나셨어요.",
+      "UnitTalk_JPN": "皆、行ってしまいました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_010.wav"
+    },
+    {
+      "Uid": 195,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이제 일어나셔도 될 것 같아요.",
+      "UnitTalk_JPN": "もう起きても大丈夫かと思います。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_011.wav"
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "UnitTalk_KOR": "큭… 크크큭…",
+      "UnitTalk_JPN": "ククッ…ククククッ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_016.wav"
+    },
+    {
+      "Uid": 197,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…뮤리엘 116번 성녀님?",
+      "UnitTalk_JPN": "…序列116番聖女ことミュリエル様？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_012.wav"
+    },
+    {
+      "Uid": 198,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "크헤헤헤헤!",
+      "UnitTalk_JPN": "ぐへへへへ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_017.wav"
+    },
+    {
+      "Uid": 199,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "크, 큰일이에요!",
+      "UnitTalk_JPN": "た、大変です！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_013.wav"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "뮤리엘 님이 드디어 정신질환에 걸리신 것 같아요!",
+      "UnitTalk_JPN": "ミュリエル様の頭がついにおかしくなってしまったようです！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_014.wav"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아아… 97번 성녀 일레느 님에게 열등감을 느끼실 때부터 이런 날이 올 줄은 알고 있었건만…",
+      "UnitTalk_JPN": "あぁ…序列97番聖女ことイレーヌ様に劣等感を抱き始めた頃から、いつかこんな日が来ることは分かっていましたが…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_015.wav"
+    },
+    {
+      "Uid": 202,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "위대하신 마신 가프님, 뮤리엘 님에게 부디 안식의 축복을…",
+      "UnitTalk_JPN": "偉大な魔神、ガプ様。ミュリエル様にどうか安らぎの祝福を…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_016.wav"
+    },
+    {
+      "Uid": 258,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 203,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "누가 정신병자야?!",
+      "UnitTalk_JPN": "誰の頭がおかしくなったって！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_018.wav"
+    },
+    {
+      "Uid": 204,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "뮤, 뮤리엘 님?",
+      "UnitTalk_JPN": "ミュ、ミュリエル様？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_017.wav"
+    },
+    {
+      "Uid": 205,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그야 어설픈 계략을 꾸미다가 역으로 당한 후에 갑자기 웃기 시작하셨잖아요.",
+      "UnitTalk_JPN": "だって…粗末な策略に失敗して痛い目を見たじゃないですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_018.wav"
+    },
+    {
+      "Uid": 206,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "누가 봐도 훌륭한 정신병자인 걸요…",
+      "UnitTalk_JPN": "それでバカみたいに笑い始めたら、頭がおかしくなったとしか思えませんよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_019.wav"
+    },
+    {
+      "Uid": 207,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그게 아니야!",
+      "UnitTalk_JPN": "違うわよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_019.wav"
+    },
+    {
+      "Uid": 208,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "난 그저… 이 모든 상황이 내 계산대로 돌아가서 기쁨의 미소를 지은 거라고!",
+      "UnitTalk_JPN": "うちはただ…ぜんぶ計画通りになったから、笑いが止まらなくなっただけよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_020.wav"
+    },
+    {
+      "Uid": 209,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "네…?",
+      "UnitTalk_JPN": "はい…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_020.wav"
+    },
+    {
+      "Uid": 210,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "설마… 아직도 대성물을 포기하지 못하신 건가요?",
+      "UnitTalk_JPN": "まさか…まだ大聖遺物を諦めていないのですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_021.wav"
+    },
+    {
+      "Uid": 282,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 211,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "포기…?",
+      "UnitTalk_JPN": "諦める…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_021.wav"
+    },
+    {
+      "Uid": 212,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "잘 들어, 엘리사.",
+      "UnitTalk_JPN": "よく聞きなさい、エリサ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_022.wav"
+    },
+    {
+      "Uid": 213,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "고작 <color=#F7BE45>[117번]</color> 성녀인 넌 이해하지 못하겠지만…",
+      "UnitTalk_JPN": "たかが序列<color=#F7BE45>「117番」</color>聖女であるあんたには理解できないだろうけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_023.wav"
+    },
+    {
+      "Uid": 214,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "야생의 법칙이 지배하는 모노리스 교단에서 위로 올라가고 싶다면 포기 따윈 있을 수 없어!",
+      "UnitTalk_JPN": "弱肉強食のモノリス教団で上を目指したいなら、何事にも執念深く向き合わなきゃいけないの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_024.wav"
+    },
+    {
+      "Uid": 215,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아… 네…",
+      "UnitTalk_JPN": "あっ、はい。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_022.wav"
+    },
+    {
+      "Uid": 216,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "녀석들은 내 비장의 기술, <color=#F7BE45>[긴급 회피의 자세]</color>에 완전히 당해버렸지.",
+      "UnitTalk_JPN": "あいつらはうちの奥義…<color=#F7BE45>「緊急回避の姿勢」</color>にまんまと騙されていたわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_025.wav"
+    },
+    {
+      "Uid": 217,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "긴급 회피의 자세…?",
+      "UnitTalk_JPN": "緊急回避の姿勢…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_023.wav"
+    },
+    {
+      "Uid": 271,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 218,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "혹시 조금 전 엎드려서 제발 용서해 달라며 울고불고 떼쓰던 것 말인가요?",
+      "UnitTalk_JPN": "もしかして…さっきの突っ伏して赦してくださいと泣き喚いていた時の姿勢のことですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_024.wav"
+    },
+    {
+      "Uid": 219,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후… 하급 성녀인 네 눈에는 그렇게 보였을지도 모르겠네.",
+      "UnitTalk_JPN": "ふふ…下っ端聖女のあんたにはそう見えたかもしれないわね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_026.wav"
+    },
+    {
+      "Uid": 220,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "하지만 그건 상대의 감정을 지배하는 고난이도의 비술.",
+      "UnitTalk_JPN": "でも、あれは相手の感情を支配するための高度なテクニック。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_027.wav"
+    },
+    {
+      "Uid": 221,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "내가 처음 교단에 입교한 후부터 수많은 고참 성녀들에게 시달리며 갈고 닦아 온…",
+      "UnitTalk_JPN": "うちが教団に入ってから、先輩の聖女たちにしごかれて習得した…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_028.wav"
+    },
+    {
+      "Uid": 222,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "일종의 <color=#F7BE45>[기적]</color>이랄까?",
+      "UnitTalk_JPN": "一種の<color=#F7BE45>「奇跡」</color>とでも言うべき秘術かしら。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_029.wav"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "기적…?!",
+      "UnitTalk_JPN": "奇跡…！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_025.wav"
+    },
+    {
+      "Uid": 224,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래. 이 기적에 의해 녀석들은 자신들에게 유리한 환경을 포기하고 물러나 버렸어.",
+      "UnitTalk_JPN": "そうよ。この奇跡によって、あいつらは自分たちに有利な状況を捨てて撤退したの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_030.wav"
+    },
+    {
+      "Uid": 274,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF"
+    },
+    {
+      "Uid": 225,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그리고 다시 주도권은 우리에게 돌아온 거지!",
+      "UnitTalk_JPN": "そしてまた、うちらに主導権が戻ってきたってわけ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_031.wav"
+    },
+    {
+      "Uid": 226,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아아…! 이 무슨…!!",
+      "UnitTalk_JPN": "あぁ…！なんてこと…！！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_026.wav"
+    },
+    {
+      "Uid": 227,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자신을 용서한 분에게까지 다시 한번 마각을 드러내는 그 비열한 모습!",
+      "UnitTalk_JPN": "情けをかけてくださった方に、性懲りもなく悪事を働こうとする卑劣なお姿！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_027.wav"
+    },
+    {
+      "Uid": 228,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "마치 스스로 지옥에 걸어 들어가기를 선택한 성녀, 그 자체!",
+      "UnitTalk_JPN": "まるで自ら地獄へ行くことを選んだ聖女そのもの！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_028.wav"
+    },
+    {
+      "Uid": 229,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "역시, 뮤리엘 116번 성녀님이야말로 교단의 미래! 구원! 복음이에요!",
+      "UnitTalk_JPN": "やはり序列116番聖女ことミュリエル様こそ、教団の未来！救援！福音です！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_029.wav"
+    },
+    {
+      "Uid": 230,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "저, 엘리사, 뮤리엘 님에게 영원한 충성을 맹세하겠습니다.",
+      "UnitTalk_JPN": "このエリサ、ミュリエル様に永遠の忠誠を誓います…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_ELF_030.wav"
+    },
+    {
+      "Uid": 231,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "으, 응… 영원히 까진 필요 없고, 적당히…",
+      "UnitTalk_JPN": "う、うん…永遠までは求めてないわ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_032.wav"
+    },
+    {
+      "Uid": 232,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무튼 기다려라, 대성물을 가진 이교도!",
+      "UnitTalk_JPN": "とにかく待ってなさい！大聖遺物を持った異教徒！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_033.wav"
+    },
+    {
+      "Uid": 233,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "우리의 승부는 지금부터다!",
+      "UnitTalk_JPN": "うちらの勝負は、これからよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_5_UNIT_S_SAINTESS_DEMON_034.wav"
+    }
+  ]
+}

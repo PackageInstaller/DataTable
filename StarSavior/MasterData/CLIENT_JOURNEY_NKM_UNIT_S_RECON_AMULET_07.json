@@ -2177,6 +2177,24 @@
       "TalkTime": 0.03
     },
     {
+      "Uid": 362,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0.42745098",
+        "0.29803923",
+        "0.14901961",
+        "0.69803923"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
       "Uid": 163,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_07",
@@ -2232,6 +2250,13 @@
       "AutoHighlight": "DARK"
     },
     {
+      "Uid": 355,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_RECON_AMULET_03.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
       "Uid": 167,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_07",
@@ -2241,10 +2266,16 @@
         "0",
         "0",
         "0",
-        "0"
+        "1"
       ],
       "BgFadeOutTime": 1.0,
       "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 356,
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_01.wav"
     },
     {
       "Uid": 168,
@@ -2289,15 +2320,6 @@
       "AutoHighlight": "DARK"
     },
     {
-      "Uid": 171,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_07",
-      "WaitClick": false,
-      "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
-      "AutoHighlight": "DARK"
-    },
-    {
       "Uid": 172,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_07",
@@ -2316,7 +2338,9 @@
       "Uid": 328,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "UnitTalk_KOR": "스…",
       "UnitTalk_JPN": "ス…",
       "TalkTime": 0.03
@@ -2327,7 +2351,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_07",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffsetTime": "FA",
       "UnitMotion": "SPECIAL3",
       "UnitTalk_KOR": "…스텔라 레인저 블랙.",
@@ -2338,12 +2364,51 @@
       "Uid": 331,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffset": "ONE_6",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "등장입니다.",
       "UnitTalk_JPN": "登場です。",
       "TalkTime": 0.03
+    },
+    {
+      "Uid": 357,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 358,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_STAGE.png"
+    },
+    {
+      "Uid": 360,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_BULLY1_MALE_F",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 361,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "SPECIAL2",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 359,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
     },
     {
       "Uid": 174,
@@ -2355,8 +2420,6 @@
       "UnitNameString": [
         "SI_BULLY_SHOWGAS_A"
       ],
-      "CameraOffset": "TWIN_7",
-      "UnitMotion": "SMILE",
       "UnitTalk_KOR": "너… 넌 뭐야?",
       "UnitTalk_JPN": "お…お前は？",
       "TalkTime": 0.03

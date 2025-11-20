@@ -7,22 +7,34 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_06", //감독자
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_INTERSTELLAR_06",  // 처단자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_06", //포식자
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_06",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_06", //감독자
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_INTERSTELLAR_06",  // 처단자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -30,24 +42,28 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_06", //감독자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_CLOISTER_INTERSTELLAR_06", //살육의 포식자
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_ELITEBONE_BLACK_ELITE_CLOISTER_INTERSTELLAR_06", // 맹목의 전파자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON" //서브 속성 타입※※※※※※※※※※※※
+            "IsElite": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_INTERSTELLAR_06", //감독자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_ELITEBONE_BLACK_ELITE_CLOISTER_INTERSTELLAR_06", // 맹목의 전파자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsElite": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

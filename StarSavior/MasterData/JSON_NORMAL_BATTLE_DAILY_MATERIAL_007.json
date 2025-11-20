@@ -8,32 +8,37 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_RAIDER_WAND_RED_DAILY_04",
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_04",
+            "ChangeAdjustType": "NUAT_MOON",
             "AllSkillAvailable": true,
             "AddStatData": {
-              "NST_NV_RATE_ATK": -2000,
-              "NST_NV_RATE_HP": -2000
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
             }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_SCAVENGER_CROSSBOW_BLACK_ELITE_DAILY_04",
+            "UnitStrId": "NKM_UNIT_MON_SCAVENGER_SWORD_BLACK_ELITE_DAILY_04",
             "IsElite": true,
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_ORDER",
+            "ChangeAdjustType": "NUAT_MOON",
             "AddStatData": {
-              "NST_NV_RATE_ATK": -2000,
-              "NST_NV_RATE_HP": -2000
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
             }
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_RAIDER_WAND_RED_DAILY_04",
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_04",
+            "ChangeAdjustType": "NUAT_MOON",
             "AllSkillAvailable": true,
             "AddStatData": {
-              "NST_NV_RATE_ATK": -2000,
-              "NST_NV_RATE_HP": -2000
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
             }
           }
         ]
@@ -43,28 +48,37 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_RED_DAILY_04",
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_04",
+            "ChangeAdjustType": "NUAT_MOON",
             "AllSkillAvailable": true,
             "AddStatData": {
-              "NST_NV_RATE_ATK": -2000,
-              "NST_NV_RATE_HP": -2000
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
             }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDER_DAGGER_BLACK_BOSS_DAILY_MATERIAL_07",
+            "UnitStrId": "NKM_UNIT_MON_CRUNNADUN_AXE_BLACK_BOSS_DAILY_04",
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_ORDER",
-            "IsBoss": true
+            "ChangeAdjustType": "NUAT_MOON",
+            "IsBoss": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_RED_DAILY_04",
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_04",
+            "ChangeAdjustType": "NUAT_MOON",
             "AllSkillAvailable": true,
             "AddStatData": {
-              "NST_NV_RATE_ATK": -2000,
-              "NST_NV_RATE_HP": -2000
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
             }
           }
         ]

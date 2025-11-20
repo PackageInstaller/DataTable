@@ -4,6 +4,31 @@
   "_Version": 4,
   "Data": [
     {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_JOURNEY_ENTER_AREA_KALAID.mp4",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0
+    },
+    {
       "Uid": 1,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_PF_30B_KLD_STANDBY",
@@ -13,6 +38,18 @@
       "StartBgmFileName": "MUSIC_CANDLE_KALAID.mp3",
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.6
     },
     {
       "Uid": 2,
@@ -25,7 +62,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "…엣취!",
-      "UnitTalk_JPN": "…えっくっ！",
+      "UnitTalk_JPN": "…へくしゅん！",
       "TalkTime": 0.03
     },
     {
@@ -37,7 +74,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "으웃, 추워…",
-      "UnitTalk_JPN": "うっ、寒い…",
+      "UnitTalk_JPN": "ううっ、寒い…",
       "TalkTime": 0.03
     },
     {
@@ -62,7 +99,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "아뇨. 제가 원래 추위에 좀 약한 편이거든요…",
-      "UnitTalk_JPN": "いえ。もともと寒さに弱い方なので…",
+      "UnitTalk_JPN": "いえ。もともと寒さに弱いもので…",
       "TalkTime": 0.03
     },
     {
@@ -74,7 +111,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그래도 괜찮습니다. 칼라이드 온천의 효능을 경험해 볼 기회니까요. ",
-      "UnitTalk_JPN": "それでも大丈夫です。カライド温泉の効能を体験できる機会ですから。 ",
+      "UnitTalk_JPN": "でも、大丈夫です。カライド温泉の効能を体験できるチャンスですから。 ",
       "TalkTime": 0.03
     },
     {
@@ -87,7 +124,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "효능이라니?",
-          "JumpAnchorStringId_JPN": "効能だって？"
+          "JumpAnchorStringId_JPN": "効能って？"
         }
       ]
     },
@@ -100,7 +137,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "칼라이드의 온천은 피로를 풀어 줄 뿐 아니라 생명력을 크게 향상시켜 주거든요.",
-      "UnitTalk_JPN": "カライドの温泉は疲労を癒すだけでなく、生命力を大きく高めてくれるんです。",
+      "UnitTalk_JPN": "カライドの温泉は、疲労を癒すだけでなく生命力を大きく向上させてくれるんです。",
       "TalkTime": 0.03
     },
     {
@@ -122,7 +159,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "캔들 스퀘어에도 전용 온천 시설이 있으니 원하신다면 언제든지 사용하실 수 있을 거예요.",
-      "UnitTalk_JPN": "キャンドル・スクエアにも専用温泉施設がございますので、ご希望であればいつでもご利用いただけます。",
+      "UnitTalk_JPN": "キャンドル・スクエアにも専用温泉施設がありますから、ご希望でしたらいつでもご利用できますよ。",
       "TalkTime": 0.03
     },
     {
@@ -134,7 +171,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그리고 꼭 그런 이유가 아니어도 이런 추운 곳에서 건강을 유지하려면 목욕은 필수니까요!",
-      "UnitTalk_JPN": "そして、必ずしもそういう理由がなくても、こんな寒い場所で健康を維持するには、入浴は必須ですから！",
+      "UnitTalk_JPN": "うぅ…こんな寒い場所で健康を維持するためには、入浴は必須ですから！",
       "TalkTime": 0.03
     },
     {
@@ -145,7 +182,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "훈련 중에 적절하게 이용하시면 큰 도움이 될 거예요.",
-      "UnitTalk_JPN": "トレーニング中に適切にご利用いただければ、大きな助けになるでしょう。",
+      "UnitTalk_JPN": "トレーニング中に適切に利用されれば、きっと大いに役立つでしょう。",
       "TalkTime": 0.03
     },
     {
@@ -171,7 +208,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "후후, 합숙 훈련을 끝낸 두 분이 얼마나 더 성장할지 기대가 되네요.",
-      "UnitTalk_JPN": "ふふ、合宿トレーニングを終えたお二人がどれほど成長されるか楽しみです。",
+      "UnitTalk_JPN": "ふふっ、合宿を終えたお二人がどれほど成長されるか楽しみです。",
       "TalkTime": 0.03
     },
     {
@@ -186,7 +223,7 @@
       "UnitMotion": "SURPRISE",
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "…엣취!",
-      "UnitTalk_JPN": "…えっくっ！",
+      "UnitTalk_JPN": "…へっくしゅん！",
       "TalkTime": 0.03
     },
     {
@@ -198,7 +235,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "으으… 이대로 계속 밖에 있으면 감기 걸리겠어요.",
-      "UnitTalk_JPN": "うう…このまま外にいたら風邪をひきそうです。",
+      "UnitTalk_JPN": "うぅ…このまま外にいたら風邪をひいてしまいそうです。",
       "TalkTime": 0.03
     },
     {
@@ -210,7 +247,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그런 이유로 전 먼저 온천으로 가겠습니다!",
-      "UnitTalk_JPN": "そういうわけで、私は先に温泉へ行きます！",
+      "UnitTalk_JPN": "という訳で、私は先に温泉に入ります！",
       "TalkTime": 0.03
     },
     {
@@ -223,7 +260,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "그래, 건강이 제일이지. 푹 쉬어",
-          "JumpAnchorStringId_JPN": "ああ、健康が一番だ。ゆっくり休んでくれ"
+          "JumpAnchorStringId_JPN": "健康が一番だから、ゆっくり休んで。"
         }
       ]
     },
@@ -251,7 +288,7 @@
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "혹시나 말씀드리는 거지만 훔쳐보시면 안 돼요!",
-      "UnitTalk_JPN": "念のため言っておきますが、覗かないでくださいね！",
+      "UnitTalk_JPN": "念のために言っておきますが、覗かないでくださいね！",
       "TalkTime": 0.03
     }
   ]

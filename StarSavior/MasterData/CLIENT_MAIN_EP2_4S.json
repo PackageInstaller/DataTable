@@ -1,0 +1,1209 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_4S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "BgFileName": "ILLUST_BG_BLACK.png"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png",
+      "UnitTalk_KOR": "우리는 스마일을 따라 공방 안으로 이동해 이야기를 나누기로 했다.",
+      "UnitTalk_JPN": "私たちはスマイルの工房へと移動し、話をすることにした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.5
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러니까… 네가 의뢰인이라고?",
+          "JumpAnchorStringId_JPN": "つまり…君が依頼人なんだな？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…긍정.",
+      "UnitTalk_JPN": "…肯定。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "의뢰 내용은… 사기꾼 검거?",
+          "JumpAnchorStringId_JPN": "依頼内容は…ペテン師の逮捕？"
+        }
+      ]
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "끄덕끄덕.",
+      "UnitTalk_JPN": "コクコク。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "사정은 이렇다.",
+      "UnitTalk_JPN": "聞いたところによれば、事情はこうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 소녀의 이름은 스마일.",
+      "UnitTalk_JPN": "この少女の名は、スマイル。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 언니가 어느 날 모습을 감췄고…",
+      "UnitTalk_JPN": "ある日、彼女の姉が姿を消してしまったらしい。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 행방을 찾기 위해 자칭 라비스타 최고의 점성술사라는 사람에게 의뢰를 넣었다.",
+      "UnitTalk_JPN": "スマイルはその行方を追うため、自称ラビスターで一番の占星術師に依頼をした。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…그리고 어제, 이 편지를 수취.",
+      "UnitTalk_JPN": "…そして昨日、一通の手紙が届いたのだという。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitTalk_KOR": "나는 스마일이 내민 편지를 받아서 읽어 보았다.",
+      "UnitTalk_JPN": "私はスマイルが差し出した手紙を受け取り、読んでみた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LETTER_01.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "달님에게 영광을!",
+      "UnitTalk_JPN": "月に祝福を！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "기뻐하라, 길 잃은 소녀여! 고귀한 달의 궤도가 네 언니의 행방을 알려주었노라.",
+      "UnitTalk_JPN": "喜ぶがいい、道に迷える少女よ！崇高なる月の軌跡が、そなたの姉の行方を告げてくれた。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 나는 보고 만 것이다…!",
+      "UnitTalk_JPN": "しかし、我は見てしまったのだ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "만남의 길 저편에 숨어 있는 검은 흉성의 미래를!",
+      "UnitTalk_JPN": "再会の道に潜む、黒き凶星の未来を！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐야? 이게 무슨 뜻이야?",
+          "JumpAnchorStringId_JPN": "…何だこれ？どういう意味だ？"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "…밑에 설명이 더 있는 것 같은데?",
+      "UnitTalk_JPN": "下に説明があるんじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하하하, 점괘나 신탁은 비유가 많아서 이해하기 어렵지?",
+      "UnitTalk_JPN": "アハハッ。占いとか神託って比喩が多くて意味わかんないよね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "쉽게 말하자면 네 언니에 대한 단서를 찾긴 했지만… 굳이 안 만나는 게 더 좋을 거란 얘기야!",
+      "UnitTalk_JPN": "要するに、キミのお姉さんの手がかりは見つけたけど…会わない方がいいってコト！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그러니 단서는 나만 알고 있는 걸로 할게.",
+      "UnitTalk_JPN": "だから、手掛かりはアタシだけの秘密にしておきます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "응응, 무슨 생각하는지 알아. ",
+      "UnitTalk_JPN": "うんうん、気持ちは分かるよ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 세상을 살다 보면 뜻대로 되지 않는 일이 더 많잖아?",
+      "UnitTalk_JPN": "でも世の中、思い通りにならないことの方が多いでしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이번 일도 그런 일이라고 생각하면 받아들이기 쉬울 거야. ",
+      "UnitTalk_JPN": "今回もそういうことだったって思えば、納得できるはず！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 점괘를 해석해 주는 일은 원래 따로 요금을 받거든.",
+      "UnitTalk_JPN": "あ、それと占いの解釈を説明するのって、本当なら追加料金がかかるんだよね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_011.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그래도… 이번엔 처음이니까 뭐, 특별히 공짜로 해 줄게!",
+      "UnitTalk_JPN": "でも…今回は初めてのお客さんだし、特別にタダにしてあげちゃうね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_012.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아, 고맙다는 말은 괜찮아! ",
+      "UnitTalk_JPN": "も～、感謝の言葉とかいらないったら！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_013.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그럼 언젠가 달이 인도하는 곳에서 다시 만나~!",
+      "UnitTalk_JPN": "じゃ、いつか月が導く場所でまた会おうね～っ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_ORACLE_014.wav"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_STORE_GENERAL.png"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…우와, 진짜냐.",
+          "JumpAnchorStringId_JPN": "…うわぁ。"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "완전히 사기꾼이잖아!",
+      "UnitTalk_JPN": "完全に詐欺じゃない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "어쩌다 이런 사람을 만나게 된 거야?",
+      "UnitTalk_JPN": "なんでこんな人に依頼したの？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "지금까지 과학적인 방법으로 언니의 행방을 탐색했지만 약간의 단서도 찾을 수 없었음.",
+      "UnitTalk_JPN": "今まで科学的な方法で姉さんの行方を探したけど、手掛かりゼロ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 이번에는 조금 더 인간적인 방법을 시도해 보기로 함.",
+      "UnitTalk_JPN": "だから、今回は人間らしい方法を試した。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "인간적인 방법?",
+          "JumpAnchorStringId_JPN": "人間らしい方法？"
+        }
+      ]
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "문제 해결을 위해 비이성적, 비논리적, 비과학적인 접근을 시도해 보는 것.",
+      "UnitTalk_JPN": "問題解決のため、非・理性的、非・論理的、非・科学的なアプローチを試みること。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_006.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "예를 들어…",
+      "UnitTalk_JPN": "例えば…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_007.wav"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>[우연]</color> 이라는 것의 효과를 확인하고자, 가게 문틈에 꽂혀 있던 전단지를 참고한다든가.",
+      "UnitTalk_JPN": "<color=#F7BE45>「巡り合わせ」</color>というものの効果に期待して、偶然工房のドアに挟まっていたチラシを参考にするとか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_008.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일이 꺼낸 전단지에는 화려한 광고 문구들이 적혀 있었다.",
+      "UnitTalk_JPN": "スマイルが取り出したチラシには、華やかな宣伝文句が書かれていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "라비스타 최고의 적중률! 당신의 미래를 알아보세요!",
+      "UnitTalk_JPN": "ラビスターいちの的中率！あなたの未来を覗いてみましょう！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "학업, 사업, 연애, 가족, 건강, 그 어떤 것이라도 답해드립니다!",
+      "UnitTalk_JPN": "学業、仕事、恋愛、家庭、健康、どんなことでもお答えします！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만 실패.",
+      "UnitTalk_JPN": "でも、失敗。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_009.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "과장된 광고 문구를 함부로 신뢰하면 안 된다는 교훈을 얻음.",
+      "UnitTalk_JPN": "誇張された広告を、鵜呑みにしてはいけないという教訓を得た。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_010.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "언젠가 인간이 되기 위해 해당 교훈이 유용하게 사용될 것으로 기대.",
+      "UnitTalk_JPN": "いつか人間になるために、この教訓が役立つことを期待。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_011.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "꼭 인간이 아닌 것처럼 이야기하네.",
+          "JumpAnchorStringId_JPN": "まるで自分が人間じゃないような言い方だな。"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "긍정. 나는 인간이 아님.",
+      "UnitTalk_JPN": "肯定。私は人間ではない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_012.wav"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "생물학적 구조는 인간과 유사하지만 본인의 정체는 초월적인 마도공학으로 만들어진 인공생명체.",
+      "UnitTalk_JPN": "生物学的構造は人間に近いが、正体は超越的な魔道工学によって作られた人工生命体。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_013.wav"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "지, 진짜-?",
+      "UnitTalk_JPN": "ほ、本当に？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_014.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "…인 걸로, 추측됨.",
+      "UnitTalk_JPN": "…だと、推測。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_015.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "아… 그래! 공방 이름이 어디선가 들어봤다 싶더니!",
+      "UnitTalk_JPN": "あっ…そうだ！この「ハッピースマイル工房」っていう名前、どこかで聞いたことがあると思ったのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "얼마 전 신문에 조그맣게 난 기사에서 봤었어.",
+      "UnitTalk_JPN": "少し前に、新聞の小さな記事で見たわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "NOA 뒷골목에 기계 장비 공방을 운영하는 엄청 솜씨 좋은 아이가 있는데…",
+      "UnitTalk_JPN": "NOAの路地裏で機械装備の工房を営む、すごい腕利きの子がいるんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "기묘한 말투를 사용하면서, 어느 날부터 자기가 인간이 아니라고 주장하기 시작했다는 이야기.",
+      "UnitTalk_JPN": "奇妙な話し方で、ある日を境に自分は人間じゃないって主張し始めたって話。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "혹시나 했는데… 역시 네가 그 아이였구나!",
+      "UnitTalk_JPN": "もしかしてって思ってたんだけど…やっぱりあなたがその子だったのね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…긍정. 혹시 신문의 뉴스로 나가면 언니가 확인하지 않을까 했지만…",
+      "UnitTalk_JPN": "…肯定。新聞に載れば、姉さんが見るかもしれないと思った…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_016.wav"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "…언니의 반응은 없었음.",
+      "UnitTalk_JPN": "…でも、姉さんからの連絡はなし。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_017.wav"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그리고, 그건 <color=#F7BE45>[주장]</color>이 아님.",
+      "UnitTalk_JPN": "あと、それは<color=#F7BE45>「主張」</color>しているだけじゃない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_018.wav"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "어린 시절부터 언니가 말해준 객관적인 사실.",
+      "UnitTalk_JPN": "小さい頃に姉さんが教えてくれた、客観的な事実。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_019.wav"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "언니와 나는 사실 인간이 아니라고.",
+      "UnitTalk_JPN": "姉さんと私は、実は人間じゃないって。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_020.wav"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "만들어진 존재라고…",
+      "UnitTalk_JPN": "作られた存在だって…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_021.wav"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…라고 주장하기 시작했다. 그리고-",
+      "UnitTalk_JPN": "…と、本人は主張し始めた。そしてー",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "어렸을 때부터 언니와 함께 자라면서 커온 걸 봐왔는데 무슨 소리냐?!",
+      "UnitTalk_JPN": "「幼い頃から姉妹で成長する姿を見てきたのに、どういうこと！？」",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "…라고 했다는 주변 사람들의 인터뷰도 실려 있었지.",
+      "UnitTalk_JPN": "…って話す近所の人のインタビューも載っていたわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_022.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_18.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "정말로 그럴 리가 없잖아! 이렇게 피부도 말랑말랑하고 보드라운데.",
+      "UnitTalk_JPN": "あなたが人工生命体なわけないじゃない！肌もこんなに柔らかくてすべすべなのに。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "피부가 부드러운 것이 곧 인간의 증명이 될 수는 없- 으으, 보, 볼을 당기지 말아 줘…",
+      "UnitTalk_JPN": "肌が柔らかいことが、人間の証明にはならーうぅ、ほ、ほっぺを引っ張らないで…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_023.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마도공학, 인공생명체, 그런 신기한 것들이 존재한다고 해도 이상할 것 없는 세계이지만…",
+      "UnitTalk_JPN": "魔道工学、人工生命体、そんな不思議なものが存在してもおかしくない世界だが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "눈앞의 스마일이 그런 인공적인 존재로 보이지는 않았다.",
+      "UnitTalk_JPN": "目の前にいるスマイルは、どう見ても人間だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무튼 우리의 첫 의뢰는 스마일의 의뢰금을 들고 사라진 사기꾼을 찾는 일로 결정되었다.",
+      "UnitTalk_JPN": "とにかく私たちの初依頼は、スマイルを騙したペテン師を探すことに決まった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "범인에게 의뢰금을 지불하기 위해 본인 공방의 보증금을 임시변통하여 사용.",
+      "UnitTalk_JPN": "犯人に依頼金を払うために、工房の保証金で工面した。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_024.wav"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "이대로 범인을 잡지 못하면 근시일 내에 공방에서 쫓겨날 것.",
+      "UnitTalk_JPN": "このまま犯人を捕まえられなかったら、近いうちに追い出されることになる。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_025.wav"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그 공방은 언니가 내게 물려준 소중한 장소임.",
+      "UnitTalk_JPN": "工房は、姉さんから譲り受けた大切な場所。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_026.wav"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "절대적 사수 필요.",
+      "UnitTalk_JPN": "絶対に死守しないといけない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_027.wav"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "걱정 마!",
+      "UnitTalk_JPN": "心配いらないわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "우리 보이저 구원단이 반드시 사기꾼을 잡아서 돈을 돌려받게 해줄 테니까!",
+      "UnitTalk_JPN": "わたしたちボイジャー救援団が必ずペテン師を捕まえて、お金を取り返してみせるから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "처음에는 기념할 만한 첫 의뢰로 고작 사기꾼을 찾는 일이라 조금 맥이 빠졌었는데…",
+      "UnitTalk_JPN": "最初は、記念すべき初依頼がペテン師の捜索だなんて、ちょっと拍子抜けしてたんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "네 이야기를 듣다 보니까 완전 열 받았어!",
+      "UnitTalk_JPN": "あなたの話を聞いてたら、すっごくむかついてきたわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그렇지, 단장?!",
+      "UnitTalk_JPN": "そうでしょ、団長！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래. 꼭 잡아서 네 공방을 지켜줄게.",
+          "JumpAnchorStringId_JPN": "そうだな。必ず捕まえて、君の工房を守ってみせるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "압도적 감사.",
+      "UnitTalk_JPN": "圧倒的感謝。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_028.wav"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그래서 질문. 어떻게 범인을 잡을지 계획 필요.",
+      "UnitTalk_JPN": "そこで質問。どうやって犯人を捕まえるのか教えてほしい。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_029.wav"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "어… 그건… 단장?",
+      "UnitTalk_JPN": "あー…それは…団長？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_019.wav"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭔가 단서는 없어? 인상착의라든가…",
+          "JumpAnchorStringId_JPN": "何か手掛かりはないのか？見た目とか…"
+        }
+      ]
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "가능, 전단지 뒷면을 확인 요망.",
+      "UnitTalk_JPN": "可能。チラシの裏の確認を求む。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_SMILE_030.wav"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_MAIN_EP_02_01.png",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스마일이 말한 대로 뒷면에는 붉은 모자를 쓴 소녀의 그림이 그려져 있었다.",
+      "UnitTalk_JPN": "チラシの裏面を見ると、そこには赤い帽子をかぶった少女の絵が描かれていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "그런데… 왠지 낯이 익은 것 같다.",
+      "UnitTalk_JPN": "なんだか…見覚えがあるような気がする。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "어라? 어디서 본 것 같은데…",
+      "UnitTalk_JPN": "あれ？どこかで見たことあるような…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_020.wav"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "아, 이 사람-!",
+      "UnitTalk_JPN": "あっ、この人ー！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_021.wav"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_ASHERAH"
+      ],
+      "UnitTalk_KOR": "구원자가 될 수 있는 최단의 방법을 놀라운 통찰력으로 알려줬던 그 사람이잖아!",
+      "UnitTalk_JPN": "手っ取り早く救援者になる方法を、驚くべき洞察力で教えてくれた人じゃない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_022.wav"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아냐-!!",
+          "JumpAnchorStringId_JPN": "そうじゃないだろう！！"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN_CROWD.png",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2",
+      "AutoHighlight": "DARK",
+      "FilterType": "CFT_SEPIASTATIC"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS4",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "봐봐, 여기 있는 사람이랑 결혼하겠다고 혼인 신고서를 내는 거야.",
+      "UnitTalk_JPN": "ほらほら、この人と結婚しまーすって婚姻届を出しちゃえばいいの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "그럼 그때부터 출가외인이니까 스트라니스 가문이 아니게 되는 거지.",
+      "UnitTalk_JPN": "そしたら、ストラニス家の一員じゃなくなるってわけ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그리고 구원자 등록을 마친 이후에 바로 이혼 서류를-",
+      "UnitTalk_JPN": "で、救援者の登録が終わったら、すぐに離婚届をー",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "CutsceneClear": "CLEARALL",
+      "UnitPos": "POS7",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitPos": "POS7",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…생각해 보면 그때도 상식에서 어긋나 있는 방법을 해결책이라고 당당히 제시했었지.",
+      "UnitTalk_JPN": "…そういえば、あの時も常識外れのことを堂々とのたまっていたな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "틀림없이 그때 그 사람이야.",
+      "UnitTalk_JPN": "間違いなく、あの時のあの人よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_023.wav"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "이름이… 아마 루나라고 했었지?",
+      "UnitTalk_JPN": "名前は…確かルナだったわよね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_4_UNIT_S_VOYAGER_STRANIS_024.wav"
+    }
+  ]
+}

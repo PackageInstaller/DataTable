@@ -145,6 +145,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -222,6 +223,8 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -264,6 +267,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -318,6 +322,8 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -366,6 +372,14 @@
       "UnitTalk_KOR": "인간 단장, 완전히 회복했다! 고맙다!",
       "UnitTalk_JPN": "人間の団長よ、完全に回復した！ありがとうなのだ！",
       "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
     }
   ]
 }

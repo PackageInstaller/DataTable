@@ -4,25 +4,42 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_02",  // 수집자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_03",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_CLOISTER_02", // 재앙의 숭배자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_02",  // 수집자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       },
@@ -30,24 +47,39 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_02",  // 포식자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_WANDERER_ELITEPRICKLE_BLACK_ELITE_CLOISTER_02",  // 왜곡의 배회자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "IsBoss": true, 
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_03",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_02",  // 포식자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       }

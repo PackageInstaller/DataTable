@@ -1,0 +1,1595 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_BOMB_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 161,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0,
+      "BgFileName": "DRAMA_ACTIVATE_ARCANA_1.prefab",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 162,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 1.0
+    },
+    {
+      "Uid": 163,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 3.0
+    },
+    {
+      "Uid": 164,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 0.2
+    },
+    {
+      "Uid": 165,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CONSTRUCTION_SITE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3"
+    },
+    {
+      "Uid": 166,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "1",
+        "1",
+        "1",
+        "0"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "<color=#F7BE45>페트라 조합</color>, 다들 주목~!",
+      "UnitTalk_JPN": "<color=#F7BE45>ペトラ組合</color>、ちゅうもーく！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "정말 길었어, 드디어 마지막 의뢰야…",
+      "UnitTalk_JPN": "ほんっとに長かったね、ついに最後の依頼だよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "마지막 의뢰인가… 이것만 끝나면 휴가를…!",
+      "UnitTalk_JPN": "やっとか…これさえ終われば、休みが…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응, 다 함께 떠나는 거야. 산과 바다가 있고, 젖과 꿀이 흐르는 곳으로…",
+      "UnitTalk_JPN": "うん、みんなで一緒にお出かけだよ。海と山があって、平和な楽園みたいなところに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그동안 힘들게 달려왔던 우리의 마음을 달래줄 곳으로…!",
+      "UnitTalk_JPN": "今まで頑張ってきたペトラたちの心を、癒してくれるところに…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "튀김 파티도 해. 내가 맛있게 튀겨줄게. 응.",
+      "UnitTalk_JPN": "天ぷらパーティーもする。わたしがおいしく揚げてあげる。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "좋아 좋아♪ <color=#F7BE45>페트라 조합</color>, 마지막 의뢰도 힘내서 얼른 해치워 버리자구!",
+      "UnitTalk_JPN": "よーし♪ <color=#F7BE45>ペトラ組合</color>…最後の依頼も頑張って、ささっと片付けちゃおう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그럼 의뢰를 시작해 볼…",
+      "UnitTalk_JPN": "じゃ、依頼を始め…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응? 근데 하늘이 왜 이래?",
+      "UnitTalk_JPN": "…あれ？なんだか空の様子がおかしくない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "USN_UI_REST_START"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WEATHER_THUNDER.wav"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.2
+    },
+    {
+      "Uid": 11,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "0.4"
+      ],
+      "BgFadeInTime": 0.6,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WEATHER_THUNDER.wav",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_RAIN_AMB.wav",
+      "UnitTalk_KOR": "쏴아아―",
+      "UnitTalk_JPN": "ザーーーッ",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_PETRA_UNION"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "<color=#F7BE45>페</color>…",
+      "UnitTalk_JPN": "<color=#F7BE45>ペ</color>…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "<color=#F7BE45>페트라 조합</color>, 후퇴-!!",
+      "UnitTalk_JPN": "<color=#F7BE45>ペトラ組合</color>、てったーい！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0.4"
+      ],
+      "BgFadeOutTime": 0.5,
+      "BgFileName": "ILLUST_BG_OFFICE_01.png",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_5"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 172,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav"
+    },
+    {
+      "Uid": 173,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_04.wav"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_RAIN_AMB.wav"
+    },
+    {
+      "Uid": 181,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav"
+    },
+    {
+      "Uid": 182,
+      "WaitClick": false,
+      "WaitTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_RAIN_AMB.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "우와아… 홀딱 젖어버렸어… ",
+      "UnitTalk_JPN": "うぇ～ん…ずぶ濡れになっちゃった…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 184,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitPos": "POS2",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "귀여운 페트라의 스타일이…",
+      "UnitTalk_JPN": "可愛いペトラの髪型が…",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_09.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그래도 소나기인 것 같으니까 금방 그치겠지? 오늘 비 소식도 없었고 말이야~",
+      "UnitTalk_JPN": "でも、にわか雨ならすぐ止むよね？今日は天気予報も雨じゃなかったし～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "글쎄다. 소나기라고 하기엔 하늘이 심상치 않은데…",
+      "UnitTalk_JPN": "どうだろうな。にわか雨にしちゃ、空がかなり不穏だが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "오늘 휴가… 갈 수 있겠냐, 이거…?",
+      "UnitTalk_JPN": "今日の休み…行けるか、これ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "괜찮아 괜찮아♪ 페트라의 귀여움이 비를 물리칠 테니까!",
+      "UnitTalk_JPN": "だいじょーぶっ♪ペトラの可愛さで、雨を吹き飛ばしてあげる！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "오늘 휴가 못 가…?",
+      "UnitTalk_JPN": "今日、お出かけできない…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "튀김 파티… 배고파…",
+      "UnitTalk_JPN": "天ぷらパーティー…お腹すいた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "아, 아냐 아냐! 갈 수 있을 거야♪ …아마도?",
+      "UnitTalk_JPN": "う、ううん！できるはずだよ♪…多分ね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼, 그러니까 다들 희망을 버려선 안 돼! 응?",
+      "UnitTalk_JPN": "とにかく、みんな希望を捨てちゃダメだよ！分かった？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitPos": "POS5",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitPos": "POS4",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_WRENCH_GADGET"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "으음… 다들 영 기운을 못 차리네…",
+      "UnitTalk_JPN": "うーん…みんな元気がないなぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "으으음…",
+      "UnitTalk_JPN": "んーー…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좋아, 그럼 페트라가 대표로 이 비를 멈출 수 있는 방법을 하나 제안해 볼게!",
+      "UnitTalk_JPN": "よーし！じゃあペトラが代表して、雨を止ませる方法を提案してみるね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS2",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…비를 멈출 수 있는 방법이라고?",
+      "UnitTalk_JPN": "…雨を止ませる方法だとぉ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "FA",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "응응. 사실 마르실 말대로, 지금 내리는 비는 단순한 소나기가 아니야. 오늘 비 소식이 없었던 게 그 증거지.",
+      "UnitTalk_JPN": "うんうん。実はマルシルの言う通り、これはにわか雨じゃないの。今日、雨の予報がなかったのがその証拠だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그러니까 이건 아마… 그 유명한… <color=#F7BE45>건설 현장의 신</color>이 내린 저주라는 거야.",
+      "UnitTalk_JPN": "だからこれは、たぶん…あの有名な…<color=#F7BE45>建築現場の神</color>の呪いなんだよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "<color=#F7BE45>건설 현장의 신</color>?",
+      "UnitTalk_JPN": "<color=#F7BE45>建設現場の神</color>？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "잘 들어, 타냐. 현장에 많은 위험이 도사리고 있다는 건 알고 있지?",
+      "UnitTalk_JPN": "よく聞くんだよ、ターニャ。現場には、たくさんの危険が潜んでることは知ってるでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "그래서 <color=#F7BE45>건설 현장의 신</color>이 필요한 거야.",
+      "UnitTalk_JPN": "だからこそ、<color=#F7BE45>建設現場の神</color>が必要なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "우리 같은 현장 작업자들을 보호해 주는 역할을 하는 거지. 작업하기에 좋은 날씨를 만들어 주기도 하고 말이야.",
+      "UnitTalk_JPN": "ペトラたちみたいな、現場作業員を守ってくれる役割をしてるんだ。作業しやすい天気にしてくれたりとかね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "응. 알겠어.",
+      "UnitTalk_JPN": "うん。分かった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "<color=#F7BE45>건설 현장의 신</color>. 엄청 나. 응.",
+      "UnitTalk_JPN": "<color=#F7BE45>建設現場の神</color>。すごい。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "또 애한테 이상한 거 가르치지 마라…",
+      "UnitTalk_JPN": "またこいつに変なこと吹き込むんじゃねぇぞ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그런데!!",
+      "UnitTalk_JPN": "だけど！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "오늘은, 예고도 없던 비가 내리기 시작했어. 그 말은 즉… 누군가가 분명 <color=#F7BE45>건설 현장의 신</color>을 화나게 한 거야!",
+      "UnitTalk_JPN": "今日は、急に雨が降り始めた。ということは…誰かがきっと、<color=#F7BE45>建築現場の神</color>を怒らせたんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "그래서 이렇게 비를 퍼붓고 있는 거라구!",
+      "UnitTalk_JPN": "だからこんなに雨を降らせてるんだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "화났어. 풀어줘야 해. 응.",
+      "UnitTalk_JPN": "怒ってる。機嫌をとらないと。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그럼 비 그쳐. 맞아?",
+      "UnitTalk_JPN": "そしたら、雨やむ。合ってる？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "정확해 정확해♪ 역시 타냐는 배우는 게 빠르다니까.",
+      "UnitTalk_JPN": "その通りっ♪やっぱり、ターニャは吸収がはやいね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…그, 그래서 어떻게 하면 화가 풀린다는 건데?",
+      "UnitTalk_JPN": "…で、どうすれば機嫌が直るってんだ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>건설 현장의 신</color>은 작업자들의 순수한 마음가짐을 무엇보다 중시하는 신…",
+      "UnitTalk_JPN": "<color=#F7BE45>建設現場の神</color>は、作業員の純粋な心構えを重んじる神…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "그래서 현장 작업자들은 그 순수한 마음을 보여주기 위해서, 오늘 같이 중요한 현장에 나갈 때에는 <color=#F7BE45>무늬 없는 하얀 팬티</color>를 입는 게 관례야.",
+      "UnitTalk_JPN": "だから現場作業員たちは、その純粋な心をアピールするために…重要な現場に出る時は、<color=#F7BE45>無地の白いパンツ</color>を履くのが慣例なの。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitTalk_KOR": "그렇다는 건… 우리 중 누군가가…",
+      "UnitTalk_JPN": "ということは…この中の誰かが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WEATHER_THUNDER.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "<color=#F7BE45>화려한 팬티</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>派手なパンツ</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 190,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "를 입고 현장에 나온 게 분명해!",
+      "UnitTalk_JPN": "を履いてきたに違いなーい！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 192,
+      "WaitClick": true,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "POS4_2X",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "난 아니야. 깨끗한 흰 팬티. 응.",
+      "UnitTalk_JPN": "わたしじゃない。きれいな白いパンツ。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그래? 페트라도 아닌데 말이지.",
+      "UnitTalk_JPN": "そうなの？ペトラも違うんだけどなぁ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "흐음… 역시 그런가. 응응…",
+      "UnitTalk_JPN": "んー…やっぱりそうなんだ。うんうん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "페트라가 그냥 찔러보자면 아무래도 범인은…",
+      "UnitTalk_JPN": "ペトラが当てずっぽうで言ってみるなら、犯人はやっぱり……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "마르실!! …일지",
+      "UnitTalk_JPN": "マルシル！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffsetTime": "FA",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "도?",
+      "UnitTalk_JPN": "…かもね？",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 191,
+      "WaitClick": true,
+      "WaitTime": 0.0
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "마, 말도 안 되는 소리하고 있어!",
+      "UnitTalk_JPN": "お、おい！バカなこと言うんじゃねぇぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "내, 내가 그렇다는 건 아니지만, 흰 팬티만이 순수한 마음을 대변할 수 있는 것도 아니잖냐!",
+      "UnitTalk_JPN": "ワ、ワシがそうだって訳じゃねぇが…白いパンツだけが、純粋な心を表せるわけじゃねぇだろ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…흐, 흥. 그리고 겨우 그런 거 가지고 <color=#F7BE45>현장 건설업의 신</color>이 화를 낼 리가…",
+      "UnitTalk_JPN": "…へ、へんっ。それに、そんなことで<color=#F7BE45>現場建設の神</color>が怒るわけ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "POS4_2X",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "마르실. <color=#F7BE45>현장 건설업의 신</color>. 아니야.",
+      "UnitTalk_JPN": "マルシル。<color=#F7BE45>現場建設の神</color>じゃない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>건설 현장의 신</color>. 응.",
+      "UnitTalk_JPN": "<color=#F7BE45>建設現場の神</color>。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "우와- 너무해. 흰 팬티도 안 입었으면서 이름도 틀렸어… 이거 분명 마르실 때문이지 어떻게 봐도.",
+      "UnitTalk_JPN": "うわわ～、これはひどいねぇ。白いパンツも履いてないのに、名前まで間違えるなんて…どう考えてもマルシルのせいじゃん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "아니라고! <color=#F7BE45>현장 건설의 신</color>이 나를 왜…",
+      "UnitTalk_JPN": "ちげぇよ！<color=#F7BE45>現場建設の神</color>がどうしてワシの…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "또 틀렸어. <color=#F7BE45>건설 현장의 신</color>.",
+      "UnitTalk_JPN": "また間違えた。<color=#F7BE45>建設現場の神</color>。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "아무리 생각해도 안 되겠어. 이대로면 분명 더 큰 저주가 내려질 게 분명하다구.",
+      "UnitTalk_JPN": "こりゃダメだね～。このままじゃ、もっと大きな呪いが降りかかってくるかも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "타냐, 그냥 잡아서 제물로 바칠까? 속죄한다는 마음으로 팬티 보이게 해서 창가에 매달자. 그럼 그…",
+      "UnitTalk_JPN": "ターニャ、捕まえて生贄に捧げちゃおっか？贖罪の気持ちを込めて、パンツが見えるように窓際に吊るすの。そうすれば…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "…아무튼, 그 신이 용서해 줄지도 모르잖아♪",
+      "UnitTalk_JPN": "…えと、あの神も許してくれるかもしれないし♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "얼버무렸어! 분명히 얼버무렸어!",
+      "UnitTalk_JPN": "おい！今、誤魔化しただろぉ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitTalk_KOR": "그 신 이야기도 다 지어낸 거지! 그냥 아무 말이나 한 거지!",
+      "UnitTalk_JPN": "ぜんぶデタラメなんだな！適当に言っただけだろ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 186,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_03.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "응? 뭐야…? 왜 다들…",
+      "UnitTalk_JPN": "あぁん？おい…どうしたんだよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.2,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "뭐, 뭐하는 거냐고 이 자식들아!",
+      "UnitTalk_JPN": "な、何すんだ！こんにゃろぉ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "팬티 확인하지 마! 옷 들추지 말라고!",
+      "UnitTalk_JPN": "パンツを確認するんじゃねぇ！服をめくるなぁぁ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "타냐! 자, 잡지 마, 잡지 마아아―!",
+      "UnitTalk_JPN": "ターニャ！や、やめろ！捕まえるんじゃねぇー！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아…! 아, 안 돼…!",
+      "UnitTalk_JPN": "た…！頼むからやめてくれ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "…응?",
+      "UnitTalk_JPN": "…ん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "우와. <color=#F7BE45>무지개</color>…?",
+      "UnitTalk_JPN": "うわぁ。<color=#F7BE45>虹</color>…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "타냐의 말에 모두가 바라본 창문 밖에는…",
+      "UnitTalk_JPN": "ターニャの言葉に、窓の外を見ると……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느덧 푸른 하늘 위로 길게 뻗은 무지개 한 줄이 드리워 있었다.",
+      "UnitTalk_JPN": "いつの間にか、青空に長く伸びた虹が架かっていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "CameraOffset": "TWIN_7",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "무지개 처음 봐. 응.",
+      "UnitTalk_JPN": "虹、初めて見た。うん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "예쁘다.",
+      "UnitTalk_JPN": "きれい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "CameraOffset": "TWIN_5",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "사, 살았다…",
+      "UnitTalk_JPN": "た、助かったぜ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "POS3_2X",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "냐하하~ 어느 새 비가 그쳤네.",
+      "UnitTalk_JPN": "にゃはは～、いつの間にか雨も止んだね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 145,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "좋아, 비도 그치고 다들 기운도 차린 것 같고!",
+      "UnitTalk_JPN": "よーし！雨も止んだことだし、みんなも元気になったみたいだし！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그… 무슨 신도 화가 전부 풀린 것 같으니까, 작업하러 가볼까?",
+      "UnitTalk_JPN": "えと…なんちゃら神もご機嫌になったみたいだから、作業しに行こっか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "얼른 끝내버리고 휴가를 즐기러 가자구♡",
+      "UnitTalk_JPN": "ささっと終わらせて、お休みを楽しもう♡",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 2.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "CameraOffset": "TRIPLE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "<color=#F7BE45>페트라 조합</color>, 다시 한번 출격이야!",
+      "UnitTalk_JPN": "<color=#F7BE45>ペトラ組合</color>、しゅつげーき！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_GADGET",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitNameString": [
+        "SI_PETRA_UNION"
+      ],
+      "UnitTalk_KOR": "가자―!!",
+      "UnitTalk_JPN": "おーっ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "LIGHT"
+    },
+    {
+      "Uid": 185,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_1.wav",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CHIME_04.wav"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어느새 그친 비와 함께 기운을 차린 <color=#F7BE45>페트라 조합</color>은, 오늘도 씩씩하게 작업 현장으로 향한다.",
+      "UnitTalk_JPN": "元気を取り戻した<color=#F7BE45>ペトラ組合</color>は、今日も元気に現場へと向かった。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "BgFadeInTime": 1.0
+    },
+    {
+      "Uid": 155,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 156,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN"
+    },
+    {
+      "Uid": 157,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER"
+    },
+    {
+      "Uid": 158,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": false,
+      "WaitTime": 2.0,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 2.0,
+      "BgEase": "InQuart"
+    },
+    {
+      "Uid": 159,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…문득 잊고 있었던 낡은 기억이 떠올랐다.",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_SPEAR_01",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 기억은 별빛이 되어 나와 <color=#F7BE45>[CHARACTER_NAME]</color>의 여정에 스며들었다.",
+      "UnitTalk_JPN": "その記憶は星の光となって、私と<color=#F7BE45> [CHARACTER_NAME] </color>の旅に溶け込んだ。",
+      "TalkTime": 0.03
+    }
+  ]
+}

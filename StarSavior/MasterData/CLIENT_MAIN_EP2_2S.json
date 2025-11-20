@@ -1,0 +1,1369 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_2S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "CameraOffset": "TWIN_6"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "오! 단장이다!",
+      "UnitTalk_JPN": "あっ！団長！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "여기야, 단장! 여기!",
+      "UnitTalk_JPN": "こっちよ、こっち！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "리사를 따라 캔들 스퀘어의 문을 열고 들어가자 눈앞에 손을 흔드는 금발의 소녀가 보였다.",
+      "UnitTalk_JPN": "リサと一緒にキャンドル・スクエアに入ると、金髪の少女が手を振っているのが見えた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "설마 기다리고 있었던 거야?",
+          "JumpAnchorStringId_JPN": "もしかして、待っていたのか？"
+        }
+      ]
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "응! 당연하지!",
+      "UnitTalk_JPN": "当然でしょ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "어제 우리가 구했던 3급 관측사… 이름이 뭐였더라?",
+      "UnitTalk_JPN": "えっと…そっちのあなた。昨日わたしたちが助けた3級観測士の…名前は何だったかしら？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "…리사요.",
+      "UnitTalk_JPN": "…リサです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_001.wav"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아, 맞아! 아무튼 그쪽에게 들었어.",
+      "UnitTalk_JPN": "そうだったわね！…とにかく、話は聞いたわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "구원단을 창설해서 <color=#F7BE45>[여정]</color>에 도전하기로 했다면서?",
+      "UnitTalk_JPN": "あなた、救援団を創設して<color=#F7BE45>「救援の旅」</color>に挑むんでしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "대단해!",
+      "UnitTalk_JPN": "すごいわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "그동안 수많은 강자들이 도전했지만 모두 실패했다고 들었는데…",
+      "UnitTalk_JPN": "これまで数多くの強者たちが挑戦したのに、一人も成功した人はいないって聞いたんだけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그런 시험에 선뜻 도전하다니… 역시 우리 단장이야!",
+      "UnitTalk_JPN": "そんな試験に挑もうだなんて、さすがはわたしの団長ね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "우리… 단장?",
+          "JumpAnchorStringId_JPN": "わたしの…団長？"
+        }
+      ]
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_18.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "아이~ 왜 모른 척하고 그래.",
+      "UnitTalk_JPN": "もう～、とぼけないでよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "목숨이 오가는 도로에서의 그 운명적인 만남!",
+      "UnitTalk_JPN": "車に轢かれて死ぬ運命を二人で回避した、あの道端での奇跡的な出会い！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "직후 이어진 공허체의 공습에 맞서서 그… 3급 관측사…",
+      "UnitTalk_JPN": "そして、<r=ヴォイドボーン>空虚体</r>の襲撃からそこの3級観測士を救出するために…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_012.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "ONE_8",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "…리사요, 리사.",
+      "UnitTalk_JPN": "リサです、リサ！3級観測士って呼ばないでください！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_002.wav"
+    },
+    {
+      "Uid": 128,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "응, 아무튼 NOA의 요인을 구출하기 위한 혈전!",
+      "UnitTalk_JPN": "…とにかく、NOAの重要人物を救出するための激戦！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_013.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "신비로운 비밀구역에서 강대한 적에 맞서 구사일생으로 살아 나오기까지…!",
+      "UnitTalk_JPN": "さらに、シークレットエリアで強大な敵に立ち向かい、力を合わせて生還したあの事件！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_014.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "단장이랑 나는 이미 떼어낼 수 없는 한 <color=#F7BE45>[가족]</color>이잖아. 안 그래?",
+      "UnitTalk_JPN": "団長とわたしはもう<color=#F7BE45>「家族」</color>みたいなものじゃない。そうでしょう？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_015.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "음, 분명 틀린 말은 없다. ",
+      "UnitTalk_JPN": "うーむ、一つ一つの出来事は間違っていないが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "しかし…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "결론이 좀 지나치게 왜곡되어 있는 것 같은데…",
+          "JumpAnchorStringId_JPN": "「家族」は盛りすぎな気が…"
+        }
+      ]
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아이~ 자꾸 섭섭한 소릴…",
+      "UnitTalk_JPN": "もう～、また寂しいこと言っちゃって…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_016.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아무튼 내가 단장의 첫 번째 단원이니까 잘 부탁해!",
+      "UnitTalk_JPN": "とにかく、わたしが団長にとっての初めての団員だから！よろしくね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_017.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게 쉽게 정해도 되는 거야?!",
+          "JumpAnchorStringId_JPN": "そんな簡単に決めていいのか！？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "달라붙는 아세라를 밀쳐내며 리사에게 물었다.",
+      "UnitTalk_JPN": "くっついてくるアセラを押しのけて、リサに尋ねた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "단원이 되려면 뭔가 절차라든가 그런 게 있지 않나?",
+      "UnitTalk_JPN": "団員になるには、何か手続きが必要じゃないのか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음, 원래라면 여정 단원은 관측사 평의회에서 후보들을 추천해요.",
+      "UnitTalk_JPN": "う～ん…本来なら旅の団員は、観測士評議会から候補者が推薦されるんです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_003.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그중 한 명을 골라 알리시아님이 초대장을 보내는 거죠.",
+      "UnitTalk_JPN": "そしてその中から一人を選んで、アリシア様が招待状を送るというわけですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_004.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하지만 이번에는… 조금 규칙이 바뀌었다고 들었어요.",
+      "UnitTalk_JPN": "しかし今回は…少しルールが特殊なようです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_005.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "여정 단원 선정에 대한 모든 권한은 단장님께 일임한다고 공문에 적혀 있었어요.",
+      "UnitTalk_JPN": "団員選定に関するすべての権限は、団長に一任すると公文書に書かれてありました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_006.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "인원도, 방식도 자유라고.",
+      "UnitTalk_JPN": "誰を選んでも、どんな選び方をしても構わないそうで。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_007.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "부담스러운데…",
+          "JumpAnchorStringId_JPN": "荷が重いな…"
+        }
+      ]
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "그것 봐! 알리시아님도 알고 계신 거야!",
+      "UnitTalk_JPN": "ほら！アリシア様もご存じだったのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_018.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "단장의 곁에 이미 완벽한 여정 단원 후보가 있다는 걸!",
+      "UnitTalk_JPN": "団長の隣にはもう、完璧な団員候補がいるってことをね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_019.wav"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아세라는 팔을 파닥거리며 <color=#F7BE45>[뽑아 줄 거지?]</color> 라는 의미가 담긴 제스처를 취하고 있었다.",
+      "UnitTalk_JPN": "アセラは<color=#F7BE45>「選んでくれるでしょ？」</color>と言わんばかりの眼差しを向けてくる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 130,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하아… 거부해 봐야 소용없을걸요.",
+      "UnitTalk_JPN": "はぁ…団長、たぶん断っても無駄ですよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_008.wav"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "저 아가씨, 생긴 것과는 다르게 완전 고집불통이니까요.",
+      "UnitTalk_JPN": "彼女、見かけによらず本当に頑固ですから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_009.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "단장님이 <color=#F7BE45>[여정 단장]</color>에 내정되었다는 말을 듣고는 어젯밤부터 기다리고 있었거든요.",
+      "UnitTalk_JPN": "団長が<color=#F7BE45>「旅の団長」</color>に内定したという話を聞いて、昨日の夜から待っていたんですよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_010.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아무튼 지금부터 간단히 <color=#F7BE45>[여정]</color>에 대해 설명 드리겠습니다.",
+      "UnitTalk_JPN": "とにかく、今から簡単に<color=#F7BE45>「救援の旅」</color>についてご説明します。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_011.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "그 후 리사는 내게 여러 가지 사항과 규칙에 대해 설명했다.",
+      "UnitTalk_JPN": "その後、リサは旅の詳細を教えてくれた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_6",
+      "UnitTalk_KOR": "<color=#F7BE45>[여정]</color>이란 과거 이 세계를 구원한 <color=#F7BE45>[별의 구원자]</color>의 힘을 계승 받기 위한 시험.",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>とは、過去にこの世界を救った<color=#F7BE45>「星の救援者」</color>の力を継承するための試験。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정 단장으로서 나의 일은 재능 있는 구원자를 단원으로 영입하는 것.",
+      "UnitTalk_JPN": "旅の団長としての私の仕事は、才能ある救援者を団員として迎え入れること。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 그들이 <color=#F7BE45>[여정의 끝]</color>에 다다를 수 있도록 <color=#F7BE45>[지도]</color> 하는 것이라고 한다.",
+      "UnitTalk_JPN": "そして団員が<color=#F7BE45>「旅の終わり」</color>に到達できるよう、<color=#F7BE45>「指導」</color>すること。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "참고로 구원자란, <color=#F7BE45>[별의 힘]</color>을 타고난… 일종의 초인을 부르는 명칭인 것 같다.",
+      "UnitTalk_JPN": "ちなみに救援者とは、<color=#F7BE45>「星の力」</color>を生まれ持つ…一種の超人のことらしい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런데 그런 초인들에겐 무슨 훈련을 시켜야 하지? 팔굽혀펴기?",
+      "UnitTalk_JPN": "そんな超人を相手に、私はどんな「指導」をすればいいんだ？腕立て伏せ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "기초적인 설명은 여기까지입니다.",
+      "UnitTalk_JPN": "基本的な説明はここまでです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_012.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그럼 일단 캔들 스퀘어에서 구원단 창설 절차를 마무리하세요.",
+      "UnitTalk_JPN": "それでは、まずはキャンドル・スクエアで救援団創設の手続きを行ってください。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_013.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그래야 단원 영입이든 뭐든 할 수 있으니까요.",
+      "UnitTalk_JPN": "そうしないと、団員の勧誘もできませんしね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_014.wav"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "구원단은 또 뭐지?",
+          "JumpAnchorStringId_JPN": "救援団って何なんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "으음, 그러고 보니 정확히 설명 드린 적이 없는 것 같네요.",
+      "UnitTalk_JPN": "あ、それも説明がまだでしたね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_015.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "구원자들은 단독으로 활동하기도 하지만 파티를 맺고 단체로 활동하기도 해요.",
+      "UnitTalk_JPN": "救援者は単独で活動することもありますが、パーティを組んで活動することもあります。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_016.wav"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "아무래도 어려운 의뢰를 수행하려면 힘을 합치는 편이 유리하니까요.",
+      "UnitTalk_JPN": "難しい依頼を完遂させるには、集団で力を合わせるほうが有利ですから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_017.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "그러한 단체를 <color=#F7BE45>[구원단]</color> 이라고 합니다.",
+      "UnitTalk_JPN": "そうした団体のことを<color=#F7BE45>「救援団」</color>と呼んでいます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_018.wav"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "구원단이 되면 NOA의 다양한 지원 혜택을 받을 수 있으니까 참고하세요.",
+      "UnitTalk_JPN": "救援団になれば、NOAから様々なサポートを受けることができるんですよ。覚えておいてくださいね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_019.wav"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "알겠어.",
+          "JumpAnchorStringId_JPN": "分かった。"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 전 다른 중요한 지시 사항이 없는지 확인하고 오겠습니다.",
+      "UnitTalk_JPN": "それでは、他に重要な指示がないか確認してきます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_020.wav"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이따가 뵙겠습니다, 단장님!",
+      "UnitTalk_JPN": "後でお会いしましょう、団長！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_NPC_NOA_LISA_021.wav"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitTalk_KOR": "리사는 인사를 한 후 밖으로 사라졌다.",
+      "UnitTalk_JPN": "リサは挨拶すると、外へと消えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 그녀가 말한 서류 처리를 위해 담당자를 찾았다.",
+      "UnitTalk_JPN": "私は救援団の創設手続きを行うため、担当者を探すことにした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_RECRUIT.png"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "안녕하세요. 무엇을 도와드릴…",
+      "UnitTalk_JPN": "こんにちは。何かご用で…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_001.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "앗, 당신은?",
+      "UnitTalk_JPN": "あっ、あなたは！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_002.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "안녕, 다시 보네.",
+          "JumpAnchorStringId_JPN": "また会ったな。"
+        }
+      ]
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "결혼사기단?!",
+      "UnitTalk_JPN": "結婚詐欺の人！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_003.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니야!!",
+          "JumpAnchorStringId_JPN": "違う！！"
+        }
+      ]
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오해를 풀고 사정을 설명하는데 꽤 많은 시간이 필요했다.",
+      "UnitTalk_JPN": "誤解を解き、事情を説明するのにかなりの時間がかかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그러니까… 당신이 알리시아님이 직접 영입한 단장 내정자라는 거군요.",
+      "UnitTalk_JPN": "つまり…あなたが、アリシア様が直々に迎え入れた団長内定者ということですか。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_004.wav"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "과연, 그래서 긴급한 상황에서도 그리 침착하셨던 거겠죠.",
+      "UnitTalk_JPN": "なるほど、それで緊急時にもあれほど冷静だったのですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_005.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "덕분에 지난번에는 큰 도움을 받았습니다.",
+      "UnitTalk_JPN": "おかげさまで、先日は大変助かりました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_006.wav"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "캔들 스퀘어의 모든 멤버를 대표하여 감사의 인사를 드립니다.",
+      "UnitTalk_JPN": "キャンドル・スクエア一同を代表し、心より感謝申し上げます。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_007.wav"
+    },
+    {
+      "Uid": 131,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "감사 인사는 나보다는 이쪽에 해줘.",
+          "JumpAnchorStringId_JPN": "感謝なら、私じゃなくてアセラにしてくれ。"
+        }
+      ]
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그때 돕겠다고 나선 건 아세라였으니까.",
+      "UnitTalk_JPN": "あの時キャンドル・スクエアに協力すると言ったのは、アセラだったのだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 그냥 상황에 떠밀리듯 따라갔을 뿐이다.",
+      "UnitTalk_JPN": "私はただ、流れに身を任せただけだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "아이, 참 단장도. 뭘 그런 걸 따지고 그래.",
+      "UnitTalk_JPN": "もう、団長ってば。そんな細かいことはいいって。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_020.wav"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "단원의 공은 다 단장의 공이지!",
+      "UnitTalk_JPN": "団員の功績は、団長の功績なんだから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_021.wav"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장이 도와준 덕분에 일도 잘 풀리고 <color=#F7BE45>[정식 구원자 등록]</color>도 성공했으니까.",
+      "UnitTalk_JPN": "団長のおかげで任務も完遂できたし、無事に<color=#F7BE45>「救援者」</color>として登録もできたことだし。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_022.wav"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "…이젠 아주 <color=#F7BE45>[사기 결혼]</color> 시도를 했다는 걸 숨길 생각도 없군요.",
+      "UnitTalk_JPN": "…はぁ、<color=#F7BE45>「偽装結婚」</color>まで企てていた癖にいけしゃあしゃあと。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_008.wav"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "이런 사람의 구원자 등록을 허가하다니 대체 그 <color=#F7BE45>[현장 담당]</color>은 무슨 생각인 걸까요?",
+      "UnitTalk_JPN": "こんな人を救援者として登録するなんて、一体<color=#F7BE45>「現場担当者」</color>は何を考えているのでしょうか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_009.wav"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "후후, 자고로 훌륭한 구원자는 <color=#F7BE45>[역경을 뚫고 기회를 포착할 줄 알아야 한다]</color> 라고 했어.",
+      "UnitTalk_JPN": "わたしはただ絵本…いえ、偉人伝で見た<color=#F7BE45>「星の救援者」</color>の言葉に従っただけよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_023.wav"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "난 그저 동화책… 아, 아니 위인전에서 본 <color=#F7BE45>[별의 구원자]</color>의 말을 따랐을 뿐이라고.",
+      "UnitTalk_JPN": "曰く、<color=#F7BE45>「どんな逆境でもチャンスを掴み取らなければならない」</color>…素敵でしょ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_024.wav"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그 말이 언제부터 <color=#F7BE45>[억지를 쓰다가 안 되면 편법으로 일을 처리한다]</color> 와 동의어가 되었는지 모르겠네요.",
+      "UnitTalk_JPN": "その言葉がいつから<color=#F7BE45>「強引な手段がダメなら、抜け道を使え」</color>という意味になったのですか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_010.wav"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "하아… 아무튼 알겠습니다.",
+      "UnitTalk_JPN": "まあ…とにかく、分かりました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_011.wav"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래서 무얼 도와드리면 될까요, 단장님?",
+      "UnitTalk_JPN": "それで、何をお手伝いすればよろしいですか？団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_012.wav"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "구원단 창설을 허가받았으면 해.",
+          "JumpAnchorStringId_JPN": "救援団設立の許可を受けたいんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "확인했습니다.",
+      "UnitTalk_JPN": "かしこまりました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_013.wav"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "마침 관련 내용에 대한 공문도 조금 전에 받은 참입니다.",
+      "UnitTalk_JPN": "ちょうど、その件に関する書類を受け取ったところです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_014.wav"
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "서류에 따르면 단장님이 창설할 구원단의 이름은…",
+      "UnitTalk_JPN": "それによれば、団長が創設する救援団の名前は…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_015.wav"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>[보이저 구원단]</color> 이군요.",
+      "UnitTalk_JPN": "<color=#F7BE45>「ボイジャー救援団」</color> ですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_016.wav"
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "보이저 구원단?!",
+      "UnitTalk_JPN": "ボイジャー救援団！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_025.wav"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "나 그 이름 알아! 분명 동화책에서…",
+      "UnitTalk_JPN": "わたし、その名前知ってるわ！確か、絵本で…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_026.wav"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "동화책…?",
+      "UnitTalk_JPN": "絵本…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_017.wav"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 아니, 역사책에서 봤어.",
+      "UnitTalk_JPN": "い、いえ、偉人伝で見たの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_027.wav"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "분명 <color=#F7BE45>[별의 구원자]</color>가 만든 최초의 구원단 이름이었어!",
+      "UnitTalk_JPN": "確か<color=#F7BE45>「星の救援者」</color>が創った、初めての救援団の名前よ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_028.wav"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…네, 한때 알리시아님도 단원으로 계셨던 유서 깊은 구원단입니다.",
+      "UnitTalk_JPN": "…その通りです。一時はアリシア様も団員として所属していた、由緒深い救援団です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_018.wav"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "일반인들은 잘 모르는 사실인데 역사에 관심이 많으신가 보네요.",
+      "UnitTalk_JPN": "一般的にはあまり知られていない事実ですが、アセラ様は歴史に興味がおありのようですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_019.wav"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "으응? 그, 그렇지 뭐.",
+      "UnitTalk_JPN": "え？そ、そうよ、興味があるのよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_029.wav"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "흐음… 뭐, 알겠습니다.",
+      "UnitTalk_JPN": "それはそれは…とにかく、分かりました。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_020.wav"
+    },
+    {
+      "Uid": 134,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "앞으로도 구원단의 이름에 부끄럽지 않은 활약을 부탁드립니다.",
+      "UnitTalk_JPN": "救援団の名に恥じぬ活躍を期待していますよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_021.wav"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "단장님.",
+      "UnitTalk_JPN": "団長。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_022.wav"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "절차는 이게 끝인가?",
+          "JumpAnchorStringId_JPN": "手続きはもう終わりか？"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "실은 신규 창설 구원단의 경우 규정상 <color=#F7BE45>[기초 평가전]</color>을 진행하게 되어 있습니다.",
+      "UnitTalk_JPN": "…本当は、救援団を新しく創設する場合、<color=#F7BE45>「基礎試験」</color>を受けていただく規則となっています。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_023.wav"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "단원들의 실력을 평가하고 적절한 난이도의 의뢰를 맡기기 위해서죠.",
+      "UnitTalk_JPN": "団員の実力を評価し、適切な難易度の依頼を受けるための措置です。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_024.wav"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "하지만… 단장님께는 필요 없을 것 같군요.",
+      "UnitTalk_JPN": "しかし…団長には必要ないようですね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_025.wav"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "지난번 공허체 습격 사건 때의 활약을 보면 실력은 충분한 것 같으니까요.",
+      "UnitTalk_JPN": "前回の<r=ヴォイドボーン>空虚体</r>襲撃事件での活躍を見れば、実力は十分だと分かりますので。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_MAID_SPEAR_026.wav"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "아니, 그건…",
+          "JumpAnchorStringId_JPN": "いや、それは…"
+        }
+      ]
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitQuickSet": true
+    },
+    {
+      "Uid": 132,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_4",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "나는 뒤에서 눈을 빛내고 있는 아세라를 바라보았다.",
+      "UnitTalk_JPN": "私は、後ろで目を輝かせるアセラを見つめた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "인정할 건 인정해야겠지.",
+      "UnitTalk_JPN": "認めるべきところは、認めないとな。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "지난번 습격에서 살아남은 건 그녀가 있었기 때문이다.",
+      "UnitTalk_JPN": "前回の襲撃で生き残れたのは、彼女のおかげだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여정이라는 것에 어떤 시련이 기다리고 있을지.",
+      "UnitTalk_JPN": "旅というものに、どのような試練が待ち受けているのか。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내가, 그리고 그녀가 어느 정도 해낼 수 있을지 지금은 알 수 없지만…",
+      "UnitTalk_JPN": "私たち二人がどこまでやれるのか、今はまだ分からないが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무래도 보이저 구원단의 첫 번째 단원은… 정해진 것 같다.",
+      "UnitTalk_JPN": "とにかく、ボイジャー救援団の最初の団員は…決まったようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잘 부탁해.",
+          "JumpAnchorStringId_JPN": "よろしくな、アセラ。"
+        }
+      ]
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "응! 나도 잘 부탁해, 단장!",
+      "UnitTalk_JPN": "うん！こちらこそよろしくね、団長！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_030.wav"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "절대로 실망시키지 않을 테니까!",
+      "UnitTalk_JPN": "絶対にガッカリさせないから！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_2_UNIT_S_VOYAGER_STRANIS_031.wav"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀는 내가 내민 손을 힘껏 잡으며 웃었다.",
+      "UnitTalk_JPN": "彼女は私が差し出した手を取り、笑った。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    }
+  ]
+}

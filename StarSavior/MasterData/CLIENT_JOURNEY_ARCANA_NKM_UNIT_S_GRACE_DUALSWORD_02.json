@@ -97,7 +97,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "캔들 스퀘어 정문 근처.",
-      "UnitTalk_JPN": "キャンドル・スクエアの正門の近くにて。",
+      "UnitTalk_JPN": "キャンドル・スクエアの正門近く。",
       "TalkTime": 0.03
     },
     {
@@ -137,7 +137,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "즐거운 듯이 담소를 나누고 있는 게 맞았다.",
-      "UnitTalk_JPN": "見間違いじゃない。エピンデルが楽しそうに談笑している。",
+      "UnitTalk_JPN": "エピンデルが楽しそうに笑っている。",
       "TalkTime": 0.03
     },
     {
@@ -174,11 +174,33 @@
       "TransitionControl": "IN"
     },
     {
-      "Uid": 15,
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_NOBLE_FEMALE_1",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 117,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_02",
       "WaitClick": false,
-      "WaitTime": 0.0
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "CameraOffset": "TRIPLE_2",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": " 아, 저도 들은 바가 있어요.",
+      "UnitTalk_JPN": "そういえば、私も聞いたことがあります。",
+      "TalkTime": 0.03
     },
     {
       "Uid": 16,
@@ -209,7 +231,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 칼라이드의 썰매개들은 말과도 나란히 달릴 수 있다던데요.",
-      "UnitTalk_JPN": "カライドのそり犬たちは、馬とも並走できるそうです。",
+      "UnitTalk_JPN": "カライドのそり犬は、馬とも並んで走れるそうです。",
       "TalkTime": 0.03
     },
     {
@@ -220,8 +242,17 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 칼라이드 썰매 경주는 제 고향에서도 그 박진감으로 명성이 자자하답니다.",
-      "UnitTalk_JPN": "カライドの犬ぞりレースはものすごい迫力だと、私の故郷でも定評があります。",
+      "UnitTalk_JPN": "私の故郷でも、カライドの犬ぞりレースはかなりの迫力だと定評なのですよ。",
       "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_NOBLE_FEMALE_1",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS2",
+      "EmotionEffect": "FUN"
     },
     {
       "Uid": 20,
@@ -232,7 +263,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": " 어머, 초대해 주시는 건가요?",
-      "UnitTalk_JPN": "あら、招待してくださるんですか？",
+      "UnitTalk_JPN": "あら、招待してくださるのですか？",
       "TalkTime": 0.03
     },
     {
@@ -243,7 +274,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 기뻐라-, 연이 닿는다면 물론이죠.",
-      "UnitTalk_JPN": "嬉しいです。機会があれば是非。",
+      "UnitTalk_JPN": "嬉しいです、ご縁があればぜひ。",
       "TalkTime": 0.03
     },
     {
@@ -267,8 +298,54 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": " 오늘 대화, 퍽 즐거웠답니다. 그럼 다음에 또.",
-      "UnitTalk_JPN": "楽しい会話、感謝いたします。それでは、また。",
+      "UnitTalk_JPN": "とても楽しかったです。それでは、ごきげんよう。",
       "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.3
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_NOBLE_FEMALE_1",
+      "CameraOffsetTime": "NR",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NPC_MODULE_MERCHANT1_MALE_W",
+      "UnitQuickSet": true,
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_02",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "UnitMotion": "NORMAL"
     },
     {
       "Uid": 24,
@@ -295,12 +372,26 @@
       "StartFxSoundName": "SFX_BATTLE_COMMON_MOVEMENT_FOOT_STEP.wav"
     },
     {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.3
+    },
+    {
       "Uid": 27,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_GRACE_DUALSWORD_02",
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " ……",
       "UnitTalk_JPN": "……",
@@ -327,7 +418,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "새로 사귄 친구야?",
-          "JumpAnchorStringId_JPN": "新しい友だち？"
+          "JumpAnchorStringId_JPN": "友達ができたのか？"
         }
       ]
     },
@@ -350,7 +441,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 귀하께서는?",
-      "UnitTalk_JPN": "団長は？",
+      "UnitTalk_JPN": "貴殿はどういったご用ですか？",
       "TalkTime": 0.03
     },
     {
@@ -361,7 +452,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 아, 시내에 잠깐 일이 있으셨다고요.",
-      "UnitTalk_JPN": "あ、市内にお出掛けですか。",
+      "UnitTalk_JPN": "なるほど、街に用があったのですね。",
       "TalkTime": 0.03
     },
     {
@@ -372,7 +463,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 가신 일은 잘되셨나요? ",
-      "UnitTalk_JPN": "それで、用事は無事お済みになられましたか？",
+      "UnitTalk_JPN": "用事はすべて終えられたのですか？",
       "TalkTime": 0.03
     },
     {
@@ -400,7 +491,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "시간도 남는 김에 함께 더 잡담을 나누었다.",
-      "UnitTalk_JPN": "時間もあることだし、少し雑談をしてみることにした。",
+      "UnitTalk_JPN": "時間もあることだし、少し雑談をしてみよう。",
       "TalkTime": 0.03
     },
     {
@@ -418,7 +509,7 @@
       "WaitTime": 0.0,
       "StartBgmFileName": "EMPTY.mp3",
       "UnitTalk_KOR": "곧 점심시간을 알리는 종이 울렸다.",
-      "UnitTalk_JPN": "ほどなくして昼時を告げる鐘が鳴った。",
+      "UnitTalk_JPN": "ほどなくして、昼時を知らせる鐘が鳴った。",
       "TalkTime": 0.03
     },
     {
@@ -428,7 +519,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "현관에 누워 있던 떠돌이 개가 쩍 하품을 하더니, 어디론가 어슬렁어슬렁 사라졌다.",
-      "UnitTalk_JPN": "玄関に横たわっていた野良犬が、あくびをしながら、うろうろとどこかに歩いて行った。",
+      "UnitTalk_JPN": "玄関に寝転がっていた野良犬が、あくびをしながらどこかへ歩いて行った。",
       "TalkTime": 0.03
     },
     {
@@ -439,7 +530,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " …어머, 벌써 시간이 이렇게.",
-      "UnitTalk_JPN": "あら、もうこんな時間。",
+      "UnitTalk_JPN": "…あら、もうこんな時間。",
       "TalkTime": 0.03
     },
     {
@@ -451,7 +542,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "오늘은 어울려주셔서 감사합니다. 그럼 다음에 또.",
-      "UnitTalk_JPN": "今日はお付き合いいただき、感謝いたします。それでは、ごきげんよう。",
+      "UnitTalk_JPN": "お付き合いいただきありがとうございました。それでは、ごきげんよう。",
       "TalkTime": 0.03
     },
     {
@@ -500,7 +591,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "에핀델이 현관으로 사뿐사뿐 걸어 들어갔다.",
-      "UnitTalk_JPN": "エピンデルはそっと玄関へ入っていった。",
+      "UnitTalk_JPN": "エピンデルは、そろりそろりと玄関の方へ歩いて行った。",
       "TalkTime": 0.03
     },
     {
@@ -549,7 +640,7 @@
       "WaitTime": 0.0,
       "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
       "UnitTalk_KOR": "다음날도…",
-      "UnitTalk_JPN": "その翌日も…",
+      "UnitTalk_JPN": "次の日も…",
       "TalkTime": 0.03
     },
     {
@@ -560,7 +651,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 아, 단장님. 오늘은 혼자시네요?",
-      "UnitTalk_JPN": "あら、団長。今日はお一人なんですね。",
+      "UnitTalk_JPN": "あら、団長。おひとりですか？",
       "TalkTime": 0.03
     },
     {
@@ -588,7 +679,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "그 다음날도…",
-      "UnitTalk_JPN": "その翌日も…",
+      "UnitTalk_JPN": "その次の日も…",
       "TalkTime": 0.03
     },
     {
@@ -599,7 +690,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 어머, 즐거운 일이라도 있으셨어요?",
-      "UnitTalk_JPN": "あら、団長。何かいいことでもありましたか？",
+      "UnitTalk_JPN": "まぁ、何かいいことでもあったのですか？",
       "TalkTime": 0.03
     },
     {
@@ -642,7 +733,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 듣고 있답니다.",
-      "UnitTalk_JPN": "聞こえております。",
+      "UnitTalk_JPN": "どうされましたか？",
       "TalkTime": 0.03
     },
     {
@@ -655,7 +746,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "정문의 개 때문에 못 들어가는 거야?",
-          "JumpAnchorStringId_JPN": "正門に犬がいるから入れないの？"
+          "JumpAnchorStringId_JPN": "犬のせいで中に入れないのか？"
         }
       ]
     },
@@ -703,7 +794,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "너랑 수다를 떠는 날마다…",
-          "JumpAnchorStringId_JPN": "エピンデルと話す日は…"
+          "JumpAnchorStringId_JPN": "エピンデルとこうして話す日は…"
         }
       ]
     },
@@ -717,7 +808,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "쟤가 정문에 누워 있는 것 같아서.",
-          "JumpAnchorStringId_JPN": "絶対に正門に犬がいるから…"
+          "JumpAnchorStringId_JPN": "玄関に絶対犬がいるから。"
         }
       ]
     },
@@ -754,7 +845,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 그런 말도 안 되는 의혹을 제기하시다뇨.",
-      "UnitTalk_JPN": "そんなつまらない冗談をなさるなんて…",
+      "UnitTalk_JPN": "つまらない冗談をおっしゃるなんて。",
       "TalkTime": 0.03
     },
     {
@@ -765,7 +856,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 오를랑의 차기 가주가 한낱 동물을 두려워할 거라고 생각하세요?",
-      "UnitTalk_JPN": "オルラン家の次期当主が、たかが一匹の動物に怯えるなど、あってはならないことですわ。",
+      "UnitTalk_JPN": "オルラン家の次期当主が動物に怯えるなど、あってはならないことです。",
       "TalkTime": 0.03
     },
     {
@@ -776,7 +867,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 고작 크, 크고, 사납고, 침을 뚝뚝 흘리는 식육목 야수 따위를요?",
-      "UnitTalk_JPN": "た…ただ大きくて、よだれをダラダラ流しているだけの肉食獣ごとき…",
+      "UnitTalk_JPN": "お、大きくて、よだれをダラダラと流しているだけの肉食獣ごとき…",
       "TalkTime": 0.03
     },
     {
@@ -794,7 +885,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "캔들 스퀘어의 떠돌이 개는 세상에서 가장 순하고 멍청하게 생긴 복슬이였다…",
-      "UnitTalk_JPN": "キャンドル・スクエアの野良犬は、世界で一番おとなしくて間抜けな顔をした犬だった…",
+      "UnitTalk_JPN": "キャンドル・スクエアの野良犬はおとなしく、世界で一番間抜けな顔をしているが…",
       "TalkTime": 0.03
     },
     {
@@ -807,7 +898,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "잠깐 가려줄게. 지나갈 수 있게.",
-          "JumpAnchorStringId_JPN": "私が犬の気を引いているから、その間に通って。"
+          "JumpAnchorStringId_JPN": "私が犬を隠してあげるよ。これで通れる？"
         }
       ]
     },
@@ -820,7 +911,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": " 그, 그러니까 필요 없다니까요?",
-      "UnitTalk_JPN": "だ、だから！必要ございません！",
+      "UnitTalk_JPN": "だ、だから！必要ありませんってば！",
       "TalkTime": 0.03
     },
     {
@@ -831,7 +922,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 주변 사람들이 오해하잖아요!",
-      "UnitTalk_JPN": "周囲の人間に誤解されてしまいます！",
+      "UnitTalk_JPN": "周囲の方に誤解されてしまいます！",
       "TalkTime": 0.03
     },
     {
@@ -891,7 +982,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "가까이 다가가자 떠돌이 개가 느릿느릿 꼬리를 쳤다.",
-      "UnitTalk_JPN": "私が近づくと、野良犬はしっぽをフリフリと振り始めた。",
+      "UnitTalk_JPN": "近づくと、野良犬はしっぽを振り始めた。",
       "TalkTime": 0.03
     },
     {
@@ -901,7 +992,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "내 손을 쿡 찔러봤다가, 먹을 게 없다는 걸 알고는 그냥 도로 드러누웠다.",
-      "UnitTalk_JPN": "私の手に鼻をちょんと当てて、食べ物を持ってないと分かると、野良犬はその場にゴロリと横になってしまった。",
+      "UnitTalk_JPN": "私の手に鼻をツンツンと当て、食べ物がないことを知るとその場でゴロンと寝転がった。",
       "TalkTime": 0.03
     },
     {
@@ -911,7 +1002,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "쭈그려 앉아서 개를 쓰다듬어주었다.",
-      "UnitTalk_JPN": "しゃがみ込んで野良犬を撫でてあげた。",
+      "UnitTalk_JPN": "私はかがんで撫でてあげた。",
       "TalkTime": 0.03
     },
     {
@@ -921,7 +1012,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "뭘 먹고 다니는지 털에 윤기가 좌르르 흘렀다…",
-      "UnitTalk_JPN": "何を食べているのかは知らないが、毛並みはつやつやだった。",
+      "UnitTalk_JPN": "何を食べているのだろう、毛並みがツヤツヤだ。",
       "TalkTime": 0.03
     },
     {
@@ -961,7 +1052,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": " 아니라고 말씀을 드리는데!",
-      "UnitTalk_JPN": "違うと申し上げているではありませんか！",
+      "UnitTalk_JPN": "違うと申し上げているでしょう！",
       "TalkTime": 0.03
     },
     {
@@ -1002,7 +1093,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "에핀델이 주춤주춤 다가왔다.",
-      "UnitTalk_JPN": "エピンデルは、おそるそおる近づいてきた。",
+      "UnitTalk_JPN": "エピンデルがおずおずと近づいてきた。",
       "TalkTime": 0.03
     },
     {
@@ -1043,7 +1134,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "뒤에 서서, 내 어깨를 짚고 복슬이에게 손을 뻗었다.",
-      "UnitTalk_JPN": "私の後ろに立ち、私の肩を掴んだまま、野良犬に手を伸ばした。",
+      "UnitTalk_JPN": "私の後ろに立ち、私の肩を掴んだまま犬に手を伸ばした。",
       "TalkTime": 0.03
     },
     {
@@ -1066,7 +1157,7 @@
         "SI_EPINDEL"
       ],
       "UnitTalk_KOR": " 가만히 있으렴…",
-      "UnitTalk_JPN": "じっとしててね…",
+      "UnitTalk_JPN": "じっとしてるのよ…",
       "TalkTime": 0.03
     },
     {
@@ -1076,7 +1167,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "손끝이 누렁이의 목덜미에 톡 닿았다.",
-      "UnitTalk_JPN": "エピンデルの指先が、野良犬の首にそっと触れた。",
+      "UnitTalk_JPN": "エピンデルの指先が、犬の首にそっと触れた。",
       "TalkTime": 0.03
     },
     {
@@ -1086,7 +1177,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "…누렁이는 에핀델을 흘끔 보고는 게으르게 꼬리만 쳤다.",
-      "UnitTalk_JPN": "野良犬はエピンデルを一瞥し、めんどくさそうにしっぽを振った。",
+      "UnitTalk_JPN": "…犬はエピンデルをチラリと見ると、めんどくさそうにしっぽを振った。",
       "TalkTime": 0.03
     },
     {
@@ -1109,7 +1200,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": "이 정도면 의혹에 대한 답이 되었나요?",
-      "UnitTalk_JPN": "これで疑惑は晴れたでしょうか？",
+      "UnitTalk_JPN": "これで疑惑は晴れましたね？",
       "TalkTime": 0.03
     },
     {
@@ -1120,7 +1211,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " 이런 사나운 야수를 한 손만으로 제, 제압하고 있으니까요.",
-      "UnitTalk_JPN": "こんな凶暴な獣を、片手で制圧しているのですから！",
+      "UnitTalk_JPN": "このような凶暴な野獣を、片手で制圧したのですから！",
       "TalkTime": 0.03
     },
     {
@@ -1133,7 +1224,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "대충 그런 걸로 하자…",
-          "JumpAnchorStringId_JPN": "そういうことにしておこうか…"
+          "JumpAnchorStringId_JPN": "そういうことにしておくよ…"
         }
       ]
     },
@@ -1166,7 +1257,7 @@
       "CutsceneClear": "CLEARUNIT",
       "UnitQuickSet": true,
       "UnitTalk_KOR": "에핀델은 한동안 빳빳이 굳은 채 손만 움직여서 개를 쓰다듬었다.",
-      "UnitTalk_JPN": "エピンデルはしばらく硬直したまま、手だけを動かして野良犬を撫でていた。",
+      "UnitTalk_JPN": "エピンデルはしばらく硬直したまま、手だけを動かして犬を撫で続けた。",
       "TalkTime": 0.03
     },
     {
@@ -1177,7 +1268,7 @@
       "WaitTime": 0.0,
       "BgFileName": "ILLUST_BG_BLACK.png",
       "UnitTalk_KOR": "그 날 이후, 에핀델이 동료들과 대화를 나누는 모습은 볼 수 없었다.",
-      "UnitTalk_JPN": "それ以降、エピンデルが他の同僚たちと話す姿は見ていない。",
+      "UnitTalk_JPN": "それ以降、エピンデルが他の救援者と話す姿は見ていない。",
       "TalkTime": 0.03
     },
     {
@@ -1187,7 +1278,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "조금 더 내버려둘걸, 하는 후회가 들었다.",
-      "UnitTalk_JPN": "もう少しだけ放っておけばよかった…という後悔が頭をよぎった。",
+      "UnitTalk_JPN": "もう少し放っておけばよかったと後悔した。",
       "TalkTime": 0.03,
       "DictionaryFinalCut": true
     },
@@ -1258,7 +1349,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "…문득 잊고 있었던 낡은 기억이 떠올랐다.",
-      "UnitTalk_JPN": "…ふと忘れていた記憶が蘇った。",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
       "TalkTime": 0.03
     },
     {

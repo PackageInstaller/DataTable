@@ -1314,13 +1314,51 @@
       "TalkTime": 0.03
     },
     {
+      "Uid": 197,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 198,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_DETECTIVE_WATSON_01.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 199,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.7
+    },
+    {
       "Uid": 103,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "CameraOffset": "ONE_3",
       "CameraOffsetTime": "FA",
       "UnitMotion": "SMILE",
@@ -1334,7 +1372,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "진실을 알고 나면 하나도 무섭지 않을 거라고. ",
       "UnitTalk_JPN": "真実を知れば、ひとつも怖くないって。 ",
       "TalkTime": 0.03
@@ -1345,7 +1385,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "USN_UI_TOUCH",
       "UnitTalk_KOR": "이렇게 귀여운 쥐가 범인이었을 줄 누가 알았겠어요?",
       "UnitTalk_JPN": "こんなにかわいいネズミさんが犯人だったなんて、誰も想像していなかったでしょうね。",
@@ -1382,7 +1424,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "CameraOffset": "TWIN_6",
       "CameraOffsetTime": "NR",
       "UnitMotion": "USN_UI_REST_START",
@@ -1396,7 +1440,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "아아! 그냥 쥐가 아니었네요!",
       "UnitTalk_JPN": "あっ！かわいいネズミさんじゃありませんでしたね！",
       "TalkTime": 0.03
@@ -1423,7 +1469,9 @@
       "WaitTime": 0.0,
       "BgCrash": 0.5,
       "BgCrashTime": 0.5,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "CameraOffset": "ONE_3",
       "CameraOffsetTime": "FA",
       "UnitMotion": "SMILE",
@@ -1437,7 +1485,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "등 뒤에 묻어 있는 이건… ",
       "UnitTalk_JPN": "背中にくっついてるのは… ",
       "TalkTime": 0.03
@@ -1448,7 +1498,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "도토리 조각이 확실해요! ",
       "UnitTalk_JPN": "どんぐりの欠片で間違いありません！ ",
@@ -1460,7 +1512,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "안녕 다람아~!",
       "UnitTalk_JPN": "こんにちは、リスさ～ん！",
       "TalkTime": 0.03
@@ -1494,6 +1548,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_EVIL_VOICE_01.wav",
       "UnitTalk_KOR": "기괴할 정도로 발달한 큰 이빨 사이로는 흰 거품이 부글부글 끓어대고 있다…",
       "UnitTalk_JPN": "そして、不気味なほどに発達した大きな歯の隙間からは…白い泡がぶくぶくと溢れ出していた。",
       "TalkTime": 0.03,
@@ -1505,7 +1562,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "아앗, 그런 거구나…! ",
       "UnitTalk_JPN": "ああっ、そういうことだったんだ…！ ",
@@ -1517,7 +1576,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "혹시, 배고파서 쓰레기통을 뒤졌던 거야? ",
       "UnitTalk_JPN": "お腹が減って、ゴミ箱を漁ってたんだよね？ ",
       "TalkTime": 0.03
@@ -1528,7 +1589,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "사람들이 무서워서 해가 지면 돌아다녔던 거고?",
       "UnitTalk_JPN": "それに…人が怖くて、日が沈んでから行動してたんでしょう？",
@@ -1540,7 +1603,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "그림자는… 아! ",
       "UnitTalk_JPN": "影は…あっ！ ",
@@ -1550,7 +1615,9 @@
       "Uid": 194,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "USN_UI_REST_START",
       "UnitTalk_KOR": "토끼 씨 말이 맞는 것 같아.",
       "UnitTalk_JPN": "ウサギさんの言うとおりです。",
@@ -1562,7 +1629,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "석양이 지면 골목길로 길게 그림자가 비치니까 그렇게 보였던 거구나!  ",
       "UnitTalk_JPN": "夕日が沈めば、路地裏に影が長く伸びますから…怪物のように見えていたのでしょう！  ",
       "TalkTime": 0.03
@@ -1587,7 +1656,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "CameraOffset": "TWIN_6",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "으응? 토끼 씨? ",
@@ -1600,7 +1671,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": "그게 중요한 게 아니라니, 그럼 뭐가 중요한 건데…? ",
       "UnitTalk_JPN": "他にもっと大事なことがあるって、何のことですか…？ ",
@@ -1612,7 +1685,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "더, 더러우니까 멀리 던져버리라고?",
       "UnitTalk_JPN": "き、汚いから遠くに投げ捨てろって言うんですか？",
@@ -1624,7 +1699,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "너무해 토끼 씨…  ",
       "UnitTalk_JPN": "ひどいですよ、ウサギさん…  ",
@@ -1636,7 +1713,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "아무리 우리 말을 못 알아듣는 동물이라고 해도 그렇게 심한 말은 하면 안 되는 거야. ",
       "UnitTalk_JPN": "いくら言葉が通じない動物だからって、そんなひどいこと言っちゃダメです。 ",
       "TalkTime": 0.03
@@ -1647,7 +1726,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_DETECTIVE_WATSON",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "아앗?! 이 녀석, 애교부리는 것 좀 보세요, 단장님! ",
       "UnitTalk_JPN": "ええっ！？この子、愛嬌を振りまいてますよ！見てください、団長さん！ ",
@@ -1673,6 +1754,12 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BITE_GENERAL.wav",
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "CameraOffset": "ONE_3",
       "CameraOffsetTime": "NR",
       "UnitTalk_KOR": "이빨을 까득까득거리고 있는 것 같은데…?",
@@ -1686,10 +1773,50 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_DETECTIVE_WATSON_03",
       "WaitClick": true,
       "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LILY"
+      ],
       "UnitTalk_KOR": "그 손, 놓치면 당장이라도 달려들 것 같은데…!!!",
       "UnitTalk_JPN": "手を離せば、今にでも飛び掛かってきそうだ…！！！",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 200,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.7
+    },
+    {
+      "Uid": 201,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3"
+    },
+    {
+      "Uid": 202,
+      "WaitClick": false,
+      "WaitTime": 0.7,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.7
     },
     {
       "Uid": 133,

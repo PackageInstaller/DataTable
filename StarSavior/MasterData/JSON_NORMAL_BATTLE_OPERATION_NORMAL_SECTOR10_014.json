@@ -4,48 +4,25 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_03",//처단자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_03",//은둔자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_03",//처단자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_03",//은둔자
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_OPERATION_03", //안식자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_OPERATION_03",//망자의 처단자
+            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_03", //살육의 포식자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_03",//은둔자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_OPERATION_03", //안식자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           }

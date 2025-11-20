@@ -16,7 +16,7 @@
           {
             "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_INFO.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_FOCUS_INFO_READY.wav"
             ]
           }
         ]
@@ -25,52 +25,49 @@
         "StateName": "USN_START",
         "SoundEvents": [
           {
-            "EventFrame": 5,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_START.wav"
             ]
           }
         ]
       },
       {
         "StateName": "USN_ATTACK",
-        "AttackEvents": [
+        "NonAttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 57,
-            "ReActType": "NRT_DAMAGE_A",
-            // "StopTimeDef": 0.15,
-            // "CameraCrashGap": 0.2,
-            // "CameraCrashTime": 0.4,
+            "EventFrame": 10,
+            "ReActType": "",
+            "CameraCrashGap": 0.05,
+            "CameraCrashTime": 1.7,
             "EffectData": {
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
             }
           }
         ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 60,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.4
+          }
+        ],
         "SoundEvents": [
           {
-            "EventFrame": 14,
+            "EventFrame": 1,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MAGIC.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_ATK.wav"
             ]
           },
           {
-            "EventFrame": 35,
+            "EventFrame": 57,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_02.wav"
-            ]
-          },
-          {
-            "EventFrame": 39,
-            "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_VOICE.wav"
-            ]
-          },
-          {
-            "EventFrame": 47,
-            "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_03.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_ATK_02.wav"
             ]
           }
         ]
@@ -80,10 +77,10 @@
         "AttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 47,
+            "EventFrame": 65,
             "ReActType": "NRT_DAMAGE_A",
-            // "CameraCrashGap": 0.1,
-            // "CameraCrashTime": 0.3,
+            "CameraCrashGap": 0.2,
+            "CameraCrashTime": 0.4,
             "EffectData": {
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
@@ -92,15 +89,21 @@
         ],
         "SoundEvents": [
           {
-            "EventFrame": 10,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_04.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_SPECIAL_ATTACK.wav"
             ]
           },
           {
-            "EventFrame": 43,
+            "EventFrame": 38,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MAGIC_02.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_SPECIAL_ATTACK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 67,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_SPECIAL_ATTACK_03.wav"
             ]
           }
         ]
@@ -109,21 +112,15 @@
         "StateName": "USN_DYING",
         "SoundEvents": [
           {
-            "EventFrame": 6,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_MUTATE_05.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_DYING.wav"
             ]
           },
           {
-            "EventFrame": 12,
+            "EventFrame": 30,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_WIZARD_MARBLE_BLACK_VOICE_03.wav"
-            ]
-          },
-          {
-            "EventFrame": 22,
-            "listSoundName": [
-              "SFX_BATTLE_COMMON_DIE.wav"
+              "SFX_BT_UNIT_MON_PROPHET_JELLY_DYING_02.wav"
             ]
           }
         ]

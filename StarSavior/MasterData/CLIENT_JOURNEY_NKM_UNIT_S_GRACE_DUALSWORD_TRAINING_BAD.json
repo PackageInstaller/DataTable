@@ -36,7 +36,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": " 방금 넘어진 거, 아무도 못 봤겠…",
-      "UnitTalk_JPN": "さっき転んだの、誰も見ていないよね…",
+      "UnitTalk_JPN": "今転んだの、誰も見られて…",
       "TalkTime": 0.03
     },
     {
@@ -48,7 +48,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": " 아, 단장 귀하… 계셨구나.",
-      "UnitTalk_JPN": "あら、団長…いらっしゃったんですね。",
+      "UnitTalk_JPN": "あら、団長…いらっしゃったのですね。",
       "TalkTime": 0.03
     },
     {
@@ -99,7 +99,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": "…보셨어요?",
-      "UnitTalk_JPN": "…もしかして、見ました？",
+      "UnitTalk_JPN": "…見ましたか？",
       "TalkTime": 0.03
     },
     {
@@ -112,7 +112,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "크흠.",
-          "JumpAnchorStringId_JPN": "ゴホン…"
+          "JumpAnchorStringId_JPN": "コホン。"
         }
       ]
     },
@@ -125,7 +125,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": " 아무 일도 없던 거예요.",
-      "UnitTalk_JPN": "団長は何も見ていません。いいですね？",
+      "UnitTalk_JPN": "団長は何も見ていません。よろしいですね？",
       "TalkTime": 0.03
     },
     {
@@ -137,7 +137,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그럼 훈련을 시작해볼까요?",
-      "UnitTalk_JPN": "では、訓練を始めましょうか？",
+      "UnitTalk_JPN": "では、トレーニングを始めましょうか？",
       "TalkTime": 0.03
     },
     {
@@ -150,7 +150,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "꽤 심하게 넘어지던데, 일단 멈추자.",
-          "JumpAnchorStringId_JPN": "思いっきり転んでたけど…訓練はちょっと中断しよう。",
+          "JumpAnchorStringId_JPN": "思いっきり転んでたし、少し休もう。",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
@@ -162,7 +162,7 @@
         {
           "Uid": 3,
           "JumpAnchorStringId_KOR": "활력 포션을 건넨다.",
-          "JumpAnchorStringId_JPN": "活力ポーションを渡した。",
+          "JumpAnchorStringId_JPN": "活力ポーションを渡す。",
           "JumpAnchorId": "REWARD_ANCHOR_3"
         }
       ]
@@ -189,7 +189,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "USN_UI_TOUCH",
       "UnitTalk_KOR": " 하아, 귀하께서 그렇게 판단하셨다면 어쩔 수 없죠.",
-      "UnitTalk_JPN": "はあ、団長がそう判断したのなら仕方がないですね。",
+      "UnitTalk_JPN": "はぁ、団長がそう判断したなら仕方がありませんね。",
       "TalkTime": 0.03
     },
     {
@@ -201,7 +201,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": " …네, 몰래 다시 안 올 테니까 그런 표정으로 보실 필요 없답니다.",
-      "UnitTalk_JPN": "…大丈夫ですよ。こっそり一人で訓練しに来たりしませんので。そんな顔でこちらを見ないでください。",
+      "UnitTalk_JPN": "…こっそりトレーニングしに戻って来たりしませんから。怪訝な表情はやめてくださいます？",
       "TalkTime": 0.03
     },
     {
@@ -212,7 +212,7 @@
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARUNIT",
       "UnitTalk_KOR": "묘하게 절뚝거리는 에핀델과 함께 숙소로 돌아갔다.",
-      "UnitTalk_JPN": "足を引きずるエピンデルと一緒に宿に戻った。",
+      "UnitTalk_JPN": "足を引きずるエピンデルと一緒に宿へ戻った。",
       "TalkTime": 0.03
     },
     {
@@ -222,7 +222,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "조금 걱정했지만, 다행히 내 판단을 신뢰했는지 다시 나오지는 않았다. ",
-      "UnitTalk_JPN": "少し心配したが、幸いにも私の判断を信頼したのか、エピンデルは部屋でゆっくり休んだ。",
+      "UnitTalk_JPN": "少し心配だったが…私の判断を信頼してくれたのか、エピンデルがこっそり部屋を抜け出すことはなかった。",
       "TalkTime": 0.03
     },
     {
@@ -263,7 +263,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": "그렇다면 나 혼자서라도…",
-      "UnitTalk_JPN": "ならば、私一人だけでも…",
+      "UnitTalk_JPN": "でしたら、私一人で…",
       "TalkTime": 0.03
     },
     {
@@ -275,7 +275,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "네? 아무 말도 하지 않았답니다.",
-      "UnitTalk_JPN": "はい？何も言っておりません。",
+      "UnitTalk_JPN": "いえ、何も言っておりませんが。",
       "TalkTime": 0.03
     },
     {
@@ -297,7 +297,7 @@
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARUNIT",
       "UnitTalk_KOR": "에핀델은 묘하게 절뚝이는 걸음으로 숙소로 향했다.",
-      "UnitTalk_JPN": "エピンデルは、足を引きずりながら宿に向かった。",
+      "UnitTalk_JPN": "エピンデルは、足を引きずりながら宿に戻った。",
       "TalkTime": 0.03
     },
     {
@@ -307,7 +307,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "진짜로 몰래 다시 안 나오겠지…?",
-      "UnitTalk_JPN": "本当に、こっそり抜け出したりしないよな…？",
+      "UnitTalk_JPN": "こっそり抜け出したりしないよな…？",
       "TalkTime": 0.03
     },
     {
@@ -338,7 +338,7 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": " 그게 오를랑의 정신이랍니다.",
-      "UnitTalk_JPN": "それがオルランのやり方です。",
+      "UnitTalk_JPN": "はい、オルランの精神に従いましょう。",
       "TalkTime": 0.03
     },
     {
@@ -350,7 +350,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 그럼 실수를 발판 삼아… 어머. 말 실수를.",
-      "UnitTalk_JPN": "ミスを踏み台に…って、あら、失礼。",
+      "UnitTalk_JPN": "失敗を糧に…コホン、失礼しました。",
       "TalkTime": 0.03
     },
     {
@@ -361,7 +361,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": "실수 없이 한 번에 성공시켜 보죠.",
-      "UnitTalk_JPN": "ミスなく一度で成功させるのが、オルランのやり方です。",
+      "UnitTalk_JPN": "失敗なく一度で成功させるのが、オルランのやり方です。",
       "TalkTime": 0.03
     },
     {
@@ -372,7 +372,7 @@
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARUNIT",
       "UnitTalk_KOR": "에핀델은 의욕을 불태우며 훈련장으로 돌아갔다.",
-      "UnitTalk_JPN": "エピンデルはやる気に満ち溢れて訓練場に戻った。",
+      "UnitTalk_JPN": "エピンデルは意欲を燃やし、訓練場に戻っていった。",
       "TalkTime": 0.03
     },
     {
@@ -412,7 +412,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "훌륭하네요… 아큭.",
-      "UnitTalk_JPN": "素晴らしいですね…あぐっ。",
+      "UnitTalk_JPN": "素晴らしい判断で…あぐっ。",
       "TalkTime": 0.03
     },
     {
@@ -424,7 +424,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "흠흠. 아무 것도 아닙니다.",
-      "UnitTalk_JPN": "はぁはぁ、何でもありません。",
+      "UnitTalk_JPN": "コ、コホン。何でもありません。",
       "TalkTime": 0.03
     },
     {
@@ -447,7 +447,7 @@
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARUNIT",
       "UnitTalk_KOR": "에핀델은 의욕을 불태우며 훈련장으로 돌아갔다.",
-      "UnitTalk_JPN": "エピンデルはやる気に満ち溢れて訓練場に戻った。",
+      "UnitTalk_JPN": "エピンデルは意欲を燃やし、訓練場に戻っていった。",
       "TalkTime": 0.03
     },
     {
@@ -457,7 +457,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "…묘하게 절뚝거리는 것 같은데, 정말 괜찮을까?",
-      "UnitTalk_JPN": "…妙に足を引きずっているようだけど、本当に大丈夫だろうか？",
+      "UnitTalk_JPN": "…足を引きずっているようだが、本当に大丈夫だろうか？",
       "TalkTime": 0.03
     },
     {
@@ -487,7 +487,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 어머, 감사합니다?",
-      "UnitTalk_JPN": "あら、ありがとうございます？",
+      "UnitTalk_JPN": "あら、ありがとうございます。",
       "TalkTime": 0.03
     },
     {
@@ -498,7 +498,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " …아, 이거.",
-      "UnitTalk_JPN": "あ、これ…",
+      "UnitTalk_JPN": "あっ、これは…",
       "TalkTime": 0.03
     },
     {
@@ -536,7 +536,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": " 귀족이라고 해서 특별한 포션이 필요한 것도 아니니까요.",
-      "UnitTalk_JPN": "貴族だからといって特別なポーションを飲むわけではありません。",
+      "UnitTalk_JPN": "貴族だからといって、特別なポーションを飲むわけではありませんから。",
       "TalkTime": 0.03
     },
     {
@@ -558,7 +558,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": " …네, 딱 지금 같을 때요.",
-      "UnitTalk_JPN": "…はい、まさに今日みたいな。",
+      "UnitTalk_JPN": "…まさに今日のような日にです。",
       "TalkTime": 0.03
     },
     {
@@ -570,7 +570,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": " 그럼 잘 마시겠습니다.",
-      "UnitTalk_JPN": "では、いただきます。",
+      "UnitTalk_JPN": "では、頂戴しますね。",
       "TalkTime": 0.03
     },
     {
@@ -581,7 +581,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitTalk_KOR": "모처럼 좋은 선물도 받았으니, 힘을 내서-",
-      "UnitTalk_JPN": "せっかく素敵なプレゼントを頂いたので、頑張って──",
+      "UnitTalk_JPN": "素敵な贈り物も頂いたことですし、頑張って──",
       "TalkTime": 0.03
     },
     {
@@ -594,7 +594,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "안 돼. 오늘은 이거 마시고 쉬는 날이야.",
-          "JumpAnchorStringId_JPN": "ダメだ。今日はこれを飲んで休むんだ。"
+          "JumpAnchorStringId_JPN": "いや、今日はこれを飲んで休むんだ。"
         }
       ]
     },
@@ -607,7 +607,7 @@
       "UnitStrId": "NKM_UNIT_NPC_GRACE_DUALSWORD",
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": "…이럴 때만 날카로우시긴.",
-      "UnitTalk_JPN": "…こういう時だけ鋭いですね。",
+      "UnitTalk_JPN": "…こういう時だけは鋭いですね。",
       "TalkTime": 0.03
     },
     {
@@ -618,7 +618,7 @@
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARUNIT",
       "UnitTalk_KOR": "부루퉁한 에핀델을 개인실에 데려다 놓았다.",
-      "UnitTalk_JPN": "ふてくされたエピンデルを連れて宿に帰った。",
+      "UnitTalk_JPN": "ふくれっ面のエピンデルを連れて宿に戻った。",
       "TalkTime": 0.03
     },
     {

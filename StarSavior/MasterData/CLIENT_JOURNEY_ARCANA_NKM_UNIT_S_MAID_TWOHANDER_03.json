@@ -147,7 +147,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
       "UnitTalk_KOR": "단장님?!",
-      "UnitTalk_JPN": "団長！？",
+      "UnitTalk_JPN": "団長殿！？",
       "TalkTime": 0.03
     },
     {
@@ -568,7 +568,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "으음…",
-      "UnitTalk_JPN": "うーん…",
+      "UnitTalk_JPN": "うむ…",
       "TalkTime": 0.03
     },
     {
@@ -904,7 +904,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_TWOHANDER",
       "UnitMotion": "USN_UI_REST_START",
       "UnitTalk_KOR": "흐음…",
-      "UnitTalk_JPN": "うーん…",
+      "UnitTalk_JPN": "ふむ…",
       "TalkTime": 0.03
     },
     {
@@ -966,7 +966,9 @@
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MAID_TWOHANDER_03",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "BgFileName": "CURRENT_TOWN"
+      "BgFileName": "CURRENT_TOWN",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
     },
     {
       "Uid": 81,

@@ -4,18 +4,21 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_B",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_S_SAINTESS_DEMON", // 몬스터 뮤리엘로 차후 교체 필요
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_SAINTESS_DEMON_BOSS_MAINSTORY_03",
             "IsBoss": true,
-            "AllSkillAvailable": true
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
           },
           {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_S_SAINTESS_ELF", // 몬스터 엘리사로 차후 교체 필요
-            "AllSkillAvailable": true
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_SAINTESS_ELF_ELITE_MAINSTORY_03",
+            "IsElite": true,
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false
           }
         ]
       }

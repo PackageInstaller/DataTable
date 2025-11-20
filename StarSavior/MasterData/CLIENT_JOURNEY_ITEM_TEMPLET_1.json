@@ -401,7 +401,7 @@
           [
             {
               "UseType" : "UT_PP",
-              "UseValue" : 40
+              "UseValue" : 30
             }
           ]
         },
@@ -421,111 +421,6 @@
           "ItemIconImg" : "JOURNEY_ITEM_WOOD_ORGEL.png",
           "ItemName" : "SI_JOURNEY_ITEM_NAME_101003",
           "ItemDesc" : "SI_JOURNEY_ITEM_DESC_101003",
-          "ItemQuickUse" : false
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ItemId" : 105001,
-          "ItemSubType" : "ST_CONSUME",
-          "NarrativeTag" : "NT_SNACK",
-          "EventUsable" : true,
-          "ItemGrade" : "IG_UNIQUE",
-          "StackMax" : 99,
-          "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
-          "ItemName" : "SI_JOURNEY_ITEM_NAME_105001",
-          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105001",
-          "ItemQuickUse" : false,
-          "UseData" : 
-          [
-            {
-              "UseType" : "UT_BUFF_DELETE_NEGATIVE",
-              "UseValue" : 0
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ItemId" : 105002,
-          "ItemSubType" : "ST_NORMAL",
-          "NarrativeTag" : "NT_VALUABLES",
-          "EventUsable" : true,
-          "ItemGrade" : "IG_UNIQUE",
-          "StackMax" : 99,
-          "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
-          "ItemName" : "SI_JOURNEY_ITEM_NAME_105002",
-          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105002",
-          "ItemQuickUse" : false
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ItemId" : 105003,
-          "ItemSubType" : "ST_NORMAL",
-          "NarrativeTag" : "NT_VALUABLES",
-          "EventUsable" : true,
-          "ItemGrade" : "IG_RARE",
-          "StackMax" : 99,
-          "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
-          "ItemName" : "SI_JOURNEY_ITEM_NAME_105003",
-          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105003",
-          "ItemQuickUse" : false
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ItemId" : 105004,
-          "ItemSubType" : "ST_NORMAL",
-          "NarrativeTag" : "NT_VALUABLES",
-          "EventUsable" : true,
-          "ItemGrade" : "IG_RARE",
-          "StackMax" : 99,
-          "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
-          "ItemName" : "SI_JOURNEY_ITEM_NAME_105004",
-          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105004",
-          "ItemQuickUse" : false
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ItemId" : 105005,
-          "ItemSubType" : "ST_NORMAL",
-          "NarrativeTag" : "NT_VALUABLES",
-          "EventUsable" : true,
-          "ItemGrade" : "IG_LEGENDARY",
-          "StackMax" : 1,
-          "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
-          "ItemName" : "SI_JOURNEY_ITEM_NAME_105005",
-          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105005",
-          "ItemQuickUse" : false
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ItemId" : 105008,
-          "ItemSubType" : "ST_NORMAL",
-          "NarrativeTag" : "NT_VALUABLES",
-          "EventUsable" : true,
-          "ItemGrade" : "IG_RARE",
-          "StackMax" : 1,
-          "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
-          "ItemName" : "SI_JOURNEY_ITEM_NAME_105008",
-          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105008",
-          "ItemQuickUse" : false
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ItemId" : 105009,
-          "ItemSubType" : "ST_NORMAL",
-          "NarrativeTag" : "NT_VALUABLES",
-          "EventUsable" : true,
-          "ItemGrade" : "IG_RARE",
-          "StackMax" : 1,
-          "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_VALOR_TOKEN.png",
-          "ItemName" : "SI_JOURNEY_ITEM_NAME_105009",
-          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105009",
           "ItemQuickUse" : false
         },
         {
@@ -846,7 +741,7 @@
           "CharmSeStrId" : ["CHARM_1050351"],
           "CharmConvertPP" : 4,
           "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_BREATHE_CHARCOAL.png",
+          "ItemIconImg" : "JOURNEY_ITEM_UNIDENTIFIED_ARTIFACT.png",
           "ShowSELog" : true,
           "ItemName" : "SI_JOURNEY_ITEM_NAME_105035",
           "ItemDesc" : "SI_JOURNEY_ITEM_DESC_105035",
@@ -2235,7 +2130,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_POWER",
-              "UseValue" : 1000
+              "UseValue" : 500
             }
           ]
         },
@@ -2256,7 +2151,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_HEALTH",
-              "UseValue" : 1000
+              "UseValue" : 500
             }
           ]
         },
@@ -2277,7 +2172,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_ENDURANCE",
-              "UseValue" : 1000
+              "UseValue" : 500
             }
           ]
         },
@@ -2298,7 +2193,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_FOCUS",
-              "UseValue" : 1000
+              "UseValue" : 500
             }
           ]
         },
@@ -2319,7 +2214,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_PROTECT",
-              "UseValue" : 1000
+              "UseValue" : 500
             }
           ]
         },
@@ -2340,7 +2235,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_POWER",
-              "UseValue" : 3000
+              "UseValue" : 1500
             }
           ]
         },
@@ -2361,7 +2256,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_HEALTH",
-              "UseValue" : 3000
+              "UseValue" : 1500
             }
           ]
         },
@@ -2382,7 +2277,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_ENDURANCE",
-              "UseValue" : 3000
+              "UseValue" : 1500
             }
           ]
         },
@@ -2403,7 +2298,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_FOCUS",
-              "UseValue" : 3000
+              "UseValue" : 1500
             }
           ]
         },
@@ -2424,7 +2319,7 @@
           [
             {
               "UseType" : "UT_TRAINING_EXP_PROTECT",
-              "UseValue" : 3000
+              "UseValue" : 1500
             }
           ]
         },
@@ -2767,6 +2662,60 @@
           "ItemQuickUse" : false
         },
         {
+          "ContentsTag" : "TAG_UNIT_S_NIGHTMARE_REAPER",
+          "ItemId" : 5011014,
+          "ItemSubType" : "ST_CHARM",
+          "NarrativeTag" : "NT_CHARM",
+          "EventUsable" : false,
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "CharmTarget" : "BCT_LEADER",
+          "CharmSeStrId" : ["CHARM_50110141"],
+          "CharmConvertPP" : 12,
+          "ItemEventType" : "IET_NORMAL",
+          "ItemIconImg" : "JOURNEY_ITEM_DREAMING_BUTTERFLY.png",
+          "ShowSELog" : true,
+          "ItemName" : "SI_JOURNEY_ITEM_NAME_5011014",
+          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011014",
+          "ItemQuickUse" : false
+        },
+        {
+          "ContentsTag" : "TAG_UNIT_S_STELLAR_THIEF",
+          "ItemId" : 5011015,
+          "ItemSubType" : "ST_CHARM",
+          "NarrativeTag" : "NT_CHARM",
+          "EventUsable" : false,
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "CharmTarget" : "BCT_LEADER",
+          "CharmSeStrId" : ["CHARM_50110151"],
+          "CharmConvertPP" : 12,
+          "ItemEventType" : "IET_NORMAL",
+          "ItemIconImg" : "JOURNEY_ITEM_TRISH_VUVUZELA.png",
+          "ShowSELog" : true,
+          "ItemName" : "SI_JOURNEY_ITEM_NAME_5011015",
+          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011015",
+          "ItemQuickUse" : false
+        },
+        {
+          "ContentsTag" : "TAG_UNIT_S_INCOGNITA_FLOWER",
+          "ItemId" : 5011018,
+          "ItemSubType" : "ST_CHARM",
+          "NarrativeTag" : "NT_CHARM",
+          "EventUsable" : false,
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "CharmTarget" : "BCT_LEADER",
+          "CharmSeStrId" : ["CHARM_50110181"],
+          "CharmConvertPP" : 12,
+          "ItemEventType" : "IET_NORMAL",
+          "ItemIconImg" : "JOURNEY_ITEM_TRAIN_MINIATURE.png",
+          "ShowSELog" : true,
+          "ItemName" : "SI_JOURNEY_ITEM_NAME_5011018",
+          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011018",
+          "ItemQuickUse" : false
+        },
+        {
           "ContentsTag" : "TAG_UNIT_S_EASTERN_OWL",
           "ItemId" : 5011019,
           "ItemSubType" : "ST_CHARM",
@@ -2800,6 +2749,42 @@
           "ShowSELog" : true,
           "ItemName" : "SI_JOURNEY_ITEM_NAME_5011021",
           "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011021",
+          "ItemQuickUse" : false
+        },
+        {
+          "ContentsTag" : "TAG_UNIT_S_SAINTESS_DEMON",
+          "ItemId" : 5011023,
+          "ItemSubType" : "ST_CHARM",
+          "NarrativeTag" : "NT_CHARM",
+          "EventUsable" : false,
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "CharmTarget" : "BCT_LEADER",
+          "CharmSeStrId" : ["CHARM_50110231"],
+          "CharmConvertPP" : 12,
+          "ItemEventType" : "IET_NORMAL",
+          "ItemIconImg" : "JOURNEY_ITEM_BREATHE_CHARCOAL.png",
+          "ShowSELog" : true,
+          "ItemName" : "SI_JOURNEY_ITEM_NAME_5011023",
+          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011023",
+          "ItemQuickUse" : false
+        },
+        {
+          "ContentsTag" : "TAG_UNIT_S_SAINTESS_ELF",
+          "ItemId" : 5011024,
+          "ItemSubType" : "ST_CHARM",
+          "NarrativeTag" : "NT_CHARM",
+          "EventUsable" : false,
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "CharmTarget" : "BCT_LEADER",
+          "CharmSeStrId" : ["CHARM_50110241"],
+          "CharmConvertPP" : 12,
+          "ItemEventType" : "IET_NORMAL",
+          "ItemIconImg" : "JOURNEY_ITEM_STUDY_HELPER.png",
+          "ShowSELog" : true,
+          "ItemName" : "SI_JOURNEY_ITEM_NAME_5011024",
+          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011024",
           "ItemQuickUse" : false
         },
         {
@@ -2872,6 +2857,42 @@
           "ShowSELog" : true,
           "ItemName" : "SI_JOURNEY_ITEM_NAME_5011041",
           "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011041",
+          "ItemQuickUse" : false
+        },
+        {
+          "ContentsTag" : "TAG_UNIT_S_CONSTRUCT_BOMB",
+          "ItemId" : 5011042,
+          "ItemSubType" : "ST_CHARM",
+          "NarrativeTag" : "NT_CHARM",
+          "EventUsable" : false,
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "CharmTarget" : "BCT_LEADER",
+          "CharmSeStrId" : ["CHARM_50110421"],
+          "CharmConvertPP" : 12,
+          "ItemEventType" : "IET_NORMAL",
+          "ItemIconImg" : "JOURNEY_ITEM_PETRA_TOOLS.png",
+          "ShowSELog" : true,
+          "ItemName" : "SI_JOURNEY_ITEM_NAME_5011042",
+          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011042",
+          "ItemQuickUse" : false
+        },
+        {
+          "ContentsTag" : "TAG_UNIT_S_INDEPENDENT_DRAGON",
+          "ItemId" : 5011049,
+          "ItemSubType" : "ST_CHARM",
+          "NarrativeTag" : "NT_CHARM",
+          "EventUsable" : false,
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "CharmTarget" : "BCT_LEADER",
+          "CharmSeStrId" : ["CHARM_50110491"],
+          "CharmConvertPP" : 12,
+          "ItemEventType" : "IET_NORMAL",
+          "ItemIconImg" : "JOURNEY_ITEM_CLEAR_OUTLOOK_BREATH.png",
+          "ShowSELog" : true,
+          "ItemName" : "SI_JOURNEY_ITEM_NAME_5011049",
+          "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5011049",
           "ItemQuickUse" : false
         },
         {
@@ -3434,7 +3455,7 @@
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "RecommendClass" : ["NURT_SUPPORTER"],
-          "CharmSeStrId" : ["CHARM_50620061", "CHARM_50620062"],
+          "CharmSeStrId" : ["CHARM_50620061", "CHARM_50620062", "CHARM_50620063"],
           "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_STEEL_FLOWER.png",
@@ -3453,7 +3474,7 @@
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "RecommendClass" : ["NURT_SUPPORTER"],
-          "CharmSeStrId" : ["CHARM_50620071", "CHARM_50620072", "CHARM_50620073"],
+          "CharmSeStrId" : ["CHARM_50620071", "CHARM_50620072"],
           "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_KNIGHT_GLORY.png",
@@ -3585,7 +3606,7 @@
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640011", "CHARM_50640012", "CHARM_50640013"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
           "ShowSELog" : true,
@@ -3603,7 +3624,7 @@
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640021"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_EXPLORE_CROWBAR.png",
           "ShowSELog" : true,
@@ -3617,11 +3638,11 @@
           "ItemSubType" : "ST_CHARM",
           "NarrativeTag" : "NT_CHARM",
           "EventUsable" : false,
-          "ItemGrade" : "IG_LEGENDARY",
+          "ItemGrade" : "IG_UNIQUE",
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640031", "CHARM_50640032"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_MAGIC_BOTTLE.png",
           "ShowSELog" : true,
@@ -3635,13 +3656,13 @@
           "ItemSubType" : "ST_CHARM",
           "NarrativeTag" : "NT_CHARM",
           "EventUsable" : false,
-          "ItemGrade" : "IG_LEGENDARY",
+          "ItemGrade" : "IG_UNIQUE",
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640041", "CHARM_50640042"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
+          "ItemIconImg" : "JOURNEY_ITEM_CHANCE_KATANA.png",
           "ShowSELog" : true,
           "ItemName" : "SI_JOURNEY_ITEM_NAME_5064004",
           "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5064004",
@@ -3653,13 +3674,13 @@
           "ItemSubType" : "ST_CHARM",
           "NarrativeTag" : "NT_CHARM",
           "EventUsable" : false,
-          "ItemGrade" : "IG_LEGENDARY",
+          "ItemGrade" : "IG_UNIQUE",
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640051"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
+          "ItemIconImg" : "JOURNEY_ITEM_PIERROT_MASK.png",
           "ShowSELog" : true,
           "ItemName" : "SI_JOURNEY_ITEM_NAME_5064005",
           "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5064005",
@@ -3671,11 +3692,11 @@
           "ItemSubType" : "ST_CHARM",
           "NarrativeTag" : "NT_CHARM",
           "EventUsable" : false,
-          "ItemGrade" : "IG_LEGENDARY",
+          "ItemGrade" : "IG_UNIQUE",
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640061", "CHARM_50640062", "CHARM_50640063"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_UTILITY_JACKET.png",
           "ShowSELog" : true,
@@ -3689,11 +3710,11 @@
           "ItemSubType" : "ST_CHARM",
           "NarrativeTag" : "NT_CHARM",
           "EventUsable" : false,
-          "ItemGrade" : "IG_LEGENDARY",
+          "ItemGrade" : "IG_UNIQUE",
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640071", "CHARM_50640072"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
           "ShowSELog" : true,
@@ -3707,13 +3728,13 @@
           "ItemSubType" : "ST_CHARM",
           "NarrativeTag" : "NT_CHARM",
           "EventUsable" : false,
-          "ItemGrade" : "IG_LEGENDARY",
+          "ItemGrade" : "IG_UNIQUE",
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
           "CharmSeStrId" : ["CHARM_50640081"],
-          "CharmConvertPP" : 12,
+          "CharmConvertPP" : 8,
           "ItemEventType" : "IET_NORMAL",
-          "ItemIconImg" : "JOURNEY_ITEM_CREDITOR_STRATEGY.png",
+          "ItemIconImg" : "JOURNEY_ITEM_TRIPLE_BULLET.png",
           "ShowSELog" : true,
           "ItemName" : "SI_JOURNEY_ITEM_NAME_5064008",
           "ItemDesc" : "SI_JOURNEY_ITEM_DESC_5064008",
@@ -3728,8 +3749,8 @@
           "ItemGrade" : "IG_LEGENDARY",
           "StackMax" : 1,
           "CharmTarget" : "BCT_LEADER",
-          "CharmStatType" : "NST_NV_RATE_TURN_SPEED",
-          "CharmStatValue" : 1000,
+          "CharmStatType" : "NST_TURN_SPEED",
+          "CharmStatValue" : 10,
           "CharmConvertPP" : 12,
           "ItemEventType" : "IET_NORMAL",
           "ItemIconImg" : "JOURNEY_ITEM_BREATHE_CHARCOAL.png",

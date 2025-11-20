@@ -8,21 +8,74 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_03",  // 처단자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_03", // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_03",  // 처단자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_03",  // 처단자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_CLOISTER_03", // 전파자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_03",  // 처단자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       },
@@ -31,23 +84,38 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_CLOISTER_03",  // 전파자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_CLOISTER_03", // 침묵의 은둔자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_CLOISTER_03",
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_CLOISTER_03",  // 전파자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       }

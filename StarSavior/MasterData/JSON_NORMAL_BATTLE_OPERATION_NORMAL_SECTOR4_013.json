@@ -4,25 +4,23 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_00",//기록자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_OPERATION_00",
-            "IsElite": true,
-            "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_00", //추적자
+            "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_00",//기록자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           }
@@ -32,22 +30,22 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_00",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_00",
-            "ChangeAdjustType": "NUAT_STAR",
-            "IsBoss": true,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_MU_OPERATION_04", //업화의 추적자(죽음의 추격)
             "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR"
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_00",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           }

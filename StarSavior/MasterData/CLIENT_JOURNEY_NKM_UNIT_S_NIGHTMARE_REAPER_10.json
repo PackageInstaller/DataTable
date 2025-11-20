@@ -1,0 +1,627 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_10",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_10",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_WELL_DIRAC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_01.mp3"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "드디어 도달했어요.",
+      "UnitTalk_JPN": "ついに到達しましたね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "여정의 끝…",
+      "UnitTalk_JPN": "旅の果てに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "수고했어.",
+          "JumpAnchorStringId_JPN": "お疲れ様。"
+        }
+      ]
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "…단장님도요.",
+      "UnitTalk_JPN": "…団長さまもです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아, 나비가…",
+      "UnitTalk_JPN": "あっ、蝶が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라의 손끝에서 쉬고 있던 푸른 나비가 빠르게 날갯짓했다.",
+      "UnitTalk_JPN": "セイラの指先で休んでいた青い蝶が、素早く羽ばたいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…다시 한번, 단장님께… 죄송하다는 말을 해야 할 것 같아요.",
+      "UnitTalk_JPN": "…もう一度、団長さまに…謝らなければならないようです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "왜…?",
+          "JumpAnchorStringId_JPN": "どうしてだ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "제 능력은… 강한 힘이 있다고 해서… 제어할 수 있는 게 아니란 걸…",
+      "UnitTalk_JPN": "わたしの能力は…強い力があるからといって…制御できるものではないということを…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "별의 구원자의 힘을 얻어도… 제가 원하는 미래를 얻을 수는 없으리라는 걸…",
+      "UnitTalk_JPN": "星の救援者の力を得ても…わたしが望む未来は訪れないだろうと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "예상…하고 있었어요…",
+      "UnitTalk_JPN": "予想…していました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "세이라의 손끝에 있던 나비가, 하늘로 날아올랐다가 다시 내려앉았다.",
+      "UnitTalk_JPN": "セイラの指先にいた蝶が、空へ舞い上がったかと思うと…ふたたび戻ってきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "…제 힘이 너무 강해져서… 더는 억제할 수 없다고 해요.",
+      "UnitTalk_JPN": "…力が強くなりすぎて…もう抑えきれないようです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "비록… 원하는 걸 얻지는 못해도…",
+      "UnitTalk_JPN": "たとえ…望むものが手に入らなくとも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "…단장님과 함께, 마지막까지 오고 싶어서…",
+      "UnitTalk_JPN": "…団長さまと一緒に、最後まで来たかったから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "그래서, 아무 말도 하지 않았어요.",
+      "UnitTalk_JPN": "だから、何も言いませんでした。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "죄송해요… 단장님…",
+      "UnitTalk_JPN": "ごめんなさい…団長さま…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…미안해할 것 없어.",
+          "JumpAnchorStringId_JPN": "…謝ることはないよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "하지만 그럼 앞으로...",
+          "JumpAnchorStringId_JPN": "じゃあ、これからは…"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이대로 계속 제가 NOA에 있으면, 다시 제어할 수 없는 <color=#F7BE45>꿈의 영역</color>이 펼쳐질 거예요.",
+      "UnitTalk_JPN": "このままわたしがNOAにい続ければ、また制御できない<color=#F7BE45>夢の領域</color>が広がってしまうでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…세이라.",
+          "JumpAnchorStringId_JPN": "…セイラ。"
+        }
+      ]
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…괜찮아요. 꿈은 언제든 끝이 있기 마련이고…",
+      "UnitTalk_JPN": "…大丈夫です。夢には、いつでも終わりがあるものです…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "이젠… 깨어날 시간이 된 것뿐이니까…",
+      "UnitTalk_JPN": "もう…目覚める時が来ただけですから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 잠시 그녀의 환한 얼굴을 바라보았다.",
+      "UnitTalk_JPN": "私は、しばらく彼女の眩しい笑顔を見つめていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "수많은 시련과 상처를 딛고 마침내 <color=#F7BE45>[여정]</color>의 끝에 도달한 자.",
+      "UnitTalk_JPN": "幾多の試練と痛みを克服し、ついに<color=#F7BE45>「救援の旅」</color>の終わりに到達した者。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀의 앞에는 더욱 많은 고난과 어려움이 기다리고 있을 것이다.",
+      "UnitTalk_JPN": "彼女には、更なる苦悩と困難が待ち受けているはずだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 나는 믿는다.",
+      "UnitTalk_JPN": "しかし、私は信じよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그녀는 분명 나를 뛰어넘을…",
+      "UnitTalk_JPN": "彼女ならきっと、私を超え…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "최고의 <color=#F7BE45>[구원자]</color>가 될 것이라는 걸.",
+      "UnitTalk_JPN": "最高の<color=#F7BE45>「救援者」</color>になれるということを。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 1.0,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 눈부신 모습에… 나는 잠시 눈을 감았다.",
+      "UnitTalk_JPN": "その眩しい姿に…私はそっと瞳を閉じた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "DEFAULT"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitPos": "POS2"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "CameraOffset": "TWIN_2"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 1.2
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "…축하드립니다. 구원자님.",
+      "UnitTalk_JPN": "…おめでとうございます。救援者様。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "이걸로 구원자님은 <color=#F7BE45>[여정]</color> 최종 시험을 통과하셨습니다.",
+      "UnitTalk_JPN": "これにて救援者様は<color=#F7BE45>「救援の旅」</color>の最終試験を通過されました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그럼 이제 돌아갈…",
+      "UnitTalk_JPN": "では、戻りま…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SAD"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "흐아암…",
+      "UnitTalk_JPN": "ふあぁ～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…아, 갑자기 급격한 졸음이…",
+      "UnitTalk_JPN": "…あっ、突然ひどい眠気が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA",
+      "UnitTalk_KOR": "죄송해요… 아무래도 저 먼저… 돌아가야겠…",
+      "UnitTalk_JPN": "すみません…どうやら私、先に…帰らなければ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_01.wav",
+      "UnitTalk_KOR": "털썩-",
+      "UnitTalk_JPN": "バタッ──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LISA"
+      ],
+      "UnitTalk_KOR": "Zzzz…",
+      "UnitTalk_JPN": "Zzzz…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_06.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "…단장님…",
+      "UnitTalk_JPN": "…団長さま…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "이렇게 여정이 끝났어요…",
+      "UnitTalk_JPN": "こうして旅は終わりました…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "이제 저는 다시… 또 다른 꿈들을 떠돌아다니겠죠.",
+      "UnitTalk_JPN": "わたしはまた…別の夢を彷徨うことになるのでしょうね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "CameraOffset": "POS2_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "하지만 슬프지 않아요.",
+      "UnitTalk_JPN": "でも、悲しくはありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "저에겐… 수많은 꿈들 사이에서 단장님을 찾아내야 한다는 목표가 생겼으니까요.",
+      "UnitTalk_JPN": "わたしには…無数の夢の中から、団長さまを見つけ出すという目標ができたのですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그러니까 더 이상… 외롭지도 않아요.",
+      "UnitTalk_JPN": "だからもう…寂しくありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_NIGHTMARE_REAPER",
+      "UnitTalk_KOR": "반드시 단장님의 꿈을 찾아내서, 다시 뵈러 갈래요.",
+      "UnitTalk_JPN": "必ず団長さまの夢を見つけて、会いに行きますからね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_10",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "DRAMA_SHOOTING_STAR_01.prefab"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 59,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이 순간 또 하나의 새로운 별빛이 점화되었다.",
+      "UnitTalk_JPN": "今この瞬間、新たな星の煌めきが加わった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그 찬란한 불꽃은 아카이브에 기록되어 우주의 어둠을 비추리라.",
+      "UnitTalk_JPN": "その眩い輝きはアーカイブに記録され、宇宙の闇を照らすであろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_NIGHTMARE_REAPER_10",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "관측 종료.",
+      "UnitTalk_JPN": "観測終了。",
+      "TalkTime": 0.03
+    }
+  ]
+}

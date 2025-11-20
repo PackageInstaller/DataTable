@@ -64,7 +64,7 @@
         "SI_SHOP_EMPLOYEE"
       ],
       "UnitTalk_KOR": "만약 가격을 보고 실망하셨더라도 걱정 마세요!",
-      "UnitTalk_JPN": "もしお値段を見てがっかりされた方も、ご安心を！",
+      "UnitTalk_JPN": "お値段を見てがっかりされた方も、ご安心を！",
       "TalkTime": 0.03
     },
     {
@@ -98,7 +98,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "CURRENT_CHARACTER",
       "UnitTalk_KOR": "[EVENT_FIXED_CHALLENGE_01_01]",
-      "UnitTalk_JPN": "「EVENT_FIXED_CHALLENGE_01_01」",
+      "UnitTalk_JPN": "[EVENT_FIXED_CHALLENGE_01_01]",
       "TalkTime": 0.03
     },
     {
@@ -145,7 +145,7 @@
         {
           "Uid": 3,
           "JumpAnchorStringId_KOR": "정석으로 도전한다.",
-          "JumpAnchorStringId_JPN": "挑戦する。",
+          "JumpAnchorStringId_JPN": "正攻法で挑む。",
           "JumpAnchorId": "REWARD_ANCHOR_3"
         },
         {
@@ -294,7 +294,7 @@
       "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "직원이 감탄에 찬 표정으로 검을 건네 줬다.",
+      "UnitTalk_KOR": "직원이 감탄에 찬 표정으로 검을 건네줬다.",
       "UnitTalk_JPN": "店員は感嘆した表情で、剣を手渡してくれた。",
       "TalkTime": 0.03,
       "DictionaryFinalCut": true,
@@ -333,7 +333,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(이)가 힘을 주자, 깊숙이 박힌 검이 천천히 올라왔다.",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が力を込めると、深く刺さっていた剣がゆっくりと身を現わした。",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>が力を込めると、深く刺さっていた剣がゆっくりと刀身を現わした。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -373,7 +373,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "이렇게 한 자루가 훌륭한 주인을 찾았군요. 다른 도전자 분은 안 계십니까?",
-      "UnitTalk_JPN": "こうして、一振が素晴らしい主を見つけましたね。他に、挑戦者はいらっしゃいませんか？",
+      "UnitTalk_JPN": "こうして、一振りが素晴らしい主を見つけましたね。他に挑戦者はいらっしゃいませんか？",
       "TalkTime": 0.03
     },
     {
@@ -382,7 +382,7 @@
       "CutsceneStrId": "JOURNEY_PF_09_NOA_STANDBY",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "직원이 참여를 유도하며 검을 건네 줬다.",
+      "UnitTalk_KOR": "직원이 참여를 유도하며 검을 건네줬다.",
       "UnitTalk_JPN": "店員は、参加を促しながら剣を手渡してくれた。",
       "TalkTime": 0.03,
       "DictionaryFinalCut": true,

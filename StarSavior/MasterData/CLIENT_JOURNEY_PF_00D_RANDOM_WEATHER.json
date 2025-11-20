@@ -33,7 +33,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "CURRENT_CHARACTER",
       "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_04_01]",
-      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_04_01」",
+      "UnitTalk_JPN": "[EVENT_RANDOM_WEATHER_04_01]",
       "TalkTime": 0.03
     },
     {
@@ -42,7 +42,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "CURRENT_CHARACTER",
       "UnitTalk_KOR": "[EVENT_RANDOM_WEATHER_04_02]",
-      "UnitTalk_JPN": "「EVENT_RANDOM_WEATHER_04_02」",
+      "UnitTalk_JPN": "[EVENT_RANDOM_WEATHER_04_02]",
       "TalkTime": 0.03
     },
     {
@@ -121,8 +121,8 @@
       "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "[CHARACTER_NAME](을)를 격려해 가며 훈련을 이어 나갔다.",
-      "UnitTalk_JPN": "[CHARACTER_NAME]を励ましながら、トレーニングを続けた。",
+      "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(을)를 격려해 가며 훈련을 이어 나갔다.",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>を励ましながら、トレーニングを続けた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },

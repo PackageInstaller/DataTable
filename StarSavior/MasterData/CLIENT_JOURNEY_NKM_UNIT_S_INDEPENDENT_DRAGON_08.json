@@ -1,0 +1,1110 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_INDEPENDENT_DRAGON_08",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 4,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitTalk_KOR": "시계를 보니 레이시와 만나기로 약속한 시간이 지나있었다.",
+      "UnitTalk_JPN": "時計を見ると、レイシーとの約束時間を過ぎていた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만 기분이 나쁘지 않았다.",
+      "UnitTalk_JPN": "だが、気分は悪くなかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "레이시가 늦는 거야 워낙 일상이기도 하고, 무엇보다 그녀가 최근 많은 변화를 보여줬기 때문이다.",
+      "UnitTalk_JPN": "レイシーが遅刻するのはいつものことだ。何より、最近大きな変化を見せてくれた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_1",
+      "UnitTalk_KOR": "노파가 떠난 이후, 레이시는 다시 글을 쓰기 시작하더니 순식간에 책 한 권을 출간했다.",
+      "UnitTalk_JPN": "年老いた女性が旅だった後、レイシーは再び執筆を始め、あっという間に一冊の本を出版したのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "더 놀라운 건 그러는 와중에도, 내 훈련을 열심히 따라주었다는 것이다.",
+      "UnitTalk_JPN": "さらに驚くべきは、そんな中でも熱心にトレーニングに励んでくれたことだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "감개무량하네.",
+          "JumpAnchorStringId_JPN": "感無量だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS9",
+      "UnitTalk_KOR": "무엇이 말이냐?",
+      "UnitTalk_JPN": "何のことじゃ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_4",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "등 뒤에서 들려온 목소리에 놀라서 돌아보니 레이시가 보였다.",
+      "UnitTalk_JPN": "背後から聞こえてきた声に驚いて振り返ると、レイシーが立っていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "뭐가 감개무량했다는 말이냐, 여가 책을 낸 것을 말하는 것이냐?",
+      "UnitTalk_JPN": "何が感無量なのじゃ？余が本を出したことかの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그거라면 여도 놀랐느니라.",
+      "UnitTalk_JPN": "それなら、余も驚いたぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "글을 쓰는 내내 단 한 순간도 손이 멈추지 않더구나.",
+      "UnitTalk_JPN": "文を書いている間、一瞬たりとも手が止まらなかったのじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "수십 년 동안 수많은 책을 집필한 여조차도 처음 겪어보는 일이었다!",
+      "UnitTalk_JPN": "数十年間、数多の本を執筆してきた余でさえ、初めてのことであった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그건 그렇고…",
+      "UnitTalk_JPN": "それはそうと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "크흠!",
+      "UnitTalk_JPN": "コホン！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "…늦어서 미안하구나.",
+      "UnitTalk_JPN": "…遅れてすまなかったのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "레이시의 말대로 약속 시간은 지나있었다. 하지만, <color=#F7BE45>고작</color> 12분 정도일 뿐이다.",
+      "UnitTalk_JPN": "レイシーの言う通り、約束の時間は過ぎていた。だが、<color=#F7BE45>たった</color>12分だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "오래 기다렸느냐?",
+      "UnitTalk_JPN": "長く待たせてしまったかの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 방금 왔어.",
+          "JumpAnchorStringId_JPN": "今来たところだよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그렇다면 다행이구나.",
+      "UnitTalk_JPN": "なら、良かったのじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "안도한 듯 살며시 웃는 레이시의 표정을 보니, 지난번에 본 쓸쓸한 미소가 떠오른다.",
+      "UnitTalk_JPN": "安堵したようにそっと微笑むレイシーの表情を見ていると、以前見た寂しげな笑顔を思い出す。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 그대여, 가보도록 할까?",
+      "UnitTalk_JPN": "よし、それでは行くのじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "간다라… 그러고 보니 만나기로 약속은 했었지만, 무슨 이유로 만나기로 한 건지 듣지 못했다는 게 생각났다.",
+      "UnitTalk_JPN": "行く…？そういえば、会う約束はしていたが…どういった用件か聞いていなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어디를?",
+          "JumpAnchorStringId_JPN": "どこに？"
+        }
+      ]
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여가 신작을 발매한 지 좀 되지 않았느냐?",
+      "UnitTalk_JPN": "新作を発売してから、しばらく経ったじゃろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "지난번처럼 독자들의 반응을 확인하러 가보자꾸나.",
+      "UnitTalk_JPN": "前回のように、読者の反応を確認しに参ろうではないか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "반응 같은 거 신경 안 쓴다며?",
+          "JumpAnchorStringId_JPN": "反応なんて気にしないんじゃなかったの？"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "그대… 이제 보니 조금 심술 맞은 면이 있구나. 다 알면서 그러는 게지?",
+      "UnitTalk_JPN": "其方…ちと意地悪な面があるようじゃのう。すべて分かっていながら、そう言っているのだな？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "이번 작품은 여에게 있어서 여러모로 뜻깊은 작품이라는 걸 알지 알고 있지 않으냐.",
+      "UnitTalk_JPN": "今回の作品は、余にとって意義深い作品だということを知っているじゃろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그러니까 평소보다 신경이 쓰이는 건 당연한…",
+      "UnitTalk_JPN": "故に、気になるのは当然のことでだな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "가자.",
+          "JumpAnchorStringId_JPN": "行こう。"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "CameraOffset": "POS9_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "변명하듯 주절거리는 레이시의 말을 끊고는 손을 낚아채듯 잡아 도서관으로 향했다.",
+      "UnitTalk_JPN": "言い訳のようにぶつぶつ言うレイシーの言葉を遮り、掴むように手を取って図書館に向かった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "CameraOffset": "POS9_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "자, 잠깐! 여는 아해가 아니니라! 어째서 손을 잡는 것이냐…!",
+      "UnitTalk_JPN": "ま、待たんか！余は童ではないのだぞ！どうして手を繋ぐ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "레이시는 말을 더듬으며 당황했지만, ",
+      "UnitTalk_JPN": "レイシーは言葉を詰まらせて慌てたが…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 117,
+      "WaitClick": false,
+      "WaitTime": 0.9,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SAD",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav",
+      "UnitTalk_KOR": "끝내 손을 빼지는 않았다.",
+      "UnitTalk_JPN": "図書館に着くまで、手を離そうとはしなかった。",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 86,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_LIBRARY.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitTalk_KOR": "도서관은 평소보다 붐비고 있었다.",
+      "UnitTalk_JPN": "図書館はいつもより混んでいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뭔가 일이 생긴 건 아닐까 싶어 주변의 소리에 귀를 기울인 끝에, 마침내 그 이유를 알 수 있었다.",
+      "UnitTalk_JPN": "何事かと思い、耳を傾けると…ついにその理由を知ることになった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "레이시 작가님의 신작 ",
+      "UnitTalk_JPN": "レイシー先生の新作",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_S",
+      "UnitPos": "POS5",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 91,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>게으른 용과 소녀</color>는 ",
+      "UnitTalk_JPN": "<color=#F7BE45>怠け者の龍と少女</color>は",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 93,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_3",
+      "UnitPos": "POS4",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_FEMALE",
+      "UnitNameString": [
+        "SI_LIBRARIAN"
+      ],
+      "UnitTalk_KOR": "현재 모두 대여 중입니다!",
+      "UnitTalk_JPN": "現在、すべて貸し出し中です！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_MALE_S",
+      "UnitNameString": [
+        "SI_NERVY_CUSTOMER"
+      ],
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "10권도 넘게 들어왔다며! 그게 다 대여 중이라는 겁니까?",
+      "UnitTalk_JPN": "10冊以上入荷したんでしょう！それが全部貸し出し中だと言うのですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_OBSERVER_FEMALE_3",
+      "UnitNameString": [
+        "SI_THUG_CUSTOMER"
+      ],
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "서점에서도 품절이라 도서관이 유일한 희망이었는데…",
+      "UnitTalk_JPN": "書店でも完売で、図書館が唯一の希望だったのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "도서관이 붐빈 이유는 레이시의 신작을 대여하고 싶은 사람들이 몰린 탓이었다.",
+      "UnitTalk_JPN": "図書館が混雑していた理由は、レイシーの新作を借りようと人々が押し寄せたせいだった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "CameraOffset": "POS6_2X",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "그대여, 지금 여가 꿈꾸고 있는 건 아니겠지?",
+      "UnitTalk_JPN": "其方よ。これは夢ではないだろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "축하해.",
+          "JumpAnchorStringId_JPN": "おめでとう。"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "고맙구나…",
+      "UnitTalk_JPN": "感謝するぞ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH.wav",
+      "UnitTalk_KOR": "레이시가 부드럽게 웃으며 손을 꼼지락거린다. 그제야 아직도 그녀의 손을 잡고 있었다는 것을 깨달았다.",
+      "UnitTalk_JPN": "レイシーは優しく笑いながら、手をソワソワとさせた。その時、まだ彼女の手を握っていたことに気づいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "슬쩍 손을 놓자, ",
+      "UnitTalk_JPN": "そっと手を離すと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.9,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SAD",
+      "TalkAppend": true
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "레이시가 묘한 시선으로 나와 잡고 있던 손을 만지작거린다.",
+      "UnitTalk_JPN": "レイシーは妙な眼差しで、私と繋いでいた手をいじった。",
+      "TalkTime": 0.03,
+      "TalkAppend": true,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitMotion": "SERIOUS",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_02.wav",
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "어색한 침묵, 그런 우리 둘 사이를 가르며 두 여성이 지나갔다.",
+      "UnitTalk_JPN": "ぎこちない沈黙の中、私たちの間を二人の女性が通り過ぎた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL_LOOP"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_9",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "묘하게 낯이 익은 두 여성은, 지난번 레이시의 작품을 흉보았던 이들이었다.",
+      "UnitTalk_JPN": "なんとなく見覚えがあると思っていたら、以前レイシーの作品を酷評していた女性たちだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "CameraOffset": "TWIN_1",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "저 자들은… 그때 여의 작품을 혹평했던 이들이구나.",
+      "UnitTalk_JPN": "あれは…あの時、余の作品を酷評していた者だな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitMotion": "SAD",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "레이시 역시 두 여성을 알아본 것인지 얼굴에서 긴장의 빛이 아른거린다.",
+      "UnitTalk_JPN": "レイシーも気づいたのか、顔に緊張の色が浮かんだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "CameraOffset": "TWIN_4",
+      "UnitTalk_KOR": "여성들이 무슨 말을 할지 주시하고 있자니, 그중 한 여성이 자신의 가방에서 책 한 권을 꺼내 들었다.",
+      "UnitTalk_JPN": "何を言うのかと見守っていると、そのうちの一人が自分のカバンから本を一冊取り出した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BOING_02.wav",
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_SHARPLOOK_FEMALE"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "제 책을 도서관에 기부하겠어요!",
+      "UnitTalk_JPN": "私の本を、図書館に寄贈します！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_SHY_FEMALE"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "저도요!",
+      "UnitTalk_JPN": "わたしもです！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_2.wav",
+      "UnitTalk_KOR": "여성들의 말에 도서관이 술렁인다.",
+      "UnitTalk_JPN": "女性たちの言葉に、図書館がざわめいた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_SHARPLOOK_FEMALE"
+      ],
+      "UnitTalk_KOR": "<color=#F7BE45>게으른 용과 소녀</color>는 가히 레이시 작가님의 최전성기 작품들과 견줄, 아니 뛰어넘을 명작이에요!",
+      "UnitTalk_JPN": "<color=#F7BE45>怠け者の龍と少女</color>は、まさにレイシー先生の全盛期の作品に匹敵する、いや、それをも超える名作です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_SHY_FEMALE"
+      ],
+      "UnitTalk_KOR": "이런 작품을 많은 사람들이 보지 못하는 건 비극이에요!",
+      "UnitTalk_JPN": "そんな作品を、たくさんの人に見てもらえないなんて悲劇です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_RICH_FEMALE_2",
+      "UnitNameString": [
+        "SI_SHY_FEMALE"
+      ],
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "흑흑… 작가님이 언젠가는 슬럼프를 극복하실 줄 알았어!",
+      "UnitTalk_JPN": "ぐすっ…先生なら、いつかスランプを乗り越えられると思ってた！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitMotion": "SMILE",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NPC_MODULE_MERCHANT_FEMALE_3",
+      "UnitNameString": [
+        "SI_SHARPLOOK_FEMALE"
+      ],
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "반대로 말하면 이루어진다는 말이 정말이었나 봐!",
+      "UnitTalk_JPN": "逆のことを言えば叶うって、本当だったみたいね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SURPRISE",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "두 여성의 말에 놀란 눈으로 레이시를 돌아봤다. 레이시 역시 놀란 건 마찬가지였는지 눈을 동그랗게 뜨고 나를 올려다보고 있었다.",
+      "UnitTalk_JPN": "その言葉に驚いた私は、振り返ってレイシーの方を見た。レイシーも驚いたのか、目を丸くして私を見上げていた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "눈이 마주친 우리는 누가 먼저라 할 것도 없이 웃음을 터뜨렸다.",
+      "UnitTalk_JPN": "目が合った私たちは、どちらからともなく笑い出した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "푸흡, 아하하하하!",
+      "UnitTalk_JPN": "プフッ、あははははっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그런 우리를 사람들이 의아하다는 표정으로 돌아보자 우리는 도망치듯 자리를 떠났다.",
+      "UnitTalk_JPN": "人々に不思議そうな目で見られた私たちは、逃げ出すようにその場を離れた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_04.wav"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "그대여, 그러고 보니 벌써 1년이 다 되어가는구나.",
+      "UnitTalk_JPN": "其方よ。そういえば、もう一年が経とうとしているのじゃな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "1년… 분명 엄청나게 긴 시간이라고 생각했는데 레이시의 말대로 순식간에 지나간 것처럼 느껴진다.",
+      "UnitTalk_JPN": "一年…長い時間だと思っていたが、レイシーの言う通り、あっという間に過ぎ去ったように感じる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "순식간이었어.",
+          "JumpAnchorStringId_JPN": "一瞬だったね。"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "거봐라. 여의 말이 맞지 않았느냐. 1년은 참으로 금방이야.",
+      "UnitTalk_JPN": "見よ、余の言葉が正しかったじゃろう？一年とは、本当にあっという間だからのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "하지만 100년보다 가치 있는 1년이었노라고 생각한다. 적어도 여는 그렇게 느꼈다.",
+      "UnitTalk_JPN": "しかし、百年に勝る価値のある一年じゃった。少なくとも、余はそう思ったぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도.",
+          "JumpAnchorStringId_JPN": "私もだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "기껏해야 한 세기 정도를 사는 단명종인 그대가 100년의 세월을 논하는 것이냐?",
+      "UnitTalk_JPN": "せいぜい一世紀ほどしか生きられない短命種の其方が、百年の歳月を論じるつもりか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후훗, 농담이다.",
+      "UnitTalk_JPN": "ふふっ、冗談じゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "그대에게도 그만큼 값진 1년이었다는 것이겠지.",
+      "UnitTalk_JPN": "其方にとっても、それほど価値ある一年だったということじゃろう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "비록, 고생하며 모은 힘을 오지랖 때문에 모두 잃고 말았지만 말이야.",
+      "UnitTalk_JPN": "とはいえ…苦労して蓄えた力を、余計なお節介のせいですべて失ってしまったがな。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잃기만 한 건 아니야.",
+          "JumpAnchorStringId_JPN": "ただ失った訳じゃない。"
+        }
+      ]
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "호오~, 그 말은 뭐가 남기라도 했다는 말이냐?",
+      "UnitTalk_JPN": "ほぉう。一体、何かが残ったというのじゃ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "레이시가 웃고 있잖아.",
+          "JumpAnchorStringId_JPN": "レイシーが笑ってるじゃないか。"
+        }
+      ]
+    },
+    {
+      "Uid": 113,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SURPRISE",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "만약 그때, 내가 힘을 잃는 게 두려워 나서기를 주저했다면…",
+      "UnitTalk_JPN": "もしあの時、力を失うのを恐れて踏み出せなかったら…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 116,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "SPECIAL",
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "…지금처럼 나를 향해 웃어주는 레이시는 이 자리에 없었을 것이라 확신한다.",
+      "UnitTalk_JPN": "…今のように笑ってくれるレイシーは、この場にいなかったと確信している。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그걸로 충분해.",
+          "JumpAnchorStringId_JPN": "それで十分だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "애초에 내가 힘을 키우려고 한 건 레이시를 위한 것이었기에 조금도 아깝지 않고, 잃었다고 생각하지도 않는다.",
+      "UnitTalk_JPN": "そもそも私が力をつけようとしていたのは、レイシーのためだった。だから失ったとも思っていないし、少しも惜しくない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitTalk_KOR": "확실히 그대의 오지랖 덕분에 여는 구원받을 수 있었다고 생각한다.",
+      "UnitTalk_JPN": "確かに、其方のお節介のおかげで、余は救われたようじゃ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_INDEPENDENT_DRAGON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…구원자가 되길 잘한 것 같구나.",
+      "UnitTalk_JPN": "…救援者になって良かったのう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "가식도 거짓도 느껴지지 않는 말에, 나 역시도 고개를 끄덕였다.",
+      "UnitTalk_JPN": "嘘偽りが感じられない言葉に、私もまた頷いた。",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_BAND_BASS_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -111,7 +111,7 @@
       "UnitMotion": "SPECIAL",
       "UnitPos": "POS1",
       "UnitTalk_KOR": "…여기 커피라도 마시고 기운차리시죠.",
-      "UnitTalk_JPN": "…ここでコーヒーでも飲んで、元気を出してください。",
+      "UnitTalk_JPN": "…コーヒーでも飲んで、元気を出してください。",
       "TalkTime": 0.03
     },
     {
@@ -123,7 +123,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "EmotionEffect": "THINK",
       "UnitTalk_KOR": "쭈우웁… 맛있네… ",
-      "UnitTalk_JPN": "ズズッ…美味しいな…",
+      "UnitTalk_JPN": "ズズッ…美味しいわね…",
       "TalkTime": 0.03
     },
     {
@@ -136,7 +136,7 @@
       "CameraOffset": "ONE_1",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "또 <color=#F7BE45>규정위반으로 인한 징계</color>라니. ",
-      "UnitTalk_JPN": "また<color=#F7BE45>規定違反による懲戒</color>だなんて。",
+      "UnitTalk_JPN": "また<color=#F7BE45>規定違反による懲戒</color>ですか。",
       "TalkTime": 0.03
     },
     {
@@ -148,18 +148,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "이번엔 또 왜 그러셨습니까?",
-      "UnitTalk_JPN": "今度はまた、どうしてそんなことを？",
-      "TalkTime": 0.03
-    },
-    {
-      "Uid": 111,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_RECON_KNUCKLE_03",
-      "WaitClick": true,
-      "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
-      "UnitTalk_KOR": "이번엔 또 왜 그러셨어요?",
-      "UnitTalk_JPN": "今度はまた、どうしてそんなことを？",
+      "UnitTalk_JPN": "今回はまた何をされたのですか？",
       "TalkTime": 0.03
     },
     {
@@ -174,7 +163,7 @@
       "UnitMotion": "NORMAL",
       "EmotionEffect": "STRESS",
       "UnitTalk_KOR": "…가만히 놔뒀다간 화재가 번질 게 뻔했단 말이야.",
-      "UnitTalk_JPN": "…放っておいたら火事が広がるに決まってるだろ。",
+      "UnitTalk_JPN": "…放っておいたら火事が広がりそうだったのよ。",
       "TalkTime": 0.03
     },
     {
@@ -185,7 +174,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitTalk_KOR": "그 근처는 목재 건물이 많아서 순식간에 불이 옮겨붙는다고.",
-      "UnitTalk_JPN": "あの辺りは木造建築が多くて、あっという間に火が移るんだ。",
+      "UnitTalk_JPN": "あの辺りは木造建築が多くて、あっという間に火が移るんだもの。",
       "TalkTime": 0.03
     },
     {
@@ -197,7 +186,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "마수들 때문에 한가롭게 불 끄고 있을 시간도 없었고.",
-      "UnitTalk_JPN": "魔獣たちのせいで、のんびり消火している時間すらなかった。",
+      "UnitTalk_JPN": "魔獣のせいで、のんびり火を消す時間もなかったことだし。",
       "TalkTime": 0.03
     },
     {
@@ -211,7 +200,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "…그렇다고 주변 건물을 다 때려 부숴 놓는 건 지나치게 과격하셨습니다.",
-      "UnitTalk_JPN": "…とはいえ、周辺の建物を全部壊すのはやりすぎでしたよ。",
+      "UnitTalk_JPN": "…とはいえ、周辺の建物をすべて壊すのはいかがなものかと。",
       "TalkTime": 0.03
     },
     {
@@ -225,7 +214,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": "화재의 원인은 탈 것. 탈 것을 모두 제거하면 불은 붙지 않아. ",
-      "UnitTalk_JPN": "火災の原因は燃えやすいもの。燃えやすいものをすべて取り除けば火は燃え移らない。",
+      "UnitTalk_JPN": "火事の原因は燃えるもの。燃えやすいものを排除すれば、火は燃え移らないでしょ？",
       "TalkTime": 0.03
     },
     {
@@ -250,7 +239,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "USN_UI_REST_START",
       "UnitTalk_KOR": "원론적으로는 맞는 이야기지만… ",
-      "UnitTalk_JPN": "原理的には正しい話ですが…",
+      "UnitTalk_JPN": "理屈としては正しいですが…",
       "TalkTime": 0.03
     },
     {
@@ -262,7 +251,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": "부탁드립니다만, 최대한 규정을 지키는 선에서 처리해주셨으면 합니다.",
-      "UnitTalk_JPN": "お願いいたしますが、可能な限り規定を守る範囲で対応していただければ幸いです。",
+      "UnitTalk_JPN": "可能な限り、規定を遵守のうえでご対応いただきたいのです。",
       "TalkTime": 0.03
     },
     {
@@ -274,7 +263,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "EmotionEffect": "STRESS",
       "UnitTalk_KOR": "자꾸 상부에 밉보이면 일이 더 복잡해지기만 하니까요.",
-      "UnitTalk_JPN": "上層部に嫌われると、かえって事態が複雑化するだけです。",
+      "UnitTalk_JPN": "上層部に目をつけられると、事が複雑になるだけですから。",
       "TalkTime": 0.03
     },
     {
@@ -286,7 +275,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "선배도 이젠 일개 팀원이 아니라 팀장이니까, 마냥 예전처럼 일할 수는 없습니다.",
-      "UnitTalk_JPN": "先輩も今は一チームのメンバーではなくリーダーですから、以前のように仕事はできません。",
+      "UnitTalk_JPN": "先輩ももう、チームメンバーではなくリーダーです。以前のように仕事をするわけにはいきません。",
       "TalkTime": 0.03
     },
     {
@@ -297,7 +286,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "UnitTalk_KOR": "<color=#F7BE45>댐 파괴 사건</color> 때, 기억 나십니까?",
-      "UnitTalk_JPN": "<color=#F7BE45>ダム破壊事件</color>の時、覚えていらっしゃいますか？",
+      "UnitTalk_JPN": "<color=#F7BE45>ダム破壊事件</color>のことを覚えていらっしゃいますか？",
       "TalkTime": 0.03
     },
     {
@@ -311,7 +300,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "USN_UI_REST_START",
       "UnitTalk_KOR": "당연히 기억 나지. ",
-      "UnitTalk_JPN": "もちろん覚えているさ。",
+      "UnitTalk_JPN": "もちろん覚えてるわよ。",
       "TalkTime": 0.03
     },
     {
@@ -366,7 +355,7 @@
       "UnitQuickSet": true,
       "UnitPos": "POS2",
       "UnitTalk_KOR": "…틀렸어. 우리 둘로는 저 놈들 다 못 막아.",
-      "UnitTalk_JPN": "…ダメだ。俺たち二人じゃ、あの連中を全部止められない。",
+      "UnitTalk_JPN": "…ダメよ。私たち二人じゃ、あの連中は食い止められない。",
       "TalkTime": 0.03
     },
     {
@@ -377,7 +366,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitTalk_KOR": "이대로 두면 저 댐을 타고 이쪽으로 넘어올 거야.  ",
-      "UnitTalk_JPN": "このままにしておけば、あのダムを越えてこっちに侵入してくる。",
+      "UnitTalk_JPN": "このままだと、あのダムを越えて侵入してくるはずよ。",
       "TalkTime": 0.03
     },
     {
@@ -389,7 +378,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": "선배. 증원 요청은 해뒀습니다. 후퇴해서 도시 초입에서 버텨보면…!",
-      "UnitTalk_JPN": "先輩。増援要請は済ませてあります。後退して都市の入口で耐えれば…！",
+      "UnitTalk_JPN": "先輩。増援要請は済ませてあります。一旦後退して街の入口で持ちこたえれば…！",
       "TalkTime": 0.03
     },
     {
@@ -401,7 +390,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "무리야. 생각보다 진행 속도가 너무 빨라. ",
-      "UnitTalk_JPN": "無理だ。予想以上に進行速度が速すぎる。",
+      "UnitTalk_JPN": "無理よ。予想以上に進行速度が速すぎるわ。",
       "TalkTime": 0.03
     },
     {
@@ -412,7 +401,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitTalk_KOR": "아직 주민 대피가 반절도 안 끝났어. 한 마리라도 놓치면 대참사야. 그렇다면…",
-      "UnitTalk_JPN": "まだ住民避難が半分も終わってない。一匹でも見逃せば大惨事だ。それなら…",
+      "UnitTalk_JPN": "まだ住民の避難が半分も終わってない。一匹でも逃したら大惨事よ。それなら…",
       "TalkTime": 0.03
     },
     {
@@ -426,7 +415,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "…루그.",
-      "UnitTalk_JPN": "…ルグ。",
+      "UnitTalk_JPN": "…ルー。",
       "TalkTime": 0.03
     },
     {
@@ -437,7 +426,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitTalk_KOR": "알케인 댐 아랫마을 사람들은 전부 대피했지?",
-      "UnitTalk_JPN": "アルケインダムの下の村の人々は全員避難したか？",
+      "UnitTalk_JPN": "アルカンダムの下にある村の住民は全員避難した？",
       "TalkTime": 0.03
     },
     {
@@ -451,7 +440,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "네. 주민 수가 적어서 이미 네 시간전에 대피가 완료된 상태입니다.",
-      "UnitTalk_JPN": "はい。住民数が少ないため、既に四時間前に避難は完了しております。",
+      "UnitTalk_JPN": "はい。人数が少なかったため、四時間前に避難は完了しています。",
       "TalkTime": 0.03
     },
     {
@@ -465,7 +454,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "USN_UI_TOUCH",
       "UnitTalk_KOR": "…부술게. ",
-      "UnitTalk_JPN": "…壊す。",
+      "UnitTalk_JPN": "…壊すわ。",
       "TalkTime": 0.03
     },
     {
@@ -479,7 +468,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "…예? 잘못 들었습니다?",
-      "UnitTalk_JPN": "…え？聞き間違いですか？",
+      "UnitTalk_JPN": "…はい？聞き間違いでしょうか？",
       "TalkTime": 0.03
     },
     {
@@ -492,7 +481,7 @@
       "CameraOffset": "TWIN_1",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "댐을 부수면, 마수들은 산능성이를 돌아와야 해. ",
-      "UnitTalk_JPN": "ダムを壊せば、魔獣たちは山稜城を迂回して戻ってくる。",
+      "UnitTalk_JPN": "ダムを壊せば、魔獣は山を迂回することになるでしょ。",
       "TalkTime": 0.03
     },
     {
@@ -504,7 +493,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "그러면 시간을 충분히 벌 수 있어. ",
-      "UnitTalk_JPN": "そうすれば時間を十分に稼げる。",
+      "UnitTalk_JPN": "そうすれば時間は十分に稼げるわ。",
       "TalkTime": 0.03
     },
     {
@@ -564,8 +553,8 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "UnitMotion": "NORMAL",
-      "UnitTalk_KOR": "아시죠? 그때 전 팀장님 아니면 팀 통째로 해체당할 뻔한 거.",
-      "UnitTalk_JPN": "ご存知でしょう？あの時、私がリーダーでなければチーム丸ごと解体されるところだったんです。",
+      "UnitTalk_KOR": "아시죠? 그때 전 팀장님이 아니었으면 팀 통째로 해체당할 뻔한 거.",
+      "UnitTalk_JPN": "ご存知でしょう？あの時、リーダーでなければチームごと解体されていたはずです。",
       "TalkTime": 0.03
     },
     {
@@ -577,7 +566,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "미안해. 이래저래 팀원들에게 폐를 끼치고 있다는 건 알아. ",
-      "UnitTalk_JPN": "ごめん。あれこれチームメンバーに迷惑をかけているのは分かっている。",
+      "UnitTalk_JPN": "すまなかったわ。色々とチームメンバーに迷惑をかけているのは分かってるのよ。",
       "TalkTime": 0.03
     },
     {
@@ -591,7 +580,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "하지만 내가 잘못된 결정을 했다고 생각하지는 않아. ",
-      "UnitTalk_JPN": "でも、自分が間違った決断をしたとは思わない。",
+      "UnitTalk_JPN": "でも、間違った決断をしたとは思っていないわ。",
       "TalkTime": 0.03
     },
     {
@@ -602,7 +591,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitTalk_KOR": "그때 그냥 물러섰다면, 훨씬 많은 사람들이 다치고 죽었을 거야. ",
-      "UnitTalk_JPN": "あの時、ただ退いていたら、もっと多くの人々が傷つき、死んでいただろう。",
+      "UnitTalk_JPN": "あの時退却してたら、もっと多くの人が傷つき亡くなっていたはずよ。",
       "TalkTime": 0.03
     },
     {
@@ -616,7 +605,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "…저도 이해합니다. 그래서 저도 당시에는 팀장님 의견에 동의했으니까.",
-      "UnitTalk_JPN": "…私も理解しています。だから私も当時はチームリーダーの意見に同意したんです。",
+      "UnitTalk_JPN": "…私も分かっています。そのため、リーダーの意見に同意したのですから。",
       "TalkTime": 0.03
     },
     {
@@ -629,7 +618,7 @@
       "CameraOffset": "ONE_1",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "알긴 아는데!",
-      "UnitTalk_JPN": "わかってるんだ！",
+      "UnitTalk_JPN": "分かってはいますが！",
       "TalkTime": 0.03
     },
     {
@@ -641,7 +630,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": "후우… 무리만 하지 말아주세요.",
-      "UnitTalk_JPN": "ふう…無理だけはしないでください。",
+      "UnitTalk_JPN": "ふぅ…どうか無理だけはなさらないでください。",
       "TalkTime": 0.03
     },
     {
@@ -669,7 +658,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "그야 팀장님 혼자 결국 뒷처리를 한다고 매번 밤 늦게까지…",
-      "UnitTalk_JPN": "だってリーダーさん一人で結局後始末するから、毎回夜遅くまで…",
+      "UnitTalk_JPN": "結局、リーダーひとりで後始末をする羽目になり、毎回夜遅くまで…",
       "TalkTime": 0.03
     },
     {
@@ -682,7 +671,7 @@
       "UnitMotion": "SAD",
       "EmotionEffect": "STRESS",
       "UnitTalk_KOR": "…아무것도 아닙니다. 슬슬 들어가시죠. ",
-      "UnitTalk_JPN": "…何もありません。そろそろお入りください。",
+      "UnitTalk_JPN": "…何でもありません。そろそろ戻りましょう。",
       "TalkTime": 0.03
     },
     {
@@ -702,7 +691,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "후우… 들어가면 또 처리해야 할 서류 작업이 산더미 같이…",
-      "UnitTalk_JPN": "ふう…入ったらまた処理すべき書類作業が山積みで…",
+      "UnitTalk_JPN": "ふぅ…戻ったらまた書類地獄ね…",
       "TalkTime": 0.03
     },
     {
@@ -712,7 +701,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "EmotionEffect": "STRESS",
       "UnitTalk_KOR": "으으… 오늘 밤은 독한 걸로 한잔 마셔야겠어…",
-      "UnitTalk_JPN": "うう…今夜は強い酒で一杯飲まなきゃな…",
+      "UnitTalk_JPN": "うぅ…今夜は強いお酒を一杯飲まないと…",
       "TalkTime": 0.03
     },
     {
@@ -725,7 +714,7 @@
       "UnitPos": "POS1",
       "EmotionEffect": "QMARK",
       "UnitTalk_KOR": "팀장님, 안 오십니까?",
-      "UnitTalk_JPN": "リーダー、おいでになりませんか？",
+      "UnitTalk_JPN": "リーダー、事務所に戻られないのですか？",
       "TalkTime": 0.03
     },
     {
@@ -735,7 +724,7 @@
       "UnitStrId": "NKM_UNIT_NPC_RECON_KNUCKLE",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "아아, 가고 있어. 잠시 다른 생각 좀 하느라고.",
-      "UnitTalk_JPN": "ああ、行くよ。ちょっと他のことを考えてたんだ。",
+      "UnitTalk_JPN": "今行くわ。少し他のことを考えてたの。",
       "TalkTime": 0.03
     },
     {
@@ -772,7 +761,7 @@
       "UnitMotion": "SERIOUS",
       "EmotionEffect": "QMARK",
       "UnitTalk_KOR": "…어라? 댐? 파괴?",
-      "UnitTalk_JPN": "…え？ダム？破壊？",
+      "UnitTalk_JPN": "…ん？ダム？破壊？",
       "TalkTime": 0.03
     },
     {
@@ -798,7 +787,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAGICIAN_SNIPER",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "뭐야? 왜 갑자기 진지한 얼굴이 됐어? ",
-      "UnitTalk_JPN": "何だ？なんで急に真剣な顔になったんだ？",
+      "UnitTalk_JPN": "どしたの？急に真面目な顔になっちゃってさ？",
       "TalkTime": 0.03
     },
     {
@@ -810,7 +799,7 @@
       "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
       "EmotionEffect": "THINK2",
       "UnitTalk_KOR": "방금 저 사람들… ",
-      "UnitTalk_JPN": "さっきあの人たち…",
+      "UnitTalk_JPN": "さっきのあの人たち…",
       "TalkTime": 0.03
     },
     {
@@ -822,7 +811,7 @@
       "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": "으음… 아니겠지! ",
-      "UnitTalk_JPN": "うーん…まさか！",
+      "UnitTalk_JPN": "うーん…まさかな！",
       "TalkTime": 0.03
     },
     {
@@ -833,7 +822,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
       "UnitTalk_KOR": "아무것도 아니야! ",
-      "UnitTalk_JPN": "何でもない！",
+      "UnitTalk_JPN": "何でもないぜ！",
       "TalkTime": 0.03,
       "DictionaryFinalCut": true
     },
@@ -904,7 +893,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "문득 잊고 있었던 낡은 기억이 떠올랐다.",
-      "UnitTalk_JPN": "ふと忘れていた古い記憶がよみがえった",
+      "UnitTalk_JPN": "ふと忘れていた記憶が蘇った。",
       "TalkTime": 0.03
     },
     {

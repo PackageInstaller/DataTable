@@ -80,7 +80,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "눈이 마주치자, 슬라임들이 이쪽을 향해 달려들었다…!",
-      "UnitTalk_JPN": "目が合うと、スライムたちがこちらに向かって突進してきた…！",
+      "UnitTalk_JPN": "目が合うと、スライムがこちらに向かって突進してきた…！",
       "TalkTime": 0.03
     },
     {
@@ -110,7 +110,7 @@
       "WaitTime": 0.0,
       "CameraOffset": "TWIN_6",
       "UnitTalk_KOR": "급한 대로 슬라임에 점령당한 거리를 빠져나오자…",
-      "UnitTalk_JPN": "急いでスライムに占領された街を抜け出そうとしたところ…",
+      "UnitTalk_JPN": "急いでスライムに占領された通りを抜けると…",
       "TalkTime": 0.03
     },
     {
@@ -122,7 +122,7 @@
         "SI_NPC_TOWNGUARD"
       ],
       "UnitTalk_KOR": "죄송합니다. 출입 통제령이 내려졌는데 못 보셨군요.",
-      "UnitTalk_JPN": "申し訳ありません。通行規制令が出ているのに気づかなかったようですね。",
+      "UnitTalk_JPN": "申し訳ありません。立入禁止令が出ているのをご存じなかったようですね。",
       "TalkTime": 0.03
     },
     {
@@ -169,7 +169,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "아무튼, 그래서 퇴치가 끝나기 전까지는 통행이 금지된 상황입니다.",
-      "UnitTalk_JPN": "とにかく、駆除が終わるまでは通行禁止の状況です。",
+      "UnitTalk_JPN": "とにかく、討伐が終わるまでは通行禁止です。",
       "TalkTime": 0.03
     },
     {
@@ -181,7 +181,7 @@
         "SI_NPC_TOWNGUARD"
       ],
       "UnitTalk_KOR": "여기도 언제 위험해질지 모릅니다. 다른 길을 알아보십시오.",
-      "UnitTalk_JPN": "ここもいつ危険になるか分かりません。別の道を探してください。",
+      "UnitTalk_JPN": "ここもいつ危険な状況になるか分かりません。別の道をお探しください。",
       "TalkTime": 0.03
     },
     {
@@ -205,7 +205,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "주위에서 들리는 이야기로는, 일손이 적어서 오늘 내로 끝나긴 힘들다고 한다. ",
-      "UnitTalk_JPN": "周囲で聞かれる話では、人手が足りず今日中に終わるのは難しいそうだ。 ",
+      "UnitTalk_JPN": "周りから聞こえてくる話では…人手が足りず、今日中に終わらせるのは難しいらしい。 ",
       "TalkTime": 0.03
     },
     {
@@ -224,19 +224,19 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "슬라임을 몰아내자.",
-          "JumpAnchorStringId_JPN": "スライムを追い出そう。",
+          "JumpAnchorStringId_JPN": "スライムを追い払おう。",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "대피를 돕자.",
-          "JumpAnchorStringId_JPN": "避難を助けよう。",
+          "JumpAnchorStringId_JPN": "避難の手伝いをしよう。",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         },
         {
           "Uid": 3,
           "JumpAnchorStringId_KOR": "얽히지 말자.",
-          "JumpAnchorStringId_JPN": "絡まれないようにしよう。",
+          "JumpAnchorStringId_JPN": "関わらないでおこう。",
           "JumpAnchorId": "REWARD_ANCHOR_3"
         }
       ]
@@ -252,7 +252,7 @@
       ],
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "퇴치를 도와주시겠다고요?",
-      "UnitTalk_JPN": "退治をお手伝いくださるのですか？",
+      "UnitTalk_JPN": "退治を手伝ってくださるのですか？",
       "TalkTime": 0.03
     },
     {
@@ -265,7 +265,7 @@
       ],
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": "물론 저희야 환영이죠! 잘 부탁드립니다!",
-      "UnitTalk_JPN": "もちろん私たちも大歓迎です！よろしくお願いします！",
+      "UnitTalk_JPN": "もちろん、私たちは大歓迎です！よろしくお願いします！",
       "TalkTime": 0.03
     },
     {
@@ -304,7 +304,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "…그렇게, 퇴치를 끝마쳤을 때는 온몸이 점액투성이가 되었다.",
-      "UnitTalk_JPN": "…そうして、退治を終えた時には全身が粘液まみれになっていた。",
+      "UnitTalk_JPN": "…そうして、退治を終える頃には全身が粘液まみれになっていた。",
       "TalkTime": 0.03
     },
     {
@@ -326,7 +326,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "조사 결과로는, 이 슬라임들은 어떤 연금술사가 시내에서 몰래 번식시킨 거라더군요.",
-      "UnitTalk_JPN": "調査の結果、このスライムたちは、ある錬金術師が街で密かに繁殖させたものだそうです。",
+      "UnitTalk_JPN": "調査の結果…このスライムたちは、ある錬金術師が街でこっそり繁殖させていたものだそうです。",
       "TalkTime": 0.03
     },
     {
@@ -338,7 +338,7 @@
         "SI_NPC_TOWNGUARD"
       ],
       "UnitTalk_KOR": "슬라임의 점액은 약을 만드는 재료로도 쓰이니까요.",
-      "UnitTalk_JPN": "スライムの粘液は薬を作る材料にも使われるからです。",
+      "UnitTalk_JPN": "スライムの粘液は、薬の材料としても使えますから。",
       "TalkTime": 0.03
     },
     {
@@ -350,7 +350,7 @@
         "SI_NPC_TOWNGUARD"
       ],
       "UnitTalk_KOR": "그런데 수가 너무 늘어나서 감당이 안 되니 도망친 것 같습니다.",
-      "UnitTalk_JPN": "しかし数があまりにも増えて手に負えなくなり、逃げ出したようです。",
+      "UnitTalk_JPN": "ところが…数が増えすぎて手に負えなくなり、その錬金術師は逃げ出したようです。",
       "TalkTime": 0.03
     },
     {
@@ -362,7 +362,7 @@
         "SI_NPC_TOWNGUARD"
       ],
       "UnitTalk_KOR": "남아 있던 슬라임들은 배가 고파지자 난동을 피우게 된 거고요.",
-      "UnitTalk_JPN": "残っていたスライムたちは腹が減って暴れ出したというわけです。",
+      "UnitTalk_JPN": "そして残されたスライムが、腹を空かせて暴れ出したという訳ですね。",
       "TalkTime": 0.03
     },
     {
@@ -375,7 +375,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "두 분 덕분에 퇴치가 수월하게 끝났습니다. 정말 감사드립니다.",
-      "UnitTalk_JPN": "お二人のおかげで駆除が順調に終わりました。本当にありがとうございます。",
+      "UnitTalk_JPN": "お二人のおかげでスムーズに退治できました。本当にありがとうございます。",
       "TalkTime": 0.03
     },
     {
@@ -401,7 +401,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "고된 하루였지만 그만큼 많은 경험을 쌓을 수 있었다.",
-      "UnitTalk_JPN": "大変な一日でしたが、その分多くの経験を積むことができました。",
+      "UnitTalk_JPN": "大変な一日だったが、その分多くの経験を積めた。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -410,7 +410,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(은)는 이번 사건을 계기로 무언가 깨달은 모양이다!",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は今回の事件をきっかけに何かを悟ったようだ！",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、今回の件をきっかけに何か悟ったようだ！",
       "TalkTime": 0.03
     },
     {
@@ -426,7 +426,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "현장에 일손이 부족하다면, 한 명이라도 더 가는 편이 낫지 않을까?",
-      "UnitTalk_JPN": "現場で人手が足りないなら、一人でも多く行く方が良いのでは？",
+      "UnitTalk_JPN": "現場に人手が足りないなら、一人でも多く向かった方がいいんじゃないか？",
       "TalkTime": 0.03
     },
     {
@@ -439,7 +439,7 @@
       ],
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "여기를 대신 맡아 주시겠다고요?",
-      "UnitTalk_JPN": "こちらを代わりに引き受けてくださるのですか？",
+      "UnitTalk_JPN": "ここを代わりに引き受けてくださるのですか？",
       "TalkTime": 0.03
     },
     {
@@ -452,7 +452,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "감사합니다! 그럼 다른 저는 동료들이 있는 곳으로 가 보겠습니다!",
-      "UnitTalk_JPN": "ありがとうございます！それでは、もう一人の私は仲間がいる場所へ向かいます！",
+      "UnitTalk_JPN": "ありがとうございます！それでは、私は他の仲間がいる場所へと向かいます！",
       "TalkTime": 0.03
     },
     {
@@ -491,7 +491,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "<color=#F7BE45>[CHARACTER_NAME]</color>(와)과 함께 길을 잘못 들어온 시민들을 다른 길로 안내해 줬다.",
-      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、道に迷った市民たちを別の道へ案内した。",
+      "UnitTalk_JPN": "<color=#F7BE45>[CHARACTER_NAME]</color>は、立入禁止区域に入ってきた市民を別の道に案内した。",
       "TalkTime": 0.03
     },
     {
@@ -499,7 +499,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "사람이 많이 지나다니는 곳이라, 퇴치가 끝날 무렵에는 함께 녹초가 되었다.",
-      "UnitTalk_JPN": "人が多く行き交う場所だったため、退治が終わる頃には二人ともぐったりしていた。",
+      "UnitTalk_JPN": "人通りの多い道だったため、退治が終わる頃には二人ともヘトヘトになってしまった。",
       "TalkTime": 0.03
     },
     {
@@ -521,7 +521,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "감사합니다. 두 분 덕분에 동료들을 도우러 갈 수 있었습니다.",
-      "UnitTalk_JPN": "ありがとうございます。お二人のおかげで仲間を助けに行けました。",
+      "UnitTalk_JPN": "ありがとうございます。お二人のおかげで、仲間の支援に向かうことができました。",
       "TalkTime": 0.03
     },
     {
@@ -535,7 +535,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "아, 그리고 이건 여러분께 개인적으로 드리는 보답입니다.",
-      "UnitTalk_JPN": "ああ、それとこれは皆さんへの個人的なお礼です。",
+      "UnitTalk_JPN": "あっ、これは個人的なお礼です。",
       "TalkTime": 0.03
     },
     {
@@ -548,7 +548,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "약소한 금액이지만… 도움이 되길 바랍니다.",
-      "UnitTalk_JPN": "微々たる金額ですが…お役に立てれば幸いです。",
+      "UnitTalk_JPN": "ささやかな金額ではありますが…お役に立てれば幸いです。",
       "TalkTime": 0.03
     },
     {
@@ -574,7 +574,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "하루 종일 서 있느라 힘들었지만, 생각도 못 한 보수를 받았다.",
-      "UnitTalk_JPN": "一日中立っていて疲れたけれど、思いもよらない報酬をもらった。",
+      "UnitTalk_JPN": "一日中立っていて疲れたが、思いがけない報酬を受け取った。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -583,7 +583,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "이건 <color=#F7BE45>[여정]</color>에서 유용하게 쓰도록 하자!",
-      "UnitTalk_JPN": "これは<color=#F7BE45>「救援の旅」</color>で役立てよう！",
+      "UnitTalk_JPN": "<color=#F7BE45>「救援の旅」</color>で役立てよう！",
       "TalkTime": 0.03
     },
     {
@@ -630,8 +630,8 @@
       "Uid": 105,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "타운 가드의 안내대로, 소동이 벌어진 거리를 멀리 돌아갔다.",
-      "UnitTalk_JPN": "タウンガードの案内通り、騒動が起きた通りを遠回りした。",
+      "UnitTalk_KOR": "타운가드의 안내대로, 소동이 벌어진 거리를 멀리 돌아갔다.",
+      "UnitTalk_JPN": "タウンガードの案内に従い、騒動が起きている通りを避けて遠回りした。",
       "TalkTime": 0.03
     },
     {
@@ -647,7 +647,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "대피하는 인파에 시달리느라 고생했다….",
-      "UnitTalk_JPN": "避難する人々に悩まされて苦労した…",
+      "UnitTalk_JPN": "避難する人の波にもまれ、ヘトヘトになってしまった…",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     }

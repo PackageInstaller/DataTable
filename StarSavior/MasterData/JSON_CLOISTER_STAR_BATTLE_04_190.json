@@ -7,22 +7,36 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_06",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_05", // 추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_06",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_ELITEJELLY_BLACK_ELITE_CLOISTER_05", // 망각의 예언자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_06",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_CLOISTER_05", // 추적자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -31,23 +45,35 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_06",
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_JELLY_BLACK_CLOISTER_05",  // 예언자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_CST_19",
+            "UnitStrId": "NKM_UNIT_MON_USURPER_CHAIR_BLACK_BOSS_CLOISTER_05", // 공허찬탈자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_06",
+            "UnitStrId": "NKM_UNIT_MON_PROPHET_JELLY_BLACK_CLOISTER_05",  // 예언자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

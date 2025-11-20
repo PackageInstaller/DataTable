@@ -4,25 +4,27 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_INTERSTELLAR_00", // 수집자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_INTERSTELLAR_02", //처단자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_CLOISTER_INTERSTELLAR_00", // 재앙의 숭배자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN"
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_CLOISTER_INTERSTELLAR_00", // 수집자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN"
           }
         ]
       },
@@ -30,24 +32,24 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_SPOTTER_RING_BLACK_CLOISTER_INTERSTELLAR_00",  // 감시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_CLOISTER_INTERSTELLAR_02", //망자의 처단자
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_CLOISTER_INTERSTELLAR_00",  // 침묵의 은둔자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_SUN" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_SUN"
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_SPOTTER_RING_BLACK_CLOISTER_INTERSTELLAR_00",  // 감시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN"
           }
         ]
       }

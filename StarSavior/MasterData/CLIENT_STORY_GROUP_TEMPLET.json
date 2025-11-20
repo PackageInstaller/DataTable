@@ -6,6 +6,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1000001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@1",
           "OrderList" : 0,
           "DictionaryStoryId" : 100011,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
@@ -15,7 +16,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1000001,
-          "StageNumber" : "SI_NUMBER_BATTLE_BEFORE@@3",
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@2",
           "OrderList" : 1,
           "DictionaryStoryId" : 100031,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
@@ -25,7 +26,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1000001,
-          "StageNumber" : "SI_NUMBER_BATTLE_AFTER@@3",
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@2",
           "OrderList" : 2,
           "DictionaryStoryId" : 100032,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
@@ -35,6 +36,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1000001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@3",
           "OrderList" : 3,
           "DictionaryStoryId" : 100041,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
@@ -44,6 +46,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1000001,
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@3",
           "OrderList" : 4,
           "DictionaryStoryId" : 100042,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
@@ -53,6 +56,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1000001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@4",
           "OrderList" : 5,
           "DictionaryStoryId" : 100051,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
@@ -62,74 +66,302 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@1",
           "OrderList" : 0,
           "DictionaryStoryId" : 101001,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001001,
+          "UnlockValue" : 1001001001,
           "Cutscene" : 101001
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@2",
           "OrderList" : 1,
           "DictionaryStoryId" : 101011,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001001,
+          "UnlockValue" : 1001001002,
           "Cutscene" : 101011
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@3",
           "OrderList" : 2,
           "DictionaryStoryId" : 101021,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001002,
+          "UnlockValue" : 1001001003,
           "Cutscene" : 101021
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@4",
           "OrderList" : 3,
           "DictionaryStoryId" : 101031,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001003,
+          "UnlockValue" : 1001001004,
           "Cutscene" : 101031
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@4",
           "OrderList" : 4,
           "DictionaryStoryId" : 101032,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001004,
+          "UnlockValue" : 1001001004,
           "Cutscene" : 101032
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@5",
           "OrderList" : 5,
           "DictionaryStoryId" : 101041,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001005,
+          "UnlockValue" : 1001001005,
           "Cutscene" : 101041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@5",
           "OrderList" : 6,
           "DictionaryStoryId" : 101042,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001005,
+          "UnlockValue" : 1001001005,
           "Cutscene" : 101042
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1001001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@6",
           "OrderList" : 7,
           "DictionaryStoryId" : 101051,
           "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
-          "UnlockValue" : 1009001006,
+          "UnlockValue" : 1001001006,
           "Cutscene" : 101051
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@1",
+          "OrderList" : 0,
+          "DictionaryStoryId" : 102011,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002001,
+          "Cutscene" : 102011
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@2",
+          "OrderList" : 1,
+          "DictionaryStoryId" : 102021,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002002,
+          "Cutscene" : 102021
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@3",
+          "OrderList" : 2,
+          "DictionaryStoryId" : 102031,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002003,
+          "Cutscene" : 102031
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@4",
+          "OrderList" : 3,
+          "DictionaryStoryId" : 102041,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002004,
+          "Cutscene" : 102041
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@5",
+          "OrderList" : 4,
+          "DictionaryStoryId" : 102051,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002005,
+          "Cutscene" : 102051
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@6",
+          "OrderList" : 5,
+          "DictionaryStoryId" : 102061,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002006,
+          "Cutscene" : 102061
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@7",
+          "OrderList" : 6,
+          "DictionaryStoryId" : 102071,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002007,
+          "Cutscene" : 102071
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@7",
+          "OrderList" : 7,
+          "DictionaryStoryId" : 102072,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002007,
+          "Cutscene" : 102072
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@8",
+          "OrderList" : 8,
+          "DictionaryStoryId" : 102081,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002008,
+          "Cutscene" : 102081
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@8",
+          "OrderList" : 9,
+          "DictionaryStoryId" : 102082,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002008,
+          "Cutscene" : 102082
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@9",
+          "OrderList" : 10,
+          "DictionaryStoryId" : 102091,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002009,
+          "Cutscene" : 102091
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@10",
+          "OrderList" : 11,
+          "DictionaryStoryId" : 102101,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002010,
+          "Cutscene" : 102101
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@11",
+          "OrderList" : 12,
+          "DictionaryStoryId" : 102111,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002010,
+          "Cutscene" : 102111
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1002001,
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@11",
+          "OrderList" : 13,
+          "DictionaryStoryId" : 102112,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001002011,
+          "Cutscene" : 102112
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@1",
+          "OrderList" : 0,
+          "DictionaryStoryId" : 103011,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003001,
+          "Cutscene" : 103011
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@2",
+          "OrderList" : 1,
+          "DictionaryStoryId" : 103021,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003002,
+          "Cutscene" : 103021
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@3",
+          "OrderList" : 2,
+          "DictionaryStoryId" : 103031,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003003,
+          "Cutscene" : 103031
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@4",
+          "OrderList" : 3,
+          "DictionaryStoryId" : 103041,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003004,
+          "Cutscene" : 103041
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@5",
+          "OrderList" : 4,
+          "DictionaryStoryId" : 103051,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003005,
+          "Cutscene" : 103051
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@6",
+          "OrderList" : 5,
+          "DictionaryStoryId" : 103061,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003006,
+          "Cutscene" : 103061
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_S@@7",
+          "OrderList" : 6,
+          "DictionaryStoryId" : 103071,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003007,
+          "Cutscene" : 103071
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1003001,
+          "StageNumber" : "SI_NUMBER_BATTLE_E@@7",
+          "OrderList" : 7,
+          "DictionaryStoryId" : 103072,
+          "StoryUnlockType" : "SUT_NORMAL_BATTLE_CLEAR ",
+          "UnlockValue" : 1001003007,
+          "Cutscene" : 103072
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -175,33 +407,6 @@
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
           "UnlockValue" : 100503031,
           "Cutscene" : 100503031
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "StoryGroupId" : 2,
-          "OrderList" : 0,
-          "DictionaryStoryId" : 4,
-          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 999994,
-          "Cutscene" : 4
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "StoryGroupId" : 2,
-          "OrderList" : 1,
-          "DictionaryStoryId" : 5,
-          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 999995,
-          "Cutscene" : 5
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "StoryGroupId" : 2,
-          "OrderList" : 2,
-          "DictionaryStoryId" : 6,
-          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 999996,
-          "Cutscene" : 6
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -744,6 +949,276 @@
           "Cutscene" : 1101013
         },
         {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 0,
+          "DictionaryStoryId" : 1011014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1011014,
+          "Cutscene" : 1011014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 1,
+          "DictionaryStoryId" : 1021014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1021014,
+          "Cutscene" : 1021014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 2,
+          "DictionaryStoryId" : 1031014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1031014,
+          "Cutscene" : 1031014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 3,
+          "DictionaryStoryId" : 1041014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1041014,
+          "Cutscene" : 1041014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 4,
+          "DictionaryStoryId" : 1051014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1051014,
+          "Cutscene" : 1051014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 5,
+          "DictionaryStoryId" : 1061014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1061014,
+          "Cutscene" : 1061014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 6,
+          "DictionaryStoryId" : 1071014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1071014,
+          "Cutscene" : 1071014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 7,
+          "DictionaryStoryId" : 1081014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1081014,
+          "Cutscene" : 1081014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 8,
+          "DictionaryStoryId" : 1091014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1091014,
+          "Cutscene" : 1091014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1014,
+          "OrderList" : 9,
+          "DictionaryStoryId" : 1101014,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1101014,
+          "Cutscene" : 1101014
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 0,
+          "DictionaryStoryId" : 1011015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1011015,
+          "Cutscene" : 1011015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 1,
+          "DictionaryStoryId" : 1021015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1021015,
+          "Cutscene" : 1021015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 2,
+          "DictionaryStoryId" : 1031015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1031015,
+          "Cutscene" : 1031015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 3,
+          "DictionaryStoryId" : 1041015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1041015,
+          "Cutscene" : 1041015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 4,
+          "DictionaryStoryId" : 1051015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1051015,
+          "Cutscene" : 1051015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 5,
+          "DictionaryStoryId" : 1061015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1061015,
+          "Cutscene" : 1061015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 6,
+          "DictionaryStoryId" : 1071015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1071015,
+          "Cutscene" : 1071015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 7,
+          "DictionaryStoryId" : 1081015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1081015,
+          "Cutscene" : 1081015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 8,
+          "DictionaryStoryId" : 1091015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1091015,
+          "Cutscene" : 1091015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1015,
+          "OrderList" : 9,
+          "DictionaryStoryId" : 1101015,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1101015,
+          "Cutscene" : 1101015
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 0,
+          "DictionaryStoryId" : 1011018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1011018,
+          "Cutscene" : 1011018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 1,
+          "DictionaryStoryId" : 1021018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1021018,
+          "Cutscene" : 1021018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 2,
+          "DictionaryStoryId" : 1031018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1031018,
+          "Cutscene" : 1031018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 3,
+          "DictionaryStoryId" : 1041018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1041018,
+          "Cutscene" : 1041018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 4,
+          "DictionaryStoryId" : 1051018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1051018,
+          "Cutscene" : 1051018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 5,
+          "DictionaryStoryId" : 1061018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1061018,
+          "Cutscene" : 1061018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 6,
+          "DictionaryStoryId" : 1071018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1071018,
+          "Cutscene" : 1071018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 7,
+          "DictionaryStoryId" : 1081018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1081018,
+          "Cutscene" : 1081018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 8,
+          "DictionaryStoryId" : 1091018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1091018,
+          "Cutscene" : 1091018
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1018,
+          "OrderList" : 9,
+          "DictionaryStoryId" : 1101018,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1101018,
+          "Cutscene" : 1101018
+        },
+        {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1019,
           "OrderList" : 0,
@@ -922,6 +1397,186 @@
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
           "UnlockValue" : 1101021,
           "Cutscene" : 1101021
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 0,
+          "DictionaryStoryId" : 1011023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1011023,
+          "Cutscene" : 1011023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 1,
+          "DictionaryStoryId" : 1021023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1021023,
+          "Cutscene" : 1021023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 2,
+          "DictionaryStoryId" : 1031023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1031023,
+          "Cutscene" : 1031023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 3,
+          "DictionaryStoryId" : 1041023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1041023,
+          "Cutscene" : 1041023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 4,
+          "DictionaryStoryId" : 1051023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1051023,
+          "Cutscene" : 1051023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 5,
+          "DictionaryStoryId" : 1061023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1061023,
+          "Cutscene" : 1061023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 6,
+          "DictionaryStoryId" : 1071023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1071023,
+          "Cutscene" : 1071023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 7,
+          "DictionaryStoryId" : 1081023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1081023,
+          "Cutscene" : 1081023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 8,
+          "DictionaryStoryId" : 1091023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1091023,
+          "Cutscene" : 1091023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1023,
+          "OrderList" : 9,
+          "DictionaryStoryId" : 1101023,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1101023,
+          "Cutscene" : 1101023
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 0,
+          "DictionaryStoryId" : 1011024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1011024,
+          "Cutscene" : 1011024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 1,
+          "DictionaryStoryId" : 1021024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1021024,
+          "Cutscene" : 1021024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 2,
+          "DictionaryStoryId" : 1031024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1031024,
+          "Cutscene" : 1031024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 3,
+          "DictionaryStoryId" : 1041024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1041024,
+          "Cutscene" : 1041024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 4,
+          "DictionaryStoryId" : 1051024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1051024,
+          "Cutscene" : 1051024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 5,
+          "DictionaryStoryId" : 1061024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1061024,
+          "Cutscene" : 1061024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 6,
+          "DictionaryStoryId" : 1071024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1071024,
+          "Cutscene" : 1071024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 7,
+          "DictionaryStoryId" : 1081024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1081024,
+          "Cutscene" : 1081024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 8,
+          "DictionaryStoryId" : 1091024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1091024,
+          "Cutscene" : 1091024
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1024,
+          "OrderList" : 9,
+          "DictionaryStoryId" : 1101024,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1101024,
+          "Cutscene" : 1101024
         },
         {
           "ContentsTag" : "DEV_OPEN",
@@ -1197,91 +1852,271 @@
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 0,
-          "DictionaryStoryId" : 1011001,
+          "DictionaryStoryId" : 1011041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1011001,
-          "Cutscene" : 1011001
+          "UnlockValue" : 1011041,
+          "Cutscene" : 1011041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 1,
-          "DictionaryStoryId" : 1021001,
+          "DictionaryStoryId" : 1021041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1021001,
-          "Cutscene" : 1021001
+          "UnlockValue" : 1021041,
+          "Cutscene" : 1021041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 2,
-          "DictionaryStoryId" : 1031001,
+          "DictionaryStoryId" : 1031041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1031001,
-          "Cutscene" : 1031001
+          "UnlockValue" : 1031041,
+          "Cutscene" : 1031041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 3,
-          "DictionaryStoryId" : 1041001,
+          "DictionaryStoryId" : 1041041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1041001,
-          "Cutscene" : 1041001
+          "UnlockValue" : 1041041,
+          "Cutscene" : 1041041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 4,
-          "DictionaryStoryId" : 1051001,
+          "DictionaryStoryId" : 1051041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1051001,
-          "Cutscene" : 1051001
+          "UnlockValue" : 1051041,
+          "Cutscene" : 1051041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 5,
-          "DictionaryStoryId" : 1061001,
+          "DictionaryStoryId" : 1061041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1061001,
-          "Cutscene" : 1061001
+          "UnlockValue" : 1061041,
+          "Cutscene" : 1061041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 6,
-          "DictionaryStoryId" : 1071001,
+          "DictionaryStoryId" : 1071041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1071001,
-          "Cutscene" : 1071001
+          "UnlockValue" : 1071041,
+          "Cutscene" : 1071041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 7,
-          "DictionaryStoryId" : 1081001,
+          "DictionaryStoryId" : 1081041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1081001,
-          "Cutscene" : 1081001
+          "UnlockValue" : 1081041,
+          "Cutscene" : 1081041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 8,
-          "DictionaryStoryId" : 1091001,
+          "DictionaryStoryId" : 1091041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1091001,
-          "Cutscene" : 1091001
+          "UnlockValue" : 1091041,
+          "Cutscene" : 1091041
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "StoryGroupId" : 1041,
           "OrderList" : 9,
-          "DictionaryStoryId" : 1101001,
+          "DictionaryStoryId" : 1101041,
           "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
-          "UnlockValue" : 1101001,
-          "Cutscene" : 1101001
+          "UnlockValue" : 1101041,
+          "Cutscene" : 1101041
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 0,
+          "DictionaryStoryId" : 1011042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1011042,
+          "Cutscene" : 1011042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 1,
+          "DictionaryStoryId" : 1021042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1021042,
+          "Cutscene" : 1021042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 2,
+          "DictionaryStoryId" : 1031042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1031042,
+          "Cutscene" : 1031042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 3,
+          "DictionaryStoryId" : 1041042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1041042,
+          "Cutscene" : 1041042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 4,
+          "DictionaryStoryId" : 1051042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1051042,
+          "Cutscene" : 1051042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 5,
+          "DictionaryStoryId" : 1061042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1061042,
+          "Cutscene" : 1061042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 6,
+          "DictionaryStoryId" : 1071042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1071042,
+          "Cutscene" : 1071042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 7,
+          "DictionaryStoryId" : 1081042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1081042,
+          "Cutscene" : 1081042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 8,
+          "DictionaryStoryId" : 1091042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1091042,
+          "Cutscene" : 1091042
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "StoryGroupId" : 1042,
+          "OrderList" : 9,
+          "DictionaryStoryId" : 1101042,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1101042,
+          "Cutscene" : 1101042
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 0,
+          "DictionaryStoryId" : 1011049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1011049,
+          "Cutscene" : 1011049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 1,
+          "DictionaryStoryId" : 1021049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1021049,
+          "Cutscene" : 1021049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 2,
+          "DictionaryStoryId" : 1031049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1031049,
+          "Cutscene" : 1031049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 3,
+          "DictionaryStoryId" : 1041049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1041049,
+          "Cutscene" : 1041049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 4,
+          "DictionaryStoryId" : 1051049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1051049,
+          "Cutscene" : 1051049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 5,
+          "DictionaryStoryId" : 1061049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1061049,
+          "Cutscene" : 1061049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 6,
+          "DictionaryStoryId" : 1071049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1071049,
+          "Cutscene" : 1071049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 7,
+          "DictionaryStoryId" : 1081049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1081049,
+          "Cutscene" : 1081049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 8,
+          "DictionaryStoryId" : 1091049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1091049,
+          "Cutscene" : 1091049
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "StoryGroupId" : 1049,
+          "OrderList" : 9,
+          "DictionaryStoryId" : 1101049,
+          "StoryUnlockType" : "SUT_CUTSCENE_VIEW",
+          "UnlockValue" : 1101049,
+          "Cutscene" : 1101049
         },
         {
           "ContentsTag" : "MAIN_OPEN",

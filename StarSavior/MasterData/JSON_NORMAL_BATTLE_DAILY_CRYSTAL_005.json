@@ -10,21 +10,36 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_DOLL_MAGE_BLACK_DAILY_02",
             "ChangeAdjustType": "NUAT_STAR",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_PLUMP_HAMMER_BLACK_ELITE_DAILY_02",
+            "UnitStrId": "NKM_UNIT_MON_PUPPET_SWORD_BLACK_ELITE_DAILY_02",
             "IsElite": true,
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_DOLL_MAGE_BLACK_DAILY_02",
             "ChangeAdjustType": "NUAT_STAR",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -35,21 +50,36 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_DOLL_MAGE_BLACK_DAILY_02",
             "ChangeAdjustType": "NUAT_STAR",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VETERAN_GUN_SILVER_BOSS_DAILY_CRYSTAL_02",
+            "UnitStrId": "NKM_UNIT_MON_PLUMP_HAMMER_BLACK_BOSS_DAILY_02",
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "ChangeAdjustType": "NUAT_STAR",
-            "IsBoss": true
+            "IsBoss": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_DOLL_MAGE_BLACK_DAILY_02",
             "ChangeAdjustType": "NUAT_STAR",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

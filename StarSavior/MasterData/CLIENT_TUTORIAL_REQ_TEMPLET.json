@@ -286,58 +286,8 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "TutorialGroupId" : 1010,
-          "TutorialStrID" : "TUTORIAL_JOURNEY_TRADE_2",
-          "Step" : 1,
-          "ProgressId" : 10101,
-          "ProgressPoint" : "JOURNEY_MAIN",
-          "TutorialREQ" : 
-          [
-            {
-              "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10091
-            },
-
-            {
-              "Req" : "JOURNEY_TURN_NUMBER",
-              "ReqValue" : 4
-            },
-
-            {
-              "Req" : "JOURNEY_SCENARIO_PLAY",
-              "ReqValue" : 99
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "TutorialGroupId" : 1010,
-          "TutorialStrID" : "TUTORIAL_JOURNEY_TRADE_2",
-          "Step" : 2,
-          "ProgressId" : 10102,
-          "ProgressPoint" : "JOURNEY_SHOP",
-          "TutorialREQ" : 
-          [
-            {
-              "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10091
-            },
-
-            {
-              "Req" : "JOURNEY_TURN_NUMBER",
-              "ReqValue" : 4
-            },
-
-            {
-              "Req" : "JOURNEY_SCENARIO_PLAY",
-              "ReqValue" : 99
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
           "TutorialGroupId" : 1011,
-          "TutorialStrID" : "TUTORIAL_JOURNEY_EVALUATION",
+          "TutorialStrID" : "TUTORIAL_JOURNEY_POTENTIAL",
           "Step" : 1,
           "ProgressId" : 10111,
           "ProgressPoint" : "JOURNEY_MAIN",
@@ -345,7 +295,7 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10101
+              "ReqValue" : 10092
             },
 
             {
@@ -370,7 +320,7 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10101
+              "ReqValue" : 10092
             },
 
             {
@@ -395,7 +345,7 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10111
+              "ReqValue" : 10112
             },
 
             {
@@ -415,22 +365,7 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10111
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "TutorialGroupId" : 1013,
-          "TutorialStrID" : "TUTORIAL_JOURNEY_END",
-          "Step" : 2,
-          "ProgressId" : 10132,
-          "ProgressPoint" : "JOURNEY_END",
-          "TutorialREQ" : 
-          [
-            {
-              "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10111
+              "ReqValue" : 10112
             }
           ]
         },
@@ -445,7 +380,7 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10132
+              "ReqValue" : 10131
             }
           ]
         },
@@ -460,7 +395,7 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 10132
+              "ReqValue" : 10131
             }
           ]
         },
@@ -555,56 +490,6 @@
 
             {
               "Req" : "BATTLE_PLAY",
-              "ReqValue" : 11001001
-            },
-
-            {
-              "Req" : "NORMAL_BATTLE_NOT_CLEAR",
-              "ReqValue" : 11001002
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "TutorialGroupId" : 1103,
-          "TutorialStrID" : "TUTORIAL_MAINSTREAM_OPERATION_1_1_RESULT",
-          "Step" : 2,
-          "ProgressId" : 110311,
-          "ProgressPoint" : "LOBBY",
-          "TutorialREQ" : 
-          [
-            {
-              "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11023
-            },
-
-            {
-              "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001001
-            },
-
-            {
-              "Req" : "NORMAL_BATTLE_NOT_CLEAR",
-              "ReqValue" : 11001002
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "TutorialGroupId" : 1103,
-          "TutorialStrID" : "TUTORIAL_MAINSTREAM_OPERATION_1_1_RESULT",
-          "Step" : 3,
-          "ProgressId" : 11032,
-          "ProgressPoint" : "MAINSTREAM_OPERATION",
-          "TutorialREQ" : 
-          [
-            {
-              "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11023
-            },
-
-            {
-              "Req" : "NORMAL_BATTLE_CLEAR",
               "ReqValue" : 11001001
             },
 
@@ -716,26 +601,61 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "TutorialGroupId" : 1108,
-          "TutorialStrID" : "TUTORIAL_MAINSTREAM_OPERATION_1_2_RESULT",
+          "TutorialGroupId" : 1109,
+          "TutorialStrID" : "TUTORIAL_GUIDE_MISSION",
           "Step" : 1,
-          "ProgressId" : 11081,
-          "ProgressPoint" : "NORMAL_BATTLE_RESULT",
+          "ProgressId" : 11091,
+          "ProgressPoint" : "LOBBY",
           "TutorialREQ" : 
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11032
-            },
-
-            {
-              "Req" : "BATTLE_PLAY",
-              "ReqValue" : 11001002
+              "ReqValue" : 11023
             },
 
             {
               "Req" : "NORMAL_BATTLE_NOT_CLEAR",
-              "ReqValue" : 11001003
+              "ReqValue" : 11001005
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "TutorialGroupId" : 1109,
+          "TutorialStrID" : "TUTORIAL_GUIDE_MISSION",
+          "Step" : 2,
+          "ProgressId" : 11092,
+          "ProgressPoint" : "MAINSTREAM_OPERATION",
+          "TutorialREQ" : 
+          [
+            {
+              "Req" : "PROGRESS_CLEAR",
+              "ReqValue" : 11023
+            },
+
+            {
+              "Req" : "NORMAL_BATTLE_NOT_CLEAR",
+              "ReqValue" : 11001005
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "TutorialGroupId" : 1109,
+          "TutorialStrID" : "TUTORIAL_GUIDE_MISSION",
+          "Step" : 3,
+          "ProgressId" : 11093,
+          "ProgressPoint" : "LOBBY",
+          "TutorialREQ" : 
+          [
+            {
+              "Req" : "PROGRESS_CLEAR",
+              "ReqValue" : 11023
+            },
+
+            {
+              "Req" : "NORMAL_BATTLE_NOT_CLEAR",
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -750,12 +670,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11081
+              "ReqValue" : 11031
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -770,12 +690,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11081
+              "ReqValue" : 11031
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -791,12 +711,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11081
+              "ReqValue" : 11031
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -812,12 +732,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11081
+              "ReqValue" : 11031
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -832,12 +752,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11081
+              "ReqValue" : 11031
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -852,12 +772,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 11081
+              "ReqValue" : 11031
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -872,12 +792,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 21036
+              "ReqValue" : 21035
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -893,12 +813,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 21036
+              "ReqValue" : 21035
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -913,12 +833,12 @@
           [
             {
               "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 21036
+              "ReqValue" : 21035
             },
 
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -958,7 +878,22 @@
           [
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "TutorialGroupId" : 3002,
+          "TutorialStrID" : "TUTORIAL_GUILD",
+          "Step" : 1,
+          "ProgressId" : 30021,
+          "ProgressPoint" : "GUILD_LOBBY_WAIT_JOIN",
+          "TutorialREQ" : 
+          [
+            {
+              "Req" : "NORMAL_BATTLE_CLEAR",
+              "ReqValue" : 11002015
             }
           ]
         },
@@ -973,7 +908,7 @@
           [
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11001008
+              "ReqValue" : 11001005
             }
           ]
         },
@@ -1105,8 +1040,8 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "TutorialGroupId" : 30076,
-          "TutorialStrID" : "TUTORIAL_CAMPAIGN_CUBE_PALACE",
-          "Step" : 6,
+          "TutorialStrID" : "TUTORIAL_CAMPAIGN_CUBE_PALACE_GUIDE",
+          "Step" : 1,
           "ProgressId" : 30076,
           "ProgressPoint" : "LOBBY",
           "TutorialREQ" : 
@@ -1114,6 +1049,21 @@
             {
               "Req" : "PROGRESS_CLEAR",
               "ReqValue" : 30075
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "TutorialGroupId" : 30077,
+          "TutorialStrID" : "TUTORIAL_CAMPAIGN_CUBE_PALACE_CLEAR",
+          "Step" : 1,
+          "ProgressId" : 30077,
+          "ProgressPoint" : "CUBE_PALACE_BATTLE_RESULT",
+          "TutorialREQ" : 
+          [
+            {
+              "Req" : "BATTLE_PLAY",
+              "ReqValue" : 10401001
             }
           ]
         },
@@ -1215,12 +1165,7 @@
           [
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11003018
-            },
-
-            {
-              "Req" : "PROGRESS_CLEAR",
-              "ReqValue" : 30085
+              "ReqValue" : 11005028
             }
           ]
         },
@@ -1235,7 +1180,7 @@
           [
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
-              "ReqValue" : 11008040
+              "ReqValue" : 11006032
             }
           ]
         },
@@ -1281,6 +1226,36 @@
             {
               "Req" : "NORMAL_BATTLE_CLEAR",
               "ReqValue" : 11004025
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "TutorialGroupId" : 3012,
+          "TutorialStrID" : "TUTORIAL_CAMPAIGN_SPECIAL_RAID",
+          "Step" : 2,
+          "ProgressId" : 30122,
+          "ProgressPoint" : "CAMPAIGN_BATTLE_LIST",
+          "TutorialREQ" : 
+          [
+            {
+              "Req" : "NORMAL_BATTLE_CLEAR",
+              "ReqValue" : 11004025
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "TutorialGroupId" : 3013,
+          "TutorialStrID" : "TUTORIAL_CAMPAIGN_RANKING_RAID",
+          "Step" : 1,
+          "ProgressId" : 30131,
+          "ProgressPoint" : "CAMPAIGN_RANKING_RAID",
+          "TutorialREQ" : 
+          [
+            {
+              "Req" : "NORMAL_BATTLE_CLEAR",
+              "ReqValue" : 11012060
             }
           ]
         },

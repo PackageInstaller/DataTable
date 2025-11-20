@@ -4,25 +4,39 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_05", //은둔자
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_WORM_BLACK_CLOISTER_INTERSTELLAR_04", // 숙고자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_05", //포식자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_CLOISTER_INTERSTELLAR_04", // 침묵의 은둔자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_05", //은둔자
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_WORM_BLACK_CLOISTER_INTERSTELLAR_04", // 숙고자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -31,23 +45,36 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_05", //포식자
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_04",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_BELLWETHER_MANE_BLACK_BOSS_CI_11", //공허 선도자
+            "UnitStrId": "NKM_UNIT_MON_USURPER_CHAIR_BLACK_BOSS_CLOISTER_INTERSTELLAR_04", // 공허찬탈자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR" //서브 속성 타입※※※※※※※※※※※※
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : 1000,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_INTERSTELLAR_05", //포식자
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_CLOISTER_INTERSTELLAR_04",  // 은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

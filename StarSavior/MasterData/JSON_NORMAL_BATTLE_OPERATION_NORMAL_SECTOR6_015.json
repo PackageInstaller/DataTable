@@ -4,49 +4,42 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_01",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_MINION_OPERATION_01",//은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2500,
+              "NST_NV_RATE_HP": -2500,
+              "NST_TURN_SPEED" : -25
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_OPERATION_01",
+            "UnitStrId": "NKM_UNIT_MON_VOIDREAPER_SCYTHE_BLACK_BOSS_OPERATION_01",//공허 수확자
             "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2500,
+              "NST_NV_RATE_HP": -2500,
+              "NST_TURN_SPEED" : -25
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_01",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_MINION_OPERATION_01",//은둔자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2500,
+              "NST_NV_RATE_HP": -2500,
+              "NST_TURN_SPEED" : -25
+            }
           }
         ]
       }

@@ -1,0 +1,110 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_ARCANA_NKM_UNIT_S_MUTANT_MASK_03",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MUTANT_MASK_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK"
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MUTANT_MASK_03",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라의 집에 방문했다. 집에 가려는데, 키라가 밤새도록 같이 놀자며 붙잡았다.",
+      "UnitTalk_JPN": "キラの家を訪ねた。帰ろうとすると、キラが「一晩中一緒に遊ぼう」と引き止めてきた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도망친다.",
+          "JumpAnchorStringId_JPN": "逃げる。",
+          "JumpAnchorId": "REWARD_ANCHOR_1"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "운명을 받아들인다.",
+          "JumpAnchorStringId_JPN": "運命を受け入れる。    ",
+          "JumpAnchorId": "REWARD_ANCHOR_2"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "JumpAnchorInfo": "JUMPANCHOR_1_SUCCESS",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "키라의 언령에 붙잡히고 말았다. 그 이후의 일은… 잘 기억이 나지 않는다.",
+      "UnitTalk_JPN": "キラの言葉に縛られてしまった。その後のことは……よく覚えていない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "JumpAnchorInfo": "JUMPANCHOR_1_FAIL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잠긴 문을 열 수 없었다. 그 이후의 일은… 잘 기억이 나지 않는다.",
+      "UnitTalk_JPN": "閉ざされた扉を開けられなかった。その後のことは……よく覚えていない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "JumpAnchorInfo": "JUMPANCHOR_2",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MUTANT_MASK",
+      "UnitMotion": "SPECIAL"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "어쩔 수 없으니 키라의 말에 따라주기로 했다. 그 이후의 일은… 잘 기억이 나지 않는다.",
+      "UnitTalk_JPN": "仕方なくキラの言葉に従うことにした。その後のことは……よく覚えていない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MUTANT_MASK_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_MUTANT_MASK_03",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SPECIAL"
+    }
+  ]
+}

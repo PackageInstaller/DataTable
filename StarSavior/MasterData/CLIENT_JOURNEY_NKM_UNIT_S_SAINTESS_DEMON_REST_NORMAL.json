@@ -1,0 +1,117 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "아, 단장. 혹시 오늘은 뭘 할지 정해 뒀어?",
+      "UnitTalk_JPN": "あっ、団長。今日何するかもう決めた？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "내가 지난 밤에 곰곰이 생각해 봤거든.",
+      "UnitTalk_JPN": "昨日の夜、じっくりと考えてみたのよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "마침내 내린 결론이, 여정 단원은 다양한 경험을 갖춰야 한다는 것!",
+      "UnitTalk_JPN": "で…うちが下した結論は、団員は色んな経験をしないといけないってことよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "그러니까 오늘은 훈련이나 의뢰 대신에 연극 관람은 어떨까?",
+      "UnitTalk_JPN": "だから、今日は訓練とか依頼の代わりに、演劇を観に行くのはどう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "예술적인 교양도 대성녀로서 갖춰야 할 미덕이라구.",
+      "UnitTalk_JPN": "芸術的な教養も、大聖女として備えておくべきだと思うわ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건 대성녀가 된 다음 챙기는 게 좋지 않을까?",
+          "JumpAnchorStringId_JPN": "それは大聖女になってからの方がいいんじゃない？"
+        }
+      ]
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "치이… 이럴 때만 까탈스럽다니까, 단장도.",
+      "UnitTalk_JPN": "ちぇっ…団長は、こんな時だけ厳しいんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "투덜거리는 뮤리엘을 보니, 오늘도 평소 같은 하루가 될 것 같다.",
+      "UnitTalk_JPN": "不満をもらすミュリエルを見ていると、今日も普段通りの一日になりそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REST_NORMAL",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -1,0 +1,394 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP2_7S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "UnitTalk_KOR": "우린 도망치는 루나의 뒤를 쫓았다.",
+      "UnitTalk_JPN": "私たちは、逃げるルナの後を追った。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "아하하, 따라올 테면 따라와 보시지!",
+      "UnitTalk_JPN": "アハハ。ついて来られるもんなら、ついて来なよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "모든 미래를 읽는 이 예언자님에게는 절대 잡히지 않는 도주 루트가 눈에 그려지듯이 보이-",
+      "UnitTalk_JPN": "全知全能の予言者様には、絶対に捕まらない逃走ルートが丸わかり―",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "으악?!",
+      "UnitTalk_JPN": "うあっ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 6,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "뒷문을 통해 밖으로 나오자, 골목으로 도망치다 쓰레기통에 걸려 넘어진 루나의 모습이 보였다.",
+      "UnitTalk_JPN": "裏口から外に出ると、路地裏へ逃げる途中でゴミ箱につまづくルナの姿が見えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "아, 아파…!",
+      "UnitTalk_JPN": "い、いたっ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "이딴 곳에 누가 쓰레기통을 가져다 놓은 거야!",
+      "UnitTalk_JPN": "こんなところに誰がゴミ箱置いたのよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이게… 예언자?",
+          "JumpAnchorStringId_JPN": "こんな奴が…予言者だって？"
+        }
+      ]
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "거기 서! 이 사기꾼!",
+      "UnitTalk_JPN": "待ちなさい！ペテン師！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "지금 당장 항복하지 않으면 후회하게 만들어 주겠어!",
+      "UnitTalk_JPN": "今すぐ降参しないと、後悔することになるわよ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "헤헹~ 난 살면서 후회 같은 건 해본 적 없는걸.",
+      "UnitTalk_JPN": "へっへーん。アタシは生まれてこの方、1回も後悔したことないもん！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 뭐, 순순히 잡혀주면 용서해 주기라도 할 거야?",
+      "UnitTalk_JPN": "それとも、おとなしく捕まったら許してくれる？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "당연히 아니지!",
+      "UnitTalk_JPN": "そんな訳ないでしょう！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "역시, 내가 예지한 대로네.",
+      "UnitTalk_JPN": "やっぱり、アタシが予知した通りね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_008.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "신성한 달의 지팡이를 통해 달님께서 말씀하셨지.",
+      "UnitTalk_JPN": "神聖なる月の杖を通して、お告げを授かったの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_009.wav"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "<color=#F7BE45>[루나야, 어차피 도망치다 잡히나, 그냥 잡히나 손해 볼 건 없단다.]</color> 라고!",
+      "UnitTalk_JPN": "<color=#F7BE45>「ルナよ。捕まったら酷い目にあうぞ」</color> って！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_010.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런 걸 굳이 예지까지 해야 알 수 있는 건가…?",
+          "JumpAnchorStringId_JPN": "それはそうだろう…"
+        }
+      ]
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "아무튼 그쪽이나 포기하라고.",
+      "UnitTalk_JPN": "とにかく、そっちが諦めてよね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_011.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "어차피 그 꼬맹이한테 받은 의뢰금은 다 써버렸으니까 날 잡아도 바뀔 건 없어.",
+      "UnitTalk_JPN": "どうせちびっこから受け取った依頼金は全部使っちゃったんだし、アタシを捕まえたところで一緒だよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_012.wav"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그러니까 이 좋은 날에 더 이상 폭력은 그만두자.",
+      "UnitTalk_JPN": "だから、こんな素晴らしい日に乱暴なことはやめない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_013.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "서로를 존중하면서 각자의 길을 가도록 축복해 주는 거지.",
+      "UnitTalk_JPN": "お互いを尊重して、それぞれが気持ちよく過ごせるように祝福するの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_014.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 아디오스~",
+      "UnitTalk_JPN": "じゃ、アディオス～！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_015.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "얼렁뚱땅 넘어가려고 하지 마!",
+      "UnitTalk_JPN": "うやむやにして逃げようとしないで！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "돈이 없다면 몸으로라도 갚게 만들겠어!",
+      "UnitTalk_JPN": "お金がないなら、身体で払ってもらうわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "히이익…!",
+      "UnitTalk_JPN": "ええっ！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_016.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "거… 귀하게 자란 아가씨 같은데 무서운 소릴 함부로 하네.",
+      "UnitTalk_JPN": "お…お嬢様育ちっぽいのに、物騒なことを言うのね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_017.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_7",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아무튼 쉽게 보내줄 생각이 없다면야…",
+      "UnitTalk_JPN": "どうしても見逃してくれないなら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_018.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_BATTLE_NORMAL_03.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "어쩔 수 없지!",
+      "UnitTalk_JPN": "仕方ないわ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_019.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ENERGY_FIRE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "…대규모 에너지 파동 확인.",
+      "UnitTalk_JPN": "…大規模なエネルギー波を確認。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "경계 태세 필요. 전투준비.",
+      "UnitTalk_JPN": "警戒態勢が必要。戦闘準備。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "폭력은 좋아하지 않지만…",
+      "UnitTalk_JPN": "暴力は好きじゃないけど…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_020.wav"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "끝까지 귀찮게 군다면 상대해 줄 수밖에.",
+      "UnitTalk_JPN": "アタシの運命に立ちはだかるっていうなら、相手になってあげるしかないね。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_021.wav"
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "보여주지! 미래를 꿰뚫어 보는 자의 싸움을!",
+      "UnitTalk_JPN": "見せてあげるわ！未来を見通す者の、戦いをね！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP2_7_UNIT_S_VOYAGER_ORACLE_022.wav"
+    }
+  ]
+}

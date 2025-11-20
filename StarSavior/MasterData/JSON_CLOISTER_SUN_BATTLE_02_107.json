@@ -7,22 +7,39 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_CLOISTER_04",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_04", // 감독자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_CLOISTER_04",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SPLINTER_BLACK_ELITE_CLOISTER_04", // 심연의 주시자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_CLOISTER_04",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_04", // 감독자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -31,23 +48,38 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_04", // 포식자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_ELITEWORM_BLACK_ELITE_CLOISTER_04", // 번뇌의 숙고자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_CORROSIVE_CRYSTAL_BLACK_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_CLOISTER_04", // 포식자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

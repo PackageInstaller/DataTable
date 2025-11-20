@@ -56,7 +56,7 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "BattleID" : 13,
+          "BattleID" : 12,
           "BattleStrID" : "TUTORIAL_JOURNEY_BATTLE_RAID_01",
           "SkipCondition" : "AlwaysSkip",
           "DeckSlotMax" : "BATTLE_SLOT_1",
@@ -71,7 +71,7 @@
           "CustomerDescStringId" : "SI_TUTORIAL_JOURNEY_BATTLE_RAID_01_DESC",
           "RequestImage" : "ILLUST_BG_ASTRO_SANCTUM.png",
           "BattleIcon" : "BATTLE_ICON_RAID.png",
-          "Difficulty" : "HARD",
+          "Difficulty" : "NORMAL",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
           "BattleLevel" : 12,
@@ -105,7 +105,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110101,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_01_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_1",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_01_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
@@ -156,7 +156,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110102,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_02_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_1",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_02_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
@@ -206,7 +206,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110103,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_03_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_2",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_03_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_RUIN_DAY",
@@ -256,7 +256,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110104,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_04_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_2",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_04_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
@@ -306,7 +306,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110105,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_05_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_05_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
@@ -356,7 +356,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110106,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_HURDLE_06_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_HURDLE_06_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
@@ -405,7 +405,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110151,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_FLORA_01_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_FLORA_01_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_FLORA_GROUND_DAY",
@@ -454,7 +454,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 110152,
           "BattleStrID" : "JOURNEY_01_E_BATTLE_KALAID_01_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_E_BATTLE_KALAID_01_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_SNOW_FIELD_DAY",
@@ -571,7 +571,7 @@
           "BattleLevel" : 4,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 10520,
+          "AfterBattleWinEventId1" : 10510,
           "AfterBattleLoseEventId1" : 10540,
           "JourneyRewardCoin" : 40,
           "JourneyRewardExp" : 0,
@@ -620,7 +620,7 @@
           "BattleLevel" : 8,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 10530,
+          "AfterBattleWinEventId1" : 10510,
           "AfterBattleLoseEventId1" : 10540,
           "JourneyRewardCoin" : 60,
           "JourneyRewardExp" : 0,
@@ -718,7 +718,7 @@
           "BattleLevel" : 8,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 822,
+          "AfterBattleWinEventId1" : 821,
           "AfterBattleLoseEventId1" : 824,
           "JourneyRewardCoin" : 40,
           "JourneyRewardExp" : 0,
@@ -767,7 +767,7 @@
           "BattleLevel" : 12,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 823,
+          "AfterBattleWinEventId1" : 821,
           "AfterBattleLoseEventId1" : 824,
           "JourneyRewardCoin" : 60,
           "JourneyRewardExp" : 0,
@@ -944,7 +944,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120101,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_01_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_1",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_01_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
@@ -961,7 +961,7 @@
           "Difficulty" : "BOSS",
           "BattleTag" : "EVALUATION",
           "SafePartyCount" : 1,
-          "BattleLevel" : 10,
+          "BattleLevel" : 12,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
           "BattlePower" : 2000,
           "BeforeBattleEventId1" : 1030,
@@ -977,17 +977,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -995,7 +995,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120102,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_02_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_1",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_02_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_STARDUST_FORTRESS_DAY",
@@ -1012,7 +1012,7 @@
           "Difficulty" : "BOSS",
           "BattleTag" : "EVALUATION",
           "SafePartyCount" : 1,
-          "BattleLevel" : 15,
+          "BattleLevel" : 17,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
           "BattlePower" : 2000,
           "BeforeBattleEventId1" : 1060,
@@ -1027,17 +1027,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -1045,7 +1045,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120103,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_03_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_2",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_03_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_RUIN_DAY",
@@ -1062,7 +1062,7 @@
           "Difficulty" : "BOSS",
           "BattleTag" : "EVALUATION",
           "SafePartyCount" : 1,
-          "BattleLevel" : 20,
+          "BattleLevel" : 24,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
           "BattlePower" : 2000,
           "BeforeBattleEventId1" : 1650,
@@ -1077,17 +1077,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 25
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 20
             }
           ]
         },
@@ -1095,7 +1095,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120104,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_04_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_2",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_04_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_CANDLE_GROUND_DAY",
@@ -1112,7 +1112,7 @@
           "Difficulty" : "BOSS",
           "BattleTag" : "EVALUATION",
           "SafePartyCount" : 1,
-          "BattleLevel" : 25,
+          "BattleLevel" : 31,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
           "BattlePower" : 2000,
           "BeforeBattleEventId1" : 1170,
@@ -1127,17 +1127,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 25
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 20
             }
           ]
         },
@@ -1145,7 +1145,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120105,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_05_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_05_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
@@ -1162,7 +1162,7 @@
           "Difficulty" : "BOSS",
           "BattleTag" : "EVALUATION",
           "SafePartyCount" : 1,
-          "BattleLevel" : 35,
+          "BattleLevel" : 46,
           "MusicName" : "MUSIC_BATTLE_BOSS_03.mp3",
           "BattlePower" : 2000,
           "BeforeBattleEventId1" : 1290,
@@ -1177,17 +1177,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 20
+              "BattleMissionTask" : 40
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 18
+              "BattleMissionTask" : 35
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             }
           ]
         },
@@ -1195,7 +1195,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120106,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_HURDLE_06_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_HURDLE_06_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_DIRAC_WELL_DAY",
@@ -1212,7 +1212,7 @@
           "Difficulty" : "BOSS",
           "BattleTag" : "EVALUATION",
           "SafePartyCount" : 1,
-          "BattleLevel" : 40,
+          "BattleLevel" : 52,
           "MusicName" : "MUSIC_GILLE.mp3",
           "BattlePower" : 2000,
           "BeforeBattleEventId1" : 9,
@@ -1226,17 +1226,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 20
+              "BattleMissionTask" : 40
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 18
+              "BattleMissionTask" : 35
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             }
           ]
         },
@@ -1244,7 +1244,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120151,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_FLORA_01_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_FLORA_01_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_FLORA_GROUND_DAY",
@@ -1260,7 +1260,7 @@
           "Difficulty" : "HARD",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 30,
+          "BattleLevel" : 41,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
           "BattlePower" : 2000,
           "AfterBattleWinEventId1" : 1143,
@@ -1275,17 +1275,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 20
+              "BattleMissionTask" : 40
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 18
+              "BattleMissionTask" : 35
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             }
           ]
         },
@@ -1293,7 +1293,7 @@
           "ContentsTag" : "MAIN_OPEN",
           "BattleID" : 120152,
           "BattleStrID" : "JOURNEY_01_N_BATTLE_KALAID_01_BOSS",
-          "SkipCondition" : "AlwaysSkip",
+          "SkipCondition" : "BattleWin",
           "DeckSlotMax" : "BATTLE_SLOT_3",
           "BattleTempletFileName" : "JSON_JOURNEY_01_N_BATTLE_KALAID_01_BOSS.txt",
           "BattleMapStrID" : "MAP_BATTLE_SNOW_FIELD_DAY",
@@ -1309,7 +1309,7 @@
           "Difficulty" : "HARD",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 30,
+          "BattleLevel" : 41,
           "MusicName" : "MUSIC_BATTLE_BOSS_02.mp3",
           "BattlePower" : 2000,
           "AfterBattleWinEventId1" : 1253,
@@ -1324,17 +1324,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 20
+              "BattleMissionTask" : 40
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 18
+              "BattleMissionTask" : 35
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             }
           ]
         },
@@ -1358,10 +1358,10 @@
           "Difficulty" : "EASY",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 7,
+          "BattleLevel" : 10,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 10510,
+          "AfterBattleWinEventId1" : 10520,
           "AfterBattleLoseEventId1" : 10540,
           "JourneyRewardCoin" : 20,
           "JourneyRewardExp" : 0,
@@ -1373,17 +1373,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -1407,7 +1407,7 @@
           "Difficulty" : "NORMAL",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 9,
+          "BattleLevel" : 12,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
           "AfterBattleWinEventId1" : 10520,
@@ -1422,17 +1422,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -1456,10 +1456,10 @@
           "Difficulty" : "HARD",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 13,
+          "BattleLevel" : 14,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 10530,
+          "AfterBattleWinEventId1" : 10520,
           "AfterBattleLoseEventId1" : 10540,
           "JourneyRewardCoin" : 60,
           "JourneyRewardExp" : 0,
@@ -1471,17 +1471,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -1505,10 +1505,10 @@
           "Difficulty" : "EASY",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 12,
+          "BattleLevel" : 14,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 821,
+          "AfterBattleWinEventId1" : 822,
           "AfterBattleLoseEventId1" : 824,
           "JourneyRewardCoin" : 20,
           "JourneyRewardExp" : 0,
@@ -1520,17 +1520,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -1554,7 +1554,7 @@
           "Difficulty" : "NORMAL",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 14,
+          "BattleLevel" : 17,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
           "AfterBattleWinEventId1" : 822,
@@ -1569,17 +1569,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -1603,10 +1603,10 @@
           "Difficulty" : "HARD",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 18,
+          "BattleLevel" : 20,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 823,
+          "AfterBattleWinEventId1" : 822,
           "AfterBattleLoseEventId1" : 824,
           "JourneyRewardCoin" : 60,
           "JourneyRewardExp" : 0,
@@ -1618,17 +1618,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 20
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 18
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 10
+              "BattleMissionTask" : 16
             }
           ]
         },
@@ -1652,10 +1652,10 @@
           "Difficulty" : "EASY",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 22,
+          "BattleLevel" : 27,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 831,
+          "AfterBattleWinEventId1" : 841,
           "AfterBattleLoseEventId1" : 834,
           "JourneyRewardCoin" : 20,
           "JourneyRewardExp" : 0,
@@ -1667,17 +1667,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 25
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 20
             }
           ]
         },
@@ -1701,10 +1701,10 @@
           "Difficulty" : "NORMAL",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 24,
+          "BattleLevel" : 30,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 832,
+          "AfterBattleWinEventId1" : 842,
           "AfterBattleLoseEventId1" : 834,
           "JourneyRewardCoin" : 40,
           "JourneyRewardExp" : 0,
@@ -1716,17 +1716,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 25
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 20
             }
           ]
         },
@@ -1750,10 +1750,10 @@
           "Difficulty" : "HARD",
           "BattleTag" : "RAID",
           "SafePartyCount" : 1,
-          "BattleLevel" : 28,
+          "BattleLevel" : 33,
           "MusicName" : "MUSIC_BATTLE_NORMAL_02.mp3",
           "BattlePower" : 2000,
-          "AfterBattleWinEventId1" : 833,
+          "AfterBattleWinEventId1" : 843,
           "AfterBattleLoseEventId1" : 834,
           "JourneyRewardCoin" : 60,
           "JourneyRewardExp" : 0,
@@ -1765,17 +1765,17 @@
           [
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 16
+              "BattleMissionTask" : 30
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 14
+              "BattleMissionTask" : 25
             },
 
             {
               "BattleMissionType" : "BMT_LIMIT_TURN",
-              "BattleMissionTask" : 12
+              "BattleMissionTask" : 20
             }
           ]
         }

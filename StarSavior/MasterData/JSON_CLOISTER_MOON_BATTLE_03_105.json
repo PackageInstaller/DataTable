@@ -4,25 +4,42 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_04",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_WORM_BLACK_CLOISTER_04", // 숙고자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_CLOISTER_04",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_ELITEBONE_BLACK_ELITE_CLOISTER_04", // 맹목의 전파자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_04",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_CONSIDER_WORM_BLACK_CLOISTER_04", // 숙고자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           }
         ]
       },
@@ -30,24 +47,39 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_04",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_CLOISTER_04",  // 전파자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_CLOISTER_04",
+            "UnitStrId": "NKM_UNIT_MON_CLOAKING_CLAW_BOSS_CLOISTER_04", // 공허습격자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -1500,
+              "NST_TURN_SPEED" : -20
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_CLOISTER_04",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_CLOISTER_04",  // 전파자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -1500,
+              "NST_NV_RATE_HP": -1500,
+              "NST_NV_RATE_DEF": -1500
+            }
           }
         ]
       }

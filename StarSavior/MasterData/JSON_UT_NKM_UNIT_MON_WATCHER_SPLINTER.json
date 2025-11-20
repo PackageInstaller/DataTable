@@ -19,18 +19,14 @@
             "listSoundName": [
               "SFX_BT_UNIT_MON_WATCHER_SPLINTER_SPELL_DARK_06.wav"
             ]
-          }
-        ],
-        "VoiceSeries": [
+          },
           {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE_02.wav"
-              }
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE_02.wav"
             ]
           }
-       ]
+        ]
       }, 
       {
         "StateName": "USN_START",
@@ -74,6 +70,12 @@
             ]
           },
           {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 31,
             "listSoundName": [
               "SFX_BT_UNIT_MON_WATCHER_SPLINTER_SPELL_DARK_02.wav"
@@ -85,17 +87,7 @@
               "SFX_BT_UNIT_MON_WATCHER_SPLINTER_HIT.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 30,
-                "VoiceName": "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE.wav"
-              }
-            ]
-          }
-       ]
+        ]
       },
       {
         "StateName": "USN_SPECIAL",
@@ -123,7 +115,19 @@
             ]
           },
           {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WATCHER_SPLINTER_SPELL_DARK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
             "listSoundName": [
               "SFX_BT_UNIT_MON_WATCHER_SPLINTER_SPELL_DARK_04.wav"
             ]
@@ -140,21 +144,7 @@
               "SFX_BT_UNIT_MON_WATCHER_SPLINTER_SPELL_DARK_05.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE.wav"
-              },
-              {
-                "EventFrame": 52,
-                "VoiceName": "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE_02.wav"
-              }
-            ]
-          }
-       ]
+        ]
       },
       {
         "StateName": "USN_DYING",
@@ -163,6 +153,12 @@
             "EventFrame": 0,
             "listSoundName": [
               "SFX_BT_UNIT_MON_WATCHER_SPLINTER_SPELL_DARK_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE_03.wav"
             ]
           },
           {
@@ -177,17 +173,7 @@
               "SFX_BATTLE_COMMON_DIE.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_WATCHER_SPLINTER_VOICE_03.wav"
-              }
-            ]
-          }
-       ]
+        ]
       }
     ]
   }

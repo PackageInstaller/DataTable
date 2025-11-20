@@ -31,7 +31,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "신년 파티에 초대해줘서 고마워, 단장.",
-      "UnitTalk_JPN": "新年のパーティーに招待してくれてありがとう、団長。",
+      "UnitTalk_JPN": "ホームパーティーに招待してくれてありがとう、団長。",
       "TalkTime": 0.03
     },
     {
@@ -89,7 +89,7 @@
       "CameraOffset": "ONE_7",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "세르팡과 토토는 꾸벅 하고 새해 인사를 하더니 바로 앞까지 와서 손을 내밀었다.",
-      "UnitTalk_JPN": "セルパンとトトは私の姿を見るやいなや、深く頭を下げた。",
+      "UnitTalk_JPN": "セルパンとトトはぺこりと新年の挨拶をすると、すぐに目の前まで来て手を差し出した。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -116,7 +116,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "뭐, 뭐하는 거야? 왜 그래?",
-          "JumpAnchorStringId_JPN": "ど、どうしたの？"
+          "JumpAnchorStringId_JPN": "ど、どうしたんだ？"
         }
       ]
     },
@@ -131,7 +131,7 @@
       "UnitQuickSet": true,
       "UnitPos": "POS7",
       "UnitTalk_KOR": "세뱃돈...",
-      "UnitTalk_JPN": "お年玉、ないの？",
+      "UnitTalk_JPN": "お年玉…",
       "TalkTime": 0.03
     },
     {
@@ -154,7 +154,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "세, 세뱃돈?",
-          "JumpAnchorStringId_JPN": "はぁ…"
+          "JumpAnchorStringId_JPN": "お、お年玉？"
         }
       ]
     },
@@ -163,8 +163,7 @@
       "WaitClick": false,
       "WaitTime": -1.0,
       "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
-      "UnitPos": "POS8",
-      "UnitTalk_JPN": "東の大陸では、お正月に子供がお辞儀をすると、大人がお年玉というものくれるんだよ。"
+      "UnitPos": "POS8"
     },
     {
       "Uid": 14,
@@ -177,7 +176,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "동대륙에서는 새해에 어른들이 반드시 세뱃돈을 줬어.",
-      "UnitTalk_JPN": "貧乏な子どもたちの懐事情を解決してくれるいい風習だよね。",
+      "UnitTalk_JPN": "東大陸では、新年に大人が必ずお年玉をくれたんだ。",
       "TalkTime": 0.03
     },
     {
@@ -188,7 +187,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "단장은 우리보다 어른이잖아?",
-      "UnitTalk_JPN": "初めて聞いたって顔してるね。",
+      "UnitTalk_JPN": "団長はボクらより大人でしょ？",
       "TalkTime": 0.03
     },
     {
@@ -200,7 +199,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "그런데 표정을 보니… 없나 보네.",
-      "UnitTalk_JPN": "これだから「四書五経」すら読まない中央大陸の連中は…",
+      "UnitTalk_JPN": "でも、その表情を見るに…用意してなかったみたいだね。",
       "TalkTime": 0.03
     },
     {
@@ -213,7 +212,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "과, 과자랑 주스랑 요리는 준비했는데...",
-          "JumpAnchorStringId_JPN": "お、お菓子とジュース、それに料理は用意したよ！"
+          "JumpAnchorStringId_JPN": "お、おやつとジュースと料理は用意したんだけど…"
         }
       ]
     },
@@ -226,7 +225,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "으음~",
-      "UnitTalk_JPN": "うーん～",
+      "UnitTalk_JPN": "う～ん…",
       "TalkTime": 0.03
     },
     {
@@ -238,7 +237,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "하는 수 없지. 그걸로 만족할까?",
-      "UnitTalk_JPN": "はぁ…仕方ないか…今回はそれでいいかな。",
+      "UnitTalk_JPN": "仕方ないかぁ…それで満足しとこうかな。",
       "TalkTime": 0.03
     },
     {
@@ -261,7 +260,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "응? 처음 보는 과자잖아! 이거 진짜 비싼 건데!",
-      "UnitTalk_JPN": "うん？初めて見るお菓子だ！これ、高かったでしょ？",
+      "UnitTalk_JPN": "あれ？初めて見るおやつだ！これ、高かったでしょ？",
       "TalkTime": 0.03
     },
     {
@@ -273,7 +272,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "고향 음식도 잔뜩 있네!",
-      "UnitTalk_JPN": "故郷の料理もある！",
+      "UnitTalk_JPN": "故郷の料理もいっぱいだぁ！",
       "TalkTime": 0.03
     },
     {
@@ -296,7 +295,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "와! 잘 먹을게, 단장!",
-      "UnitTalk_JPN": "わぁ、いただきます！団長！",
+      "UnitTalk_JPN": "わぁ～！いただきます、団長！",
       "TalkTime": 0.03
     },
     {
@@ -325,7 +324,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "후우~ 배불러…",
-      "UnitTalk_JPN": "ふぅ～お腹いっぱい…",
+      "UnitTalk_JPN": "ふぅ～、お腹いっぱい…",
       "TalkTime": 0.03
     },
     {
@@ -361,7 +360,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "토토도 고향에서 먹은 것보다 맛있었다고 해.",
-      "UnitTalk_JPN": "トトも故郷のご飯より、おいしかったって言ってる。",
+      "UnitTalk_JPN": "トトも、故郷のごはんよりおいしかったって。",
       "TalkTime": 0.03
     },
     {
@@ -373,7 +372,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "그런데…",
-      "UnitTalk_JPN": "でも…",
+      "UnitTalk_JPN": "ところで…",
       "TalkTime": 0.03
     },
     {
@@ -384,7 +383,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "이대로 새해를 보내기는 아쉽지 않아?",
-      "UnitTalk_JPN": "これで終わるのは、ちょっと淋しくない？",
+      "UnitTalk_JPN": "このまま新年を過ごすのはもったいないよね？",
       "TalkTime": 0.03
     },
     {
@@ -407,7 +406,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "아니, 싫어. 움직이기 귀찮아.",
-      "UnitTalk_JPN": "ううん。嫌だ。動きたくない。",
+      "UnitTalk_JPN": "ううん、嫌だ。動きたくないもん。",
       "TalkTime": 0.03
     },
     {
@@ -419,7 +418,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그래서 실내에서 즐길 수 있는 놀이 도구를 가져왔지!",
-      "UnitTalk_JPN": "そだから、室内で楽しめる遊び道具を持ってきたよ！",
+      "UnitTalk_JPN": "だから、室内で楽しめる遊び道具を持ってきたよ！",
       "TalkTime": 0.03
     },
     {
@@ -444,7 +443,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "이건... 부●마불...?!",
-          "JumpAnchorStringId_JPN": "人生ゲームみたいだね。"
+          "JumpAnchorStringId_JPN": "これは…人●ゲーム…！？"
         }
       ]
     },
@@ -457,7 +456,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "부●마불…? 아아~ 서대륙에도 비슷한 게임이 있나 보네?",
-      "UnitTalk_JPN": "人生ゲーム…？あ～西大陸にも似たゲームがあるんだね。",
+      "UnitTalk_JPN": "人●ゲーム…？あ～、西大陸にも似たゲームがあるんだね？",
       "TalkTime": 0.03
     },
     {
@@ -469,7 +468,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "이건 동대륙에서 유명한 <color=#F7BE45>환생게임</color>이야. 마지막에 가장 돈이 많은 사람이 승리하지.",
-      "UnitTalk_JPN": "これは東の大陸で有名な<color=#F7BE45>転生ゲーム</color>で、最後に一番お金を持っている人が勝つんだよ。",
+      "UnitTalk_JPN": "これは東大陸で有名な<color=#F7BE45>転生ゲーム</color>だよ。最後に一番お金を持ってる人の勝ちなんだ。",
       "TalkTime": 0.03
     },
     {
@@ -481,7 +480,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "직업도 정할 수 있는데 신수의 무녀 같은 것도 될 수 있다? 재밌겠지?",
-      "UnitTalk_JPN": "職業も決められるし、神獣の巫女なんかにもなれるよ。面白そうでしょ？",
+      "UnitTalk_JPN": "職業も選べて、神獣の巫女なんかにもなれるんだよ。面白そうでしょ？",
       "TalkTime": 0.03
     },
     {
@@ -494,7 +493,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "어쩐지 다른 게임이 생각나는데…",
-          "JumpAnchorStringId_JPN": "なんだか色んなのが混ざってるような…"
+          "JumpAnchorStringId_JPN": "他のゲームが頭をよぎるな…"
         }
       ]
     },
@@ -507,7 +506,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "몇 판 하면 금방 배울 거야. 시작할게?",
-      "UnitTalk_JPN": "何回かやればすぐ覚えられるよ！じゃあ、始めようか。",
+      "UnitTalk_JPN": "何回かやればすぐ慣れるよ。じゃあ、始めよっか。",
       "TalkTime": 0.03
     },
     {
@@ -549,7 +548,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "그 후 세르팡, 토토와 환생게임을 하면서 규칙을 배웠다.",
-      "UnitTalk_JPN": "その後、セルパンたちとゲームをしながらルールを覚えた。",
+      "UnitTalk_JPN": "その後…セルパンたちとゲームをしながら、ルールを覚えた。",
       "TalkTime": 0.03
     },
     {
@@ -625,7 +624,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "그렇지? 재밌지!",
-      "UnitTalk_JPN": "でしょ？面白いよね！",
+      "UnitTalk_JPN": "でしょ？面白いよねぇ！",
       "TalkTime": 0.03
     },
     {
@@ -637,7 +636,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "신기한 기분이네. 우리가 단장한테 뭘 가르쳐준 건 이번이 처음이니까.",
-      "UnitTalk_JPN": "団長になにかを教えるなんて、不思議な気分。",
+      "UnitTalk_JPN": "団長に何かを教えてあげるなんて、不思議な気分だよ。",
       "TalkTime": 0.03
     },
     {
@@ -660,7 +659,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "게임에 상품이 걸리면 재밌으니까.",
-      "UnitTalk_JPN": "ゲームには商品があったほうがいいよね。",
+      "UnitTalk_JPN": "ゲームするなら、賞品があった方がいいよね。",
       "TalkTime": 0.03
     },
     {
@@ -672,7 +671,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "1등 상품으로 <color=#F7BE45>카페 스트레가</color>의 신년 한정 스페셜 디저트를 걸고 하자!",
-      "UnitTalk_JPN": "一位になった人には、<color=#F7BE45>カフェ・ストレガ</color>の新年限定スペシャルデザートをプレゼント！",
+      "UnitTalk_JPN": "一位になった人には、<color=#F7BE45>カフェ・ストレガ</color>の新年限定スペシャルスイーツをプレゼント！",
       "TalkTime": 0.03
     },
     {
@@ -683,7 +682,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "물론 단장이 사는 걸로.",
-      "UnitTalk_JPN": "もちろん、買うのは団長だよ。",
+      "UnitTalk_JPN": "もちろん、団長のおごりで。",
       "TalkTime": 0.03
     },
     {
@@ -696,7 +695,7 @@
       "UnitMotion": "SPECIAL",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "꾸루룩!",
-      "UnitTalk_JPN": "クルッ！",
+      "UnitTalk_JPN": "クルルッ！",
       "TalkTime": 0.03
     },
     {
@@ -709,7 +708,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "왠지 그럴 것 같았어.",
-          "JumpAnchorStringId_JPN": "そうだと思ってた。"
+          "JumpAnchorStringId_JPN": "そうだと思った。"
         }
       ]
     },
@@ -735,7 +734,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "…으음, 4칸 전진. 백수로 전직…",
-      "UnitTalk_JPN": "…うーん、4マス前進。無職に転職…",
+      "UnitTalk_JPN": "…うーん、4マス進む。無職に転職…",
       "TalkTime": 0.03
     },
     {
@@ -771,7 +770,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "토토는 3칸 전진. 마스코트! 이제 단장 차례야.",
-      "UnitTalk_JPN": "トトは3マス前進。次は団長の番だよ。",
+      "UnitTalk_JPN": "トトは3マス進む。次は団長の番だよ。",
       "TalkTime": 0.03
     },
     {
@@ -784,7 +783,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "(주사위를 던진다)",
-          "JumpAnchorStringId_JPN": "(サイコロを振った)"
+          "JumpAnchorStringId_JPN": "（サイコロを振る）"
         }
       ]
     },
@@ -809,7 +808,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "와~ 11칸. 관리자로 취직. 게다가 제일 멀리 갔어~",
-      "UnitTalk_JPN": "わぁ～！11マス。管理者として就職。しかも一番遠くに進んだ～",
+      "UnitTalk_JPN": "おわぁ～！11マス。管理者に就職。しかも一番遠くまで進んだよ～。",
       "TalkTime": 0.03
     },
     {
@@ -821,7 +820,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "대단해, 단장. 이러다 1등하는 거 아니야?",
-      "UnitTalk_JPN": "すごいよ、団長。このまま一位になれるかも！",
+      "UnitTalk_JPN": "すごい、団長。このまま一位になれるかも！",
       "TalkTime": 0.03
     },
     {
@@ -834,7 +833,7 @@
       "UnitMotion": "SPECIAL",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "꾸룩. 꾸후루룩.",
-      "UnitTalk_JPN": "クルッ。クルルルッ！",
+      "UnitTalk_JPN": "クルッ。クルルルッ。",
       "TalkTime": 0.03
     },
     {
@@ -844,7 +843,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "목소리만 들어도 진심이 아니라는 게 느껴졌다.",
-      "UnitTalk_JPN": "声を聞いただけで、セルパンが本気で言っていないのが分かった。",
+      "UnitTalk_JPN": "声を聞いただけで、本心でないのが感じられた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -871,7 +870,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "그래, 그래. 마음껏… 응?",
-      "UnitTalk_JPN": "うんうん、好きなだけ…うん？",
+      "UnitTalk_JPN": "うんうん、好きなだけ…えぇ？",
       "TalkTime": 0.03
     },
     {
@@ -884,7 +883,7 @@
       "CameraOffset": "ONE_7",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "황금 카드? 한 번 더 추가행동?",
-      "UnitTalk_JPN": "黄金のカード？しかも、追加行動？",
+      "UnitTalk_JPN": "黄金カード？しかも、追加行動？",
       "TalkTime": 0.03
     },
     {
@@ -914,7 +913,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "계속 던지면 되지?",
-          "JumpAnchorStringId_JPN": "また振ってもいいんだろ？"
+          "JumpAnchorStringId_JPN": "また振ればいいんだろ？"
         }
       ]
     },
@@ -945,7 +944,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "초심자의 행운인지, 내 말은 두 사람의 말과 격차를 벌리기 시작했고.",
-      "UnitTalk_JPN": "ビギナーズラックなのか、私の馬と二人の馬は、大きな差がつき始めた。",
+      "UnitTalk_JPN": "ビギナーズラックなのか、私のコマは二人のコマと差を広げ…",
       "TalkTime": 0.03
     },
     {
@@ -1011,7 +1010,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "한 번만 더 던지면 끝나겠네.",
-          "JumpAnchorStringId_JPN": "もう一回サイコロを振れば終わりだね。"
+          "JumpAnchorStringId_JPN": "もう一回サイコロを振れば終わりだな。"
         }
       ]
     },
@@ -1047,7 +1046,7 @@
       "StartBgmFileName": "MUSIC_BATTLE_BOSS_02.mp3",
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "…제법이네, 단장. 이렇게까지 불리한 건 당주님 이후로 처음이야.",
-      "UnitTalk_JPN": "…さすがは団長。ここまで不利なのは堂主様以来だよ。",
+      "UnitTalk_JPN": "…さすが団長。こんなに差がついたのは堂主以来初めてだよ。",
       "TalkTime": 0.03
     },
     {
@@ -1059,7 +1058,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "하지만 있지. 그거 알아?",
-      "UnitTalk_JPN": "でもね、知ってる？",
+      "UnitTalk_JPN": "だけどね、知ってる？",
       "TalkTime": 0.03
     },
     {
@@ -1114,7 +1113,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": "진정한 환생게임은 지금부터 시작이야.",
-      "UnitTalk_JPN": "本当の転生ゲームはこれからなんだよ。",
+      "UnitTalk_JPN": "ほんとの転生ゲームはこれからなんだよ。",
       "TalkTime": 0.03
     },
     {
@@ -1127,7 +1126,7 @@
         "SI_SERPENT"
       ],
       "UnitTalk_KOR": "후우!",
-      "UnitTalk_JPN": "ふーっ…",
+      "UnitTalk_JPN": "ふぅ！",
       "TalkTime": 0.03
     },
     {
@@ -1143,7 +1142,7 @@
         "SI_SERPENT"
       ],
       "UnitTalk_KOR": "주사위 양면 6! 특별 규칙으로 추가행동 획득!",
-      "UnitTalk_JPN": "サイコロは二つとも6！特別ルールで追加行動獲得！",
+      "UnitTalk_JPN": "サイコロが二つとも6！特別ルールで追加行動ゲット！",
       "TalkTime": 0.03
     },
     {
@@ -1169,7 +1168,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "…응?",
-          "JumpAnchorStringId_JPN": "…ん？"
+          "JumpAnchorStringId_JPN": "…え？"
         }
       ]
     },
@@ -1187,7 +1186,7 @@
       ],
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "다음! 주사위 탑 쌓기 성공! 특별 규칙으로 추가행동 2번 획득!",
-      "UnitTalk_JPN": "次！二つのサイコロが重なった！特別ルールで追加行動2回獲得！",
+      "UnitTalk_JPN": "次！サイコロタワーに成功！特別ルールで追加行動2回ゲット！",
       "TalkTime": 0.03
     },
     {
@@ -1232,7 +1231,7 @@
       ],
       "EmotionEffect": "EMARK",
       "UnitTalk_KOR": "이어서 계속! 봉황의 무녀로 전직! 봉황의 가호를 받으면 추가행동 5번 획득!",
-      "UnitTalk_JPN": "次！鳳凰の巫女に転職！鳳凰の加護を受けると追加行動5回獲得！",
+      "UnitTalk_JPN": "続けるよ！鳳凰の巫女に転職！鳳凰の加護を受ければ追加行動5回ゲット！",
       "TalkTime": 0.03
     },
     {
@@ -1247,7 +1246,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": "토토! 승리의 주문을!",
-      "UnitTalk_JPN": "トト！勝利のおまじないを！",
+      "UnitTalk_JPN": "トト！勝利の呪文を！",
       "TalkTime": 0.03
     },
     {
@@ -1279,7 +1278,7 @@
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "좋았어! 추가행동 5번 획득, 성공! 계속해서 간다! ",
-      "UnitTalk_JPN": "よし！追加行動5回獲得！続行！ ",
+      "UnitTalk_JPN": "よぉし！追加行動5回ゲット！次！ ",
       "TalkTime": 0.03
     },
     {
@@ -1292,7 +1291,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "아니, 잠깐만!? 뭔데 마지막은!?",
-          "JumpAnchorStringId_JPN": "いや、待ってくれ！なんだこれ！？"
+          "JumpAnchorStringId_JPN": "いやいや！何だよこれ！？"
         }
       ]
     },
@@ -1344,7 +1343,7 @@
       "StartBgmFileName": "EMPTY.mp3",
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "후우…",
-      "UnitTalk_JPN": "ふう…",
+      "UnitTalk_JPN": "ふぅ…",
       "TalkTime": 0.03
     },
     {
@@ -1355,7 +1354,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "좋은 승부였어.",
-      "UnitTalk_JPN": "いい勝負だったよ。",
+      "UnitTalk_JPN": "いい勝負だったね。",
       "TalkTime": 0.03
     },
     {
@@ -1366,7 +1365,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_EASTERN_OWL_TOTO",
       "UnitTalk_KOR": "꾸루룩.",
-      "UnitTalk_JPN": "クルッ。",
+      "UnitTalk_JPN": "クルルッ。",
       "TalkTime": 0.03
     },
     {
@@ -1382,7 +1381,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "잠깐만! 이상하잖아?",
-          "JumpAnchorStringId_JPN": "お、おかしくないか？"
+          "JumpAnchorStringId_JPN": "お、おかしいぞ！"
         }
       ]
     },
@@ -1395,7 +1394,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "응? 뭐가 이상해?",
-      "UnitTalk_JPN": "うん？なにがおかしいの？",
+      "UnitTalk_JPN": "うん？何がおかしいの？",
       "TalkTime": 0.03
     },
     {
@@ -1408,7 +1407,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "추가행동만 연속으로 30번 했잖아!?",
-          "JumpAnchorStringId_JPN": "追加行動だけで30回連続してたぞ！？"
+          "JumpAnchorStringId_JPN": "30回も連続で追加行動してたぞ！？"
         }
       ]
     },
@@ -1422,7 +1421,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "그리고 뭔데!? 승리의 주문은!?",
-          "JumpAnchorStringId_JPN": "それに、なんだよ！？勝利のおまじない？"
+          "JumpAnchorStringId_JPN": "それに、勝利の呪文って何だよ！？"
         }
       ]
     },
@@ -1436,7 +1435,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "아~ 말 안 했던가?",
-      "UnitTalk_JPN": "あ～言ってなかったっけ？",
+      "UnitTalk_JPN": "あ～、言ってなかったっけ？",
       "TalkTime": 0.03
     },
     {
@@ -1447,7 +1446,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "나, 태어나서 지금까지 단 한 번도 환생게임에서 져본 적 없어.",
-      "UnitTalk_JPN": "ボクね、生まれてから今日まで、一回も転生ゲームで負けたことがないんだ。",
+      "UnitTalk_JPN": "ボクね、生まれてから一回も転生ゲームで負けたことないんだ。",
       "TalkTime": 0.03
     },
     {
@@ -1458,7 +1457,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitTalk_KOR": "그래서 풍월당 사람들은 이걸로 내기 안 해. 나랑 토토가 무조건 이기거든.",
-      "UnitTalk_JPN": "だからね、風月堂の人たちはこれで賭けはしないの。ボクとトトが絶対勝つから。",
+      "UnitTalk_JPN": "だから風月堂の人たちは、これで賭けたりしないんだよ。ボクとトトが絶対勝つから。",
       "TalkTime": 0.03
     },
     {
@@ -1486,7 +1485,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "속였구나…!",
-          "JumpAnchorStringId_JPN": "私を騙したな…！"
+          "JumpAnchorStringId_JPN": "騙したな…！"
         }
       ]
     },
@@ -1499,7 +1498,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "에이~ 속이다니. 말하지 않은 것뿐이지.",
-      "UnitTalk_JPN": "騙すとか、人聞き悪いな～言ってなかっただけだよ。",
+      "UnitTalk_JPN": "もぉ～、騙すなんて人聞きが悪いなぁ。言わなかっただけだよ。",
       "TalkTime": 0.03
     },
     {
@@ -1511,7 +1510,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "<color=#F7BE45>카페 스트레가</color>의 신년 한정 스페셜 디저트!",
-      "UnitTalk_JPN": "<color=#F7BE45>カフェ・ストレガ</color>の新年限定スペシャルデザート！",
+      "UnitTalk_JPN": "<color=#F7BE45>カフェ・ストレガ</color>の新年限定スペシャルスイーツ！",
       "TalkTime": 0.03
     },
     {
@@ -1525,7 +1524,7 @@
       "CameraOffsetTime": "FA",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "감사히 받아 갈게. 에헤헤~",
-      "UnitTalk_JPN": "ありがたくいただくよ、団長！えへへ～",
+      "UnitTalk_JPN": "ありがたくいただくよぉ！えへへ～。",
       "TalkTime": 0.03
     },
     {
@@ -1566,7 +1565,7 @@
       "WaitTime": 0.0,
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "이후, 스페셜 디저트를 나눠 먹으면서 이야기를 나누다 다 함께 잠들었다.",
-      "UnitTalk_JPN": "そのあと、みんなでスペシャルデザートを食べながらおしゃべりして、気づかないうちに眠りについた。",
+      "UnitTalk_JPN": "その後…みんなでスペシャルスイーツ食べながら話をし、みんなで眠りについた。",
       "TalkTime": 0.03,
       "DictionaryFinalCut": true
     },

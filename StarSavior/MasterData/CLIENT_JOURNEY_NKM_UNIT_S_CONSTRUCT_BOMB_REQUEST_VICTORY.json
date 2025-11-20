@@ -1,0 +1,64 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_BOMB_REQUEST_VICTORY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_INCOGNITA_FLOWER_REQUEST_VICTORY",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_CANDLE",
+      "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "귀여운 페트라에게 이 정도는 아무것도 아니지♡",
+      "UnitTalk_JPN": "可愛いペトラにとって、これぐらいどうってことないんだぁ♡",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "페트라의 귀여움으로 금방 해결할 수 있다고, 페트라가 그랬잖아.",
+      "UnitTalk_JPN": "ペトラの可愛さで、すぐに解決できるって言ったでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "페트라 말이 맞지, 단장?",
+      "UnitTalk_JPN": "やっぱりペトラの言う通りになったね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그러니까… 일 좀 미루지 말라는 잔소리는 그만해~! 결혼해 줄 테니까아~!!",
+      "UnitTalk_JPN": "だ、だから…仕事を先延ばしにするなってお説教はもうやめて～！ 結婚してあげるからぁ～！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_SAINTESS_DEMON_REQUEST_VICTORY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "NORMAL"
+    }
+  ]
+}

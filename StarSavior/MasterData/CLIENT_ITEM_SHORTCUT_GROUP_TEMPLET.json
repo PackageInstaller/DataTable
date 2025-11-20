@@ -3,5 +3,1792 @@
     "$comment": "name: ITEM_SHORTCUT_GROUP_TEMPLET",
     "_Version": 0,
     "Data": [
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_ACCRUE",
+          "ShortCutStringId" : "SI_ACCRUE_REWARD_TITLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_OPERATION",
+          "ShortCutStringId" : "SI_OPERATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 30000001,
+          "ShortCutStringId" : "SI_TIME_BOX_GOLD@@1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 30000002,
+          "ShortCutStringId" : "SI_TIME_BOX_GOLD@@2"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 30000003,
+          "ShortCutStringId" : "SI_TIME_BOX_GOLD@@4"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "5",
+          "ShortCutUseItemId" : 30000004,
+          "ShortCutStringId" : "SI_TIME_BOX_GOLD@@8"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "6",
+          "ShortCutUseItemId" : 30000005,
+          "ShortCutStringId" : "SI_TIME_BOX_GOLD@@12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "7",
+          "ShortCutUseItemId" : 30000006,
+          "ShortCutStringId" : "SI_TIME_BOX_GOLD@@24"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "8",
+          "ShortCutUseItemId" : 30000019,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "9",
+          "ShortCutUseItemId" : 30000020,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@2"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "10",
+          "ShortCutUseItemId" : 30000021,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@4"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "11",
+          "ShortCutUseItemId" : 30000022,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@8"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "12",
+          "ShortCutUseItemId" : 30000023,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 101,
+          "OrderList" : "13",
+          "ShortCutUseItemId" : 30000024,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@24"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 301,
+          "OrderList" : "0",
+          "ShortCutUseItemId" : 32100616,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100616"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 304,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_OBSERVE",
+          "ShortCutStringId" : "SI_OBSERVE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 107,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_GUNTLET_LOBBY",
+          "ShortCutStringId" : "SI_GAUNTLET"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 111,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 101,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 112,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 102,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_RAID_REQUEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 113,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 105,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_COSMO_GATE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 200,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10101,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 200,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
+          "ShortCutStringId" : "SI_ACS_JOURNEY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 200,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 201,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10102,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 201,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
+          "ShortCutStringId" : "SI_ACS_JOURNEY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 201,
+          "OrderList" : "3",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_ACCRUE",
+          "ShortCutStringId" : "SI_ACCRUE_REWARD_TITLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_OPERATION",
+          "ShortCutStringId" : "SI_OPERATION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 30000007,
+          "ShortCutStringId" : "SI_TIME_BOX_OPERATION_REPORT@@1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 30000008,
+          "ShortCutStringId" : "SI_TIME_BOX_OPERATION_REPORT@@2"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 30000009,
+          "ShortCutStringId" : "SI_TIME_BOX_OPERATION_REPORT@@4"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "5",
+          "ShortCutUseItemId" : 30000010,
+          "ShortCutStringId" : "SI_TIME_BOX_OPERATION_REPORT@@8"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "6",
+          "ShortCutUseItemId" : 30000011,
+          "ShortCutStringId" : "SI_TIME_BOX_OPERATION_REPORT@@12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "7",
+          "ShortCutUseItemId" : 30000012,
+          "ShortCutStringId" : "SI_TIME_BOX_OPERATION_REPORT@@24"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "8",
+          "ShortCutUseItemId" : 30000019,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "9",
+          "ShortCutUseItemId" : 30000020,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@2"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "10",
+          "ShortCutUseItemId" : 30000021,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@4"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "11",
+          "ShortCutUseItemId" : 30000022,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@8"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "12",
+          "ShortCutUseItemId" : 30000023,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 202,
+          "OrderList" : "13",
+          "ShortCutUseItemId" : 30000024,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@24"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_ACCRUE",
+          "ShortCutStringId" : "SI_ACCRUE_REWARD_TITLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 103,
+          "ShortCutStringId" : "SI_INTERSTELLAR_CLOISTER"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 30000013,
+          "ShortCutStringId" : "SI_TIME_BOX_ESSENCE_SHINE@@1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 30000014,
+          "ShortCutStringId" : "SI_TIME_BOX_ESSENCE_SHINE@@2"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 30000015,
+          "ShortCutStringId" : "SI_TIME_BOX_ESSENCE_SHINE@@4"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "5",
+          "ShortCutUseItemId" : 30000016,
+          "ShortCutStringId" : "SI_TIME_BOX_ESSENCE_SHINE@@8"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "6",
+          "ShortCutUseItemId" : 30000017,
+          "ShortCutStringId" : "SI_TIME_BOX_ESSENCE_SHINE@@12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "7",
+          "ShortCutUseItemId" : 30000018,
+          "ShortCutStringId" : "SI_TIME_BOX_ESSENCE_SHINE@@24"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "8",
+          "ShortCutUseItemId" : 30000019,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "9",
+          "ShortCutUseItemId" : 30000020,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@2"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "10",
+          "ShortCutUseItemId" : 30000021,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@4"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "11",
+          "ShortCutUseItemId" : 30000022,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@8"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "12",
+          "ShortCutUseItemId" : 30000023,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@12"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 203,
+          "OrderList" : "13",
+          "ShortCutUseItemId" : 30000024,
+          "ShortCutStringId" : "SI_TIME_BOX_ALL@@24"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 204,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 104,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_CUBE_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 204,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 5,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 204,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100079,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100079"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 205,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 104,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_CUBE_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 205,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 5,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 205,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100079,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100079"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 206,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 104,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_CUBE_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 206,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 5,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 206,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100079,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100079"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 207,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_MISSION",
+          "ShortCutValue" : 102,
+          "ShortCutStringId" : "SI_MISSION_KOR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 207,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 5,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 209,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 210,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 211,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 501,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 501,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 502,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 502,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100501,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100501"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 502,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 503,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 503,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100501,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100501"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 503,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 504,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 504,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100501,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100501"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 504,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 505,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 505,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100501,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100501"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 505,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 506,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 506,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100501,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100501"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 506,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 507,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 507,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100501,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100501"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 507,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 508,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 508,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100503,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100503"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 508,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 509,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 509,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100503,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100503"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 509,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 510,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 510,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100503,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100503"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 510,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 511,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 511,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100503,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100503"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 511,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 512,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 512,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100503,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100503"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 512,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100505,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100505"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 513,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 514,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 515,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 3,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 521,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_MISSION",
+          "ShortCutValue" : 106,
+          "ShortCutStringId" : "SI_MISSION_KOR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 522,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_MISSION",
+          "ShortCutValue" : 106,
+          "ShortCutStringId" : "SI_MISSION_KOR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 523,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_MISSION",
+          "ShortCutValue" : 106,
+          "ShortCutStringId" : "SI_MISSION_KOR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 524,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_MISSION",
+          "ShortCutValue" : 106,
+          "ShortCutStringId" : "SI_MISSION_KOR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 525,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_MISSION",
+          "ShortCutValue" : 106,
+          "ShortCutStringId" : "SI_MISSION_KOR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 531,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10201,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_RAID_REQUEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 531,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100067,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100067"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 532,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10202,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_RAID_REQUEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 532,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100067,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100067"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 533,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10203,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_RAID_REQUEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 533,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100067,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100067"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 534,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10201,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_RAID_REQUEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 534,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9201,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 534,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100068,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100068"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 535,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10202,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_RAID_REQUEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 535,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9202,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 535,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100068,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100068"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 536,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10201,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_RAID_REQUEST"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 536,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9203,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 536,
+          "OrderList" : "2",
+          "ShortCutUseItemId" : 32100068,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100068"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 191,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 101,
+          "ShortCutStringId" : "SI_CAMPAIGN"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 191,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 192,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 193,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 194,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 610,
+          "OrderList" : "0",
+          "ShortCutUseItemId" : 32100601,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100601"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 611,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 611,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100603,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100603"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 612,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 612,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100605,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100605"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 613,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 613,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100607,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100607"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 614,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 614,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100609,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100609"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 620,
+          "OrderList" : "0",
+          "ShortCutUseItemId" : 32100601,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100601"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 621,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 621,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100603,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100603"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 622,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 622,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100605,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100605"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 623,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 623,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100607,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100607"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 624,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 624,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100609,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100609"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 630,
+          "OrderList" : "0",
+          "ShortCutUseItemId" : 32100601,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100601"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 631,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 631,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100603,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100603"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 632,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 632,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100605,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100605"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 633,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 633,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100607,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100607"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 634,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 634,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100609,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100609"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 640,
+          "OrderList" : "0",
+          "ShortCutUseItemId" : 32100601,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100601"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 641,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 641,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100603,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100603"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 642,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 642,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100605,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100605"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 643,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 643,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100607,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100607"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 644,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 644,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100609,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100609"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 650,
+          "OrderList" : "0",
+          "ShortCutUseItemId" : 32100601,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100601"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 651,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 651,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100603,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100603"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 652,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 652,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100605,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100605"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 653,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 653,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100607,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100607"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 654,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 2,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 654,
+          "OrderList" : "1",
+          "ShortCutUseItemId" : 32100609,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100609"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 901,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 901,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
+          "ShortCutStringId" : "SI_ACS_JOURNEY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 901,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 902,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 902,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9101,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 902,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 902,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100063,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100063"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 902,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 903,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 903,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9102,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 903,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 903,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100063,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100063"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 903,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 904,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 904,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9103,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 904,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 904,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100063,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100063"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 904,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 905,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 905,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9104,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 905,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 905,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100063,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100063"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 905,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 906,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 906,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9105,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 906,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 906,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100063,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100063"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 906,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 907,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 907,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9106,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 907,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 907,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100063,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100063"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 907,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 951,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 951,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9151,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 951,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 951,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100064,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100064"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 951,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 952,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 952,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9152,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 952,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 952,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100064,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100064"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 952,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 953,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 953,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9153,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 953,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 953,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100064,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100064"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 953,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 954,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 954,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9154,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 954,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 954,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100064,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100064"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 954,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 955,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 955,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9155,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 955,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 955,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100064,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100064"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 955,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 956,
+          "OrderList" : "0",
+          "ShortCutType" : "SC_CAMPAIGN_TAB",
+          "ShortCutValue" : 10103,
+          "ShortCutStringId" : "SI_CAMPAIN_NUMBER@@SI_DAILY_BATTLE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 956,
+          "OrderList" : "1",
+          "ShortCutType" : "SC_CRAFT_CRAFTID",
+          "ShortCutValue" : 9156,
+          "ShortCutStringId" : "SI_FACILITY_FORGE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 956,
+          "OrderList" : "2",
+          "ShortCutType" : "SC_SHOP",
+          "ShortCutValue" : 6,
+          "ShortCutStringId" : "SI_SHOP_NORMAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 956,
+          "OrderList" : "3",
+          "ShortCutUseItemId" : 32100064,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100064"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemShortCutGroupId" : 956,
+          "OrderList" : "4",
+          "ShortCutUseItemId" : 32100080,
+          "ShortCutStringId" : "SI_NORMAL_ITEM_NAME_32100080"
+        }
     ]
 }

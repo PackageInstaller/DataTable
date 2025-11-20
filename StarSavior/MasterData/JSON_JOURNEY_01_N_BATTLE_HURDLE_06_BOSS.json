@@ -16,7 +16,23 @@
             "SpawnPosIndex": 2,
             "UnitStrId": "NKM_UNIT_MON_APOSTLE_GILLE_BOSS_NORMAL_01",
             "IsBoss": true,
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            // "ConditionalSpawnData": [
+            //   {
+            //     "LeaderUnitIdList": [
+            //       3001
+            //     ],
+            //     "UnitStrId": "NKM_UNIT_S_COUNTERSIDE_ROSARIA", //테스트용 추후 전용 몬스터로 변경 예정                
+            //     "SpecialSkillAvailable": true
+            //   },
+            //   {
+            //     "LeaderUnitIdList": [
+            //       3003
+            //     ],
+            //     "UnitStrId": "NKM_UNIT_S_COUNTERSIDE_HILDE", //테스트용 추후 전용 몬스터로 변경 예정
+            //     "SpecialSkillAvailable": true
+            //   }
+            // ]
           },
           {
             "SpawnPosIndex": 3,

@@ -1145,7 +1145,7 @@
       "Uid": 89,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_KOR": "종이에 쓰여진 글자를… 어째서인지 자연스럽게 읽을 수 있었다.",
+      "UnitTalk_KOR": "종이에 쓰인 글자를… 어째서인지 자연스럽게 읽을 수 있었다.",
       "UnitTalk_JPN": "紙に書かれた文字が…なぜかスッと目に入ってきた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
@@ -1247,6 +1247,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "CameraOffset": "TRIPLE_4",
+      "CameraOffsetTime": "FA",
       "UnitMotion": "ANGRY",
       "EmotionEffect": "UPSET",
       "UnitTalk_KOR": "닥치세요. 그 비석으로 머리통 깨버리기 전에.",
@@ -1508,7 +1509,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitTalk_KOR": "지금 <color=#F7BE45>[PLAYER_NAME]</color>님이라고 하셨나요?",
-      "UnitTalk_JPN": "今、確か…[PLAYER_NAME]<color=#F7BE45>[PLAYER_NAME]</color>様と仰いましたか？",
+      "UnitTalk_JPN": "今、確か…<color=#F7BE45>[PLAYER_NAME]</color>様と仰いましたか？",
       "TalkTime": 0.03,
       "TalkVoice": "MAIN_LAVISTAR_01_UNIT_S_MAID_SPEAR_036.wav"
     },
@@ -1744,7 +1745,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
-      "UnitMotion": "SURPRISE"
+      "UnitMotion": "ANGRY"
     },
     {
       "Uid": 202,

@@ -4,31 +4,42 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_B",
+        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_CLOISTER_INTERSTELLAR_02", //숭배자
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_INTERSTELLAR_01",  // 주시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
-          },
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_CLOISTER_INTERSTELLAR_01", // 망자의 처단자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_CLOISTER_INTERSTELLAR_02", //숭배자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_CLOISTER_INTERSTELLAR_01",  // 주시자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -36,24 +47,39 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WANDERER_PRICKLE_BLACK_CLOISTER_INTERSTELLAR_01",  // 배회자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_CLOISTER_INTERSTELLAR_02", //재앙의 숭배자
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_CLOISTER_INTERSTELLAR_01",  // 업화의 추적자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "IsBoss": true,
-            "ChangeAdjustType": "NUAT_MOON" //서브 속성 타입※※※※※※※※※※※※
+            "IsBoss": true, 
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_CLOISTER_INTERSTELLAR_02", //경멸자
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WANDERER_PRICKLE_BLACK_CLOISTER_INTERSTELLAR_01",  // 배회자
             "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_MOON" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_ATK" : -1000,
+              "NST_NV_RATE_HP": -1000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

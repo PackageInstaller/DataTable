@@ -8,7 +8,7 @@
           "ContentsTargetType" : "CT_FORTUNE",
           "UnlockType" : "ALWAYS_CLOSE",
           "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
+          "UnlockGuideString" : "SI_UNLOCK_NOTICE"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -27,30 +27,14 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CUBE_PALACE_STEP_4",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
+          "UnlockType" : "ALWAYS_OPEN",
+          "UnlockValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CUBE_PALACE_STEP_5",
           "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ContentsTargetType" : "CT_PASS",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ContentsTargetType" : "CT_CHAT",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
+          "UnlockValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -132,6 +116,12 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_ATTENDANCE",
+          "UnlockType" : "ALWAYS_OPEN",
+          "UnlockValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_BATTLE_AUTO",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 200
@@ -169,9 +159,8 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_SHOP_CASH",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
+          "UnlockType" : "JOURNEY_CLEAR",
+          "UnlockValue" : 99
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -181,6 +170,18 @@
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_FRIEND.png",
           "UnlockTitle" : "SI_FRIEND",
           "UnlockDesc" : "SI_FRIEND_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_PASS",
+          "UnlockType" : "JOURNEY_CLEAR",
+          "UnlockValue" : 99
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_CHAT",
+          "UnlockType" : "JOURNEY_CLEAR",
+          "UnlockValue" : 99
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -205,12 +206,6 @@
           "ContentsTargetType" : "CT_ACCRUE",
           "UnlockType" : "JOURNEY_CLEAR",
           "UnlockValue" : 99
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ContentsTargetType" : "CT_ATTENDANCE",
-          "UnlockType" : "ALWAYS_OPEN",
-          "UnlockValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -246,29 +241,36 @@
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_GO_NEXT_STAGE",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001002,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_2"
+          "UnlockValue" : 11001001,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@1"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_AUTO_GO_NEXT_STAGE",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001002,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_2"
+          "UnlockValue" : 11001001,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_ITEM_SHORTCUT",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11001001,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@1"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_LOBBY_BATTLE_BUTTON",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001008,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_8"
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_LOBBY_CENTRAL_BUTTON",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001008,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_8",
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CENTRAL.png",
           "UnlockTitle" : "SI_CENTRAL",
           "UnlockDesc" : "SI_CENTRAL_UNLOCK_DESC"
@@ -277,8 +279,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_DISPATCH",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001008,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_8",
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DISPATCH.png",
           "UnlockTitle" : "SI_FACILITY_DISPATCH",
           "UnlockDesc" : "SI_FACILITY_DISPATCH_UNLOCK_DESC"
@@ -287,8 +289,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CAMPAIGN",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001008,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_8",
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CAMPAIGN.png",
           "UnlockTitle" : "SI_CAMPAIGN",
           "UnlockDesc" : "SI_CAMPAIGN_UNLOCK_DESC"
@@ -297,39 +299,66 @@
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CAMPAIGN_DAILY",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001008,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_8"
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_EVENT",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_BATTLE_OVERLAP",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001008,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_8"
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_SHOP_CONTENT",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11001008,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_1_8",
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_SHOP_NORMAL.png",
           "UnlockTitle" : "SI_SHOP_NORMAL",
           "UnlockDesc" : "SI_SHOP_CONTENT_UNLCOK_DESC"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_DICTIONARY",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@1@@5",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DICTIONARY.png",
+          "UnlockTitle" : "SI_DICTIONARY",
+          "UnlockDesc" : "SI_DICTIONARY_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_DICTIONARY_ARCANA_EVENT_TAB",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11001005,
+          "UnlockGuideString" : "SI_OPEN_DICTIONARY_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_RANKING_BOARD",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11002015,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_RANKING_BOARD.png",
+          "UnlockTitle" : "SI_RANKING_BOARD",
+          "UnlockDesc" : "SI_RANKING_CONTENT_UNLCOK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_GUILD",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11002015,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_GUILD.png",
           "UnlockTitle" : "SI_ACS_GUILD",
           "UnlockDesc" : "SI_COMMUNITY_GUILD_UNLOCK_DESC"
@@ -339,27 +368,17 @@
           "ContentsTargetType" : "CT_CUBE_PALACE",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_2_15",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CUBE_PALACE.png",
           "UnlockTitle" : "SI_CUBE_PALACE",
           "UnlockDesc" : "SI_CUBE_PALACE_UNLOCK_DESC"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ContentsTargetType" : "CT_DICTIONARY",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT",
-          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_DICTIONARY.png",
-          "UnlockTitle" : "SI_DICTIONARY",
-          "UnlockDesc" : "SI_DICTIONARY_UNLOCK_DESC"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_PVP",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_2_15",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_GAUNTLET.png",
           "UnlockTitle" : "SI_GAUNTLET",
           "UnlockDesc" : "SI_PVP_UNLOCK_DESC"
@@ -369,48 +388,38 @@
           "ContentsTargetType" : "CT_PVP_ASYNC",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_2_15"
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_PVP_PRIVATE",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT"
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11002015,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_PVP_RANK",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11002015,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_2_15"
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@2@@15"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_SYNCHRO",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11003018,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_3_18",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@3@@18",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_SYNCHRO.png",
           "UnlockTitle" : "SI_FACILITY_SYNCHRO",
           "UnlockDesc" : "SI_SYNCHRO_UNLOCK_DESC"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
-          "ContentsTargetType" : "CT_TACTICS",
-          "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11003018,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_3_18",
-          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_TACTICS.png",
-          "UnlockTitle" : "SI_FACILITY_TACTICS",
-          "UnlockDesc" : "SI_CT_TACTICS_DESC"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_SPECIAL_RAID",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11004025,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_4_25",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@4@@25",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_SPECIAL_RAID.png",
           "UnlockTitle" : "SI_SPECIAL_RAID",
           "UnlockDesc" : "SI_SPECIAL_RAID_UNLOCK_DESC"
@@ -420,17 +429,27 @@
           "ContentsTargetType" : "CT_CRAFT",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
           "UnlockValue" : 11004025,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_4_25",
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@4@@25",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CRAFT.png",
           "UnlockTitle" : "SI_FACILITY_CRAFT",
           "UnlockDesc" : "SI_CRAFT_UNLOCK_DESC"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ContentsTargetType" : "CT_TACTICS",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11005028,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@5@@28",
+          "UnlockIcon" : "SYSTEM_UNLOCK_ICON_TACTICS.png",
+          "UnlockTitle" : "SI_FACILITY_TACTICS",
+          "UnlockDesc" : "SI_CT_TACTICS_UNLOCK_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_CLOISTER",
           "UnlockType" : "NORMAL_BATTLE_CLEAR",
-          "UnlockValue" : 11008040,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_OPERATION_CLEAR_8_40",
+          "UnlockValue" : 11006032,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@6@@32",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_CLOISTER.png",
           "UnlockTitle" : "SI_INTERSTELLAR_CLOISTER",
           "UnlockDesc" : "SI_INTERSTELLAR_CLOISTER_UNLOCK_DESC"
@@ -438,9 +457,9 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_RANKING_RAID",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
-          "UnlockGuideString" : "SI_UNLOCK_NOTICE_CBT",
+          "UnlockType" : "NORMAL_BATTLE_CLEAR",
+          "UnlockValue" : 11012060,
+          "UnlockGuideString" : "SI_OPERATION_UNLOCK@@12@@60",
           "UnlockIcon" : "SYSTEM_UNLOCK_ICON_COSMO_GATE.png",
           "UnlockTitle" : "SI_COSMO_GATE",
           "UnlockDesc" : "SI_RANKING_RAID_UNLOCK_DESC"
@@ -448,8 +467,8 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ContentsTargetType" : "CT_SYNCHRO_ENHANCE",
-          "UnlockType" : "ALWAYS_CLOSE",
-          "UnlockValue" : 1,
+          "UnlockType" : "SYNCHRO_LEVEL",
+          "UnlockValue" : 200,
           "UnlockTitle" : "SI_STAR_LINK_ENHANCE",
           "UnlockDesc" : "SI_STAR_LINK_ENHANCE_UNLOCK_DESC"
         }

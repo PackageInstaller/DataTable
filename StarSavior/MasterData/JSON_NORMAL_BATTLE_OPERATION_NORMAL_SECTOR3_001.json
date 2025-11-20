@@ -4,40 +4,17 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",// 숭배자
             "ChangeAdjustType": "NUAT_MOON",
             "AllSkillAvailable": true
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_OPERATION_00",//저주의 경멸자
             "ChangeAdjustType": "NUAT_MOON",
             "IsBoss": true,
             "SpecialSkillAvailable": true,
@@ -45,7 +22,7 @@
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",// 숭배자
             "ChangeAdjustType": "NUAT_MOON",
             "AllSkillAvailable": true
           }

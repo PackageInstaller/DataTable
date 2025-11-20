@@ -8,44 +8,21 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_00",//기록자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_00", //재앙의 숭배자
+            "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_STAR",
+            "IsBoss": true
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          }
-        ]
-      },
-      {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_00",
-            "IsBoss": true,
-            "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_00",//기록자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           }

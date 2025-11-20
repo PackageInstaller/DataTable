@@ -11,7 +11,7 @@
           {
             "EventFrame": 0,
             "listSoundName": [
-              "SFX_BATTLE_COMMON_CLOTH_65.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_FOCUS_INFO_READY.wav"
             ]
           }
         ]
@@ -22,13 +22,13 @@
           {
             "EventFrame": 0,
             "listSoundName": [
-              "SFX_BATTLE_COMMON_MOVEMENT_21.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_START.wav"
             ]
           },
           {
-            "EventFrame": 18,
+            "EventFrame": 38,
             "listSoundName": [
-              "SFX_BATTLE_COMMON_WHOOSH_SWORD_22.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_START_02.wav"
             ]
           }
         ]
@@ -54,45 +54,33 @@
             "AnimTime": true,
             "EventFrame": 37,
             "ReActType": "NRT_DAMAGE_A",
-            // "StopTimeAtk": 0.1,
-            // "StopTimeDef": 0.1,
-            // "CameraCrashGap": 0.1,
-            // "CameraCrashTime": 0.3,
-            // "EffectData": {
-            //   "EffectName": "",
-            //   "EffectHeight": "BVH_BODY"
-            // }
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
           }
         ], 
         "SoundEvents": [
           {
             "EventFrame": 6,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_ATK.wav"
             ]
           },
           {
-            "EventFrame": 35,
+            "EventFrame": 22,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_02.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_ATK_02.wav"
             ]
           },
           {
-            "EventFrame": 65,
+            "EventFrame": 58,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_03.wav"
-            ]
-          },
-          {
-            "EventFrame": 106,
-            "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_04.wav"
-            ]
-          },
-          {
-            "EventFrame": 138,
-            "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_ATK_05.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_ATK_03.wav"
             ]
           }
         ]
@@ -104,43 +92,45 @@
             "AnimTime": true,
             "EventFrame": 62,
             "ReActType": "NRT_DAMAGE_A",
-            // "CameraCrashGap": 0.1,
-            // "CameraCrashTime": 0.3,
-            // "EffectData": {
-            //   "EffectName": "",
-            //   "EffectHeight": "BVH_BODY"
-            // }
+            "StopTimeAtk": 0.2,
+            "StopTimeDef": 0.2,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
           }
         ], 
         "SoundEvents": [
           {
-            "EventFrame": 6,
+            "EventFrame": 2,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_SPECIAL_ATK.wav"
             ]
           },
           {
-            "EventFrame": 36,
+            "EventFrame": 28,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_02.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_SPECIAL_ATK_02.wav"
             ]
           },
           {
-            "EventFrame": 68,
+            "EventFrame": 40,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_03.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_SPECIAL_ATK_03.wav"
             ]
           },
           {
-            "EventFrame": 103,
+            "EventFrame": 62,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_04.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_SPECIAL_ATK_04.wav"
             ]
           },
           {
-            "EventFrame": 145,
+            "EventFrame": 102,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_SPECIAL_05.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_SPECIAL_ATK_05.wav"
             ]
           }
         ]
@@ -161,90 +151,66 @@
             "AnimTime": true,
             "EventFrame": 78,
             "ReActType": "NRT_DAMAGE_A",
-            // "CameraCrashGap": 0.1,
-            // "CameraCrashTime": 0.3,
-            // "EffectData": {
-            //   "EffectName": "",
-            //   "EffectHeight": "BVH_BODY"
-            // }
-            "ReAttackCount": 9,
-            "ReAttackGap": 0.2
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "VFX_HIT_UNIT_MON_WANDERER_ELITEPRICKLE_BLACK_HYPER.prefab",
+              "EffectHeight": "BVH_ZERO"              
+            },
+            "HitEffectOffsetPos": {
+            },
+            "HitEffectOffsetRotate": {
+            },
+            "ReAttackCount": 6,
+            "ReAttackGap": 0.3
           }
         ], 
         "SoundEvents": [
           {
             "EventFrame": 6,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_HYPER.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_HYPER_ATK.wav"
             ]
           },
           {
-            "EventFrame": 38,
+            "EventFrame": 21,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_HYPER_02.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_HYPER_ATK_02.wav"
             ]
           },
           {
-            "EventFrame": 55,
+            "EventFrame": 78,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_HYPER_03.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_HYPER_ATK_03.wav"
             ]
           },
           {
-            "EventFrame": 80,
+            "EventFrame": 148,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_HYPER_04.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_HYPER_ATK_04.wav"
             ]
           },
           {
-            "EventFrame": 123,
+            "EventFrame": 170,
             "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_HYPER_05.wav"
-            ]
-          },
-          {
-            "EventFrame": 155,
-            "listSoundName": [
-              "SFX_BT_UNIT_MON_VOIDMAID_SHIELD_HYPER_06.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_HYPER_ATK_05.wav"
             ]
           }
         ]
       },
       {
         "StateName": "USN_DYING",
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 8,
-                "VoiceName": "SFX_BT_UNIT_MON_VOID_MAID_SHIELD_BLACK_VOICE_07.wav"
-              }
-            ]
-          }
-        ], 
         "SoundEvents": [
           {
-            "EventFrame": 8,
+            "EventFrame": 0,
             "listSoundName": [
-              "SFX_BATTLE_COMMON_BODYFALL_56.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_DYING.wav"
             ]
           },
           {
-            "EventFrame": 9,
+            "EventFrame": 32,
             "listSoundName": [
-              "SFX_BATTLE_COMMON_WEAPON_DROP_06.wav"
-            ]
-          },
-          {
-            "EventFrame": 28,
-            "listSoundName": [
-              "SFX_BATTLE_COMMON_BODYFALL_57.wav"
-            ]
-          },
-          {
-            "EventFrame": 40,
-            "listSoundName": [
-              "SFX_BATTLE_COMMON_DIE.wav"
+              "SFX_BT_UNIT_MON_WANDERER_ELITEPRICKLE_DYING_02.wav"
             ]
           }
         ]

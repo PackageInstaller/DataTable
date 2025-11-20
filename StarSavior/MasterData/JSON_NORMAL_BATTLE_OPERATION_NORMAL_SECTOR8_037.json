@@ -5,47 +5,24 @@
     "Waves": [
       {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
-        "TeamBSpawnList": [ 
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WATCHER_SPLINTER_BLACK_ELITE_OPERATION_02",
-            "IsElite": true,
-            "SpecialSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_OPERATION_02",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_SUN"
-          }
-        ]
-      },
-      {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_OPERATION_02",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_02", //숭배자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SPLINTER_BLACK_ELITE_OPERATION_02",//심연의 주시자
             "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_VOIDKNIGHT_SWORD_BLACK_OPERATION_02",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_02", //숭배자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }

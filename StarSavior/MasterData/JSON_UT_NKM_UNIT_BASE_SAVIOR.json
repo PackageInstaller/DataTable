@@ -1406,9 +1406,34 @@
         }
       },
       {
+        "StateName": "USN_ASTAND_ATTACK2_READY",
+        "StateType": "NUST_ASTAND",
+        "AnimName": "BATTLE_ASTAND_ATTACK2_READY",
+        "AnimLoop": false,
+        "SelectTargetCandidate": true,
+        "StartUnitShow": {
+          "ShowUnitBossHudOn": true
+        }
+      },
+      {
         "StateName": "USN_ATTACK",
         "StateType": "NUST_ATTACK",
         "AnimName": "BATTLE_ATTACK",
+        "AnimLoop": false,
+        "NoRootMoveZ": false,
+        "SeeTarget": true,
+        "EndFadeOut": true,
+        "ShowGroundEffect": false,
+        "StartUnitShow": {
+          "ShowUnitHudOffEnemy": true,
+          "ShowUnitHudOnTarget": true,
+          "ShowOffSelfBuff": true
+        }
+      },
+      {
+        "StateName": "USN_ATTACK2",
+        "StateType": "NUST_ATTACK",
+        "AnimName": "BATTLE_ATTACK2",
         "AnimLoop": false,
         "NoRootMoveZ": false,
         "SeeTarget": true,

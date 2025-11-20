@@ -8,21 +8,21 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VOIDMAID_SHIELD_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_OBELISK_BLACK_OPERATION_00",// 숭배자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
           }
         ]
       },
@@ -31,23 +31,23 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "IsBoss": true,
+            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_MU_OPERATION_03", //업화의 추적자(파멸의 기운)
             "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false
+            "HyperSkillAvailable": false,
+            "IsBoss": true,
+            "ChangeAdjustType": "NUAT_MOON"
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_HOURGLASS_STARDUST_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
           }
         ]
       }

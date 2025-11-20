@@ -4,50 +4,27 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_EYE_SAWTOOTH_BLACK_ELITE_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "IsBoss": true,
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_00", //재앙의 숭배자
             "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false
+            "HyperSkillAvailable": false,
+            "ChangeAdjustType": "NUAT_MOON",
+            "IsBoss": true
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",
-            "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_00",//감독자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_MOON"
           }
         ]
       }

@@ -83,6 +83,12 @@
             ]
           },
           {
+            "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 25,
             "listSoundName": [
               "SFX_BT_UNIT_MON_ARCHON_SPEAR_HIT.wav"
@@ -100,17 +106,7 @@
               "SFX_BT_UNIT_MON_ARCHON_SPEAR_BODYFALL.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 23,
-                "VoiceName": "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE.wav"
-              }
-            ]
-          }
-       ]
+        ]
       },
       {
         "StateName": "USN_SPECIAL",
@@ -193,6 +189,12 @@
             ]
           },
           {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE_02.wav"
+            ]
+          },
+          {
             "EventFrame": 33,
             "listSoundName": [
               "SFX_BT_UNIT_MON_ARCHON_SPEAR_HIT_02.wav"
@@ -223,6 +225,12 @@
             ]
           },
           {
+            "EventFrame": 59,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE.wav"
+            ]
+          },
+          {
             "EventFrame": 68,
             "listSoundName": [
               "SFX_BT_UNIT_MON_ARCHON_SPEAR_HIT_03.wav"
@@ -240,21 +248,7 @@
               "SFX_BT_UNIT_MON_ARCHON_SPEAR_BODYFALL.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE_02.wav"
-              },
-              {
-                "EventFrame": 59,
-                "VoiceName": "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE.wav"
-              }
-            ]
-          }
-       ]
+        ]
       },
       {
         "StateName": "USN_DYING",
@@ -263,6 +257,12 @@
             "EventFrame": 0,
             "listSoundName": [
               "SFX_BT_UNIT_MON_ARCHON_SPEAR_FIRE.wav"
+            ]
+          },
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE_03.wav"
             ]
           },
           {
@@ -277,17 +277,7 @@
               "SFX_BATTLE_COMMON_DIE.wav"
             ]
           }
-        ],
-        "VoiceSeries": [
-          {
-            "DataList": [
-              {
-                "EventFrame": 0,
-                "VoiceName": "SFX_BT_UNIT_MON_ARCHON_SPEAR_VOICE_03.wav"
-              }
-            ]
-          }
-       ]
+        ]
       }
     ]
   }

@@ -4,48 +4,25 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
-        "TeamBSpawnList": [
-          {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          },
-          {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_00",
-            "AllSkillAvailable": true,
-            "ChangeAdjustType": "NUAT_STAR"
-          }
-        ]
-      },
-      {
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_00",//기록자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_OPERATION_00",
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_SWORD_BLACK_ELITE_OPERATION_00", //망자의 처단자
+            "ChangeAdjustType": "NUAT_STAR",
             "IsBoss": true,
             "SpecialSkillAvailable": true,
-            "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_STAR"
+            "HyperSkillAvailable": false
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_00",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_00",//기록자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR"
           }

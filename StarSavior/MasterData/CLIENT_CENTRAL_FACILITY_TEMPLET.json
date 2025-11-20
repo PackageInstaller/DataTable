@@ -33,11 +33,6 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
-            {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
             }
@@ -53,11 +48,6 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
-            {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
             }
@@ -72,11 +62,6 @@
           "BonusValue" : 1000,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
             {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
@@ -89,14 +74,9 @@
           "FacilityLevel" : 5,
           "LevelMax" : 10,
           "BonusType" : "ACCRUE_BONUS_REWARD_01",
-          "BonusValue" : 2000,
+          "BonusValue" : 1000,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
             {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
@@ -109,14 +89,9 @@
           "FacilityLevel" : 6,
           "LevelMax" : 10,
           "BonusType" : "ACCRUE_BONUS_REWARD_02",
-          "BonusValue" : 1500,
+          "BonusValue" : 1000,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
             {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
@@ -129,14 +104,9 @@
           "FacilityLevel" : 7,
           "LevelMax" : 10,
           "BonusType" : "ACCRUE_BONUS_REWARD_03",
-          "BonusValue" : 1500,
+          "BonusValue" : 1000,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
             {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
@@ -149,14 +119,9 @@
           "FacilityLevel" : 8,
           "LevelMax" : 10,
           "BonusType" : "ACCRUE_BONUS_REWARD_01",
-          "BonusValue" : 3000,
+          "BonusValue" : 1000,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
             {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
@@ -169,14 +134,9 @@
           "FacilityLevel" : 9,
           "LevelMax" : 10,
           "BonusType" : "ACCRUE_BONUS_REWARD_02",
-          "BonusValue" : 2000,
+          "BonusValue" : 1000,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
             {
               "FacilityReqItemId" : 525,
               "FacilityReqItemValue" : 10
@@ -189,17 +149,12 @@
           "FacilityLevel" : 10,
           "LevelMax" : 10,
           "BonusType" : "ACCRUE_BONUS_REWARD_03",
-          "BonusValue" : 2000,
+          "BonusValue" : 1000,
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
-            {
               "FacilityReqItemId" : 525,
-              "FacilityReqItemValue" : 20
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -211,27 +166,20 @@
           "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_STAR_LINK.png",
           "ContentsTargetType" : "CT_SYNCHRO",
           "FacilityLevel" : 1,
-          "LevelMax" : 4,
-          "BonusType" : "SYNCHRO_SLOT_PLUS",
-          "BonusValue" : 3
+          "LevelMax" : 5
         },
         {
           "ContentsTag" : "DEV_OPEN",
           "FacilityType" : "FACILITY_SYNCHRO",
           "FacilityLevel" : 2,
-          "LevelMax" : 4,
+          "LevelMax" : 5,
           "BonusType" : "SYNCHRO_SLOT_PLUS",
           "BonusValue" : 3,
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
-            {
               "FacilityReqItemId" : 522,
-              "FacilityReqItemValue" : 30
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -239,19 +187,14 @@
           "ContentsTag" : "DEV_OPEN",
           "FacilityType" : "FACILITY_SYNCHRO",
           "FacilityLevel" : 3,
-          "LevelMax" : 4,
+          "LevelMax" : 5,
           "BonusType" : "SYNCHRO_SLOT_PLUS",
           "BonusValue" : 3,
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 100000
-            },
-
-            {
               "FacilityReqItemId" : 522,
-              "FacilityReqItemValue" : 30
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -259,19 +202,29 @@
           "ContentsTag" : "DEV_OPEN",
           "FacilityType" : "FACILITY_SYNCHRO",
           "FacilityLevel" : 4,
-          "LevelMax" : 4,
+          "LevelMax" : 5,
           "BonusType" : "SYNCHRO_SLOT_PLUS",
           "BonusValue" : 3,
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
+              "FacilityReqItemId" : 522,
+              "FacilityReqItemValue" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "DEV_OPEN",
+          "FacilityType" : "FACILITY_SYNCHRO",
+          "FacilityLevel" : 5,
+          "LevelMax" : 5,
+          "BonusType" : "SYNCHRO_SLOT_PLUS",
+          "BonusValue" : 3,
+          "FacilityReqItem" : 
+          [
             {
               "FacilityReqItemId" : 522,
-              "FacilityReqItemValue" : 30
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -295,13 +248,8 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 50000
-            },
-
-            {
               "FacilityReqItemId" : 524,
-              "FacilityReqItemValue" : 20
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -315,13 +263,8 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 100000
-            },
-
-            {
               "FacilityReqItemId" : 524,
-              "FacilityReqItemValue" : 20
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -335,13 +278,8 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
               "FacilityReqItemId" : 524,
-              "FacilityReqItemValue" : 20
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -355,13 +293,8 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
               "FacilityReqItemId" : 524,
-              "FacilityReqItemValue" : 20
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -373,22 +306,17 @@
           "FacilityIcon" : "UI_SAVIOR_CENTRAL_ICON_TACTICAL_ANALYSIS.png",
           "ContentsTargetType" : "CT_TACTICS",
           "FacilityLevel" : 1,
-          "LevelMax" : 9
+          "LevelMax" : 5
         },
         {
           "ContentsTag" : "DEV_OPEN",
           "FacilityType" : "FACILITY_TACTICS",
           "FacilityLevel" : 2,
-          "LevelMax" : 9,
-          "BonusType" : "TACTICS_COMMON_ATTACK",
-          "BonusValue" : 30,
+          "LevelMax" : 5,
+          "BonusType" : "TACTICS_COMMON_RATE_TRINITY",
+          "BonusValue" : 100,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
             {
               "FacilityReqItemId" : 521,
               "FacilityReqItemValue" : 10
@@ -399,16 +327,11 @@
           "ContentsTag" : "DEV_OPEN",
           "FacilityType" : "FACILITY_TACTICS",
           "FacilityLevel" : 3,
-          "LevelMax" : 9,
-          "BonusType" : "TACTICS_COMMON_HP",
-          "BonusValue" : 200,
+          "LevelMax" : 5,
+          "BonusType" : "TACTICS_COMMON_RATE_TRINITY",
+          "BonusValue" : 100,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
             {
               "FacilityReqItemId" : 521,
               "FacilityReqItemValue" : 10
@@ -419,16 +342,11 @@
           "ContentsTag" : "DEV_OPEN",
           "FacilityType" : "FACILITY_TACTICS",
           "FacilityLevel" : 4,
-          "LevelMax" : 9,
-          "BonusType" : "TACTICS_COMMON_DEFENSE",
-          "BonusValue" : 15,
+          "LevelMax" : 5,
+          "BonusType" : "TACTICS_COMMON_RATE_TRINITY",
+          "BonusValue" : 100,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
             {
               "FacilityReqItemId" : 521,
               "FacilityReqItemValue" : 10
@@ -439,99 +357,14 @@
           "ContentsTag" : "DEV_OPEN",
           "FacilityType" : "FACILITY_TACTICS",
           "FacilityLevel" : 5,
-          "LevelMax" : 9,
-          "BonusType" : "TACTICS_COMMON_RATE_CRITICAL",
-          "BonusValue" : 1000,
-          "FacilityReqItem" : 
-          [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
-              "FacilityReqItemId" : 521,
-              "FacilityReqItemValue" : 10
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "FacilityType" : "FACILITY_TACTICS",
-          "FacilityLevel" : 6,
-          "LevelMax" : 9,
-          "BonusType" : "TACTICS_COMMON_RATE_CRITICAL_DAMAGE",
-          "BonusValue" : 1000,
-          "FacilityReqItem" : 
-          [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
-              "FacilityReqItemId" : 521,
-              "FacilityReqItemValue" : 10
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "FacilityType" : "FACILITY_TACTICS",
-          "FacilityLevel" : 7,
-          "LevelMax" : 9,
-          "BonusType" : "TACTICS_COMMON_RATE_EFFECT_HIT",
-          "BonusValue" : 1000,
-          "FacilityReqItem" : 
-          [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
-              "FacilityReqItemId" : 521,
-              "FacilityReqItemValue" : 10
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "FacilityType" : "FACILITY_TACTICS",
-          "FacilityLevel" : 8,
-          "LevelMax" : 9,
-          "BonusType" : "TACTICS_COMMON_RATE_EFFECT_EVADE",
-          "BonusValue" : 1000,
-          "FacilityReqItem" : 
-          [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
-              "FacilityReqItemId" : 521,
-              "FacilityReqItemValue" : 20
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "FacilityType" : "FACILITY_TACTICS",
-          "FacilityLevel" : 9,
-          "LevelMax" : 9,
+          "LevelMax" : 5,
           "BonusType" : "TACTICS_COMMON_RATE_TRINITY",
-          "BonusValue" : 1000,
+          "BonusValue" : 200,
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
               "FacilityReqItemId" : 521,
-              "FacilityReqItemValue" : 20
+              "FacilityReqItemValue" : 10
             }
           ]
         },
@@ -557,11 +390,6 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
               "FacilityReqItemId" : 523,
               "FacilityReqItemValue" : 10
             }
@@ -576,11 +404,6 @@
           "BonusValue" : 1,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
             {
               "FacilityReqItemId" : 523,
               "FacilityReqItemValue" : 10
@@ -597,11 +420,6 @@
           "FacilityReqItem" : 
           [
             {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
-            {
               "FacilityReqItemId" : 523,
               "FacilityReqItemValue" : 10
             }
@@ -616,11 +434,6 @@
           "BonusValue" : 5,
           "FacilityReqItem" : 
           [
-            {
-              "FacilityReqItemId" : 101,
-              "FacilityReqItemValue" : 200000
-            },
-
             {
               "FacilityReqItemId" : 523,
               "FacilityReqItemValue" : 10

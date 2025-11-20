@@ -10,7 +10,7 @@
           "ReqDispatchLevel" : 1,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_101",
-          "RecommendUnitRoleType" : ["NURT_STRIKER", "NURT_SUPPORTER"],
+          "RecommendUnitRoleType" : ["NURT_SUPPORTER", "NURT_DEFENDER"],
           "RewardItem" : 
           [
             {
@@ -26,13 +26,13 @@
           "BonusRewardItem" : 
           [
             {
-              "BonusRewardItemId" : 30000001,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 10000
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         },
@@ -43,7 +43,7 @@
           "ReqDispatchLevel" : 1,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_102",
-          "RecommendUnitRoleType" : ["NURT_RANGER", "NURT_ASSASSIN"],
+          "RecommendUnitRoleType" : ["NURT_RANGER", "NURT_STRIKER"],
           "RewardItem" : 
           [
             {
@@ -59,13 +59,13 @@
           "BonusRewardItem" : 
           [
             {
-              "BonusRewardItemId" : 30000007,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 202,
+              "BonusRewardItemCount" : 30000
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         },
@@ -76,12 +76,12 @@
           "ReqDispatchLevel" : 2,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_103",
-          "RecommendUnitRoleType" : ["NURT_DEFENDER", "NURT_CASTER"],
+          "RecommendUnitRoleType" : ["NURT_CASTER", "NURT_ASSASSIN"],
           "RewardItem" : 
           [
             {
               "RewardItemId" : 200,
-              "RewardItemCount" : 20
+              "RewardItemCount" : 8
             },
 
             {
@@ -93,12 +93,12 @@
           [
             {
               "BonusRewardItemId" : 200,
-              "BonusRewardItemCount" : 10
+              "BonusRewardItemCount" : 2
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         },
@@ -109,12 +109,12 @@
           "ReqDispatchLevel" : 2,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_104",
-          "RecommendUnitRoleType" : ["NURT_ASSASSIN", "NURT_RANGER"],
+          "RecommendUnitRoleType" : ["NURT_STRIKER", "NURT_RANGER"],
           "RewardItem" : 
           [
             {
               "RewardItemId" : 201,
-              "RewardItemCount" : 10000
+              "RewardItemCount" : 4000
             },
 
             {
@@ -126,12 +126,12 @@
           [
             {
               "BonusRewardItemId" : 201,
-              "BonusRewardItemCount" : 5000
+              "BonusRewardItemCount" : 1000
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         },
@@ -142,12 +142,12 @@
           "ReqDispatchLevel" : 2,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_105",
-          "RecommendUnitRoleType" : ["NURT_SUPPORTER", "NURT_DEFENDER"],
+          "RecommendUnitRoleType" : ["NURT_DEFENDER", "NURT_CASTER"],
           "RewardItem" : 
           [
             {
               "RewardItemId" : 901,
-              "RewardItemCount" : 60
+              "RewardItemCount" : 8
             },
 
             {
@@ -159,78 +159,12 @@
           [
             {
               "BonusRewardItemId" : 901,
-              "BonusRewardItemCount" : 30
+              "BonusRewardItemCount" : 2
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "DispatchId" : 106,
-          "DispatchName" : "SI_DISPATCH_106",
-          "ReqDispatchLevel" : 4,
-          "DispatchTime" : 1200,
-          "DispatchDesc" : "SI_DISPATCH_DESC_106",
-          "RecommendUnitRoleType" : ["NURT_CASTER", "NURT_STRIKER"],
-          "RewardItem" : 
-          [
-            {
-              "RewardItemId" : 30000001,
-              "RewardItemCount" : 2
-            },
-
-            {
-              "RewardItemId" : 191,
-              "RewardItemCount" : 1
-            }
-          ],
-          "BonusRewardItem" : 
-          [
-            {
-              "BonusRewardItemId" : 30000001,
-              "BonusRewardItemCount" : 1
-            },
-
-            {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "DispatchId" : 107,
-          "DispatchName" : "SI_DISPATCH_107",
-          "ReqDispatchLevel" : 4,
-          "DispatchTime" : 1200,
-          "DispatchDesc" : "SI_DISPATCH_DESC_107",
-          "RecommendUnitRoleType" : ["NURT_STRIKER", "NURT_RANGER"],
-          "RewardItem" : 
-          [
-            {
-              "RewardItemId" : 30000007,
-              "RewardItemCount" : 2
-            },
-
-            {
-              "RewardItemId" : 191,
-              "RewardItemCount" : 1
-            }
-          ],
-          "BonusRewardItem" : 
-          [
-            {
-              "BonusRewardItemId" : 30000007,
-              "BonusRewardItemCount" : 1
-            },
-
-            {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         },
@@ -238,15 +172,15 @@
           "ContentsTag" : "MAIN_OPEN",
           "DispatchId" : 108,
           "DispatchName" : "SI_DISPATCH_108",
-          "ReqDispatchLevel" : 5,
+          "ReqDispatchLevel" : 4,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_108",
-          "RecommendUnitRoleType" : ["NURT_DEFENDER", "NURT_ASSASSIN"],
+          "RecommendUnitRoleType" : ["NURT_ASSASSIN", "NURT_SUPPORTER"],
           "RewardItem" : 
           [
             {
               "RewardItemId" : 30000013,
-              "RewardItemCount" : 2
+              "RewardItemCount" : 1
             },
 
             {
@@ -257,13 +191,13 @@
           "BonusRewardItem" : 
           [
             {
-              "BonusRewardItemId" : 30000013,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 203,
+              "BonusRewardItemCount" : 20
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         },
@@ -271,15 +205,15 @@
           "ContentsTag" : "MAIN_OPEN",
           "DispatchId" : 109,
           "DispatchName" : "SI_DISPATCH_109",
-          "ReqDispatchLevel" : 5,
+          "ReqDispatchLevel" : 4,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_109",
-          "RecommendUnitRoleType" : ["NURT_SUPPORTER", "NURT_CASTER"],
+          "RecommendUnitRoleType" : ["NURT_STRIKER", "NURT_DEFENDER"],
           "RewardItem" : 
           [
             {
-              "RewardItemId" : 209,
-              "RewardItemCount" : 3
+              "RewardItemId" : 210,
+              "RewardItemCount" : 1
             },
 
             {
@@ -291,12 +225,12 @@
           [
             {
               "BonusRewardItemId" : 209,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemCount" : 5
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         },
@@ -307,11 +241,11 @@
           "ReqDispatchLevel" : 5,
           "DispatchTime" : 1200,
           "DispatchDesc" : "SI_DISPATCH_DESC_110",
-          "RecommendUnitRoleType" : ["NURT_ASSASSIN", "NURT_STRIKER"],
+          "RecommendUnitRoleType" : ["NURT_CASTER", "NURT_RANGER"],
           "RewardItem" : 
           [
             {
-              "RewardItemId" : 33000012,
+              "RewardItemId" : 33000011,
               "RewardItemCount" : 1
             },
 
@@ -323,13 +257,13 @@
           "BonusRewardItem" : 
           [
             {
-              "BonusRewardItemId" : 33000012,
+              "BonusRewardItemId" : 33000011,
               "BonusRewardItemCount" : 1
             },
 
             {
-              "BonusRewardItemId" : 191,
-              "BonusRewardItemCount" : 1
+              "BonusRewardItemId" : 101,
+              "BonusRewardItemCount" : 5000
             }
           ]
         }

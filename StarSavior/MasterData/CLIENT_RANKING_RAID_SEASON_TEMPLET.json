@@ -4,26 +4,42 @@
     "_Version": 0,
     "Data": [
         {
-          "ContentsTag" : "DEV_OPEN",
-          "RankingRaidSeasonId" : 9999,
-          "PlayableIntervalId" : "DATE_RANKING_RAID_TEST_01",
-          "IntervalId" : "DATE_RANKING_RAID_REWARD_TEST_01",
+          "ContentsTag" : "MAIN_OPEN",
+          "RankingRaidSeasonId" : 9998,
+          "PlayableIntervalId" : "DATE_RANKING_RAID_PRESEASON",
+          "IntervalId" : "DATE_RANKING_RAID_REWARD_PRESEASON_01",
           "ReqCountItemId" : 408,
           "ReqCountItemValue" : 1,
-          "PointRewardGroupId" : 9999,
-          "RankingRewardGroupId" : 9999,
+          "PointRewardGroupId" : 9998,
+          "RankingRewardGroupId" : 9998,
           "RankingRaidGroup" : 
           [
             {
-              "RaidGroupId" : 10501
-            },
-
-            {
-              "RaidGroupId" : 10502
-            },
-
-            {
               "RaidGroupId" : 10503
+            },
+
+            {
+              "RaidGroupId" : 10504
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "RankingRaidSeasonId" : 1001,
+          "PlayableIntervalId" : "DATE_RANKING_RAID_SEASON_01",
+          "IntervalId" : "DATE_RANKING_RAID_REWARD_SEASON_01",
+          "ReqCountItemId" : 408,
+          "ReqCountItemValue" : 1,
+          "PointRewardGroupId" : 9998,
+          "RankingRewardGroupId" : 1001,
+          "RankingRaidGroup" : 
+          [
+            {
+              "RaidGroupId" : 10505
+            },
+
+            {
+              "RaidGroupId" : 10506
             }
           ]
         }

@@ -1,0 +1,1185 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: MAIN_EP3_3S",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_PUBLIC.png",
+      "CameraOffset": "ONE_1"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 3,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "그러니까… 지난번에 실패한 건 정보 부족 때문이었다는 거군요?",
+      "UnitTalk_JPN": "つまり…前回失敗した原因は、情報不足だったから…ということですね？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_001.wav"
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "그래. 우리 계획엔 아무런 문제도 없었어.",
+      "UnitTalk_JPN": "そうよ。うちらの計画には何の問題もなかったの。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_001.wav"
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "문제가 있었다면… 그 녀석이 <color=#F7BE45>[차가운 도시 남자]</color> 타입이라는 걸 몰랐을 뿐이지.",
+      "UnitTalk_JPN": "計算外だったのは…あいつが<color=#F7BE45>「都会の悪い男」</color>タイプだったってこと。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_002.wav"
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "차가운 도시 남자!",
+      "UnitTalk_JPN": "都会の悪い男！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_002.wav"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "그래.",
+      "UnitTalk_JPN": "そうよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_003.wav"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "여기 모노리스 교단 성서 33장, <color=#F7BE45>[만나선 안 될 남자의 32가지 유형]</color>에 정확히 나와 있어.",
+      "UnitTalk_JPN": "モノリス教団、聖書33章…<color=#F7BE45>「付き合ってはいけない男のタイプ32種」</color>に書かれてるんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_004.wav"
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "27번 타입, <color=#F7BE45>[차가운 도시 남자]</color>.",
+      "UnitTalk_JPN": "27番目のタイプ、<color=#F7BE45>「都会の悪い男」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_005.wav"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오오…!",
+      "UnitTalk_JPN": "あっ…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_003.wav"
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>[수많은 여자들이 차가운 도시 남자의 매력에 끌리지만 그 끝은 좋지 못하다.]</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>「数多くの女性が都会の悪い男に惹かれるが、往々にして幸せな結末にはならない。」</color>",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_006.wav"
+    },
+    {
+      "Uid": 16,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "<color=#F7BE45>[이 타입의 남자는 여자에게 쉽게 마음을 주지 않는다.]</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>「このタイプの男性は、なかなか女性に心を許さないのである。」</color>",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_007.wav"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그, 그렇다면…",
+      "UnitTalk_JPN": "ということは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_004.wav"
+    },
+    {
+      "Uid": 118,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그분은 절 쾌락의 도구로만 사용했다는 건가요?!",
+      "UnitTalk_JPN": "あの方は、私を単なる快楽の道具として扱ったということですか！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_005.wav"
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "이 무슨… 지옥에서 올라온 악마조차 경악할 일인지…!",
+      "UnitTalk_JPN": "なんてこと…地獄の悪魔でさえ驚愕する所業…！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_006.wav"
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "뮤리엘 116번 성녀님! 저 납득했어요!",
+      "UnitTalk_JPN": "序列116番聖女ことミュリエル様！私、思い知りました！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_007.wav"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "결코 그런 분의 손에 대성물을 맡겨선 안 된다는 걸요!",
+      "UnitTalk_JPN": "あのような方に、大聖遺物を預けていてはいけません！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_008.wav"
+    },
+    {
+      "Uid": 119,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "NORMAL"
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "USN_UI_REST_START",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "하지만… 어떻게 해야 대성물을 가지고 올 수 있을까요?",
+      "UnitTalk_JPN": "しかし…どうすれば大聖遺物を手にすることができるのでしょうか？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_009.wav"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그 빙하처럼 얼어붙은 마음을 녹이는 건… 저로서는 무리예요.",
+      "UnitTalk_JPN": "あの方の凍り付いた心を溶かすのは…私には荷が重いです。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_010.wav"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후후, 그러니까 네가 아직 겨우 서열 117위인 거야.",
+      "UnitTalk_JPN": "ふふふ、そんなだから序列117番なのよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_008.wav"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "보라고! 방법은 이미 성서에 다 나와 있어.",
+      "UnitTalk_JPN": "見なさい！解決策はぜんぶ聖書に載ってるんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_009.wav"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitTalk_KOR": "네? 어디에…?",
+      "UnitTalk_JPN": "はい？どこに…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_011.wav"
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "<color=#F7BE45>[차가운 도시 남자에게 사랑 따윈 하찮은 감정일 뿐이다.]</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>「都会の悪い男にとって、愛などくだらない感情に過ぎない。」</color>",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_010.wav"
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "<color=#F7BE45>[그는 오직 일과 성공으로만 자신의 영혼을 채울 수 있다!]</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>「彼の魂を満たすことができるのは、仕事の成功だけである！」</color>",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_011.wav"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_ELF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그렇다면… 설마?!",
+      "UnitTalk_JPN": "ということは…まさか！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_ELF_012.wav"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "CameraOffset": "POS2_2X",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "후후후, 기대하라고.",
+      "UnitTalk_JPN": "ふふふ、信じなさい。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_012.wav"
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "모든 남자의 공략법을 깨달은 나, 모노리스 교단 116번 성녀!",
+      "UnitTalk_JPN": "すべての男を攻略する方法を思いついた、モノリス教団序列116番聖女の頭脳を！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_013.wav"
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_SAINTESS_DEMON",
+      "UnitTalk_KOR": "뮤리엘 님의 계획을!",
+      "UnitTalk_JPN": "このミュリエル様の、壮大なる計画を！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_SAINTESS_DEMON_014.wav"
+    },
+    {
+      "Uid": 129,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 88,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FOREST_ROAD.png",
+      "CutsceneClear": "CLEARALL",
+      "CameraOffset": "TWIN_1"
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "얼마나 더 가야 하지…?",
+          "JumpAnchorStringId_JPN": "あとどれくらいだ…？"
+        }
+      ]
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_7",
+      "UnitTalk_KOR": "거의 다 왔어. 이번 언덕만 넘으면 돼.",
+      "UnitTalk_JPN": "もう少しね。この丘を越えたら到着よ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_001.wav"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "바로 저기가 의뢰서에 적힌 <color=#F7BE45>[도적 떼]</color>가 나타났다는 곳이야.",
+      "UnitTalk_JPN": "ほら…あそこが<color=#F7BE45>「盗賊団」</color>が出たっていう場所。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_002.wav"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "우와, 도적 떼라니… 요즘도 그런 게 있단 말야?",
+      "UnitTalk_JPN": "うわぁ、盗賊なんて…今時そんなのがほんとにいるのー？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_ORACLE_001.wav"
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "NOA 근처는 치안이 좋다고 들었는데.",
+      "UnitTalk_JPN": "NOAの周りは治安がいいって聞いたんだけど。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_ORACLE_002.wav"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "어쩌면 그냥 장난일지도?",
+      "UnitTalk_JPN": "もしかしたらその依頼、イタズラなんじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_ORACLE_003.wav"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "ONE_7",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "이번 의뢰의 의뢰주는 <color=#F7BE45>[모노리스 교단]</color>.",
+      "UnitTalk_JPN": "今回の依頼主は<color=#F7BE45>「モノリス教団」</color>。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_SMILE_001.wav"
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "라비스타에서도 가장 큰 종교단체의 공식 의뢰임.",
+      "UnitTalk_JPN": "つまり、ラビスターで一番大きい宗教団体からの公式依頼。イタズラとは思えない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_SMILE_002.wav"
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_5",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "헤에~ 너 은근히 권위에 기대는 성격이구나?",
+      "UnitTalk_JPN": "へぇ～、意外と権威で判断するタイプなんだ？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_ORACLE_004.wav"
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "잘 들어, 스마일.",
+      "UnitTalk_JPN": "よく聞くのよ、スマイルちゃん。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_ORACLE_005.wav"
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "세상에서 제일 믿지 못할 녀석들이 있다면 첫 번째가 정부 기관, 두 번째가 종교 단체, 세 번째가 은행이라고.",
+      "UnitTalk_JPN": "世の中には信用しちゃいけないヤツらが３種類いるの。まずは政府機関でしょ、次に銀行、そして最後が宗教団体。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_ORACLE_006.wav"
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "설사 네 말이 맞다고 해도, 의뢰주가 가짜일 수도 있고.",
+      "UnitTalk_JPN": "確かにモノリス教会は有名かもしれないけど、依頼したのが本物かどうか分からないし。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_ORACLE_007.wav"
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "루나의 편견에 가득 찬 평가는 설득력이 전무.",
+      "UnitTalk_JPN": "ルナの偏見にまみれた評価は、説得力皆無。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_SMILE_003.wav"
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS9"
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "캔들 스퀘어에 의뢰를 하려면 신원 보증이 필수.",
+      "UnitTalk_JPN": "キャンドル・スクエアに依頼をするには、身元保証が必須。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_SMILE_004.wav"
+    },
+    {
+      "Uid": 125,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "사칭일 가능성은 거의 없음.",
+      "UnitTalk_JPN": "詐称の可能性はほとんどない。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_SMILE_005.wav"
+    },
+    {
+      "Uid": 120,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "너희들! 아무리 도적 토벌이라지만 너무 긴장이 풀린 거 아냐?",
+      "UnitTalk_JPN": "ちょっと。相手が盗賊だからって、油断しすぎじゃない？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_003.wav"
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "이러다가 기습이라도 당하면…!",
+      "UnitTalk_JPN": "こういう時に奇襲でもされたら…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_004.wav"
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SWORD_SLASH_BIG_12.wav",
+      "UnitTalk_KOR": "촤아악-",
+      "UnitTalk_JPN": "シュッ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "다들 조심해!",
+          "JumpAnchorStringId_JPN": "みんな、気をつけろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.5,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "MUSIC_CUTSCENE_20.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_59.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 1.0,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_HIT_17.wav"
+    },
+    {
+      "Uid": 113,
+      "WaitClick": false,
+      "WaitTime": 1.0
+    },
+    {
+      "Uid": 109,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS6"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "POS6_2X",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "단장! 괜찮아?!",
+      "UnitTalk_JPN": "団長？大丈夫！？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_005.wav"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.5,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_006.wav"
+    },
+    {
+      "Uid": 114,
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 127,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS"
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "뭐야, 다친 데가 없는데…?",
+      "UnitTalk_JPN": "どういうこと？怪我はないわ…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_007.wav"
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "최고로 멋진 일류 헌터 특!",
+      "UnitTalk_JPN": "最高にクールな一流ハンターたる者！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_001.wav"
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "기습 따윈 하지 않는다!",
+      "UnitTalk_JPN": "奇襲などしないのである！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_002.wav"
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "자신이 누구에게 잡혀가는지 사냥감에게 똑똑히 알려주는 것이 헌터의 미학!",
+      "UnitTalk_JPN": "自分が誰に捕らえられるのか、獲物に教えてやるのがハンターの美学！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_003.wav"
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "뭐야 저 녀석은…?",
+          "JumpAnchorStringId_JPN": "なんだ、あいつは…？"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "후후, 이 몸의 정체가 궁금하신가? 물론 그럴 수밖에 없겠지.",
+      "UnitTalk_JPN": "ふふ、オレの正体が気になるのか？無理もないな。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_004.wav"
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그렇다면 알려주는 것이 인지상정!",
+      "UnitTalk_JPN": "それなら、答えてやるのが世の情けだ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_005.wav"
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "CameraOffset": "POS8_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "이 몸은 아셀루스 헌터 협회에서도 가장 멋지고 화려한 일류 헌터 트리쉬!",
+      "UnitTalk_JPN": "オレはアセルス協会で、最もクールで派手な一流ハンター、トリッシュ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_006.wav"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "USN_UI_TOUCH",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "그런 내가 너희 도적들을 토벌하기 위해 이곳에 도착!",
+      "UnitTalk_JPN": "今日はお前たち盗賊団を討伐するためにやって来た！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_007.wav"
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "자자, 나의 멋진 활약이 돋보이도록 얼른 덤벼 보라고!",
+      "UnitTalk_JPN": "さぁさぁ、オレのクールな活躍を引き立たせるために、さっさとかかってこい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_008.wav"
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도적 토벌…?",
+          "JumpAnchorStringId_JPN": "盗賊の討伐…？"
+        }
+      ]
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "너, 누군진 모르겠지만 착각한 거 아냐?",
+      "UnitTalk_JPN": "あなた、誰だか知らないけど…人違いしてるんじゃない…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_008.wav"
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "우린 도적이 아니야!",
+      "UnitTalk_JPN": "わたしたちは盗賊じゃないわ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_009.wav"
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitTalk_KOR": "오히려 우리가 도적을 토벌하러 가는 중이었다고!",
+      "UnitTalk_JPN": "むしろ、わたしたちは盗賊を討伐しに向かっているところなんだから。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_010.wav"
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "어… 어?",
+      "UnitTalk_JPN": "えっ…？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_009.wav"
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "상대도 제대로 못 알아보면서 무슨 일류 헌터라는 건지 모르겠네, 정말.",
+      "UnitTalk_JPN": "獲物の区別もつけられないくせに、何が一流ハンターよ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_VOYAGER_STRANIS_011.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "그, 그럴 리가… 잠깐만…",
+      "UnitTalk_JPN": "そ、そんなはずは…ちょっと待ってくれ…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_010.wav"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "POS8_2X",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "의뢰서가 분명… 여기에 있었는데…",
+      "UnitTalk_JPN": "依頼書は確か…ここにしまったはず…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_011.wav"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 여기에 있다.",
+      "UnitTalk_JPN": "あっ、あったぞ。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_012.wav"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "도적 무리의 인상착의 설명…",
+      "UnitTalk_JPN": "盗賊の見た目は…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_013.wav"
+    },
+    {
+      "Uid": 92,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 95,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 121,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitTalk_KOR": "쓸데없이 가슴만 큰 금발 여자.",
+      "UnitTalk_JPN": "無駄に巨乳な金髪女。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_014.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 115,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitPos": "POS3"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_5",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 99,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 126,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY"
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitTalk_KOR": "핑크 머리 주문쟁이.",
+      "UnitTalk_JPN": "ピンク髪の魔法使い。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_015.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 98,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_1",
+      "CameraOffsetTime": "FA"
+    },
+    {
+      "Uid": 122,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_TRISH"
+      ],
+      "UnitTalk_KOR": "노란 점퍼를 입은 혀 짧은 꼬맹이 그리고…",
+      "UnitTalk_JPN": "黄色の上着を着た、舌足らずのちびっこ。あとは…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_016.wav",
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE"
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "지옥의 악마보다 더 차가운 마음을 가진 모든 여자의 적.",
+      "UnitTalk_JPN": "地獄の悪魔より冷たい心を持つ、すべての女の敵。",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_017.wav"
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그거 내 이야기…?",
+          "JumpAnchorStringId_JPN": "それは、私のことか…？"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE"
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "…대충 맞는 것 같은데?",
+      "UnitTalk_JPN": "…大体合ってんだが？",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_018.wav"
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_019.wav"
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_14.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "CameraOffset": "POS3_2X",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "일류 헌터 특! 사냥감의 감언이설에 속아 넘어가지 않음!",
+      "UnitTalk_JPN": "一流ハンターたる者！獲物の口車には乗せられない！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_020.wav"
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "핫하! 날 혼란하게 만들 모양이지만 어림도 없지!",
+      "UnitTalk_JPN": "ははっ！オレを混乱させようとしても、そうはいかないぜ！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_021.wav"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitTalk_KOR": "자자, 도망갈 곳 따윈 없으니까 얼른 덤비라고.",
+      "UnitTalk_JPN": "さぁさぁ、逃げ道はないぞ！早くかかってこい！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_022.wav"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.5,
+      "BgCrashTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_STELLAR_THIEF",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "전부 현상금으로 바꿔 줄 테니까!",
+      "UnitTalk_JPN": "まとめて賞金に変えてやる！",
+      "TalkTime": 0.03,
+      "TalkVoice": "MAIN_EP3_3_UNIT_S_STELLAR_THIEF_023.wav"
+    }
+  ]
+}

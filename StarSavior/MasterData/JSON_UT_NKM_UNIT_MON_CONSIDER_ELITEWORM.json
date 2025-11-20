@@ -10,25 +10,25 @@
     "BattleStates": [
       {
         "StateName": "USN_ASTAND_FOCUS_INFO_READY",
-        // "SoundEvents": [
-        //   {
-        //     "EventFrame": 0,
-        //     "listSoundName": [
-        //       "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_INFO.wav"
-        //     ]
-        //   }
-        // ]
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_FOCUS_INFO_READY.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_START",
-        // "SoundEvents": [
-        //   {
-        //     "EventFrame": 9,
-        //     "listSoundName": [
-        //       "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_MUTATE.wav"
-        //     ]
-        //   }
-        // ]
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_START.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_ATTACK",
@@ -43,25 +43,51 @@
         "AttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 65,
+            "EventFrame": 56,
             "ReActType": "NRT_DAMAGE_A",
-            // "StopTimeDef": 0.1,
-            // "CameraCrashGap": 0.1,
-            // "CameraCrashTime": 0.3,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "ReAttackCount": 3,
+            "ReAttackGap": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 71,
+            "ReActType": "NRT_DAMAGE_A",
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
             "EffectData": {
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
             }
           }
         ],
-        // "SoundEvents": [
-        //   {
-        //     "EventFrame": 16,
-        //     "listSoundName": [
-        //       "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_ATK.wav"
-        //     ]
-        //   }
-        // ]
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_ATTACK.wav"
+            ]
+          },
+          {
+            "EventFrame": 30,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_ATTACK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 47,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_ATTACK_03.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_SPECIAL",
@@ -91,10 +117,21 @@
         "AttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 52,
+            "EventFrame": 49,
             "ReActType": "NRT_DAMAGE_A",
-            // "CameraCrashGap": 0.3,
-            // "CameraCrashTime": 0.3,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 53,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
             "EffectData": {
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
@@ -110,15 +147,33 @@
               "EffectHeight": "BVH_BODY"
             }
           }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_SPECIAL_ATTACK.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_SPECIAL_ATTACK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 51,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_SPECIAL_ATTACK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 78,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_SPECIAL_ATTACK_04.wav"
+            ]
+          }
         ]
-        // "SoundEvents": [
-        //   {
-        //     "EventFrame": 10,
-        //     "listSoundName": [
-        //       "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_SPECIAL.wav"
-        //     ]
-        //   },
-        // ]
       },
       {
         "StateName": "USN_HYPER",
@@ -133,35 +188,76 @@
         "AttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 65,
+            "EventFrame": 58,
             "ReActType": "NRT_DAMAGE_A",
-            // "CameraCrashGap": 0.5,
-            // "CameraCrashTime": 0.3,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 64,
+            "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.5,
+            "CameraCrashTime": 0.5,
             "EffectData": {
               "EffectName": "",
               "EffectHeight": "BVH_BODY"
             }
           }
         ],
-        // "SoundEvents": [
-        //   {
-        //     "EventFrame": 6,
-        //     "listSoundName": [
-        //       "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_HYPER.wav"
-        //     ]
-        //   },
-        // ]
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_HYPER_ATTACK.wav"
+            ]
+          },
+          {
+            "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_HYPER_ATTACK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 46,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_HYPER_ATTACK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_HYPER_ATTACK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 92,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_HYPER_ATTACK_05.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_DYING",
-        // "SoundEvents": [
-        //   {
-        //     "EventFrame": 3,
-        //     "listSoundName": [
-        //       "SFX_BT_UNIT_MON_WIZARD_HALO_BLACK_ELITE_MUTATE_08.wav"
-        //     ]
-        //   },
-        // ]
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_DYING.wav"
+            ]
+          },
+          {
+            "EventFrame": 37,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CONSIDER_ELITEWORM_DYING_02.wav"
+            ]
+          }
+        ]
       }
     ]
   }

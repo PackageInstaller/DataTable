@@ -4,24 +4,52 @@
   "Data": {
     "Waves": [
       {
-        "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
-        "TeamBSpawnList": [ 
+        "MapPosType": "NMPT_BATTLE_SLOT_4_A",
+        "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_VOIDMAID_SHIELD_BLACK_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_02",
-            "IsElite": true,
-            "SpecialSkillAvailable": true,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_02", //처단자
+            "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_VOIDMAID_SHIELD_BLACK_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_B",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_02", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_02", //경멸자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_SUN"
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_02", //주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }
@@ -31,21 +59,26 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_VOIDMAID_SHIELD_BLACK_OPERATION_02",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_02", //경멸자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_02",
+            "UnitStrId": "NKM_UNIT_MON_MONUMENT_TOTEM_BLACK_ELITE_OPERATION_02",//재앙의 숭배자
             "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_SUN"
+            "ChangeAdjustType": "NUAT_SUN",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -3000,              
+              "NST_NV_RATE_TURN_SPEED" : 2500
+            }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_VOIDMAID_SHIELD_BLACK_OPERATION_02",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_EYE_OCTAGON_BLACK_OPERATION_02", //경멸자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }

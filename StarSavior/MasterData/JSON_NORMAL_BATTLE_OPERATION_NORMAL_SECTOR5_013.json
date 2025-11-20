@@ -7,20 +7,20 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_01",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_01", //처단자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_01",
+            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_01", //포식자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_01",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_WEAPON_BLADE_BLACK_OPERATION_01", //처단자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }
@@ -30,21 +30,22 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_01",
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_01", //감독자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_01",
+            "UnitStrId": "NKM_UNIT_MON_TANKER_IRON_BLACK_ELITE_MU_OPERATION_05", //살육의 포식자(질풍의 위상)
             "SpecialSkillAvailable": true,
+            "HyperSkillAvailable": false,
             "IsBoss": true,
             "ChangeAdjustType": "NUAT_SUN"
           },
           {
-            "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_01",
+            "SpawnPosIndex": 4,
+            "UnitStrId": "NKM_UNIT_MON_TURRET_CRYSTAL_BLACK_OPERATION_01", //감독자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_SUN"
           }

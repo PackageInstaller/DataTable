@@ -9,30 +9,130 @@
       "BODY": 1.6
     },
     "UnitBuffEffectScale": 1.8,
-    "UnitHudHeight": 4,
+    "UnitHudHeight": 3.4,
     "UseRespawnFocus": true,
     "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_10.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START_FOCUS",
+        "SoundEvents": [
+          {
+            "EventFrame": 8,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_FOOTSTEP_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 27,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_FOOTSTEP_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_FOOTSTEP_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 69,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 107,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 113,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_VOICE_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK.wav"
+            ]
+          },
+          {
+            "EventFrame": 23,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 56,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_FOOTSTEP.wav"
+            ]
+          }
+        ]
+      },
       {
         "StateName": "USN_ATTACK",
         "UseInternalCamera": true,
         "StartUnitShow": {
           "ShowOffMyTeam": true,
           "ShowOffEnemy": true,
-          "ShowOnTarget": true,
+          "ShowOnTarget": true
           //"FormationEnemy": "SFT_CENTER_TARGET_ENEMY"
         },
         "AttackEvents": [
           {
             "AnimTime": true,
-            "EventFrame": 95,
+            "EventFrame": 75,
             "ReActType": "NRT_DAMAGE_A",
-            //"StopTimeDef": 0.15,
-            //"CameraCrashGap": 0.2,
-            //"CameraCrashTime": 0.4,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
             "EffectData": {
               "EffectName": "VFX_HIT_CMN_00.prefab",
               "EffectHeight": "BVH_BODY"
             }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 10,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 41,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 76,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_HIT.wav"
+            ]
           }
         ]
       },
@@ -60,13 +160,44 @@
             "AnimTime": false,
             "EventFrame": 160,
             "ReActType": "NRT_DAMAGE_A",
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.5,
             "EffectData": {
-              "EffectHeight": "BVH_ZERO"
-            },
-            "HitEffectOffsetPos": {
-            },
-            "HitEffectOffsetRotate": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
             }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 6,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 59,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 92,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_08.wav"
+            ]
+          },
+          {
+            "EventFrame": 148,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_HIT_02.wav"
+            ]
           }
         ]
       },
@@ -82,21 +213,76 @@
             "AnimTime": true,
             "EventFrame": 148,
             "ReActType": "NRT_DAMAGE_A",
-            //"CameraCrashGap": 0.2,
-            //"CameraCrashTime": 0.3,
-            "ReAttackCount": 8,
-            "ReAttackGap": 0.15,
+            "CameraCrashGap": 0.05,
+            "CameraCrashTime": 0.1,
+            "ReAttackCount": 10,
             "EffectData": {
-              "EffectName": "VFX_HIT_CMN_00.prefab",
+              "EffectName": "",
               "EffectHeight": "BVH_BODY"
             }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_FOOTSTEP_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 26,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_FOOTSTEP_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 58,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_FOOTSTEP_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 68,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_VOICE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 73,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 135,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_HIT_03.wav"
+            ]
           }
         ]
       },
       {
         "StateName": "USN_DYING",
-        "DyingStateTimeChangeStateTime": 8,
-        "DyingStateTimeChangeState": "USN_DIE"
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 17,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_VOICE_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_BELLWETHER_HORN_BLACK_SPELL_DARK_11.wav"
+            ]
+          }
+        ]
       }
     ]
   }

@@ -10,7 +10,12 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_DAILY_03",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
@@ -18,13 +23,23 @@
             "IsElite": true,
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
-            "ChangeAdjustType": "NUAT_MOON"
+            "ChangeAdjustType": "NUAT_MOON",
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_DAILY_03",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       },
@@ -35,21 +50,36 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_03",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VETERAN_BARON_BLACK_BOSS_DAILY_GOLD_03",
+            "UnitStrId": "NKM_UNIT_MON_CRUNNADUN_AXE_BLACK_BOSS_DAILY_03",
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "ChangeAdjustType": "NUAT_MOON",
-            "IsBoss": true
+            "IsBoss": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_CROSSBOW_BLUE_DAILY_03",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -2000,
+              "NST_NV_RATE_HP": -2000,
+              "NST_NV_RATE_DEF": -1000
+            }
           }
         ]
       }

@@ -75,6 +75,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_OFFICER_POLICE_06",
       "WaitClick": true,
       "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_WATER_SPRAY_01.wav",
       "UnitTalk_KOR": "상의를 벗어서 잘 개어두고, 머리부터 끼얹었다.",
       "UnitTalk_JPN": "そして上着を脱いで畳むと、頭から水を浴びた。",
       "TalkTime": 0.03
@@ -712,7 +715,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_OFFICER_POLICE",
-      "CameraOffset": "ONE_3",
+      "CameraOffset": "TRIPLE_2",
       "CameraOffsetTime": "NR",
       "UnitTalk_KOR": "지지진정하시고요, 선생님.",
       "UnitTalk_JPN": "おおおお落ち着いてください！",

@@ -10,19 +10,34 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_DAILY_00",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_DAILY_00",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_SWORD_BLUE_DAILY_00",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       },
@@ -33,21 +48,36 @@
             "SpawnPosIndex": 1,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_DAILY_00",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_VETERAN_BARON_BLACK_BOSS_DAILY_GOLD_00",
+            "UnitStrId": "NKM_UNIT_MON_CRUNNADUN_AXE_BLACK_BOSS_DAILY_00",
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "ChangeAdjustType": "NUAT_MOON",
-            "IsBoss": true
+            "IsBoss": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -2000
+            }
           },
           {
             "SpawnPosIndex": 3,
             "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_DAILY_00",
             "ChangeAdjustType": "NUAT_MOON",
-            "AllSkillAvailable": true
+            "AllSkillAvailable": true,
+            "AddStatData": {
+              "NST_NV_RATE_ATK": -3000,
+              "NST_NV_RATE_HP": -3000,
+              "NST_NV_RATE_DEF": -2000
+            }
           }
         ]
       }

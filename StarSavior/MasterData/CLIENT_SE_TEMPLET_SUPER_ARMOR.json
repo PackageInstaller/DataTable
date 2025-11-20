@@ -19,6 +19,20 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 10002,
+          "m_SEStrID" : "COND_UNIT_ARMOR_BREAK_B",
+          "m_SEName" : "SI_CROSS_REVENGE_TRIGGER_BAN",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_PARALYSIS",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 11001,
           "m_SEStrID" : "COND_MON_NORMAL_ARMOR_BREAK_A",
           "m_SEName" : "SI_ARMOR_DAMAGE@@15",
@@ -40,6 +54,20 @@
           "m_BuffStrID" : "BI_ARMOR_BREAK_SPEED_GAUGE_CHANGE_FIX",
           "m_BuffLifeTurn" : 0,
           "SpeedGaugeRate" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 11003,
+          "m_SEStrID" : "COND_MON_NORMAL_ARMOR_BREAK_C",
+          "m_SEName" : "SI_CROSS_REVENGE_TRIGGER_BAN",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_PARALYSIS",
+          "m_BuffLifeTurn" : 1,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_INSTANT",
@@ -77,6 +105,20 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 12003,
+          "m_SEStrID" : "COND_MON_ELITE_ARMOR_BREAK_C",
+          "m_SEName" : "SI_CROSS_REVENGE_TRIGGER_BAN",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_PARALYSIS",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "m_SEID" : 13001,
           "m_SEStrID" : "COND_MON_BOSS_ARMOR_BREAK_A",
           "m_SEName" : "SI_ARMOR_DAMAGE@@15",
@@ -98,6 +140,20 @@
           "m_BuffStrID" : "BI_ARMOR_BREAK_SPEED_GAUGE_CHANGE_FIX",
           "m_BuffLifeTurn" : 0,
           "SpeedGaugeRate" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_INSTANT",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "m_SEID" : 13003,
+          "m_SEStrID" : "COND_MON_BOSS_ARMOR_BREAK_C",
+          "m_SEName" : "SI_CROSS_REVENGE_TRIGGER_BAN",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ARMOR_BREAK_PARALYSIS",
+          "m_BuffLifeTurn" : 1,
           "m_Condition" : 
           {
             "m_ActiveType" : "NSEAT_INSTANT",

@@ -105,7 +105,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "커다란 <color=#F7BE45>냄비</color>라고밖에 말할 수 없는 물건에, 물이 가득 담겨 있고, 그 냄비는 장작불 위에 올려져 있었다.",
-      "UnitTalk_JPN": "水がたっぷりと入った巨大な<color=#F7BE45>鍋</color>のようなものが、薪の火にかけられていた。",
+      "UnitTalk_JPN": "水がたっぷりと入った巨大な<color=#F7BE45>鍋</color>のようなものが、火にかけられていた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -192,7 +192,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "하지만 이건 누가 봐도 요리를 하는-",
-          "JumpAnchorStringId_JPN": "でも、これは誰が見ても料理でー"
+          "JumpAnchorStringId_JPN": "でも、これはどう見ても料理だ──"
         }
       ]
     },
@@ -252,7 +252,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "토토는 냄비… 아니, 철제 욕조에 머리와 몸을 기댄 채 기분 좋은 소리를 내고 있었다.",
-      "UnitTalk_JPN": "トトは鍋…じゃなくて、浴槽にもたれかかり、気持ちよさような声を出していた。",
+      "UnitTalk_JPN": "トトは鍋…じゃなくて浴槽にもたれかかり、気持ちよさような声を出していた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -266,7 +266,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "프레이가 왜 토토를 목욕시키는 건데?",
-          "JumpAnchorStringId_JPN": "フレイが何でトトをお風呂に入れてるの？"
+          "JumpAnchorStringId_JPN": "フレイが何でトトをお風呂に入れてるんだ？"
         }
       ]
     },
@@ -329,7 +329,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "수상해!",
-          "JumpAnchorStringId_JPN": "怪しい！"
+          "JumpAnchorStringId_JPN": "怪しすぎる！"
         }
       ]
     },
@@ -519,7 +519,7 @@
       "UnitMotion": "NORMAL",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "꾸룩-",
-      "UnitTalk_JPN": "クルッー",
+      "UnitTalk_JPN": "クルッ──",
       "TalkTime": 0.03
     },
     {
@@ -531,7 +531,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "…토토가 요리되고 있잖아-!!",
-      "UnitTalk_JPN": "…トトが料理されてるー！！",
+      "UnitTalk_JPN": "…トトが煮込まれてる～！？",
       "TalkTime": 0.03
     },
     {
@@ -558,7 +558,7 @@
       "UnitMotion": "ANGRY",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "목욕입니다!",
-      "UnitTalk_JPN": "お風呂ですから！",
+      "UnitTalk_JPN": "お風呂ですってば！",
       "TalkTime": 0.03
     },
     {
@@ -633,8 +633,8 @@
       "JumpAnchorData": [
         {
           "Uid": 1,
-          "JumpAnchorStringId_KOR": "…봉황 우려낸 물을 팔려고 했다는 거군",
-          "JumpAnchorStringId_JPN": "…さては、その水を売ろうとしてたでしょ。"
+          "JumpAnchorStringId_KOR": "…봉황 우려낸 물을 팔려고 했다는 거군.",
+          "JumpAnchorStringId_JPN": "…さては、その水を売ろうとしてたな。"
         }
       ]
     },
@@ -647,7 +647,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "ANGRY",
       "UnitTalk_KOR": "너무해-! 우리 토토를 이용해서 돈을 벌려고 하다니!",
-      "UnitTalk_JPN": "ひどい！トトを利用して金儲けしようとするなんて！",
+      "UnitTalk_JPN": "ひどいよぉ！トトを利用して稼ごうとするなんて！",
       "TalkTime": 0.03
     },
     {
@@ -733,7 +733,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "…그게 생각나서 포기하는 거지?",
-          "JumpAnchorStringId_JPN": "…それを思い出して、諦めたんだよね？"
+          "JumpAnchorStringId_JPN": "…それを思い出して諦めたんだろ？"
         }
       ]
     },
@@ -809,7 +809,7 @@
       "UnitMotion": "SMILE",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "궁금하신가요! 제가 예상한 수익은 이 정도…! 거기서 양을 좀 더 늘이거나 희석하면 여기까지…!",
-      "UnitTalk_JPN": "気になるのですね！わたくしの予想収益は、これぐらいで…！水の量を増やしたり、希釈すればここまで…！",
+      "UnitTalk_JPN": "気になるのですね！わたくしの予想収益はこれぐらいで…！水の量を増やしたり、希釈すればここまで…！",
       "TalkTime": 0.03
     },
     {
@@ -844,7 +844,7 @@
       "UnitStrId": "NKM_UNIT_NPC_KINGDOM_PRAY",
       "UnitMotion": "SPECIAL",
       "UnitTalk_KOR": "그렇죠? 그렇죠!",
-      "UnitTalk_JPN": "そうでしょ！そうなのですよ！",
+      "UnitTalk_JPN": "そうです！そうなのです！",
       "TalkTime": 0.03
     },
     {
@@ -871,7 +871,7 @@
       "UnitStrId": "NKM_UNIT_NPC_EASTERN_OWL",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "으아, 으앗 따거, 토토! 농담, 농담이야!",
-      "UnitTalk_JPN": "うっ、うあっ、熱いよトト！冗談だって！",
+      "UnitTalk_JPN": "うっ、うあっ、痛いよトト！冗談だって！",
       "TalkTime": 0.03
     },
     {
@@ -884,7 +884,7 @@
       "UnitMotion": "ANGRY",
       "UnitPos": "POS8",
       "UnitTalk_KOR": "전 농담이 아니, 따거워-!! 쪼지 마세요! 그만! 그만!",
-      "UnitTalk_JPN": "わたくしは冗談ではー熱ッ！！そんな渋らなくても！や、やめてっ！！",
+      "UnitTalk_JPN": "わたくしは冗談では──痛ッ！！そんな渋らなくても！や、やめてくださいっ！！",
       "TalkTime": 0.03
     },
     {
@@ -912,7 +912,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "NOA의 상점가에 봉황의 건강수가 나오는 일은 아마 없을 것 같다.",
-      "UnitTalk_JPN": "NOAの商店街に、鳳凰の健康水が並ぶ日はきっと来ないだろう。",
+      "UnitTalk_JPN": "NOAの街に、鳳凰の健康水が並ぶ日はきっと来ないだろう。",
       "TalkTime": 0.03,
       "DictionaryFinalCut": true
     },

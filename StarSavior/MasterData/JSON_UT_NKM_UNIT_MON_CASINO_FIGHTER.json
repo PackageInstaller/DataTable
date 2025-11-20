@@ -1,0 +1,274 @@
+﻿{
+  "$schema": "../../../../../../../DataSchema/UnitScript.jsonc",
+  "_Version": 5,
+  "Data": {
+    "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_MONSTER.txt",
+    "UiStates": [],
+    "BattleStates": [
+      {
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "VoiceSeries": [
+          {
+            "Repeatable": false,
+            "DataList": [
+              {
+                "EventFrame": 8,
+                "VoiceName": "SFX_BT_UNIT_MON_CASINO_SHOTGUN_BLACK_VOICE.wav"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_SHOTGUN_BLACK_JUMP.wav"
+            ]
+          },
+          {
+            "EventFrame": 21,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_CLOTH.wav"
+            ]
+          },
+          {
+            "EventFrame": 38,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_CLOTH_02.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_ATTACK",
+        "NoRootMoveZ": false,
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 12,
+            "EventEndFrame": 18,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 59,
+            "EventEndFrame": 67,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 31,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 38,
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.3,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 12,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_DASH.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_PUNCH.wav"
+            ]
+          },
+          {
+            "EventFrame": 34,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_PUNCH_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 41,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 60,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_JUMP.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_SPECIAL",
+        "UseInternalCamera": false,
+        "UseEnemyTargetCamera": true,
+        "EndFadeOut": true,
+        "StartUnitShow": {
+          "ShowOffEnemy": true,
+          "ShowOnTarget": true
+        },
+        "MoveEvents": [
+          {
+            "UseAnimTime": true,
+            "EventFrame": 8,
+            "EventEndFrame": 16,
+            "EventMoveTarget": "NEMT_TARGET"
+          },
+          {
+            "UseAnimTime": true,
+            "EventFrame": 111,
+            "EventEndFrame": 123,
+            "EventMoveTarget": "NEMT_SELF"
+          }
+        ],
+        "AttackEvents": [
+          {
+            "AnimTime": true,
+            "EventFrame": 28,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 36,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 61,
+            "CameraCrashGap": 0.1,
+            "CameraCrashTime": 0.1,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          },
+          {
+            "AnimTime": true,
+            "EventFrame": 100,
+            "StopTimeAtk": 0.1,
+            "StopTimeDef": 0.1,
+            "CameraCrashGap": 0.3,
+            "CameraCrashTime": 0.3,
+            "ReActType": "NRT_DAMAGE_A",
+            "EffectData": {
+              "EffectName": "",
+              "EffectHeight": "BVH_BODY"
+            }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 9,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_DASH.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_PUNCH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_VOICE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 35,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_PUNCH_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 44,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_PUNCH_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 48,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 85,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_PUNCH_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 101,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_EXPLOSION.wav"
+            ]
+          },
+          {
+            "EventFrame": 112,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_JUMP.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_DYING",
+        "SoundEvents": [
+          {
+            "EventFrame": 2,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_CLOTH_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 21,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_FIGHTER_BLACK_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 22,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_CASINO_SHOTGUN_BLACK_BODY.wav"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

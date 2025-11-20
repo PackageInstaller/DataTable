@@ -8,19 +8,48 @@
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
-            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_04", // 은둔자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_SKELETON_BLACK_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_04", // 주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_TOMB_CROSS_BLACK_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_04", // 은둔자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          }
+        ]
+      },
+      {
+        "MapPosType": "NMPT_BATTLE_SLOT_4_B",
+        "TeamBSpawnList": [
+          {
+            "SpawnPosIndex": 0,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_04", // 주시자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_OPERATION_04", // 전파자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 2,
+            "UnitStrId": "NKM_UNIT_MON_SPREADER_BONE_BLACK_OPERATION_04", // 전파자
+            "AllSkillAvailable": true,
+            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+          },
+          {
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WATCHER_SHARP_BLACK_OPERATION_04", // 주시자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           }
@@ -30,22 +59,26 @@
         "MapPosType": "NMPT_BATTLE_SLOT_4_BOSS_A",
         "TeamBSpawnList": [
           {
-            "SpawnPosIndex": 0,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_05",
+            "SpawnPosIndex": 1,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_04", // 은둔자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           },
           {
             "SpawnPosIndex": 2,
-            "UnitStrId": "NKM_UNIT_MON_STALKER_DEATHBONE_BLACK_ELITE_OPERATION_05",
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_HALO_BLACK_ELITE_OPERATION_04", // 침묵의 은둔자
             "SpecialSkillAvailable": true,
             "HyperSkillAvailable": false,
             "IsBoss": true,
-            "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
+            "ChangeAdjustType": "NUAT_STAR",
+            "AddStatData": {
+              "NST_NV_RATE_HP": -3000,              
+              "NST_NV_RATE_TURN_SPEED" : 2500
+            }
           },
           {
-            "SpawnPosIndex": 4,
-            "UnitStrId": "NKM_UNIT_MON_TANKER_STONE_BLACK_OPERATION_05",
+            "SpawnPosIndex": 3,
+            "UnitStrId": "NKM_UNIT_MON_WIZARD_MARBLE_BLACK_OPERATION_04", // 은둔자
             "AllSkillAvailable": true,
             "ChangeAdjustType": "NUAT_STAR" //메인 속성 타입
           }

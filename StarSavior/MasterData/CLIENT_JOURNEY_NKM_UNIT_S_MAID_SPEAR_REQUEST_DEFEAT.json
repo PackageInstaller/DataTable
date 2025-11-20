@@ -64,7 +64,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "...배워?",
-          "JumpAnchorStringId_JPN": "…学ぶ？"
+          "JumpAnchorStringId_JPN": "…学んだ？"
         }
       ]
     },
@@ -91,7 +91,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "그래. 돌아가서 생각해 보자.",
-          "JumpAnchorStringId_JPN": "そっか。戻って一緒に考えてみよう。",
+          "JumpAnchorStringId_JPN": "戻って一緒に考えてみよう。",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
@@ -142,6 +142,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -178,7 +179,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "다음에는 더욱 철저한 계획을 짠 후에 의뢰에 임하는 게 좋겠습니다.",
-      "UnitTalk_JPN": "次回は、さらに徹底した計画を練った後、依頼に挑もうと思います。",
+      "UnitTalk_JPN": "次回は、さらに徹底した計画を練ってから依頼に挑もうと思います。",
       "TalkTime": 0.03
     },
     {
@@ -197,6 +198,8 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -242,10 +245,16 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
-      "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "다음에는 더 완벽한 계획을 세워서 성공하도록 하죠…!",
       "UnitTalk_JPN": "次回はもっと完璧な計画を立てて、成功できるようにしましょう…！",
       "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE"
     }
   ]
 }

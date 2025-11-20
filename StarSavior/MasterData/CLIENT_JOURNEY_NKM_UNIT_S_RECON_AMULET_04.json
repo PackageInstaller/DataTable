@@ -494,13 +494,35 @@
       ]
     },
     {
+      "Uid": 221,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 222,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_RECON_AMULET_01.png"
+    },
+    {
+      "Uid": 223,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
       "Uid": 39,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_04",
       "WaitClick": true,
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_BUTTON.wav",
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffset": "DEFAULT",
       "CameraOffsetTime": "FA",
       "UnitTalk_KOR": "카메라 렌즈, 이상 없음. 삼각대, 이상 없음.",
@@ -514,7 +536,9 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_CAMERA.wav",
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffset": "ONE_3",
       "CameraOffsetTime": "NR",
       "UnitMotion": "SERIOUS",
@@ -528,7 +552,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_04",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffset": "DEFAULT",
       "CameraOffsetTime": "FA",
       "UnitMotion": "NORMAL",
@@ -542,7 +568,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_04",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "UnitMotion": "SMILE",
       "EmotionEffect": "FUN",
       "UnitTalk_KOR": "여기서라면 최고의 사진을 찍을 수 있을 것 같습니다.",
@@ -569,7 +597,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_04",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffset": "ONE_3",
       "CameraOffsetTime": "NR",
       "UnitMotion": "USN_UI_REST_START",
@@ -579,12 +609,21 @@
       "TalkTime": 0.03
     },
     {
+      "Uid": 224,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_RECON_AMULET_02.png",
+      "BgChangeTime": 1.0
+    },
+    {
       "Uid": 45,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_04",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffset": "DEFAULT",
       "CameraOffsetTime": "NR",
       "UnitMotion": "SURPRISE",
@@ -599,7 +638,9 @@
       "CutsceneStrId": "JOURNEY_NKM_UNIT_S_RECON_AMULET_04",
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitStrId": "NKM_UNIT_NPC_RECON_AMULET",
+      "UnitNameString": [
+        "SI_LUGH"
+      ],
       "CameraOffset": "TRIPLE_2",
       "CameraOffsetTime": "FA",
       "UnitMotion": "SAD",
@@ -649,7 +690,7 @@
         "SI_EMCEE"
       ],
       "UnitTalk_KOR": "세상의 끝이 온다고 해도, 우리의 전부를 건다!",
-      "UnitTalk_JPN": "荒ぶった数だけ痛みを知れる！",
+      "UnitTalk_JPN": "世界の終わりが来たって、俺たちは全部を懸けて戦う！",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },

@@ -1,0 +1,79 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_CONSTRUCT_BOMB_REST_NORMAL",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_STELLAR_THIEF_REST_NORMAL",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFileName": "CURRENT_TOWN_REST",
+      "StartBgmFileName": "MUSIC_CUTSCENE_17.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "단장, 잘 잤어? 좋은 아침이야♪",
+      "UnitTalk_JPN": "団長、よく眠れた？おはよーん♪",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋은 아침, 페트라.",
+          "JumpAnchorStringId_JPN": "おはよう、ペトラ。"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "냐하하~ 단장, 아침부터 페트라의 미모에 반한 것 같은데?",
+      "UnitTalk_JPN": "にゃはは～。団長、朝からペトラの美貌に惚れ直したでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_BOMB",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "페트라의 귀여움은 평소대로인데 말이지♡",
+      "UnitTalk_JPN": "ペトラの可愛さは、いつも通りなんだけどね♡",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "페트라는 밤새 푹 쉰 것처럼 보인다!",
+      "UnitTalk_JPN": "ペトラはぐっすり眠れたようだ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오늘 훈련은 평소대로 진행하면 될 것 같다.",
+      "UnitTalk_JPN": "今日のトレーニングは、予定通り進めても良さそうだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "DARK"
+    },
+    {
+      "Uid": 26,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

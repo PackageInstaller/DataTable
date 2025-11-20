@@ -6,14 +6,6 @@
     "Waves": [
       {
         "MapPosType": "NMPT_BATTLE_SLOT_1_BOSS_A",
-        "BattleEvents": [
-          {
-            "OnWaveStart": {},
-            "PlayProgress": {
-              "ProgressId": 50002
-             }
-          }
-        ],
         "TeamBSpawnList": [
           {
             "SpawnPosIndex": 1,
@@ -28,7 +20,7 @@
           },
           {
             "SpawnPosIndex": 3,
-            "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_RED_00",
+            "UnitStrId": "NKM_UNIT_MON_RAIDER_DAGGER_BLUE_00",
             "AllSkillAvailable": true
           }
         ]

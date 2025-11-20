@@ -3,15 +3,84 @@
   "_Version": 5,
   "Data": {
     "PresetJsonFileName": "JSON_UT_NKM_UNIT_BASE_VOIDER.txt",
-    "UnitHudHeight": 3.6,
+    "UnitHudHeight": 6,
     "UseRespawnFocus": true,
     "UiStates": [],
     "BattleStates": [
       {
-        "StateName": "USN_ASTAND_FOCUS_INFO_READY"
+        "StateName": "USN_ASTAND_FOCUS_INFO_READY",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_FOCUS_INFO_READY.wav"
+            ]
+          }
+        ]
       },
       {
-        "StateName": "USN_START"
+        "StateName": "USN_START_FOCUS",
+        "SoundEvents": [
+          {
+            "EventFrame": 1,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 12,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 49,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_06.wav"
+            ]
+          },
+          {
+            "EventFrame": 79,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_07.wav"
+            ]
+          },
+          {
+            "EventFrame": 108,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_VOICE.wav"
+            ]
+          },
+          {
+            "EventFrame": 113,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_08.wav"
+            ]
+          }
+        ]
+      },
+      {
+        "StateName": "USN_START",
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK.wav"
+            ]
+          },
+          {
+            "EventFrame": 25,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_02.wav"
+            ]
+          }
+        ]
       },
       {
         "StateName": "USN_ATTACK",
@@ -35,6 +104,26 @@
               "EffectName": "VFX_HIT_CMN_00.prefab",
               "EffectHeight": "BVH_BODY"
             }
+          }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_09.wav"
+            ]
+          },
+          {
+            "EventFrame": 4,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_VOICE_02.wav"
+            ]
+          },
+          {
+            "EventFrame": 53,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_HIT.wav"
+            ]
           }
         ]
       },
@@ -73,6 +162,32 @@
               "EffectHeight": "BVH_BODY"
             }
           }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_10.wav"
+            ]
+          },
+          {
+            "EventFrame": 29,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_VOICE_03.wav"
+            ]
+          },
+          {
+            "EventFrame": 51,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_CHARGING.wav"
+            ]
+          },
+          {
+            "EventFrame": 101,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_HIT_02.wav"
+            ]
+          }
         ]
       },
       {
@@ -108,11 +223,62 @@
               "EffectHeight": "BVH_BODY"
             }
           }
+        ],
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_11.wav"
+            ]
+          },
+          {
+            "EventFrame": 14,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_VOICE_04.wav"
+            ]
+          },
+          {
+            "EventFrame": 52,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_12.wav"
+            ]
+          },
+          {
+            "EventFrame": 105,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_13.wav"
+            ]
+          },
+          {
+            "EventFrame": 170,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_HIT_03.wav"
+            ]
+          }
         ]
       },
       {
         "StateName": "USN_DYING",
-        //"DyingDissolveStartTime": 1.16
+        "SoundEvents": [
+          {
+            "EventFrame": 0,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_14.wav"
+            ]
+          },
+          {
+            "EventFrame": 7,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_VOICE_05.wav"
+            ]
+          },
+          {
+            "EventFrame": 31,
+            "listSoundName": [
+              "SFX_BT_UNIT_MON_EXCEED_EYES_BLACK_SPELL_DARK_15.wav"
+            ]
+          }
+        ]
       }
     ]
   }

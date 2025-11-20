@@ -52,7 +52,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitTalk_KOR": "오늘 훈련은 반드시 오늘 마쳐야 합니다. 안 그러면 내일 계획에 지장이 생깁니다.",
-      "UnitTalk_JPN": "今日の訓練は、必ず今日終えなければなりません。そうしないと、明日の計画に支障が出てしまいますから。",
+      "UnitTalk_JPN": "今日のトレーニングは、必ず今日終えなければなりません。そうしないと、明日の計画に支障が出てしまいますから。",
       "TalkTime": 0.03
     },
     {
@@ -76,7 +76,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "무리하다 다쳐. 그만하자.",
-          "JumpAnchorStringId_JPN": "無理したら怪我するよ。もう辞めよう。",
+          "JumpAnchorStringId_JPN": "無理は怪我に繋がるから、やめておこう。",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
@@ -103,7 +103,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "생각해 보니… 단장님의 말씀에도 일리가 있군요.",
-      "UnitTalk_JPN": "考えてみると…団長の言葉にも一理がありますね。",
+      "UnitTalk_JPN": "そうですね…団長の言葉も一理あります。",
       "TalkTime": 0.03
     },
     {
@@ -114,7 +114,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitTalk_KOR": "무리한 훈련을 진행하다가 부상이라도 발생한다면…",
-      "UnitTalk_JPN": "無理に訓練を続けて、怪我でもしたら…",
+      "UnitTalk_JPN": "無理にトレーニングを続けて、怪我でもしたら…",
       "TalkTime": 0.03
     },
     {
@@ -137,7 +137,7 @@
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "알겠습니다. 오늘 훈련은 여기서 중단할게요.",
-      "UnitTalk_JPN": "分かりました。今日の訓練はここまでにします。",
+      "UnitTalk_JPN": "分かりました。今日のトレーニングはここまでにします。",
       "TalkTime": 0.03
     },
     {
@@ -156,6 +156,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -178,9 +179,16 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "클레어가 아쉬워하는 게 눈에 보였지만 다음 훈련을 기약하기로 했다.",
-      "UnitTalk_JPN": "クレアは残念そうにしていたが、今日の訓練はここまでにした。",
+      "UnitTalk_JPN": "クレアは残念そうにしていたが、トレーニングはここまでにした。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD"
     },
     {
       "Uid": 14,
@@ -203,7 +211,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
       "UnitTalk_KOR": "그럼, 훈련 계획표에 따라 계속 진행하겠습니다.",
-      "UnitTalk_JPN": "それでは、スケジュール表に沿って訓練を続けます。",
+      "UnitTalk_JPN": "それでは、スケジュール表に沿ってトレーニングを続けます。",
       "TalkTime": 0.03
     },
     {
@@ -213,7 +221,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "걱정과 달리, 클레어는 나머지 훈련을 훌륭하게 소화했다.",
-      "UnitTalk_JPN": "心配とは裏腹に、クレアは残りの訓練を立派にやり遂げた。",
+      "UnitTalk_JPN": "心配とは裏腹に、クレアは残りのトレーニングを立派にやり遂げた。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -222,6 +230,7 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -244,7 +253,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "클레어의 강력한 의지에 훈련을 계속 진행했지만, 성과는 그리 좋지 않았다.",
-      "UnitTalk_JPN": "クレアの強い意志に沿って訓練を続けたが、良い成果は得られなかった。",
+      "UnitTalk_JPN": "クレアの強い意志に沿ってトレーニングを続けたが、良い成果は得られなかった。",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -253,6 +262,8 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SAD",
       "AutoHighlight": "LIGHT"
     },
     {
@@ -307,6 +318,8 @@
       "WaitClick": false,
       "WaitTime": 0.0,
       "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "UnitMotion": "SMILE",
       "AutoHighlight": "LIGHT"
     }
   ]

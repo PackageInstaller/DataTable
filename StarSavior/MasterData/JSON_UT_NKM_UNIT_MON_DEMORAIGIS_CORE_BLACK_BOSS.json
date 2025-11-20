@@ -9,11 +9,11 @@
       "UiStates": [],
       "BuffEffectPosition": {
         "HEAD": 8,
-        "BODY": 2
+        "BODY": 3
       },
       "UnitRadius": 3.35,
       "TargetBinderOffsetZ" : -1.5,
-      "UnitBuffEffectScale": 2.0,
+      "UnitBuffEffectScale": 6,
       "UnitBuffIndicatorOffsetY": 1.0,
       "BattleStates": [
         {
@@ -31,21 +31,18 @@
         },
         {
           "StateName": "USN_START",
-          "VoiceSeries": [
-            {
-              "DataList": [
-                {
-                  "EventFrame": 0,
-                  "VoiceName": "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_07.wav"
-                }
-              ]
-            }
-          ],
+          
           "SoundEvents": [
             {
               "EventFrame": 0,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_SPELL_DARK_10.wav"
+              ]
+            },
+            {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_07.wav"
               ]
             }
           ]
@@ -60,16 +57,7 @@
           //     "BgmName":"MUSIC_BATTLE_BOSS_01.mp3"
           //   }
           // ],
-          "VoiceSeries": [
-            {
-              "DataList": [
-                {
-                  "EventFrame": 490,
-                  "VoiceName": "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE.wav"
-                }
-              ]
-            }
-          ],
+         
           "SoundEvents": [
             {
               "EventFrame": 0,
@@ -126,6 +114,12 @@
               ]
             },
             {
+              "EventFrame": 490,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE.wav"
+              ]
+            },
+            {
               "EventFrame": 600,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_WHOOSH_11.wav"
@@ -156,16 +150,6 @@
               }
             }
           ],
-          "VoiceSeries": [
-            {
-              "DataList": [
-                {
-                  "EventFrame": 90,
-                  "VoiceName": "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_02.wav"
-                }
-              ]
-            }
-          ],
           "SoundEvents": [
             {
               "EventFrame": 0,
@@ -183,6 +167,12 @@
               "EventFrame": 33,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_SPELL_DARK_05.wav"
+              ]
+            },
+            {
+              "EventFrame": 90,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_02.wav"
               ]
             },
             {
@@ -248,16 +238,6 @@
               }
             }
           ],
-          "VoiceSeries": [
-            {
-              "DataList": [
-                {
-                  "EventFrame": 144,
-                  "VoiceName": "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_03.wav"
-                }
-              ]
-            }
-          ],
           "SoundEvents": [
             {
               "EventFrame": 0,
@@ -287,6 +267,12 @@
               "EventFrame": 142,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_WHOOSH_07.wav"
+              ]
+            },
+            {
+              "EventFrame": 144,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_03.wav"
               ]
             },
             {
@@ -343,16 +329,6 @@
               "ShowUnitHudOnEnemy" :true
             }
           ],
-          "VoiceSeries": [
-            {
-              "DataList": [
-                {
-                  "EventFrame": 40,
-                  "VoiceName": "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_04.wav"
-                }
-              ]
-            }
-          ],
           "SoundEvents": [
             {
               "EventFrame": 0,
@@ -364,6 +340,12 @@
               "EventFrame": 40,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_LIGHTNING.wav"
+              ]
+            },
+            {
+              "EventFrame": 40,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_04.wav"
               ]
             },
             {
@@ -391,7 +373,7 @@
               ]
             },
             {
-              "EventFrame": 270,
+              "EventFrame": 260,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_WHOOSH_10.wav"
               ]
@@ -416,21 +398,17 @@
           "SeeTarget": false,
           "DyingStateTimeChangeStateTime": 8,
           "DyingStateTimeChangeState": "USN_DIE",
-          "VoiceSeries": [
-            {
-              "DataList": [
-                {
-                  "EventFrame": 0,
-                  "VoiceName": "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_06.wav"
-                }
-              ]
-            }
-          ],
           "SoundEvents": [
             {
               "EventFrame": 0,
               "listSoundName": [
                 "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_LIGHTNING_02.wav"
+              ]
+            },
+            {
+              "EventFrame": 0,
+              "listSoundName": [
+                "SFX_BT_UNIT_MON_DEMORAIGIS_CORE_BLACK_EVIL_VOICE_06.wav"
               ]
             },
             {

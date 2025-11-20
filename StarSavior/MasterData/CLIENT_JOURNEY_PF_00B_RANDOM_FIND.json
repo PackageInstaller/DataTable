@@ -24,7 +24,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "의뢰 게시판을 확인하던 중에, 오래된 상자를 찾고 있다는 공고를 발견했다.",
-      "UnitTalk_JPN": "依頼掲示板を確認していたところ、古い箱を探しているという告知を発見した。",
+      "UnitTalk_JPN": "依頼掲示板を確認していたところ、古い箱を探しているという依頼を見かけた。",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -33,7 +33,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "지난번 훈련장에서 찾은 <color=#F7BE45>[수상한 상자]</color>가 생각나서 의뢰인을 찾아갔는데….",
-      "UnitTalk_JPN": "先日のトレーニング場で見つけた<color=#F7BE45>「怪しい箱」</color>を思い出し、依頼主を訪ねてみたところ…",
+      "UnitTalk_JPN": "先日、訓練場で見つけた<color=#F7BE45>「怪しい箱」</color>のことを思い出し、依頼主を訪ねてみると…",
       "TalkTime": 0.03
     },
     {
@@ -47,7 +47,7 @@
       "Uid": 52,
       "WaitClick": false,
       "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_CAFE_01.png",
+      "BgFileName": "ILLUST_BG_MONOLITH_TEMPLE.png",
       "CutsceneClear": "CLEARALL"
     },
     {
@@ -86,7 +86,7 @@
       ],
       "UnitPos": "POS8",
       "EmotionEffect": "EMARK",
-      "UnitTalk_KOR": "오오, 이 테두리의 마감 양식과 시건 장치는….",
+      "UnitTalk_KOR": "오오, 이 테두리의 마감 양식과 시건장치는….",
       "UnitTalk_JPN": "おお、この縁取りの仕上げ様式と施錠装置は…",
       "TalkTime": 0.03
     },
@@ -100,7 +100,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "틀림없습니다. 저희 교단에서 만든 물건이군요.",
-      "UnitTalk_JPN": "間違いありません。当教団で作られた品物ですね。",
+      "UnitTalk_JPN": "間違いありません。当教団で作られた物です。",
       "TalkTime": 0.03
     },
     {
@@ -120,7 +120,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "그런 물건이 왜 훈련장에 묻혀 있었던 거지?",
-          "JumpAnchorStringId_JPN": "そんな物がなぜトレーニング場に埋まっていたんだ？"
+          "JumpAnchorStringId_JPN": "どうしてそんな物が訓練場に？"
         }
       ]
     },
@@ -135,7 +135,7 @@
       ],
       "UnitMotion": "SERIOUS",
       "UnitTalk_KOR": "흐음… 기록에 따르면…",
-      "UnitTalk_JPN": "うーん…記録によれば…",
+      "UnitTalk_JPN": "ふむ…記録によりますと…",
       "TalkTime": 0.03
     },
     {
@@ -147,7 +147,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "오래전, NOA가 공허체의 대대적인 공격을 받을 때 묻어 뒀다고 합니다.",
-      "UnitTalk_JPN": "昔、NOAが空虚体の大規模な攻撃を受けた時に埋めたそうです。",
+      "UnitTalk_JPN": "昔、NOAが<r=ヴォイドボーン>空虚体</r>の大規模な攻撃を受けた際に埋められたそうです。",
       "TalkTime": 0.03
     },
     {
@@ -159,7 +159,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "당시 관할 사제께서 남기셨던 기록이 최근에 발견되어, 수소문 중이었죠.",
-      "UnitTalk_JPN": "当時、管轄司祭が残された記録が最近発見され、聞き込み調査中でした。",
+      "UnitTalk_JPN": "当時の司祭様が残された記録が最近発見され、行方を探していたところでした。",
       "TalkTime": 0.03
     },
     {
@@ -170,7 +170,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "그럼 뭐가 들어 있는지는 모르는 건가?",
-          "JumpAnchorStringId_JPN": "では、何が入っているのかはわからないのか？"
+          "JumpAnchorStringId_JPN": "ということは、中身は分からないのか？"
         }
       ]
     },
@@ -184,7 +184,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "후대를 위해 남긴다는 말 이외에 다른 건 적혀 있지 않았습니다.",
-      "UnitTalk_JPN": "後世のために残すという言葉以外に、他のことは何も記されていませんでした。",
+      "UnitTalk_JPN": "後世のために遺すという言葉以外には、何も記されていませんでした。",
       "TalkTime": 0.03
     },
     {
@@ -196,8 +196,8 @@
         "SI_PRIEST"
       ],
       "UnitPos": "POS8",
-      "UnitTalk_KOR": "다행히, 지부의 지하실에서 시건 장치에 맞는 열쇠를 찾았습니다만…",
-      "UnitTalk_JPN": "幸い、支部の地下室で施錠装置に合う鍵を見つけましたが…",
+      "UnitTalk_KOR": "다행히, 지부의 지하실에서 시건장치에 맞는 열쇠를 찾았습니다만…",
+      "UnitTalk_JPN": "幸い、支部の地下室で施錠装置に合う鍵は見つけましたが…",
       "TalkTime": 0.03
     },
     {
@@ -210,7 +210,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "어떻습니까? 이 자리에서 열어 보시는 건?",
-      "UnitTalk_JPN": "いかがでしょうか？この場で開けてみるのは？",
+      "UnitTalk_JPN": "いかがですか？この場で開けてみられますか？",
       "TalkTime": 0.03
     },
     {
@@ -226,7 +226,7 @@
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "교단에서 잃어버린 물건인데도?",
-          "JumpAnchorStringId_JPN": "教団で失われた物なのに？"
+          "JumpAnchorStringId_JPN": "教団の失くし物なのに？"
         }
       ]
     },
@@ -239,7 +239,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "허허, 경위야 어떻든 지금은 두 분께서 찾으신 물건이니까요.",
-      "UnitTalk_JPN": "はは、経緯はどうあれ今はお二人が見つけた物ですから。",
+      "UnitTalk_JPN": "ハハッ。経緯はどうであれ、お二人が見つけた物ですから。",
       "TalkTime": 0.03
     },
     {
@@ -251,7 +251,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "이렇게 인연이 닿지 않았더라면 다시 볼 수 없었을 겁니다.",
-      "UnitTalk_JPN": "このように縁が繋がっていなければ、再び見ることはできなかったでしょう。",
+      "UnitTalk_JPN": "こうして縁が繋がらなければ、二度と見つからなかったでしょう。",
       "TalkTime": 0.03
     },
     {
@@ -263,7 +263,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "그러니 어떻게 처분할지도 두 분께 달린 것이죠.",
-      "UnitTalk_JPN": "ですから、どう処分するかもお二人次第です。",
+      "UnitTalk_JPN": "ですから、どのように処分されるかもあなた方次第です。",
       "TalkTime": 0.03
     },
     {
@@ -271,7 +271,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "사제의 말을 들으니 고민이 된다.",
-      "UnitTalk_JPN": "司祭の言葉を聞くと悩ましい。",
+      "UnitTalk_JPN": "そう言われると悩むな…",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -280,7 +280,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "그렇다면…",
-      "UnitTalk_JPN": "では…",
+      "UnitTalk_JPN": "だったら…",
       "TalkTime": 0.03,
       "AutoHighlight": "OFF"
     },
@@ -292,13 +292,13 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "어서 열어보자.",
-          "JumpAnchorStringId_JPN": "さあ、開けてみよう。",
+          "JumpAnchorStringId_JPN": "よし、今開けてみよう。",
           "JumpAnchorId": "REWARD_ANCHOR_1"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "다음에 열어보자.",
-          "JumpAnchorStringId_JPN": "次に開けてみよう。",
+          "JumpAnchorStringId_JPN": "後々開けてみよう。",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -334,7 +334,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOCK_TICKING_04.wav",
       "UnitTalk_KOR": "사제에게 건네받은 열쇠로 자물쇠를 열었다.",
-      "UnitTalk_JPN": "司祭から渡された鍵で錠を開けた。",
+      "UnitTalk_JPN": "司祭から受け取った鍵で錠を開けた。",
       "TalkTime": 0.03
     },
     {
@@ -383,7 +383,7 @@
       "UnitMotion": "SMILE",
       "UnitPos": "POS8",
       "UnitTalk_KOR": "책이로군요. 밀폐되어 있어서인지 보존 상태가 좋습니다.",
-      "UnitTalk_JPN": "本ですね。密封されていたせいか保存状態が良いです。",
+      "UnitTalk_JPN": "本ですね。密封されていたおかげか、保存状態も良好です。",
       "TalkTime": 0.03
     },
     {
@@ -396,7 +396,7 @@
       ],
       "UnitPos": "POS8",
       "UnitTalk_KOR": "내용은… 구원자분들께 도움이 될 것 같군요.",
-      "UnitTalk_JPN": "内容は…救援者様方のお役に立ちそうです。",
+      "UnitTalk_JPN": "内容は…救援者の方のお役に立ちそうですね。",
       "TalkTime": 0.03
     },
     {
@@ -442,7 +442,7 @@
       "WaitTime": 0.0,
       "StartFxSoundName": "SFX_CUTSCENE_COMMON_PAGE_TURN.wav",
       "UnitTalk_KOR": "책에는 당시 구원자들의 실전에서 우러나온 조언이 가득 적혀 있었다.",
-      "UnitTalk_JPN": "本には当時の救援者たちの実戦から滲み出た助言がびっしりと記されていた。",
+      "UnitTalk_JPN": "本には、当時の救援者たちの実戦から得られた助言がびっしりと記されていた。",
       "TalkTime": 0.03
     },
     {
@@ -494,7 +494,7 @@
       ],
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "확실히, 이 상자 자체도 당시 사람들이 공허체에 저항했다는 증거니까요.",
-      "UnitTalk_JPN": "確かに、この箱自体も当時の人々が空虚体に抵抗した証拠ですから。",
+      "UnitTalk_JPN": "確かに、この箱自体も当時の人々が<r=ヴォイドボーン>空虚体</r>に抵抗した証拠ですから。",
       "TalkTime": 0.03
     },
     {
@@ -506,7 +506,7 @@
         "SI_PRIEST"
       ],
       "UnitTalk_KOR": "열지 않고 그대로 두는 것도 의미가 있겠지요.",
-      "UnitTalk_JPN": "開けずにそのまま置いておくことも意味があるでしょう。",
+      "UnitTalk_JPN": "開けずにそのまま置いておくことにも意味があるでしょう。",
       "TalkTime": 0.03
     },
     {
@@ -519,7 +519,7 @@
       ],
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "그럼 아무쪼록 소중히 보관해 주시길 바라겠습니다.",
-      "UnitTalk_JPN": "それではどうか大切に保管してください。",
+      "UnitTalk_JPN": "それでは、どうか大切に保管してください。",
       "TalkTime": 0.03
     },
     {

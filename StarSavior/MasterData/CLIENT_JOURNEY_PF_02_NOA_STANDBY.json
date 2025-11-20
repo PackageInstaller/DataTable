@@ -4,15 +4,52 @@
   "_Version": 4,
   "Data": [
     {
+      "Uid": 13,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "MOVIE_JOURNEY_ENTER_AREA_NOA.mp4",
+      "StartBgmFileName": "EMPTY.mp3"
+    },
+    {
+      "Uid": 12,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.0
+    },
+    {
       "Uid": 1,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_PF_02_NOA_STANDBY",
-      "RewardAnchor": "REWARD_ANCHOR_1",
       "WaitClick": false,
       "WaitTime": 0.0,
       "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
       "StartBgmFileName": "MUSIC_CUTSCENE_02.mp3",
       "UnitStrId": "NKM_UNIT_S_NOA_LISA"
+    },
+    {
+      "Uid": 14,
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 0.6
     },
     {
       "Uid": 2,
@@ -22,7 +59,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "여정 단원과 인사는 잘 나누셨나요, 단장님?",
-      "UnitTalk_JPN": "団員とご挨拶はされましたか？",
+      "UnitTalk_JPN": "団員とはご挨拶されましたか？",
       "TalkTime": 0.03
     },
     {
@@ -33,7 +70,7 @@
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_S_NOA_LISA",
       "UnitTalk_KOR": "오늘은 곧 진행될 첫 번째 평가전에 대한 설명을 드리겠습니다.",
-      "UnitTalk_JPN": "本日は、まもなく行われる試験についてご説明いたします。",
+      "UnitTalk_JPN": "今日は、まもなく行われる試験についてご説明いたしますね。",
       "TalkTime": 0.03
     },
     {
