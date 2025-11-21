@@ -61,10 +61,13 @@ def deserialize(ip, op):
         content = f.read()
     filename = os.path.basename(ip)
     header = content[:4]
+    # \x02 开头的一定加密
     if len(header) == 4 and header == b"\x02\xde\x21\x2b":
         content = decrypt_file(content, filename, skip_bytes=4)
     header = content[:4]
 
+    is_subtitle = False
+    # 这里处理\x02外都是不加密的，直接解压
     if len(header) == 4 and header[1:4] == b"\xde\x21\x2b":
         try:
             decompressed = lz4.frame.decompress(content[4:])
@@ -79,6 +82,7 @@ def deserialize(ip, op):
         except Exception as e:
             print(f"错误: {e}")
             return False
+    # 直接lz4类型
     elif len(header) == 4 and header == b"\x04\x22\x4d\x18":
         try:
             decompressed = lz4.frame.decompress(content)
@@ -93,9 +97,14 @@ def deserialize(ip, op):
             return False
     else:
         try:
+            # 这里是处理字幕类型
             str_data = content.decode("utf-8-sig")
+            if "-->" in str_data[:64]:
+                is_subtitle = True
         except:
             return False
+    if is_subtitle:
+        op = op.rsplit(".", 1)[0] + ".srt"
 
     with open(op, "w", encoding="utf-8-sig") as f:
         f.write(str_data)
