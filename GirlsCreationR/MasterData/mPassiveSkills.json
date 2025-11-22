@@ -1217,7 +1217,7 @@
             ""
         ],
         "ml_description": [
-            "入魂後に即時追加行動（毎ターン[[effects_power_1]]回まで）<hidden=effects_power_2>/移動力[[effects_power_2]]増加。1回行動後解除</hidden>",
+            "入魂後に即時追加行動[[effects_power_1]]回(毎ターン1回まで)<hidden=effects_power_2>/移動力[[effects_power_2]]増加(1回行動後解除)</hidden>",
             ""
         ]
     },
@@ -1928,11 +1928,11 @@
         "rarity": 5,
         "image_index": 1130002,
         "ml_name": [
-            "一定体力以下で攻撃増加（重複可）・敏捷増加（重複可）・移動増加",
+            "一定体力以下で攻撃増加（重複可）・精神増加（重複可）・移動増加",
             ""
         ],
         "ml_description": [
-            "一定体力以下で攻撃[[effects_power_1]%]増加（重複可）・敏捷[[effects_power_2]%]増加（重複可）・移動[[effects_power_3]]増加（重複可）",
+            "一定体力以下で攻撃[[effects_power_1]%]増加（重複可）・精神[[effects_power_2]%]増加（重複可）・移動[[effects_power_3]]増加（重複可）",
             ""
         ]
     },
@@ -1984,7 +1984,7 @@
             ""
         ],
         "ml_description": [
-            "バトル開始時、自身に再生付与/一定体力以下で自身に<help=physical_shield>物理シールド</help>付与/ダメージを受けた時、自身に攻撃・敏捷[[effects_power_4]%]増加（重複可",
+            "バトル開始時、自身に再生付与/一定体力以下で自身に<help=physical_shield>物理シールド</help>付与/ダメージを受けた時、自身に攻撃・敏捷[[effects_power_4]%]増加（重複可）",
             ""
         ]
     },
@@ -1998,6 +1998,84 @@
         ],
         "ml_description": [
             "バトル開始時、自身に<help=fire_shield>炎シールド</help>付与・防御[[effects_power_2]%]増加（重複可）/一定体力以下で防御[[effects_power_3]%]増加（重複可）",
+            ""
+        ]
+    },
+    {
+        "id": 35330047,
+        "rarity": 5,
+        "image_index": 1160006,
+        "ml_name": [
+            "行動終了後、自身の敏捷[[effects_power_1]%]減少/ターン開始時、敏捷デバフ解除",
+            ""
+        ],
+        "ml_description": [
+            "行動終了後、自身の敏捷[[effects_power_1]%]減少/ターン開始時、敏捷デバフ解除",
+            ""
+        ]
+    },
+    {
+        "id": 35330048,
+        "rarity": 5,
+        "image_index": 1110008,
+        "ml_name": [
+            "追加行動/不動/ターン開始時、攻撃デバフ解除/ダウン時に味方全体の熱情[[effects_power_5]]増加・全状態異常解除",
+            ""
+        ],
+        "ml_description": [
+            "追加行動/不動/ターン開始時、攻撃デバフ解除/ダウン時に味方全体の熱情[[effects_power_5]]増加・全状態異常解除",
+            ""
+        ]
+    },
+    {
+        "id": 35330049,
+        "rarity": 5,
+        "image_index": 1110011,
+        "ml_name": [
+            "バトル開始時、自身に再生付与/一定体力以下で自身の攻撃増加",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時、自身に再生付与/一定体力以下で自身に攻撃[[effects_power_2]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 35330050,
+        "rarity": 5,
+        "image_index": 1110008,
+        "ml_name": [
+            "再行動（行動回数＋[[effects_power_3]]）/不動/2ターンに1度行動不可/ターン開始時、敏捷デバフ解除/行動開始時、自身にシールドを1付与/行動終了後、自身の敏捷[[effects_power_4]%]減少",
+            ""
+        ],
+        "ml_description": [
+            "再行動（行動回数＋[[effects_power_3]]）/不動/2ターンに1度行動不可/ターン開始時、敏捷デバフ解除/行動開始時、自身にシールドを1付与/行動終了後、自身の敏捷[[effects_power_4]%]減少",
+            ""
+        ]
+    },
+    {
+        "id": 35330051,
+        "rarity": 5,
+        "image_index": 1110008,
+        "ml_name": [
+            "バトル開始時、自身に不動付与",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時、自身に不動付与",
+            ""
+        ]
+    },
+    {
+        "id": 35330055,
+        "rarity": 5,
+        "image_index": 1110008,
+        "ml_name": [
+            "再行動（行動回数＋[[effects_power_2]]）/不動/ターン開始時、攻撃デバフ解除",
+            ""
+        ],
+        "ml_description": [
+            "再行動（行動回数＋[[effects_power_2]]）/不動/ターン開始時、攻撃デバフ解除",
             ""
         ]
     },
@@ -5525,6 +5603,32 @@
         ]
     },
     {
+        "id": 75130017,
+        "rarity": 5,
+        "image_index": 1390004,
+        "ml_name": [
+            "白属性有利＋（50%）",
+            ""
+        ],
+        "ml_description": [
+            "味方のアイボリー（白）のバイオレット（紫）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 74130017,
+        "rarity": 4,
+        "image_index": 1130002,
+        "ml_name": [
+            "エネミーのバイオレット(紫)の攻撃+60%",
+            ""
+        ],
+        "ml_description": [
+            "エネミーのバイオレット(紫)の攻撃+[[effects_power]%]",
+            ""
+        ]
+    },
+    {
         "id": 90130001,
         "rarity": 5,
         "image_index": 1130001,
@@ -6734,6 +6838,19 @@
         ]
     },
     {
+        "id": 45090401,
+        "rarity": 5,
+        "image_index": 1300004,
+        "ml_name": [
+            "精髄：【絶望を切り開く鍵】",
+            ""
+        ],
+        "ml_description": [
+            "雷エレメントの攻撃を[[effects_power]%]強化/体力[[effects_power_2]%]増加/技法または絶技でオブジェクト召喚時、敵全体の攻撃[[effects_power_3]%]減少＜[[effects_turn_3]ターン]＞",
+            ""
+        ]
+    },
+    {
         "id": 45020501,
         "rarity": 5,
         "image_index": 1080000,
@@ -6808,6 +6925,331 @@
         ],
         "ml_description": [
             "系統：彫刻に対してダメージ[[effects_power]%]上昇/敏捷[[effects_power_2]%]増加/技法または絶技で体力消費時、味方全員の入魂ゲージ[[effects_power_3]]増加",
+            ""
+        ]
+    },
+    {
+        "id": 45011001,
+        "rarity": 5,
+        "image_index": 1150001,
+        "ml_name": [
+            "精髄：【不安のオルタ】",
+            ""
+        ],
+        "ml_description": [
+            "バトル開始時の熱情[[effects_power]]増加/水エレメントの攻撃を[[effects_power_2]%]強化/技法または絶技で熱情消費時、自身に<help=ignite>気炎</help>付与・自身の熱情[[effects_power_4]]増加",
+            ""
+        ]
+    },
+    {
+        "id": 45130401,
+        "rarity": 5,
+        "image_index": 1300002,
+        "ml_name": [
+            "精髄：【夜空を照らす聖樹】",
+            ""
+        ],
+        "ml_description": [
+            "水エレメントの攻撃を[[effects_power]%]強化/攻撃[[effects_power_2]%]増加/技法または絶技で補助効果付与時、味方全員の攻撃[[effects_power_3]%]増加（重複可）＜[[effects_turn_3]ターン]＞・移動[[effects_power_4]]増加＜[[effects_turn_4]ターン]＞",
+            ""
+        ]
+    },
+    {
+        "id": 1130001,
+        "rarity": 3,
+        "image_index": 1130001,
+        "ml_name": [
+            "体力アップ",
+            ""
+        ],
+        "ml_description": [
+            "体力[[effects_power]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1130002,
+        "rarity": 3,
+        "image_index": 1130002,
+        "ml_name": [
+            "攻撃アップ",
+            ""
+        ],
+        "ml_description": [
+            "攻撃[[effects_power]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1130003,
+        "rarity": 3,
+        "image_index": 1130003,
+        "ml_name": [
+            "精神アップ",
+            ""
+        ],
+        "ml_description": [
+            "精神[[effects_power]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1130004,
+        "rarity": 3,
+        "image_index": 1130004,
+        "ml_name": [
+            "防御アップ",
+            ""
+        ],
+        "ml_description": [
+            "防御[[effects_power]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1130005,
+        "rarity": 3,
+        "image_index": 1130005,
+        "ml_name": [
+            "器用アップ",
+            ""
+        ],
+        "ml_description": [
+            "器用[[effects_power]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1130006,
+        "rarity": 3,
+        "image_index": 1130006,
+        "ml_name": [
+            "敏捷アップ",
+            ""
+        ],
+        "ml_description": [
+            "敏捷[[effects_power]%]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1130007,
+        "rarity": 3,
+        "image_index": 1130007,
+        "ml_name": [
+            "幸運アップ",
+            ""
+        ],
+        "ml_description": [
+            "幸運[[effects_power]]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1150001,
+        "rarity": 3,
+        "image_index": 1150001,
+        "ml_name": [
+            "熱情アップ",
+            ""
+        ],
+        "ml_description": [
+            "熱情[[effects_power]]増加",
+            ""
+        ]
+    },
+    {
+        "id": 1080001,
+        "rarity": 3,
+        "image_index": 1080001,
+        "ml_name": [
+            "工芸特攻",
+            ""
+        ],
+        "ml_description": [
+            "系統：工芸に対してダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1080002,
+        "rarity": 3,
+        "image_index": 1080002,
+        "ml_name": [
+            "絵画特攻",
+            ""
+        ],
+        "ml_description": [
+            "系統：絵画に対してダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1080003,
+        "rarity": 3,
+        "image_index": 1080003,
+        "ml_name": [
+            "彫刻特攻",
+            ""
+        ],
+        "ml_description": [
+            "系統：彫刻に対してダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1080005,
+        "rarity": 3,
+        "image_index": 1080005,
+        "ml_name": [
+            "芸道特攻",
+            ""
+        ],
+        "ml_description": [
+            "系統：芸道に対してダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1080006,
+        "rarity": 3,
+        "image_index": 1080006,
+        "ml_name": [
+            "贋作特攻",
+            ""
+        ],
+        "ml_description": [
+            "系統：贋作に対してダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1390001,
+        "rarity": 3,
+        "image_index": 1390001,
+        "ml_name": [
+            "赤属性有利+",
+            ""
+        ],
+        "ml_description": [
+            "スタイルがカーマイン（赤）時、ビリジアン（緑）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1390002,
+        "rarity": 3,
+        "image_index": 1390002,
+        "ml_name": [
+            "青属性有利+",
+            ""
+        ],
+        "ml_description": [
+            "スタイルがセルリアン（青）時、カーマイン（赤）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1390003,
+        "rarity": 3,
+        "image_index": 1390003,
+        "ml_name": [
+            "緑属性有利+",
+            ""
+        ],
+        "ml_description": [
+            "スタイルがビリジアン（緑）時、セルリアン（青）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1390004,
+        "rarity": 3,
+        "image_index": 1390004,
+        "ml_name": [
+            "白属性有利+",
+            ""
+        ],
+        "ml_description": [
+            "スタイルがアイボリー（白）時、バイオレット（紫）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1390005,
+        "rarity": 3,
+        "image_index": 1390005,
+        "ml_name": [
+            "紫属性有利+",
+            ""
+        ],
+        "ml_description": [
+            "スタイルがバイオレット（紫）時、アイボリー（白）に対してのダメージ[[effects_power]%]上昇",
+            ""
+        ]
+    },
+    {
+        "id": 1300000,
+        "rarity": 3,
+        "image_index": 1300000,
+        "ml_name": [
+            "物理強化",
+            ""
+        ],
+        "ml_description": [
+            "物理エレメントの攻撃を[[effects_power]%]強化",
+            ""
+        ]
+    },
+    {
+        "id": 1300001,
+        "rarity": 3,
+        "image_index": 1300001,
+        "ml_name": [
+            "炎強化",
+            ""
+        ],
+        "ml_description": [
+            "炎エレメントの攻撃を[[effects_power]%]強化",
+            ""
+        ]
+    },
+    {
+        "id": 1300002,
+        "rarity": 3,
+        "image_index": 1300002,
+        "ml_name": [
+            "水強化",
+            ""
+        ],
+        "ml_description": [
+            "水エレメントの攻撃を[[effects_power]%]強化",
+            ""
+        ]
+    },
+    {
+        "id": 1300003,
+        "rarity": 3,
+        "image_index": 1300003,
+        "ml_name": [
+            "風強化",
+            ""
+        ],
+        "ml_description": [
+            "風エレメントの攻撃を[[effects_power]%]強化",
+            ""
+        ]
+    },
+    {
+        "id": 1300004,
+        "rarity": 3,
+        "image_index": 1300004,
+        "ml_name": [
+            "雷強化",
+            ""
+        ],
+        "ml_description": [
+            "雷エレメントの攻撃を[[effects_power]%]強化",
             ""
         ]
     }

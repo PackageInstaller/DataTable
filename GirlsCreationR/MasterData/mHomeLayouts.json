@@ -1,0 +1,738 @@
+[
+    {
+        "id": 1001,
+        "type": 1,
+        "name": "ようこそ、夢幻美術館へ！",
+        "ml_name": [
+            ""
+        ],
+        "asset": "10020",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 1,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1002,
+        "type": 1,
+        "name": "広大なキャンバス",
+        "ml_name": [
+            ""
+        ],
+        "asset": "10030",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 20,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1003,
+        "type": 1,
+        "name": "藝術のある箱庭",
+        "ml_name": [
+            ""
+        ],
+        "asset": "10050",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 30,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1004,
+        "type": 1,
+        "name": "Let's Make Art!",
+        "ml_name": [
+            ""
+        ],
+        "asset": "10060",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 40,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1005,
+        "type": 1,
+        "name": "日常を彩る円舞",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30010",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 50,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1006,
+        "type": 1,
+        "name": "賑やかなアテネス",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30020",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 60,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1007,
+        "type": 1,
+        "name": "今吹く風を写し出そう",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30030",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 70,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1008,
+        "type": 1,
+        "name": "筆を交わす同志たち",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30040",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 80,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1009,
+        "type": 1,
+        "name": "忍び寄る影",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30050",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 90,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1010,
+        "type": 1,
+        "name": "黒に染まりゆく日々",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30070",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 100,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1011,
+        "type": 1,
+        "name": "解(こたえ)は色彩の中に",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30080",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 110,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1012,
+        "type": 1,
+        "name": "暗躍する者",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30090",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 120,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1013,
+        "type": 1,
+        "name": "ようこそ、夢幻美術館へ！[Moist]",
+        "ml_name": [
+            ""
+        ],
+        "asset": "30180",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 130,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 1014,
+        "type": 1,
+        "name": "無形色のパレット[Moist]",
+        "ml_name": [
+            ""
+        ],
+        "asset": "10010",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 140,
+        "image_index": 0,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2001,
+        "type": 2,
+        "name": "美術館・エントランス（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3004100",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 1,
+        "image_index": 3004100,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2002,
+        "type": 2,
+        "name": "美術館・エントランス（夜/点灯）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3004104",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 10,
+        "image_index": 3004104,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2003,
+        "type": 2,
+        "name": "美術館・回廊（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000100",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 20,
+        "image_index": 3000100,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2004,
+        "type": 2,
+        "name": "美術館・回廊（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000101",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 21,
+        "image_index": 3000101,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2005,
+        "type": 2,
+        "name": "美術館・回廊（夜）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000102",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 22,
+        "image_index": 3000102,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2006,
+        "type": 2,
+        "name": "美術館・バックヤード廊下（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000200",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 30,
+        "image_index": 3000200,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2007,
+        "type": 2,
+        "name": "美術館・バックヤード廊下（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000201",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 31,
+        "image_index": 3000201,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2008,
+        "type": 2,
+        "name": "美術館・バックヤード廊下（夜）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000202",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 32,
+        "image_index": 3000202,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2009,
+        "type": 2,
+        "name": "美術館・中庭１（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000300",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 40,
+        "image_index": 3000300,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2010,
+        "type": 2,
+        "name": "美術館・中庭１（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000301",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 41,
+        "image_index": 3000301,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2011,
+        "type": 2,
+        "name": "美術館・中庭１（夜）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000302",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 42,
+        "image_index": 3000302,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2013,
+        "type": 2,
+        "name": "美術館・展示室（昼/点灯）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000400",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 60,
+        "image_index": 3000400,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2014,
+        "type": 2,
+        "name": "美術館・ホール（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000500",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 70,
+        "image_index": 3000500,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2015,
+        "type": 2,
+        "name": "美術館・ホール（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000501",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 71,
+        "image_index": 3000501,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2016,
+        "type": 2,
+        "name": "美術館・ホール（夜/点灯）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000502",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 72,
+        "image_index": 3000502,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2017,
+        "type": 2,
+        "name": "美術館・執務室（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000600",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 80,
+        "image_index": 3000600,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2018,
+        "type": 2,
+        "name": "美術館・執務室（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000601",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 81,
+        "image_index": 3000601,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2019,
+        "type": 2,
+        "name": "美術館・執務室（夜/点灯）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000602",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 82,
+        "image_index": 3000602,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2020,
+        "type": 2,
+        "name": "美術館・作業部屋",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000700",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 90,
+        "image_index": 3000700,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2021,
+        "type": 2,
+        "name": "美術館・汎用居室（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000800",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 100,
+        "image_index": 3000800,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2022,
+        "type": 2,
+        "name": "美術館・汎用居室（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000801",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 101,
+        "image_index": 3000801,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2023,
+        "type": 2,
+        "name": "美術館・汎用居室（夜/点灯）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000802",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 102,
+        "image_index": 3000802,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2024,
+        "type": 2,
+        "name": "美術館・館長の自室（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000900",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 110,
+        "image_index": 3000900,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2025,
+        "type": 2,
+        "name": "美術館・館長の自室（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000901",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 111,
+        "image_index": 3000901,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2026,
+        "type": 2,
+        "name": "美術館・館長の自室（夜/点灯）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3000902",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 112,
+        "image_index": 3000902,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2027,
+        "type": 2,
+        "name": "美術館・特別収蔵エリア",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3007700",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 120,
+        "image_index": 3007700,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2028,
+        "type": 2,
+        "name": "美術館・美術館前（昼）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3009300",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 0,
+        "order": 130,
+        "image_index": 3009300,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 2029,
+        "type": 2,
+        "name": "美術館・美術館前（夕）",
+        "ml_name": [
+            ""
+        ],
+        "asset": "3009301",
+        "consume_item_type": 1,
+        "consume_item_id": 0,
+        "price": 500,
+        "condition_memory_id": 0,
+        "order": 131,
+        "image_index": 3009301,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 3001,
+        "type": 3,
+        "name": "レモネードのひととき",
+        "ml_name": [
+            ""
+        ],
+        "asset": "emv_10010706_10",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 4120041,
+        "order": 70,
+        "image_index": 4120041,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 3002,
+        "type": 3,
+        "name": "その藝術家は奸悪の天敵",
+        "ml_name": [
+            ""
+        ],
+        "asset": "emv_10010801_10",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 4120030,
+        "order": 80,
+        "image_index": 4120059,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 3003,
+        "type": 3,
+        "name": "うたたねサンソヴィーノ",
+        "ml_name": [
+            ""
+        ],
+        "asset": "emv_10010901_10",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 4120059,
+        "order": 90,
+        "image_index": 4120060,
+        "start_time": "2001-01-01 00:00:00"
+    },
+    {
+        "id": 3004,
+        "type": 3,
+        "name": "運命の交差点",
+        "ml_name": [
+            ""
+        ],
+        "asset": "emv_10011006_10",
+        "consume_item_type": 0,
+        "consume_item_id": 0,
+        "price": 0,
+        "condition_memory_id": 4120080,
+        "order": 100,
+        "image_index": 4120061,
+        "start_time": "2001-01-01 00:00:00"
+    }
+]
