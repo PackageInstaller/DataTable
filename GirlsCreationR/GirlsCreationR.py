@@ -31,7 +31,9 @@ class Config:
         f"https://www-r18.gc.dmmgames.com/manifest/{PLATFORM}/{REGION}"
     )
     ASSET_JSON_FILES = [
-        "master.json"
+        "master.json",
+        "assetbundle.json",
+        "advvoice.json",
     ]  # 这里去掉了 "assetbundle.json" "advvoice.json"，有需要可以自己加上
     DOWNLOAD_DIR = "downloads"
     MASTER_DATA_DIR = "MasterData"
@@ -130,22 +132,40 @@ class Downloader:
                 print(f"{json_file} (包含 {len(asset_data['d'])} 个资源)")
                 all_assets.extend(asset_data["d"])
 
-        print(f"\n[cyan]准备处理 {len(all_assets)} 个总资源...[/cyan]")
+        print(
+            f"\n[cyan]准备处理 {len(all_assets)} 个总资源，开始检查本地文件...[/cyan]"
+        )
 
         for asset in all_assets:
             if "n" not in asset or "s" not in asset:
                 continue
 
-            if asset["n"] == "master.dmm":
+            file_name = asset["n"]
+            server_size = int(asset["s"])
+
+            if file_name == "master.dmm":
                 self.files_to_download.append(asset)
-                self.total_download_size += int(asset["s"])
+                self.total_download_size += server_size
+            else:
+                local_path = os.path.join(Config.DOWNLOAD_DIR, file_name)
+                if (
+                    os.path.exists(local_path)
+                    and os.path.getsize(local_path) == server_size
+                ):
+                    continue
+                self.files_to_download.append(asset)
+                self.total_download_size += server_size
 
         if not self.files_to_download:
-            print("[yellow]未找到master.dmm文件[/yellow]")
+            print("[green]所有文件都已是最新，无需下载。[/green]")
+            master_dmm_path = os.path.join(Config.DOWNLOAD_DIR, "master.dmm")
+            if os.path.exists(master_dmm_path):
+                with open(master_dmm_path, "rb") as f:
+                    self.master_dmm_bytes = f.read()
             return False
 
         print(
-            f"[yellow]需要下载 {len(self.files_to_download)} 个文件。总计: {self.total_download_size / 1024 / 1024:.2f} MB[/yellow]"
+            f"[yellow]需要下载/更新 {len(self.files_to_download)} 个文件。总计: {self.total_download_size / 1024 / 1024:.2f} MB[/yellow]"
         )
         return True
 
@@ -158,20 +178,45 @@ class Downloader:
             full_url, Config.APP_KEY, self.secure_timestamp
         )
 
+        local_path = os.path.join(Config.DOWNLOAD_DIR, file_name)
+        os.makedirs(os.path.dirname(local_path), exist_ok=True)
+
         download_successful = False
         for attempt in range(Config.MAX_RETRIES):
             try:
-                with self.session.get(secure_url, stream=True, timeout=30) as r:
-                    r.raise_for_status()
+                headers = {}
+                mode = "wb"
+                downloaded_size = 0
 
-                    bytes_data = bytearray()
-                    for chunk in r.iter_content(chunk_size=Config.CHUNK_SIZE):
-                        bytes_data.extend(chunk)
-                        progress.update(task_id, advance=len(chunk))
+                if os.path.exists(local_path) and file_name != "master.dmm":
+                    downloaded_size = os.path.getsize(local_path)
+                    if downloaded_size < server_size:
+                        headers["Range"] = f"bytes={downloaded_size}-"
+                        mode = "ab"
+                        progress.update(task_id, advance=downloaded_size, refresh=True)
+                    else:
+                        download_successful = True
+                        break
 
-                    if file_name == "master.dmm":
-                        with self.lock:
-                            self.master_dmm_bytes = bytes(bytes_data)
+                if not download_successful:
+                    with self.session.get(
+                        secure_url, headers=headers, stream=True, timeout=30
+                    ) as r:
+                        r.raise_for_status()
+
+                        bytes_data = bytearray()
+                        for chunk in r.iter_content(chunk_size=Config.CHUNK_SIZE):
+                            bytes_data.extend(chunk)
+                            progress.update(task_id, advance=len(chunk))
+
+                        if file_name == "master.dmm":
+                            with self.lock:
+                                self.master_dmm_bytes = bytes(bytes_data)
+                            with open(local_path, "wb") as f:
+                                f.write(bytes_data)
+                        else:
+                            with open(local_path, mode) as f:
+                                f.write(bytes_data)
 
                 download_successful = True
                 break
@@ -192,32 +237,31 @@ class Downloader:
             progress.update(task_id, description=new_description)
 
     def run(self):
-        if not self.fetch_asset_lists() or not self.files_to_download:
-            print("[red]未找到需要处理的文件[/red]")
-            return
+        has_files_to_download = self.fetch_asset_lists()
 
-        with Progress(
-            TextColumn("[cyan]{task.description}[/cyan]"),
-            BarColumn(),
-            "[progress.percentage]{task.percentage:>3.1f}%",
-            "•",
-            DownloadColumn(),
-            "•",
-            TransferSpeedColumn(),
-            "•",
-            TimeRemainingColumn(),
-        ) as progress:
+        if has_files_to_download and self.files_to_download:
+            with Progress(
+                TextColumn("[cyan]{task.description}[/cyan]"),
+                BarColumn(),
+                "[progress.percentage]{task.percentage:>3.1f}%",
+                "•",
+                DownloadColumn(),
+                "•",
+                TransferSpeedColumn(),
+                "•",
+                TimeRemainingColumn(),
+            ) as progress:
 
-            initial_description = f"下载中... (0/{len(self.files_to_download)})"
-            task_id = progress.add_task(
-                description=initial_description, total=self.total_download_size
-            )
+                initial_description = f"下载中... (0/{len(self.files_to_download)})"
+                task_id = progress.add_task(
+                    description=initial_description, total=self.total_download_size
+                )
 
-            with ThreadPoolExecutor(max_workers=Config.MAX_WORKERS) as executor:
-                for asset in self.files_to_download:
-                    executor.submit(self.download_file, asset, progress, task_id)
+                with ThreadPoolExecutor(max_workers=Config.MAX_WORKERS) as executor:
+                    for asset in self.files_to_download:
+                        executor.submit(self.download_file, asset, progress, task_id)
 
-        print(f"\n[bold green]下载完成！[/bold green]")
+            print(f"\n[bold green]下载完成！[/bold green]")
         if self.master_dmm_bytes:
             decrypt_master(self.master_dmm_bytes)
         else:
