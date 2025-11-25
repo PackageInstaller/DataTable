@@ -510,7 +510,7 @@
         "GetItemId": 1040071,
         "GetNum": 1,
         "Bind": 0,
-        "Name": "高级材料·任选礼盒",
+        "Name": "虚蚀狂潮·高级材料自选",
         "ConsumableID": [
             [
                 1070006,
@@ -527,7 +527,7 @@
         "RefreshType": 17,
         "RefreshNum": 5,
         "SexLimit": 0,
-        "Sort": 20,
+        "Sort": 21,
         "CheckDisplay": true,
         "ConditionShow": []
     },
@@ -538,7 +538,7 @@
         "GetItemId": 1040073,
         "GetNum": 1,
         "Bind": 0,
-        "Name": "中级材料·任选礼盒",
+        "Name": "虚蚀狂潮·中级材料自选",
         "ConsumableID": [
             [
                 1070006,
@@ -555,7 +555,7 @@
         "RefreshType": 17,
         "RefreshNum": 5,
         "SexLimit": 0,
-        "Sort": 21,
+        "Sort": 23,
         "CheckDisplay": true,
         "ConditionShow": []
     },
@@ -583,7 +583,7 @@
         "RefreshType": 17,
         "RefreshNum": 5,
         "SexLimit": 0,
-        "Sort": 22,
+        "Sort": 24,
         "CheckDisplay": true,
         "ConditionShow": []
     },
@@ -611,7 +611,7 @@
         "RefreshType": 17,
         "RefreshNum": 5,
         "SexLimit": 0,
-        "Sort": 23,
+        "Sort": 25,
         "CheckDisplay": true,
         "ConditionShow": []
     },
@@ -640,6 +640,62 @@
         "RefreshNum": 5,
         "SexLimit": 0,
         "Sort": 18,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "233024": {
+        "Key": 233024,
+        "Id": 233024,
+        "ExchangeID": 233,
+        "GetItemId": 1040203,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "幻花异梦·高级材料自选",
+        "ConsumableID": [
+            [
+                1070006,
+                320
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                30,
+                5,
+                1
+            ]
+        ],
+        "RefreshType": 17,
+        "RefreshNum": 5,
+        "SexLimit": 0,
+        "Sort": 20,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "233025": {
+        "Key": 233025,
+        "Id": 233025,
+        "ExchangeID": 233,
+        "GetItemId": 1040204,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "幻花异梦·中级材料自选",
+        "ConsumableID": [
+            [
+                1070006,
+                24
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                30,
+                5,
+                1
+            ]
+        ],
+        "RefreshType": 17,
+        "RefreshNum": 5,
+        "SexLimit": 0,
+        "Sort": 22,
         "CheckDisplay": true,
         "ConditionShow": []
     },
@@ -10432,7 +10488,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10454,7 +10510,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -10476,7 +10532,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -10498,7 +10554,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10751,6 +10807,50 @@
         "CheckDisplay": true,
         "ConditionShow": []
     },
+    "255016": {
+        "Key": 255016,
+        "Id": 255016,
+        "ExchangeID": 255,
+        "GetItemId": 1092092,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "原鲜羊肋排",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 255003,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "255017": {
+        "Key": 255017,
+        "Id": 255017,
+        "ExchangeID": 255,
+        "GetItemId": 1092093,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "原鲜猛兽肋排",
+        "ConsumableID": [
+            [
+                10008,
+                900
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 255003,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
     "256001": {
         "Key": 256001,
         "Id": 256001,
@@ -10762,7 +10862,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10784,7 +10884,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -10828,7 +10928,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10850,7 +10950,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10872,7 +10972,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10894,7 +10994,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10916,7 +11016,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10938,7 +11038,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10960,7 +11060,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -10982,7 +11082,7 @@
         "ConsumableID": [
             [
                 10008,
-                200
+                180
             ]
         ],
         "UnlockConditions": [],
@@ -11004,7 +11104,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11026,7 +11126,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11048,7 +11148,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11070,7 +11170,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11092,7 +11192,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11114,7 +11214,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11136,7 +11236,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11158,7 +11258,7 @@
         "ConsumableID": [
             [
                 10008,
-                400
+                360
             ]
         ],
         "UnlockConditions": [],
@@ -11180,7 +11280,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11202,7 +11302,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11224,7 +11324,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11246,7 +11346,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11268,7 +11368,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11290,7 +11390,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11312,7 +11412,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11334,7 +11434,7 @@
         "ConsumableID": [
             [
                 10008,
-                600
+                540
             ]
         ],
         "UnlockConditions": [],
@@ -11342,6 +11442,182 @@
         "RefreshNum": 60,
         "SexLimit": 0,
         "Sort": 257024,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257025": {
+        "Key": 257025,
+        "Id": 257025,
+        "ExchangeID": 257,
+        "GetItemId": 1052425,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊火精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257025,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257026": {
+        "Key": 257026,
+        "Id": 257026,
+        "ExchangeID": 257,
+        "GetItemId": 1052426,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊冰精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257026,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257027": {
+        "Key": 257027,
+        "Id": 257027,
+        "ExchangeID": 257,
+        "GetItemId": 1052427,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊雷精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257027,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257028": {
+        "Key": 257028,
+        "Id": 257028,
+        "ExchangeID": 257,
+        "GetItemId": 1052428,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊风精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257028,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257029": {
+        "Key": 257029,
+        "Id": 257029,
+        "ExchangeID": 257,
+        "GetItemId": 1052429,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊岩精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257029,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257030": {
+        "Key": 257030,
+        "Id": 257030,
+        "ExchangeID": 257,
+        "GetItemId": 1052430,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊森精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257030,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257031": {
+        "Key": 257031,
+        "Id": 257031,
+        "ExchangeID": 257,
+        "GetItemId": 1052431,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊光精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257031,
+        "CheckDisplay": true,
+        "ConditionShow": []
+    },
+    "257032": {
+        "Key": 257032,
+        "Id": 257032,
+        "ExchangeID": 257,
+        "GetItemId": 1052432,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "蜥脊暗精晶片",
+        "ConsumableID": [
+            [
+                10008,
+                720
+            ]
+        ],
+        "UnlockConditions": [],
+        "RefreshType": 15,
+        "RefreshNum": 60,
+        "SexLimit": 0,
+        "Sort": 257032,
         "CheckDisplay": true,
         "ConditionShow": []
     },
@@ -21949,5 +22225,1189 @@
         "Sort": 21,
         "CheckDisplay": true,
         "ConditionShow": []
+    },
+    "272001": {
+        "Key": 272001,
+        "Id": 272001,
+        "ExchangeID": 272,
+        "GetItemId": 2010940,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140力量套装头盔",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 2,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272002": {
+        "Key": 272002,
+        "Id": 272002,
+        "ExchangeID": 272,
+        "GetItemId": 2010941,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140敏捷套装护面",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 3,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272003": {
+        "Key": 272003,
+        "Id": 272003,
+        "ExchangeID": 272,
+        "GetItemId": 2010942,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140智力套装毡帽",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 4,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272004": {
+        "Key": 272004,
+        "Id": 272004,
+        "ExchangeID": 272,
+        "GetItemId": 2011040,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160力量套装覆面盔",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 5,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272005": {
+        "Key": 272005,
+        "Id": 272005,
+        "ExchangeID": 272,
+        "GetItemId": 2011041,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160敏捷套装揭面盔",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 6,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272006": {
+        "Key": 272006,
+        "Id": 272006,
+        "ExchangeID": 272,
+        "GetItemId": 2011042,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160智力套装法冠",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 7,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272007": {
+        "Key": 272007,
+        "Id": 272007,
+        "ExchangeID": 272,
+        "GetItemId": 2020940,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140力量套装板甲",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 8,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272008": {
+        "Key": 272008,
+        "Id": 272008,
+        "ExchangeID": 272,
+        "GetItemId": 2020941,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140敏捷套装胸甲",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 9,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272009": {
+        "Key": 272009,
+        "Id": 272009,
+        "ExchangeID": 272,
+        "GetItemId": 2020942,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140智力套装长袍",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 10,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272010": {
+        "Key": 272010,
+        "Id": 272010,
+        "ExchangeID": 272,
+        "GetItemId": 2021040,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160力量套装重铠",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 11,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272011": {
+        "Key": 272011,
+        "Id": 272011,
+        "ExchangeID": 272,
+        "GetItemId": 2021041,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160敏捷套装战甲",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 12,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272012": {
+        "Key": 272012,
+        "Id": 272012,
+        "ExchangeID": 272,
+        "GetItemId": 2021042,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160智力套装羽织",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 13,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272013": {
+        "Key": 272013,
+        "Id": 272013,
+        "ExchangeID": 272,
+        "GetItemId": 2030940,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140力量套装护臂",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 14,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272014": {
+        "Key": 272014,
+        "Id": 272014,
+        "ExchangeID": 272,
+        "GetItemId": 2030941,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140敏捷套装护手",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 15,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272015": {
+        "Key": 272015,
+        "Id": 272015,
+        "ExchangeID": 272,
+        "GetItemId": 2030942,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140智力套装裹手",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 16,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272016": {
+        "Key": 272016,
+        "Id": 272016,
+        "ExchangeID": 272,
+        "GetItemId": 2031040,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160力量套装臂铠",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 17,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272017": {
+        "Key": 272017,
+        "Id": 272017,
+        "ExchangeID": 272,
+        "GetItemId": 2031041,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160敏捷套装臂甲",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 18,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272018": {
+        "Key": 272018,
+        "Id": 272018,
+        "ExchangeID": 272,
+        "GetItemId": 2031042,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160智力套装臂环",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 19,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272019": {
+        "Key": 272019,
+        "Id": 272019,
+        "ExchangeID": 272,
+        "GetItemId": 2040940,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140力量套装板甲靴",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 20,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272020": {
+        "Key": 272020,
+        "Id": 272020,
+        "ExchangeID": 272,
+        "GetItemId": 2040941,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140敏捷套装胫甲",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 21,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272021": {
+        "Key": 272021,
+        "Id": 272021,
+        "ExchangeID": 272,
+        "GetItemId": 2040942,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140智力套装筒靴",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 22,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272022": {
+        "Key": 272022,
+        "Id": 272022,
+        "ExchangeID": 272,
+        "GetItemId": 2041040,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160力量套装腿铠",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 23,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272023": {
+        "Key": 272023,
+        "Id": 272023,
+        "ExchangeID": 272,
+        "GetItemId": 2041041,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160敏捷套装战靴",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 24,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272024": {
+        "Key": 272024,
+        "Id": 272024,
+        "ExchangeID": 272,
+        "GetItemId": 2041042,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160智力套装法靴",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 25,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272025": {
+        "Key": 272025,
+        "Id": 272025,
+        "ExchangeID": 272,
+        "GetItemId": 2080940,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140力量套装红玉左手环",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 26,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272026": {
+        "Key": 272026,
+        "Id": 272026,
+        "ExchangeID": 272,
+        "GetItemId": 2080941,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140敏捷套装翡翠左手环",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 27,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272027": {
+        "Key": 272027,
+        "Id": 272027,
+        "ExchangeID": 272,
+        "GetItemId": 2080942,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140智力套装钻石左手环",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 28,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272028": {
+        "Key": 272028,
+        "Id": 272028,
+        "ExchangeID": 272,
+        "GetItemId": 2081040,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160力量套装暖阳左手环",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 29,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272029": {
+        "Key": 272029,
+        "Id": 272029,
+        "ExchangeID": 272,
+        "GetItemId": 2081041,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160敏捷套装玉髓左手环",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 30,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272030": {
+        "Key": 272030,
+        "Id": 272030,
+        "ExchangeID": 272,
+        "GetItemId": 2081042,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160智力套装星辉左手环",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 31,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272031": {
+        "Key": 272031,
+        "Id": 272031,
+        "ExchangeID": 272,
+        "GetItemId": 2090940,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140力量套装红玉右手环",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 32,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272032": {
+        "Key": 272032,
+        "Id": 272032,
+        "ExchangeID": 272,
+        "GetItemId": 2090941,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140敏捷套装翡翠右手环",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 33,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272033": {
+        "Key": 272033,
+        "Id": 272033,
+        "ExchangeID": 272,
+        "GetItemId": 2090942,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "140智力套装钻石右手环",
+        "ConsumableID": [
+            [
+                1070040,
+                60
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 34,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
+    },
+    "272034": {
+        "Key": 272034,
+        "Id": 272034,
+        "ExchangeID": 272,
+        "GetItemId": 2091040,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160力量套装暖阳右手环",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 35,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272035": {
+        "Key": 272035,
+        "Id": 272035,
+        "ExchangeID": 272,
+        "GetItemId": 2091041,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160敏捷套装玉髓右手环",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 36,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272036": {
+        "Key": 272036,
+        "Id": 272036,
+        "ExchangeID": 272,
+        "GetItemId": 2091042,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "160智力套装星辉右手环",
+        "ConsumableID": [
+            [
+                1070041,
+                80
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2327
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 99999,
+        "SexLimit": 0,
+        "Sort": 37,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2327
+            ]
+        ]
+    },
+    "272037": {
+        "Key": 272037,
+        "Id": 272037,
+        "ExchangeID": 272,
+        "GetItemId": 1070043,
+        "GetNum": 1,
+        "Bind": 0,
+        "Name": "浮光流金",
+        "ConsumableID": [
+            [
+                1070035,
+                1
+            ]
+        ],
+        "UnlockConditions": [
+            [
+                9,
+                2321
+            ]
+        ],
+        "RefreshType": 0,
+        "RefreshNum": 30,
+        "SexLimit": 0,
+        "Sort": 1,
+        "CheckDisplay": true,
+        "ConditionShow": [
+            [
+                9,
+                2321
+            ]
+        ]
     }
 }

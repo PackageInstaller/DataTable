@@ -3618,6 +3618,35 @@
         "IsShowUI": true,
         "PauseLogic": []
     },
+    "121": {
+        "Key": 121,
+        "Id": 121,
+        "Name": "幻梦之源",
+        "Description": "受到幻幻花之力的影响，副本内的所有敌人获得巨额属性增幅。",
+        "Remark": "",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                700140,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
     "201": {
         "Key": 201,
         "Id": 201,
@@ -3625,6 +3654,151 @@
         "Description": "迷境值涨满时，出现迷梦具象攻击玩家，击败迷梦具象会获得大幅战斗增益。",
         "Remark": "S2核心词缀",
         "Icon": "ui/atlas/affix/com_affix_s1_flux_meteor1",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "202": {
+        "Key": 202,
+        "Id": 202,
+        "Name": "幻能晶簇",
+        "Description": "交互释放场景中的幻能晶簇，能够大幅增长迷境值。",
+        "Remark": "S2核心词缀",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_energy1",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "203": {
+        "Key": 203,
+        "Id": 203,
+        "Name": "迷梦具象·暴怒",
+        "Description": "迷境值涨满时，出现迷梦具象·暴怒攻击玩家，击败会获得大幅战斗增益。",
+        "Remark": "S2核心词缀",
+        "Icon": "ui/atlas/affix/com_affix_baonu",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "204": {
+        "Key": 204,
+        "Id": 204,
+        "Name": "迷梦具象·崩裂",
+        "Description": "迷境值涨满时，出现迷梦具象·崩裂攻击玩家，击败会获得大幅战斗增益。",
+        "Remark": "S2核心词缀",
+        "Icon": "ui/atlas/affix/com_affix_benghuai",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "205": {
+        "Key": 205,
+        "Id": 205,
+        "Name": "迷梦具象·狩猎",
+        "Description": "迷境值涨满时，出现迷梦具象·崩裂攻击玩家，击败会获得大幅战斗增益。",
+        "Remark": "S2核心词缀",
+        "Icon": "ui/atlas/affix/com_affix_waiqiangzhonggan",
+        "EffectType": 2,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                0,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "206": {
+        "Key": 206,
+        "Id": 206,
+        "Name": "迷梦具象·救赎",
+        "Description": "迷境值涨满时，出现迷梦具象·救赎，治愈迷梦具象·救赎会获得大幅战斗增益。",
+        "Remark": "S2核心词缀",
+        "Icon": "ui/atlas/affix/com_affix_bingfenglingyu",
         "EffectType": 2,
         "TargetType": 3,
         "Level": 1,

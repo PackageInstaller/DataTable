@@ -3356,7 +3356,7 @@
         "Id": 90222,
         "Name": "因子心眼冷却",
         "Desc": "因子心眼冷却",
-        "AttrType": 100,
+        "AttrType": 101,
         "LogicType": 1,
         "AttrParams": [
             1744
@@ -3371,7 +3371,7 @@
         "Id": 90223,
         "Name": "因子护佑之风冷却",
         "Desc": "因子护佑之风冷却",
-        "AttrType": 100,
+        "AttrType": 101,
         "LogicType": 1,
         "AttrParams": [
             1437
@@ -3423,6 +3423,66 @@
         ],
         "LowerLimit": 0,
         "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90227": {
+        "Key": 90227,
+        "Id": 90227,
+        "Name": "惩击转治疗乘算",
+        "Desc": "惩击转治疗乘算",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": -99999,
+        "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90228": {
+        "Key": 90228,
+        "Id": 90228,
+        "Name": "自然庇护持续时间",
+        "Desc": "自然庇护持续时间",
+        "AttrType": 502,
+        "LogicType": 4,
+        "AttrParams": [
+            21422
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 10000,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90229": {
+        "Key": 90229,
+        "Id": 90229,
+        "Name": "神罚之镰特效资源管理",
+        "Desc": "神罚之镰特效资源管理",
+        "AttrType": 0,
+        "LogicType": 0,
+        "AttrParams": [
+            0
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 2,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90230": {
+        "Key": 90230,
+        "Id": 90230,
+        "Name": "不羁之种冷却时间",
+        "Desc": "不羁之种冷却时间",
+        "AttrType": 100,
+        "LogicType": 1,
+        "AttrParams": [
+            1519
+        ],
+        "LowerLimit": 0,
+        "UpperLimit": 5000,
         "IsSyncClient": true,
         "AttrDesc": ""
     },
@@ -3514,6 +3574,21 @@
         ],
         "LowerLimit": -99999,
         "UpperLimit": 99999,
+        "IsSyncClient": true,
+        "AttrDesc": ""
+    },
+    "90306": {
+        "Key": 90306,
+        "Id": 90306,
+        "Name": "S2套装效果神影螺旋buff层数",
+        "Desc": "神影螺旋buff层数增加",
+        "AttrType": 503,
+        "LogicType": 4,
+        "AttrParams": [
+            2205134
+        ],
+        "LowerLimit": -999,
+        "UpperLimit": 999,
         "IsSyncClient": true,
         "AttrDesc": ""
     },

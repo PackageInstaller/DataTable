@@ -182,13 +182,12 @@ def download_assets(assets: list[str], size_map: dict[str, int]):
 
 
 def main():
-    # ver = get_environment_ver()
-    #webgl_names = download_webgl_manifest()
+    
+    ver = get_environment_ver()
     download_masterdata()
-    # patch_names, size_map = download_patch_list(ver)
-
-    # all_assets = sorted(set(webgl_names + patch_names))
-    # download_assets(all_assets, size_map)
+    patch_names, size_map = download_patch_list(ver)
+    # 这里注释了资产只保留了数据表，有需要下载资产的自己取消注释
+    # download_assets(sorted(set(download_webgl_manifest() + patch_names)), size_map)
 
 if __name__ == "__main__":
     main()

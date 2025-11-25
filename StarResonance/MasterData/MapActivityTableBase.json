@@ -39,7 +39,7 @@
         "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_2",
         "FunctionId": 100802,
         "RedDotId": 1201,
-        "Note": ""
+        "Note": "平原景点打卡"
     },
     "4": {
         "Key": 4,
@@ -61,11 +61,21 @@
     "5": {
         "Key": 5,
         "Id": 5,
+        "Name": "点亮旅程",
+        "Scene": [
+            9
+        ],
+        "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_2",
+        "FunctionId": 800888,
+        "RedDotId": 1202,
+        "Note": "高原景点打卡"
+    },
+    "6": {
+        "Key": 6,
+        "Id": 6,
         "Name": "地区声望",
         "Scene": [
             9,
-            91,
-            92,
             93,
             94
         ],

@@ -4666,6 +4666,89 @@
         "Note": "",
         "AwardPreview": []
     },
+    "20022": {
+        "Key": 20022,
+        "QuestId": 20022,
+        "QuestName": "分裂的两人",
+        "QuestDetail": "猎人营地的首领一直有一个很苦恼的事情，<br>他觉得凭借自己一个人是解决不了的，<br>正急得寻找合适的人选，所以去帮帮他吧。",
+        "QuestType": 2,
+        "QuestStep": 20022006,
+        "AwardId": 31003140,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10904)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30075"
+            ]
+        ],
+        "AccpetType": [
+            1,
+            93,
+            1930101,
+            20022001,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini10/sidequest_mini10-16",
+        "NpcMarkedByQuest": [
+            [
+                1090625,
+                23063601,
+                1090402,
+                22002102,
+                22002203,
+                1930101,
+                22002202
+            ],
+            [
+                23063504,
+                22002204,
+                22002205,
+                22002206,
+                22002207
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "20023": {
+        "Key": 20023,
+        "QuestId": 20023,
+        "QuestName": "妮欧咪的烦恼",
+        "QuestDetail": "孩子们互相都是朋友，在知道阿尔卑一个人去森林里找莫哈麦德时，一向安静的妮欧咪终于生气了，她请求你送一封信给莫哈麦德告状，杜绝这种危险的行为……",
+        "QuestType": 2,
+        "QuestStep": 20023001,
+        "AwardId": 31003110,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(30804)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/sidequest_93yueyingzhiye/sidequest_93yueyingzhiye-4",
+        "NpcMarkedByQuest": [
+            [
+                23000501,
+                1930103,
+                1930104,
+                22002301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "20040": {
         "Key": 20040,
         "QuestId": 20040,
@@ -4890,7 +4973,7 @@
             1,
             9,
             1090303,
-            0,
+            30000201,
             0
         ],
         "TimeLimit": [],
@@ -4913,10 +4996,10 @@
         "QuestDetail": "作为地下世界的原住民，巴哈马尔巨蜥在矿场建成之前就已在这里生活了不知多少年代，它们早已是高原人习以为常的存在。然而对于布法利亚教团与冒险者来说，这种生理特征与巨龙相似的物种，始终需要警惕。",
         "QuestType": 3,
         "QuestStep": 30003001,
-        "AwardId": 0,
+        "AwardId": 31003070,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "34502",
         "MustPreQuest": [],
         "AccessLimit": [],
         "AccpetType": [
@@ -4962,16 +5045,21 @@
     "30004": {
         "Key": 30004,
         "QuestId": 30004,
-        "QuestName": "巴西利斯克的怒咆",
-        "QuestDetail": "巴西利斯克是高原人给巨蜥一族首领起的名字，其意为神话中的怪物，如果龙族与巨蜥的同源猜想成立，那么巴西利斯克毫无疑问是最接近龙族的存在。",
+        "QuestName": "蓝脊巨蜥之噬",
+        "QuestDetail": "蓝脊巨蜥是高原巨蜥族群中的变异个体，拥有更强大的力量、更健壮的体魄以及更灵活的身手，如果龙族与巨蜥的同源猜想成立，那么蓝脊巨蜥相比普通巨蜥是更接近龙族的存在。",
         "QuestType": 3,
         "QuestStep": 30004002,
-        "AwardId": 0,
+        "AwardId": 31003080,
         "FollowQuest": 0,
         "PreQuest": [],
         "PreQuestLogic": "30003",
         "MustPreQuest": [],
-        "AccessLimit": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30079"
+            ]
+        ],
         "AccpetType": [
             0
         ],
@@ -5007,6 +5095,37 @@
                 23450103,
                 23450201,
                 23340402
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30005": {
+        "Key": 30005,
+        "QuestId": 30005,
+        "QuestName": "阿尔卑的烦恼",
+        "QuestDetail": "阿尔卑有一个朋友，他被父母带走，跟着阿方索一起离开了猎人营地。<br>阿尔卑有一个关于如何见到好朋友的烦恼，正在营地边缘赌气……",
+        "QuestType": 3,
+        "QuestStep": 30005001,
+        "AwardId": 31003100,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(30637)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/sidequest_93yueyingzhiye/sidequest_93yueyingzhiye-3",
+        "NpcMarkedByQuest": [
+            [
+                23000501,
+                1930103,
+                1930104
             ]
         ],
         "Note": "",
@@ -6140,7 +6259,7 @@
         "Key": 30118,
         "QuestId": 30118,
         "QuestName": "失踪的维修工匠",
-        "QuestDetail": "维修路灯的工匠赛斯突然失踪了，难道和之前他在路灯上找到的神秘遗产有关？协助卡利斯托调查一下吧。",
+        "QuestDetail": "维修路灯的工匠克莱门特突然失踪了，难道和之前他在路灯上找到的神秘遗产有关？协助卡利斯托调查一下吧。",
         "QuestType": 3,
         "QuestStep": 30118026,
         "AwardId": 31000890,
@@ -6346,7 +6465,7 @@
         "Key": 30123,
         "QuestId": 30123,
         "QuestName": "泰德的秘宝",
-        "QuestDetail": "年轻的工匠列维找到了一个前会长泰德留下的箱子，并且迫切地想要打开它。他认为这里面存放的是泰德大师留下的工匠秘籍。事实真的如他所想吗？",
+        "QuestDetail": "年轻的工匠基安找到了一个前会长泰德留下的箱子，并且迫切地想要打开它。他认为这里面存放的是泰德大师留下的工匠秘籍。事实真的如他所想吗？",
         "QuestType": 3,
         "QuestStep": 30123001,
         "AwardId": 31000910,
@@ -8900,7 +9019,7 @@
         "Key": 30214,
         "QuestId": 30214,
         "QuestName": "水源清理计划",
-        "QuestDetail": "薇尔赫米娜表示营地中的水源经常遭到污染，始作俑者竟然是一只狡猾的哥布林，想想办法吧。",
+        "QuestDetail": "菲奥娜表示营地中的水源经常遭到污染，始作俑者竟然是一只狡猾的哥布林，想想办法吧。",
         "QuestType": 3,
         "QuestStep": 30214001,
         "AwardId": 31001810,
@@ -12130,7 +12249,7 @@
         "Key": 30617,
         "QuestId": 30617,
         "QuestName": "疗愈",
-        "QuestDetail": "矿场的混乱渐渐止息，一些破裂的人际关系也该被修复吧——管理员真挚地如此希望着。",
+        "QuestDetail": "和矿场的办事员谈谈。",
         "QuestType": 3,
         "QuestStep": 30617001,
         "AwardId": 31002690,
@@ -12339,12 +12458,12 @@
         "AwardId": 31002730,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "(10904)",
         "MustPreQuest": [],
         "AccessLimit": [
             [
-                "1",
-                "999"
+                "18",
+                "30077"
             ]
         ],
         "AccpetType": [
@@ -12369,7 +12488,8 @@
                 23061902,
                 23061904,
                 23061901,
-                23062101
+                23062101,
+                23062102
             ],
             [
                 23061803,
@@ -12395,14 +12515,9 @@
         "AwardId": 31002740,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "30621",
         "MustPreQuest": [],
-        "AccessLimit": [
-            [
-                "1",
-                "999"
-            ]
-        ],
+        "AccessLimit": [],
         "AccpetType": [
             0
         ],
@@ -12426,18 +12541,19 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229
             ],
             [
                 23061803,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
                 23061407,
                 23061408,
                 23061903,
-                23061905,
-                23062201
+                23061905
             ]
         ],
         "Note": "",
@@ -12483,19 +12599,20 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201
             ],
             [
                 23061803,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
                 23061407,
                 23061408,
                 23061903,
-                23061905,
-                23062201
+                23061905
             ]
         ],
         "Note": "",
@@ -12581,6 +12698,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -12590,14 +12708,14 @@
             ],
             [
                 23061803,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
                 23061407,
                 23061408,
                 23061903,
-                23061905,
-                23062201
+                23061905
             ]
         ],
         "Note": "",
@@ -12644,6 +12762,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -12652,14 +12771,14 @@
             ],
             [
                 23061803,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
                 23061407,
                 23061408,
                 23061903,
-                23061905,
-                23062201
+                23061905
             ]
         ],
         "Note": "",
@@ -12701,6 +12820,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -12712,14 +12832,14 @@
             ],
             [
                 23061803,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
                 23061407,
                 23061408,
                 23061903,
-                23061905,
-                23062201
+                23061905
             ]
         ],
         "Note": "",
@@ -12766,6 +12886,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -12777,14 +12898,14 @@
             ],
             [
                 23061803,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
                 23061407,
                 23061408,
                 23061903,
-                23061905,
-                23062201
+                23061905
             ]
         ],
         "Note": "",
@@ -12830,6 +12951,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -12841,14 +12963,14 @@
             ],
             [
                 23061803,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
                 23061407,
                 23061408,
                 23061903,
-                23061905,
-                23062201
+                23061905
             ]
         ],
         "Note": "",
@@ -12890,6 +13012,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -12901,7 +13024,7 @@
             ],
             [
                 23061803,
-                23063001,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
@@ -12909,7 +13032,7 @@
                 23061408,
                 23061903,
                 23061905,
-                23062201,
+                23063001,
                 23063002,
                 23063004
             ]
@@ -12958,6 +13081,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -12969,7 +13093,7 @@
             ],
             [
                 23061803,
-                23063001,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
@@ -12977,7 +13101,7 @@
                 23061408,
                 23061903,
                 23061905,
-                23062201,
+                23063001,
                 23063002,
                 23063004,
                 23063003
@@ -13027,6 +13151,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -13038,7 +13163,7 @@
             ],
             [
                 23061803,
-                23063001,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
@@ -13046,7 +13171,7 @@
                 23061408,
                 23061903,
                 23061905,
-                23062201,
+                23063001,
                 23063002,
                 23063004,
                 23063003
@@ -13100,6 +13225,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -13112,7 +13238,7 @@
             ],
             [
                 23061803,
-                23063001,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
@@ -13120,7 +13246,7 @@
                 23061408,
                 23061903,
                 23061905,
-                23062201,
+                23063001,
                 23063002,
                 23063004,
                 23063003,
@@ -13175,6 +13301,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -13189,7 +13316,7 @@
             ],
             [
                 23061803,
-                23063001,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
@@ -13197,7 +13324,7 @@
                 23061408,
                 23061903,
                 23061905,
-                23062201,
+                23063001,
                 23063002,
                 23063004,
                 23063003,
@@ -13217,14 +13344,9 @@
         "AwardId": 31002860,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "(30004)",
         "MustPreQuest": [],
-        "AccessLimit": [
-            [
-                "1",
-                "999"
-            ]
-        ],
+        "AccessLimit": [],
         "AccpetType": [
             1,
             9,
@@ -13277,6 +13399,57 @@
             ],
             [
                 23063504
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30637": {
+        "Key": 30637,
+        "QuestId": 30637,
+        "QuestName": "老猎人的求助",
+        "QuestDetail": "阿德里安最近因为打猎从山崖上摔下来了，年纪大了需要养养伤。<br>但是因为出不了营地，导致他很担心因为自己负责的猎物陷阱没有去维护，而让大家的狩猎成果不理想……",
+        "QuestType": 3,
+        "QuestStep": 30637001,
+        "AwardId": 31003150,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "20022",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            93,
+            1930103,
+            30063701,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/sidequest_mini10/sidequest_mini10-17",
+        "NpcMarkedByQuest": [
+            [
+                1090625,
+                23063601,
+                1090402,
+                22002102,
+                22002203,
+                1930101,
+                22002202,
+                1930103,
+                23063704
+            ],
+            [
+                23063504,
+                23063701,
+                23063702,
+                22002204,
+                22002205,
+                22002206,
+                22002207,
+                23063703
             ]
         ],
         "Note": "",
@@ -13603,15 +13776,15 @@
         "QuestDetail": "陷落河的水近来受到热捧，让一些人起了贩卖河水的念头 。",
         "QuestType": 3,
         "QuestStep": 30801001,
-        "AwardId": 0,
+        "AwardId": 31003060,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "(10904)",
         "MustPreQuest": [],
         "AccessLimit": [
             [
-                "1",
-                "999"
+                "18",
+                "30079"
             ]
         ],
         "AccpetType": [
@@ -13626,6 +13799,122 @@
             [
                 1090302,
                 1090304
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30802": {
+        "Key": 30802,
+        "QuestId": 30802,
+        "QuestName": "学术研究危机事件",
+        "QuestDetail": "多日未见采购员，贝尔利特感到担忧；与此同时，某位正在研究奥古拉斯遗迹的学者最近好像遇到了一些麻烦。",
+        "QuestType": 3,
+        "QuestStep": 30802001,
+        "AwardId": 31003090,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            1091201,
+            33080201,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini07/bahamar_mini07-8",
+        "NpcMarkedByQuest": [
+            [
+                1090302,
+                1090304,
+                1090102,
+                1091201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30803": {
+        "Key": 30803,
+        "QuestId": 30803,
+        "QuestName": "讨债来了",
+        "QuestDetail": "阿摩拉拜托你去问阿道夫要对方借走的狐狸皮毛，因为马上要过冬了，现在大家手里的货都不多，她的猎物要卖了买储存用的食物，无法跟以前一样阔绰了，但是互相都是营地里的人不好亲自去，于是拜托你帮个忙……",
+        "QuestType": 3,
+        "QuestStep": 30803004,
+        "AwardId": 31003120,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(30005)",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "30076"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini07/bahamar_mini07-12",
+        "NpcMarkedByQuest": [
+            [
+                1090302,
+                1090304,
+                1090102,
+                1091201,
+                1930102,
+                23080301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "30804": {
+        "Key": 30804,
+        "QuestId": 30804,
+        "QuestName": "家属们的困扰",
+        "QuestDetail": "亚莱西亚是猎人基安娜的女儿，她看起来提心吊胆的，似乎有什么事情在困扰着她……",
+        "QuestType": 3,
+        "QuestStep": 30804001,
+        "AwardId": 31003130,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "30803",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            93,
+            1930202,
+            33080401,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini07/bahamar_mini07-13",
+        "NpcMarkedByQuest": [
+            [
+                1090302,
+                1090304,
+                1090102,
+                1091201,
+                1930102,
+                23080301,
+                23080401,
+                1931001,
+                1930202
             ]
         ],
         "Note": "",
@@ -14432,8 +14721,8 @@
     "33404": {
         "Key": 33404,
         "QuestId": 33404,
-        "QuestName": "他的名字",
-        "QuestDetail": "洛塔尔盯着一只小狗，非常困惑……",
+        "QuestName": "小小的守护",
+        "QuestDetail": "法法菈盯着一只小狗，非常困惑。",
         "QuestType": 3,
         "QuestStep": 33404001,
         "AwardId": 31002700,
@@ -15036,7 +15325,7 @@
         "Key": 33602,
         "QuestId": 33602,
         "QuestName": "送给孤独者的花",
-        "QuestDetail": "为劫后余生庆幸之余，马蒂斯并没有忘记，还有人始终不幸福。",
+        "QuestDetail": "酩酊之余，马蒂斯并没有忘记，还有人始终不幸福。",
         "QuestType": 3,
         "QuestStep": 33602001,
         "AwardId": 31002660,
@@ -15077,14 +15366,9 @@
         "AwardId": 31002760,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "(30622)",
         "MustPreQuest": [],
-        "AccessLimit": [
-            [
-                "1",
-                "999"
-            ]
-        ],
+        "AccessLimit": [],
         "AccpetType": [
             0
         ],
@@ -15162,8 +15446,8 @@
         "MustPreQuest": [],
         "AccessLimit": [
             [
-                "1",
-                "999"
+                "18",
+                "30078"
             ]
         ],
         "AccpetType": [
@@ -15296,12 +15580,12 @@
         "AwardId": 31002780,
         "FollowQuest": 0,
         "PreQuest": [],
-        "PreQuestLogic": "",
+        "PreQuestLogic": "(33603)",
         "MustPreQuest": [],
         "AccessLimit": [
             [
-                "1",
-                "999"
+                "18",
+                "30078"
             ]
         ],
         "AccpetType": [
@@ -15491,6 +15775,458 @@
         "Note": "",
         "AwardPreview": []
     },
+    "39101": {
+        "Key": 39101,
+        "QuestId": 39101,
+        "QuestName": "旅人计划-莎夏",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为”颠覆性的旅程“，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39101001,
+        "AwardId": 31002930,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910101,
+            30910101,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian01/jingdian01-3",
+        "NpcMarkedByQuest": [
+            [
+                23910101
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39102": {
+        "Key": 39102,
+        "QuestId": 39102,
+        "QuestName": "旅人计划-利亚姆",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39102001,
+        "AwardId": 31002940,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910201,
+            30910201,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian01/jingdian01-4",
+        "NpcMarkedByQuest": [
+            [
+                23910101,
+                23910201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39103": {
+        "Key": 39103,
+        "QuestId": 39103,
+        "QuestName": "旅人计划-朱利安",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39103001,
+        "AwardId": 31002950,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910301,
+            30910301,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian01/jingdian01-5",
+        "NpcMarkedByQuest": [
+            [
+                23910101,
+                23910201,
+                23910301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39104": {
+        "Key": 39104,
+        "QuestId": 39104,
+        "QuestName": "旅人计划-艾丽达",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39104001,
+        "AwardId": 31002960,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910401,
+            30910401,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian01/jingdian01-6",
+        "NpcMarkedByQuest": [
+            [
+                23910101,
+                23910201,
+                23910301,
+                23910401
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39105": {
+        "Key": 39105,
+        "QuestId": 39105,
+        "QuestName": "旅人计划-欧文",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39105001,
+        "AwardId": 31002970,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910501,
+            30910501,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian01/jingdian01-7",
+        "NpcMarkedByQuest": [
+            [
+                23910101,
+                23910201,
+                23910301,
+                23910401,
+                23910501
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39106": {
+        "Key": 39106,
+        "QuestId": 39106,
+        "QuestName": "旅人计划-瑞德",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39106001,
+        "AwardId": 31002980,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910601,
+            33910601,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian02/jingdian02-3",
+        "NpcMarkedByQuest": [
+            [
+                23910601
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39107": {
+        "Key": 39107,
+        "QuestId": 39107,
+        "QuestName": "旅人计划-黛西",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39107001,
+        "AwardId": 31002990,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910701,
+            33910701,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian02/jingdian02-4",
+        "NpcMarkedByQuest": [
+            [
+                23910601,
+                23910701
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39108": {
+        "Key": 39108,
+        "QuestId": 39108,
+        "QuestName": "旅人计划-布洛克",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39108002,
+        "AwardId": 31003000,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910801,
+            33910801,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian02/jingdian02-5",
+        "NpcMarkedByQuest": [
+            [
+                23910601,
+                23910701,
+                23910801
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39109": {
+        "Key": 39109,
+        "QuestId": 39109,
+        "QuestName": "旅人计划-猎人",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39109002,
+        "AwardId": 31003010,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23910901,
+            33910901,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian02/jingdian02-6",
+        "NpcMarkedByQuest": [
+            [
+                23910601,
+                23910701,
+                23910801,
+                23910901
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39110": {
+        "Key": 39110,
+        "QuestId": 39110,
+        "QuestName": "旅人计划-里奥",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为“颠覆性的旅程”，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39110001,
+        "AwardId": 31003020,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23911001,
+            33911001,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian02/jingdian02-7",
+        "NpcMarkedByQuest": [
+            [
+                23910601,
+                23910701,
+                23910801,
+                23910901,
+                23911001
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39111": {
+        "Key": 39111,
+        "QuestId": 39111,
+        "QuestName": "旅人计划-艾琳",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为”颠覆性的旅程“，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39111002,
+        "AwardId": 31003030,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23911101,
+            33911101,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian03/jingdian03-3",
+        "NpcMarkedByQuest": [
+            [
+                23911101
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39112": {
+        "Key": 39112,
+        "QuestId": 39112,
+        "QuestName": "旅人计划-布鲁克",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为”颠覆性的旅程“，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39112002,
+        "AwardId": 31003040,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23911201,
+            33911201,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian03/jingdian03-4",
+        "NpcMarkedByQuest": [
+            [
+                23911101,
+                23911201
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "39113": {
+        "Key": 39113,
+        "QuestId": 39113,
+        "QuestName": "旅人计划-费林克斯",
+        "QuestDetail": "视角共享社正在推行一项名为“旅人计划”的公益项目，旨在为那些因故无法亲临巴哈马尔高原的人们，提供一次真实的“灵魂之旅”。<br>作为“引路人”，我只需要佩戴社团特制的遗产眼镜，在探索高原的同时，将自己的视野共享给远方的“旅人”，带领他们领略高原的独特风景，完成他们心中的夙愿。<br>社团称此计划为”颠覆性的旅程“，并声称会为引路人提供丰厚的报酬。",
+        "QuestType": 3,
+        "QuestStep": 39113002,
+        "AwardId": 31003050,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "(10606)",
+        "MustPreQuest": [],
+        "AccessLimit": [],
+        "AccpetType": [
+            1,
+            9,
+            23911301,
+            33911301,
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/jingdian03/jingdian03-5",
+        "NpcMarkedByQuest": [
+            [
+                23911101,
+                23911201,
+                23911301
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
     "50001": {
         "Key": 50001,
         "QuestId": 50001,
@@ -15594,7 +16330,7 @@
         "AccessLimit": [
             [
                 "18",
-                "40106"
+                "273"
             ],
             [
                 "1",
@@ -15606,12 +16342,7 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [
-            [
-                "18",
-                "40105"
-            ]
-        ],
+        "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-7",
         "NpcMarkedByQuest": [
@@ -15677,7 +16408,7 @@
             ],
             [
                 "18",
-                "40111"
+                "276"
             ]
         ],
         "AccpetType": [
@@ -15685,12 +16416,7 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [
-            [
-                "18",
-                "40105"
-            ]
-        ],
+        "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-19",
         "NpcMarkedByQuest": [
@@ -15721,7 +16447,7 @@
             ],
             [
                 "18",
-                "40111"
+                "276"
             ]
         ],
         "AccpetType": [
@@ -15729,12 +16455,7 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [
-            [
-                "18",
-                "40105"
-            ]
-        ],
+        "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-20",
         "NpcMarkedByQuest": [
@@ -15765,7 +16486,7 @@
             ],
             [
                 "18",
-                "40111"
+                "276"
             ]
         ],
         "AccpetType": [
@@ -15773,12 +16494,7 @@
         ],
         "TimeLimit": [],
         "ContinueLimit": [],
-        "AbortLimit": [
-            [
-                "18",
-                "40105"
-            ]
-        ],
+        "AbortLimit": [],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/huodong/50001/50001-21",
         "NpcMarkedByQuest": [
@@ -15915,6 +16631,263 @@
             [
                 21010537,
                 21010538
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50020": {
+        "Key": 50020,
+        "QuestId": 50020,
+        "QuestName": "【限时活动】大师试炼！坠入梦的门扉",
+        "QuestDetail": "击碎虚无的幻梦，直面幻境的最终考验！在限定时间内，攻略大师副本累积获取1900积分即可完成挑战！<br><style=\"emph-gn\">任务时限：大师试炼！幻梦共战活动期间</style>",
+        "QuestType": 84,
+        "QuestStep": 50020001,
+        "AwardId": 70070010,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40031"
+            ],
+            [
+                "1",
+                "19"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40131"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50020/50020-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50021": {
+        "Key": 50021,
+        "QuestId": 50021,
+        "QuestName": "【限时活动】大师试炼！行于梦的穹顶",
+        "QuestDetail": "击碎虚无的幻梦，直面幻境的最终考验！在限定时间内，攻略大师副本累积获取2000积分即可完成挑战！<br><style=\"emph-gn\">任务时限：大师试炼！幻梦共战活动期间</style>",
+        "QuestType": 84,
+        "QuestStep": 50021001,
+        "AwardId": 70070020,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40031"
+            ],
+            [
+                "1",
+                "19"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40131"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50020/50020-4",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50022": {
+        "Key": 50022,
+        "QuestId": 50022,
+        "QuestName": "【限时活动】大师试炼！凝望梦的彼端",
+        "QuestDetail": "击碎虚无的幻梦，直面幻境的最终考验！在限定时间内，攻略大师副本累积获取2100积分即可完成挑战！<br><style=\"emph-gn\">任务时限：大师试炼！幻梦共战活动期间</style>",
+        "QuestType": 84,
+        "QuestStep": 50022001,
+        "AwardId": 70070030,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "18",
+                "40031"
+            ],
+            [
+                "1",
+                "19"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "18",
+                "40131"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50020/50020-5",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50030": {
+        "Key": 50030,
+        "QuestId": 50030,
+        "QuestName": "【每周】幻花沉眠之地·鸣角之野",
+        "QuestDetail": "前往幻花沉眠之地击败任意难度的角羊之王·炎光和角羊逆王·幻华！",
+        "QuestType": 85,
+        "QuestStep": 50030001,
+        "AwardId": 32000160,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "50"
+            ],
+            [
+                "18",
+                "2321"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50030/50030-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50031": {
+        "Key": 50031,
+        "QuestId": 50031,
+        "QuestName": "【每周】幻花沉眠之地·石骸之庭",
+        "QuestDetail": "前往幻花沉眠之地击败任意难度的幻花的陈骸！",
+        "QuestType": 85,
+        "QuestStep": 50031001,
+        "AwardId": 32000170,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "50"
+            ],
+            [
+                "18",
+                "2322"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50030/50030-5",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50032": {
+        "Key": 50032,
+        "QuestId": 50032,
+        "QuestName": "【每周】幻花沉眠之地·蚀影之渊",
+        "QuestDetail": "前往幻花沉眠之地击败任意难度的蚀花的残影！",
+        "QuestType": 85,
+        "QuestStep": 50032001,
+        "AwardId": 32000180,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "50"
+            ],
+            [
+                "18",
+                "2323"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50030/50030-6",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "50033": {
+        "Key": 50033,
+        "QuestId": 50033,
+        "QuestName": "【活动】幻花沉眠之地",
+        "QuestDetail": "遗迹被幻幻花所侵蚀，发生了一些难以预料的异变……",
+        "QuestType": 84,
+        "QuestStep": 50033001,
+        "AwardId": 32000190,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "50"
+            ],
+            [
+                "18",
+                "2321"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/huodong/50030/50030-13",
+        "NpcMarkedByQuest": [
+            [
+                1009800
             ]
         ],
         "Note": "",
@@ -24458,8 +25431,8 @@
     "186013": {
         "Key": 186013,
         "QuestId": 186013,
-        "QuestName": "击败丹尼尔一行",
-        "QuestDetail": "打倒丹尼尔纠集的流氓们",
+        "QuestName": "击败吕西安一行",
+        "QuestDetail": "打倒吕西安纠集的流氓们",
         "QuestType": 67,
         "QuestStep": 186013001,
         "AwardId": 0,
@@ -25356,8 +26329,8 @@
     "186025": {
         "Key": 186025,
         "QuestId": 186025,
-        "QuestName": "抓住逃跑的丹尼尔",
-        "QuestDetail": "在不惊扰居民的前提下，成功追捕丹尼尔",
+        "QuestName": "抓住逃跑的吕西安",
+        "QuestDetail": "在不惊扰居民的前提下，成功追捕吕西安",
         "QuestType": 67,
         "QuestStep": 186025001,
         "AwardId": 0,
@@ -29241,7 +30214,7 @@
     "186409": {
         "Key": 186409,
         "QuestId": 186409,
-        "QuestName": "击败铎格曼",
+        "QuestName": "击败安塞尔",
         "QuestDetail": "",
         "QuestType": 67,
         "QuestStep": 186409001,
@@ -30500,6 +31473,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -30511,7 +31485,7 @@
             ],
             [
                 23061803,
-                23063001,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
@@ -30519,7 +31493,7 @@
                 23061408,
                 23061903,
                 23061905,
-                23062201,
+                23063001,
                 23063002,
                 23063004,
                 23063003
@@ -30564,6 +31538,7 @@
                 23061904,
                 23061901,
                 23062101,
+                23062102,
                 1091229,
                 1091201,
                 1091233,
@@ -30578,7 +31553,7 @@
             ],
             [
                 23061803,
-                23063001,
+                23062202,
                 23061403,
                 23061404,
                 23061406,
@@ -30586,7 +31561,7 @@
                 23061408,
                 23061903,
                 23061905,
-                23062201,
+                23063001,
                 23063002,
                 23063004,
                 23063003,
@@ -30773,6 +31748,48 @@
             ],
             [
                 23063504
+            ]
+        ],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "186436": {
+        "Key": 186436,
+        "QuestId": 186436,
+        "QuestName": "卷心菜危机",
+        "QuestDetail": "",
+        "QuestType": 67,
+        "QuestStep": 186436001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "15",
+                "6436"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "16",
+                "6436"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/bahamar/bahamar_mini07/bahamar_mini07-9",
+        "NpcMarkedByQuest": [
+            [
+                1090302,
+                1090304,
+                1090102,
+                1091201
             ]
         ],
         "Note": "",
@@ -32659,7 +33676,7 @@
     "800201": {
         "Key": 800201,
         "QuestId": 800201,
-        "QuestName": "【安德拉保卫战】",
+        "QuestName": "【机像擂台】",
         "QuestDetail": "",
         "QuestType": 15,
         "QuestStep": 800201001,
@@ -32687,6 +33704,78 @@
         ],
         "GiveUp": false,
         "StepFlowPath": "bin/task/task_step/8002/8002-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "800501": {
+        "Key": 800501,
+        "QuestId": 800501,
+        "QuestName": "【搬运货物】",
+        "QuestDetail": "",
+        "QuestType": 15,
+        "QuestStep": 800501001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "20",
+                "8005",
+                "0"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/800501/800501-3",
+        "NpcMarkedByQuest": [],
+        "Note": "",
+        "AwardPreview": []
+    },
+    "800601": {
+        "Key": 800601,
+        "QuestId": 800601,
+        "QuestName": "【搬运货物】",
+        "QuestDetail": "",
+        "QuestType": 15,
+        "QuestStep": 800601001,
+        "AwardId": 0,
+        "FollowQuest": 0,
+        "PreQuest": [],
+        "PreQuestLogic": "",
+        "MustPreQuest": [],
+        "AccessLimit": [
+            [
+                "1",
+                "999"
+            ]
+        ],
+        "AccpetType": [
+            0
+        ],
+        "TimeLimit": [],
+        "ContinueLimit": [],
+        "AbortLimit": [
+            [
+                "20",
+                "8006",
+                "0"
+            ]
+        ],
+        "GiveUp": false,
+        "StepFlowPath": "bin/task/task_step/800601/800601-3",
         "NpcMarkedByQuest": [],
         "Note": "",
         "AwardPreview": []

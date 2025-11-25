@@ -4,7 +4,7 @@
         "Id": 9040001,
         "Name": "大旅行家",
         "Type": 1,
-        "UnlockDes": "通过点亮旅程玩法解锁全部地标后获得。",
+        "UnlockDes": "通过点亮旅程玩法解锁阿斯特里亚平原全部地标后获得。",
         "Image": "personalzone_medal_icon_01_09",
         "Tex": "badge/ch_badge_001/tex/ch_badge_005_d",
         "TargetId": 0,
@@ -1319,14 +1319,14 @@
     "9040090": {
         "Key": 9040090,
         "Id": 9040090,
-        "Name": "幻花与绯梦之息",
+        "Name": "迷心之花",
         "Type": 1,
-        "UnlockDes": "",
+        "UnlockDes": "参与限时活动“大师试炼！幻梦共战”获得。",
         "Image": "personalzone_medal_icon_01_92",
         "Tex": "",
         "TargetId": 0,
-        "Sort": 119,
-        "NotUnlock": 1,
+        "Sort": 121,
+        "NotUnlock": 0,
         "IsHide": 0,
         "Condition": []
     },
@@ -1481,5 +1481,33 @@
                 80204
             ]
         ]
+    },
+    "9040099": {
+        "Key": 9040099,
+        "Id": 9040099,
+        "Name": "不息的绯色",
+        "Type": 1,
+        "UnlockDes": "通过点亮旅程玩法解锁巴哈马尔高原全部地标后获得。",
+        "Image": "personalzone_medal_icon_01_102",
+        "Tex": "",
+        "TargetId": 0,
+        "Sort": 120,
+        "NotUnlock": 0,
+        "IsHide": 0,
+        "Condition": []
+    },
+    "9040100": {
+        "Key": 9040100,
+        "Id": 9040100,
+        "Name": "绯色之空",
+        "Type": 1,
+        "UnlockDes": "参与限时活动“大师试炼！幻梦共战”获得。",
+        "Image": "personalzone_medal_icon_01_103",
+        "Tex": "",
+        "TargetId": 0,
+        "Sort": 122,
+        "NotUnlock": 0,
+        "IsHide": 0,
+        "Condition": []
     }
 }

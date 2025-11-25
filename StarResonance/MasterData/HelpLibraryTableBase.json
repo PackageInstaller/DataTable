@@ -3312,6 +3312,58 @@
         "Guideunlock": 0,
         "Condition": []
     },
+    "4404": {
+        "Key": 4404,
+        "Id": 4404,
+        "SortId": 404,
+        "Type": 1,
+        "TypeGroup": 0,
+        "MainTitle": "",
+        "HelpGroup": 3,
+        "GroupName": "",
+        "Title": "休闲活动 - 魅力鱼获大游行",
+        "Content": [
+            "领队将沿着上图路线移动，活动开启后，在起点会有显示路径的交互点，可以沿着路径来寻找游行队伍。"
+        ],
+        "Res": [
+            "season_seasonact_help_20902"
+        ],
+        "Sequence": 34,
+        "DurationTime": 0,
+        "EventType": 0,
+        "Param": "",
+        "Button": "",
+        "FunctionId": 0,
+        "Icon": "",
+        "Guideunlock": 0,
+        "Condition": []
+    },
+    "4405": {
+        "Key": 4405,
+        "Id": 4405,
+        "SortId": 405,
+        "Type": 1,
+        "TypeGroup": 0,
+        "MainTitle": "",
+        "HelpGroup": 3,
+        "GroupName": "",
+        "Title": "休闲活动 - 小猪骑士大游行",
+        "Content": [
+            "领队将沿着上图路线移动，活动开启后，在起点会有显示路径的交互点，可以沿着路径来寻找游行队伍。"
+        ],
+        "Res": [
+            "season_seasonact_help_20901"
+        ],
+        "Sequence": 35,
+        "DurationTime": 0,
+        "EventType": 0,
+        "Param": "",
+        "Button": "",
+        "FunctionId": 0,
+        "Icon": "",
+        "Guideunlock": 0,
+        "Condition": []
+    },
     "4501": {
         "Key": 4501,
         "Id": 4501,
@@ -3342,7 +3394,7 @@
             "raid_icedragon_07",
             "raid_icedragon_08"
         ],
-        "Sequence": 34,
+        "Sequence": 36,
         "DurationTime": 15,
         "EventType": 0,
         "Param": "",
@@ -3382,7 +3434,7 @@
             "raid_darkdragon_08",
             "raid_darkdragon_09"
         ],
-        "Sequence": 35,
+        "Sequence": 37,
         "DurationTime": 15,
         "EventType": 0,
         "Param": "",
@@ -3422,7 +3474,7 @@
             "raid_lightdragon_08",
             "raid_lightdragon_06"
         ],
-        "Sequence": 36,
+        "Sequence": 38,
         "DurationTime": 15,
         "EventType": 0,
         "Param": "",
@@ -3436,25 +3488,106 @@
         "Key": 4504,
         "Id": 4504,
         "SortId": 454,
+        "Type": 1,
+        "TypeGroup": 0,
+        "MainTitle": "",
+        "HelpGroup": 3,
+        "GroupName": "",
+        "Title": "幻花沉眠之地 - 角羊·花与刃",
+        "Content": [
+            "领地意识：当煌之冠·阳炎、苍之冠·月影处于对方领地时，分别对对方领地造成伤害。<br><style=\"GuideBookLab2\">技巧攻略：两名坦克玩家分别将煌之冠·阳炎、苍之冠·月影前置于各自场地。</style>",
+            "领地守护：煌之冠·阳炎、苍之冠·月影分别点名一块自己的领地造成大量伤害，若没有玩家承受伤害，领地将<崩裂>：持续造成大量伤害直至战斗结束。<br><style=\"GuideBookLab2\">技巧攻略：坦克玩家注意预警，快速到达对应领地承受伤害。</style>",
+            "领地驱逐指令：煌之冠·阳炎、苍之冠·月影分别在自己的领地召唤对应的光球，并在场地中召唤对应交互光球，10秒后光球对场地中光球方向造成大量范围伤害。<br><style=\"GuideBookLab2\">技巧攻略：两名玩家分别与光球进行交互，将其牵至场地两侧避免对团队造成伤害。</style>",
+            "裁定时刻：煌之冠·阳炎、苍之冠·月影进行一次胜负裁定，分别跃至自己领地，随后冲向对方。此时玩家可以通过站在相应领地为所支持的王投票，获得优势票数的王将对对方造成一次最大生命值伤害，并夺取其领地一块。领地数量优势的王在自己领地时，将获得攻击速度提升。<br><style=\"GuideBookLab2\">技巧攻略：团队提前安排好每名玩家的投票位置，并支持血量更低的王来平衡血量。</style>",
+            "誓死守护：煌之冠·阳炎对苍之冠·月影进行一次蓄力攻击，一段时间后造成大量伤害与全场伤害。苍之冠·月影展开护盾保护自己免受伤害。<br><style=\"GuideBookLab2\">技巧攻略：击破苍之冠·月影的护盾，处于其中免受伤害。</style>",
+            "决定时刻：当煌之冠·阳炎、苍之冠·月影任意处于濒死状态时，双王触发决定时刻合力驱逐侵略者，在一定时间内使双王同步濒死，即可击溃双王。<br><style=\"GuideBookLab2\">技巧攻略：合理控制血量，并一举击溃。</style>"
+        ],
+        "Res": [
+            "raid_jiaoyang_01",
+            "raid_jiaoyang_02",
+            "raid_jiaoyang_03",
+            "raid_jiaoyang_04",
+            "raid_jiaoyang_05",
+            "raid_jiaoyang_06"
+        ],
+        "Sequence": 39,
+        "DurationTime": 15,
+        "EventType": 0,
+        "Param": "",
+        "Button": "",
+        "FunctionId": 0,
+        "Icon": "",
+        "Guideunlock": 0,
+        "Condition": []
+    },
+    "4505": {
+        "Key": 4505,
+        "Id": 4505,
+        "SortId": 451,
+        "Type": 1,
+        "TypeGroup": 0,
+        "MainTitle": "",
+        "HelpGroup": 3,
+        "GroupName": "",
+        "Title": "虚空浮岛·神龙枷所 - 凛·伊兹寇利基",
+        "Content": [
+            "寒冰之触：极寒天气下的状态，可叠加，并提高首领对自己造成的伤害，20层时会被冻结。被冻结的玩家可被队友击碎冰块救出。<br>恶劣天气：场景存在晴、雨、雪、暴雪四档天气，不同天气下给玩家施加的寒冰之触速度不同。<br><style=\"GuideBookLab2\">技巧攻略：在雪、暴雪天气下，队伍成员需要站在一起。</style>",
+            "极寒天气：在雪、暴雪天气中，玩家身边玩家数量过少时，玩家会在一定时间后被冻结。<br><style=\"GuideBookLab2\">技巧攻略：在雪、暴雪天气下，队伍成员需要站在一起。</style>",
+            "火龙突袭：火龙停留在场地两侧，向场内喷射燃烧区域。<br><style=\"GuideBookLab2\">技巧攻略：燃烧区域可以清除玩家的寒冰之触。</style>",
+            "龙击炮：场地两侧常驻的炮台，交互可以攻击对应位置的火龙，击中3次后火龙会被击落。炮台陷入燃烧与冻结状态后均无法使用。<br><style=\"GuideBookLab2\">技巧攻略：注意安排队伍攻击火龙，同时注意合理利用技能来使冻结、燃烧的炮台恢复正常。</style>",
+            "无尽寒冬：首领飞往远处的空岛，并在空中留下一座冰封桥梁。桥尽头存在两枚冰封之矛，同时击破后冰墙会被击破。<br><style=\"GuideBookLab2\">技巧攻略：注意安排两队分别前往两侧路径，并同时击破冰封之矛，在集体行动中注意彼此靠近防止冰冻。</style>",
+            "火药桶：击碎后开始燃烧，短暂延迟后爆炸造成伤害。<br><style=\"GuideBookLab2\">技巧攻略：合理利用火药桶驱散寒冰之触。</style>",
+            "冰霜重击：对前方区域产生一次致死伤害，如果没有玩家在区域内，则造成大范围伤害。<br><style=\"GuideBookLab2\">技巧攻略：守护职业开启减伤技能承接伤害。</style>",
+            "零度雪域：点名玩家产生一次分摊伤害，并召唤零度雪域，每名玩家均和雪域核心链接，持续叠加寒冰之触，扯断连线时，会受到一次伤害。<br><style=\"GuideBookLab2\">技巧攻略：团队尽快离开区域，需要彼此抱团。</style>"
+        ],
+        "Res": [
+            "raid_icedragon_01",
+            "raid_icedragon_02",
+            "raid_icedragon_03",
+            "raid_icedragon_04",
+            "raid_icedragon_05",
+            "raid_icedragon_06",
+            "raid_icedragon_07",
+            "raid_icedragon_08"
+        ],
+        "Sequence": 36,
+        "DurationTime": 15,
+        "EventType": 0,
+        "Param": "",
+        "Button": "",
+        "FunctionId": 0,
+        "Icon": "",
+        "Guideunlock": 0,
+        "Condition": [
+            [
+                9,
+                2322
+            ]
+        ]
+    },
+    "4511": {
+        "Key": 4511,
+        "Id": 4511,
+        "SortId": 451,
         "Type": 3,
         "TypeGroup": 0,
         "MainTitle": "",
         "HelpGroup": 0,
         "GroupName": "",
-        "Title": "虚空浮岛·神龙枷所玩法说明",
+        "Title": "幻花沉眠之地玩法说明",
         "Content": [
             "1",
             "玩法开启",
             "2",
-            "虚空浮岛·神龙枷所非常危险，需要冒险者齐心协力共同面对强大的敌人，开启挑战需要组队人数不低于10人，组队后需要队长开启挑战。<br>",
+            "幻花沉眠之地非常危险，需要冒险者齐心协力共同面对强大的敌人，开启挑战需要组队人数不低于10人，组队后需要队长开启挑战。<br>",
             "1",
             "奖励次数",
             "2",
-            "虚空浮岛·神龙枷所每个首领每周可以获得一次挑战奖励，奖励次数每周刷新无法进行累积。<br>",
+            "幻花沉眠之地每个首领每周可以获得一次挑战奖励，奖励次数每周刷新无法进行累积。<br>",
             "1",
             "动态难度规则",
             "2",
-            "虚空浮岛·神龙枷所会随挑战人数动态调整挑战难度，人数减少时，挑战难度会相应降低。<br>",
+            "幻花沉眠之地会随挑战人数动态调整挑战难度，人数减少时，挑战难度会相应降低。<br>",
             "1",
             "挑战增益",
             "2",
@@ -3760,7 +3893,7 @@
             "1",
             "玩法说明",
             "2",
-            "<style=\"GuideBookLab1\">拍照任务</style>：根据画册大致方位，前往寻找拍照点。可通过交互拍照点，同时达成指定条件后拍照完成任务；也可以打开自己的相机记录地标美景完成任务。<br><style=\"GuideBookLab1\">故事任务</style>：寻找生活在这里的人们，听他们讲发生在这里的故事。<br><style=\"GuideBookLab1\">点亮旅程</style>：完成地标所有任务可点亮地标并获得奖励。点亮所有地标可以获得精美的时装奖励。"
+            "<style=\"GuideBookLab1\">拍照任务</style>：根据画册大致方位，前往寻找拍照点。可通过交互拍照点，同时达成指定条件后拍照完成任务。<br><style=\"GuideBookLab1\">故事任务</style>：寻找生活在这里的人们，听他们讲发生在这里的故事。<br><style=\"GuideBookLab1\">点亮旅程</style>：完成地标所有任务可点亮地标并获得奖励。"
         ],
         "Res": [],
         "Sequence": 0,
@@ -6585,7 +6718,7 @@
         "GroupName": "",
         "Title": "委托轮数说明",
         "Content": [
-            "冒险者每天可获得1轮委托轮数，如果当天的委托未领取，会累积到下一个游戏日，最多可累计3轮。<br>轮数在委托被领取时即刻扣除，被领取的委托如果在当天未完成，在下一个游戏日会自动删除。"
+            "冒险者每天可获得1轮委托轮数，完成任意3项委托即可完成一轮，如果当天的委托未领取，会累积到下一个游戏日，最多可累计3轮。<br>轮数在委托被领取时即刻扣除，被领取的委托如果在当天未完成，在下一个游戏日会自动删除。"
         ],
         "Res": [],
         "Sequence": 0,

@@ -807,6 +807,14 @@
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
     },
+    "1119": {
+        "Key": 1119,
+        "Id": 1119,
+        "Name": "释放幻觉能量",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_chat",
+        "FunctionOrder": []
+    },
     "1120": {
         "Key": 1120,
         "Id": 1120,
@@ -1290,7 +1298,7 @@
     "1258": {
         "Key": 1258,
         "Id": 1258,
-        "Name": "驾驶近战机甲",
+        "Name": "驾驶近战机像",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -1298,7 +1306,7 @@
     "1259": {
         "Key": 1259,
         "Id": 1259,
-        "Name": "驾驶远程机甲",
+        "Name": "驾驶远程机像",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -1306,7 +1314,7 @@
     "1260": {
         "Key": 1260,
         "Id": 1260,
-        "Name": "驾驶机甲3型",
+        "Name": "驾驶机像3型",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -1314,7 +1322,7 @@
     "1261": {
         "Key": 1261,
         "Id": 1261,
-        "Name": "驾驶机甲4型",
+        "Name": "驾驶机像4型",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -1322,7 +1330,7 @@
     "1262": {
         "Key": 1262,
         "Id": 1262,
-        "Name": "驾驶机甲",
+        "Name": "驾驶机像",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -1533,7 +1541,7 @@
     "2016": {
         "Key": 2016,
         "Id": 2016,
-        "Name": "选择一选项",
+        "Name": "选择选项A",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_evn",
         "FunctionOrder": []
@@ -1541,7 +1549,7 @@
     "2017": {
         "Key": 2017,
         "Id": 2017,
-        "Name": "选择二选项",
+        "Name": "选择选项B",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_evn",
         "FunctionOrder": []
@@ -1549,7 +1557,7 @@
     "2018": {
         "Key": 2018,
         "Id": 2018,
-        "Name": "选择三选项",
+        "Name": "选择选项C",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_evn",
         "FunctionOrder": []
@@ -1557,7 +1565,7 @@
     "2019": {
         "Key": 2019,
         "Id": 2019,
-        "Name": "选择四选项",
+        "Name": "选择选项D",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_evn",
         "FunctionOrder": []
@@ -2209,7 +2217,7 @@
     "6028": {
         "Key": 6028,
         "Id": 6028,
-        "Name": "辨认丹尼尔",
+        "Name": "辨认吕西安",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_chat",
         "FunctionOrder": []
@@ -3070,6 +3078,38 @@
         "IconPath": "ui/atlas/npc/talk_icon_evn",
         "FunctionOrder": []
     },
+    "9005": {
+        "Key": 9005,
+        "Id": 9005,
+        "Name": "前往鸣角之野",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9006": {
+        "Key": 9006,
+        "Id": 9006,
+        "Name": "前往石骸之庭",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9007": {
+        "Key": 9007,
+        "Id": 9007,
+        "Name": "前往蚀影之渊",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "9008": {
+        "Key": 9008,
+        "Id": 9008,
+        "Name": "前往幻花零落处",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
     "12010": {
         "Key": 12010,
         "Id": 12010,
@@ -3342,6 +3382,14 @@
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
     },
+    "30226": {
+        "Key": 30226,
+        "Id": 30226,
+        "Name": "正骨",
+        "BtnType": 0,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
     "30300": {
         "Key": 30300,
         "Id": 30300,
@@ -3458,6 +3506,14 @@
         "Key": 54065,
         "Id": 54065,
         "Name": "拾取【长枪2】流派球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "54100": {
+        "Key": 54100,
+        "Id": 54100,
+        "Name": "获得货物",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -3746,6 +3802,22 @@
         "Key": 57017,
         "Id": 57017,
         "Name": "开始聚力",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57045": {
+        "Key": 57045,
+        "Id": 57045,
+        "Name": "帮助哥布林",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "57046": {
+        "Key": 57046,
+        "Id": 57046,
+        "Name": "帮助姆克",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -4058,6 +4130,134 @@
         "Key": 130150,
         "Id": 130150,
         "Name": "躲避",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140201": {
+        "Key": 140201,
+        "Id": 140201,
+        "Name": "提升背包",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "140202": {
+        "Key": 140202,
+        "Id": 140202,
+        "Name": "武器创造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_89",
+        "FunctionOrder": []
+    },
+    "140203": {
+        "Key": 140203,
+        "Id": 140203,
+        "Name": "武器改造",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_90",
+        "FunctionOrder": []
+    },
+    "140204": {
+        "Key": 140204,
+        "Id": 140204,
+        "Name": "发明",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_83",
+        "FunctionOrder": []
+    },
+    "140205": {
+        "Key": 140205,
+        "Id": 140205,
+        "Name": "物资",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_27",
+        "FunctionOrder": []
+    },
+    "140206": {
+        "Key": 140206,
+        "Id": 140206,
+        "Name": "食材",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_cook",
+        "FunctionOrder": []
+    },
+    "140207": {
+        "Key": 140207,
+        "Id": 140207,
+        "Name": "烹饪",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_cook",
+        "FunctionOrder": []
+    },
+    "140208": {
+        "Key": 140208,
+        "Id": 140208,
+        "Name": "锻炼",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "140210": {
+        "Key": 140210,
+        "Id": 140210,
+        "Name": "回到营地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140211": {
+        "Key": 140211,
+        "Id": 140211,
+        "Name": "悬月崖",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140212": {
+        "Key": 140212,
+        "Id": 140212,
+        "Name": "望月坡",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140213": {
+        "Key": 140213,
+        "Id": 140213,
+        "Name": "流月池",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140214": {
+        "Key": 140214,
+        "Id": 140214,
+        "Name": "天中之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140215": {
+        "Key": 140215,
+        "Id": 140215,
+        "Name": "海无之地",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140216": {
+        "Key": 140216,
+        "Id": 140216,
+        "Name": "远荒",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "140217": {
+        "Key": 140217,
+        "Id": 140217,
+        "Name": "漠清岭",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_evn",
         "FunctionOrder": []
@@ -4590,6 +4790,14 @@
         "IconPath": "ui/atlas/npc/talk_icon_union_52",
         "FunctionOrder": []
     },
+    "200068": {
+        "Key": 200068,
+        "Id": 200068,
+        "Name": "<style=\"emph-sq\">幻花沉眠之地</style>",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_26",
+        "FunctionOrder": []
+    },
     "200070": {
         "Key": 200070,
         "Id": 200070,
@@ -4604,6 +4812,14 @@
         "Name": "领取今日糖果",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_gift",
+        "FunctionOrder": []
+    },
+    "200072": {
+        "Key": 200072,
+        "Id": 200072,
+        "Name": "幻梦秘宝兑换",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_union_91",
         "FunctionOrder": []
     },
     "307021": {
@@ -4961,7 +5177,7 @@
     "700009": {
         "Key": 700009,
         "Id": 700009,
-        "Name": "获取火种",
+        "Name": "开始快递",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_worldquest",
         "FunctionOrder": []
@@ -5070,6 +5286,102 @@
         "IconPath": "ui/atlas/npc/talk_icon_worldquest",
         "FunctionOrder": []
     },
+    "700023": {
+        "Key": 700023,
+        "Id": 700023,
+        "Name": "【高原保卫战】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700024": {
+        "Key": 700024,
+        "Id": 700024,
+        "Name": "开启裂隙",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700025": {
+        "Key": 700025,
+        "Id": 700025,
+        "Name": "【铁甲钢拳】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700026": {
+        "Key": 700026,
+        "Id": 700026,
+        "Name": "开始挑战",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700027": {
+        "Key": 700027,
+        "Id": 700027,
+        "Name": "【接受快递委托】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700028": {
+        "Key": 700028,
+        "Id": 700028,
+        "Name": "开始快递",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700029": {
+        "Key": 700029,
+        "Id": 700029,
+        "Name": "【接受快递委托】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700030": {
+        "Key": 700030,
+        "Id": 700030,
+        "Name": "开始快递",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700031": {
+        "Key": 700031,
+        "Id": 700031,
+        "Name": "【开始平息纷争】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700032": {
+        "Key": 700032,
+        "Id": 700032,
+        "Name": "选择完毕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700033": {
+        "Key": 700033,
+        "Id": 700033,
+        "Name": "【开始平息纷争】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
+    "700034": {
+        "Key": 700034,
+        "Id": 700034,
+        "Name": "选择完毕",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_worldquest",
+        "FunctionOrder": []
+    },
     "707001": {
         "Key": 707001,
         "Id": 707001,
@@ -5114,6 +5426,46 @@
         "Key": 709006,
         "Id": 709006,
         "Name": "拾取【加速】技能球",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710001": {
+        "Key": 710001,
+        "Id": 710001,
+        "Name": "拾取【火焰机像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710002": {
+        "Key": 710002,
+        "Id": 710002,
+        "Name": "拾取【弹幕机像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710003": {
+        "Key": 710003,
+        "Id": 710003,
+        "Name": "拾取【天火机像】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710004": {
+        "Key": 710004,
+        "Id": 710004,
+        "Name": "拾取【减速装置】",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "710005": {
+        "Key": 710005,
+        "Id": 710005,
+        "Name": "拾取【引力装置】",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -5234,6 +5586,14 @@
         "Key": 731004,
         "Id": 731004,
         "Name": "召唤云朵粒子",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "731005": {
+        "Key": 731005,
+        "Id": 731005,
+        "Name": "显示游行路线",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
@@ -6316,6 +6676,22 @@
         "Name": "等待天黑",
         "BtnType": 1,
         "IconPath": "ui/atlas/npc/talk_icon_evn",
+        "FunctionOrder": []
+    },
+    "3000002": {
+        "Key": 3000002,
+        "Id": 3000002,
+        "Name": "被没收的小弓",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
+        "FunctionOrder": []
+    },
+    "3000003": {
+        "Key": 3000003,
+        "Id": 3000003,
+        "Name": "亮晶晶的东西",
+        "BtnType": 1,
+        "IconPath": "ui/atlas/npc/talk_icon_hand",
         "FunctionOrder": []
     },
     "3012501": {

@@ -447,8 +447,8 @@
             60000,
             80000,
             120000,
-            150000,
-            200000
+            300000,
+            300000
         ],
         "PVEFixedParameter": [
             0
@@ -1253,11 +1253,11 @@
             10000,
             10000,
             20000,
-            20000,
+            40000,
             40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 0,
         "PVEStunnedDamage": [
@@ -1863,6 +1863,37 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "3380000": {
+        "Key": 3380000,
+        "Id": 3380000,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 3800,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            4400
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "3700200": {
         "Key": 3700200,
         "Id": 3700200,
@@ -2254,6 +2285,66 @@
                 0
             ]
         ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "3710000": {
+        "Key": 3710000,
+        "Id": 3710000,
+        "Level": 0,
+        "Name": "good",
+        "DamageType": 3,
+        "TypeEnum": 7100,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "3710100": {
+        "Key": 3710100,
+        "Id": 3710100,
+        "Level": 0,
+        "Name": "good",
+        "DamageType": 3,
+        "TypeEnum": 7101,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
         "DamageProperty": 0,
         "PartDamageType": 0,
         "DamageWeight": [],
@@ -3348,7 +3439,7 @@
             67,
             33,
             9,
-            68,
+            69,
             39,
             94
         ],
@@ -3827,6 +3918,28 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "22142204": {
+        "Key": 22142204,
+        "Id": 22142204,
+        "Level": 0,
+        "Name": "护盾",
+        "DamageType": 2,
+        "TypeEnum": 21422,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "22142303": {
         "Key": 22142303,
         "Id": 22142303,
@@ -3834,7 +3947,7 @@
         "Name": "救赎印记",
         "DamageType": 2,
         "TypeEnum": 21423,
-        "DamageScript": "SpHeal",
+        "DamageScript": "OtherToHeal",
         "PVEDamageRadio": [
             0
         ],
@@ -3853,7 +3966,9 @@
         "DamageProperty": 0,
         "PartDamageType": 0,
         "DamageWeight": [],
-        "Tags": [],
+        "Tags": [
+            67
+        ],
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
@@ -7157,7 +7272,7 @@
         "Name": "",
         "DamageType": 2,
         "TypeEnum": 55311,
-        "DamageScript": "SpHeal",
+        "DamageScript": "OtherToHeal",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
@@ -10273,8 +10388,8 @@
             29,
             9,
             69,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -10373,8 +10488,8 @@
             29,
             9,
             69,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -10503,8 +10618,8 @@
             67,
             29,
             9,
-            94,
-            69
+            69,
+            94
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -11341,8 +11456,8 @@
             29,
             10,
             69,
-            39,
-            94
+            94,
+            39
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -11472,8 +11587,8 @@
             29,
             10,
             69,
-            39,
-            94
+            94,
+            39
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -11603,8 +11718,8 @@
             29,
             10,
             69,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -11678,6 +11793,303 @@
             88
         ],
         "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "112600101": {
+        "Key": 112600101,
+        "Id": 112600101,
+        "Level": 1,
+        "Name": "冰陨石虚拟体",
+        "DamageType": 1,
+        "TypeEnum": 1260,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            7333,
+            7626,
+            7920,
+            8800,
+            9093,
+            9386,
+            10266
+        ],
+        "PVEFixedParameter": [
+            12,
+            30,
+            48,
+            66,
+            86,
+            104,
+            122,
+            140,
+            158,
+            176,
+            194,
+            212,
+            230,
+            248,
+            266,
+            284,
+            302,
+            322,
+            340,
+            358,
+            376,
+            394,
+            412,
+            430,
+            448,
+            466,
+            484,
+            502,
+            520,
+            540
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            29,
+            9,
+            69,
+            94
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "112600102": {
+        "Key": 112600102,
+        "Id": 112600102,
+        "Level": 1,
+        "Name": "冰陨石虚拟体",
+        "DamageType": 1,
+        "TypeEnum": 1260,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            7333,
+            7626,
+            7920,
+            8800,
+            9093,
+            9386,
+            10266
+        ],
+        "PVEFixedParameter": [
+            12,
+            30,
+            48,
+            66,
+            86,
+            104,
+            122,
+            140,
+            158,
+            176,
+            194,
+            212,
+            230,
+            248,
+            266,
+            284,
+            302,
+            322,
+            340,
+            358,
+            376,
+            394,
+            412,
+            430,
+            448,
+            466,
+            484,
+            502,
+            520,
+            540
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            29,
+            9,
+            69,
+            94
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "112600103": {
+        "Key": 112600103,
+        "Id": 112600103,
+        "Level": 1,
+        "Name": "冰陨石虚拟体",
+        "DamageType": 1,
+        "TypeEnum": 1260,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            7333,
+            7626,
+            7920,
+            8800,
+            9093,
+            9386,
+            10266
+        ],
+        "PVEFixedParameter": [
+            12,
+            30,
+            48,
+            66,
+            86,
+            104,
+            122,
+            140,
+            158,
+            176,
+            194,
+            212,
+            230,
+            248,
+            266,
+            284,
+            302,
+            322,
+            340,
+            358,
+            376,
+            394,
+            412,
+            430,
+            448,
+            466,
+            484,
+            502,
+            520,
+            540
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            29,
+            9,
+            69,
+            94
+        ],
+        "BehitLightIsOpen": true,
         "IsProfession": false
     },
     "112610101": {
@@ -11804,8 +12216,8 @@
             67,
             29,
             69,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -11813,6 +12225,303 @@
     "112620101": {
         "Key": 112620101,
         "Id": 112620101,
+        "Level": 1,
+        "Name": "冰陨石虚拟体",
+        "DamageType": 1,
+        "TypeEnum": 1262,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            7333,
+            7626,
+            7920,
+            8800,
+            9093,
+            9386,
+            10266
+        ],
+        "PVEFixedParameter": [
+            12,
+            30,
+            48,
+            66,
+            86,
+            104,
+            122,
+            140,
+            158,
+            176,
+            194,
+            212,
+            230,
+            248,
+            266,
+            284,
+            302,
+            322,
+            340,
+            358,
+            376,
+            394,
+            412,
+            430,
+            448,
+            466,
+            484,
+            502,
+            520,
+            540
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            29,
+            9,
+            69,
+            94
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "112620103": {
+        "Key": 112620103,
+        "Id": 112620103,
+        "Level": 1,
+        "Name": "冰陨石虚拟体",
+        "DamageType": 1,
+        "TypeEnum": 1262,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            7333,
+            7626,
+            7920,
+            8800,
+            9093,
+            9386,
+            10266
+        ],
+        "PVEFixedParameter": [
+            12,
+            30,
+            48,
+            66,
+            86,
+            104,
+            122,
+            140,
+            158,
+            176,
+            194,
+            212,
+            230,
+            248,
+            266,
+            284,
+            302,
+            322,
+            340,
+            358,
+            376,
+            394,
+            412,
+            430,
+            448,
+            466,
+            484,
+            502,
+            520,
+            540
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            29,
+            9,
+            69,
+            94
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "112620104": {
+        "Key": 112620104,
+        "Id": 112620104,
+        "Level": 1,
+        "Name": "冰陨石虚拟体",
+        "DamageType": 1,
+        "TypeEnum": 1262,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            7333,
+            7626,
+            7920,
+            8800,
+            9093,
+            9386,
+            10266
+        ],
+        "PVEFixedParameter": [
+            12,
+            30,
+            48,
+            66,
+            86,
+            104,
+            122,
+            140,
+            158,
+            176,
+            194,
+            212,
+            230,
+            248,
+            266,
+            284,
+            302,
+            322,
+            340,
+            358,
+            376,
+            394,
+            412,
+            430,
+            448,
+            466,
+            484,
+            502,
+            520,
+            540
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78,
+            78
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            29,
+            9,
+            69,
+            94
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "112620105": {
+        "Key": 112620105,
+        "Id": 112620105,
         "Level": 1,
         "Name": "冰陨石虚拟体",
         "DamageType": 1,
@@ -14283,8 +14992,8 @@
         "PartDamageType": 0,
         "DamageWeight": [],
         "Tags": [
-            31,
             66,
+            31,
             9,
             69,
             93
@@ -14387,8 +15096,8 @@
         "PartDamageType": 0,
         "DamageWeight": [],
         "Tags": [
-            31,
             66,
+            31,
             9,
             69,
             93
@@ -16950,8 +17659,8 @@
             31,
             9,
             68,
-            23,
-            93
+            93,
+            23
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -17582,8 +18291,8 @@
             31,
             9,
             68,
-            23,
-            93
+            93,
+            23
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -36025,6 +36734,105 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "117370106": {
+        "Key": 117370106,
+        "Id": 117370106,
+        "Level": 1,
+        "Name": "奥尔维拉S2月刃套装效果",
+        "DamageType": 1,
+        "TypeEnum": 1737,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            150000,
+            156000,
+            162000,
+            180000,
+            186000,
+            192000,
+            210000
+        ],
+        "PVEFixedParameter": [
+            150,
+            351,
+            553,
+            755,
+            956,
+            1158,
+            1360,
+            1562,
+            1763,
+            1965,
+            2167,
+            2368,
+            2570,
+            2772,
+            2974,
+            3175,
+            3377,
+            3579,
+            3781,
+            3982,
+            4184,
+            4386,
+            4587,
+            4789,
+            4991,
+            5193,
+            5394,
+            5596,
+            5798,
+            6000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            61,
+            66,
+            30,
+            9,
+            93,
+            69
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "117370112": {
         "Key": 117370112,
         "Id": 117370112,
@@ -47382,6 +48190,105 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "123060104": {
+        "Key": 123060104,
+        "Id": 123060104,
+        "Level": 1,
+        "Name": "增幅节拍",
+        "DamageType": 1,
+        "TypeEnum": 2306,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            8000,
+            8320,
+            8640,
+            9600,
+            9920,
+            10240,
+            11200
+        ],
+        "PVEFixedParameter": [
+            12,
+            28,
+            44,
+            60,
+            76,
+            92,
+            108,
+            124,
+            141,
+            157,
+            173,
+            189,
+            205,
+            221,
+            237,
+            254,
+            270,
+            286,
+            302,
+            318,
+            334,
+            350,
+            367,
+            383,
+            399,
+            415,
+            431,
+            447,
+            463,
+            480
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111,
+            111
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            3,
+            67,
+            28,
+            9,
+            68,
+            93
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "123120123": {
         "Key": 123120123,
         "Id": 123120123,
@@ -56105,6 +57012,136 @@
         "BehitLightIsOpen": true,
         "IsProfession": false
     },
+    "141010101": {
+        "Key": 141010101,
+        "Id": 141010101,
+        "Level": 1,
+        "Name": "碎晶雷",
+        "DamageType": 1,
+        "TypeEnum": 4101,
+        "DamageScript": "",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [
+            100
+        ],
+        "PVELoopTime": 4,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "141010102": {
+        "Key": 141010102,
+        "Id": 141010102,
+        "Level": 1,
+        "Name": "碎晶雷",
+        "DamageType": 1,
+        "TypeEnum": 4101,
+        "DamageScript": "",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [
+            100
+        ],
+        "PVELoopTime": 4,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "141010103": {
+        "Key": 141010103,
+        "Id": 141010103,
+        "Level": 1,
+        "Name": "碎晶雷",
+        "DamageType": 1,
+        "TypeEnum": 4101,
+        "DamageScript": "",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [
+            100
+        ],
+        "PVELoopTime": 4,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "141010104": {
+        "Key": 141010104,
+        "Id": 141010104,
+        "Level": 1,
+        "Name": "碎晶雷",
+        "DamageType": 1,
+        "TypeEnum": 4101,
+        "DamageScript": "",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [
+            100
+        ],
+        "PVELoopTime": 4,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "141030101": {
+        "Key": 141030101,
+        "Id": 141030101,
+        "Level": 1,
+        "Name": "碎晶雷",
+        "DamageType": 1,
+        "TypeEnum": 4103,
+        "DamageScript": "",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [
+            50
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "155030101": {
         "Key": 155030101,
         "Id": 155030101,
@@ -56224,6 +57261,38 @@
             11,
             69
         ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "160140104": {
+        "Key": 160140104,
+        "Id": 160140104,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 6014,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            3000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
@@ -57647,6 +58716,50 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "270026001": {
+        "Key": 270026001,
+        "Id": 270026001,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 700260,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "270026101": {
+        "Key": 270026101,
+        "Id": 270026101,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 700261,
+        "DamageScript": "SpAttack",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "270101404": {
         "Key": 270101404,
         "Id": 270101404,
@@ -58650,6 +59763,391 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "282712203": {
+        "Key": 282712203,
+        "Id": 282712203,
+        "Level": 0,
+        "Name": "炎光领地衰减",
+        "DamageType": 2,
+        "TypeEnum": 827122,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282712303": {
+        "Key": 282712303,
+        "Id": 282712303,
+        "Level": 0,
+        "Name": "幻华领地衰减",
+        "DamageType": 2,
+        "TypeEnum": 827123,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282713202": {
+        "Key": 282713202,
+        "Id": 282713202,
+        "Level": 0,
+        "Name": "我是炎光",
+        "DamageType": 2,
+        "TypeEnum": 827132,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282713404": {
+        "Key": 282713404,
+        "Id": 282713404,
+        "Level": 0,
+        "Name": "场地虚拟体buff",
+        "DamageType": 2,
+        "TypeEnum": 827134,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            200000,
+            99999999,
+            99999999
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282713602": {
+        "Key": 282713602,
+        "Id": 282713602,
+        "Level": 0,
+        "Name": "分摊",
+        "DamageType": 2,
+        "TypeEnum": 827136,
+        "DamageScript": "MstSpSkillAttackShare",
+        "PVEDamageRadio": [
+            100000,
+            150000,
+            150000
+        ],
+        "PVEFixedParameter": [
+            15000
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282713702": {
+        "Key": 282713702,
+        "Id": 282713702,
+        "Level": 0,
+        "Name": "分摊-幻华",
+        "DamageType": 2,
+        "TypeEnum": 827137,
+        "DamageScript": "MstSpSkillAttackShare",
+        "PVEDamageRadio": [
+            100000,
+            150000,
+            150000
+        ],
+        "PVEFixedParameter": [
+            15000
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282715001": {
+        "Key": 282715001,
+        "Id": 282715001,
+        "Level": 0,
+        "Name": "炎光护盾",
+        "DamageType": 2,
+        "TypeEnum": 827150,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282715101": {
+        "Key": 282715101,
+        "Id": 282715101,
+        "Level": 0,
+        "Name": "真实护盾值",
+        "DamageType": 2,
+        "TypeEnum": 827151,
+        "DamageScript": "AddShieldByHp",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282716501": {
+        "Key": 282716501,
+        "Id": 282716501,
+        "Level": 0,
+        "Name": "炎光护盾",
+        "DamageType": 2,
+        "TypeEnum": 827165,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282720901": {
+        "Key": 282720901,
+        "Id": 282720901,
+        "Level": 0,
+        "Name": "电能震慑",
+        "DamageType": 2,
+        "TypeEnum": 827209,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282720903": {
+        "Key": 282720903,
+        "Id": 282720903,
+        "Level": 0,
+        "Name": "电能震慑",
+        "DamageType": 2,
+        "TypeEnum": 827209,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282723403": {
+        "Key": 282723403,
+        "Id": 282723403,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 827234,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282723801": {
+        "Key": 282723801,
+        "Id": 282723801,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 827238,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282723901": {
+        "Key": 282723901,
+        "Id": 282723901,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 827239,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282724103": {
+        "Key": 282724103,
+        "Id": 282724103,
+        "Level": 0,
+        "Name": "幻灭",
+        "DamageType": 2,
+        "TypeEnum": 827241,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "282724704": {
+        "Key": 282724704,
+        "Id": 282724704,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 827247,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "283209301": {
         "Key": 283209301,
         "Id": 283209301,
@@ -58681,6 +60179,28 @@
         "Name": "",
         "DamageType": 2,
         "TypeEnum": 833018,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "283305601": {
+        "Key": 283305601,
+        "Id": 283305601,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 833056,
         "DamageScript": "",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
@@ -61351,7 +62871,12 @@
         "TypeEnum": 881721,
         "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            1000
+            1000,
+            1000,
+            1000,
+            2000,
+            4000,
+            4000
         ],
         "PVEFixedParameter": [
             200
@@ -61455,11 +62980,11 @@
             1000,
             1000,
             5000,
-            50000,
-            60000
+            20000,
+            30000
         ],
         "PVEFixedParameter": [
-            500
+            800
         ],
         "PVELoopTime": 0,
         "PVEStunnedDamage": [
@@ -62554,11 +64079,17 @@
         "Name": "",
         "DamageType": 2,
         "TypeEnum": 882719,
-        "DamageScript": "",
-        "PVEDamageRadio": [],
-        "PVEFixedParameter": [],
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13200
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
         "PVELoopTime": -1,
-        "PVEStunnedDamage": [],
+        "PVEStunnedDamage": [
+            0
+        ],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
         "AbnormalDamage": [],
@@ -62602,6 +64133,28 @@
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "288273703": {
+        "Key": 288273703,
+        "Id": 288273703,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 882737,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
         "PVEStunnedDamage": [],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
@@ -62834,8 +64387,8 @@
             3000,
             4000,
             4000,
-            4000,
-            4000
+            6000,
+            6000
         ],
         "PVEFixedParameter": [
             400
@@ -63406,6 +64959,50 @@
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
         "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "296090303": {
+        "Key": 296090303,
+        "Id": 296090303,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 960903,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "296090703": {
+        "Key": 296090703,
+        "Id": 296090703,
+        "Level": 0,
+        "Name": "着火",
+        "DamageType": 2,
+        "TypeEnum": 960907,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": -1,
         "PVEStunnedDamage": [],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
@@ -65807,8 +67404,8 @@
             29,
             9,
             68,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -65878,8 +67475,8 @@
             29,
             9,
             68,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -65945,8 +67542,8 @@
             29,
             9,
             68,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -66076,8 +67673,8 @@
             29,
             9,
             68,
-            70,
-            94
+            94,
+            70
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -73482,6 +75079,94 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "370001300": {
+        "Key": 370001300,
+        "Id": 370001300,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 700013,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            2000,
+            2000,
+            2000,
+            2000,
+            4000,
+            4000
+        ],
+        "PVEFixedParameter": [
+            500
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "370001301": {
+        "Key": 370001301,
+        "Id": 370001301,
+        "Level": 0,
+        "Name": "幻梦娜宝扔炸弹(远距离）",
+        "DamageType": 3,
+        "TypeEnum": 700013,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            2000,
+            2000,
+            2000,
+            2000,
+            4000,
+            4000
+        ],
+        "PVEFixedParameter": [
+            500
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "370001400": {
+        "Key": 370001400,
+        "Id": 370001400,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 3,
+        "TypeEnum": 700014,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "370030100": {
         "Key": 370030100,
         "Id": 370030100,
@@ -74736,10 +76421,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            30,
             9,
             68,
             88,
-            30,
             93,
             94
         ],
@@ -74766,10 +76451,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            30,
             11,
             68,
-            89,
-            30
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -74794,10 +76479,10 @@
         "DamageWeight": [],
         "Tags": [
             67,
+            29,
             9,
             68,
             88,
-            29,
             93,
             94
         ],
@@ -74824,10 +76509,10 @@
         "DamageWeight": [],
         "Tags": [
             67,
+            29,
             11,
             68,
-            89,
-            29
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -74852,10 +76537,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            28,
             9,
             68,
             88,
-            28,
             93,
             94
         ],
@@ -74882,10 +76567,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            28,
             11,
             68,
-            89,
-            28
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -74910,10 +76595,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            31,
             9,
             68,
             88,
-            31,
             93,
             94
         ],
@@ -74940,10 +76625,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            31,
             11,
             68,
-            89,
-            31
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -74968,10 +76653,10 @@
         "DamageWeight": [],
         "Tags": [
             67,
+            33,
             9,
             68,
             88,
-            33,
             93,
             94
         ],
@@ -74998,10 +76683,10 @@
         "DamageWeight": [],
         "Tags": [
             67,
+            33,
             11,
             68,
-            89,
-            33
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -75026,10 +76711,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            30,
             9,
             68,
             88,
-            30,
             93,
             94
         ],
@@ -75056,10 +76741,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            30,
             11,
             68,
-            89,
-            30
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -75084,10 +76769,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            32,
             9,
             68,
             88,
-            32,
             93,
             94
         ],
@@ -75114,10 +76799,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            32,
             11,
             68,
-            89,
-            32
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -75142,10 +76827,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            35,
             9,
             68,
             88,
-            35,
             93,
             94
         ],
@@ -75172,10 +76857,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            35,
             11,
             68,
-            89,
-            35
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -75200,10 +76885,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            34,
             9,
             68,
             88,
-            34,
             93,
             94
         ],
@@ -75230,10 +76915,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            34,
             11,
             68,
-            89,
-            34
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -75258,10 +76943,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            34,
             9,
             68,
             88,
-            34,
             93,
             94
         ],
@@ -75288,10 +76973,10 @@
         "DamageWeight": [],
         "Tags": [
             66,
+            34,
             11,
             68,
-            89,
-            34
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -75316,10 +77001,10 @@
         "DamageWeight": [],
         "Tags": [
             67,
+            28,
             9,
             68,
             88,
-            28,
             93,
             94
         ],
@@ -75346,10 +77031,10 @@
         "DamageWeight": [],
         "Tags": [
             67,
+            28,
             11,
             68,
-            89,
-            28
+            89
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -78342,6 +80027,43 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "2220329109": {
+        "Key": 2220329109,
+        "Id": 2220329109,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 2203291,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            41000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34,
+            66,
+            9,
+            68,
+            46,
+            94
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "2220330202": {
         "Key": 2220330202,
         "Id": 2220330202,
@@ -78754,10 +80476,10 @@
         "PartDamageType": 0,
         "DamageWeight": [],
         "Tags": [
-            31,
             66,
-            68,
-            9
+            31,
+            9,
+            68
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -78789,10 +80511,10 @@
         "PartDamageType": 0,
         "DamageWeight": [],
         "Tags": [
-            31,
             66,
-            68,
-            10
+            31,
+            10,
+            68
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -79921,6 +81643,32 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "2240427101": {
+        "Key": 2240427101,
+        "Id": 2240427101,
+        "Level": 0,
+        "Name": "护盾",
+        "DamageType": 2,
+        "TypeEnum": 2404271,
+        "DamageScript": "MAddShield",
+        "PVEDamageRadio": [
+            120000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 0,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            26
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "2240614003": {
         "Key": 2240614003,
         "Id": 2240614003,
@@ -80720,6 +82468,45 @@
             67,
             9,
             69
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "2321002203": {
+        "Key": 2321002203,
+        "Id": 2321002203,
+        "Level": 0,
+        "Name": "",
+        "DamageType": 2,
+        "TypeEnum": 3210022,
+        "DamageScript": "AutoAttack",
+        "PVEDamageRadio": [
+            10000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": -1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            9,
+            69,
+            88
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -82762,7 +84549,7 @@
         "TypeEnum": 1010601,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            10000
+            7767
         ],
         "PVEFixedParameter": [
             0
@@ -82777,9 +84564,7 @@
         "DamageProperty": 0,
         "PartDamageType": 0,
         "DamageWeight": [],
-        "Tags": [
-            28
-        ],
+        "Tags": [],
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
@@ -87599,10 +89384,10 @@
         "TypeEnum": 100433,
         "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            47400
+            30600
         ],
         "PVEFixedParameter": [
-            1500
+            1000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -88240,10 +90025,10 @@
         "TypeEnum": 100578,
         "DamageScript": "MstSpSkillMAttack",
         "PVEDamageRadio": [
-            47400
+            30600
         ],
         "PVEFixedParameter": [
-            1500
+            1000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -104445,8 +106230,8 @@
         "PartDamageType": 0,
         "DamageWeight": [],
         "Tags": [
-            31,
             66,
+            31,
             9,
             69,
             93
@@ -104481,8 +106266,8 @@
         "PartDamageType": 0,
         "DamageWeight": [],
         "Tags": [
-            31,
             66,
+            31,
             9,
             68,
             93,
@@ -104519,7 +106304,8 @@
             66,
             31,
             9,
-            69
+            69,
+            93
         ],
         "BehitLightIsOpen": false,
         "IsProfession": false
@@ -104787,8 +106573,8 @@
             31,
             9,
             68,
-            23,
-            93
+            93,
+            23
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -104922,8 +106708,8 @@
             31,
             9,
             68,
-            23,
-            93
+            93,
+            23
         ],
         "BehitLightIsOpen": true,
         "IsProfession": false
@@ -107978,7 +109764,7 @@
         "Key": 12301010101,
         "Id": 12301010101,
         "Level": 1,
-        "Name": "奥尔维拉飞雷神",
+        "Name": "聚合乐章单段",
         "DamageType": 1,
         "TypeEnum": 230101,
         "DamageScript": "MAttack",
@@ -108077,7 +109863,7 @@
         "Key": 12301020101,
         "Id": 12301020101,
         "Level": 1,
-        "Name": "奥尔维拉飞雷神",
+        "Name": "聚合乐章单段",
         "DamageType": 1,
         "TypeEnum": 230102,
         "DamageScript": "MAttack",
@@ -108176,7 +109962,7 @@
         "Key": 12301020102,
         "Id": 12301020102,
         "Level": 1,
-        "Name": "聚合乐章单段",
+        "Name": "聚合乐章二段",
         "DamageType": 1,
         "TypeEnum": 230102,
         "DamageScript": "MAttack",
@@ -108275,7 +110061,7 @@
         "Key": 12301030101,
         "Id": 12301030101,
         "Level": 1,
-        "Name": "奥尔维拉飞雷神",
+        "Name": "聚合乐章单段",
         "DamageType": 1,
         "TypeEnum": 230103,
         "DamageScript": "MAttack",
@@ -108374,7 +110160,7 @@
         "Key": 12301030102,
         "Id": 12301030102,
         "Level": 1,
-        "Name": "聚合乐章单段",
+        "Name": "聚合乐章二段",
         "DamageType": 1,
         "TypeEnum": 230103,
         "DamageScript": "MAttack",
@@ -108473,7 +110259,7 @@
         "Key": 12301030103,
         "Id": 12301030103,
         "Level": 1,
-        "Name": "聚合乐章二段",
+        "Name": "聚合乐章三段",
         "DamageType": 1,
         "TypeEnum": 230103,
         "DamageScript": "MAttack",
@@ -108572,7 +110358,7 @@
         "Key": 12301040101,
         "Id": 12301040101,
         "Level": 1,
-        "Name": "奥尔维拉飞雷神",
+        "Name": "聚合乐章单段",
         "DamageType": 1,
         "TypeEnum": 230104,
         "DamageScript": "MAttack",
@@ -108671,7 +110457,7 @@
         "Key": 12301040102,
         "Id": 12301040102,
         "Level": 1,
-        "Name": "聚合乐章单段",
+        "Name": "聚合乐章二段",
         "DamageType": 1,
         "TypeEnum": 230104,
         "DamageScript": "MAttack",
@@ -108770,7 +110556,7 @@
         "Key": 12301040103,
         "Id": 12301040103,
         "Level": 1,
-        "Name": "聚合乐章二段",
+        "Name": "聚合乐章三段",
         "DamageType": 1,
         "TypeEnum": 230104,
         "DamageScript": "MAttack",
@@ -108869,7 +110655,7 @@
         "Key": 12301040104,
         "Id": 12301040104,
         "Level": 1,
-        "Name": "聚合乐章三段",
+        "Name": "聚合乐章四段",
         "DamageType": 1,
         "TypeEnum": 230104,
         "DamageScript": "MAttack",
@@ -128580,10 +130366,10 @@
         "TypeEnum": 1004806,
         "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            47400
+            16800
         ],
         "PVEFixedParameter": [
-            1500
+            500
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -133876,11 +135662,17 @@
         "Name": "剑盾山贼飞盾",
         "DamageType": 1,
         "TypeEnum": 1010601,
-        "DamageScript": "",
-        "PVEDamageRadio": [],
-        "PVEFixedParameter": [],
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30600
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
         "PVELoopTime": 1,
-        "PVEStunnedDamage": [],
+        "PVEStunnedDamage": [
+            0
+        ],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
         "AbnormalDamage": [],
@@ -134164,12 +135956,12 @@
         "Name": "剑盾山贼飞盾",
         "DamageType": 1,
         "TypeEnum": 1010801,
-        "DamageScript": "Attack",
+        "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            30000
+            30600
         ],
         "PVEFixedParameter": [
-            0
+            1000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -134194,7 +135986,7 @@
         "TypeEnum": 1010803,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            10000
+            7950
         ],
         "PVEFixedParameter": [
             0
@@ -134222,7 +136014,7 @@
         "TypeEnum": 1010803,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            10000
+            7950
         ],
         "PVEFixedParameter": [
             0
@@ -134250,7 +136042,7 @@
         "TypeEnum": 1010803,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            10000
+            10600
         ],
         "PVEFixedParameter": [
             0
@@ -134278,7 +136070,7 @@
         "TypeEnum": 1010804,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            7500
+            13700
         ],
         "PVEFixedParameter": [
             0
@@ -134312,7 +136104,7 @@
         "TypeEnum": 1010805,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            30000
+            26500
         ],
         "PVEFixedParameter": [
             0
@@ -134340,7 +136132,7 @@
         "TypeEnum": 1010805,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            30000
+            26500
         ],
         "PVEFixedParameter": [
             0
@@ -134368,7 +136160,7 @@
         "TypeEnum": 1010901,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            10000
+            26450
         ],
         "PVEFixedParameter": [
             0
@@ -134396,7 +136188,7 @@
         "TypeEnum": 1010901,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            10000
+            26450
         ],
         "PVEFixedParameter": [
             0
@@ -134424,7 +136216,7 @@
         "TypeEnum": 1010902,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            3300
+            6450
         ],
         "PVEFixedParameter": [
             0
@@ -134452,7 +136244,7 @@
         "TypeEnum": 1010902,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            3300
+            6450
         ],
         "PVEFixedParameter": [
             0
@@ -152548,10 +154340,10 @@
         "TypeEnum": 2002907,
         "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            23700
+            15800
         ],
         "PVEFixedParameter": [
-            750
+            500
         ],
         "PVELoopTime": 0,
         "PVEStunnedDamage": [
@@ -161220,12 +163012,12 @@
             1000,
             1500,
             2000,
-            3000,
             5000,
+            15000,
             99999999
         ],
         "PVEFixedParameter": [
-            200
+            300
         ],
         "PVELoopTime": 10,
         "PVEStunnedDamage": [
@@ -161393,12 +163185,12 @@
         "TypeEnum": 3320162,
         "DamageScript": "TargetHpHeal",
         "PVEDamageRadio": [
-            5000,
-            5000,
-            5000,
-            8000,
-            1000,
-            1000
+            300,
+            300,
+            300,
+            400,
+            400,
+            400
         ],
         "PVEFixedParameter": [
             0
@@ -161426,12 +163218,12 @@
         "TypeEnum": 3320162,
         "DamageScript": "TargetHpHeal",
         "PVEDamageRadio": [
-            5000,
-            5000,
-            5000,
-            8000,
-            1000,
-            1000
+            300,
+            300,
+            300,
+            400,
+            400,
+            400
         ],
         "PVEFixedParameter": [
             0
@@ -161459,12 +163251,12 @@
         "TypeEnum": 3320164,
         "DamageScript": "TargetHpHeal",
         "PVEDamageRadio": [
-            1000,
-            1000,
-            1000,
-            1500,
-            2000,
-            2000
+            300,
+            300,
+            300,
+            400,
+            400,
+            400
         ],
         "PVEFixedParameter": [
             0
@@ -161561,8 +163353,8 @@
             5000,
             50000,
             100000,
-            150000,
-            150000
+            100000,
+            100000
         ],
         "PVEFixedParameter": [
             10000
@@ -162267,8 +164059,8 @@
             833,
             8333,
             16667,
-            25000,
-            25000
+            16667,
+            16667
         ],
         "PVEFixedParameter": [
             1667
@@ -164016,7 +165808,12 @@
         "TypeEnum": 3350103,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            50000
+            50000,
+            50000,
+            50000,
+            50000,
+            60000,
+            80000
         ],
         "PVEFixedParameter": [
             0
@@ -164145,8 +165942,8 @@
             5000,
             10000,
             20000,
-            40000,
-            40000
+            30000,
+            30000
         ],
         "PVEFixedParameter": [
             2000
@@ -164180,8 +165977,8 @@
             5000,
             50000,
             100000,
-            150000,
-            150000
+            100000,
+            100000
         ],
         "PVEFixedParameter": [
             10000
@@ -164209,12 +166006,17 @@
         "Name": "",
         "DamageType": 1,
         "TypeEnum": 3350109,
-        "DamageScript": "Attack",
+        "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            20000
+            20000,
+            20000,
+            20000,
+            20000,
+            30000,
+            60000
         ],
         "PVEFixedParameter": [
-            0
+            1000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164307,7 +166109,12 @@
         "TypeEnum": 3350113,
         "DamageScript": "Attack",
         "PVEDamageRadio": [
-            30000
+            30000,
+            30000,
+            30000,
+            30000,
+            60000,
+            60000
         ],
         "PVEFixedParameter": [
             0
@@ -164369,9 +166176,9 @@
             1000,
             1000,
             2000,
-            2000,
-            2000,
-            2000
+            4000,
+            8000,
+            8000
         ],
         "PVEFixedParameter": [
             200
@@ -164404,13 +166211,13 @@
         "PVEDamageRadio": [
             5000,
             5000,
-            5000,
-            8000,
-            10000,
-            10000
+            20000,
+            30000,
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            500
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164440,13 +166247,13 @@
         "PVEDamageRadio": [
             5000,
             5000,
-            5000,
-            8000,
-            10000,
-            10000
+            20000,
+            30000,
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            500
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164514,11 +166321,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164550,11 +166357,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164586,11 +166393,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164622,11 +166429,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164658,11 +166465,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164694,11 +166501,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164730,11 +166537,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164766,11 +166573,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164802,11 +166609,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164838,11 +166645,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164874,11 +166681,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164910,11 +166717,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -164946,11 +166753,11 @@
             5000,
             20000,
             30000,
-            50000,
-            50000
+            40000,
+            40000
         ],
         "PVEFixedParameter": [
-            2000
+            3000
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -167362,8 +169169,8 @@
             5000,
             50000,
             100000,
-            150000,
-            150000
+            100000,
+            100000
         ],
         "PVEFixedParameter": [
             10000
@@ -170297,6 +172104,38 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "160156010101": {
+        "Key": 160156010101,
+        "Id": 160156010101,
+        "Level": 1,
+        "Name": "扫射型机甲-扩散导弹雨",
+        "DamageType": 1,
+        "TypeEnum": 6015601,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            0
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "1102701010102": {
         "Key": 1102701010102,
         "Id": 1102701010102,
@@ -170327,6 +172166,30 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "160155010101": {
+        "Key": 160155010101,
+        "Id": 160155010101,
+        "Level": 1,
+        "Name": "机兵旋转喷火",
+        "DamageType": 1,
+        "TypeEnum": 6015501,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            1000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 99,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "1102701020101": {
         "Key": 1102701020101,
         "Id": 1102701020101,
@@ -170354,6 +172217,36 @@
         "Tags": [
             34
         ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "160157020101": {
+        "Key": 160157020101,
+        "Id": 160157020101,
+        "Level": 1,
+        "Name": "安德拉天火",
+        "DamageType": 1,
+        "TypeEnum": 6015702,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
@@ -170594,6 +172487,223 @@
         "Tags": [
             34
         ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109030102": {
+        "Key": 181109030102,
+        "Id": 181109030102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 8110903,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            5000,
+            5000,
+            10000,
+            10000
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 999,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109030103": {
+        "Key": 181109030103,
+        "Id": 181109030103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 8110903,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            5000,
+            5000,
+            10000,
+            10000
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 999,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109030104": {
+        "Key": 181109030104,
+        "Id": 181109030104,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 8110903,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            5000,
+            5000,
+            10000,
+            10000
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 999,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109040101": {
+        "Key": 181109040101,
+        "Id": 181109040101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 8110904,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            44100
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109040105": {
+        "Key": 181109040105,
+        "Id": 181109040105,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 8110904,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109040109": {
+        "Key": 181109040109,
+        "Id": 181109040109,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 8110904,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109040115": {
+        "Key": 181109040115,
+        "Id": 181109040115,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 8110904,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "181109050101": {
+        "Key": 181109050101,
+        "Id": 181109050101,
+        "Level": 1,
+        "Name": "分身娜宝-连续普通拳",
+        "DamageType": 1,
+        "TypeEnum": 8110905,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            5000
+        ],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 2,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
@@ -171732,6 +173842,190 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "1102800010101": {
+        "Key": 1102800010101,
+        "Id": 1102800010101,
+        "Level": 1,
+        "Name": "炎光普攻01",
+        "DamageType": 1,
+        "TypeEnum": 10280001,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800020101": {
+        "Key": 1102800020101,
+        "Id": 1102800020101,
+        "Level": 1,
+        "Name": "炎光普攻02",
+        "DamageType": 1,
+        "TypeEnum": 10280002,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800030101": {
+        "Key": 1102800030101,
+        "Id": 1102800030101,
+        "Level": 1,
+        "Name": "炎光普攻03",
+        "DamageType": 1,
+        "TypeEnum": 10280003,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800040101": {
+        "Key": 1102800040101,
+        "Id": 1102800040101,
+        "Level": 1,
+        "Name": "炎光普攻04",
+        "DamageType": 1,
+        "TypeEnum": 10280004,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800050101": {
+        "Key": 1102800050101,
+        "Id": 1102800050101,
+        "Level": 1,
+        "Name": "炎光全场aoe",
+        "DamageType": 1,
+        "TypeEnum": 10280005,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800100104": {
+        "Key": 1102800100104,
+        "Id": 1102800100104,
+        "Level": 1,
+        "Name": "召唤隐形npc技能",
+        "DamageType": 1,
+        "TypeEnum": 10280010,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            40000,
+            40000,
+            50000
+        ],
+        "PVEFixedParameter": [
+            3000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "110048100101": {
         "Key": 110048100101,
         "Id": 110048100101,
@@ -171760,6 +174054,36 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "1102800120102": {
+        "Key": 1102800120102,
+        "Id": 1102800120102,
+        "Level": 1,
+        "Name": "十字aoe_竖",
+        "DamageType": 1,
+        "TypeEnum": 10280012,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "133501560106": {
         "Key": 133501560106,
         "Id": 133501560106,
@@ -171779,6 +174103,38 @@
         "PartDamageType": 0,
         "DamageWeight": [],
         "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800150101": {
+        "Key": 1102800150101,
+        "Id": 1102800150101,
+        "Level": 1,
+        "Name": "炎光之衰减",
+        "DamageType": 1,
+        "TypeEnum": 10280015,
+        "DamageScript": "AttackRangeAttenuation",
+        "PVEDamageRadio": [
+            200000,
+            400000,
+            400000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
@@ -171812,6 +174168,37 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "1102800160101": {
+        "Key": 1102800160101,
+        "Id": 1102800160101,
+        "Level": 1,
+        "Name": "炎光誓死守护-攻",
+        "DamageType": 1,
+        "TypeEnum": 10280016,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            99999999
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 15,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "133501560107": {
         "Key": 133501560107,
         "Id": 133501560107,
@@ -171834,25 +174221,33 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
-    "11905070101": {
-        "Key": 11905070101,
-        "Id": 11905070101,
+    "1102800500101": {
+        "Key": 1102800500101,
+        "Id": 1102800500101,
         "Level": 1,
-        "Name": "娜宝水晶开花出球",
+        "Name": "领地共鸣伤害",
         "DamageType": 1,
-        "TypeEnum": 190507,
-        "DamageScript": "",
-        "PVEDamageRadio": [],
-        "PVEFixedParameter": [],
+        "TypeEnum": 10280050,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            3000
+        ],
         "PVELoopTime": 1,
-        "PVEStunnedDamage": [],
+        "PVEStunnedDamage": [
+            0
+        ],
         "PVEExtinctionDamage": 0,
         "PartDamageRadio": [],
         "AbnormalDamage": [],
         "DamageProperty": 0,
         "PartDamageType": 0,
         "DamageWeight": [],
-        "Tags": [],
+        "Tags": [
+            34
+        ],
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
@@ -171884,6 +174279,215 @@
         "BehitLightIsOpen": false,
         "IsProfession": false
     },
+    "1102800510101": {
+        "Key": 1102800510101,
+        "Id": 1102800510101,
+        "Level": 1,
+        "Name": "领地分摊",
+        "DamageType": 1,
+        "TypeEnum": 10280051,
+        "DamageScript": "MstSpSkillAttackShare",
+        "PVEDamageRadio": [
+            100000,
+            150000,
+            150000
+        ],
+        "PVEFixedParameter": [
+            15000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "14201700101": {
+        "Key": 14201700101,
+        "Id": 14201700101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 420170,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "14201710101": {
+        "Key": 14201710101,
+        "Id": 14201710101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 420171,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "14201720101": {
+        "Key": 14201720101,
+        "Id": 14201720101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 420172,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "14201730101": {
+        "Key": 14201730101,
+        "Id": 14201730101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 420173,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800510103": {
+        "Key": 1102800510103,
+        "Id": 1102800510103,
+        "Level": 1,
+        "Name": "领地分摊",
+        "DamageType": 1,
+        "TypeEnum": 10280051,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 9999,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "14201730102": {
+        "Key": 14201730102,
+        "Id": 14201730102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 420173,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 999,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "14201630105": {
+        "Key": 14201630105,
+        "Id": 14201630105,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 420163,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "14201630106": {
+        "Key": 14201630106,
+        "Id": 14201630106,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 420163,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 999,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
     "133501560108": {
         "Key": 133501560108,
         "Id": 133501560108,
@@ -171891,6 +174495,1644 @@
         "Name": "",
         "DamageType": 1,
         "TypeEnum": 3350156,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800520101": {
+        "Key": 1102800520101,
+        "Id": 1102800520101,
+        "Level": 1,
+        "Name": "领地致死",
+        "DamageType": 1,
+        "TypeEnum": 10280052,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            150000,
+            200000,
+            275000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 2,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102800520102": {
+        "Key": 1102800520102,
+        "Id": 1102800520102,
+        "Level": 1,
+        "Name": "领地致死",
+        "DamageType": 1,
+        "TypeEnum": 10280052,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            150000,
+            200000,
+            275000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 9999,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801010101": {
+        "Key": 1102801010101,
+        "Id": 1102801010101,
+        "Level": 1,
+        "Name": "幻华普攻01",
+        "DamageType": 1,
+        "TypeEnum": 10280101,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801020101": {
+        "Key": 1102801020101,
+        "Id": 1102801020101,
+        "Level": 1,
+        "Name": "幻华普攻02",
+        "DamageType": 1,
+        "TypeEnum": 10280102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801030101": {
+        "Key": 1102801030101,
+        "Id": 1102801030101,
+        "Level": 1,
+        "Name": "幻华普攻03",
+        "DamageType": 1,
+        "TypeEnum": 10280103,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801040101": {
+        "Key": 1102801040101,
+        "Id": 1102801040101,
+        "Level": 1,
+        "Name": "幻华普攻04",
+        "DamageType": 1,
+        "TypeEnum": 10280104,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            13300
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801050102": {
+        "Key": 1102801050102,
+        "Id": 1102801050102,
+        "Level": 1,
+        "Name": "幻华全场aoe",
+        "DamageType": 1,
+        "TypeEnum": 10280105,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801100104": {
+        "Key": 1102801100104,
+        "Id": 1102801100104,
+        "Level": 1,
+        "Name": "召唤隐形npc技能",
+        "DamageType": 1,
+        "TypeEnum": 10280110,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            40000
+        ],
+        "PVEFixedParameter": [
+            3000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801120102": {
+        "Key": 1102801120102,
+        "Id": 1102801120102,
+        "Level": 1,
+        "Name": "十字aoe_竖",
+        "DamageType": 1,
+        "TypeEnum": 10280112,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801150101": {
+        "Key": 1102801150101,
+        "Id": 1102801150101,
+        "Level": 1,
+        "Name": "炎光之衰减",
+        "DamageType": 1,
+        "TypeEnum": 10280115,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            200000,
+            400000,
+            400000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801160101": {
+        "Key": 1102801160101,
+        "Id": 1102801160101,
+        "Level": 1,
+        "Name": "炎光誓死守护-攻",
+        "DamageType": 1,
+        "TypeEnum": 10280116,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            99999999
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 15,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801500101": {
+        "Key": 1102801500101,
+        "Id": 1102801500101,
+        "Level": 1,
+        "Name": "领地共鸣伤害",
+        "DamageType": 1,
+        "TypeEnum": 10280150,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            3000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801510101": {
+        "Key": 1102801510101,
+        "Id": 1102801510101,
+        "Level": 1,
+        "Name": "领地分摊",
+        "DamageType": 1,
+        "TypeEnum": 10280151,
+        "DamageScript": "MstSpSkillAttackShare",
+        "PVEDamageRadio": [
+            100000,
+            150000,
+            150000
+        ],
+        "PVEFixedParameter": [
+            15000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801510103": {
+        "Key": 1102801510103,
+        "Id": 1102801510103,
+        "Level": 1,
+        "Name": "领地分摊",
+        "DamageType": 1,
+        "TypeEnum": 10280151,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 9999,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801520102": {
+        "Key": 1102801520102,
+        "Id": 1102801520102,
+        "Level": 1,
+        "Name": "领地致死",
+        "DamageType": 1,
+        "TypeEnum": 10280152,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            150000,
+            200000,
+            275000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 9999,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102801520101": {
+        "Key": 1102801520101,
+        "Id": 1102801520101,
+        "Level": 1,
+        "Name": "领地致死",
+        "DamageType": 1,
+        "TypeEnum": 10280152,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            150000,
+            200000,
+            275000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 2,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102812510101": {
+        "Key": 1102812510101,
+        "Id": 1102812510101,
+        "Level": 1,
+        "Name": "光暗纠缠体",
+        "DamageType": 1,
+        "TypeEnum": 10281251,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102812520101": {
+        "Key": 1102812520101,
+        "Id": 1102812520101,
+        "Level": 1,
+        "Name": "光暗大爆炸",
+        "DamageType": 1,
+        "TypeEnum": 10281252,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            30000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102812530101": {
+        "Key": 1102812530101,
+        "Id": 1102812530101,
+        "Level": 1,
+        "Name": "羊之冲撞",
+        "DamageType": 1,
+        "TypeEnum": 10281253,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 10,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102812540101": {
+        "Key": 1102812540101,
+        "Id": 1102812540101,
+        "Level": 1,
+        "Name": "全场aoe",
+        "DamageType": 1,
+        "TypeEnum": 10281254,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            99999999
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901020104": {
+        "Key": 1102901020104,
+        "Id": 1102901020104,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290102,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901020105": {
+        "Key": 1102901020105,
+        "Id": 1102901020105,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290102,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901020106": {
+        "Key": 1102901020106,
+        "Id": 1102901020106,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290102,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901030101": {
+        "Key": 1102901030101,
+        "Id": 1102901030101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290103,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901050101": {
+        "Key": 1102901050101,
+        "Id": 1102901050101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290105,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            60000,
+            80000,
+            200000,
+            350000,
+            400000,
+            500000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901060101": {
+        "Key": 1102901060101,
+        "Id": 1102901060101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290106,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 3,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901110106": {
+        "Key": 1102901110106,
+        "Id": 1102901110106,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290111,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901120101": {
+        "Key": 1102901120101,
+        "Id": 1102901120101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290112,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901120102": {
+        "Key": 1102901120102,
+        "Id": 1102901120102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290112,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901130102": {
+        "Key": 1102901130102,
+        "Id": 1102901130102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290113,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901140101": {
+        "Key": 1102901140101,
+        "Id": 1102901140101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290114,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 3,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901140102": {
+        "Key": 1102901140102,
+        "Id": 1102901140102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290114,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 3,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901140103": {
+        "Key": 1102901140103,
+        "Id": 1102901140103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290114,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 8,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901140104": {
+        "Key": 1102901140104,
+        "Id": 1102901140104,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290114,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901150102": {
+        "Key": 1102901150102,
+        "Id": 1102901150102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290115,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901160102": {
+        "Key": 1102901160102,
+        "Id": 1102901160102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290116,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901510101": {
+        "Key": 1102901510101,
+        "Id": 1102901510101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290151,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            20000,
+            30000,
+            50000,
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901520101": {
+        "Key": 1102901520101,
+        "Id": 1102901520101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290152,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            20000,
+            30000,
+            50000,
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901530101": {
+        "Key": 1102901530101,
+        "Id": 1102901530101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290153,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            20000,
+            30000,
+            50000,
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102901540101": {
+        "Key": 1102901540101,
+        "Id": 1102901540101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10290154,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            20000,
+            30000,
+            50000,
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            67,
+            34
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103001010102": {
+        "Key": 1103001010102,
+        "Id": 1103001010102,
+        "Level": 1,
+        "Name": "火焰兽人爪击三连",
+        "DamageType": 1,
+        "TypeEnum": 10300101,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            3050
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            28
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001010104": {
+        "Key": 1103001010104,
+        "Id": 1103001010104,
+        "Level": 1,
+        "Name": "火焰兽人爪击三连",
+        "DamageType": 1,
+        "TypeEnum": 10300101,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            3050
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            28
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001020101": {
+        "Key": 1103001020101,
+        "Id": 1103001020101,
+        "Level": 1,
+        "Name": "火焰兽人砸地冲击",
+        "DamageType": 1,
+        "TypeEnum": 10300102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            8000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 1,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001020102": {
+        "Key": 1103001020102,
+        "Id": 1103001020102,
+        "Level": 1,
+        "Name": "火焰兽人砸地冲击",
+        "DamageType": 1,
+        "TypeEnum": 10300102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            8000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 1,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001020103": {
+        "Key": 1103001020103,
+        "Id": 1103001020103,
+        "Level": 1,
+        "Name": "火焰兽人砸地冲击",
+        "DamageType": 1,
+        "TypeEnum": 10300102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            4800
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 5,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 1,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001020104": {
+        "Key": 1103001020104,
+        "Id": 1103001020104,
+        "Level": 1,
+        "Name": "火焰兽人砸地冲击",
+        "DamageType": 1,
+        "TypeEnum": 10300102,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            24000
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 1,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001030101": {
+        "Key": 1103001030101,
+        "Id": 1103001030101,
+        "Level": 1,
+        "Name": "火焰兽人激昂",
+        "DamageType": 1,
+        "TypeEnum": 10300103,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103001040102": {
+        "Key": 1103001040102,
+        "Id": 1103001040102,
+        "Level": 1,
+        "Name": "火焰兽人前跳砸地",
+        "DamageType": 1,
+        "TypeEnum": 10300104,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            29400
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            28
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001060101": {
+        "Key": 1103001060101,
+        "Id": 1103001060101,
+        "Level": 1,
+        "Name": "火焰兽人砸地冲击",
+        "DamageType": 1,
+        "TypeEnum": 10300106,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103001080104": {
+        "Key": 1103001080104,
+        "Id": 1103001080104,
+        "Level": 1,
+        "Name": "火焰兽人爪击三连",
+        "DamageType": 1,
+        "TypeEnum": 10300108,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            3050
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            28
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103001500101": {
+        "Key": 1103001500101,
+        "Id": 1103001500101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300150,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103001510101": {
+        "Key": 1103001510101,
+        "Id": 1103001510101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300151,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103002010104": {
+        "Key": 1103002010104,
+        "Id": 1103002010104,
+        "Level": 1,
+        "Name": "火焰兽人爪击三连",
+        "DamageType": 1,
+        "TypeEnum": 10300201,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            3050
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            28
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103003050105": {
+        "Key": 1103003050105,
+        "Id": 1103003050105,
+        "Level": 1,
+        "Name": "虚蚀蒂娜_虚蚀重击",
+        "DamageType": 1,
+        "TypeEnum": 10300305,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            5000,
+            5000,
+            10000,
+            20000,
+            40000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [
+            0
+        ],
+        "AbnormalDamage": [
+            [
+                0
+            ]
+        ],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": true,
+        "IsProfession": false
+    },
+    "1103003500101": {
+        "Key": 1103003500101,
+        "Id": 1103003500101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300350,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003500102": {
+        "Key": 1103003500102,
+        "Id": 1103003500102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300350,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003520101": {
+        "Key": 1103003520101,
+        "Id": 1103003520101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300352,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003520102": {
+        "Key": 1103003520102,
+        "Id": 1103003520102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300352,
         "DamageScript": "",
         "PVEDamageRadio": [],
         "PVEFixedParameter": [],
@@ -171965,12 +176207,12 @@
         "Name": "",
         "DamageType": 1,
         "TypeEnum": 1011605,
-        "DamageScript": "Attack",
+        "DamageScript": "MstSpSkillAttack",
         "PVEDamageRadio": [
-            3000
+            0
         ],
         "PVEFixedParameter": [
-            0
+            2
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -171993,9 +176235,13 @@
         "Name": "",
         "DamageType": 1,
         "TypeEnum": 3350141,
-        "DamageScript": "",
-        "PVEDamageRadio": [],
-        "PVEFixedParameter": [],
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            44100
+        ],
+        "PVEFixedParameter": [
+            0
+        ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [],
         "PVEExtinctionDamage": 0,
@@ -172050,17 +176296,12 @@
         "Name": "",
         "DamageType": 1,
         "TypeEnum": 3350142,
-        "DamageScript": "MstSpSkillAttack",
+        "DamageScript": "Attack",
         "PVEDamageRadio": [
-            5000,
-            5000,
-            20000,
-            30000,
-            50000,
-            50000
+            44100
         ],
         "PVEFixedParameter": [
-            2000
+            0
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -172086,17 +176327,12 @@
         "Name": "",
         "DamageType": 1,
         "TypeEnum": 3350143,
-        "DamageScript": "MstSpSkillAttack",
+        "DamageScript": "Attack",
         "PVEDamageRadio": [
-            5000,
-            5000,
-            20000,
-            30000,
-            50000,
-            50000
+            44100
         ],
         "PVEFixedParameter": [
-            2000
+            0
         ],
         "PVELoopTime": 1,
         "PVEStunnedDamage": [
@@ -172112,6 +176348,942 @@
             67,
             34
         ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "110109100102": {
+        "Key": 110109100102,
+        "Id": 110109100102,
+        "Level": 1,
+        "Name": "蓄力砸地",
+        "DamageType": 1,
+        "TypeEnum": 1010910,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            21800
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "110109100101": {
+        "Key": 110109100101,
+        "Id": 110109100101,
+        "Level": 1,
+        "Name": "蓄力砸地",
+        "DamageType": 1,
+        "TypeEnum": 1010910,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            21800
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "110109100103": {
+        "Key": 110109100103,
+        "Id": 110109100103,
+        "Level": 1,
+        "Name": "蓄力3连砸",
+        "DamageType": 1,
+        "TypeEnum": 1010910,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            21800
+        ],
+        "PVEFixedParameter": [
+            1000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            0
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "12301070101": {
+        "Key": 12301070101,
+        "Id": 12301070101,
+        "Level": 1,
+        "Name": "聚合乐章单段",
+        "DamageType": 1,
+        "TypeEnum": 230107,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            15000,
+            15600,
+            16200,
+            18000,
+            18600,
+            19200,
+            21000
+        ],
+        "PVEFixedParameter": [
+            22,
+            52,
+            83,
+            113,
+            143,
+            173,
+            204,
+            234,
+            264,
+            294,
+            325,
+            355,
+            385,
+            415,
+            446,
+            476,
+            506,
+            536,
+            567,
+            597,
+            627,
+            657,
+            688,
+            718,
+            748,
+            778,
+            809,
+            839,
+            869,
+            900
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            28,
+            9,
+            69,
+            93
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "12301070102": {
+        "Key": 12301070102,
+        "Id": 12301070102,
+        "Level": 1,
+        "Name": "聚合乐章二段",
+        "DamageType": 1,
+        "TypeEnum": 230107,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            15000,
+            15600,
+            16200,
+            18000,
+            18600,
+            19200,
+            21000
+        ],
+        "PVEFixedParameter": [
+            22,
+            52,
+            83,
+            113,
+            143,
+            173,
+            204,
+            234,
+            264,
+            294,
+            325,
+            355,
+            385,
+            415,
+            446,
+            476,
+            506,
+            536,
+            567,
+            597,
+            627,
+            657,
+            688,
+            718,
+            748,
+            778,
+            809,
+            839,
+            869,
+            900
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            28,
+            9,
+            69,
+            93
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "12301070103": {
+        "Key": 12301070103,
+        "Id": 12301070103,
+        "Level": 1,
+        "Name": "聚合乐章三段",
+        "DamageType": 1,
+        "TypeEnum": 230107,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            15000,
+            15600,
+            16200,
+            18000,
+            18600,
+            19200,
+            21000
+        ],
+        "PVEFixedParameter": [
+            22,
+            52,
+            83,
+            113,
+            143,
+            173,
+            204,
+            234,
+            264,
+            294,
+            325,
+            355,
+            385,
+            415,
+            446,
+            476,
+            506,
+            536,
+            567,
+            597,
+            627,
+            657,
+            688,
+            718,
+            748,
+            778,
+            809,
+            839,
+            869,
+            900
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            28,
+            9,
+            69,
+            93
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "12301070104": {
+        "Key": 12301070104,
+        "Id": 12301070104,
+        "Level": 1,
+        "Name": "聚合乐章四段",
+        "DamageType": 1,
+        "TypeEnum": 230107,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            15000,
+            15600,
+            16200,
+            18000,
+            18600,
+            19200,
+            21000
+        ],
+        "PVEFixedParameter": [
+            22,
+            52,
+            83,
+            113,
+            143,
+            173,
+            204,
+            234,
+            264,
+            294,
+            325,
+            355,
+            385,
+            415,
+            446,
+            476,
+            506,
+            536,
+            567,
+            597,
+            627,
+            657,
+            688,
+            718,
+            748,
+            778,
+            809,
+            839,
+            869,
+            900
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            28,
+            9,
+            69,
+            93
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "12301070105": {
+        "Key": 12301070105,
+        "Id": 12301070105,
+        "Level": 1,
+        "Name": "聚合乐章五段",
+        "DamageType": 1,
+        "TypeEnum": 230107,
+        "DamageScript": "MAttack",
+        "PVEDamageRadio": [
+            15000,
+            15600,
+            16200,
+            18000,
+            18600,
+            19200,
+            21000
+        ],
+        "PVEFixedParameter": [
+            22,
+            52,
+            83,
+            113,
+            143,
+            173,
+            204,
+            234,
+            264,
+            294,
+            325,
+            355,
+            385,
+            415,
+            446,
+            476,
+            506,
+            536,
+            567,
+            597,
+            627,
+            657,
+            688,
+            718,
+            748,
+            778,
+            809,
+            839,
+            869,
+            900
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292,
+            292
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            4,
+            67,
+            28,
+            9,
+            69,
+            93
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "11799110101": {
+        "Key": 11799110101,
+        "Id": 11799110101,
+        "Level": 1,
+        "Name": "废弃",
+        "DamageType": 1,
+        "TypeEnum": 179911,
+        "DamageScript": "Attack",
+        "PVEDamageRadio": [
+            150000,
+            156000,
+            162000,
+            180000,
+            186000,
+            192000,
+            210000
+        ],
+        "PVEFixedParameter": [
+            150,
+            351,
+            553,
+            755,
+            956,
+            1158,
+            1360,
+            1562,
+            1763,
+            1965,
+            2167,
+            2368,
+            2570,
+            2772,
+            2974,
+            3175,
+            3377,
+            3579,
+            3781,
+            3982,
+            4184,
+            4386,
+            4587,
+            4789,
+            4991,
+            5193,
+            5394,
+            5596,
+            5798,
+            6000
+        ],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135,
+            135
+        ],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            61,
+            66,
+            30,
+            9,
+            93,
+            69
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102812530102": {
+        "Key": 1102812530102,
+        "Id": 1102812530102,
+        "Level": 1,
+        "Name": "羊之冲撞",
+        "DamageType": 1,
+        "TypeEnum": 10281253,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 10,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003010101": {
+        "Key": 1103003010101,
+        "Id": 1103003010101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300301,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1102812530103": {
+        "Key": 1102812530103,
+        "Id": 1102812530103,
+        "Level": 1,
+        "Name": "羊之冲撞",
+        "DamageType": 1,
+        "TypeEnum": 10281253,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            50000
+        ],
+        "PVEFixedParameter": [
+            2000
+        ],
+        "PVELoopTime": 10,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [
+            35
+        ],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003010102": {
+        "Key": 1103003010102,
+        "Id": 1103003010102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300301,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003010103": {
+        "Key": 1103003010103,
+        "Id": 1103003010103,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300301,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003020101": {
+        "Key": 1103003020101,
+        "Id": 1103003020101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300302,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003030101": {
+        "Key": 1103003030101,
+        "Id": 1103003030101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300303,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003030102": {
+        "Key": 1103003030102,
+        "Id": 1103003030102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300303,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "117008580103": {
+        "Key": 117008580103,
+        "Id": 117008580103,
+        "Level": 1,
+        "Name": "赤玉地狐-扫尾aoe-英雄本",
+        "DamageType": 1,
+        "TypeEnum": 1700858,
+        "DamageScript": "MstSpSkillAttack",
+        "PVEDamageRadio": [
+            15300
+        ],
+        "PVEFixedParameter": [
+            500
+        ],
+        "PVELoopTime": 2,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003510101": {
+        "Key": 1103003510101,
+        "Id": 1103003510101,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300351,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
+        "BehitLightIsOpen": false,
+        "IsProfession": false
+    },
+    "1103003510102": {
+        "Key": 1103003510102,
+        "Id": 1103003510102,
+        "Level": 1,
+        "Name": "",
+        "DamageType": 1,
+        "TypeEnum": 10300351,
+        "DamageScript": "",
+        "PVEDamageRadio": [],
+        "PVEFixedParameter": [],
+        "PVELoopTime": 1,
+        "PVEStunnedDamage": [],
+        "PVEExtinctionDamage": 0,
+        "PartDamageRadio": [],
+        "AbnormalDamage": [],
+        "DamageProperty": 0,
+        "PartDamageType": 0,
+        "DamageWeight": [],
+        "Tags": [],
         "BehitLightIsOpen": false,
         "IsProfession": false
     }

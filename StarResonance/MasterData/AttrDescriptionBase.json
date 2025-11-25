@@ -3044,6 +3044,16 @@
         "Id": 2401120,
         "Description": "居合斩消耗的每个雷之印使你的伤害提升{*Decision.unmarkpercent(1)*}，持续8秒"
     },
+    "2401130": {
+        "Key": 2401130,
+        "Id": 2401130,
+        "Description": "职业技能对当前目标造成暴击时，暴击伤害+2%，持续5秒，此效果最多叠加5层。"
+    },
+    "2401140": {
+        "Key": 2401140,
+        "Id": 2401140,
+        "Description": "无穷雷霆之力未生效期间，超高出力获得雷之印+1。<br>"
+    },
     "2401210": {
         "Key": 2401210,
         "Id": 2401210,
@@ -3069,6 +3079,16 @@
         "Id": 2401250,
         "Description": "消耗雷之印的技能提升{*Decision.unmarkpercent(1)*}物理增效"
     },
+    "2401260": {
+        "Key": 2401260,
+        "Id": 2401260,
+        "Description": "攻击速度小于80%时，攻击速度+6%；攻击速度大于等于80%时，专精技能雷元素伤害+7%。"
+    },
+    "2401270": {
+        "Key": 2401270,
+        "Id": 2401270,
+        "Description": "每施放2次神罚之镰，下一次神罚之镰额外触发1次镰刃逆转，该效果视同神罚之镰。<br>"
+    },
     "2402110": {
         "Key": 2402110,
         "Id": 2402110,
@@ -3083,6 +3103,16 @@
         "Key": 2402130,
         "Id": 2402130,
         "Description": "冰霜之矛暴击伤害提升{*Decision.unmarkpercent(1)*}；消耗玄冰时，10秒内寒冰风暴的伤害提高{*Decision.unmarkpercent(2)*}，最多叠加10层"
+    },
+    "2402140": {
+        "Key": 2402140,
+        "Id": 2402140,
+        "Description": "冰霜之矛、陨星风暴暴击伤害+13%。施放清滝绕珠后的5秒内持续回复共计80点寒冰能量。"
+    },
+    "2402150": {
+        "Key": 2402150,
+        "Id": 2402150,
+        "Description": "冰霜之矛触发暴击或幸运一击，获得1层幻冰；暴击、幸运一击同时触发则获得2层；幻冰达到25层时，朝前方施放清滝绕珠，该效果每15秒最多生效一次。<br>"
     },
     "2402210": {
         "Key": 2402210,
@@ -3109,6 +3139,16 @@
         "Id": 2402250,
         "Description": ""
     },
+    "2402260": {
+        "Key": 2402260,
+        "Id": 2402260,
+        "Description": "冰箭伤害+15%（可影响霜爆天赋）。"
+    },
+    "2402270": {
+        "Key": 2402270,
+        "Id": 2402270,
+        "Description": "浪潮汇聚对当前目标伤害+28%。<br>"
+    },
     "2403110": {
         "Key": 2403110,
         "Id": 2403110,
@@ -3123,6 +3163,16 @@
         "Key": 2403130,
         "Id": 2403130,
         "Description": "造成伤害时，你当前每拥有1个锐利，伤害提升{*Decision.unmarkpercent(1)*}"
+    },
+    "2403140": {
+        "Key": 2403140,
+        "Id": 2403140,
+        "Description": "消耗勇气的职业技能忽视目标22%物理防御。"
+    },
+    "2403150": {
+        "Key": 2403150,
+        "Id": 2403150,
+        "Description": "施放风姿卓绝自动放出1发龙击炮。神影螺旋现在可以存储2次。<br>"
     },
     "2403210": {
         "Key": 2403210,
@@ -3154,6 +3204,16 @@
         "Id": 2403260,
         "Description": "风姿卓绝期间提升{*Decision.unmarkpercent(1)*}物理增效"
     },
+    "2403270": {
+        "Key": 2403270,
+        "Id": 2403270,
+        "Description": "施放风姿卓绝后的下一次翔反和刹那风元素伤害+70%。<br>"
+    },
+    "2403280": {
+        "Key": 2403280,
+        "Id": 2403280,
+        "Description": "触发幸运一击时，缩减风姿卓绝0.2秒剩余冷却时间（同一时间只生效一次）。风姿卓绝生效期间，再次施放风姿卓绝立即获得上一次风姿卓绝未回复完毕的勇气（该行为亦可触发天赋风雷破击）。"
+    },
     "2404110": {
         "Key": 2404110,
         "Id": 2404110,
@@ -3173,6 +3233,16 @@
         "Key": 2404140,
         "Id": 2404140,
         "Description": "释放狂野绽放、不羁之种会使你的下一次灌注造成的伤害提高{*Decision.unmarkpercent(1)*}，或使你的下一次自然庇护的护盾值提升{*Decision.unmarkpercent(2)*}，最多叠加3次"
+    },
+    "2404150": {
+        "Key": 2404150,
+        "Id": 2404150,
+        "Description": "不羁之种冷却时间-25%。不羁之种元素伤害+12%。"
+    },
+    "2404160": {
+        "Key": 2404160,
+        "Id": 2404160,
+        "Description": "自然庇护生效期间溢出治疗可为其增加护盾量，最终护盾量不超过50%生命上限。自然庇护持续时间+5秒。<br>"
     },
     "2404210": {
         "Key": 2404210,
@@ -3199,6 +3269,16 @@
         "Id": 2404250,
         "Description": "治疗型专精技能提升{*Decision.unmarkpercent(1)*}魔法增效"
     },
+    "2404260": {
+        "Key": 2404260,
+        "Id": 2404260,
+        "Description": "直接治疗型职业技能为受治疗目标叠加1层春意：生命上限+2.5%，持续10秒，最多叠加5层。"
+    },
+    "2404270": {
+        "Key": 2404270,
+        "Id": 2404270,
+        "Description": "春意满层后，再次施放直接治疗型职业技能可将其转化为春意盎然：立即获得1200%攻击力护盾，且受到的鼓舞效果提升20%，持续10秒。<br>"
+    },
     "2405110": {
         "Key": 2405110,
         "Id": 2405110,
@@ -3218,6 +3298,16 @@
         "Key": 2405140,
         "Id": 2405140,
         "Description": "野狼的攻击有10%的几率使你的光属性加成提升{*Decision.unmarkpercent(1)*}，持续8秒"
+    },
+    "2405150": {
+        "Key": 2405150,
+        "Id": 2405150,
+        "Description": "每1%精通提供0.2%暴击伤害。"
+    },
+    "2405160": {
+        "Key": 2405160,
+        "Id": 2405160,
+        "Description": "暴风箭矢命中目标后，自身敏捷+1.5%，持续8秒，该效果最多可叠加5层。<br>"
     },
     "2405210": {
         "Key": 2405210,
@@ -3242,7 +3332,12 @@
     "2405250": {
         "Key": 2405250,
         "Id": 2405250,
-        "Description": ""
+        "Description": "精神凝聚生效期间，暴击伤害+50%。<br>"
+    },
+    "2405260": {
+        "Key": 2405260,
+        "Id": 2405260,
+        "Description": "每施放1次特殊攻击缩减光能轰炸1秒剩余冷却时间。光能轰炸施放速度大幅提升。"
     },
     "2406110": {
         "Key": 2406110,
@@ -3263,6 +3358,16 @@
         "Key": 2406140,
         "Id": 2406140,
         "Description": "护盾猛击给自身添加护盾时，对3米内敌方造成最大生命值{*Decision.unmarkpercent(1)*}的伤害"
+    },
+    "2406150": {
+        "Key": 2406150,
+        "Id": 2406150,
+        "Description": "砂石斗篷、碎星冲及其强化技能（碎星崩裂）伤害+35%。职业技能对当前目标造成伤害时有18%固定几率获得1枚砂晶石。"
+    },
+    "2406160": {
+        "Key": 2406160,
+        "Id": 2406160,
+        "Description": "护盾猛击、怒爆及其强化技能（地崩山摧）伤害+25%。护盾猛击、怒爆及其强化技能（地崩山摧）命中后使目标在8秒内对你造成的伤害-5%。<br>"
     },
     "2406210": {
         "Key": 2406210,
@@ -3294,6 +3399,16 @@
         "Id": 2406260,
         "Description": "格挡冲击状态下提升{*Decision.unmarkpercent(1)*}物理增效"
     },
+    "2406270": {
+        "Key": 2406270,
+        "Id": 2406270,
+        "Description": "砂石斗篷生效期间岩怒之击及其强化技能（巨岩轰击）伤害+50%。砂石斗篷对当前目标造成伤害时有20%固定几率使得下一次岩怒之击不消耗砂晶石。"
+    },
+    "2406280": {
+        "Key": 2406280,
+        "Id": 2406280,
+        "Description": "召唤岩弹缩减砂石斗篷0.6秒剩余冷却时间，若其处于激活状态则改为延长0.6秒持续时间。<br>"
+    },
     "2407010": {
         "Key": 2407010,
         "Id": 2407010,
@@ -3318,6 +3433,16 @@
         "Key": 2407130,
         "Id": 2407130,
         "Description": "施放消耗圣令的技能会使你在下一次圣光守卫期间获得{*Decision.unmarkpercent(1)*}的伤害加成和{*Decision.unmarkpercent(2)*}的受治疗强度，最多叠加20层"
+    },
+    "2407140": {
+        "Key": 2407140,
+        "Id": 2407140,
+        "Description": "施放清算、炽热清算获得幻光：伤害+8%，物理防御+12%，持续5秒。"
+    },
+    "2407150": {
+        "Key": 2407150,
+        "Id": 2407150,
+        "Description": "圣光守卫生效期间，幻光效果翻倍，并额外将造成伤害的20%转化为光明圣盾。<br>"
     },
     "2407210": {
         "Key": 2407210,
@@ -3354,6 +3479,16 @@
         "Id": 2407270,
         "Description": "拥有光铸屏障时提升{*Decision.unmarkpercent(1)*}物理增效"
     },
+    "2407280": {
+        "Key": 2407280,
+        "Id": 2407280,
+        "Description": "每拥有1层光铸屏障，受到伤害-0.5%，力量+1%。施放裁决立即获得1层光铸屏障。"
+    },
+    "2407290": {
+        "Key": 2407290,
+        "Id": 2407290,
+        "Description": "每消耗15层光铸屏障，伤害+10%，急速+6%，持续7秒。<br>"
+    },
     "2408110": {
         "Key": 2408110,
         "Id": 2408110,
@@ -3363,6 +3498,16 @@
         "Key": 2408120,
         "Id": 2408120,
         "Description": "鸣奏·英勇乐章演奏期间，派生猛烈挥击的速度提升30%"
+    },
+    "2408130": {
+        "Key": 2408130,
+        "Id": 2408130,
+        "Description": "英勇乐章生效期间火元素加成+5%。"
+    },
+    "2408140": {
+        "Key": 2408140,
+        "Id": 2408140,
+        "Description": "增幅节拍攻击次数+1。<br>"
     },
     "2408210": {
         "Key": 2408210,
@@ -3388,6 +3533,16 @@
         "Key": 2408250,
         "Id": 2408250,
         "Description": "开启鸣奏·愈合乐章期间提升{*Decision.unmarkpercent(1)*}魔法增效"
+    },
+    "2408260": {
+        "Key": 2408260,
+        "Id": 2408260,
+        "Description": "愈合乐章演奏治疗量的火元素加成+14%。"
+    },
+    "2408270": {
+        "Key": 2408270,
+        "Id": 2408270,
+        "Description": "施放愈合节拍后5秒内，愈合乐章最终治疗效果+8%。施放激涌五重奏后8秒内，愈合乐章最终治疗效果+16%。<br>"
     },
     "3000010": {
         "Key": 3000010,
@@ -4112,7 +4267,7 @@
     "3052110": {
         "Key": 3052110,
         "Id": 3052110,
-        "Description": "冰霜之矛对寒冰风暴内的目标，额外造成一次等范围伤害，该伤害=<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>寒冰风暴伤害"
+        "Description": "冰霜之矛对寒冰风暴内的目标，额外造成一次范围伤害，该伤害=<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>寒冰风暴伤害"
     },
     "3053010": {
         "Key": 3053010,
@@ -4297,7 +4452,7 @@
     "3056040": {
         "Key": 3056040,
         "Id": 3056040,
-        "Description": "自身受到共生印记影响时，魔法伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+        "Description": "自身受到共生印记影响时，魔法增效+<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
     },
     "3056050": {
         "Key": 3056050,
@@ -4352,7 +4507,7 @@
     "3057040": {
         "Key": 3057040,
         "Id": 3057040,
-        "Description": "魔法伤害+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>；但安和曲转换治疗量降低<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
+        "Description": "魔法增效+<style=\"accent-gn\">{*Decision.unmarkpercent(2)*}</style>；但安和曲转换治疗量降低<style=\"accent-gn\">{*Decision.unmarkpercent(1)*}</style>"
     },
     "3057050": {
         "Key": 3057050,
@@ -4727,12 +4882,12 @@
     "3210130": {
         "Key": 3210130,
         "Id": 3210130,
-        "Description": "力量/智力/敏捷<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style><br>进入战斗后每隔<style=\"accent-gn\">10秒</style>重新随机获得一个效果：<br>1、力量/智力/敏捷<style=\"accent-gn\">+{*Decision.unmarkpercent(2)*}</style><br>2、全能<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>3、精通<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>4、急速<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>5、全元素伤害<style=\"accent-gn\">+{*Decision.unmarkpercent(3)*}</style><br>[全能、精通和急速固定值跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(5)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(6)*}</style>]"
+        "Description": "力量/智力/敏捷<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style><br>进入战斗后每隔<style=\"accent-gn\">10秒</style>重新随机获得一个效果：<br>1、力量/智力/敏捷<style=\"accent-gn\">+{*Decision.unmarkpercent(2)*}</style><br>2、全能<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>3、精通<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>4、急速<style=\"accent-gn\">+{*Decision.unmarknormal(4)*}</style><br>5、全元素伤害<style=\"accent-gn\">+{*Decision.unmarkpercent(3)*}</style>"
     },
     "3210140": {
         "Key": 3210140,
         "Id": 3210140,
-        "Description": "每隔<style=\"accent-gn\">15秒</style>，获得「绝对幸运」：幸运<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，幸运一击伤害和治疗<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>。施放<style=\"accent-gn\">3</style>次伤害型专精技能后移除该效果<br>[幸运值跟随赛季等级，每提升1级<style=\"accent-gn\">+{*Decision.unmarknormal(3)*}</style>，基础值与等级值累加最终不超过<style=\"accent-gn\">{*Decision.unmarknormal(4)*}</style>]"
+        "Description": "每隔<style=\"accent-gn\">15秒</style>，获得「绝对幸运」：幸运<style=\"accent-gn\">+{*Decision.unmarknormal(2)*}</style>，幸运一击伤害和治疗<style=\"accent-gn\">+{*Decision.unmarkpercent(1)*}</style>。施放<style=\"accent-gn\">3</style>次伤害型专精技能后移除该效果"
     },
     "3210150": {
         "Key": 3210150,

@@ -1348,6 +1348,48 @@
         ],
         "IsShowSpVariableProgress": []
     },
+    "7604": {
+        "Key": 7604,
+        "Id": 7604,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 13011,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "击败双王倒计时",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "cur_time"
+        ],
+        "SpVariableLimit": [
+            "max_time"
+        ],
+        "SpVariableName": [
+            "倒计时"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "7605": {
+        "Key": 7605,
+        "Id": 7605,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 13011,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "击败双王",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [
+            "倒计时"
+        ],
+        "IsShowSpVariableProgress": []
+    },
     "8901": {
         "Key": 8901,
         "Id": 8901,
@@ -1844,7 +1886,7 @@
         "Key": 100151,
         "Id": 100151,
         "TargetType": 10,
-        "Num": 9,
+        "Num": 8,
         "SceneId": 1001,
         "Param": [],
         "TargetPos": "",
@@ -5539,6 +5581,286 @@
         "SpVariableName": [],
         "IsShowSpVariableProgress": []
     },
+    "140201": {
+        "Key": 140201,
+        "Id": 140201,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "根据提示进行操作",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "140202": {
+        "Key": 140202,
+        "Id": 140202,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "根据提示进行操作",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "140203": {
+        "Key": 140203,
+        "Id": 140203,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "物资",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "thingNum"
+        ],
+        "SpVariableLimit": [
+            "thingNumMax"
+        ],
+        "SpVariableName": [
+            "物资"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140204": {
+        "Key": 140204,
+        "Id": 140204,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "根据提示进行操作",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "140205": {
+        "Key": 140205,
+        "Id": 140205,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "物资",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "thingNum"
+        ],
+        "SpVariableLimit": [
+            "thingNumMax"
+        ],
+        "SpVariableName": [
+            "物资"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140206": {
+        "Key": 140206,
+        "Id": 140206,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "食材",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "foodNum"
+        ],
+        "SpVariableLimit": [
+            "foodNumMax"
+        ],
+        "SpVariableName": [
+            "食材"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140207": {
+        "Key": 140207,
+        "Id": 140207,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "饥饿值",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "hungerNum"
+        ],
+        "SpVariableLimit": [
+            "hungerNumMax"
+        ],
+        "SpVariableName": [
+            "饥饿值"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140208": {
+        "Key": 140208,
+        "Id": 140208,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "找到离开幻境的方法",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "140209": {
+        "Key": 140209,
+        "Id": 140209,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "物资",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "thingNum"
+        ],
+        "SpVariableLimit": [
+            "thingNumMax"
+        ],
+        "SpVariableName": [
+            "物资"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140210": {
+        "Key": 140210,
+        "Id": 140210,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "食材",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "foodNum"
+        ],
+        "SpVariableLimit": [
+            "foodNumMax"
+        ],
+        "SpVariableName": [
+            "食材"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140211": {
+        "Key": 140211,
+        "Id": 140211,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "饥饿值",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "hungerNum"
+        ],
+        "SpVariableLimit": [
+            "hungerNumMax"
+        ],
+        "SpVariableName": [
+            "饥饿值"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140212": {
+        "Key": 140212,
+        "Id": 140212,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "迷梦值",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "dream"
+        ],
+        "SpVariableLimit": [
+            "dreamMax"
+        ],
+        "SpVariableName": [
+            "迷梦值"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
+    "140213": {
+        "Key": 140213,
+        "Id": 140213,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 1402,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "天数",
+        "IsShowProgress": false,
+        "SpVariable": [
+            "day"
+        ],
+        "SpVariableLimit": [
+            "dayMax"
+        ],
+        "SpVariableName": [
+            "天数"
+        ],
+        "IsShowSpVariableProgress": [
+            1
+        ]
+    },
     "141101": {
         "Key": 141101,
         "Id": 141101,
@@ -5559,7 +5881,7 @@
         "Key": 142101,
         "Id": 142101,
         "TargetType": 27,
-        "Num": 600,
+        "Num": 510,
         "SceneId": 1421,
         "Param": [],
         "TargetPos": "",
@@ -5575,7 +5897,7 @@
         "Key": 142102,
         "Id": 142102,
         "TargetType": 27,
-        "Num": 600,
+        "Num": 510,
         "SceneId": 1421,
         "Param": [],
         "TargetPos": "",
@@ -5591,7 +5913,7 @@
         "Key": 142103,
         "Id": 142103,
         "TargetType": 27,
-        "Num": 1200,
+        "Num": 1250,
         "SceneId": 1421,
         "Param": [],
         "TargetPos": "",
@@ -7865,7 +8187,7 @@
         "Param": [],
         "TargetPos": "2=161",
         "IsTeamShare": false,
-        "TargetDes": "和富野对话，了解情况",
+        "TargetDes": "和洛伦佐对话，了解情况",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -7897,7 +8219,7 @@
         "Param": [],
         "TargetPos": "2=162",
         "IsTeamShare": false,
-        "TargetDes": "再次和富野对话，打开裂缝",
+        "TargetDes": "再次和洛伦佐对话，打开裂缝",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -7932,12 +8254,12 @@
         "Key": 706501,
         "Id": 706501,
         "TargetType": 10,
-        "Num": 1,
+        "Num": 6,
         "SceneId": 7065,
         "Param": [],
         "TargetPos": "1=48",
         "IsTeamShare": false,
-        "TargetDes": "帮助运货员背起货物",
+        "TargetDes": "在货运员处获得六份货物",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -7953,7 +8275,7 @@
         "Param": [],
         "TargetPos": "1=49",
         "IsTeamShare": false,
-        "TargetDes": "全部六份货物送达目的地",
+        "TargetDes": "将六份货物送达目的地",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9219,7 +9541,7 @@
         "Param": [],
         "TargetPos": "2=21",
         "IsTeamShare": false,
-        "TargetDes": "和富野对话，了解情况",
+        "TargetDes": "和洛伦佐对话，了解情况",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9233,9 +9555,9 @@
         "Num": 1,
         "SceneId": 8001,
         "Param": [],
-        "TargetPos": "2=89|2=90|2=91|2=92",
+        "TargetPos": "2=21",
         "IsTeamShare": false,
-        "TargetDes": "全员乘坐机甲",
+        "TargetDes": "和洛伦佐对话，了解情况",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9249,9 +9571,9 @@
         "Num": 1,
         "SceneId": 8001,
         "Param": [],
-        "TargetPos": "2=22",
+        "TargetPos": "",
         "IsTeamShare": false,
-        "TargetDes": "再次和富野对话，打开裂缝",
+        "TargetDes": "召唤所有机像后，再次与洛伦佐对话",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9291,7 +9613,7 @@
         "Param": [],
         "TargetPos": "2=27",
         "IsTeamShare": false,
-        "TargetDes": "和富野对话，了解情况",
+        "TargetDes": "和洛伦佐对话，了解情况",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9336,12 +9658,12 @@
         "Key": 800501,
         "Id": 800501,
         "TargetType": 10,
-        "Num": 1,
+        "Num": 6,
         "SceneId": 8005,
         "Param": [],
         "TargetPos": "1=20",
         "IsTeamShare": false,
-        "TargetDes": "帮助运货员背起货物",
+        "TargetDes": "在货运员处获得六份货物",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9357,7 +9679,7 @@
         "Param": [],
         "TargetPos": "1=21",
         "IsTeamShare": false,
-        "TargetDes": "全部六份货物送达目的地",
+        "TargetDes": "将六份货物送达目的地",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9368,12 +9690,12 @@
         "Key": 800601,
         "Id": 800601,
         "TargetType": 10,
-        "Num": 1,
+        "Num": 6,
         "SceneId": 8006,
         "Param": [],
         "TargetPos": "1=18",
         "IsTeamShare": false,
-        "TargetDes": "帮助运货员背起货物",
+        "TargetDes": "在货运员处获得六份货物",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9389,7 +9711,7 @@
         "Param": [],
         "TargetPos": "1=19",
         "IsTeamShare": false,
-        "TargetDes": "全部六份货物送达目的地",
+        "TargetDes": "将六份货物送达目的地",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9403,9 +9725,9 @@
         "Num": 1,
         "SceneId": 8020,
         "Param": [],
-        "TargetPos": "1=263|1=264",
+        "TargetPos": "1=271",
         "IsTeamShare": false,
-        "TargetDes": "向亚人首领了解情况",
+        "TargetDes": "向亚人研究员了解情况",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9419,7 +9741,7 @@
         "Num": 1,
         "SceneId": 8020,
         "Param": [],
-        "TargetPos": "4=24|4=25",
+        "TargetPos": "1=269|1=270",
         "IsTeamShare": false,
         "TargetDes": "选择你支持的亚人队伍",
         "IsShowProgress": false,
@@ -9451,9 +9773,9 @@
         "Num": 1,
         "SceneId": 8021,
         "Param": [],
-        "TargetPos": "1=20|1=51",
+        "TargetPos": "1=145",
         "IsTeamShare": false,
-        "TargetDes": "向亚人首领了解情况",
+        "TargetDes": "向亚人研究员了解情况",
         "IsShowProgress": false,
         "SpVariable": [],
         "SpVariableLimit": [],
@@ -9467,7 +9789,7 @@
         "Num": 1,
         "SceneId": 8021,
         "Param": [],
-        "TargetPos": "4=15|4=16",
+        "TargetPos": "1=143|1=144",
         "IsTeamShare": false,
         "TargetDes": "选择你支持的亚人队伍",
         "IsShowProgress": false,
@@ -10657,6 +10979,86 @@
             1,
             1
         ]
+    },
+    "1301101": {
+        "Key": 1301101,
+        "Id": 1301101,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "队长选择需要讨伐的首领",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "1301102": {
+        "Key": 1301102,
+        "Id": 1301102,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "击败阳炎与月影",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "1301103": {
+        "Key": 1301103,
+        "Id": 1301103,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "击败幻花的陈骸",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "1301104": {
+        "Key": 1301104,
+        "Id": 1301104,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "击败蚀花的残影",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
+    },
+    "1301105": {
+        "Key": 1301105,
+        "Id": 1301105,
+        "TargetType": 10,
+        "Num": 1,
+        "SceneId": 0,
+        "Param": [],
+        "TargetPos": "",
+        "IsTeamShare": false,
+        "TargetDes": "已完成全部讨伐，请退出副本",
+        "IsShowProgress": false,
+        "SpVariable": [],
+        "SpVariableLimit": [],
+        "SpVariableName": [],
+        "IsShowSpVariableProgress": []
     },
     "1331001": {
         "Key": 1331001,
@@ -12258,7 +12660,7 @@
         "Key": 6311007,
         "Id": 6311007,
         "TargetType": 27,
-        "Num": 220,
+        "Num": 260,
         "SceneId": 6331,
         "Param": [],
         "TargetPos": "",
@@ -12282,7 +12684,7 @@
         "Key": 6311008,
         "Id": 6311008,
         "TargetType": 27,
-        "Num": 380,
+        "Num": 420,
         "SceneId": 6332,
         "Param": [],
         "TargetPos": "",
@@ -12306,7 +12708,7 @@
         "Key": 6311009,
         "Id": 6311009,
         "TargetType": 27,
-        "Num": 520,
+        "Num": 700,
         "SceneId": 6333,
         "Param": [],
         "TargetPos": "",

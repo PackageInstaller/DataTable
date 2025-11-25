@@ -836,7 +836,7 @@
         "AttrNumType": 0,
         "OfficialName": "暴击",
         "TipTemplate": "暴击{*attr.value*}",
-        "AttrDes": "提高自身触发暴击的几率<br>造成伤害时，有一定概率触发暴击，使该次伤害受到暴击伤害的加成<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高自身触发暴击的几率<br>造成伤害时，有一定概率触发暴击，使该次伤害受到暴击伤害的加成<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -880,7 +880,7 @@
         "AttrNumType": 0,
         "OfficialName": "急速",
         "TipTemplate": "急速{*attr.value*}",
-        "AttrDes": "提高攻击速度和施法速度<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高攻击速度和施法速度<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_cd",
@@ -924,7 +924,7 @@
         "AttrNumType": 0,
         "OfficialName": "幸运",
         "TipTemplate": "幸运{*attr.value*}",
-        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害和治疗。<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害和治疗。<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_lucky",
@@ -968,7 +968,7 @@
         "AttrNumType": 0,
         "OfficialName": "精通",
         "TipTemplate": "精通{*attr.value*}",
-        "AttrDes": "提高雷影剑士的居合斩及幻影镰刀伤害；<br>提高青岚骑士的风元素伤害；<br>提高巨刃守护者的格挡几率和护盾强度；<br>提高神盾骑士的物理防御和受治疗强度；<br>提高冰魔导师的冰元素伤害；<br>提高森语者的治疗强度；<br>提高神射手的宠物伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高雷影剑士的居合斩及幻影镰刀伤害；<br>提高青岚骑士的风元素伤害；<br>提高巨刃守护者的格挡几率和护盾强度；<br>提高神盾骑士的物理防御和受治疗强度；<br>提高冰魔导师的冰元素伤害；<br>提高森语者的治疗强度；<br>提高神射手的宠物伤害<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -1012,7 +1012,7 @@
         "AttrNumType": 0,
         "OfficialName": "全能",
         "TipTemplate": "全能{*attr.value*}",
-        "AttrDes": "每1%全能提高0.35%造成伤害、治疗和施加护盾时的百分比加成，以及0.15%受到伤害时的伤害减免<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "每1%全能提高0.35%造成伤害、治疗和施加护盾时的百分比加成，以及0.15%受到伤害时的伤害减免<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -1097,7 +1097,7 @@
         "AttrNumType": 0,
         "OfficialName": "格挡",
         "TipTemplate": "格挡{*attr.value*}",
-        "AttrDes": "提高自身格挡敌方攻击的几率<br>受到伤害时，有一定概率触发格挡，使该次伤害降低，降低比例等于格挡伤害减免<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高自身格挡敌方攻击的几率<br>受到伤害时，有一定概率触发格挡，使该次伤害降低，降低比例等于格挡伤害减免<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_def",
@@ -1699,7 +1699,7 @@
         "AttrNumType": 0,
         "OfficialName": "幻梦强度",
         "TipTemplate": "幻梦强度{*attr.value*}",
-        "AttrDes": "在「幻梦赛季」内，当你的幻梦强度低于敌方时，你造成的伤害和治疗会大幅降低，受到的伤害会大幅提升。<br>可通过怪物头上的图标颜色判断威胁程度，怪物手册和副本介绍中也可以观测怪物强度。",
+        "AttrDes": "对「幻梦赛季」怪物：<br>当你的幻梦强度高于敌方时，每高出100点你造成的伤害提升5%（不超过20%），造成的治疗提升2%（不超过8%，仅在副本和野外精英、首领附近生效）<br>当你的幻梦强度低于敌方时，你造成的伤害和治疗会大幅降低，受到的伤害会大幅提升<br><br>对「过往赛季」野外怪物：<br>你造成的伤害提升100%<br><br>可通过怪物头上的图标颜色判断威胁程度，怪物手册和副本介绍中也可以观测怪物强度。<br>",
         "BuffShowAttrHUD": 0,
         "AttrIcon": [],
         "Icon": "ui/atlas/weaponhero/new/common_icon01",
@@ -2100,7 +2100,7 @@
         "AttrNumType": 1,
         "OfficialName": "暴击",
         "TipTemplate": "暴击{*attr.value*}",
-        "AttrDes": "提高自身触发暴击的几率<br>造成伤害时，有一定概率触发暴击，使该次伤害受到暴击伤害的加成<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高自身触发暴击的几率<br>造成伤害时，有一定概率触发暴击，使该次伤害受到暴击伤害的加成<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -2405,7 +2405,7 @@
         "AttrNumType": 1,
         "OfficialName": "幸运",
         "TipTemplate": "幸运{*attr.value*}",
-        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害和治疗。<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高自身触发幸运效果的几率<br>使用职业技能造成非持续性伤害或治疗时，有一定概率触发你所拥有的所有幸运效果。<br>基础幸运一击效果：额外触发一次固定倍率的伤害或治疗，倍率跟随幸运概率的提升而提升。<br>幸运增效：每1%幸运几率提升1%「幸运效果」伤害和治疗。<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_lucky",
@@ -3044,7 +3044,7 @@
         "AttrNumType": 1,
         "OfficialName": "急速",
         "TipTemplate": "急速{*attr.value*}",
-        "AttrDes": "提高攻击速度和施法速度<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高攻击速度和施法速度<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -3088,7 +3088,7 @@
         "AttrNumType": 1,
         "OfficialName": "精通",
         "TipTemplate": "精通{*attr.value*}",
-        "AttrDes": "提高雷影剑士的居合斩及幻影镰刀伤害；<br>提高青岚骑士的风元素伤害；<br>提高巨刃守护者的格挡几率和护盾强度；<br>提高神盾骑士的物理防御和受治疗强度；<br>提高冰魔导师的冰元素伤害；<br>提高森语者的治疗强度；<br>提高神射手的宠物伤害<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高雷影剑士的居合斩及幻影镰刀伤害；<br>提高青岚骑士的风元素伤害；<br>提高巨刃守护者的格挡几率和护盾强度；<br>提高神盾骑士的物理防御和受治疗强度；<br>提高冰魔导师的冰元素伤害；<br>提高森语者的治疗强度；<br>提高神射手的宠物伤害<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -3132,7 +3132,7 @@
         "AttrNumType": 1,
         "OfficialName": "全能",
         "TipTemplate": "全能{*attr.value*}",
-        "AttrDes": "每1%全能提高0.35%造成伤害、治疗和施加护盾时的百分比加成，以及0.15%受到伤害时的伤害减免<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "每1%全能提高0.35%造成伤害、治疗和施加护盾时的百分比加成，以及0.15%受到伤害时的伤害减免<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",
@@ -3220,7 +3220,7 @@
         "AttrNumType": 1,
         "OfficialName": "格挡",
         "TipTemplate": "格挡{*attr.value*}",
-        "AttrDes": "提高自身格挡敌方攻击的几率<br>受到伤害时，有一定概率触发格挡，使该次伤害降低，降低比例等于格挡伤害减免<br>[固定值转化的百分比将随赛季等级衰减，30级时达到最大衰减]<br>",
+        "AttrDes": "提高自身格挡敌方攻击的几率<br>受到伤害时，有一定概率触发格挡，使该次伤害降低，降低比例等于格挡伤害减免<br>",
         "BuffShowAttrHUD": 1,
         "AttrIcon": [
             "ui/atlas/hud/buff/buff_blue_atk",

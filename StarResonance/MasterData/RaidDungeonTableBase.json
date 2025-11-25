@@ -18,7 +18,29 @@
         "MonsterShowTexture": "ui/textures/roid/raid_easy_monster",
         "DiffBgTexture": "ui/textures/roid/raid_easy_bg",
         "TitleBgTexture": "ui/textures/roid/raid_title_easy",
-        "Desc": "<br><size=22><color=#f04f84>梦幻之力：在虚空浮岛中，每1点幻梦强度，可使造成的伤害增加0.12%，最高100%。</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
+        "BossNamePos": [
+            [
+                "-413",
+                "-161",
+                "0"
+            ],
+            [
+                "101",
+                "-348",
+                "0"
+            ],
+            [
+                "462",
+                "185",
+                "0"
+            ]
+        ],
+        "DifficultySelectImage": [
+            "ui/atlas/raid/raid_tog_select_easy_on",
+            "ui/atlas/raid/raid_tog_select_difficulty_on",
+            "ui/atlas/raid/raid_tog_select_nightmare_on"
+        ],
+        "Desc": "<br><size=22><color=#f04f84>梦幻之力：在虚空浮岛中，你造成的伤害提高100%。</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
     },
     "13002": {
         "Key": 13002,
@@ -39,7 +61,29 @@
         "MonsterShowTexture": "ui/textures/roid/raid_difficulty_monster",
         "DiffBgTexture": "ui/textures/roid/raid_difficulty_bg",
         "TitleBgTexture": "ui/textures/roid/raid_title_difficulty",
-        "Desc": "<br><size=22><color=#f04f84>梦幻之力：在虚空浮岛中，每1点幻梦强度，可使造成的伤害增加0.12%，最高100%。</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
+        "BossNamePos": [
+            [
+                "-413",
+                "-161",
+                "0"
+            ],
+            [
+                "101",
+                "-348",
+                "0"
+            ],
+            [
+                "462",
+                "185",
+                "0"
+            ]
+        ],
+        "DifficultySelectImage": [
+            "ui/atlas/raid/raid_tog_select_easy_on",
+            "ui/atlas/raid/raid_tog_select_difficulty_on",
+            "ui/atlas/raid/raid_tog_select_nightmare_on"
+        ],
+        "Desc": "<br><size=22><color=#f04f84>梦幻之力：在虚空浮岛中，你造成的伤害提高100%。</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
     },
     "13003": {
         "Key": 13003,
@@ -60,6 +104,157 @@
         "MonsterShowTexture": "ui/textures/roid/raid_nightmare_monster",
         "DiffBgTexture": "ui/textures/roid/raid_nightmare_bg",
         "TitleBgTexture": "ui/textures/roid/raid_title_nightmare",
-        "Desc": "<br><size=22><color=#f04f84>梦幻之力：在虚空浮岛中，每1点幻梦强度，可使造成的伤害增加0.12%，最高100%。</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
+        "BossNamePos": [
+            [
+                "-413",
+                "-161",
+                "0"
+            ],
+            [
+                "101",
+                "-348",
+                "0"
+            ],
+            [
+                "462",
+                "185",
+                "0"
+            ]
+        ],
+        "DifficultySelectImage": [
+            "ui/atlas/raid/raid_tog_select_easy_on",
+            "ui/atlas/raid/raid_tog_select_difficulty_on",
+            "ui/atlas/raid/raid_tog_select_nightmare_on"
+        ],
+        "Desc": "<br><size=22><color=#f04f84>梦幻之力：在虚空浮岛中，你造成的伤害提高100%。</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
+    },
+    "13011": {
+        "Key": 13011,
+        "DungeonId": 13011,
+        "Difficult": 1,
+        "GroupId": 2,
+        "Name": "幻花沉眠之地",
+        "Content": 4511,
+        "MatchPic": "",
+        "BossId": [
+            102800,
+            102901,
+            103001
+        ],
+        "PassAward": [
+            16000101
+        ],
+        "MonsterShowTexture": "ui/textures/roid/raid_easy_monster_02",
+        "DiffBgTexture": "ui/textures/roid/raid_easy_bg_02",
+        "TitleBgTexture": "ui/textures/roid/raid_title_easy_02",
+        "BossNamePos": [
+            [
+                "-111",
+                "-385",
+                "0"
+            ],
+            [
+                "428",
+                "-316",
+                "0"
+            ],
+            [
+                "71",
+                "-12",
+                "0"
+            ]
+        ],
+        "DifficultySelectImage": [
+            "ui/atlas/raid/raid_tog_select_easy_on",
+            "ui/atlas/raid/raid_tog_select_difficulty_on",
+            "ui/atlas/raid/raid_tog_select_nightmare_on_02"
+        ],
+        "Desc": "<br><size=22><color=#f04f84>推荐「幻梦强度」达到1480</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
+    },
+    "13012": {
+        "Key": 13012,
+        "DungeonId": 13012,
+        "Difficult": 2,
+        "GroupId": 2,
+        "Name": "幻花沉眠之地",
+        "Content": 4511,
+        "MatchPic": "",
+        "BossId": [
+            102821,
+            102911,
+            103011
+        ],
+        "PassAward": [
+            16000102
+        ],
+        "MonsterShowTexture": "ui/textures/roid/raid_difficulty_monster_02",
+        "DiffBgTexture": "ui/textures/roid/raid_difficulty_bg_02",
+        "TitleBgTexture": "ui/textures/roid/raid_title_difficulty_02",
+        "BossNamePos": [
+            [
+                "-111",
+                "-385",
+                "0"
+            ],
+            [
+                "428",
+                "-316",
+                "0"
+            ],
+            [
+                "71",
+                "-12",
+                "0"
+            ]
+        ],
+        "DifficultySelectImage": [
+            "ui/atlas/raid/raid_tog_select_easy_on",
+            "ui/atlas/raid/raid_tog_select_difficulty_on",
+            "ui/atlas/raid/raid_tog_select_nightmare_on_02"
+        ],
+        "Desc": "<br><size=22><color=#f04f84>推荐「幻梦强度」达到2230</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size>"
+    },
+    "13013": {
+        "Key": 13013,
+        "DungeonId": 13013,
+        "Difficult": 3,
+        "GroupId": 2,
+        "Name": "幻花沉眠之地",
+        "Content": 4511,
+        "MatchPic": "",
+        "BossId": [
+            102831,
+            102921,
+            103021
+        ],
+        "PassAward": [
+            16000103
+        ],
+        "MonsterShowTexture": "ui/textures/roid/raid_nightmare_monster_02",
+        "DiffBgTexture": "ui/textures/roid/raid_nightmare_bg_02",
+        "TitleBgTexture": "ui/textures/roid/raid_title_nightmare_02",
+        "BossNamePos": [
+            [
+                "-111",
+                "-385",
+                "0"
+            ],
+            [
+                "428",
+                "-316",
+                "0"
+            ],
+            [
+                "71",
+                "-12",
+                "0"
+            ]
+        ],
+        "DifficultySelectImage": [
+            "ui/atlas/raid/raid_tog_select_easy_on",
+            "ui/atlas/raid/raid_tog_select_difficulty_on",
+            "ui/atlas/raid/raid_tog_select_nightmare_on_02"
+        ],
+        "Desc": "<br><size=22><color=#f04f84>推荐「幻梦强度」达到2460</color><br><style=\"\"tipsYellow\"\">小提示：可以借助料理和药剂短时间提高作战能力，更好的参与挑战哦。</style></size><br><size=22>与<style=\"\"tipsYellow\"\">决战！虚空浮岛</style>共享<color=#eed335>潋光的星核</color>奖励次数。"
     }
 }
