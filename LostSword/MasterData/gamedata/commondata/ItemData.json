@@ -2,6 +2,7 @@
     "DoNotUseThis": [
         {
             "Index": 183,
+            "ValidationOnly": 460,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -15,6 +16,7 @@
         },
         {
             "Index": 37,
+            "ValidationOnly": 461,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "Mystic",
@@ -23,13 +25,57 @@
         },
         {
             "Index": 191,
+            "ValidationOnly": 462,
             "Type": 1,
             "Rank": 5,
             "Prefab": "Etc",
             "ShowUI": true
         },
         {
+            "Index": 237,
+            "ValidationOnly": 468,
+            "ShowUI": true,
+            "ConsumeInfo": {
+                "Type": 17,
+                "Info": {
+                    "$type": "CommonLibrary.ConsumeInfo+SelectionInfo, Assembly-CSharp",
+                    "ItemList": [
+                        {
+                            "Asset": {
+                                "Type": 6,
+                                "Index": 37,
+                                "Num": 5
+                            }
+                        },
+                        {
+                            "Asset": {
+                                "Type": 6,
+                                "Index": 201,
+                                "Num": 1
+                            }
+                        },
+                        {
+                            "Asset": {
+                                "Type": 6,
+                                "Index": 184,
+                                "Num": 3
+                            }
+                        },
+                        {
+                            "Asset": {
+                                "Type": 6,
+                                "Index": 63,
+                                "Num": 20
+                            }
+                        }
+                    ]
+                }
+            },
+            "SliderMaxNum": 12
+        },
+        {
             "Index": 171,
+            "ValidationOnly": 463,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -190,6 +236,7 @@
         },
         {
             "Index": 170,
+            "ValidationOnly": 464,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -269,6 +316,7 @@
         },
         {
             "Index": 172,
+            "ValidationOnly": 465,
             "Type": 1,
             "Rank": 3,
             "ShowUI": true,
@@ -347,6 +395,7 @@
         },
         {
             "Index": 176,
+            "ValidationOnly": 466,
             "Type": 1,
             "Rank": 5,
             "ShowUI": true,
@@ -372,6 +421,7 @@
         },
         {
             "Index": 226,
+            "ValidationOnly": 467,
             "ShowUI": true,
             "ConsumeInfo": {
                 "Type": 17,
@@ -399,6 +449,7 @@
         },
         {
             "Index": 231,
+            "ValidationOnly": 468,
             "ShowUI": true,
             "ConsumeInfo": {
                 "Type": 17,
@@ -426,6 +477,7 @@
         },
         {
             "Index": 99,
+            "ValidationOnly": 469,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "Rank": 5,
@@ -587,6 +639,7 @@
         },
         {
             "Index": 118,
+            "ValidationOnly": 470,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "ShowUI": true,
@@ -630,6 +683,7 @@
         },
         {
             "Index": 117,
+            "ValidationOnly": 471,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "Prefab": "Accessary",
@@ -682,6 +736,7 @@
         },
         {
             "Index": 38,
+            "ValidationOnly": 472,
             "IndexName": "CBasic",
             "Type": 1,
             "SortingOrder": 9900,
@@ -689,6 +744,7 @@
         },
         {
             "Index": 122,
+            "ValidationOnly": 473,
             "Type": 1,
             "SortingOrder": 7985,
             "ShowUI": true,
@@ -705,6 +761,7 @@
         },
         {
             "Index": 88,
+            "ValidationOnly": 474,
             "IndexName": "Cube1",
             "Type": 1,
             "SortingOrder": 8340,
@@ -712,6 +769,7 @@
         },
         {
             "Index": 90,
+            "ValidationOnly": 475,
             "IndexName": "Cube2",
             "Type": 1,
             "SortingOrder": 8350,
@@ -719,6 +777,7 @@
         },
         {
             "Index": 91,
+            "ValidationOnly": 476,
             "IndexName": "Cube3",
             "Type": 1,
             "SortingOrder": 8360,
@@ -726,6 +785,7 @@
         },
         {
             "Index": 92,
+            "ValidationOnly": 477,
             "IndexName": "Cube4",
             "Type": 1,
             "SortingOrder": 8370,
@@ -733,6 +793,7 @@
         },
         {
             "Index": 93,
+            "ValidationOnly": 478,
             "IndexName": "Cube5",
             "Type": 1,
             "SortingOrder": 8380,
@@ -740,6 +801,7 @@
         },
         {
             "Index": 220,
+            "ValidationOnly": 479,
             "IndexName": "Cube3",
             "Type": 1,
             "SortingOrder": 8390,
@@ -747,6 +809,7 @@
         },
         {
             "Index": 221,
+            "ValidationOnly": 480,
             "IndexName": "Cube4",
             "Type": 1,
             "SortingOrder": 8400,
@@ -754,6 +817,7 @@
         },
         {
             "Index": 222,
+            "ValidationOnly": 481,
             "IndexName": "Cube5",
             "Type": 1,
             "SortingOrder": 8410,
@@ -761,6 +825,7 @@
         },
         {
             "Index": 89,
+            "ValidationOnly": 482,
             "IndexName": "CubeE",
             "Type": 1,
             "SortingOrder": 8390,
@@ -768,6 +833,7 @@
         },
         {
             "Index": 3,
+            "ValidationOnly": 483,
             "IndexName": "Dia",
             "Type": 1,
             "Prefab": "Dia",
@@ -778,6 +844,7 @@
         },
         {
             "Index": 102,
+            "ValidationOnly": 484,
             "IndexName": "DiaC",
             "Type": 1,
             "Prefab": "Dia",
@@ -787,6 +854,7 @@
         },
         {
             "Index": 135,
+            "ValidationOnly": 485,
             "Type": 1,
             "Rank": 5,
             "ShowUI": true,
@@ -842,6 +910,7 @@
         },
         {
             "Index": 134,
+            "ValidationOnly": 486,
             "Prefab": "Etc",
             "ShowUI": true,
             "AssetList": [
@@ -854,6 +923,7 @@
         },
         {
             "Index": 19,
+            "ValidationOnly": 487,
             "IndexName": "Dust",
             "Type": 1,
             "Prefab": "Dust",
@@ -862,6 +932,7 @@
         },
         {
             "Index": 55,
+            "ValidationOnly": 488,
             "IndexName": "Dust2",
             "Type": 1,
             "Prefab": "Dust2",
@@ -870,6 +941,7 @@
         },
         {
             "Index": 223,
+            "ValidationOnly": 489,
             "IndexName": "Dust2",
             "Type": 1,
             "Prefab": "Dust3",
@@ -878,6 +950,7 @@
         },
         {
             "Index": 210,
+            "ValidationOnly": 490,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Dark",
@@ -893,6 +966,7 @@
         },
         {
             "Index": 213,
+            "ValidationOnly": 491,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Divine",
@@ -908,6 +982,7 @@
         },
         {
             "Index": 211,
+            "ValidationOnly": 492,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Electric",
@@ -923,6 +998,7 @@
         },
         {
             "Index": 207,
+            "ValidationOnly": 493,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Fire",
@@ -938,6 +1014,7 @@
         },
         {
             "Index": 208,
+            "ValidationOnly": 494,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Leaf",
@@ -953,6 +1030,7 @@
         },
         {
             "Index": 209,
+            "ValidationOnly": 495,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Light",
@@ -968,6 +1046,7 @@
         },
         {
             "Index": 212,
+            "ValidationOnly": 496,
             "IndexName": "AStone",
             "Type": 1,
             "Prefab": "ElementalStone_Water",
@@ -983,12 +1062,14 @@
         },
         {
             "Index": 219,
+            "ValidationOnly": 497,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true
         },
         {
             "Index": 121,
+            "ValidationOnly": 498,
             "Type": 1,
             "ShowUI": true,
             "ConsumeInfo": {
@@ -1011,12 +1092,14 @@
         },
         {
             "Index": 104,
+            "ValidationOnly": 499,
             "Type": 1,
             "Prefab": "ElfCoin",
             "ShowUI": true
         },
         {
             "Index": 15,
+            "ValidationOnly": 500,
             "IndexName": "EnhA",
             "Type": 1,
             "Prefab": "Scroll",
@@ -1027,6 +1110,7 @@
         },
         {
             "Index": 60,
+            "ValidationOnly": 501,
             "IndexName": "EnhBox",
             "Type": 1,
             "SortingOrder": 8901,
@@ -1064,6 +1148,7 @@
         },
         {
             "Index": 18,
+            "ValidationOnly": 502,
             "IndexName": "EnhR",
             "Type": 1,
             "Prefab": "Scroll",
@@ -1074,6 +1159,7 @@
         },
         {
             "Index": 16,
+            "ValidationOnly": 503,
             "IndexName": "EnhT",
             "Type": 1,
             "Prefab": "Scroll",
@@ -1084,6 +1170,7 @@
         },
         {
             "Index": 14,
+            "ValidationOnly": 504,
             "IndexName": "EnhW",
             "Type": 1,
             "Prefab": "Scroll",
@@ -1094,36 +1181,53 @@
         },
         {
             "Index": 188,
+            "ValidationOnly": 505,
             "SortingOrder": 9992
         },
         {
             "Index": 225,
+            "ValidationOnly": 506,
             "SortingOrder": 9991
         },
         {
             "Index": 206,
+            "ValidationOnly": 507,
             "SortingOrder": 9992,
             "StartTime": "2025-05-29T00:00:00Z",
             "EndTime": "2025-06-27T00:00:00Z"
         },
         {
+            "Index": 235,
+            "ValidationOnly": 1280,
+            "SortingOrder": 9992
+        },
+        {
+            "Index": 233,
+            "ValidationOnly": 508,
+            "SortingOrder": 9992
+        },
+        {
             "Index": 203,
+            "ValidationOnly": 509,
             "SortingOrder": 9992,
             "StartTime": "2025-04-30T00:00:00Z",
             "EndTime": "2025-05-30T00:00:00Z"
         },
         {
             "Index": 232,
+            "ValidationOnly": 510,
             "SortingOrder": 9992
         },
         {
             "Index": 216,
+            "ValidationOnly": 511,
             "SortingOrder": 9992,
             "StartTime": "2025-07-10T00:00:00Z",
             "EndTime": "2025-08-07T00:00:00Z"
         },
         {
             "Index": 182,
+            "ValidationOnly": 512,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
@@ -1131,6 +1235,7 @@
         },
         {
             "Index": 187,
+            "ValidationOnly": 513,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
@@ -1138,21 +1243,40 @@
         },
         {
             "Index": 224,
+            "ValidationOnly": 514,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 6600,
-            "ShowUI": true,
             "ManyDrop": true
         },
         {
             "Index": 205,
+            "ValidationOnly": 515,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
             "ManyDrop": true
         },
         {
+            "Index": 236,
+            "ValidationOnly": 1281,
+            "Type": 1,
+            "Prefab": "FeCoin",
+            "SortingOrder": 6601,
+            "ShowUI": true,
+            "ManyDrop": true
+        },
+        {
+            "Index": 234,
+            "ValidationOnly": 516,
+            "Type": 1,
+            "Prefab": "FeCoin",
+            "SortingOrder": 6600,
+            "ManyDrop": true
+        },
+        {
             "Index": 190,
+            "ValidationOnly": 517,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
@@ -1160,14 +1284,15 @@
         },
         {
             "Index": 230,
+            "ValidationOnly": 518,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 6600,
-            "ShowUI": true,
             "ManyDrop": true
         },
         {
             "Index": 214,
+            "ValidationOnly": 519,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
@@ -1175,6 +1300,7 @@
         },
         {
             "Index": 177,
+            "ValidationOnly": 520,
             "Type": 1,
             "Prefab": "FeCoin",
             "SortingOrder": 9988,
@@ -1182,6 +1308,7 @@
         },
         {
             "Index": 74,
+            "ValidationOnly": 521,
             "IndexName": "Exp1",
             "Type": 1,
             "Prefab": "Exp1",
@@ -1199,6 +1326,7 @@
         },
         {
             "Index": 75,
+            "ValidationOnly": 522,
             "IndexName": "Exp2",
             "Type": 1,
             "Prefab": "Exp2",
@@ -1216,6 +1344,7 @@
         },
         {
             "Index": 76,
+            "ValidationOnly": 523,
             "IndexName": "Exp3",
             "Type": 1,
             "Prefab": "Exp3",
@@ -1233,6 +1362,7 @@
         },
         {
             "Index": 173,
+            "ValidationOnly": 524,
             "Type": 1,
             "Rank": 1,
             "Prefab": "Accessary",
@@ -1249,6 +1379,7 @@
         },
         {
             "Index": 80,
+            "ValidationOnly": 525,
             "IndexName": "FeCoin",
             "Type": 1,
             "Prefab": "FeCoin",
@@ -1257,6 +1388,7 @@
         },
         {
             "Index": 174,
+            "ValidationOnly": 526,
             "Type": 1,
             "SortingOrder": 8911,
             "ShowUI": true,
@@ -1287,12 +1419,14 @@
         },
         {
             "Index": 111,
+            "ValidationOnly": 527,
             "Type": 1,
             "Prefab": "Chicken_01",
             "ShowUI": true
         },
         {
             "Index": 112,
+            "ValidationOnly": 528,
             "Type": 1,
             "Prefab": "Chicken_02",
             "ShowUI": true,
@@ -1307,6 +1441,7 @@
         },
         {
             "Index": 113,
+            "ValidationOnly": 529,
             "Type": 1,
             "Prefab": "Etc",
             "SortingOrder": 6660,
@@ -1324,12 +1459,14 @@
         },
         {
             "Index": 114,
+            "ValidationOnly": 530,
             "Type": 1,
             "Prefab": "Egg",
             "ShowUI": true
         },
         {
             "Index": 115,
+            "ValidationOnly": 531,
             "Type": 1,
             "Prefab": "GoldEgg",
             "ShowUI": true,
@@ -1344,6 +1481,7 @@
         },
         {
             "Index": 137,
+            "ValidationOnly": 532,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -1358,6 +1496,7 @@
         },
         {
             "Index": 138,
+            "ValidationOnly": 533,
             "IndexName": "FoodM",
             "Type": 1,
             "SortingOrder": 6897,
@@ -1375,6 +1514,7 @@
         },
         {
             "Index": 116,
+            "ValidationOnly": 534,
             "Type": 1,
             "SortingOrder": 6650,
             "ShowUI": true,
@@ -1398,6 +1538,7 @@
         },
         {
             "Index": 48,
+            "ValidationOnly": 535,
             "IndexName": "FoodA",
             "Type": 1,
             "Prefab": "Etc",
@@ -1416,6 +1557,7 @@
         },
         {
             "Index": 49,
+            "ValidationOnly": 536,
             "IndexName": "FoodM",
             "Type": 1,
             "Prefab": "Etc",
@@ -1434,6 +1576,7 @@
         },
         {
             "Index": 17,
+            "ValidationOnly": 537,
             "IndexName": "FoodW",
             "Type": 1,
             "Prefab": "Etc",
@@ -1452,16 +1595,19 @@
         },
         {
             "Index": 131,
+            "ValidationOnly": 538,
             "Type": 1,
             "MaxNum": 1
         },
         {
             "Index": 132,
+            "ValidationOnly": 539,
             "Type": 1,
             "MaxNum": 1
         },
         {
             "Index": 161,
+            "ValidationOnly": 540,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1470,6 +1616,7 @@
         },
         {
             "Index": 148,
+            "ValidationOnly": 541,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1478,6 +1625,7 @@
         },
         {
             "Index": 160,
+            "ValidationOnly": 542,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1486,6 +1634,7 @@
         },
         {
             "Index": 157,
+            "ValidationOnly": 543,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1494,6 +1643,7 @@
         },
         {
             "Index": 139,
+            "ValidationOnly": 544,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1502,6 +1652,7 @@
         },
         {
             "Index": 156,
+            "ValidationOnly": 545,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1510,6 +1661,7 @@
         },
         {
             "Index": 151,
+            "ValidationOnly": 546,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1518,6 +1670,7 @@
         },
         {
             "Index": 166,
+            "ValidationOnly": 547,
             "Type": 1,
             "Rank": 3,
             "SortingOrder": 9999,
@@ -1526,6 +1679,7 @@
         },
         {
             "Index": 149,
+            "ValidationOnly": 548,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1534,6 +1688,7 @@
         },
         {
             "Index": 143,
+            "ValidationOnly": 549,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1542,6 +1697,7 @@
         },
         {
             "Index": 163,
+            "ValidationOnly": 550,
             "Type": 1,
             "Rank": 3,
             "SortingOrder": 9999,
@@ -1550,6 +1706,7 @@
         },
         {
             "Index": 150,
+            "ValidationOnly": 551,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1558,6 +1715,7 @@
         },
         {
             "Index": 145,
+            "ValidationOnly": 552,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1566,6 +1724,7 @@
         },
         {
             "Index": 140,
+            "ValidationOnly": 553,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1574,6 +1733,7 @@
         },
         {
             "Index": 155,
+            "ValidationOnly": 554,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1582,6 +1742,7 @@
         },
         {
             "Index": 147,
+            "ValidationOnly": 555,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1590,6 +1751,7 @@
         },
         {
             "Index": 158,
+            "ValidationOnly": 556,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1598,6 +1760,7 @@
         },
         {
             "Index": 153,
+            "ValidationOnly": 557,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1606,6 +1769,7 @@
         },
         {
             "Index": 169,
+            "ValidationOnly": 558,
             "Type": 1,
             "Rank": 3,
             "SortingOrder": 9999,
@@ -1614,6 +1778,7 @@
         },
         {
             "Index": 154,
+            "ValidationOnly": 559,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1622,6 +1787,7 @@
         },
         {
             "Index": 152,
+            "ValidationOnly": 560,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1630,6 +1796,7 @@
         },
         {
             "Index": 168,
+            "ValidationOnly": 561,
             "Type": 1,
             "Rank": 3,
             "SortingOrder": 9999,
@@ -1638,6 +1805,7 @@
         },
         {
             "Index": 165,
+            "ValidationOnly": 562,
             "Type": 1,
             "Rank": 3,
             "SortingOrder": 9999,
@@ -1646,6 +1814,7 @@
         },
         {
             "Index": 146,
+            "ValidationOnly": 563,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1654,6 +1823,7 @@
         },
         {
             "Index": 162,
+            "ValidationOnly": 564,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1662,6 +1832,7 @@
         },
         {
             "Index": 142,
+            "ValidationOnly": 565,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1670,6 +1841,7 @@
         },
         {
             "Index": 167,
+            "ValidationOnly": 566,
             "Type": 1,
             "Rank": 3,
             "SortingOrder": 9999,
@@ -1678,6 +1850,7 @@
         },
         {
             "Index": 159,
+            "ValidationOnly": 567,
             "Type": 1,
             "Rank": 4,
             "SortingOrder": 9999,
@@ -1686,6 +1859,7 @@
         },
         {
             "Index": 144,
+            "ValidationOnly": 568,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1694,6 +1868,7 @@
         },
         {
             "Index": 164,
+            "ValidationOnly": 569,
             "Type": 1,
             "Rank": 3,
             "SortingOrder": 9999,
@@ -1702,6 +1877,7 @@
         },
         {
             "Index": 204,
+            "ValidationOnly": 570,
             "Type": 1,
             "Rank": 5,
             "ShowUI": true,
@@ -1777,6 +1953,7 @@
         },
         {
             "Index": 192,
+            "ValidationOnly": 571,
             "Type": 1,
             "Prefab": "Etc",
             "SortingOrder": 8600,
@@ -1784,11 +1961,13 @@
         },
         {
             "Index": 202,
+            "ValidationOnly": 572,
             "Type": 1,
             "ShowUI": true
         },
         {
             "Index": 1,
+            "ValidationOnly": 573,
             "IndexName": "Gold",
             "Type": 1,
             "Prefab": "Gold",
@@ -1797,6 +1976,7 @@
         },
         {
             "Index": 193,
+            "ValidationOnly": 574,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -1811,6 +1991,7 @@
         },
         {
             "Index": 22,
+            "ValidationOnly": 575,
             "IndexName": "GoldBoxA",
             "Type": 1,
             "Prefab": "Accessary",
@@ -1827,6 +2008,7 @@
         },
         {
             "Index": 12,
+            "ValidationOnly": 576,
             "IndexName": "GuildCoin",
             "Type": 1,
             "Prefab": "GuildCoin",
@@ -1835,6 +2017,7 @@
         },
         {
             "Index": 69,
+            "ValidationOnly": 577,
             "IndexName": "HolyRelic_1",
             "Type": 1,
             "Rank": 5,
@@ -1852,6 +2035,7 @@
         },
         {
             "Index": 125,
+            "ValidationOnly": 578,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9999,
@@ -1859,10 +2043,10 @@
         },
         {
             "Index": 217,
+            "ValidationOnly": 579,
             "IndexName": "ScrollD",
             "Type": 1,
             "SortingOrder": 6699,
-            "ShowUI": true,
             "GroupType": 1,
             "ApplyUseCondition": true,
             "ConsumeInfo": {
@@ -1876,10 +2060,10 @@
         },
         {
             "Index": 218,
+            "ValidationOnly": 580,
             "IndexName": "ScrollD",
             "Type": 1,
             "SortingOrder": 6699,
-            "ShowUI": true,
             "GroupType": 1,
             "ApplyUseCondition": true,
             "ConsumeInfo": {
@@ -1893,6 +2077,7 @@
         },
         {
             "Index": 81,
+            "ValidationOnly": 581,
             "IndexName": "Maze001",
             "Type": 1,
             "Prefab": "Skull2",
@@ -1909,6 +2094,7 @@
         },
         {
             "Index": 82,
+            "ValidationOnly": 582,
             "IndexName": "Maze002",
             "Type": 1,
             "Prefab": "Skull2",
@@ -1925,6 +2111,7 @@
         },
         {
             "Index": 83,
+            "ValidationOnly": 583,
             "IndexName": "Maze003",
             "Type": 1,
             "Prefab": "Skull",
@@ -1941,6 +2128,7 @@
         },
         {
             "Index": 84,
+            "ValidationOnly": 584,
             "IndexName": "Maze004",
             "Type": 1,
             "Prefab": "Etc",
@@ -1957,6 +2145,7 @@
         },
         {
             "Index": 85,
+            "ValidationOnly": 585,
             "IndexName": "Maze005",
             "Type": 1,
             "Prefab": "Etc",
@@ -1973,6 +2162,7 @@
         },
         {
             "Index": 86,
+            "ValidationOnly": 586,
             "IndexName": "Maze006",
             "Type": 1,
             "Prefab": "Rune",
@@ -1989,6 +2179,7 @@
         },
         {
             "Index": 87,
+            "ValidationOnly": 587,
             "IndexName": "Maze007",
             "Type": 1,
             "Prefab": "Potion1",
@@ -2005,6 +2196,7 @@
         },
         {
             "Index": 120,
+            "ValidationOnly": 588,
             "IndexName": "Maze003",
             "Type": 1,
             "Prefab": "Etc",
@@ -2021,6 +2213,7 @@
         },
         {
             "Index": 194,
+            "ValidationOnly": 589,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -2035,6 +2228,7 @@
         },
         {
             "Index": 195,
+            "ValidationOnly": 590,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -2049,6 +2243,7 @@
         },
         {
             "Index": 196,
+            "ValidationOnly": 591,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -2063,6 +2258,7 @@
         },
         {
             "Index": 197,
+            "ValidationOnly": 592,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -2077,6 +2273,7 @@
         },
         {
             "Index": 198,
+            "ValidationOnly": 593,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -2091,6 +2288,7 @@
         },
         {
             "Index": 199,
+            "ValidationOnly": 594,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -2105,6 +2303,7 @@
         },
         {
             "Index": 200,
+            "ValidationOnly": 595,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true,
@@ -2119,6 +2318,7 @@
         },
         {
             "Index": 45,
+            "ValidationOnly": 596,
             "IndexName": "MileCoin",
             "Icon": "Mile",
             "Type": 1,
@@ -2127,6 +2327,7 @@
         },
         {
             "Index": 130,
+            "ValidationOnly": 597,
             "IndexName": "MileCoin",
             "Icon": "Mile",
             "Type": 1,
@@ -2135,12 +2336,14 @@
         },
         {
             "Index": 128,
+            "ValidationOnly": 598,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true
         },
         {
             "Index": 43,
+            "ValidationOnly": 599,
             "IndexName": "MScroll",
             "Type": 1,
             "Prefab": "Scroll",
@@ -2148,6 +2351,7 @@
         },
         {
             "Index": 175,
+            "ValidationOnly": 600,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "Rank": 5,
@@ -2174,6 +2378,7 @@
         },
         {
             "Index": 50,
+            "ValidationOnly": 601,
             "IndexName": "PotionA",
             "Type": 1,
             "Prefab": "Potion1",
@@ -2191,6 +2396,7 @@
         },
         {
             "Index": 71,
+            "ValidationOnly": 602,
             "IndexName": "PotionC",
             "Type": 1,
             "SortingOrder": 6780,
@@ -2214,6 +2420,7 @@
         },
         {
             "Index": 72,
+            "ValidationOnly": 603,
             "IndexName": "PotionD",
             "Type": 1,
             "SortingOrder": 6780,
@@ -2237,6 +2444,7 @@
         },
         {
             "Index": 67,
+            "ValidationOnly": 604,
             "IndexName": "PotionM",
             "Type": 1,
             "SortingOrder": 6790,
@@ -2254,6 +2462,7 @@
         },
         {
             "Index": 51,
+            "ValidationOnly": 605,
             "IndexName": "PotionS",
             "Type": 1,
             "Prefab": "Potion1",
@@ -2271,6 +2480,7 @@
         },
         {
             "Index": 20,
+            "ValidationOnly": 606,
             "IndexName": "Pvp",
             "Type": 2,
             "SortingOrder": 9992,
@@ -2284,6 +2494,7 @@
         },
         {
             "Index": 123,
+            "ValidationOnly": 607,
             "IndexName": "PvpCoin",
             "Type": 1,
             "Prefab": "FeCoin",
@@ -2292,6 +2503,7 @@
         },
         {
             "Index": 107,
+            "ValidationOnly": 608,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "ShowUI": true,
@@ -2380,6 +2592,7 @@
         },
         {
             "Index": 108,
+            "ValidationOnly": 609,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "ShowUI": true,
@@ -2468,6 +2681,7 @@
         },
         {
             "Index": 109,
+            "ValidationOnly": 610,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "ShowUI": true,
@@ -2556,6 +2770,7 @@
         },
         {
             "Index": 110,
+            "ValidationOnly": 611,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "ShowUI": true,
@@ -2644,6 +2859,7 @@
         },
         {
             "Index": 106,
+            "ValidationOnly": 612,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "ShowUI": true,
@@ -2732,6 +2948,7 @@
         },
         {
             "Index": 13,
+            "ValidationOnly": 613,
             "IndexName": "BoxE_Kirke",
             "Type": 1,
             "Prefab": "RaidCoin",
@@ -2740,6 +2957,7 @@
         },
         {
             "Index": 179,
+            "ValidationOnly": 614,
             "Type": 1,
             "Rank": 5,
             "ShowUI": true,
@@ -2815,6 +3033,7 @@
         },
         {
             "Index": 184,
+            "ValidationOnly": 615,
             "Type": 1,
             "Prefab": "Etc",
             "SortingOrder": 6620,
@@ -2833,11 +3052,13 @@
         },
         {
             "Index": 185,
+            "ValidationOnly": 616,
             "Type": 1,
             "ShowUI": true
         },
         {
             "Index": 186,
+            "ValidationOnly": 617,
             "Type": 1,
             "ShowUI": true,
             "ConsumeInfo": {
@@ -2852,12 +3073,14 @@
         },
         {
             "Index": 189,
+            "ValidationOnly": 618,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true
         },
         {
             "Index": 68,
+            "ValidationOnly": 619,
             "IndexName": "SandGlass",
             "Type": 1,
             "SortingOrder": 8000,
@@ -2874,6 +3097,7 @@
         },
         {
             "Index": 53,
+            "ValidationOnly": 620,
             "IndexName": "ScrollD",
             "Type": 1,
             "SortingOrder": 6699,
@@ -2890,6 +3114,7 @@
         },
         {
             "Index": 52,
+            "ValidationOnly": 621,
             "IndexName": "ScrollF",
             "Type": 1,
             "SortingOrder": 6700,
@@ -2906,6 +3131,7 @@
         },
         {
             "Index": 54,
+            "ValidationOnly": 622,
             "IndexName": "ScrollS",
             "Type": 1,
             "SortingOrder": 6698,
@@ -2922,6 +3148,7 @@
         },
         {
             "Index": 63,
+            "ValidationOnly": 623,
             "IndexName": "SkillPage",
             "Type": 1,
             "Prefab": "SkillPage",
@@ -2932,6 +3159,7 @@
         },
         {
             "Index": 40,
+            "ValidationOnly": 624,
             "IndexName": "SmB1",
             "Type": 1,
             "Prefab": "SmB1",
@@ -2948,6 +3176,7 @@
         },
         {
             "Index": 41,
+            "ValidationOnly": 625,
             "IndexName": "SmB2",
             "Type": 1,
             "Prefab": "SmB1",
@@ -2955,6 +3184,7 @@
         },
         {
             "Index": 7,
+            "ValidationOnly": 626,
             "IndexName": "SmC34",
             "Type": 1,
             "SortingOrder": 9800,
@@ -2971,6 +3201,7 @@
         },
         {
             "Index": 47,
+            "ValidationOnly": 627,
             "IndexName": "SmC34_10",
             "Type": 1,
             "SortingOrder": 9760,
@@ -2987,6 +3218,7 @@
         },
         {
             "Index": 11,
+            "ValidationOnly": 628,
             "IndexName": "SmC4",
             "Type": 1,
             "Prefab": "Etc",
@@ -3004,6 +3236,7 @@
         },
         {
             "Index": 46,
+            "ValidationOnly": 629,
             "IndexName": "SmC45_10",
             "Type": 1,
             "Prefab": "Etc",
@@ -3021,6 +3254,7 @@
         },
         {
             "Index": 5,
+            "ValidationOnly": 630,
             "IndexName": "SmC5",
             "Type": 1,
             "Rank": 5,
@@ -3039,6 +3273,7 @@
         },
         {
             "Index": 228,
+            "ValidationOnly": 631,
             "IndexName": "SmC5",
             "Type": 1,
             "Prefab": "Etc",
@@ -3056,6 +3291,7 @@
         },
         {
             "Index": 44,
+            "ValidationOnly": 632,
             "IndexName": "SmCp",
             "Type": 1,
             "SortingOrder": 9910,
@@ -3074,6 +3310,7 @@
         },
         {
             "Index": 10,
+            "ValidationOnly": 633,
             "IndexName": "SmP3",
             "Type": 1,
             "SortingOrder": 9700,
@@ -3090,6 +3327,7 @@
         },
         {
             "Index": 100,
+            "ValidationOnly": 634,
             "IndexName": "SmP34_10",
             "Type": 1,
             "SortingOrder": 9670,
@@ -3106,6 +3344,7 @@
         },
         {
             "Index": 9,
+            "ValidationOnly": 635,
             "IndexName": "SmP4",
             "Type": 1,
             "Prefab": "Etc",
@@ -3123,6 +3362,7 @@
         },
         {
             "Index": 101,
+            "ValidationOnly": 636,
             "IndexName": "SmP45_10",
             "Type": 1,
             "Prefab": "Etc",
@@ -3140,6 +3380,7 @@
         },
         {
             "Index": 8,
+            "ValidationOnly": 637,
             "IndexName": "SmP5",
             "Type": 1,
             "Rank": 5,
@@ -3158,6 +3399,7 @@
         },
         {
             "Index": 229,
+            "ValidationOnly": 638,
             "IndexName": "SmP5",
             "Type": 1,
             "Prefab": "Etc",
@@ -3175,6 +3417,7 @@
         },
         {
             "Index": 178,
+            "ValidationOnly": 639,
             "IndexName": "SmCp",
             "Type": 1,
             "SortingOrder": 9909,
@@ -3193,6 +3436,7 @@
         },
         {
             "Index": 61,
+            "ValidationOnly": 640,
             "IndexName": "Soul",
             "Type": 1,
             "Rank": 4,
@@ -3202,6 +3446,7 @@
         },
         {
             "Index": 62,
+            "ValidationOnly": 641,
             "IndexName": "Soul2",
             "Type": 1,
             "Rank": 5,
@@ -3211,12 +3456,14 @@
         },
         {
             "Index": 127,
+            "ValidationOnly": 642,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true
         },
         {
             "Index": 2,
+            "ValidationOnly": 643,
             "IndexName": "Stm",
             "Info": {
                 "$type": "CommonLibrary.ChargeInfo, Assembly-CSharp",
@@ -3226,12 +3473,14 @@
         },
         {
             "Index": 126,
+            "ValidationOnly": 644,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true
         },
         {
             "Index": 180,
+            "ValidationOnly": 645,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9771,
@@ -3248,6 +3497,7 @@
         },
         {
             "Index": 39,
+            "ValidationOnly": 646,
             "IndexName": "SummonC",
             "Type": 1,
             "SortingOrder": 9899,
@@ -3266,6 +3516,7 @@
         },
         {
             "Index": 42,
+            "ValidationOnly": 647,
             "IndexName": "SummonP",
             "Type": 1,
             "SortingOrder": 9898,
@@ -3284,6 +3535,7 @@
         },
         {
             "Index": 124,
+            "ValidationOnly": 648,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9771,
@@ -3299,6 +3551,7 @@
         },
         {
             "Index": 181,
+            "ValidationOnly": 649,
             "Type": 1,
             "Rank": 5,
             "SortingOrder": 9771,
@@ -3315,6 +3568,7 @@
         },
         {
             "Index": 227,
+            "ValidationOnly": 650,
             "Type": 1,
             "Rank": 5,
             "ShowUI": true,
@@ -3390,6 +3644,7 @@
         },
         {
             "Index": 70,
+            "ValidationOnly": 651,
             "IndexName": "TicketB",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3397,6 +3652,7 @@
         },
         {
             "Index": 133,
+            "ValidationOnly": 652,
             "IndexName": "TicketB",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3404,6 +3660,7 @@
         },
         {
             "Index": 136,
+            "ValidationOnly": 653,
             "IndexName": "TicketB",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3411,6 +3668,7 @@
         },
         {
             "Index": 215,
+            "ValidationOnly": 654,
             "IndexName": "TicketB",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3418,6 +3676,7 @@
         },
         {
             "Index": 119,
+            "ValidationOnly": 655,
             "IndexName": "TicketB",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3425,6 +3684,7 @@
         },
         {
             "Index": 201,
+            "ValidationOnly": 656,
             "IndexName": "TicketB",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3441,6 +3701,7 @@
         },
         {
             "Index": 73,
+            "ValidationOnly": 657,
             "IndexName": "TicketP",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3448,6 +3709,7 @@
         },
         {
             "Index": 141,
+            "ValidationOnly": 658,
             "IndexName": "TicketB",
             "Type": 1,
             "SortingOrder": 9992,
@@ -3455,6 +3717,7 @@
         },
         {
             "Index": 4,
+            "ValidationOnly": 659,
             "IndexName": "Topaz",
             "Type": 1,
             "SortingOrder": 9997,
@@ -3463,6 +3726,7 @@
         },
         {
             "Index": 129,
+            "ValidationOnly": 660,
             "Type": 1,
             "Prefab": "Etc",
             "ShowUI": true

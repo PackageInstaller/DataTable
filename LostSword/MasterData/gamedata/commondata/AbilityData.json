@@ -2,9 +2,11 @@
     "DoNotUseThis": [
         {
             "Index": 52,
+            "ValidationOnly": 1,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -47,7 +49,7 @@
         },
         {
             "Index": 15,
-            "IndexName": "Ab_Balin_01",
+            "ValidationOnly": 2,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -77,7 +79,7 @@
         },
         {
             "Index": 6,
-            "IndexName": "Ab_Bedivere_01",
+            "ValidationOnly": 3,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -107,10 +109,11 @@
         },
         {
             "Index": 56,
-            "IndexName": "Ab_Bedivere_01",
+            "ValidationOnly": 4,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -153,7 +156,7 @@
         },
         {
             "Index": 16,
-            "IndexName": "Ab_Cain_01",
+            "ValidationOnly": 5,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -183,7 +186,7 @@
         },
         {
             "Index": 2,
-            "IndexName": "Ab_Claire_01",
+            "ValidationOnly": 6,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -212,8 +215,54 @@
             ]
         },
         {
+            "Index": 60,
+            "ValidationOnly": 7,
+            "Type": 2,
+            "Rank": 5,
+            "GlobalAdd": true,
+            "StatList": [
+                {
+                    "Stat": {
+                        "Key": 65544
+                    },
+                    "Val": [
+                        0.24,
+                        0.28,
+                        0.32,
+                        0.36,
+                        0.4,
+                        0.44,
+                        0.48,
+                        0.52,
+                        0.56,
+                        0.6
+                    ]
+                },
+                {
+                    "Stat": {
+                        "Key": 308
+                    },
+                    "Val": [
+                        0.06,
+                        0.08,
+                        0.1,
+                        0.12,
+                        0.14,
+                        0.16,
+                        0.18,
+                        0.2,
+                        0.22,
+                        0.24
+                    ]
+                }
+            ],
+            "SkillList": [
+                1439
+            ]
+        },
+        {
             "Index": 26,
-            "IndexName": "Ab_Cristina_01",
+            "ValidationOnly": 8,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -260,10 +309,11 @@
         },
         {
             "Index": 55,
-            "IndexName": "Ab_Enya_01",
+            "ValidationOnly": 9,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -306,7 +356,7 @@
         },
         {
             "Index": 19,
-            "IndexName": "Ab_Elaine_01",
+            "ValidationOnly": 10,
             "Type": 2,
             "Rank": 3,
             "GlobalAdd": true,
@@ -336,7 +386,7 @@
         },
         {
             "Index": 29,
-            "IndexName": "Ab_Elin_01",
+            "ValidationOnly": 11,
             "Type": 2,
             "Rank": 3,
             "GlobalAdd": true,
@@ -366,7 +416,7 @@
         },
         {
             "Index": 7,
-            "IndexName": "Ab_Elizabeth_01",
+            "ValidationOnly": 12,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -413,7 +463,7 @@
         },
         {
             "Index": 36,
-            "IndexName": "Ab_Enya_01",
+            "ValidationOnly": 13,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -460,9 +510,11 @@
         },
         {
             "Index": 53,
+            "ValidationOnly": 14,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -505,7 +557,7 @@
         },
         {
             "Index": 8,
-            "IndexName": "Ab_Esmeralda_01",
+            "ValidationOnly": 15,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -535,7 +587,7 @@
         },
         {
             "Index": 17,
-            "IndexName": "Ab_Ethan_01",
+            "ValidationOnly": 16,
             "Rank": 4,
             "GlobalAdd": true,
             "NctAdd": true,
@@ -564,25 +616,43 @@
         },
         {
             "Index": 27,
-            "IndexName": "Ab_Eva_01",
+            "ValidationOnly": 17,
             "Type": 2,
             "Rank": 5,
+            "GlobalAdd": true,
             "StatList": [
                 {
                     "Stat": {
-                        "Key": 288
+                        "Key": 33619973
                     },
                     "Val": [
+                        0.24,
+                        0.28,
+                        0.32,
+                        0.36,
+                        0.4,
+                        0.44,
+                        0.48,
+                        0.52,
+                        0.56,
+                        0.6
+                    ]
+                },
+                {
+                    "Stat": {
+                        "Key": 33554700
+                    },
+                    "Val": [
+                        0.01,
                         0.02,
+                        0.03,
                         0.04,
+                        0.05,
                         0.06,
+                        0.07,
                         0.08,
-                        0.1,
-                        0.12,
-                        0.14,
-                        0.16,
-                        0.18,
-                        0.2
+                        0.09,
+                        0.1
                     ]
                 }
             ],
@@ -591,8 +661,55 @@
             ]
         },
         {
+            "Index": 59,
+            "ValidationOnly": 18,
+            "Type": 2,
+            "Rank": 5,
+            "GlobalAdd": true,
+            "NctAdd": true,
+            "StatList": [
+                {
+                    "Stat": {
+                        "Key": 50397189
+                    },
+                    "Val": [
+                        0.24,
+                        0.28,
+                        0.32,
+                        0.36,
+                        0.4,
+                        0.44,
+                        0.48,
+                        0.52,
+                        0.56,
+                        0.6
+                    ]
+                },
+                {
+                    "Stat": {
+                        "Key": 50331916
+                    },
+                    "Val": [
+                        0.01,
+                        0.02,
+                        0.03,
+                        0.04,
+                        0.05,
+                        0.06,
+                        0.07,
+                        0.08,
+                        0.09,
+                        0.1
+                    ]
+                }
+            ],
+            "SkillList": [
+                1363
+            ]
+        },
+        {
             "Index": 42,
-            "IndexName": "Ab_Elin_01",
+            "ValidationOnly": 19,
             "Type": 2,
             "Rank": 3,
             "StatList": [
@@ -620,7 +737,7 @@
         },
         {
             "Index": 24,
-            "IndexName": "Ab_Gaheris_01",
+            "ValidationOnly": 20,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -650,9 +767,11 @@
         },
         {
             "Index": 50,
+            "ValidationOnly": 21,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -695,7 +814,7 @@
         },
         {
             "Index": 3,
-            "IndexName": "Ab_Gawain_01",
+            "ValidationOnly": 22,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -742,7 +861,7 @@
         },
         {
             "Index": 18,
-            "IndexName": "Ab_Guinevere_01",
+            "ValidationOnly": 23,
             "Rank": 5,
             "GlobalAdd": true,
             "NctAdd": true,
@@ -788,7 +907,7 @@
         },
         {
             "Index": 39,
-            "IndexName": "Ab_Ian_01",
+            "ValidationOnly": 24,
             "Type": 2,
             "Rank": 3,
             "StatList": [
@@ -833,6 +952,7 @@
         },
         {
             "Index": 44,
+            "ValidationOnly": 25,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -876,6 +996,7 @@
         },
         {
             "Index": 47,
+            "ValidationOnly": 26,
             "Type": 2,
             "Rank": 3,
             "GlobalAdd": true,
@@ -902,7 +1023,7 @@
         },
         {
             "Index": 28,
-            "IndexName": "Ab_Isolde_01",
+            "ValidationOnly": 27,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -949,7 +1070,7 @@
         },
         {
             "Index": 11,
-            "IndexName": "Ab_Jan_01",
+            "ValidationOnly": 28,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -979,7 +1100,7 @@
         },
         {
             "Index": 40,
-            "IndexName": "Ab_Jessi_01",
+            "ValidationOnly": 29,
             "Type": 2,
             "Rank": 3,
             "GlobalAdd": true,
@@ -1006,6 +1127,7 @@
         },
         {
             "Index": 41,
+            "ValidationOnly": 30,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1052,7 +1174,7 @@
         },
         {
             "Index": 38,
-            "IndexName": "Ab_Katrin_01",
+            "ValidationOnly": 31,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1099,6 +1221,7 @@
         },
         {
             "Index": 45,
+            "ValidationOnly": 32,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1128,7 +1251,7 @@
         },
         {
             "Index": 10,
-            "IndexName": "Ab_Kirke_01",
+            "ValidationOnly": 33,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1158,10 +1281,11 @@
         },
         {
             "Index": 54,
-            "IndexName": "Ab_Cain_01",
+            "ValidationOnly": 34,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -1204,7 +1328,7 @@
         },
         {
             "Index": 14,
-            "IndexName": "Ab_Lilith_01",
+            "ValidationOnly": 35,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1234,9 +1358,11 @@
         },
         {
             "Index": 51,
+            "ValidationOnly": 36,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -1279,9 +1405,11 @@
         },
         {
             "Index": 58,
+            "ValidationOnly": 37,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -1324,7 +1452,7 @@
         },
         {
             "Index": 12,
-            "IndexName": "Ab_Lua_01",
+            "ValidationOnly": 38,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1371,7 +1499,7 @@
         },
         {
             "Index": 4,
-            "IndexName": "Ab_Lucius_01",
+            "ValidationOnly": 39,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1418,7 +1546,7 @@
         },
         {
             "Index": 22,
-            "IndexName": "Ab_Lucy_01",
+            "ValidationOnly": 40,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1448,7 +1576,7 @@
         },
         {
             "Index": 5,
-            "IndexName": "Ab_Media_01",
+            "ValidationOnly": 41,
             "Type": 1,
             "Rank": 4,
             "GlobalAdd": true,
@@ -1478,7 +1606,7 @@
         },
         {
             "Index": 30,
-            "IndexName": "Ab_Merlin_01",
+            "ValidationOnly": 42,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1525,7 +1653,7 @@
         },
         {
             "Index": 33,
-            "IndexName": "Ab_Merry_01",
+            "ValidationOnly": 43,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -1555,10 +1683,11 @@
         },
         {
             "Index": 57,
-            "IndexName": "Ab_Gawain_01",
+            "ValidationOnly": 44,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -1601,7 +1730,7 @@
         },
         {
             "Index": 34,
-            "IndexName": "Ab_Mia_01",
+            "ValidationOnly": 45,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1648,7 +1777,7 @@
         },
         {
             "Index": 31,
-            "IndexName": "Ab_Mordred_01",
+            "ValidationOnly": 46,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1695,7 +1824,7 @@
         },
         {
             "Index": 20,
-            "IndexName": "Ab_Morgana_01",
+            "ValidationOnly": 47,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1725,7 +1854,7 @@
         },
         {
             "Index": 37,
-            "IndexName": "Ab_Morgause_01",
+            "ValidationOnly": 48,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1772,7 +1901,7 @@
         },
         {
             "Index": 1,
-            "IndexName": "Ab_Nimue_01",
+            "ValidationOnly": 49,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -1801,8 +1930,54 @@
             ]
         },
         {
+            "Index": 61,
+            "ValidationOnly": 37,
+            "Type": 2,
+            "Rank": 5,
+            "GlobalAdd": true,
+            "StatList": [
+                {
+                    "Stat": {
+                        "Key": 16842757
+                    },
+                    "Val": [
+                        0.24,
+                        0.28,
+                        0.32,
+                        0.36,
+                        0.4,
+                        0.44,
+                        0.48,
+                        0.52,
+                        0.56,
+                        0.6
+                    ]
+                },
+                {
+                    "Stat": {
+                        "Key": 276
+                    },
+                    "Val": [
+                        0.01,
+                        0.02,
+                        0.03,
+                        0.04,
+                        0.05,
+                        0.06,
+                        0.07,
+                        0.08,
+                        0.09,
+                        0.1
+                    ]
+                }
+            ],
+            "SkillList": [
+                1495
+            ]
+        },
+        {
             "Index": 23,
-            "IndexName": "Ab_Percival_01",
+            "ValidationOnly": 50,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -1832,7 +2007,7 @@
         },
         {
             "Index": 43,
-            "IndexName": "Ab_Elin_01",
+            "ValidationOnly": 51,
             "Type": 2,
             "Rank": 3,
             "GlobalAdd": true,
@@ -1859,6 +2034,7 @@
         },
         {
             "Index": 46,
+            "ValidationOnly": 52,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -1902,6 +2078,7 @@
         },
         {
             "Index": 49,
+            "ValidationOnly": 53,
             "Rank": 5,
             "GlobalAdd": true,
             "NctAdd": true,
@@ -1947,7 +2124,7 @@
         },
         {
             "Index": 25,
-            "IndexName": "Ab_Rita_01",
+            "ValidationOnly": 54,
             "Type": 2,
             "Rank": 3,
             "GlobalAdd": true,
@@ -1977,7 +2154,7 @@
         },
         {
             "Index": 21,
-            "IndexName": "Ab_Roy_01",
+            "ValidationOnly": 55,
             "Type": 2,
             "Rank": 3,
             "StatList": [
@@ -2005,7 +2182,7 @@
         },
         {
             "Index": 13,
-            "IndexName": "Ab_Sarah_01",
+            "ValidationOnly": 56,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -2035,9 +2212,11 @@
         },
         {
             "Index": 48,
+            "ValidationOnly": 57,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
+            "NctAdd": true,
             "StatList": [
                 {
                     "Stat": {
@@ -2080,7 +2259,7 @@
         },
         {
             "Index": 9,
-            "IndexName": "Ab_Tristan_01",
+            "ValidationOnly": 58,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,
@@ -2127,7 +2306,7 @@
         },
         {
             "Index": 35,
-            "IndexName": "Ab_Urien_01",
+            "ValidationOnly": 59,
             "Type": 2,
             "Rank": 4,
             "GlobalAdd": true,
@@ -2157,7 +2336,7 @@
         },
         {
             "Index": 32,
-            "IndexName": "Ab_Vivien_01",
+            "ValidationOnly": 60,
             "Type": 2,
             "Rank": 5,
             "GlobalAdd": true,

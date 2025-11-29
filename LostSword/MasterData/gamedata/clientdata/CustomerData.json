@@ -60,6 +60,7 @@
         "Key": "Pc_Erin_01",
         "FrontSpineName": "Pc_Erin_F_01",
         "BackSpineName": "Pc_Erin_B_01",
+        "NctAdd": "TRUE",
         "List": [
             {
                 "VoiceInfo": {
@@ -77,6 +78,7 @@
         "Key": "Pc_Tiamat_01",
         "FrontSpineName": "Pc_Tiamat_F_01",
         "BackSpineName": "Pc_Tiamat_B_01",
+        "NctAdd": "TRUE",
         "List": [
             {
                 "VoiceInfo": {
@@ -93,6 +95,7 @@
     {
         "Key": "Pc_Lisa_01",
         "FrontSpineName": "Pc_Lisa_F_01",
+        "NctAdd": "TRUE",
         "List": [
             {
                 "VoiceInfo": {
@@ -107,6 +110,67 @@
             {
                 "VoiceInfo": {
                     "Korea": "V_리사_역시 저밖에 없죠 아주 좋은 선택이에요"
+                }
+            }
+        ]
+    },
+    {
+        "Key": "Pc_Lohengrin_01",
+        "FrontSpineName": "Pc_Lohengrin_F_01",
+        "NctAdd": "TRUE",
+        "List": [
+            {
+                "VoiceInfo": {
+                    "Korea": "V_로엔그린_옷이 흐트러"
+                }
+            },
+            {
+                "SpineTouch": "Breast",
+                "VoiceInfo": {
+                    "Korea": "V_블랙스완_다른 여자"
+                }
+            }
+        ]
+    },
+    {
+        "Key": "Pc_Eva_02",
+        "FrontSpineName": "Pc_Eva_F_01",
+        "BackSpineName": "Pc_Eva_B_01",
+        "NctAdd": "TRUE",
+        "List": [
+            {
+                "VoiceInfo": {
+                    "Korea": "V_에바_어 어서 와"
+                }
+            },
+            {
+                "SpineTouch": "Breast",
+                "VoiceInfo": {
+                    "Korea": "V_에바_꺄윽"
+                }
+            },
+            {
+                "SpineTouch": "Breast",
+                "VoiceInfo": {
+                    "Korea": "V_에바_하읏"
+                }
+            }
+        ]
+    },
+    {
+        "Key": "Pc_Palamedes_01",
+        "FrontSpineName": "Pc_Palamedes_F_01",
+        "BackSpineName": "Pc_Palamedes_B_01",
+        "List": [
+            {
+                "VoiceInfo": {
+                    "Korea": "V_팔라메데스_스승님 오늘도 잘 부탁드려요"
+                }
+            },
+            {
+                "SpineTouch": "Breast",
+                "VoiceInfo": {
+                    "Korea": "V_팔라메데스_으응 더 이상은 비밀이에요"
                 }
             }
         ]

@@ -16,28 +16,26 @@
                     "NctPriority": 2
                 },
                 {
-                    "Type": 55,
-                    "StartTime": "2024-08-21T00:00:01Z",
-                    "EndTime": "2025-12-04T23:00:00Z",
-                    "DisplayStartTime": "2025-09-04T00:00:01Z",
-                    "DisplayEndTime": "2025-09-18T12:00:00Z",
-                    "Priority": 3,
-                    "NctPriority": 3
+                    "Type": 57,
+                    "NctAdd": true,
+                    "NctStartTime": "2024-08-27T00:00:01Z",
+                    "NctEndTime": "2030-10-01T10:30:00Z",
+                    "NctPriority": 4
                 },
                 {
-                    "Type": 54,
-                    "StartTime": "2024-08-21T00:00:01Z",
-                    "EndTime": "2025-12-04T23:00:00Z",
-                    "DisplayStartTime": "2025-09-04T00:00:01Z",
-                    "DisplayEndTime": "2025-09-18T12:00:00Z",
-                    "Priority": 3,
+                    "Type": 58,
+                    "StartTime": "2024-12-21T00:00:01Z",
+                    "EndTime": "2099-12-04T23:00:00Z",
+                    "DisplayStartTime": "2025-11-27T00:00:01Z",
+                    "DisplayEndTime": "2025-12-11T12:00:00Z",
+                    "Priority": 4,
                     "NctPriority": 3
                 },
                 {
                     "Type": 18,
                     "NctAdd": true,
-                    "Priority": 4,
-                    "NctPriority": 4
+                    "Priority": 5,
+                    "NctPriority": 5
                 }
             ]
         },
@@ -109,8 +107,31 @@
                     "EndTime": "2025-07-10T10:30:00Z",
                     "DisplayStartTime": "2025-05-29T00:00:01Z",
                     "DisplayEndTime": "2025-07-10T10:30:00Z",
+                    "NctAdd": true,
+                    "NctStartTime": "2025-11-12T10:30:00Z",
+                    "NctEndTime": "2025-12-17T10:30:00Z",
+                    "NctDisplayStartTime": "2025-11-12T10:30:00Z",
+                    "NctDisplayEndTime": "2025-12-17T10:30:00Z",
                     "Priority": 7,
-                    "NctPriority": 7
+                    "NctPriority": 11
+                },
+                {
+                    "Type": 62,
+                    "StartTime": "2024-11-13T00:00:01Z",
+                    "EndTime": "2025-12-24T10:30:00Z",
+                    "DisplayStartTime": "2025-11-13T00:00:01Z",
+                    "DisplayEndTime": "2025-12-24T10:30:00Z",
+                    "Priority": 8,
+                    "NctPriority": 8
+                },
+                {
+                    "Type": 60,
+                    "StartTime": "2024-10-01T00:00:01Z",
+                    "EndTime": "2025-11-27T10:30:00Z",
+                    "DisplayStartTime": "2025-10-01T00:00:01Z",
+                    "DisplayEndTime": "2025-11-27T10:30:00Z",
+                    "Priority": 9,
+                    "NctPriority": 9
                 },
                 {
                     "Type": 56,
@@ -118,8 +139,8 @@
                     "EndTime": "2025-10-16T10:30:00Z",
                     "DisplayStartTime": "2025-09-04T00:00:01Z",
                     "DisplayEndTime": "2025-10-16T10:30:00Z",
-                    "Priority": 8,
-                    "NctPriority": 8
+                    "Priority": 10,
+                    "NctPriority": 10
                 },
                 {
                     "Type": 50,
@@ -127,8 +148,13 @@
                     "EndTime": "2025-09-18T10:30:00Z",
                     "DisplayStartTime": "2025-08-07T00:00:01Z",
                     "DisplayEndTime": "2025-09-18T10:30:00Z",
-                    "Priority": 9,
-                    "NctPriority": 9
+                    "NctAdd": true,
+                    "NctStartTime": "2025-11-19T00:00:01Z",
+                    "NctEndTime": "2025-12-24T10:30:00Z",
+                    "NctDisplayStartTime": "2025-11-19T00:00:01Z",
+                    "NctDisplayEndTime": "2025-12-24T10:30:00Z",
+                    "Priority": 11,
+                    "NctPriority": 7
                 },
                 {
                     "Type": 45,
@@ -136,8 +162,8 @@
                     "EndTime": "2025-08-21T10:30:00Z",
                     "DisplayStartTime": "2025-07-10T00:00:01Z",
                     "DisplayEndTime": "2025-08-21T10:30:00Z",
-                    "Priority": 10,
-                    "NctPriority": 10
+                    "Priority": 12,
+                    "NctPriority": 12
                 },
                 {
                     "Type": 46,
@@ -145,30 +171,19 @@
                     "EndTime": "2025-08-07T10:30:00Z",
                     "DisplayStartTime": "2025-07-10T00:00:01Z",
                     "DisplayEndTime": "2025-08-07T10:30:00Z",
-                    "Priority": 11,
-                    "NctPriority": 11
-                },
-                {
-                    "Type": 19,
-                    "GlobalExcept": true,
-                    "NctAdd": true,
-                    "NctStartTime": "2024-08-20T00:00:01Z",
-                    "NctEndTime": "2025-09-24T10:30:00Z",
-                    "NctDisplayStartTime": "2025-08-20T00:00:01Z",
-                    "NctDisplayEndTime": "2025-09-24T10:30:00Z",
-                    "Priority": 12,
-                    "NctPriority": 12
-                },
-                {
-                    "Type": 26,
-                    "GlobalExcept": true,
-                    "NctAdd": true,
-                    "NctStartTime": "2024-08-27T00:00:01Z",
-                    "NctEndTime": "2025-10-01T10:30:00Z",
-                    "NctDisplayStartTime": "2025-08-27T00:00:01Z",
-                    "NctDisplayEndTime": "2025-10-01T10:30:00Z",
                     "Priority": 13,
                     "NctPriority": 13
+                },
+                {
+                    "Type": 61,
+                    "GlobalExcept": true,
+                    "NctAdd": true,
+                    "NctStartTime": "2024-10-29T00:00:01Z",
+                    "NctEndTime": "2025-12-03T10:30:00Z",
+                    "NctDisplayStartTime": "2025-10-29T00:00:01Z",
+                    "NctDisplayEndTime": "2025-12-03T10:30:00Z",
+                    "Priority": 14,
+                    "NctPriority": 14
                 }
             ]
         },
@@ -196,7 +211,8 @@
             "Index": 6,
             "ShopTypeInfoList": [
                 {
-                    "Type": 53
+                    "Type": 53,
+                    "NctAdd": true
                 }
             ]
         }

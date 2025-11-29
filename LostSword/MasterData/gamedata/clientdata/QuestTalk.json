@@ -407,8 +407,8 @@
             {
                 "IndexName": "Pc_Morgana_01",
                 "IdleAni": "Emotion_Pimple1",
-                "Pos1": "Pc_Ethan_01",
-                "Pos2": "in",
+                "Pos1Action": "Pc_Ethan_01",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "흥…….",
                     "English": "Hmph...",
@@ -470,7 +470,7 @@
             {
                 "IndexName": "Pc_Ethan_01",
                 "IdleAni": "Idle_Annoy",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "너 말이야…… 그건 나도 마찬가지라고 생각한 적 없어?",
                     "English": "And you think I don’t feel the same way?",
@@ -1104,7 +1104,7 @@
                     "Korea": "요정이 순수한 존재라고? 웃기지 마! 이 녀석, 잔인해!",
                     "English": "Fairies are pure creatures, my bum. This one’s downright cruel!",
                     "ChineseCh": "人人都说精灵是世间最为纯粹的存在？开什么玩笑！这丫头，残忍得很！",
-                    "ChineseTh": "妖精是純真的化身？別笑死人了！這傢伙簡直兇殘無比！",
+                    "ChineseTh": "妖精是純真的化身？別笑死人了！這傢伙簡直凶殘無比！",
                     "Japanese": "妖精は純粋な存在？ふざけたことを！コイツを見ろ！残酷じゃないか！"
                 },
                 "Voice": {
@@ -1114,8 +1114,8 @@
                 }
             },
             {
-                "Pos1": "hide",
-                "Pos2": "hide",
+                "Pos1Action": "hide",
+                "Pos2Action": "hide",
                 "Text": {
                     "Korea": "쓰디 쓴 후폭풍을 넘기며 허리를 쭉 폈다.",
                     "English": "I stretched my back out as I let the word storm settle.",
@@ -1189,8 +1189,8 @@
                 "IndexName": "Pc_Ethan_01",
                 "Ani": "Touch2",
                 "IdleAni": "Idle_Stand",
-                "Pos1": "in",
-                "Pos2": "Pc_Morgana_01",
+                "Pos1Action": "in",
+                "Pos2Action": "Pc_Morgana_01",
                 "Text": {
                     "Korea": "그나저나.. 판타지 세계의 공주님이라니~ 꽤 기대되네.",
                     "English": "Besides, this is a princess of a fantasy world we’re talkin’ about... I got high hopes!",
@@ -1350,7 +1350,7 @@
             {
                 "IndexName": "Pc_Ethan_01",
                 "IdleAni": "Idle_Stand",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "있잖아, 모르가나.",
                     "English": "So, Morgana.",
@@ -1382,7 +1382,7 @@
             {
                 "IndexName": "Pc_Morgana_01",
                 "IdleAni": "Emotion_Serious",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "글쎄요.",
                     "English": "Who knows?",
@@ -1910,7 +1910,7 @@
             },
             {
                 "IndexName": "Pc_Elizabeth_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "여…… 여기는 어디지?",
                     "English": "Where... where are we?",
@@ -2001,7 +2001,7 @@
             },
             {
                 "IndexName": "Pc_Bedivere_01",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "흑흑…… 공주님, 우리…… 죽는 건가요?",
                     "English": "*Sob, sob* Princess, are we... going to die?",
@@ -2284,7 +2284,7 @@
             },
             {
                 "IndexName": "Pc_Ethan_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "거의 따라잡았다!",
                     "English": "Almost gotcha!",
@@ -2317,7 +2317,7 @@
             {
                 "IndexName": "Pc_Morgana_01",
                 "IdleAni": "Emotion_Panic2_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "에, 에다아아안~! 저…… 더 이상은……! 한계…… 한계라고요!!",
                     "English": "Ethaaaaan! I can’t... I’m at my limits!!!",
@@ -2349,7 +2349,7 @@
             {
                 "IndexName": "Pc_Morgana_01",
                 "IdleAni": "Emotion_Panic2_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "자! 돼, 됐죠!? 어서 가요!",
                     "English": "There! It’s done! Go on!",
@@ -2366,7 +2366,7 @@
             {
                 "IndexName": "Pc_Ethan_01",
                 "IdleAni": "Idle_Annoy",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "젠자아아앙! 왜 이런 녀석이 조력자로 붙어있는 거냐고!",
                     "English": "Maaaan! How’d I get stuck with a helper like her?!",
@@ -2383,7 +2383,7 @@
             {
                 "IndexName": "Pc_Elizabeth_01",
                 "IdleAni": "Emotion_happy_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "구, 구해주셔서 감사합니다……!",
                     "English": "Th-Thank you for saving us...!",
@@ -2399,7 +2399,7 @@
             },
             {
                 "IndexName": "Pc_Ethan_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "인사는 됐어요. 아직 다 잡은 게 아니니까.",
                     "English": "Save it. There is more to do at hand.",
@@ -2446,7 +2446,7 @@
             {
                 "IndexName": "Pc_Elizabeth_01",
                 "IdleAni": "Emotion_sad_idle",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "히익!",
                     "English": "Eeek!",
@@ -2463,7 +2463,7 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "Ani": "Action_Surprise",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "흐윽…….",
                     "English": "Hic...",
@@ -2633,8 +2633,8 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "IdleAni": "Emotion_Sad",
-                "Pos1": "Pc_Elizabeth_01",
-                "Pos2": "in",
+                "Pos1Action": "Pc_Elizabeth_01",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "흐아앙~!! 살았어요, 살았어요 공주니이이임~!",
                     "English": "Waaah!!! We didn’t die! We’re alive, Your Highness!!!",
@@ -2652,7 +2652,7 @@
                 "IndexName": "Pc_Elizabeth_01",
                 "Ani": "Emotion_happy_action",
                 "IdleAni": "Emotion_happy_idle",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "정말이야. 하마터면 큰일 날 뻔했어, 베디.",
                     "English": "Truly, we made it by the skin of our teeth, Bedi.",
@@ -2712,7 +2712,7 @@
             },
             {
                 "IndexName": "Pc_Ethan_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "안녕…… 하세요? 하하, 저는…….",
                     "English": "Hi... Er, greetings. Haha, my name is...",
@@ -2743,7 +2743,7 @@
             },
             {
                 "IndexName": "Pc_Elizabeth_01",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "어, 그러니까, 에단 님이라 부르면 될까요?",
                     "English": "Oh, in that case, might I call you Ethan?",
@@ -2878,7 +2878,7 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "IdleAni": "Idle_Smile",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "아아, 신님! 감사드립니다……! 공주님, 이제 우린 산 거겠죠?",
                     "English": "Oh, god be praised...! We’re saved, aren’t we, Your Highness?",
@@ -2896,7 +2896,7 @@
                 "IndexName": "Pc_Elizabeth_01",
                 "Ani": "Emotion_Pimple_action",
                 "IdleAni": "Emotion_Pimple_idle",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "(아니야 베디, 아직은 몰라. 지금껏 인도자라고 나타났던 사람도 벌써 세 번째잖니.)",
                     "English": "(We cannot say for certain, Bedi. This is already the third man claiming to be the Swordbringer.)",
@@ -2928,7 +2928,7 @@
             {
                 "IndexName": "Pc_Ethan_01",
                 "IdleAni": "Idle_Annoy",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "으, 음흉? 저기 공주님, 다 들리고 있는데요?",
                     "English": "Cunning? Excuse me, Princess, you know I can hear you, right?",
@@ -2962,7 +2962,7 @@
             {
                 "IndexName": "Pc_Elizabeth_01",
                 "IdleAni": "Emotion_Pimple_idle",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "(그 또한 우리를 속이려는 치밀한 계획일지, 어떻게 알 수 있겠어?)",
                     "English": "(And how do we know saving us isn’t all part of his elaborate scheme?)",
@@ -3042,7 +3042,7 @@
             {
                 "IndexName": "Pc_Ethan_01",
                 "IdleAni": "Idle_Stand",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "물론 함께하고 있죠. 모르가나라면 바로 여기에…… 모르가나?",
                     "English": "She’s with me. She’s right... huh? Morgana?",
@@ -3058,7 +3058,7 @@
             },
             {
                 "IndexName": "Pc_Elizabeth_01",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "…….",
                     "English": ".......",
@@ -3288,7 +3288,7 @@
             },
             {
                 "IndexName": "Pc_Bedivere_01",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "공주님….",
                     "English": "Your Highness...",
@@ -3349,8 +3349,8 @@
                 "IndexName": "Pc_Bedivere_01",
                 "Ani": "Touch2",
                 "IdleAni": "Emotion_Sad",
-                "Pos1": "hide",
-                "Pos2": "hide",
+                "Pos1Action": "hide",
+                "Pos2Action": "hide",
                 "Text": {
                     "Korea": "공주니이임!",
                     "English": "Princeeeeess!",
@@ -3472,7 +3472,7 @@
             {
                 "IndexName": "Pc_Ethan_01",
                 "IdleAni": "Idle_Stand",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "저기, 잠시만요?",
                     "English": "Just a moment, My Ladies.",
@@ -3505,7 +3505,7 @@
                 "IndexName": "Pc_Elizabeth_01",
                 "Ani": "Emotion_sad2_idle",
                 "IdleAni": "Emotion_sad2_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "…...",
                     "English": ".......",
@@ -3690,7 +3690,7 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "IdleAni": "Idle_Joke_3",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "그게..",
                     "English": "Well...",
@@ -3738,7 +3738,7 @@
                 "IndexName": "Pc_Elizabeth_01",
                 "Ani": "Emotion_Pimple_action",
                 "IdleAni": "Emotion_Pimple_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "아니야, 베디! 그건 분명 사기를 당한 거야. 비겁한 술수에 놀아나고 만 거라고……!",
                     "English": "No, Bedi! It was all a scam! A cowardly racket of false artifices!",
@@ -3754,7 +3754,7 @@
             },
             {
                 "IndexName": "Pc_Ethan_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "… 설마 공주님, 도박 같은..",
                     "English": "Wait a second. Were you gambling...?!",
@@ -3867,7 +3867,7 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "IdleAni": "Idle_Joke",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "괜찮아요 공주님! 술수를 쓴 쪽이 나쁜 거니까요!",
                     "English": "It’s all right, Your Highness! It’s the tricksters who are the ones to blame!",
@@ -3914,7 +3914,7 @@
                 "IndexName": "Pc_Elizabeth_01",
                 "Ani": "Emotion_Pimple_action",
                 "IdleAni": "Emotion_Pimple_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "시, 실례에요! 거사에는 자금이 필요하다 보니 스스로 준비하려고 했던 것뿐이라고요?",
                     "English": "Th-That is uncalled for! I was simply securing funds needed for the uprising!",
@@ -3945,7 +3945,7 @@
             },
             {
                 "IndexName": "Pc_Bedivere_01",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "저도 힘을 보탰지만 어쩔 수 없는 강적을 만나버린 끝에…… 흐윽!",
                     "English": "I offered my support, but once we met our match... Sob!",
@@ -3980,7 +3980,7 @@
                 "IndexName": "Pc_Elizabeth_01",
                 "Ani": "Emotion_sad_action",
                 "IdleAni": "Emotion_sad_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "……잃은 건 안타깝지만 찾을 수 없는 건 아니에요!",
                     "English": "It is piteous we lost, but it is not as if we can’t get it back again!",
@@ -4075,7 +4075,7 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "IdleAni": "Idle_Smile",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "괜찮아요, 공주님. 공주님은 잘못 없어요. 함께 열심히 일하면 금방 모일거에요!",
                     "English": "It’s all right, Your Highness. You did no wrong. We will make that money back in a wink if we work together!",
@@ -4152,7 +4152,7 @@
                 "IndexName": "Pc_Morgana_01",
                 "Ani": "Emotion_defeat_action",
                 "IdleAni": "Emotion_defeat_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "에단…… 저…… 무언가 소중한 것을…… 잃은 기분이…….",
                     "English": "Ethan... I feel... like I lost... something close to me...",
@@ -4261,7 +4261,7 @@
             {
                 "IndexName": "Pc_Elizabeth_01",
                 "IdleAni": "Emotion_Defeat_idle",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "후후후, 난 쓸모없는 공주…….",
                     "English": "Waaaah, I’m a worthless princess...",
@@ -4277,7 +4277,7 @@
             },
             {
                 "IndexName": "Pc_Bedivere_01",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "공주님! 전 공주님 뿐이니까요!",
                     "English": "Your Highness is the only princess for me!",
@@ -4294,7 +4294,7 @@
             {
                 "IndexName": "Pc_Morgana_01",
                 "IdleAni": "Emotion_Panic2_idle",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "치욕, 치욕적인 날이에요! 이제 난 어떻게 살아가야…….",
                     "English": "This is a day of disgrace! How can I go on...?",
@@ -4564,7 +4564,7 @@
             },
             {
                 "IndexName": "Pc_Ria_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "흥, 오늘도 지각입니까?",
                     "English": "Hmph, late again today?",
@@ -4579,7 +4579,7 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "Ani": "Action_Surprise",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "히익!",
                     "English": "Eeek!",
@@ -4597,7 +4597,7 @@
                 "IndexName": "Pc_Elizabeth_01",
                 "Ani": "Touch2",
                 "IdleAni": "Idle_Stand",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "죄…… 죄송합니다!",
                     "English": "F-Forgive me!",
@@ -4613,7 +4613,7 @@
             },
             {
                 "IndexName": "Pc_Ria_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "매번 그렇게 늦어서야 되겠습니까? 오늘은 그냥 넘어갈 수 없겠군요.",
                     "English": "Do you think you can get away with being late every time? Well, today you won’t!",
@@ -4641,7 +4641,7 @@
             {
                 "IndexName": "Pc_Bedivere_01",
                 "IdleAni": "Emotion_Sad",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "히이잉…….",
                     "English": "Nnnngh...",
@@ -4657,7 +4657,7 @@
             },
             {
                 "IndexName": "Pc_Ethan_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "누구……?",
                     "English": "Who is that?",
@@ -4673,7 +4673,7 @@
             },
             {
                 "IndexName": "Pc_Ria_01",
-                "Pos2": "in",
+                "Pos2Action": "in",
                 "Text": {
                     "Korea": "점장입니다만.",
                     "English": "The owner of the store.",
@@ -4687,7 +4687,7 @@
             },
             {
                 "IndexName": "Pc_Ethan_01",
-                "Pos1": "in",
+                "Pos1Action": "in",
                 "Text": {
                     "Korea": "…….",
                     "English": ".......",
@@ -5395,7 +5395,6 @@
                     "Japanese": "このままでは死んでしまいます。契約をしましょう"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_모르가나_이대로두면죽을거에요",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_01"
                 }
             },
@@ -5409,7 +5408,6 @@
                     "Japanese": "契約を結ぶと、私たちに力を貸してくれます。召喚してみましょう"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_모르가나_펫계약을하면",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_02"
                 }
             },
@@ -5423,7 +5421,6 @@
                     "Japanese": "契約が完了しました。これで、私たちに従います"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_모르가나_계약이완료됐네요",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_03"
                 }
             },
@@ -5437,7 +5434,6 @@
                     "Japanese": "ペットになったので、編成してみましょう"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_모르가나_이제펫가되었으니",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_04"
                 }
             },
@@ -5451,7 +5447,6 @@
                     "Japanese": "ペットもチーム編成が必要です"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_모르가나_펫도똑같이",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_05"
                 }
             },
@@ -5465,7 +5460,6 @@
                     "Japanese": "ここでペットタブをタップしてください"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_모르가나_여기서펫",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_06"
                 }
             },
@@ -5479,7 +5473,6 @@
                     "Japanese": "さっき契約した子をタップしてみましょう"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_모르가나_방금계약맺은",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_07"
                 }
             },
@@ -5493,7 +5486,6 @@
                     "Japanese": "いいですね、これでペットのステータスがパーティーに影響を与えます"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Pet_Summon_좋아요이제펫의",
                     "ChineseTh": "Quest_Guide_Pet_Summon_Morgana_08"
                 }
             }
@@ -5743,7 +5735,7 @@
                     "Japanese": "アジトや鍛冶屋の増築に必要な素材は迷宮で手に入るそうです"
                 },
                 "Voice": {
-                    "Korea": "V_Guide_Town_아지트와 대장간을 증축하는데 필요한 재료는 미궁에서 구할 수 있다고 해요.",
+                    "Korea": "V_Guide_Town_아지트와 대장간을 증축하는데 필요한 재료는",
                     "ChineseTh": "Quest_Guide_Town_Elizabeth_06"
                 }
             },

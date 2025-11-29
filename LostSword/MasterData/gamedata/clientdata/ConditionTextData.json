@@ -802,7 +802,7 @@
     {
         "Key": "PvpRankUp_1",
         "Text": {
-            "Korea": "결투장에서 {0}티어를 달성하세요.",
+            "Korea": "콜로세움에서 {0}티어를 달성하세요.",
             "English": "Achieve Tier {0} in the Colosseum.",
             "ChineseCh": "在竞技场达到{0}段位。",
             "ChineseTh": "請在競技場達到{0}階段。",
@@ -835,7 +835,7 @@
             "Korea": "{0} 스테이지를 클리어하세요.",
             "English": "Clear Stage {0}.",
             "ChineseCh": "通关第{0}关卡。",
-            "ChineseTh": "請通過關卡{0}。",
+            "ChineseTh": "請通過關卡<{0}>。",
             "Japanese": "{0}ステージをクリアしましょう"
         }
     },
@@ -855,7 +855,7 @@
             "Korea": "에피소드를 시청하세요.",
             "English": "Watch the episode.",
             "ChineseCh": "观看剧情。",
-            "ChineseTh": "請觀看劇情。",
+            "ChineseTh": "請觀看角色外傳。",
             "Japanese": "エピソードを視聴しましょう"
         }
     },
@@ -865,7 +865,7 @@
             "Korea": "{0}의 에피소드를 시청하세요.",
             "English": "Watch the episode of {0}.",
             "ChineseCh": "观看{0}剧情。",
-            "ChineseTh": "請觀看{0}劇情。",
+            "ChineseTh": "請觀看{0}外傳。",
             "Japanese": "{0}のエピソードを視聴しましょう"
         }
     },
@@ -875,7 +875,7 @@
             "Korea": "샵에서 구매하세요.",
             "English": "Make a purchase from the Shop.",
             "ChineseCh": "在商店购买。",
-            "ChineseTh": "請在商店中購買。",
+            "ChineseTh": "請在商店中進行購買。",
             "Japanese": "ショップで購入しましょう"
         }
     },
@@ -1037,6 +1037,46 @@
             "ChineseCh": "在村庄里和卡莲对话。",
             "ChineseTh": "請在村莊裡與凱倫對話。 ",
             "Japanese": "村でカレンと会話しましょう"
+        }
+    },
+    {
+        "Key": "ItemUse_4",
+        "Text": {
+            "Korea": "{0}.을 {1}개 사용하세요.",
+            "English": "Use {1} {0}(s).",
+            "ChineseCh": "使用{1}个{0}。",
+            "ChineseTh": "請使用{1}個{0}。",
+            "Japanese": "{0}を{1}個使用しましょう。"
+        }
+    },
+    {
+        "Key": "CompletePvp_1",
+        "Text": {
+            "Korea": "콜로세움을 {0}회 참여하세요.",
+            "English": "Participate in the Colosseum {0} time(s).",
+            "ChineseCh": "参与竞技场{0}次。",
+            "ChineseTh": "請參加{0}次競技場。",
+            "Japanese": "コロッセウムに{0}回参加しましょう"
+        }
+    },
+    {
+        "Key": "CompletePvp_2",
+        "Text": {
+            "Korea": "콜로세움에서 {0}회 승리하세요.",
+            "English": "Win {0} time(s) in the Colosseum.",
+            "ChineseCh": "在竞技场中取得{0}次胜利。",
+            "ChineseTh": "請在競技場贏得{0}次勝利。",
+            "Japanese": "コロッセウムで{0}回勝利しましょう"
+        }
+    },
+    {
+        "Key": "CountFriend_1",
+        "Text": {
+            "Korea": "친구를 등록하세요.",
+            "English": "Add friends.",
+            "ChineseCh": "添加好友。",
+            "ChineseTh": "請加入好友。",
+            "Japanese": "フレンドを登録してください"
         }
     }
 ]

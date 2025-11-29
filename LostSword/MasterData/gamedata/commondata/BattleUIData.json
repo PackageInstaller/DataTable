@@ -23,10 +23,12 @@
                 {
                     "ZoneType": 23,
                     "PrevZoneType": 5,
-                    "OpenStage": 50
+                    "OpenStage": 50,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 31
+                    "ZoneType": 31,
+                    "NctAdd": true
                 },
                 {
                     "ZoneType": 57,
@@ -62,25 +64,32 @@
                     "NctAdd": true
                 },
                 {
-                    "ZoneType": 45
+                    "ZoneType": 45,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 46
+                    "ZoneType": 46,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 47
+                    "ZoneType": 47,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 48
+                    "ZoneType": 48,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 49
+                    "ZoneType": 49,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 50
+                    "ZoneType": 50,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 51
+                    "ZoneType": 51,
+                    "NctAdd": true
                 }
             ]
         },
@@ -91,6 +100,10 @@
                 {
                     "ZoneType": 17,
                     "NctAdd": true
+                },
+                {
+                    "ZoneType": 70,
+                    "GlobalExcept": true
                 }
             ]
         },
@@ -111,30 +124,43 @@
                 {
                     "ZoneType": 27,
                     "PrevZoneType": 26,
-                    "OpenStage": 10
+                    "OpenStage": 10,
+                    "NctAdd": true
                 },
                 {
                     "ZoneType": 32,
                     "PrevZoneType": 27,
-                    "OpenStage": 10
+                    "OpenStage": 10,
+                    "NctAdd": true
                 },
                 {
-                    "ZoneType": 6,
+                    "ZoneType": 67
+                },
+                {
+                    "ZoneType": 69
+                },
+                {
+                    "ZoneType": 40,
                     "NctAdd": true,
                     "GlobalExcept": true
                 },
                 {
-                    "ZoneType": 59
-                },
-                {
-                    "ZoneType": 60
-                },
-                {
-                    "ZoneType": 22,
+                    "ZoneType": 58,
                     "NctAdd": true,
                     "GlobalExcept": true
                 },
                 {
+                    "ZoneType": 55,
+                    "NctAdd": true,
+                    "GlobalExcept": true
+                },
+                {
+                    "ZoneType": 61,
+                    "NctAdd": true,
+                    "GlobalExcept": true
+                },
+                {
+                    "ZoneType": 56,
                     "NctAdd": true,
                     "GlobalExcept": true
                 }

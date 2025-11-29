@@ -3651,7 +3651,7 @@
             "Korea": "피해 정보가 없습니다.",
             "English": "No damage data.",
             "ChineseCh": "暂无伤害信息。",
-            "ChineseTh": "沒有傷害資訊。",
+            "ChineseTh": "沒有傷害資訊",
             "Japanese": "ダメージ情報がありません"
         }
     },
@@ -3841,7 +3841,7 @@
             "Korea": "중 {0} 직업",
             "English": "{0} Class",
             "ChineseCh": "中的{0}职业",
-            "ChineseTh": "中{0}職業",
+            "ChineseTh": "中的{0}職業",
             "Japanese": "のうち{0}職業"
         }
     },
@@ -3851,7 +3851,7 @@
             "Korea": "중 {0} 명",
             "English": "{0} Targets",
             "ChineseCh": "中的{0}名",
-            "ChineseTh": "中{0}個",
+            "ChineseTh": "中的{0}名",
             "Japanese": "のうち{0}人"
         }
     },
@@ -3861,7 +3861,7 @@
             "Korea": "목표 세부 항목 : {0}",
             "English": "Detailed Targeting Category: {0}",
             "ChineseCh": "目标详情：{0}",
-            "ChineseTh": "目標詳細項目：{0}",
+            "ChineseTh": "目標細項：{0}",
             "Japanese": "ターゲット詳細項目：{0}"
         }
     },
@@ -4058,32 +4058,108 @@
     {
         "Key": "TriggerCheckBuff",
         "Text": {
-            "Korea": "{0}에게 {1}이 {2}개 {3}일때 발동",
-            "English": "Activates when there are {2} or {3} {1} on {0}.",
-            "ChineseCh": "{0}身上存在{2}个{3}{1}时触发",
-            "ChineseTh": "當{0}身上有{2}個{3}{1}時發動",
-            "Japanese": "{0}の{1}が{2}個{3}の時に発動"
-        }
+            "Korea": "나에게 {0} 버프가 {1}개 {2}이면 발동",
+            "English": "Activates when you have {1} or {2} {0} buff(s)",
+            "ChineseCh": "当我方拥有{1}个或{2}个{0}增益时触发",
+            "ChineseTh": "我身上{0}效果達{1}個{2}時發動",
+            "Japanese": "自分に{0}バフが{1}個{2}の場合、発動"
+        },
+        "~설명": "{0}:이로운 버프, 해로운 버프, {1}:버프 개수, {2}:이상 이하"
     },
     {
         "Key": "TriggerCheckBuffSkill",
         "Text": {
-            "Korea": "{0}에게 {1} 다음 기술 중 한 개의 주문이 걸려있으면 발동. ({2})",
-            "English": "Activates when there is one of the following spells inflicted on {0} {1}. ({2})",
-            "ChineseCh": "{0}身上存在{1}以下技能中的任意咒术时触发。({2})",
-            "ChineseTh": "當{0}被施予{1}以下技能中任一咒語時發動。({2})",
-            "Japanese": "{0}に{1}次の技のうち1個の呪文がかかっていると発動({2})"
-        }
+            "Korea": "나에게 {0}이 시전한 『{1}』버프가 {2}개 {3}이면 발동",
+            "English": "Activates when you have {2} or {3}『{1}』 buff(s) cast by {0}",
+            "ChineseCh": "当我方拥有{2}个或{3}个由{0}施加的『{1}』增益时触发",
+            "ChineseTh": "{0}對我施展的『{1}』效果達{2}個{3}時發動",
+            "Japanese": "自分に{0}が詠唱した『{1}』バフが{2}個{3}の場合、発動"
+        },
+        "~설명": "{0}: 자신, 적군, 아군, 모든 타겟, {1}:스킬 이름, {2}:버프 개수, {3}:이상 이하"
+    },
+    {
+        "Key": "TriggerCheckBuffTeam",
+        "Text": {
+            "Korea": "{0} 중 {1} 버프가 {2}개 {3}인 인원이 있으면 발동",
+            "English": "Activates if any {0} has {2} or {3} {1} buff(s)",
+            "ChineseCh": "当{0}中有队员拥有{2}个或{3}个{1}增益时触发",
+            "ChineseTh": "{0}之中有受到{1}效果達{2}個{3}的成員時發動",
+            "Japanese": "{0}のうち、{1}バフが{2}個{3}の味方がいる場合、発動"
+        },
+        "~설명": "{0}:적군, 아군, {1}:이로운 버프, 해로운 버프, {2}:버프 개수, {3}:이상 이하"
+    },
+    {
+        "Key": "TriggerCheckBuffTeamSkill",
+        "Text": {
+            "Korea": "{0} 중 {1}이 시전한 『{2}』버프가 {3}개 {4}인 인원이 있으면 발동",
+            "English": "Activates if any {0} has {3} or {4} 『{2}』 buff(s) cast by {1}",
+            "ChineseCh": "当{0}中有队员拥有{3}个或{4}个由{1}施加的『{2}』增益时触发",
+            "ChineseTh": "{0}之中有被{1}賦予『{2}』效果達{3}個{4}的成員時發動",
+            "Japanese": "{0}のうち、{1}が詠唱した『{2}』バフが{3}個{4}の味方がいる場合、発動"
+        },
+        "~설명": "{0}:적군, 아군, {1}:자신, 적군, 아군, 모든 대상, {2}:스킬이름, {3}:버프 개수, {4}:이상 이하"
     },
     {
         "Key": "TriggerCheckBuffOwner",
         "Text": {
-            "Korea": "내가 시전한",
-            "English": "by the caster",
-            "ChineseCh": "我释放的",
-            "ChineseTh": "我施展的",
-            "Japanese": "自分が詠唱した"
+            "Korea": "자신",
+            "English": "Self",
+            "ChineseCh": "自身",
+            "ChineseTh": "自身",
+            "Japanese": "自分"
         }
+    },
+    {
+        "Key": "TriggerCheckBuffFriendly",
+        "Text": {
+            "Korea": "아군",
+            "English": "Ally",
+            "ChineseCh": "我方",
+            "ChineseTh": "我軍",
+            "Japanese": "味方"
+        }
+    },
+    {
+        "Key": "TriggerCheckBuffEnemy",
+        "Text": {
+            "Korea": "적군",
+            "English": "Enemy",
+            "ChineseCh": "敌方",
+            "ChineseTh": "敵軍",
+            "Japanese": "敵軍"
+        }
+    },
+    {
+        "Key": "TriggerCheckBuffAll",
+        "Text": {
+            "Korea": "모든 대상",
+            "English": "All Targets",
+            "ChineseCh": "所有目标单位",
+            "ChineseTh": "所有目標",
+            "Japanese": "全対象"
+        }
+    },
+    {
+        "Key": "TriggerCheckStun",
+        "Text": {
+            "Korea": "{0}에 걸리면 발동",
+            "English": "Activates when affected by {0}",
+            "ChineseCh": "陷入{0}时触发",
+            "ChineseTh": "受到{0}攻擊時發動",
+            "Japanese": "{0}にかかると発動"
+        },
+        "~설명": "{0}: 빙결, 기절, 등, "
+    },
+    {
+        "Key": "TriggerCheckStunTeam",
+        "Text": {
+            "Korea": "{0} 중 {1}에 걸린 인원이 있으면 발동",
+            "English": "Activates if any {0} is affected by {1}",
+            "ChineseCh": "当{0}中有队员陷入{1}时触发",
+            "ChineseTh": "{0}有受到{1}攻擊的成員時發動",
+            "Japanese": "{0}のうち、{1}にかかった味方がいる場合、発動"
+        },
+        "~설명": "{0}: 자신, 적군, 아군 {1}: 빙결, 기절 등"
     },
     {
         "Key": "TriggerCheckDead",
@@ -4181,7 +4257,7 @@
             "Korea": "발동 시 횟수가 중첩되고, {0}회가 되면 주문이 발동됩니다.",
             "English": "Stack(s) are gained upon activation. Spell is activated at {0} stack(s).",
             "ChineseCh": "触发时次数叠加，达到{0}次后咒术生效。",
-            "ChineseTh": "發動時將疊加次數，達到{0}次後將發動咒語。",
+            "ChineseTh": "發動時將疊加次數，達到{0}次後將發動咒語",
             "Japanese": "発動時、回数が重複し、{0}回になると呪文が発動されます"
         }
     },
@@ -4191,7 +4267,7 @@
             "Korea": "발동 시 횟수가 중첩되고, {0}회가 되면 대상의 {1}을 {2}만큼 소진시킵니다.",
             "English": "When triggered, the count stacks, and at {0} times, it depletes the target's {1} by {2}.",
             "ChineseCh": "触发时叠加次数，达到{0}次时消耗目标单位{1}{2}点",
-            "ChineseTh": "發動時將疊加次數，達到{0}次後將消耗目標的{1}{2}。",
+            "ChineseTh": "發動時將疊加次數，達到{0}次後將消耗目標的{1}{2}",
             "Japanese": "発動時、回数が重複し、{0}回になると対象の{1}を{2}消耗します"
         }
     },
@@ -4201,7 +4277,7 @@
             "Korea": "발동 시 횟수가 중첩되고, {0}회가 되면 대상의 {1}을 {2}만큼 회복시킵니다.",
             "English": "When triggered, the count stacks, and at {0} times, it restores the target's {1} by {2}.",
             "ChineseCh": "触发时叠加次数，达到{0}次时恢复目标单位{1}{2}点",
-            "ChineseTh": "發動時將疊加次數，達到{0}次後將恢復目標的{1}{2}。",
+            "ChineseTh": "發動時將疊加次數，達到{0}次後將恢復目標的{1}{2}",
             "Japanese": "発動時、回数が重複し、{0}回になると対象の{1}を{2}回復します"
         }
     },
@@ -4211,7 +4287,7 @@
             "Korea": "최대 {0}회, 추가 행동을 합니다.",
             "English": "Can perform additional actions, up to {0} time(s).",
             "ChineseCh": "最多{0}次，额外行动。",
-            "ChineseTh": "最多{0}次，產生額外行動。",
+            "ChineseTh": "最多{0}次，產生額外行動",
             "Japanese": "最大{0}回、追加行動を起こします"
         }
     },
@@ -4221,7 +4297,7 @@
             "Korea": "기본 공격의 대상이 {0}명 추가 됩니다.",
             "English": "The basic attack’s number of targets is increased by {0}.",
             "ChineseCh": "普攻的目标单位额外增加{0}名。",
-            "ChineseTh": "新增{0}個基本攻擊的目標。",
+            "ChineseTh": "新增{0}個基本攻擊的目標",
             "Japanese": "基本攻撃の対象を{0}人追加します"
         }
     },
@@ -4231,7 +4307,7 @@
             "Korea": "다음 효과가 있는 주문을 겁니다.",
             "English": "Apply a spell of the following effect.",
             "ChineseCh": "施加带有以下效果的咒术。",
-            "ChineseTh": "施予具以下效果的咒語。",
+            "ChineseTh": "施予具以下效果的咒語",
             "Japanese": "次の効果がある呪文をかけます"
         }
     },
@@ -4241,7 +4317,7 @@
             "Korea": "레벨이 {0} 증가합니다.",
             "English": "Level is increased by {0}.",
             "ChineseCh": "等级提升{0}级。",
-            "ChineseTh": "等級增加{0}。",
+            "ChineseTh": "等級增加{0}",
             "Japanese": "レベルが{0}アップします"
         }
     },
@@ -4251,7 +4327,7 @@
             "Korea": "가장 레벨이 높은 적보다 레벨이 낮을시 레벨이 적과 같아집니다.",
             "English": "When the level is lower than that of the enemy with the highest level, it becomes equal to the enemy’s level.",
             "ChineseCh": "若等级低于等级最高的敌方，则等级提升至与该敌方齐平。",
-            "ChineseTh": "若等級比最高等級的敵人低時，將增加至與敵人同等級。",
+            "ChineseTh": "若等級比最高等級的敵人低時，將增加至與敵人同等級",
             "Japanese": "一番レベルが高い敵よりレベルが低い時、敵と同レベルになります"
         }
     },
@@ -4261,7 +4337,7 @@
             "Korea": "줄어든 생명력 대비 {0} 능력치가 {1}% 변경됩니다.",
             "English": "The {0} stat is increased or decreased by {1}% based on missing HP.",
             "ChineseCh": "根据损失的生命值比例，{0}能力值变更{1}%。",
-            "ChineseTh": "{0}能力值將根據損失的生命力比例變更為{1}%。",
+            "ChineseTh": "{0}能力值將根據損失的生命力比例變更為{1}%",
             "Japanese": "減少した生命力に比例して{0}能力値が{1}%変更します"
         }
     },
@@ -4271,7 +4347,7 @@
             "Korea": "기본 공격이 {0}명을 추가로 공격합니다.",
             "English": "Basic attack targets and attacks {0} additional targets.",
             "ChineseCh": "普攻额外攻击{0}名敌人。",
-            "ChineseTh": "基本攻擊將額外攻擊{0}名目標。",
+            "ChineseTh": "基本攻擊將額外攻擊{0}名目標",
             "Japanese": "基本攻撃が{0}人を追加で攻撃します"
         }
     },
@@ -4281,7 +4357,7 @@
             "Korea": "대상에게 다음 주문을 겁니다. 시전자가 죽으면 주문은 사라집니다.",
             "English": "Apply the following spell to the target. The spell dissipates upon the caster's death.",
             "ChineseCh": "对目标单位施加以下咒术。施法者阵亡时咒术效果消失。",
-            "ChineseTh": "對目標施予以下咒語，施展者死亡時咒語則會消失。",
+            "ChineseTh": "對目標施予以下咒語，施展者死亡時咒語則會消失",
             "Japanese": "対象に次の呪文をかけます。詠唱者が死亡すると、呪文は消滅します"
         }
     },
@@ -4291,7 +4367,7 @@
             "Korea": "대상에 대한 위협 수준을 변경합니다. ({0})",
             "English": "Alter the target’s threat level. ({0})",
             "ChineseCh": "变更对目标单位的威胁度。({0})",
-            "ChineseTh": "變更對目標的威脅程度。({0}",
+            "ChineseTh": "變更對目標的威脅程度({0})",
             "Japanese": "対象への脅威度を変更します({0})"
         }
     },
@@ -4301,7 +4377,7 @@
             "Korea": "대상에 대한 위협 수준을 {0} 증가시킵니다.",
             "English": "Increase the target’s threat level by {0}.",
             "ChineseCh": "对目标单位的威胁度提升{0}。",
-            "ChineseTh": "對目標的威脅程度增加{0}。",
+            "ChineseTh": "對目標的威脅程度增加{0}",
             "Japanese": "対象への脅威度を{0}アップさせます"
         }
     },
@@ -4311,7 +4387,7 @@
             "Korea": "대상에 대한 위협 수준을 {0} 감소시킵니다.",
             "English": "Reduce the target’s threat level by {0}.",
             "ChineseCh": "对目标单位的威胁度降低{0}。",
-            "ChineseTh": "對目標的威脅程度減少{0}。",
+            "ChineseTh": "對目標的威脅程度減少{0}",
             "Japanese": "対象への脅威度を{0}ダウンさせます"
         }
     },
@@ -4321,7 +4397,7 @@
             "Korea": "대상에 대한 위협 수준을 초기화합니다.",
             "English": "Reset the target’s threat level.",
             "ChineseCh": "重置对目标单位的威胁度。",
-            "ChineseTh": "重置對目標的威脅程度。",
+            "ChineseTh": "重置對目標的威脅程度",
             "Japanese": "対象への脅威度をリセットします"
         }
     },
@@ -4331,7 +4407,7 @@
             "Korea": "나에 대한 대상의 위협 수준을 변경시킵니다. ({0})",
             "English": "Alter the target’s threat level towards the caster. ({0})",
             "ChineseCh": "变更目标单位对我的威胁度。({0})",
-            "ChineseTh": "變更目標對我的威脅程度。({0})",
+            "ChineseTh": "變更目標對我的威脅程度({0})",
             "Japanese": "自分への対象の脅威度を変更させます({0})"
         }
     },
@@ -4341,7 +4417,7 @@
             "Korea": "나에 대한 대상의 위협 수준을 {0} 증가시킵니다.",
             "English": "Increase the target’s threat level towards the caster by {0}.",
             "ChineseCh": "目标单位对我的威胁度提升{0}。",
-            "ChineseTh": "目標對我的威脅程度增加{0}。",
+            "ChineseTh": "目標對我的威脅程度增加{0}",
             "Japanese": "自分への対象の脅威度を{0}アップさせます"
         }
     },
@@ -4351,7 +4427,7 @@
             "Korea": "나에 대한 대상의 위협 수준을 {0} 감소시킵니다.",
             "English": "Reduce the target’s threat level towards the caster by {0}.",
             "ChineseCh": "目标单位对我的威胁度降低{0}。",
-            "ChineseTh": "目標對我的威脅程度減少{0}。",
+            "ChineseTh": "目標對我的威脅程度減少{0}",
             "Japanese": "自分への対象の脅威度を{0}ダウンさせます"
         }
     },
@@ -4361,7 +4437,7 @@
             "Korea": "나에 대한 대상의 위협 수준을 초기화시킵니다.",
             "English": "Reset the target’s threat level towards the caster.",
             "ChineseCh": "重置目标单位对我的威胁度。",
-            "ChineseTh": "重置目標對我的威脅程度。",
+            "ChineseTh": "重置目標對我的威脅程度",
             "Japanese": "自分への対象の脅威度をリセットさせます"
         }
     },
@@ -4371,7 +4447,7 @@
             "Korea": "모든 기술의 남아 있는 재사용 시간을 {0}초로 변경합니다.",
             "English": "Alter the remaining cooldown of all skills to {0}s.",
             "ChineseCh": "将所有技能的冷却时间变更为{0}秒。",
-            "ChineseTh": "所有技能的剩餘冷卻時間變更為{0}秒。",
+            "ChineseTh": "所有技能的剩餘冷卻時間變更為{0}秒",
             "Japanese": "全技の残りクールタイムを{0}秒に変更します"
         }
     },
@@ -4381,7 +4457,7 @@
             "Korea": "모든 기술의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
             "English": "Increase the remaining cooldown of all skills by {0}s.",
             "ChineseCh": "所有技能的冷却时间延长{0}秒。",
-            "ChineseTh": "所有技能的剩餘冷卻時間增加{0}秒。",
+            "ChineseTh": "所有技能的剩餘冷卻時間增加{0}秒",
             "Japanese": "全技の残りクールタイムを{0}秒延長します"
         }
     },
@@ -4391,7 +4467,7 @@
             "Korea": "모든 기술의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
             "English": "Reduce the remaining cooldown of all skills by {0}s.",
             "ChineseCh": "所有技能的冷却时间缩减{0}秒。",
-            "ChineseTh": "所有技能的剩餘冷卻時間減少{0}秒。",
+            "ChineseTh": "所有技能的剩餘冷卻時間減少{0}秒",
             "Japanese": "全技の残りクールタイムを{0}秒短縮します"
         }
     },
@@ -4401,7 +4477,7 @@
             "Korea": "액티브 스킬의 남아 있는 재사용 시간을 {0} 초로 변경합니다.",
             "English": "Alter the remaining cooldown of the active skill to {0}s.",
             "ChineseCh": "将主动技能的冷却时间变更为{0}秒。",
-            "ChineseTh": "主動技能的剩餘冷卻時間變更為{0}秒。",
+            "ChineseTh": "主動技能的剩餘冷卻時間變更為{0}秒",
             "Japanese": "アクティブスキルの残りクールタイムを{0}秒に変更します"
         }
     },
@@ -4411,7 +4487,7 @@
             "Korea": "액티브 스킬의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
             "English": "Increase the remaining cooldown of the active skill by {0}s.",
             "ChineseCh": "主动技能的冷却时间延长{0}秒。",
-            "ChineseTh": "主動技能的剩餘冷卻時間增加{0}秒。",
+            "ChineseTh": "主動技能的剩餘冷卻時間增加{0}秒",
             "Japanese": "アクティブスキルの残りクールタイムを{0}秒延長します"
         }
     },
@@ -4421,7 +4497,7 @@
             "Korea": "액티브 스킬의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
             "English": "Reduce the remaining cooldown of the active skill by {0}s.",
             "ChineseCh": "主动技能的冷却时间缩减{0}秒。",
-            "ChineseTh": "主動技能的剩餘冷卻時間減少{0}秒。",
+            "ChineseTh": "主動技能的剩餘冷卻時間減少{0}秒",
             "Japanese": "アクティブスキルの残りクールタイムを{0}秒短縮します"
         }
     },
@@ -4431,7 +4507,7 @@
             "Korea": "걸려 있는 {0}중 무작위로 선택된 {1} 개의 남은 시간을 {2}초만큼 증가시킵니다.",
             "English": "Increase the remaining time of {1} random {0} in effect by {2}s.",
             "ChineseCh": "附带的随机{1}个{0}的剩余持续时间延长{2}秒。",
-            "ChineseTh": "隨機選擇{1}個被施予的{0}增加其剩餘時間{2}秒。",
+            "ChineseTh": "隨機選擇{1}個被施予的{0}增加其剩餘時間{2}秒",
             "Japanese": "かかっている{0}のうち、ランダムに選択された{1}個の残り時間を{2}秒延長します"
         }
     },
@@ -4441,7 +4517,7 @@
             "Korea": "걸려 있는 {0}중 무작위로 선택된 {1} 개의 남은 시간을 {2}초만큼 감소시킵니다.",
             "English": "Reduce the remaining time of {1} random {0} in effect by {2}s.",
             "ChineseCh": "附带的随机{1}个{0}的剩余持续时间缩减{2}秒。",
-            "ChineseTh": "隨機選擇{1}個被施予的{0}減少其剩餘時間{2}秒。",
+            "ChineseTh": "隨機選擇{1}個被施予的{0}減少其剩餘時間{2}秒",
             "Japanese": "かかっている{0}のうち、ランダムに選択された{1}個の残り時間を{2}秒短縮します"
         }
     },
@@ -4451,7 +4527,7 @@
             "Korea": "걸려 있는 모든 {0}의 남은 시간을 {1}초만큼 증가시킵니다.",
             "English": "Increase the remaining time of all {0} in effect by {1}s.",
             "ChineseCh": "附带的所有{0}的剩余持续时间延长{1}秒。",
-            "ChineseTh": "被施予的所有{0}剩餘時間增加{1}秒。",
+            "ChineseTh": "被施予的所有{0}剩餘時間增加{1}秒",
             "Japanese": "かかっている全{0}の残り時間を{1}秒延長します"
         }
     },
@@ -4461,7 +4537,7 @@
             "Korea": "걸려 있는 모든 {0}의 남은 시간을 {1}초만큼 감소시킵니다.",
             "English": "Reduce the remaining time of all {0} in effect by {1}s.",
             "ChineseCh": "附带的所有{0}的剩余持续时间缩减{1}秒。",
-            "ChineseTh": "被施予的所有{0}剩餘時間減少{1}秒。",
+            "ChineseTh": "被施予的所有{0}剩餘時間減少{1}秒",
             "Japanese": "かかっている全{0}の残り時間を{1}秒短縮します"
         }
     },
@@ -4471,7 +4547,7 @@
             "Korea": "{0}에 걸린 대상에게 공격 시 {1}% 피해 증가",
             "English": "Damage is increased by {1}% when attacking a target affected by {0}.",
             "ChineseCh": "攻击被施加{0}的目标单位时，伤害提升{1}%",
-            "ChineseTh": "攻擊處於{0}狀態的目標時，傷害增加{1}%。",
+            "ChineseTh": "攻擊處於{0}狀態的目標時，傷害增加{1}%",
             "Japanese": "{0}にかかった対象に攻撃時、{1}%ダメージアップ"
         }
     },
@@ -4481,7 +4557,7 @@
             "Korea": "{0}에게 {1}% 확률로 다음 효과를 겁니다.",
             "English": "Apply the following effect to {0} at a {1}% chance.",
             "ChineseCh": "以{1}%的概率对{0}施加以下效果。",
-            "ChineseTh": "以{1}%機率賦予{0}以下效果。",
+            "ChineseTh": "以{1}%機率賦予{0}以下效果",
             "Japanese": "{0}に{1}%の確率で次の効果を与えます"
         }
     },
@@ -4491,7 +4567,7 @@
             "Korea": "죽음에 이르는 공격을 당하면 죽지 않고, 다음 주문이 발동됩니다.",
             "English": "When receiving fatal damage, instead of dying, the following spell is cast.",
             "ChineseCh": "承受致命攻击时免于阵亡，并触发以下咒术。",
-            "ChineseTh": "當受到致死攻擊時不會死亡，並發動以下咒語。",
+            "ChineseTh": "當受到致死攻擊時不會死亡，並發動以下咒語",
             "Japanese": "死に至る攻撃を受けると、死亡せずに次の呪文が発動されます"
         }
     },
@@ -4501,7 +4577,7 @@
             "Korea": "다음 용병이 출전 시 {0}만큼 자신의 능력치가 증가됩니다.",
             "English": "When the following mercenary is deployed, increase caster’s Attribute by {0}.",
             "ChineseCh": "以下佣兵出战时，提升自身相当于{0}的能力值。",
-            "ChineseTh": "以下傭兵出戰時，自身的能力值增加{0}。",
+            "ChineseTh": "以下傭兵出戰時，自身的能力值增加{0}",
             "Japanese": "次の傭兵が出場時、{0}ほど自分の能力値がアップします"
         }
     },
@@ -4521,7 +4597,7 @@
             "Korea": "다음 용병이 출전 시 {0}만큼 자신과 해당하는 용병 모두 능력치가 증가됩니다.",
             "English": "When the following mercenary is deployed, increase caster’s and the affected mercenaries’ Attribute by {0}.",
             "ChineseCh": "以下佣兵出战时，提升自身与佣兵相当于{0}的所有能力值。",
-            "ChineseTh": "以下傭兵出戰時，自身與相應傭兵的所有能力值增加{0}。",
+            "ChineseTh": "以下傭兵出戰時，自身與相應傭兵的所有能力值增加{0}",
             "Japanese": "次の傭兵が出場時、{0}ほど自分と対象の傭兵全員の能力値がアップします"
         }
     },
@@ -4531,7 +4607,7 @@
             "Korea": "다음 용병이 출전 시 {0}만큼 해당하는 용병 모두 능력치가 증가됩니다.",
             "English": "When the following mercenary is deployed, increase the affected mercenaries’ Attribute by {0}.",
             "ChineseCh": "以下佣兵出战时，提升该佣兵相当于{0}的所有能力值。",
-            "ChineseTh": "以下傭兵出戰時，相應傭兵的所有能力值增加{0}。",
+            "ChineseTh": "以下傭兵出戰時，相應傭兵的所有能力值增加{0}",
             "Japanese": "次の傭兵が出場時、{0}ほど対象の傭兵全員の能力値がアップします"
         }
     },
@@ -4541,7 +4617,7 @@
             "Korea": "{0}속성에게 공격 시 {1}% 피해 {2}, {3}속성에게 피격 시 {4}% 피해 {5}",
             "English": "Damage is increased by {1}% when attacking an enemy of {0} element, and damage received is reduced by {3}% when attacked by enemies of {2} element.",
             "ChineseCh": "对{0}属性造成的攻击伤害提升{1}%{2}，受到{3}属性的攻击伤害减免{4}%{5}",
-            "ChineseTh": "攻擊{0}屬性時，{2}傷害{1}%、受到{3}屬性攻擊時{5}傷害{4}%。",
+            "ChineseTh": "攻擊{0}屬性時，{2}傷害{1}%；受到{3}屬性攻擊時，{5}傷害{4}%",
             "Japanese": "{0}属性に攻撃時、{1}%ダメージアップ、{2}属性から被撃時、{3}%ダメージ軽減"
         }
     },
@@ -4551,7 +4627,7 @@
             "Korea": "모든 속성에게 공격 시 {0}% 피해 증가",
             "English": "Damage is increased by {0}% when attacking all elements.",
             "ChineseCh": "对所有属性造成的攻击伤害提升{0}%",
-            "ChineseTh": "攻擊所有屬性時，傷害增加{0}%。",
+            "ChineseTh": "受到所有屬性攻擊時，傷害減少{0}%",
             "Japanese": "全属性に攻撃時、{0}%ダメージアップ"
         }
     },
@@ -4561,7 +4637,7 @@
             "Korea": "모든 속성에게 피격 시 {0}% 피해 감소",
             "English": "Damage received is reduced by {0}% when attacked by all elements.",
             "ChineseCh": "受到所有属性的攻击伤害减免{0}%",
-            "ChineseTh": "受到所有屬性攻擊時，傷害減少{0}%。",
+            "ChineseTh": "受到所有屬性攻擊時，傷害減少{0}%",
             "Japanese": "全属性から被撃時、{0}%ダメージ軽減"
         }
     },
@@ -4571,7 +4647,7 @@
             "Korea": "{0} 직업을 공격 시 {1}% 피해 증가, {2} 직업에게 피격 시 {3}% 피해감소",
             "English": "Damage is increased by {1}% when attacking an enemy of {0} class, and damage received is reduced by {3}% when attacked by enemies of {2} class.",
             "ChineseCh": "对{0}职业造成的攻击伤害提升{1}%，受到{2}职业的攻击伤害减免{3}%",
-            "ChineseTh": "攻擊{0}職業時，傷害增加{1}%；受到{2}職業攻擊時傷害減少{3}%。",
+            "ChineseTh": "攻擊{0}職業時，傷害增加{1}%；受到{2}職業攻擊時，傷害減少{3}%",
             "Japanese": "{0}職業を攻撃時、{1}%ダメージアップ、{2}職業から被撃時、{3}%ダメージ軽減"
         }
     },
@@ -4581,7 +4657,7 @@
             "Korea": "{0}만큼 {1}을 회복합니다.",
             "English": "Recover {1} by {0}.",
             "ChineseCh": "恢复相当于{0}的{1}。",
-            "ChineseTh": "恢復{0}的{1}。",
+            "ChineseTh": "恢復{0}的{1}",
             "Japanese": "{0}ほど{1}を回復します"
         }
     },
@@ -4591,7 +4667,7 @@
             "Korea": "기본 공격 넉백에 면역이 됩니다.",
             "English": "Become immune to knockbacks from basic attacks.",
             "ChineseCh": "免疫普攻的击退效果。",
-            "ChineseTh": "對基本攻擊的擊退免疫。",
+            "ChineseTh": "對基本攻擊的擊退免疫",
             "Japanese": "基本攻撃ノックバックに耐性がつきます"
         }
     },
@@ -4601,7 +4677,7 @@
             "Korea": "스킬 공격 넉백에 면역이 됩니다.",
             "English": "Become immune to knockbacks from skills.",
             "ChineseCh": "免疫技能攻击的击退效果。",
-            "ChineseTh": "對技能攻擊的擊退免疫。",
+            "ChineseTh": "對技能攻擊的擊退免疫",
             "Japanese": "スキル攻撃ノックバックに耐性がつきます"
         }
     },
@@ -4611,7 +4687,7 @@
             "Korea": "넉백에 면역이 됩니다.",
             "English": "Become immune to knockbacks.",
             "ChineseCh": "免疫击退效果。",
-            "ChineseTh": "對擊退免疫。",
+            "ChineseTh": "對擊退免疫",
             "Japanese": "ノックバックに耐性がつきます"
         }
     },
@@ -4621,7 +4697,7 @@
             "Korea": "소환수가 다 죽기 전까지 피해를 받지 않습니다.",
             "English": "Does not take any damage until all summons are slain.",
             "ChineseCh": "在召唤兽全体阵亡前免疫伤害。",
-            "ChineseTh": "在召喚獸全部死亡前不會受到傷害。",
+            "ChineseTh": "在召喚獸全部死亡前不會受到傷害",
             "Japanese": "召喚獣が全て死亡するまで、ダメージを受けません"
         }
     },
@@ -4631,7 +4707,7 @@
             "Korea": "죽음에 이르는 공격을 당하면, 죽지 않고 살아납니다.",
             "English": "Prevents death when receiving fatal damage.",
             "ChineseCh": "承受致命攻击时免于阵亡。",
-            "ChineseTh": "當受到致死攻擊時不會死亡，並存活下來。",
+            "ChineseTh": "當受到致死攻擊時不會死亡，並存活下來",
             "Japanese": "死に至る攻撃を受けると、死亡せずに復活します"
         }
     },
@@ -4641,7 +4717,7 @@
             "Korea": "입힌 피해량의 {0}%만큼 생명력을 회복합니다.",
             "English": "Recover HP equal to {0}% of damage inflicted.",
             "ChineseCh": "恢复相当于承伤量{0}%的生命值。",
-            "ChineseTh": "恢復造成傷害量{0}%的生命力。",
+            "ChineseTh": "恢復造成傷害量{0}%的生命力",
             "Japanese": "受けたダメージ量の{0}%ほど生命力を回復します"
         }
     },
@@ -4651,7 +4727,7 @@
             "Korea": "모든 피해를 {0}% {1} 시킵니다.",
             "English": "Reduce all damage by {0}%.",
             "ChineseCh": "全部伤害降低{0}%。",
-            "ChineseTh": "所有傷害{1}{0}%。",
+            "ChineseTh": "所有傷害{1}{0}%",
             "Japanese": "全ダメージを{0}%軽減します"
         }
     },
@@ -4661,7 +4737,7 @@
             "Korea": "{0} 속성 영웅이 주는 피해를 {1}% {2} 시킵니다.",
             "English": "Reduce damage of {0} heroes by {1}%.",
             "ChineseCh": "{0}属性英雄造成的伤害降低{1}%。",
-            "ChineseTh": "{0}屬性英雄造成的傷害{2}{1}%。",
+            "ChineseTh": "{0}屬性英雄造成的傷害{2}{1}%",
             "Japanese": "{0}属性の英雄が与えるダメージを{1}%軽減します"
         }
     },
@@ -4671,7 +4747,7 @@
             "Korea": "{0}를 {1}% {2} 시킵니다.",
             "English": "Reduce {0} by {1}%.",
             "ChineseCh": "降低{1}%{0}。",
-            "ChineseTh": "{2}{0}{1}%。",
+            "ChineseTh": "使{0}{2}{1}%",
             "Japanese": "{0}を{1}%軽減させます"
         }
     },
@@ -4681,7 +4757,7 @@
             "Korea": "받은 피해의 {0}%를 반사합니다.",
             "English": "Reflect {0}% of damage received.",
             "ChineseCh": "反弹承伤的{0}%。",
-            "ChineseTh": "反射{0}%受到的傷害。",
+            "ChineseTh": "反射{0}%受到的傷害",
             "Japanese": "受けたダメージの{0}%反射します"
         }
     },
@@ -4691,7 +4767,7 @@
             "Korea": "걸려 있는 {0}중 무작위로 선택된 {1}개를 제거합니다.",
             "English": "Remove {1} random {0} in effect.",
             "ChineseCh": "移除附带的{0}中随机{1}个效果。",
-            "ChineseTh": "隨機選擇移除{1}個被施予的{0}。",
+            "ChineseTh": "隨機選擇移除{1}個被施予的{0}",
             "Japanese": "かかっている{0}のうち、ランダムに選択された{1}個を解除します"
         }
     },
@@ -4701,7 +4777,7 @@
             "Korea": "걸려 있는 {0} 모두를 제거합니다.",
             "English": "Remove all {0} in effect.",
             "ChineseCh": "移除附带的全部{0}。",
-            "ChineseTh": "移除所有受到的{0}。",
+            "ChineseTh": "移除所有受到的{0}",
             "Japanese": "かかっている{0}全てを解除します"
         }
     },
@@ -4711,7 +4787,7 @@
             "Korea": "{0}% 확률로 {1} 상태를 저항합니다.",
             "English": "Resist {1} at a {0}% chance.",
             "ChineseCh": "以{0}%的概率抵抗{1}状态。",
-            "ChineseTh": "以{0}%機率抵抗{1}狀態。",
+            "ChineseTh": "以{0}%機率抵抗{1}狀態",
             "Japanese": "{0}%の確率で{1}状態に抵抗します"
         }
     },
@@ -4721,7 +4797,7 @@
             "Korea": "{0} 상태에 면역입니다.",
             "English": "Immune to {0}.",
             "ChineseCh": "免疫{0}状态。",
-            "ChineseTh": "對{0}狀態免疫。",
+            "ChineseTh": "對{0}狀態免疫",
             "Japanese": "{0}状態に耐性がついています"
         }
     },
@@ -4731,7 +4807,7 @@
             "Korea": "모든 상태 이상에 면역입니다.",
             "English": "Immune to all status effects.",
             "ChineseCh": "免疫所有状态异常。",
-            "ChineseTh": "對所有狀態異常免疫。",
+            "ChineseTh": "對所有狀態異常免疫",
             "Japanese": "全状態異常に耐性がついています"
         }
     },
@@ -4741,7 +4817,7 @@
             "Korea": "가장 나중에 죽은 아군을 {0}%의 생명력을 가진 채 부활시킵니다.",
             "English": "Revive the most recently slain ally with {0}% HP.",
             "ChineseCh": "复活最后阵亡的我方队友，并恢复{0}%的生命值。",
-            "ChineseTh": "使最後死亡的我軍以生命力{0}%的狀態復活。",
+            "ChineseTh": "使最後死亡的我軍以生命力{0}%的狀態復活",
             "Japanese": "一番最後に死んだ味方を{0}%の生命力を付与して復活させます"
         }
     },
@@ -4751,7 +4827,7 @@
             "Korea": "가장 나중에 죽은 아군을 {0}%의 생명력을 가진 채 부활시킵니다. {1}초동안 유지 후 다시 죽습니다.",
             "English": "Revive the most recently slain ally with {0}% HP. The revived ally will die after {1}s.",
             "ChineseCh": "复活最后阵亡的我方队友，并恢复{0}%的生命值。该单位复活{1}秒后将再次阵亡。",
-            "ChineseTh": "使最後死亡的我軍以生命力{0}%的狀態復活，並在維持{1}秒後再次死亡。",
+            "ChineseTh": "使最後死亡的我軍以生命力{0}%的狀態復活，並在維持{1}秒後再次死亡",
             "Japanese": "一番最後に死んだ味方を{0}%の生命力を付与して復活させます。{1}秒間持続した後、また死亡します"
         }
     },
@@ -4761,7 +4837,7 @@
             "Korea": "{0}초동안 유지되는 소환자와 동일한 레벨의 {1}을/를 소환합니다. 소환물은 {2}%의 생명력을 가집니다.",
             "English": "Summon {1} with the same level as the summoner for {0}s. The summon’s HP is equal to {2}% of the summoner’s HP.",
             "ChineseCh": "召唤与召唤者等级相同的{1}，持续{0}秒。召唤物拥有召唤者{2}%的生命值。",
-            "ChineseTh": "召喚持續{0}秒與召喚者同樣等級的{1}。獲得召喚物品{2}%的生命力。",
+            "ChineseTh": "{0}秒期間，召喚與召喚者同樣等級的{1}，且召喚物獲得{2}%的生命力",
             "Japanese": "{0}秒間持続する召喚者と同レベルの{1}を召喚します。召喚物は{2}%の生命力を持ちます"
         }
     },
@@ -4771,7 +4847,7 @@
             "Korea": "{0}초동안 유지되는 소환자와 동일한 레벨의 {1}을/를 소환합니다.",
             "English": "Summon {1} with the same level as the summoner for {0}s.",
             "ChineseCh": "召唤与召唤者等级相同的{1}，持续{0}秒。",
-            "ChineseTh": "召喚持續{0}秒與召喚者同樣等級的{1}。",
+            "ChineseTh": "{0}秒期間，召喚與召喚者同樣等級的{1}",
             "Japanese": "{0}秒間持続する召喚者と同レベルの{1}を召喚します"
         }
     },
@@ -4781,7 +4857,7 @@
             "Korea": "{0} 기술로 쌓은 주문을 모두 사용하여 개당 {1}만큼 추가 피해를 줍니다.",
             "English": "Deals additional damage of {1} per spell by using all spells stacked from {0} skill.",
             "ChineseCh": "消耗通过{0}技能累计的全部咒术，每个咒术将造成相当于{1}的额外伤害。",
-            "ChineseTh": "使用{0}技能累積的所有咒語後，每個造成{1}的額外傷害。",
+            "ChineseTh": "使用{0}技能累積的所有咒語後，每個咒語造成{1}的額外傷害",
             "Japanese": "{0}スキルでたまった呪文を全て使用し、1つあたり{1}ほどの追加ダメージを与えます"
         }
     },
@@ -4791,7 +4867,7 @@
             "Korea": "{0} 기술로 쌓은 주문을 모두 사용하여 개당 {1}만큼 {2}초 동안 증가시킵니다.",
             "English": "Increases by {1} for {2}s per spell by using all spells stacked from {0} skill.",
             "ChineseCh": "消耗通过{0}技能累计的全部咒术，每个咒术将提升相当于{1}，持续{2}秒。",
-            "ChineseTh": "使用{0}技能累積的所有咒語後，{2}秒期間每個增加{1}。",
+            "ChineseTh": "使用{0}技能累積的所有咒語後，{2}秒期間每個咒語增加{1}",
             "Japanese": "{0}スキルでたまった呪文を全て使用し、1つあたり{1}ほど{2}秒間アップします"
         }
     },
@@ -4801,7 +4877,7 @@
             "Korea": "{0} 기술로 쌓은 주문을 모두 사용하여 개당 {1}만큼 {2}초 동안 감소시킵니다.",
             "English": "Decreases by {1} for {2}s per spell by using all spells stacked from {0} skill.",
             "ChineseCh": "消耗通过{0}技能累计的全部咒术，每个咒术将降低相当于{1}，持续{2}秒。",
-            "ChineseTh": "使用{0}技能累積的所有咒語後，{2}秒期間每個減少{1}。",
+            "ChineseTh": "使用{0}技能累積的所有咒語後，{2}秒期間每個咒語減少{1}",
             "Japanese": "{0}スキルでたまった呪文を全て使用し、1つあたり{1}ほど{2}秒間軽減します"
         }
     },
@@ -4811,7 +4887,7 @@
             "Korea": "자세한 정보를 표기할 수 없습니다.",
             "English": "There are no details.",
             "ChineseCh": "无法显示详情。",
-            "ChineseTh": "無法顯示詳細資訊。",
+            "ChineseTh": "無法顯示詳細資訊",
             "Japanese": "詳細の情報を表示できません"
         }
     },
@@ -4821,7 +4897,7 @@
             "Korea": "피해를 줄시 {0}%의 피해를 추가로 줍니다.",
             "English": "Inflict {0}% additional damage when dealing damage.",
             "ChineseCh": "造成伤害时，额外造成{0}%的伤害。",
-            "ChineseTh": "造成傷害時，額外造成{0}%傷害。",
+            "ChineseTh": "造成傷害時，額外造成{0}%的傷害",
             "Japanese": "ダメージを与える時、{0}%のダメージを追加で与えます"
         }
     },
@@ -4831,7 +4907,7 @@
             "Korea": "피해를 받을시 {0}%의 피해를 추가로 받습니다.",
             "English": "Receive {0}% additional damage when receiving damage.",
             "ChineseCh": "受到伤害时，额外承担{0}%的伤害。",
-            "ChineseTh": "受到傷害時，額外受到{0}%傷害。",
+            "ChineseTh": "受到傷害時，額外受到{0}%的傷害",
             "Japanese": "ダメージを受ける時、{0}%のダメージを追加で受けます"
         }
     },
@@ -4841,7 +4917,7 @@
             "Korea": "{0}을 추가로 공격합니다.",
             "English": "Additionally attack {0}.",
             "ChineseCh": "额外攻击{0}。",
-            "ChineseTh": "額外攻擊{0}。",
+            "ChineseTh": "額外攻擊{0}",
             "Japanese": "{0}を追加で攻撃します"
         }
     },
@@ -4851,7 +4927,7 @@
             "Korea": "{0}, 다음 대상에 지속 피해를 줍니다.",
             "English": "{0}, deals continuous damage to the next target.",
             "ChineseCh": "{0}，对下一个目标单位造成持续伤害。",
-            "ChineseTh": "{0}，對以下目標造成持續傷害。",
+            "ChineseTh": "{0}，對以下目標造成持續傷害",
             "Japanese": "{0}、次の対象に連続ダメージを与えます"
         }
     },
@@ -4861,7 +4937,7 @@
             "Korea": "공격 시 {0}% 확률로 {1}초간 행동불능에 걸립니다.",
             "English": "When attacking, there is a {0}% chance to become restrained for {1}s.",
             "ChineseCh": "攻击时，以{0}%的概率施加行动受限效果，持续{1}秒。",
-            "ChineseTh": "攻擊時，以{0}%機率在{1}秒期間陷入無法行動的狀態。",
+            "ChineseTh": "攻擊時，以{0}%機率在{1}秒期間陷入無法行動的狀態",
             "Japanese": "攻撃時、{0}%の確率で{1}秒間、行動不能になります"
         }
     },
@@ -4871,7 +4947,7 @@
             "Korea": "{0}상태일때 {1}의 피해를 추가로 {2}회 더 받습니다.",
             "English": "When in the {0} state, receive {1} damage {2} more time(s).",
             "ChineseCh": "处于{0}状态时，额外承受{2}次{1}的伤害。",
-            "ChineseTh": "處於{0}狀態時，額外受到{2}次{1}的傷害。",
+            "ChineseTh": "處於{0}狀態時，額外受到{2}次{1}的傷害",
             "Japanese": "{0}状態の時、{1}のダメージを追加で{2}回受けます"
         }
     },
@@ -4881,7 +4957,7 @@
             "Korea": "공격대상을 맞출 수 없습니다.",
             "English": "Unable to land attacks on the target.",
             "ChineseCh": "无法锁定攻击目标单位。",
-            "ChineseTh": "無法鎖定攻擊的目標。",
+            "ChineseTh": "無法鎖定攻擊的目標",
             "Japanese": "攻撃対象を当てることができません"
         }
     },
@@ -4891,7 +4967,7 @@
             "Korea": "시전자와 같은 편이 됩니다.",
             "English": "Become allied with the caster.",
             "ChineseCh": "成为与施法者相同阵营。",
-            "ChineseTh": "變為與施展者同一陣營。",
+            "ChineseTh": "與施展者變為同一陣營",
             "Japanese": "詠唱者の味方になります"
         }
     },
@@ -4901,7 +4977,7 @@
             "Korea": "{0}에 걸린 대상을 공격시 {1}%의 추가 피해.",
             "English": "Inflict {1}% additional damage to targets with {0}.",
             "ChineseCh": "攻击附带{0}的目标单位时，造成{1}%的额外伤害。",
-            "ChineseTh": "攻擊陷入{0}效果的目標時，造成{1}%額外傷害。",
+            "ChineseTh": "攻擊陷入{0}效果的目標時，造成{1}%額外傷害",
             "Japanese": "{0}にかかった対象を攻撃時、{1}%の追加ダメージ"
         }
     },
@@ -4911,7 +4987,7 @@
             "Korea": "모든 공격이 치명타로 들어갑니다.",
             "English": "All attacks become critical hits.",
             "ChineseCh": "攻击100%暴击。",
-            "ChineseTh": "所有攻擊轉變為暴擊。",
+            "ChineseTh": "所有攻擊轉變為暴擊",
             "Japanese": "全ての攻撃にクリティカルヒットが発生します"
         }
     },
@@ -4921,7 +4997,7 @@
             "Korea": "{0}, {1} 만큼 피해를 받습니다.",
             "English": "{0}, takes {1} damage.",
             "ChineseCh": "{0}，承受相当于{1}的伤害。",
-            "ChineseTh": "{0}，受到{1}傷害。",
+            "ChineseTh": "{0}，受到{1}傷害",
             "Japanese": "{0}、{1}ほどダメージを受けます"
         }
     },
@@ -4931,7 +5007,7 @@
             "Korea": "{0}초 마다 {1} 만큼 피해를 받습니다.",
             "English": "Receive {1} damage every {0}s.",
             "ChineseCh": "每{0}秒承受相当于{1}的伤害。",
-            "ChineseTh": "每{0}秒受到{1}的傷害。",
+            "ChineseTh": "每{0}秒受到{1}的傷害",
             "Japanese": "{0}秒ごとに{1}ほどダメージを受けます"
         }
     },
@@ -4941,7 +5017,7 @@
             "Korea": "{0}, {1} 만큼 생명력을 회복 합니다.",
             "English": "{0}, restores {1} HP.",
             "ChineseCh": "{0}，恢复相当于{1}的生命值。",
-            "ChineseTh": "{0}，恢復{1}生命力。",
+            "ChineseTh": "{0}，恢復{1}生命力",
             "Japanese": "{0}、{1}ほど生命力を回復します"
         }
     },
@@ -4951,7 +5027,7 @@
             "Korea": "{0}초마다 {1} 만큼 생명력을 회복 합니다.",
             "English": "Recover HP equal to {1} every {0}s.",
             "ChineseCh": "每{0}秒恢复相当于{1}的生命值。",
-            "ChineseTh": "每{0}秒恢復{1}生命力。",
+            "ChineseTh": "每{0}秒恢復{1}生命力",
             "Japanese": "{0}秒ごとに{1}ほど生命力を回復します"
         }
     },
@@ -4961,7 +5037,7 @@
             "Korea": "피아의 구분이 없어집니다.",
             "English": "The distinction between allies and enemies disappears.",
             "ChineseCh": "无视敌友关系。",
-            "ChineseTh": "不分敵友。",
+            "ChineseTh": "不分敵友",
             "Japanese": "敵と味方の区別がつかなくなります"
         }
     },
@@ -4971,7 +5047,7 @@
             "Korea": "대상 대신 시전자가 피해를 받습니다.",
             "English": "The caster takes damage in place of the target.",
             "ChineseCh": "施法者代替目标单位承受伤害。",
-            "ChineseTh": "施展者代替目標受到傷害。",
+            "ChineseTh": "施展者代替目標受到傷害",
             "Japanese": "対象の代わりに詠唱者がダメージを受けます"
         }
     },
@@ -4991,7 +5067,7 @@
             "Korea": "상대의 방어를 무시한 피해를 줍니다.",
             "English": "Deal damage that ignores the target’s Defense.",
             "ChineseCh": "无视对手的防御造成伤害。",
-            "ChineseTh": "造成無視對手防禦的傷害。",
+            "ChineseTh": "造成無視對手防禦的傷害",
             "Japanese": "相手の防御を無視したダメージを与えます"
         }
     },
@@ -5001,7 +5077,7 @@
             "Korea": "{0}회의 피해에 면역이 됩니다.",
             "English": "Become immune to damage from {0} hit(s).",
             "ChineseCh": "免疫{0}次伤害。",
-            "ChineseTh": "對{0}次傷害免疫。",
+            "ChineseTh": "對{0}次傷害免疫",
             "Japanese": "{0}回のダメージに耐性がつきます"
         }
     },
@@ -5011,7 +5087,7 @@
             "Korea": "피해에 면역이 됩니다.",
             "English": "Become immune to damage.",
             "ChineseCh": "免疫伤害。",
-            "ChineseTh": "對傷害免疫。",
+            "ChineseTh": "對傷害免疫",
             "Japanese": "ダメージに耐性がつきます"
         }
     },
@@ -5021,7 +5097,7 @@
             "Korea": "치유 주문의 효과가 없습니다.",
             "English": "Healing spells have no effect.",
             "ChineseCh": "治愈咒术无效。",
-            "ChineseTh": "治癒咒語無效。",
+            "ChineseTh": "治癒咒語無效",
             "Japanese": "回復呪文の効果がありません"
         }
     },
@@ -5031,7 +5107,7 @@
             "Korea": "저항 가능한 해로운 주문에 면역이 됩니다.",
             "English": "Become immune to harmful spells that can be resisted.",
             "ChineseCh": "免疫可被抵抗的减益咒术。",
-            "ChineseTh": "對可抵抗的減益法術免疫。",
+            "ChineseTh": "對可抵抗的減益法術免疫",
             "Japanese": "抵抗可能なデバフ呪文に耐性がつきます"
         }
     },
@@ -5041,7 +5117,7 @@
             "Korea": "도발에 면역이 됩니다.",
             "English": "Become immune to taunts.",
             "ChineseCh": "免疫嘲讽",
-            "ChineseTh": "對挑釁免疫。",
+            "ChineseTh": "對挑釁免疫",
             "Japanese": "挑発に耐性がつきます"
         }
     },
@@ -5051,7 +5127,7 @@
             "Korea": "행동 불능에 면역이 됩니다.",
             "English": "Become immune to restraint.",
             "ChineseCh": "免疫行动受限",
-            "ChineseTh": "對無法行動免疫。",
+            "ChineseTh": "對無法行動免疫",
             "Japanese": "行動不能に耐性がつきます"
         }
     },
@@ -5061,7 +5137,7 @@
             "Korea": "기본 공격을 할 수 없습니다.",
             "English": "Cannot perform basic attacks.",
             "ChineseCh": "无法进行普通攻击。",
-            "ChineseTh": "無法進行基本攻擊。",
+            "ChineseTh": "無法進行基本攻擊",
             "Japanese": "基本攻撃ができません"
         }
     },
@@ -5071,7 +5147,7 @@
             "Korea": "이동 할 수 없습니다.",
             "English": "Cannot move.",
             "ChineseCh": "无法移动",
-            "ChineseTh": "無法移動。",
+            "ChineseTh": "無法移動",
             "Japanese": "移動できません"
         }
     },
@@ -5081,7 +5157,7 @@
             "Korea": "직접 목표가 되지 않는 주문에 걸립니다.",
             "English": "Casts a spell that prevents the affected target from being directly targeted.",
             "ChineseCh": "被施予不会成为直接目标的咒术。",
-            "ChineseTh": "被施予不成為直接目標的咒語。",
+            "ChineseTh": "被施予不會成為直接目標的咒語",
             "Japanese": "直接ターゲットにならない呪文にかかります"
         }
     },
@@ -5091,7 +5167,7 @@
             "Korea": "이동 제약이 사라지는 주문에 걸립니다.",
             "English": "Casts a spell that removes movement restrictions.",
             "ChineseCh": "被施予移除移动限制的咒术。",
-            "ChineseTh": "被施予解除移動限制的咒語。",
+            "ChineseTh": "被施予解除移動限制的咒語",
             "Japanese": "移動制限がなくなる呪文にかかります"
         }
     },
@@ -5101,7 +5177,7 @@
             "Korea": "제어권을 잃고, 시전자를 우선으로 공격하게 만듭니다.",
             "English": "Loses control and prioritizes attacking the caster.",
             "ChineseCh": "失去控制权，并优先攻击施法者。",
-            "ChineseTh": "失去控制權，優先攻擊施法者。",
+            "ChineseTh": "失去控制權，優先攻擊施法者",
             "Japanese": "制御不能になり、詠唱者を優先して攻撃させます"
         }
     },
@@ -5111,7 +5187,7 @@
             "Korea": "받은 피해의 {0}%를 반사하는 주문에 걸립니다.",
             "English": "Casts a spell that reflects {0}% of damage received.",
             "ChineseCh": "被施予反弹{0}%承伤的咒术。",
-            "ChineseTh": "被施予反射{0}%受到的傷害的咒語。",
+            "ChineseTh": "被施予反射{0}%受到的傷害的咒語",
             "Japanese": "受けたダメージの{0}%を反射する呪文にかかります"
         }
     },
@@ -5121,7 +5197,7 @@
             "Korea": "행동 할수 없는 주문에 걸립니다.",
             "English": "Casts a spell that prevents actions.",
             "ChineseCh": "被施予无法行动的咒术。",
-            "ChineseTh": "被施予無法行動的咒語。",
+            "ChineseTh": "被施予無法行動的咒語",
             "Japanese": "行動できない呪文にかかります"
         }
     },
@@ -5131,7 +5207,7 @@
             "Korea": "{0} 만큼 피해를 막아주는 보호막을 생성합니다.",
             "English": "Create a shield that blocks damage equal to {0}.",
             "ChineseCh": "生成可吸收相当于{0}伤害的护盾。",
-            "ChineseTh": "生成阻擋{0}傷害的防護罩。",
+            "ChineseTh": "生成阻擋{0}傷害的防護罩",
             "Japanese": "{0}ほどダメージを遮断するシールドを生成します"
         }
     },
@@ -5141,7 +5217,7 @@
             "Korea": "스킬을 사용할 수 없습니다.",
             "English": "Affected target cannot use skills.",
             "ChineseCh": "无法使用技能。",
-            "ChineseTh": "無法使用技能。",
+            "ChineseTh": "無法使用技能",
             "Japanese": "スキルを使用できません"
         }
     },
@@ -5151,7 +5227,7 @@
             "Korea": "궁극기 및 액티브 스킬을 사용할 수 없습니다.",
             "English": "Ultimate and active skills cannot be used.",
             "ChineseCh": "无法使用终极技能及主动技能。",
-            "ChineseTh": "無法使用終極技及主動技能。",
+            "ChineseTh": "無法使用終極技及主動技能",
             "Japanese": "必殺技やスキルを使用できません"
         }
     },
@@ -5161,7 +5237,7 @@
             "Korea": "잠을 재워 행동하지 못하게 합니다. 피해를 받으면 깨어납니다.",
             "English": "Prevents the target from taking actions by putting them to sleep. The target wakes up upon taking damage.",
             "ChineseCh": "进入睡眠状态，无法行动。受到伤害时苏醒。",
-            "ChineseTh": "陷入沉睡狀態無法行動，受到傷害時將甦醒。",
+            "ChineseTh": "陷入沉睡狀態而無法行動，受到傷害時將甦醒",
             "Japanese": "眠らせて行動不能にします。ダメージを受けると目覚めます"
         }
     },
@@ -5171,7 +5247,7 @@
             "Korea": "어떤 행동도 할 수 없습니다.",
             "English": "Cannot take any actions.",
             "ChineseCh": "无法进行任何行动。",
-            "ChineseTh": "無法採取任何行動。",
+            "ChineseTh": "無法採取任何行動",
             "Japanese": "どんな行動もできません"
         }
     },
@@ -5181,7 +5257,7 @@
             "Korea": "어떤 행동도 할 수 없습니다.",
             "English": "Cannot take any actions.",
             "ChineseCh": "无法进行任何行动。",
-            "ChineseTh": "無法採取任何行動。",
+            "ChineseTh": "無法採取任何行動",
             "Japanese": "どんな行動もできません"
         }
     },
@@ -5191,7 +5267,7 @@
             "Korea": "{0}, 폭탄은 사라질 때 대상에 피해를 줍니다.",
             "English": "{0}, bombs deal damage to the target when they disappear.",
             "ChineseCh": "{0}，炸弹消失时，对目标单位造成伤害。",
-            "ChineseTh": "{0}，炸彈消失時對目標造成傷害。",
+            "ChineseTh": "{0}，炸彈消失時對目標造成傷害",
             "Japanese": "{0}、爆弾は消える際にダメージを与えます"
         }
     },
@@ -5201,7 +5277,7 @@
             "Korea": "마나를 {0}{1}만큼 소진시키는 주문에 걸립니다.",
             "English": "Casts a spell that depletes {0}{1} mana.",
             "ChineseCh": "被施予咒术，消耗相当于{0}{1}的灵力。",
-            "ChineseTh": "被施予消耗{0}{1}瑪那的咒語。",
+            "ChineseTh": "被施予消耗{0}{1}瑪那的咒語",
             "Japanese": "マナを{0}{1}ほど消耗させる呪文にかかります"
         }
     },
@@ -5211,7 +5287,7 @@
             "Korea": "자세한 정보를 표기할 수 없습니다.",
             "English": "There are no details.",
             "ChineseCh": "无法显示详情。",
-            "ChineseTh": "無法顯示詳細資訊。",
+            "ChineseTh": "無法顯示詳細資訊",
             "Japanese": "詳細の情報を表示できません"
         }
     },
@@ -5421,7 +5497,7 @@
             "Korea": "죽은 모든 아군을 부활시킵니다.",
             "English": "Revive all fallen allies.",
             "ChineseCh": "复活所有已阵亡的我军。",
-            "ChineseTh": "復活所有死亡的我軍。",
+            "ChineseTh": "復活所有死亡的我軍",
             "Japanese": "死んだ味方を全て復活させます"
         }
     },
@@ -5431,7 +5507,7 @@
             "Korea": "살아 있는 모든 아군의 체력을 {0}% 회복시킵니다.",
             "English": "Recover HP of all surviving allies by {0}%.",
             "ChineseCh": "恢复所有存活我军{0}%的生命值。",
-            "ChineseTh": "恢復所有倖存我軍的{0}%生命力。",
+            "ChineseTh": "恢復所有倖存我軍的{0}%生命力",
             "Japanese": "生きている味方全員のHPを{0}％回復させます"
         }
     },
@@ -5441,7 +5517,7 @@
             "Korea": "살아 있는 아군 중 무작위로 {0}명이 사망합니다.",
             "English": "Among the surviving allies, {0} will fall randomly.",
             "ChineseCh": "随机使{0}名存活的我军阵亡。",
-            "ChineseTh": "隨機使{0}名倖存的我軍死亡。",
+            "ChineseTh": "隨機使{0}名倖存的我軍死亡",
             "Japanese": "生きている味方からランダムで{0}人が死亡します"
         }
     },
@@ -5451,7 +5527,7 @@
             "Korea": "죽은 아군 중 무작위로 {0}명을 부활시킵니다.",
             "English": "Revive {0} random allies.",
             "ChineseCh": "随机复活{0}名已阵亡的我军。",
-            "ChineseTh": "隨機復活{0}名死亡的我軍。",
+            "ChineseTh": "隨機復活{0}名死亡的我軍",
             "Japanese": "死んだ味方からランダムで{0}人が復活します"
         }
     },
@@ -5521,7 +5597,7 @@
             "Korea": "전투에 특화된 모습으로 변신합니다.",
             "English": "Transform into a figure specialized for battles.",
             "ChineseCh": "变身为适合战斗的形态。",
-            "ChineseTh": "戰鬥時，變身為特化狀態。",
+            "ChineseTh": "戰鬥時，變身為特化狀態",
             "Japanese": "戦闘モードに変身します"
         }
     },
@@ -5581,7 +5657,7 @@
             "Korea": "대상에게 걸린 이로운 버프의 중첩 횟수 당 {0}%의 피해가 증가합니다.",
             "English": "Damage is increased by {0}% for every stack of beneficial buffs on the target.",
             "ChineseCh": "目标单位身上的有利增益效果每层提升{0}%伤害",
-            "ChineseTh": "目標身上的正面增益效果每次疊加增加{0}%傷害。",
+            "ChineseTh": "目標身上的正面增益效果每次疊加增加{0}%傷害",
             "Japanese": "対象がかかった有利なバフの重複回数につきダメージが{0}％アップする"
         }
     },
@@ -5591,7 +5667,7 @@
             "Korea": "대상에게 걸린 해로운 버프의 중첩 횟수 당 {0}%의 피해가 증가합니다.",
             "English": "Damage is increased by {0}% for every stack of harmful buffs on the target.",
             "ChineseCh": "目标单位身上的不利增益效果每层提升{0}%伤害",
-            "ChineseTh": "目標身上的負面增益效果每次疊加增加{0}%傷害。",
+            "ChineseTh": "目標身上的負面增益效果每次疊加增加{0}%傷害",
             "Japanese": "対象がかかった有利なバフの重複回数につきダメージが{0}％アップする"
         }
     },
@@ -5611,7 +5687,7 @@
             "Korea": "{0}회의 피해에 면역이 됩니다. 버프가 사라지기 전에 모든 횟수가 차감되면 {1}초간 스턴에 걸립니다.",
             "English": "Grants immunity to {0} instances of damage. If all instances are consumed before the buff expires, you will be stunned for {1}s.",
             "ChineseCh": "可免疫{0}次伤害，若在增益期间内受到同等次数的攻击，则会陷入眩晕，持续{1}秒。",
-            "ChineseTh": "可免疫{0}次傷害，若在增益消失前耗盡所有次數，則會在{1}秒期間陷入衝暈。",
+            "ChineseTh": "可免疫{0}次傷害，若在增益消失前耗盡所有次數，則會在{1}秒期間陷入衝暈",
             "Japanese": "{0}回のダメージに耐性がつきます。バフが消える前に全ての回数を使い切ると{1}秒間スタン状態になります"
         }
     },
@@ -5621,7 +5697,7 @@
             "Korea": "상태이상에 면역이 됩니다.",
             "English": "Become immune to status effects.",
             "ChineseCh": "免疫所有状态异常。",
-            "ChineseTh": "對狀態異常免疫。",
+            "ChineseTh": "對狀態異常免疫",
             "Japanese": "状態異常に対する耐性がつきます"
         }
     },
@@ -5631,7 +5707,7 @@
             "Korea": "장비 메인 옵션의 효율이 {0}% 증가합니다.\n아이템 레벨 {1} 이하의 장비에만 적용됩니다.",
             "English": "The potency of the Equipment Main Stats is increased by {0}%.\nApplies only to equipment with item level {1} or lower.",
             "ChineseCh": "装备的核心词条效率增加{0}%。\n仅适用于道具等级{1}以下的装备。",
-            "ChineseTh": "裝備的主功能效率增加{0}%。\n只會套用於道具等級{1}以下的裝備。",
+            "ChineseTh": "裝備的主功能效率增加{0}%\n只會套用於道具等級{1}以下的裝備",
             "Japanese": "装備のメインオプション効率が{0}%アップします\nアイテムレベル{1}以下の装備に適用されます"
         }
     },
@@ -5641,7 +5717,7 @@
             "Korea": "장비 메인 옵션의 효율이 {0}% 감소합니다.\n아이템 레벨 {1} 이하의 장비에만 적용됩니다.",
             "English": "The potency of the Equipment Main Stats is decreased by {0}%.\nApplies only to equipment with item level {1} or lower.",
             "ChineseCh": "装备的核心词条效率减少{0}%。\n仅适用于道具等级{1}以下的装备。",
-            "ChineseTh": "裝備的主功能效率減少{0}%。\n只會套用於道具等級{1}以下的裝備。",
+            "ChineseTh": "裝備的主功能效率減少{0}%\n只會套用於道具等級{1}以下的裝備",
             "Japanese": "装備のメインオプション効率が{0}%ダウンします\nアイテムレベル{1}以下の装備に適用されます"
         }
     },
@@ -5651,7 +5727,7 @@
             "Korea": "대상에게 감전을 겁니다. 감전에 걸린 대상은 받은 피해의 {0}% 피해를 추가로 받습니다.",
             "English": "Inflicts shock on the target. Targets affected by shock take an additional {0}% damage based on the attacker's ATK when hit.",
             "ChineseCh": "使目标陷入触电状态。触电状态下的目标将额外承受{0}%的伤害。",
-            "ChineseTh": "賦予目標觸電。受到觸電的目標將額外獲得受到的傷害{0}%的傷害。",
+            "ChineseTh": "賦予目標觸電，受到觸電的目標將額外獲得受到的傷害{0}%的傷害",
             "Japanese": "対象に感電を与えます。感電状態の対象はダメージを受ける際に、攻撃者の攻撃力の{0}％分のダメージを追加で受けます"
         }
     },
@@ -5661,7 +5737,7 @@
             "Korea": "피해 감소 수치 만큼 받는 피해가 감소합니다. 이 스탯은 최종 {0} 이상 적용되지 않습니다.",
             "English": "Damage received is reduced by the amount of Damage Reduction. This stat cannot exceed {0}.",
             "ChineseCh": "降低相当于伤害减免数值的伤害。该属性值最高生效{0}%。",
-            "ChineseTh": "受到的傷害減少至傷害減少數值。該能力在最後{0}以上不會套用。",
+            "ChineseTh": "根據傷害減少數值，受到的傷害減少，該能力在最後{0}以上不會套用",
             "Japanese": "ダメージ軽減数値だけ被ダメージが軽減します。このステータスは、最終的に{0}以上は適用されません"
         }
     },
@@ -5671,7 +5747,7 @@
             "Korea": "받은 피해를 최대 체력이 가장 높은 아군(자신은 제외) 중 1인에게 {0}%의 피해를 나눠줍니다.",
             "English": "Distributes {0}% of the damage received to one of the allies (excluding yourself) with the highest current HP.",
             "ChineseCh": "分摊受到的伤害，将{0}%的伤害分摊给队伍中 (不包括自身) 生命值上限最高的友方单位。",
-            "ChineseTh": "分享受到的傷害{0}%給最大體力最高的我軍(自己除外)中的一人。",
+            "ChineseTh": "分享受到的傷害{0}%給最大體力最高的我軍(自己除外)中的一人",
             "Japanese": "受けたダメージの{0}%を現在HPが最も高い味方(自分を除く)1人に分配します"
         }
     },
@@ -5681,7 +5757,7 @@
             "Korea": "살아 있는 모든 아군의 체력을 {0}% 깎습니다.",
             "English": "Reduces HP of all surviving allies by {0}%.",
             "ChineseCh": "削减所有存活的我方单位{0}%的生命值。",
-            "ChineseTh": "減少所有倖存我軍的{0}%生命力。",
+            "ChineseTh": "減少所有倖存我軍的{0}%生命力",
             "Japanese": "生きている味方全員のHPが{0}％減少します"
         }
     },
@@ -5718,11 +5794,11 @@
     {
         "Key": "BuffAccumMax",
         "Text": {
-            "Korea": "(최대 {0}중첩)",
-            "English": "(Max {0} stacks)",
-            "ChineseCh": "(最多叠加{0}层)",
-            "ChineseTh": "(最多{0}疊加)",
-            "Japanese": "(最大{0}重複)"
+            "Korea": "({0}중첩 달성 시, 최대 {1}회 획득)",
+            "English": "(Gained upon reaching {0} stack(s), can be acquired up to {1} time(s))",
+            "ChineseCh": "（叠加{0}层时，最多可获得{1}次）",
+            "ChineseTh": "(達成{0}疊加時，最多獲得{1}次)",
+            "Japanese": "({0}重複達成時、最大{1}回獲得)"
         }
     },
     {
@@ -5731,7 +5807,7 @@
             "Korea": "행동 불가에 면역이 됩니다.",
             "English": "Become immune to incapacitation.",
             "ChineseCh": "免疫【昏厥】效果。",
-            "ChineseTh": "對無法行動免疫。",
+            "ChineseTh": "對無法行動免疫",
             "Japanese": "行動不能に耐性がつきます"
         }
     },
@@ -5741,7 +5817,7 @@
             "Korea": "{0}%확률로 행동 불가 스킬에 저항합니다.",
             "English": "Resists incapacitation skills with a {0}% chance.",
             "ChineseCh": "有{0}%的概率抵抗【昏厥】技能。",
-            "ChineseTh": "以{0}%機率抵抗無法行動技能。",
+            "ChineseTh": "以{0}%機率抵抗無法行動技能",
             "Japanese": "{0}％の確率で行動不能スキルに抵抗します"
         }
     },
@@ -5751,7 +5827,7 @@
             "Korea": "{0}만큼 추가 타격을 {1}회 줍니다.",
             "English": "Deals an additional hit equal to {0} {1} time(s).",
             "ChineseCh": "额外追加{1}次，每次{0}点打击伤害。",
-            "ChineseTh": "造成{1}次{0}的額外打擊。",
+            "ChineseTh": "造成{1}次{0}的額外打擊",
             "Japanese": "{0}の追加ダメージを{1}回与えます"
         }
     },
@@ -5761,7 +5837,7 @@
             "Korea": "대상이 {0}일시, {1}만큼 추가 타격을 {2}회 줍니다.",
             "English": "When the target is {0}, deals additional hit equal to {1} {2} time(s).",
             "ChineseCh": "目标为{0}时，额外追加{2}次，每次{1}点打击伤害。",
-            "ChineseTh": "當目標為{0}時，造成{2}次{1}的額外打擊。",
+            "ChineseTh": "當目標為{0}時，造成{2}次{1}的額外打擊",
             "Japanese": "対象が{0}の場合、{1}の追加ダメージを{2}回与えます"
         }
     },
@@ -5771,7 +5847,7 @@
             "Korea": "대상에게 징표를 누적시켜 {0}회 이상이 되면 {1} {2}%만큼 추가 타격을 줍니다.",
             "English": "Accumulates a mark on the target, and if it reaches {0} or more, deals an additional hit equal to {1} by {2}%.",
             "ChineseCh": "对目标叠加【印记】达到{0}层时，将发动{1}次{2}%的追击伤害。",
-            "ChineseTh": "使目標累積印記{0}次以上時，造成{1}{2}%的額外打擊。",
+            "ChineseTh": "使目標累積印記{0}次以上時，造成{1}{2}%的額外打擊",
             "Japanese": "対象にマークを重複させて{0}回以上になると{1}の{2}％の追加ダメージを与えます"
         }
     },
@@ -5801,7 +5877,7 @@
             "Korea": "소환자와 동일한 레벨의 {0}을/를 소환합니다. 소환물은 {1}%의 생명력을 가집니다.",
             "English": "Summons a {0} with the same level as the summoner. The summon has {1}% of its HP.",
             "ChineseCh": "召唤与召唤者等级【{0}】相同的召唤兽。召唤兽继承召唤者{1}%的生命值。",
-            "ChineseTh": "召喚與召喚者同樣等級{0}的。獲得召喚物品{1}%的生命力。",
+            "ChineseTh": "召喚與召喚者同樣等級的{0}，獲得召喚物品{1}%的生命力",
             "Japanese": "召喚者と同レベルの{1}を召喚します。召喚されたものは{1}％のHPを持ちます"
         }
     },
@@ -5811,7 +5887,7 @@
             "Korea": "소환자와 동일한 레벨의 {0}을/를 소환합니다.",
             "English": "Summons a {0} with the same level as the summoner.",
             "ChineseCh": "召唤与召唤者等级【{0}】相同的召唤兽。",
-            "ChineseTh": "召喚與召喚者同樣等級的{0}。",
+            "ChineseTh": "召喚與召喚者同樣等級的{0}",
             "Japanese": "召喚者と同レベルの{1}を召喚します"
         }
     },
@@ -5921,7 +5997,7 @@
             "Korea": "나에게 상태이상({0})이 걸리면 받는 피해가 {1}%증가 됩니다.",
             "English": "Damage is increased by {1}% when the caster is affected by {0}.",
             "ChineseCh": "攻击被施加{0}的目标单位时，伤害提升{1}%",
-            "ChineseTh": "我受到狀態異常({0})攻擊時，受到的傷害增加{1}%。",
+            "ChineseTh": "我受到狀態異常({0})攻擊時，受到的傷害增加{1}%",
             "Japanese": "{0}にかかった対象に攻撃時、{1}%ダメージアップ"
         }
     },
@@ -5996,23 +6072,43 @@
         }
     },
     {
-        "Key": "ActorCountEnemy",
+        "Key": "ActorCountEnemyMore",
         "Text": {
             "Korea": "대상이 {0}명 이상이면 대상당 {1}%의 추가피해를 줍니다.",
             "English": "If there are {0} or more targets, inflict {1}% additional damage.",
             "ChineseCh": "当目标单位达到{0}名或以上时，对每个目标单位额外造成{1}%的伤害。",
-            "ChineseTh": "目標超過{0}人時，對每個目標造成{1}%的傷害。",
+            "ChineseTh": "目標超過{0}人時，對每個目標造成{1}%的額外傷害",
             "Japanese": "対象が{0}人以上の場合、1人につき{1}%の追加ダメージを与える。"
         }
     },
     {
-        "Key": "ActorCountEnemyFix",
+        "Key": "ActorCountEnemyLess",
+        "Text": {
+            "Korea": "대상이 {0}명 이하면 대상당 {1}%의 추가피해를 줍니다.",
+            "English": "Deals an additional {1}% damage per target when there are {0} or fewer targets.",
+            "ChineseCh": "目标单位少于{0}名时，对每个目标单位造成{1}%的额外伤害。",
+            "ChineseTh": "目標低於{0}人時，對每個目標造成{1}%的額外傷害",
+            "Japanese": "対象が{0}人以下の場合、1人につき{1}%の追加ダメージを与える。"
+        }
+    },
+    {
+        "Key": "ActorCountEnemyFixMore",
         "Text": {
             "Korea": "대상이 {0}명 이상이면 {1}%의 추가피해를 줍니다.",
             "English": "If there are {0} or more targets, {1}% additional damage.",
             "ChineseCh": "当目标单位达到{0}名或以上时，造成{1}%的额外伤害。",
-            "ChineseTh": "目標超過{0}人時，造成{1}%的傷害。",
+            "ChineseTh": "目標超過{0}人時，造成{1}%的額外傷害",
             "Japanese": "対象が{0}人以上の場合、{1}%の追加ダメージを与える。"
+        }
+    },
+    {
+        "Key": "ActorCountEnemyFixLess",
+        "Text": {
+            "Korea": "대상이 {0}명 이하면 {1}%의 추가피해를 줍니다.",
+            "English": "Deals an additional {1}% damage when there are {0} or fewer targets.",
+            "ChineseCh": "目标单位少于{0}名时，造成{1}%的额外伤害。",
+            "ChineseTh": "目標低於{0}人時，造成{1}%的額外傷害",
+            "Japanese": "対象が{0}人以下の場合、{1}%の追加ダメージを与える。"
         }
     },
     {
@@ -6021,7 +6117,7 @@
             "Korea": "스킬이 전환됩니다.",
             "English": "Skill will change.",
             "ChineseCh": "技能切换。",
-            "ChineseTh": "技能已轉換。",
+            "ChineseTh": "技能已轉換",
             "Japanese": "スキルが切り替わります。"
         }
     },
@@ -6031,7 +6127,7 @@
             "Korea": "궁극기의 남아 있는 재사용 시간을 {0} 초로 변경합니다.",
             "English": "Sets the remaining cooldown of the Ultimate to {0}s.",
             "ChineseCh": "将终极技能的剩余冷却时间更改为{0}秒。",
-            "ChineseTh": "終極技的剩餘冷卻時間變更為{0}秒。",
+            "ChineseTh": "終極技的剩餘冷卻時間變更為{0}秒",
             "Japanese": "必殺技の残りクールタイムを{0}秒に変更します"
         }
     },
@@ -6041,7 +6137,7 @@
             "Korea": "궁극기의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
             "English": "Increases the remaining cooldown of the Ultimate by {0}s.",
             "ChineseCh": "将终极技能的剩余冷却时间增加为{0}秒。",
-            "ChineseTh": "終極技的剩餘冷卻時間增加{0}秒。",
+            "ChineseTh": "終極技的剩餘冷卻時間增加{0}秒",
             "Japanese": "必殺技の残りクールタイムを{0}秒にアップします"
         }
     },
@@ -6051,7 +6147,7 @@
             "Korea": "궁극기의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
             "English": "Reduces the remaining cooldown of the Ultimate by {0}s.",
             "ChineseCh": "将终极技能的剩余冷却时间减少为{0}秒。",
-            "ChineseTh": "終極技的剩餘冷卻時間減少{0}秒。",
+            "ChineseTh": "終極技的剩餘冷卻時間減少{0}秒",
             "Japanese": "必殺技の残りクールタイムを{0}秒にダウンします"
         }
     },
@@ -6061,7 +6157,7 @@
             "Korea": "궁극기와 액티브 스킬의 남아 있는 재사용 시간을 {0} 초로 변경합니다.",
             "English": "Sets the remaining cooldown of the Ultimate and Active Skill to {0}s.",
             "ChineseCh": "将终极技能和主动技能的剩余冷却时间更改为{0}秒。",
-            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒。",
+            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒",
             "Japanese": "必殺技とアクティブスキルの残りクールタイムを{0}秒に変更します"
         }
     },
@@ -6071,7 +6167,7 @@
             "Korea": "궁극기와 액티브 스킬의 남아 있는 재사용 시간을 {0}초 증가시킵니다.",
             "English": "Increases the remaining cooldown of the Ultimate and Active Skill by {0}s.",
             "ChineseCh": "将终极技能和主动技能的剩余冷却时间增加为{0}秒。",
-            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒。",
+            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒",
             "Japanese": "必殺技とアクティブスキルの残りクールタイムを{0}秒にアップします"
         }
     },
@@ -6081,7 +6177,7 @@
             "Korea": "궁극기와 액티브 스킬의 남아 있는 재사용 시간을 {0}초 감소시킵니다.",
             "English": "Reduces the remaining cooldown of the Ultimate and Active Skill by {0}s.",
             "ChineseCh": "将终极技能和主动技能的剩余冷却时间减少为{0}秒。",
-            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒。",
+            "ChineseTh": "終極技和主動技能的剩餘冷卻時間減少{0}秒",
             "Japanese": "必殺技とアクティブスキルの残りクールタイムを{0}秒にダウンします"
         }
     },
@@ -6111,7 +6207,7 @@
             "Korea": "중 {0} 속성",
             "English": "{0} Attribute",
             "ChineseCh": "中{0}属性",
-            "ChineseTh": "中{0}屬性",
+            "ChineseTh": "中的{0}屬性",
             "Japanese": "中{0}属性"
         }
     },
@@ -6121,7 +6217,7 @@
             "Korea": "중 {0} 속성",
             "English": "{0} Attribute",
             "ChineseCh": "中{0}属性",
-            "ChineseTh": "中{0}屬性",
+            "ChineseTh": "中的{0}屬性",
             "Japanese": "中{0}属性"
         }
     },
@@ -6131,7 +6227,7 @@
             "Korea": "장비 메인 옵션의 효율이 {0}% 증가합니다.",
             "English": "Increases the effectiveness of the main equipment stats by {0}%.",
             "ChineseCh": "装备核心词条的效率提升{0}%。",
-            "ChineseTh": "裝備的主功能效率增加{0}%。",
+            "ChineseTh": "裝備的主功能效率增加{0}%",
             "Japanese": "装備のメインオプション効率が{0}%アップします"
         }
     },
@@ -6141,7 +6237,7 @@
             "Korea": "장비 메인 옵션의 효율이 {0}% 감소합니다.",
             "English": "Reduces the effectiveness of the main equipment stats by {0}%.",
             "ChineseCh": "装备核心词条的效率减少{0}%。",
-            "ChineseTh": "裝備的主功能效率減少{0}%。",
+            "ChineseTh": "裝備的主功能效率減少{0}%",
             "Japanese": "装備のメインオプション効率が{0}%ダウンします"
         }
     },
@@ -6151,7 +6247,7 @@
             "Korea": "나에게 상태이상({0})이 걸리면 받는 피해가 {1}%감소 합니다.",
             "English": "When afflicted with {0}, damage taken is reduced by {1}%.",
             "ChineseCh": "当我方陷入状态异常({0})时，受到的伤害降低{1}%。",
-            "ChineseTh": "我受到狀態異常({0})攻擊時，受到的傷害減少{1}%。",
+            "ChineseTh": "我受到狀態異常({0})攻擊時，受到的傷害減少{1}%",
             "Japanese": "自分に状態異常({0})が付与されている間、被ダメージが{1}%ダウンします"
         }
     },
@@ -6161,7 +6257,7 @@
             "Korea": "모든 횟수가 차감되면 {0}초간 {1}에 걸립니다.",
             "English": "When all counts are depleted, becomes inflicted with {1} for {0}s.",
             "ChineseCh": "所有次数用尽后，将陷入{1}{0}秒。",
-            "ChineseTh": "所有次數減少時，{0}秒期間被施予{1}。",
+            "ChineseTh": "所有次數減少時，{0}秒期間被施予{1}",
             "Japanese": "すべての回数を消費すると、{0}秒間{1}にかかります"
         }
     },
@@ -6533,6 +6629,46 @@
             "ChineseCh": "自身与召唤兽",
             "ChineseTh": "自己與召喚獸",
             "Japanese": "自分と召喚獣"
+        }
+    },
+    {
+        "Key": "BuffCheckStunState",
+        "Text": {
+            "Korea": "{0}에 걸린 대상을 공격시 {1}%의 추가 피해.",
+            "English": "Deals an additional {1}% damage when attacking a target afflicted with {0}.",
+            "ChineseCh": "攻击被施加{0}的目标单位时，造成{1}%的额外伤害",
+            "ChineseTh": "攻擊陷入{0}效果的目標時，造成{1}%額外傷害",
+            "Japanese": "{0}にかかった対象を攻撃時、{1}%の追加ダメージ"
+        }
+    },
+    {
+        "Key": "ActorCheckStunState",
+        "Text": {
+            "Korea": "{0}에 걸린 대상에게 공격 시 {1}% 피해 증가",
+            "English": "Increases damage dealt by {1}% when attacking a target afflicted with {0}.",
+            "ChineseCh": "攻击被施加{0}的目标单位时，伤害提升{1}%",
+            "ChineseTh": "攻擊處於{0}狀態的目標時，傷害增加{1}%",
+            "Japanese": "{0}にかかった対象に攻撃時、{1}%ダメージアップ"
+        }
+    },
+    {
+        "Key": "ActorCheckStunStateBuffInfo",
+        "Text": {
+            "Korea": "{0}에게 {1}% 확률로 다음 효과를 겁니다.",
+            "English": "Grants the following effect to {0} with a {1}% chance.",
+            "ChineseCh": "以{1}%的概率对{0}施加以下效果。",
+            "ChineseTh": "以{1}%機率賦予{0}以下效果",
+            "Japanese": "{0}に{1}%の確率で次の効果を与えます"
+        }
+    },
+    {
+        "Key": "BuffAddDamaged1",
+        "Text": {
+            "Korea": "{0}에게 피해를 받을시 {1}%의 피해를 추가로 받습니다.",
+            "English": "Take an additional {1}% damage when hit by {0}.",
+            "ChineseCh": "受到{0}的伤害时，额外承受{1}%的伤害。",
+            "ChineseTh": "受到{0}攻擊時，額外受到{1}%的傷害",
+            "Japanese": "{0}からダメージを受ける時、{1}%のダメージを追加で受けます"
         }
     }
 ]
