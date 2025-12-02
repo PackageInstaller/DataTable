@@ -1,0 +1,2940 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: EV_CANDLE_BUNNY_02_STANDBY",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "…이봐.",
+      "UnitTalk_JPN": "…ねぇ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_UNKNOWN"
+      ],
+      "UnitTalk_KOR": "이봐, 배달부!",
+      "UnitTalk_JPN": "ちょっと、そこの配達屋！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS3",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "어, 어라? 저를 부르신 건가요?",
+      "UnitTalk_JPN": "あ、あれ？私のことでしょうか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "CameraOffset": "TWIN_2",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS2",
+      "UnitTalk_KOR": "쉬잇-! 이쪽 보며 대답하지 말고!",
+      "UnitTalk_JPN": "しーっ！こっちを見ないこと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ITEM_OUT.wav",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "…아무것도 묻지 말고 이걸 캔들 스퀘어에 전해줘.",
+      "UnitTalk_JPN": "…何も聞かずに、これをキャンドル・スクエアに届けて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 7,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "가장 빠른 특급 배달로…!",
+      "UnitTalk_JPN": "最速のエクスプレス配送で…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 12,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.6,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "이봐, 뭘 하는 거지?",
+      "UnitTalk_JPN": "おい、何してる？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 14,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitTalk_KOR": "허튼짓하지 말고 조용히 따라와.",
+      "UnitTalk_JPN": "余計な真似はせず、大人しくついて来い。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 15,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CAPTAINGUARD"
+      ],
+      "UnitTalk_KOR": "그렇지 않으면… 아주 험한 꼴을 당하게 될 테니까.",
+      "UnitTalk_JPN": "さもないと…ひどい目に遭うことになるぞ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 16,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "허튼짓이라니, 무슨 뜻인지 모르겠네.",
+      "UnitTalk_JPN": "余計な真似って何のこと？さっぱり分からないけど。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 17,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitTalk_KOR": "나도 마침 네 녀석들의 보스가 누군지 궁금해졌어.",
+      "UnitTalk_JPN": "私も、ちょうどあんたたちのボスが誰なのか気になってたとこよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "빨리 안내나 하라고.",
+      "UnitTalk_JPN": "早く案内しなさい。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 20,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_MAID_BELL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 22,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "CameraOffset": "TWIN_6",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_05.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 28,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…아.",
+      "UnitTalk_JPN": "…あっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "…가버리셨네.",
+      "UnitTalk_JPN": "…行っちゃった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 30,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "뭔가 위험한 일에 얽힌 것 같은 느낌인데…",
+      "UnitTalk_JPN": "なんだか、危険なことに巻き込まれたようですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_LPU_POST",
+      "UnitTalk_KOR": "으음…! 이, 일단 부탁받은 배달 업무에 충실하자!",
+      "UnitTalk_JPN": "うーん…！ま、まずは頼まれた配達業務に専念しないと！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 33,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_RECRUIT.png",
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARALL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 35,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>[코드 35. 딥 필드. 벨 리스]</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>「コード35。ディープフィールド。ベル・リース」</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어에게 받은 쪽지에 적힌 내용은 3개의 단어가 전부였다.",
+      "UnitTalk_JPN": "クレアから受け取ったメモに書かれていたのは、たった3つの単語だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "코드 35가 뭐야? 딥 필드는?",
+          "JumpAnchorStringId_JPN": "コード35？ディープフィールド？"
+        }
+      ]
+    },
+    {
+      "Uid": 38,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "…후우. ",
+      "UnitTalk_JPN": "…ふぅ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "원래는 단장님을 환영하는 자리이니 불필요한 걱정을 안겨드리고 싶지 않았습니다만…",
+      "UnitTalk_JPN": "元は団長を歓迎する会でしたから、余計なご心配をおかけしたくはなかったのですが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "이미 알게 되셨으니 설명해 드리지요.",
+      "UnitTalk_JPN": "知られてしまった以上、仕方ありません。ご説明しましょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "먼저 <color=#F7BE45>[코드 35]</color>는… 캔들 스퀘어에서 긴급한 일이 발생했을 때 사용하는 비상 코드입니다.",
+      "UnitTalk_JPN": "まず<color=#F7BE45>「コード35」</color>とは…キャンドル・スクエアで、緊急事態が発生した際に使用する緊急コードです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 42,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "<color=#F7BE45>메시지를 보낸 사람이 현재 위험한 상황</color>이라는 의미입니다.",
+      "UnitTalk_JPN": "<color=#F7BE45>メッセージを送った人物が現在危険な状況にある</color>という意味です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼 벨이 지금 위험하다는 얘기야?",
+          "JumpAnchorStringId_JPN": "じゃあ、今ベルが危険な状況ってこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 44,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "쪽지를 배달해 주신 베라님의 목격 증언까지 감안하면, 그럴 확률이 높다고 판단됩니다.",
+      "UnitTalk_JPN": "メモを届けてくださったベラ様の証言も考慮すると、その可能性が高いでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "확언할 수는 없지만, <color=#F7BE45>납치</color>되었다고 표현해도 무방하겠죠.",
+      "UnitTalk_JPN": "断言はできませんが、<color=#F7BE45>拉致</color>されたと言っても差し支えないはずです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "납치라고…!",
+          "JumpAnchorStringId_JPN": "拉致…！"
+        }
+      ]
+    },
+    {
+      "Uid": 47,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "뭣보다 벨 리스님은 성실한…",
+      "UnitTalk_JPN": "何よりも、ベル・リース様は真面目な…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR",
+      "UnitPos": "POS4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.2,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "QMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…성실한 메이드라고는! 말할 수 없지만!",
+      "UnitTalk_JPN": "…真面目なメイドとは言えませんが！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 52,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "이런 걸 장난으로 보내거나 할 분은 아니니까요.",
+      "UnitTalk_JPN": "こんなものを、冗談で送ったりするような方ではありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 53,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "…뭐, 뭐냐! 왜 그 말을 하면서 날 보는 거냐!",
+      "UnitTalk_JPN": "…な、何なのだ！どうしてわがはいの方を見ながら言う！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 54,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "나도 장난으로 코드 35를 보낸 적은 없다!",
+      "UnitTalk_JPN": "わがはいだって、冗談でコード35を送ったことなどないぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "코드 28과 16은 보냈었죠.",
+      "UnitTalk_JPN": "コード28と16はあるでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "으… 으으… 그건… 미안하다고 하지 않았느냐…",
+      "UnitTalk_JPN": "う…うう…それは…謝ったではないか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…코드28과 16이 뭔지 궁금하긴 했지만, 지금은 더 중요한 이야기를 들을 때였다.",
+      "UnitTalk_JPN": "…コード28と16が何なのか気になったが、今はもっと重要な話を聞くべきだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 58,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼… 딥 필드는 뭐야?",
+          "JumpAnchorStringId_JPN": "じゃあ…ディープフィールドは？"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "그건… 저도 소문으로만 들었던 내용이긴 합니다만.",
+      "UnitTalk_JPN": "それは、私も噂でしか聞いたことがありませんが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 62,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_DEEP_FIELD_LOBBY.png",
+      "CutsceneClear": "CLEARALL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 64,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "<color=#F7BE45>클럽 딥 필드.</color>",
+      "UnitTalk_JPN": "<color=#F7BE45>クラブ・ディープフィールド。</color>",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "NOA의 부유층과 고위층들을 대상으로 한 엄격한 회원제로 운영되는 비밀 사교 클럽.",
+      "UnitTalk_JPN": "NOAの富裕層や高位高官を対象とした、厳格な会員制で運営される秘密の社交クラブ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "클럽은 다양한 사업을 전개하고 있습니다만…",
+      "UnitTalk_JPN": "クラブは様々な事業を展開していますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "배달부에게 확인한 바로는 벨 님이 사라지신 곳은 <color=#F7BE45>카지노</color> 구역이었다고 합니다.",
+      "UnitTalk_JPN": "配達屋の方に確認したところ、ベル様が消えた場所は<color=#F7BE45>カジノ</color>区域だったそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "BgFileName": "ILLUST_BG_CANDLE_RECRUIT.png",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_2",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "잠깐! 잠깐! 잠깐! 카지노라고?!",
+      "UnitTalk_JPN": "ちょ、ちょっと！待ってよ、今カジノって言った！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitPos": "POS5",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 71,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "말도 안 돼, NOA의 카지노 중 내가 모르는 곳이 있을 리가 없어!",
+      "UnitTalk_JPN": "ありえないって！NOAに、アタシが知らないカジノなんてある訳ないでしょ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "쓸데없는 곳에 자부심 갖지 마…",
+          "JumpAnchorStringId_JPN": "変なとこでプライドを持つんじゃない…"
+        }
+      ]
+    },
+    {
+      "Uid": 69,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitPos": "POS4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "아까 말씀드렸다시피 철저히 회원제로 운영되는 곳이어서요.",
+      "UnitTalk_JPN": "先ほど申し上げたように、徹底した会員制で運営されている場所ですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그런 곳이 있다… 라는 소문만 있었지, 잘 알려져 있는 내용은 아닙니다.",
+      "UnitTalk_JPN": "そういった場所がある…という噂はあるものの、広く知られている訳ではありません。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "입장할 수 있는 자는 <color=#F7BE45>딥 필드</color>의 정식 초대장을 가진 사람뿐이니까요.",
+      "UnitTalk_JPN": "入場できるのは、<color=#F7BE45>ディープフィールド</color>の正式な招待状を持つ人だけですから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "클레어는 어떻게 그렇게 잘 알아?",
+          "JumpAnchorStringId_JPN": "クレアはどうしてそんなに詳しいんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 79,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "자세한 상황을 알아보기 위해 메이드 에밀리를 파견했습니다.",
+      "UnitTalk_JPN": "詳しい状況を確認するため、メイドのエミリーを派遣しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "에밀리는 잠입 같은 걸 잘하니까 말이다, 으음!",
+      "UnitTalk_JPN": "エミリーは、潜入とか得意なのだぞ！うむ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "1시간이 안 되어서 딥 필드 카지노의 위치와 내부 상황을 알려왔습니다.",
+      "UnitTalk_JPN": "そして一時間も経たないうちに、ディープフィールドカジノの位置と内部の状況が報告されました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "NOA 시내 골목 쪽에 있는 잡화 노점이 위장된 딥 필드 카지노의 입구라고 합니다.",
+      "UnitTalk_JPN": "NOAの街の路地裏にある露店雑貨屋こそ、偽装されたディープフィールドカジノの入り口だそうです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "실제 시설은 가게를 통해 지하로 이동하면 있는 것 같습니다.",
+      "UnitTalk_JPN": "実際の施設は、店を通じた地下にあるようですね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그건… 굉장하네.",
+          "JumpAnchorStringId_JPN": "それは…すごいな。"
+        }
+      ]
+    },
+    {
+      "Uid": 86,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "치안국 타운가드에 알리는 방법도 있습니다만…",
+      "UnitTalk_JPN": "治安局のタウンガードに知らせるという方法もありますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "<color=#F7BE45>딥 필드</color>의 악명을 생각하면 제대로 움직여준다는 보장은 없으니까요.",
+      "UnitTalk_JPN": "<color=#F7BE45>ディープフィールド</color>の悪名を考えると、まともに動いてくれるという保証はありませんから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "코드 35를 받은 이상, 저희가 직접 들어가는 것이 가장 빠른 방법이라고 판단했습니다.",
+      "UnitTalk_JPN": "コード35を受けた以上…私たちが直接乗り込むのが、最速の方法だと判断しました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그래서! 지금 벨 녀석을 구출할 준비를 하는 중이었다!",
+      "UnitTalk_JPN": "それでだな！こうして、ベルのやつを助ける準備をしていたという訳なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "에밀리의 첩보에 따르면 의심받지 않고 잠입하려면 이런 옷을 입어야 한다고 했다.",
+      "UnitTalk_JPN": "エミリーの諜報によると…怪しまれずに潜入するには、こういう服を着るべし！だそうなのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "인간들의 취향이 이해는 가지 않지만…",
+      "UnitTalk_JPN": "人間の趣味は理解できぬが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "단장의 반응을 보니 좋은 선택이었던 것 같구나!",
+      "UnitTalk_JPN": "団長の反応を見るに、良い選択だったようなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…아무 말도 하지 않을래.",
+          "JumpAnchorStringId_JPN": "…ノーコメントで。"
+        }
+      ]
+    },
+    {
+      "Uid": 94,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "여기서 한 마디라도 잘못된 대답을 했다간 내 사회적 지위가 끝도 없이 추락할 거라는 확신이 든다.",
+      "UnitTalk_JPN": "ここで間違ったことを言えば、私の社会的地位が底なしに墜ちてしまうという確信があった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 95,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "저도 내키지는 않지만 어쩔 수 없죠. 비상 상황이니…",
+      "UnitTalk_JPN": "私も気が進みませんが、仕方ありません。緊急事態ですし…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 96,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그래도 이 정도면 잠입에는 충분-",
+      "UnitTalk_JPN": "ともかく、これなら潜入するに十分──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 241,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 242,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE"
+    },
+    {
+      "Uid": 97,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "아냐, 아냐, 틀렸어.",
+      "UnitTalk_JPN": "ううん、まだまだだよ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 99,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffsetTime": "NR",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "루나 님?",
+      "UnitTalk_JPN": "ルナ様？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 100,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_5",
+      "UnitTalk_KOR": "클레어, 스칼렛 둘 모두…",
+      "UnitTalk_JPN": "クレア、スカーレット、二人とも…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 103,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "아직 진짜 <color=#F7BE45>[바니걸]</color>이 되어있지 않잖아!",
+      "UnitTalk_JPN": "まだ本当の<color=#F7BE45>「バニーガール」</color>になれてないの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_16.mp3",
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그게 무슨 소리야?",
+          "JumpAnchorStringId_JPN": "どういうこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 104,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_4",
+      "UnitTalk_KOR": "보라고, 클레어의 이 뻣뻣한 기립 자세!",
+      "UnitTalk_JPN": "見てよ、このカチコチの直立姿勢！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 106,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "세상 어떤 바니걸이 이렇게 서 있어?",
+      "UnitTalk_JPN": "こんな風に突っ立ってるバニーガールなんていないよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그, 그건…! 아, 아직 잠입한 건 아니지 않습니까!",
+      "UnitTalk_JPN": "そ、それは…！ま、まだ潜入したわけではありませんから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 108,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 올바른 몸가짐과 단정한 자세는 캔들 스퀘어 메이드의 기본 소양이며…",
+      "UnitTalk_JPN": "それに、正しい身のこなしと品のある立ち振る舞いは、キャンドル・スクエアのメイドとして…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 109,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS3",
+      "UnitTalk_KOR": "쯧, 쯧, 쯧.",
+      "UnitTalk_JPN": "チッ、チッ、チッ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 110,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "들어가서도 이렇게 차렷 자세나 하고 서 있을 게 뻔해.",
+      "UnitTalk_JPN": "中に入ってからも、こうやって直立不動のままってのがオチなんだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "그… 그런… ",
+      "UnitTalk_JPN": "そ、そんな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL3",
+      "UnitTalk_KOR": "꺅?!",
+      "UnitTalk_JPN": "きゃっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "가슴은 앞으로 내밀고! ",
+      "UnitTalk_JPN": "胸を前に突き出して！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.2,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 116,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "허리는 이렇게 옆으로 돌리고!",
+      "UnitTalk_JPN": "腰はこうやって横にひねって！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 117,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "다리는 곡선을 그리면서 긴장을 풀고!",
+      "UnitTalk_JPN": "足は曲線を描くように力を抜いて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "루, 루나님? 거길 그렇게 만지시면… ",
+      "UnitTalk_JPN": "ル、ルナ様？そんな風に触られると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 120,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL2",
+      "UnitTalk_KOR": "아앗!",
+      "UnitTalk_JPN": "あぁっ！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 121,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "아직 모자라! 여기 단장 옆으로 와서 서 봐.",
+      "UnitTalk_JPN": "まだ足りないんだから！さぁ、団長の横に立ってみて。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 122,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "POS4_2X",
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "자, 이렇게 좀 더 기대듯이! 더 단장에게 붙어보라니까!",
+      "UnitTalk_JPN": "ほらほらぁ、ちょっと寄りかかるように！もっと団長にくっついてみて！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 124,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "다리로는 단장을 감싸듯이-",
+      "UnitTalk_JPN": "脚で団長を包み込むように──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffsetTime": "NR",
+      "UnitTalk_KOR": "루나의 코칭이 진행될수록 클레어가 점점 내 몸에 휘감겨 온다.",
+      "UnitTalk_JPN": "ルナのコーチが進むにつれ、クレアがどんどん私の身体に絡みついてくる。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 126,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "고개를 옆으로 돌리면 바로 클레어의 뜨거운 숨결이 느껴질 정도다.",
+      "UnitTalk_JPN": "顔を横に向ければ、クレアの熱い息遣いが感じられるほどだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 127,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "이, 이런 자세로는 걸어 다닐 수가 없겠는데요…",
+      "UnitTalk_JPN": "こ、こんな姿勢では、歩けませんよ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "ONE_6",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitPos": "POS6",
+      "UnitTalk_KOR": "마음가짐의 문제를 말하는 거야, 마음가짐.",
+      "UnitTalk_JPN": "心構えの問題だって言ってるでしょー？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "몸도 마음도 완벽한 바니걸이 되지 않으면 금방 들킬 거라고.",
+      "UnitTalk_JPN": "心も体も完璧なバニーガールにならないと、すぐにバレちゃうってば。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS5",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "으으음…!",
+      "UnitTalk_JPN": "うーーーん…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitTalk_KOR": "아세라, 표정이 굳고 있음.",
+      "UnitTalk_JPN": "アセラ、表情が強張ってる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 243,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS1"
+    },
+    {
+      "Uid": 135,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "그리고 스칼렛!",
+      "UnitTalk_JPN": "次はスカーレットの番ね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "나, 나 말이냐…?",
+      "UnitTalk_JPN": "わ、わがはいか…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그래, 클레어가 너무 굳어 있어서 문제라면 여기는 너무 씩씩해서 문제야!",
+      "UnitTalk_JPN": "そうそう、クレアが硬すぎるのが問題なら…こっちは元気すぎるのが問題なの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SAD",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "무슨 장난꾸러기 사내아이한테 바니걸을 입혀 놓은 것도 아니고…",
+      "UnitTalk_JPN": "何ていうか…いたずら好きの男の子に、バニーガール服を着せたみたいな感じ…？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 141,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "좀 더 이렇게! 스칼렛은 차라리 귀엽게 가는 게 낫겠다.",
+      "UnitTalk_JPN": "もっとこう！スカーレットは、むしろかわいい路線の方がよさげだねぇ。うんうん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 142,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "에, 에엣?! 으에!!",
+      "UnitTalk_JPN": "え、えぇっ！？うぇー！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "자 이렇게 손을 머리 위로 올리고, 허리를 옆으로 빼고-",
+      "UnitTalk_JPN": "ほらほらぁ、こうやって頭の上に手をあげて、腰を横に引いて──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "바니바니 바니바니~",
+      "UnitTalk_JPN": "ぴょんぴょん、ぴょんぴょ～ん。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_2",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SPECIAL2",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "바… 바니 바니?!",
+      "UnitTalk_JPN": "ぴ…ぴょんぴょん！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 146,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "바니…",
+      "UnitTalk_JPN": "ぴょん…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "…이, 이런 건 왠지 부끄럽다!",
+      "UnitTalk_JPN": "…こ、こんなの恥ずかしいのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "용족인 이 몸이 왜 토끼 흉내를 내야 한단 말… ",
+      "UnitTalk_JPN": "竜族であるわがはいが、どうしてウサギの真似をしなきゃならんのだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 150,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL3",
+      "UnitTalk_KOR": "히익!",
+      "UnitTalk_JPN": "はうっ！",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 151,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_1",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "꼬리는 이쪽으로 좀 더 돌려놓는 게 좋겠다… ",
+      "UnitTalk_JPN": "しっぽはこっちに回しておいた方がいいかな…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 153,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": " 응? 왜 그래, 스칼렛?",
+      "UnitTalk_JPN": "あれ？どうしたの、スカーレット？",
+      "TalkTime": 0.03,
+      "TalkAppend": true
+    },
+    {
+      "Uid": 154,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "꼬, 꼬리… 꼬리는 그렇게 막 만지면 안 된다… 히잇-",
+      "UnitTalk_JPN": "シ、シッポ…シッポをそんな風に、むやみに触るでない…はうぅ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아앗, 좋아! 바로 그 표정이야, 스칼렛! 귀여움과 부끄러움이 뒤섞인 바로 그 표정!",
+      "UnitTalk_JPN": "おおっ、いいねぇ！まさにその表情だよ！可愛らしさと恥じらいが入り混じった感じ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 156,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그 표정 그대로 스칼렛도 여기 단장 옆으로… ",
+      "UnitTalk_JPN": "その表情のままスカーレットも、団長の隣に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 244,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 157,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 158,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 159,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL2",
+      "UnitQuickSet": true,
+      "UnitPos": "POS1",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_6",
+      "UnitMotion": "SPECIAL2",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 245,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 161,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "으음! 이제 좀 볼만하네.",
+      "UnitTalk_JPN": "おっ！なかなか良くなったんじゃない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 162,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitPos": "POS5",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 246,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "ANGRY",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 163,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TWIN_4",
+      "UnitPos": "POS4",
+      "UnitTalk_KOR": "으으으음…!!!",
+      "UnitTalk_JPN": "うーーーん…！！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 164,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "아세라, 표정이…",
+      "UnitTalk_JPN": "アセラ、表情が…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "ONE_4",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "저기요! 혹시 바니걸 복장, 하나 더 없나요?",
+      "UnitTalk_JPN": "ねぇ！バニーガールの衣装、もう一つあったりしない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 166,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.4,
+      "BgCrash": 0.4,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_POP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_1",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "없습니다!!",
+      "UnitTalk_JPN": "ありません！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 168,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "EMPTY.mp3",
+      "CutsceneClear": "CLEARALL",
+      "UnitQuickSet": true,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 247,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS4"
+    },
+    {
+      "Uid": 248,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 169,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 170,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_10.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "휴우… 루나님. 여러모로 감사했습니다.",
+      "UnitTalk_JPN": "ふぅ…ルナ様。色々とありがとうございました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 249,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS5"
+    },
+    {
+      "Uid": 171,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그럼 이제 바니걸의 마음가짐도 완벽해진 것 같으니 저희는 출발하겠습니다.",
+      "UnitTalk_JPN": "それでは、バニーガールの心構えも完璧になりましたので…私たちは出発します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "연기된 환영회 일정은 사태가 수습된 후 다시 알려드리겠…",
+      "UnitTalk_JPN": "延期になった歓迎会の日程は、事態が収拾した後に改めてお伝えしま…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 173,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "…네?",
+      "UnitTalk_JPN": "…はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 174,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "가, 같이 가시겠다고요?",
+      "UnitTalk_JPN": "ご、ご一緒なさると？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 175,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그러실 필요 없습니다. 이것은 저희 캔들 스퀘어의 업무…",
+      "UnitTalk_JPN": "その必要はありません。これは、キャンドル・スクエアの任務…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 176,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TRIPLE_2",
+      "UnitQuickSet": true,
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 177,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS1",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 178,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitQuickSet": true,
+      "UnitPos": "POS3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 179,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "CameraOffset": "TRIPLE_1",
+      "UnitTalk_KOR": "우리 생각도 단장과 같아.",
+      "UnitTalk_JPN": "わたしたちも団長と同じ気持ちよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 180,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "캔들 스퀘어에는 언제나 큰 도움을 받고 있는걸.",
+      "UnitTalk_JPN": "キャンドル・スクエアには、いつも助けられてばかりだしね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 181,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그래. 단장을 바니걸들 사이에 두고 오면 아세라의 잠자리가 얼마나 뒤숭숭하겠어.",
+      "UnitTalk_JPN": "そだよー。団長をバニーガールの間に置いてくなんて、アセラも気が気じゃないもんねー？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 182,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "그, 그런 거 아니야!",
+      "UnitTalk_JPN": "そ、そんなことないわよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 183,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "USN_UI_TOUCH",
+      "UnitTalk_KOR": "그리고 방금처럼 내 코치가 필요할 수도 있고 말이지.",
+      "UnitTalk_JPN": "それに、さっきみたいにアタシのコーチが必要になるかもしれないし。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 184,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "동감. 고양이 손, 빌려줄 수 있음.",
+      "UnitTalk_JPN": "同感。猫の手、貸せる。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 185,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "캔들 스퀘어의 멤버가 위험한 상황일지도 모르는데 <color=#F7BE45>그럼 잘해봐</color> 라고 말하며 돌아갈 수는 없다.",
+      "UnitTalk_JPN": "キャンドル・スクエアのメンバーが危険な状況にあるかもしれないのに、<color=#F7BE45>じゃあ頑張ってね</color>なんて言って帰れるわけがない。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 186,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SMILE",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 187,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 188,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이곳에 모인 모두가 한마음으로 의지를 내비쳤다.",
+      "UnitTalk_JPN": "ここに集まった全員が、心を一つにして意志を示した。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 192,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_4",
+      "UnitMotion": "SAD",
+      "UnitQuickSet": true,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 193,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitQuickSet": true,
+      "UnitTalk_KOR": "클레어, 아까 <color=#F7BE45>우리만으로 괜찮을까</color> 라고 중얼거리지 않았느냐!",
+      "UnitTalk_JPN": "クレアよ！さっき、<color=#F7BE45>私たちだけで大丈夫かしら</color>とか呟いていただろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 194,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그, 그건…",
+      "UnitTalk_JPN": "そ、それは…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 195,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "EmotionEffect": "THINK2",
+      "UnitTalk_KOR": "…",
+      "UnitTalk_JPN": "…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 196,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "하아. 그럼 염치 불고하고 부탁드리겠습니다.",
+      "UnitTalk_JPN": "はぁ。それでは、厚かましいお願いですが…よろしくお願いします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 197,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "상대의 정체와 목적을 모르는 만큼 돌발 상황이 생긴다면 분명 큰 도움이 되겠지요.",
+      "UnitTalk_JPN": "相手の正体や目的がわからない以上…予期せぬ状況に陥った際、きっと大きな助けになるでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 198,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "좋아, 정해진 거지?",
+          "JumpAnchorStringId_JPN": "よし、決まりだな？"
+        }
+      ]
+    },
+    {
+      "Uid": 199,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그럼… 가보자!",
+          "JumpAnchorStringId_JPN": "じゃあ…行こう！"
+        }
+      ]
+    },
+    {
+      "Uid": 200,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 201,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_BACK_STREET.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "CutsceneClear": "CLEARALL",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 202,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "TalkTime": 0.03,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 203,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "잡화 노점과 한 블럭 떨어진 골목길에서 잠시 몸을 숨기고 마지막 작전 회의를 열었다.",
+      "UnitTalk_JPN": "露店雑貨屋から一ブロック離れた路地で、しばらく身を潜めながら最後の作戦会議を開いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 250,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitQuickSet": true,
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 204,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "그럼 아까 이야기했던 데로…",
+      "UnitTalk_JPN": "それでは、先ほどお話した通り…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 205,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "아세라님, 루나님, 스마일님은 가능한 한 크게 소란을 일으켜 주세요.",
+      "UnitTalk_JPN": "アセラ様、ルナ様、スマイル様は、可能な限り大きな騒ぎを起こしてください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 206,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "경비나 내부 인원들이 상황을 보러 나올 수 있을 정도로 말이죠.",
+      "UnitTalk_JPN": "警備隊員や内部の人間が、状況を見に来るような騒ぎです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 207,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "나는 클럽의 손님으로 위장해서 내부 잠입조와 함께하기로 했다.",
+      "UnitTalk_JPN": "私はクラブの客に扮して、潜入チームと行動を共にすることになった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 208,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "바니걸 옷을 입은 클레어와 스칼렛이 손님인 나를 에스코트해 준다는 설정이다.",
+      "UnitTalk_JPN": "バニーガールの衣装を着たクレアとスカーレットが、客である私をエスコートするという設定だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 209,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…자연스러울 거다. 분명.",
+      "UnitTalk_JPN": "…きっと、自然に見えるはずだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 210,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "클럽 경비원들이 모든 회원들의 얼굴을 알고 있지는 않겠죠.",
+      "UnitTalk_JPN": "クラブの警備隊員も、会員みなの顔を知っている訳ではないでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 211,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그리고 만약… 혹시 만약에 무슨 일이 생긴다고 해도…",
+      "UnitTalk_JPN": "そして…もし万が一、何か起きたとしても…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 212,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "알리시아님의 후원을 받는 여정 단장님께 손을 대지는 못할 테니까요.",
+      "UnitTalk_JPN": "アリシア様の後援を受ける団長に、手出しはできないでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 213,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "말하자면 최후의 현장 보험 역할이다.",
+      "UnitTalk_JPN": "つまり、私が最後の切り札という訳だ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 214,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "너무 걱정하지는 마세요.",
+      "UnitTalk_JPN": "あまり心配なさらないでください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 215,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그런 일이 벌어지지 않도록, 저희 캔들 스퀘어 모두가 지켜드리겠습니다.",
+      "UnitTalk_JPN": "そんなことが起こらないよう、キャンドル・スクエアがお守りします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 216,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아, 나도 도움이 될 수 있어서 기뻐.",
+          "JumpAnchorStringId_JPN": "大丈夫、私も役に立てて嬉しいよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 217,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "우리는 여기 이 맨홀을 통해서 잠입할 거다!",
+      "UnitTalk_JPN": "わがはいたちは、このマンホールから潜入するのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 218,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛이 발밑에 있는 맨홀 뚜껑을 발로 쿵쿵 밟았다.",
+      "UnitTalk_JPN": "スカーレットが、マンホールの蓋をドンドンと踏みつけた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 219,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "그리고 자, 이제 단장은 이 옷으로 갈아입어라!",
+      "UnitTalk_JPN": "さあ、人間の団長はこの服に着替えるのだぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 220,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛이 내민 옷은 검은색의 남성용 연미복이었다.",
+      "UnitTalk_JPN": "スカーレットが差し出した服は、黒い燕尾服だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 221,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "카라와 소매 부분에 부담스러울 정도의 화려한 용 무늬 자수가 수놓아져 있었다.",
+      "UnitTalk_JPN": "襟と袖の部分に、気恥ずかしくなるほど派手な竜の刺繍が施されている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 222,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "파티 참여용 옷 치고는 너무 수수하길래 이 몸이 직접 꾸며주었다!",
+      "UnitTalk_JPN": "パーティー用の服にしては地味すぎて、わがはいが飾りをつけてやったぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 223,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "USN_UI_REST_START",
+      "UnitTalk_KOR": "원래는 이 용 무늬 자수를 옷 전체에 깔아야 진정한 멋짐이 사는 법인데 말이다…",
+      "UnitTalk_JPN": "本来なら、竜の刺繍を服全体に散りばめてこそ、真の格好良さが引き立つというものだが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 224,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "…아니, 이걸로 충분해.",
+          "JumpAnchorStringId_JPN": "…いや、これで十分だよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 225,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.8,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 226,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "옆 골목으로 이동해서 옷을 입고 나왔다.",
+      "UnitTalk_JPN": "横の路地へ移動して、服を着替えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 251,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 227,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "CameraOffset": "TRIPLE_2",
+      "UnitPos": "POS2",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 228,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitPos": "POS4",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 229,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitPos": "POS3",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 230,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": false,
+      "WaitTime": 0.8,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeOutTime": 0.8,
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 231,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "와아, 굉장히 잘 어울리는걸! 멋지다, 단장~",
+      "UnitTalk_JPN": "わぁ、すっごく似合ってる！かっこいいわ、団長。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 232,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아하하핫핫! 좀 더 옷에 어울리는 포즈를 취해 봐, 단장!",
+      "UnitTalk_JPN": "アハハハハッ！もっと服に似合うポーズを取ってみてよ、だんちょー！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 233,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이렇게~ 양옆에 바니걸을 끼고…",
+      "UnitTalk_JPN": "こうやって～、両脇にバニーガールを抱えて～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 234,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "웃지 마!",
+          "JumpAnchorStringId_JPN": "笑うなっ！"
+        }
+      ]
+    },
+    {
+      "Uid": 235,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_SMILE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "클래식한 연미복에 과감하게 미스매치된 화려한 용 자수…",
+      "UnitTalk_JPN": "クラシックな燕尾服に、派手な竜の刺繍…大胆なミスマッチ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 236,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "유머 노트 사례집에 적지 마!",
+          "JumpAnchorStringId_JPN": "ユーモアノート事例集に書くなー！"
+        }
+      ]
+    },
+    {
+      "Uid": 252,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5
+    },
+    {
+      "Uid": 237,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_METAL_CAN_02.wav",
+      "CutsceneClear": "CLEARALL",
+      "UnitTalk_KOR": "마지막 준비를 마치고, 맨홀 뚜껑을 들어 올렸다.",
+      "UnitTalk_JPN": "最後の準備を終え、マンホールの蓋を持ち上げた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 238,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.3,
+      "UnitTalk_KOR": "어두운 하수도가 나타날 것이라는 예상과 달리, 약한 조명들이 설치된 사다리가 지하로 쭉 뻗어 있는 것이 보였다.",
+      "UnitTalk_JPN": "暗い下水道が現れるという予想に反して、薄い照明が灯された梯子が地下へとまっすぐ伸びているのが見えた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 239,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "위장되어 있는 클럽의 비밀 통로였다.",
+      "UnitTalk_JPN": "偽装されたクラブへの秘密通路だった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 240,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "EV_CANDLE_BUNNY_02_STANDBY",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "TalkTime": 0.03,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "자, 그럼 가자!",
+          "JumpAnchorStringId_JPN": "さあ、行こう！"
+        }
+      ]
+    }
+  ]
+}

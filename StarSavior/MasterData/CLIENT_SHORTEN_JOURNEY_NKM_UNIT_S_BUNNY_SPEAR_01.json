@@ -1,0 +1,26 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_BUNNY_SPEAR_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 2,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_02",
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_BUNNY_SPEAR_01.png"
+    },
+    {
+      "Uid": 3,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_GRACE_DUALSWORD_02",
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어는 마술쇼의 조수 역할로 무대에 오르게 되었지만, 공연이 중단되는 불상사가 일어나고 말았다...",
+      "UnitTalk_JPN": " クレアはマジックショーの助手として舞台に上がったが、公演が中断されるという不運な事態が起きてしまった…",
+      "TalkTime": 0.03
+    }
+  ]
+}

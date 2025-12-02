@@ -361,6 +361,37 @@
           }
         },
         {
+          "m_SEID" : 10430001,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10440001,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_NOVA_BURST_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 2000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
           "m_SEID" : 10490001,
           "m_SEStrID" : "COND_INDEPENDENT_DRAGON_NOVA_BURST_01_01",
           "m_BuffTargetType" : "NSETT_SELF",

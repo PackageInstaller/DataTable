@@ -1136,14 +1136,20 @@
       "TalkTime": 0.03
     },
     {
-      "Uid": 189,
+      "Uid": 235,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_OBSERVER_01",
       "WaitClick": false,
       "WaitTime": 0.0,
-      "BgFileName": "ILLUST_BG_FISHING_SPOT_SUNSET.png",
       "TransitionEffect": "WIPE",
       "TransitionControl": "IN"
+    },
+    {
+      "Uid": 189,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_OBSERVER_01",
+      "WaitClick": false,
+      "WaitTime": 0.0
     },
     {
       "Uid": 190,
@@ -1172,6 +1178,7 @@
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_NOA_OBSERVER_01",
       "WaitClick": false,
       "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_FISHING_SPOT_SUNSET.png",
       "TransitionEffect": "WIPE",
       "TransitionControl": "OUT"
     },
@@ -1412,7 +1419,7 @@
       "CameraOffsetTime": "FA",
       "UnitMotion": "USN_UI_REST_START",
       "UnitTalk_KOR": "응?",
-      "UnitTalk_JPN": "ん？",
+      "UnitTalk_JPN": "うん？",
       "TalkTime": 0.03
     },
     {
@@ -1540,7 +1547,7 @@
       "CameraOffsetTime": "NR",
       "UnitMotion": "SAD",
       "UnitTalk_KOR": "흐음…",
-      "UnitTalk_JPN": "はぁ…",
+      "UnitTalk_JPN": "ふぅん…",
       "TalkTime": 0.03
     },
     {

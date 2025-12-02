@@ -2852,9 +2852,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
           "ProcessKey" : 16,
-          "ProgressType" : "TOUCH_OPEN_UI",
-          "ProgressStringValue" : "UI_CMN_BTN",
-          "ProgressStringValue2" : "UI_POPUP_COMMON_RESULT_GET_SD"
+          "ProgressType" : "TOUCH_UI",
+          "ProgressStringValue" : "UI_CMN_BTN"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -2867,42 +2866,19 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
           "ProcessKey" : 18,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
+          "ProgressType" : "WAIT_POPUP_CLOSED"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
           "ProcessKey" : 19,
           "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 3
+          "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
           "ProcessKey" : 20,
-          "ProgressType" : "TOUCH_CLOSE_UI",
-          "ProgressStringValue" : "UI_POPUP_COMMON_RESULT_GET_SD",
-          "ProgressStringValue2" : "UI_POPUP_COMMON_RESULT_GET_SD"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 10092,
-          "ProcessKey" : 21,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1.5
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 10092,
-          "ProcessKey" : 22,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 88
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 10092,
-          "ProcessKey" : 23,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_10092_07"
@@ -2910,14 +2886,14 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
-          "ProcessKey" : 24,
+          "ProcessKey" : 21,
           "ProgressType" : "HIGHLIGHT_UI",
           "ProgressStringValue" : "UI_UNIT_INFO_STAT_SLOT_POTENTIAL"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
-          "ProcessKey" : 25,
+          "ProcessKey" : 22,
           "ProgressType" : "MESSAGE_BOX_RIGHT",
           "ProgressStringValue" : "UF_NKM_UNIT_S_NOA_LISA.png",
           "StringId" : "SI_TUTORIAL_MESSAGE_10092_08"
@@ -2925,14 +2901,14 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
-          "ProcessKey" : 26,
+          "ProcessKey" : 23,
           "ProgressType" : "TOUCH_UI",
           "ProgressStringValue" : "LEFT_FRONT_PAPER"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 10092,
-          "ProcessKey" : 27,
+          "ProcessKey" : 24,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -3941,9 +3917,8 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
           "ProcessKey" : 21,
-          "ProgressType" : "TOUCH_OPEN_UI",
-          "ProgressStringValue" : "BTN_REWARD",
-          "ProgressStringValue2" : "UI_POPUP_COMMON_RESULT_GET"
+          "ProgressType" : "TOUCH_UI",
+          "ProgressStringValue" : "BTN_REWARD"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3956,20 +3931,27 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
           "ProcessKey" : 23,
+          "ProgressType" : "WAIT_OPEN_UI",
+          "ProgressStringValue" : "UI_POPUP_COMMON_RESULT_GET"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 11021,
+          "ProcessKey" : 24,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 24,
+          "ProcessKey" : 25,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 1
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 25,
+          "ProcessKey" : 26,
           "ProgressType" : "TOUCH_CLOSE_UI",
           "ProgressStringValue" : "TOUCH_TUTO",
           "ProgressStringValue2" : "UI_POPUP_COMMON_RESULT_GET"
@@ -3977,21 +3959,21 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 26,
+          "ProcessKey" : 27,
           "ProgressType" : "WAIT_OPEN_UI",
           "ProgressStringValue" : "UI_POPUP_USER_LEVEL_UP"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 27,
+          "ProcessKey" : 28,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 1.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 28,
+          "ProcessKey" : 29,
           "ProgressType" : "TOUCH_CLOSE_UI",
           "ProgressStringValue" : "TOUCH_TUTO",
           "ProgressStringValue2" : "UI_POPUP_USER_LEVEL_UP"
@@ -3999,21 +3981,21 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 29,
+          "ProcessKey" : 30,
           "ProgressType" : "WAIT_SECONDS",
           "ProgressValue" : 1.5
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 30,
+          "ProcessKey" : 31,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 88
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 31,
+          "ProcessKey" : 32,
           "ProgressType" : "TOUCH_CLOSE_UI",
           "ProgressStringValue" : "BTN_X",
           "ProgressStringValue2" : "ACCUE_POPUP"
@@ -4021,7 +4003,7 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 11021,
-          "ProcessKey" : 32,
+          "ProcessKey" : 33,
           "ProgressType" : "SET_SCREEN_BG_ALPHA",
           "ProgressValue" : 1
         },
@@ -5862,37 +5844,36 @@
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21032,
           "ProcessKey" : 8,
-          "ProgressType" : "TOUCH_OPEN_UI",
-          "ProgressStringValue" : "MISSION_GUIDE",
-          "ProgressStringValue2" : "UI_POPUP_COMMON_RESULT_GET"
+          "ProgressType" : "TOUCH_UI",
+          "ProgressStringValue" : "MISSION_GUIDE"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21032,
           "ProcessKey" : 9,
-          "ProgressType" : "SET_SCREEN_BG_ALPHA",
-          "ProgressValue" : 1
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "ProgressId" : 21032,
-          "ProcessKey" : 10,
           "ProgressType" : "MARK_COMPLETE",
           "ProgressValue" : 21031
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21032,
-          "ProcessKey" : 11,
+          "ProcessKey" : 10,
           "ProgressType" : "MARK_COMPLETE",
           "ProgressValue" : 21032
         },
         {
           "ContentsTag" : "MAIN_OPEN",
           "ProgressId" : 21032,
+          "ProcessKey" : 11,
+          "ProgressType" : "SET_SCREEN_BG_ALPHA",
+          "ProgressValue" : 1
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ProgressId" : 21032,
           "ProcessKey" : 12,
-          "ProgressType" : "WAIT_SECONDS",
-          "ProgressValue" : 1.5
+          "ProgressType" : "WAIT_OPEN_UI",
+          "ProgressStringValue" : "UI_POPUP_COMMON_RESULT_GET"
         },
         {
           "ContentsTag" : "MAIN_OPEN",

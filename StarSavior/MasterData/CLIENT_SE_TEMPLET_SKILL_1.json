@@ -12106,6 +12106,1689 @@
           }
         },
         {
+          "m_SEID" : 10431011,
+          "SEGroupID" : 104311,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_SUN",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431021,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 2,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_02_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 100
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431031,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_03_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431041,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431051,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 5,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_05_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 400
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431061,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 6,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_06_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 600
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431071,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 7,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_07_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 800
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431081,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 8,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_08_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431091,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 9,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_09_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10431101,
+          "SEGroupID" : 104312,
+          "SEOrderList" : 10,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_ATTACK_10_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432011,
+          "SEGroupID" : 104321,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_01_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_HEAL_RECEIVE_DECREASE",
+          "m_BuffLifeTurn" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432012,
+          "SEGroupID" : 104322,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_01_02",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_EXTRA_TURN",
+          "m_BuffLifeTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432021,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 2,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_02_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 100
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432031,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_03_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432041,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432051,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 5,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_05_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 400
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432061,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 6,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_06_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 600
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432071,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 7,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_07_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 800
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432081,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 8,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_08_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432091,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 9,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_09_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10432101,
+          "SEGroupID" : 104323,
+          "SEOrderList" : 10,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_SPECIAL_10_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433011,
+          "SEGroupID" : 104331,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_01",
+          "SkillConditionId" : 51017,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_6",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433012,
+          "SEGroupID" : 104332,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_02",
+          "SkillConditionId" : 51018,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_6",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433013,
+          "SEGroupID" : 104333,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_03",
+          "SkillConditionId" : 51019,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_6",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433014,
+          "SEGroupID" : 104334,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_04",
+          "m_fBuffActiveRate" : 7500,
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_SPEED_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END"
+          }
+        },
+        {
+          "m_SEID" : 10433015,
+          "SEGroupID" : 104335,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_05",
+          "SkillConditionId" : 52034,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_HYPER_COOL_TURN_DOWN",
+          "m_BuffLifeTurn" : 0,
+          "SkillCoolturnDownValue" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433016,
+          "SEGroupID" : 104336,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_06",
+          "SkillConditionId" : 52035,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_HYPER_COOL_TURN_DOWN",
+          "m_BuffLifeTurn" : 0,
+          "SkillCoolturnDownValue" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433017,
+          "SEGroupID" : 104337,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_07",
+          "SkillConditionId" : 52036,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_HYPER_COOL_TURN_DOWN_ALL",
+          "m_BuffLifeTurn" : 0,
+          "SkillCoolturnDownValue" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433018,
+          "SEGroupID" : 104338,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_01_08",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "DeleteSpecificBuffStrId" : "BI_BUNNY_SCISSORS_6",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433021,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 2,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_02_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 100
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433031,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_03_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433041,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433051,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 5,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_05_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 400
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433061,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 6,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_06_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 600
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433071,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 7,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_07_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 800
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433081,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 8,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_08_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433091,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 9,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_09_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10433101,
+          "SEGroupID" : 104339,
+          "SEOrderList" : 10,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_HYPER_10_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434011,
+          "SEGroupID" : 104341,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "RandomBuffStrId" : "RBI_BUNNY_SCISSORS_1",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434012,
+          "SEGroupID" : 104342,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_02",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "RandomBuffStrId" : "RBI_BUNNY_SCISSORS_1",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434013,
+          "SEGroupID" : 104343,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_03",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "RandomBuffStrId" : "RBI_BUNNY_SCISSORS_1",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434014,
+          "SEGroupID" : 104344,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_04",
+          "SkillConditionId" : 59001,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_3",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434015,
+          "SEGroupID" : 104345,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_05",
+          "SkillConditionId" : 59002,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_3",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434016,
+          "SEGroupID" : 104346,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_06",
+          "SkillConditionId" : 59003,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_3",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434017,
+          "SEGroupID" : 104347,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_07",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "DeleteSpecificBuffStrId" : "BI_BUNNY_SCISSORS_1",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434018,
+          "SEGroupID" : 104348,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_01_08",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "DeleteSpecificBuffStrId" : "BI_BUNNY_SCISSORS_2",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434031,
+          "SEGroupID" : 104344,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_03_01",
+          "SkillConditionId" : 59001,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_4",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434032,
+          "SEGroupID" : 104345,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_03_02",
+          "SkillConditionId" : 59002,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_4",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434033,
+          "SEGroupID" : 104346,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_03_03",
+          "SkillConditionId" : 59003,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_4",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434041,
+          "SEGroupID" : 104344,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_04_01",
+          "SkillConditionId" : 59001,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_5",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434042,
+          "SEGroupID" : 104345,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_04_02",
+          "SkillConditionId" : 59002,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_5",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10434043,
+          "SEGroupID" : 104346,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SCISSORS_UNIQUE_PASSIVE_04_03",
+          "SkillConditionId" : 59003,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SCISSORS_5",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441011,
+          "SEGroupID" : 104411,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_MOON",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441021,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 2,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_02_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 100
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441031,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_03_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441041,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441051,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 5,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_05_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 400
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441061,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 6,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_06_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 600
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441071,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 7,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_07_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 800
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441081,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 8,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_08_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441091,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 9,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_09_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10441101,
+          "SEGroupID" : 104412,
+          "SEOrderList" : 10,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_ATTACK_10_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442011,
+          "SEGroupID" : 104421,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ATTACK_INCREASE",
+          "m_BuffLifeTurn" : 2,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442012,
+          "SEGroupID" : 104422,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_01_02",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 3000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442013,
+          "SEGroupID" : 104423,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_01_03",
+          "SkillConditionId" : 2020,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_MOON",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442014,
+          "SEGroupID" : 104424,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_01_04",
+          "SkillConditionId" : 2020,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_MOON",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442015,
+          "SEGroupID" : 104425,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_01_05",
+          "SkillConditionId" : 2020,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_MOON",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442021,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 2,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_02_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 100
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442031,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_03_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442041,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442051,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 5,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_05_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 400
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442061,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 6,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_06_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 600
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442071,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 7,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_07_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 800
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442081,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 8,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_08_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442091,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 9,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_09_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10442101,
+          "SEGroupID" : 104426,
+          "SEOrderList" : 10,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_SPECIAL_10_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443011,
+          "SEGroupID" : 104431,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SPEAR_1",
+          "m_BuffLifeTurn" : 3,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443012,
+          "SEGroupID" : 104432,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_01_02",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_CRITICAL",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 2000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443013,
+          "SEGroupID" : 104433,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_01_03",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SPEAR_2",
+          "m_BuffLifeTurn" : 0,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443021,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 2,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_02_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 100
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443031,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_03_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443041,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 300
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443051,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 5,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_05_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 400
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443061,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 6,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_06_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 600
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443071,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 7,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_07_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 800
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443081,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 8,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_08_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443091,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 9,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_09_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1200
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10443101,
+          "SEGroupID" : 104434,
+          "SEOrderList" : 10,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_HYPER_10_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_STAT_NST_RATE_DAMAGE_UP",
+          "m_BuffLifeTurn" : 0,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1500
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10444011,
+          "SEGroupID" : 104441,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_UNIQUE_PASSIVE_01_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SPEAR_3",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 600
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10444012,
+          "SEGroupID" : 104442,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_UNIQUE_PASSIVE_01_02",
+          "SkillConditionId" : 32129,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ENFORCE",
+          "m_BuffLifeTurn" : 0,
+          "EnforceSkillIndex" : "NSI_SKILL_2_SPECIAL",
+          "EnforceAutoTargetId" : 6,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10444013,
+          "SEGroupID" : 104443,
+          "SEOrderList" : 1,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_UNIQUE_PASSIVE_01_03",
+          "SkillConditionId" : 32129,
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_DELETE_SPECIFIC_BUFF",
+          "m_BuffLifeTurn" : 0,
+          "BuffDeleteCount" : 0,
+          "DeleteSpecificBuffStrId" : "BI_ADJUSTTYPE_RESOURCE_MOON",
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10444031,
+          "SEGroupID" : 104441,
+          "SEOrderList" : 3,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_UNIQUE_PASSIVE_03_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SPEAR_3",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 800
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 10444041,
+          "SEGroupID" : 104441,
+          "SEOrderList" : 4,
+          "m_SEStrID" : "COND_BUNNY_SPEAR_UNIQUE_PASSIVE_04_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_BUNNY_SPEAR_3",
+          "m_BuffLifeTurn" : 1,
+          "Stats" : 
+          [
+            {
+              "NKM_STAT_TYPE_RATE" : 1000
+            }
+          ],
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_TURN_START",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
           "m_SEID" : 10491011,
           "SEGroupID" : 104911,
           "SEOrderList" : 1,

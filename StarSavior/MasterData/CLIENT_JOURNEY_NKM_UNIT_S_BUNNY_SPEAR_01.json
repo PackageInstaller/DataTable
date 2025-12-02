@@ -1,0 +1,1955 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_BUNNY_SPEAR_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3"
+    },
+    {
+      "Uid": 174,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "한 번만 도와주라, 응? 내 일생일대의 부탁이야!",
+      "UnitTalk_JPN": "一回だけ助けてよ、ね？一生のお願いだって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "다른 사람에게 부탁을 할 때는 좀 더 공손하게 하세요.",
+      "UnitTalk_JPN": "人にお願いをする際は、もう少し謙虚な態度を取ることです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 4,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "그리고 몇 번을 부탁하셔도 제 대답은 변함없습니다. 이만 돌아가시죠.",
+      "UnitTalk_JPN": "何度お願いされても私の答えは変わりません。お引き取りください。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "에이, 그러지 말고~",
+      "UnitTalk_JPN": "もぉ～、そんなこと言わずにさぁ～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어를 만나러 로비에 가 보니, 실랑이가 한창이었다.",
+      "UnitTalk_JPN": "クレアに会いにロビーへ向かうと、揉め事の真っ最中だった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 187,
+      "WaitClick": false,
+      "WaitTime": 0.75,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "아, 단장님. 오셨군요.",
+      "UnitTalk_JPN": "あぁ、団長。いらっしゃいましたか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장! 마침 잘 왔어!",
+      "UnitTalk_JPN": "団長！ちょうどよかった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "이 피도 눈물도 없는 여자를 설득하려면 단장의 힘이 필요해!",
+      "UnitTalk_JPN": "この血も涙もない女を説得するには、団長の力が必要なの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…계속 그런 식으로 음해하면 앞으로 캔들 스퀘어에 출입을 금지하겠습니다.",
+      "UnitTalk_JPN": "…そのような誹謗中傷を続けるようでしたら、今後キャンドル・スクエアへの出入りを禁止します。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "무슨 일인데 그래?",
+          "JumpAnchorStringId_JPN": "何があったんだ？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "마술 쇼에서 조수 역할을 해 달라고 하더군요.",
+      "UnitTalk_JPN": "マジックショーで、アシスタントをしてほしいと言われました。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마술 쇼?",
+          "JumpAnchorStringId_JPN": "マジックショー？"
+        }
+      ]
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "응, 얼마 전에 길에서 빚쟁이한테 붙잡혔거든.",
+      "UnitTalk_JPN": "うんうん。この前、道で借金取りに捕まっちゃってさ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "THINK",
+      "UnitTalk_KOR": "그런데 그 사람이 기획한 축제 때 오기로 한 마술사가 부상을 입었다길래…",
+      "UnitTalk_JPN": "その人が企画したお祭りに来るはずだったマジシャンが、怪我したって言うから…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 16,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 175,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_NOA_BRIDGE.png",
+      "CutsceneClear": "CLEARALL",
+      "FilterType": "CFT_SEPIA"
+    },
+    {
+      "Uid": 176,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_BUSINESSMAN"
+      ],
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "뭐? 자네가 하겠다고?",
+      "UnitTalk_JPN": "何？君がやるだと？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_BUSINESSMAN"
+      ],
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "흠… 이제 와서 사람을 구하기도 어렵긴 하지.",
+      "UnitTalk_JPN": "ふむ…今から人を探すのも難しいことだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_ADULT_MALE",
+      "UnitNameString": [
+        "SI_BUSINESSMAN"
+      ],
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "좋아. 만약 성적이 좋으면 다음달 이자도 면제해 주겠네.",
+      "UnitTalk_JPN": "よし。もし成績が良ければ、来月の利息も免除してあげよう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 177,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 178,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "CutsceneClear": "CLEARALL",
+      "FilterType": "CFT_NORMAL"
+    },
+    {
+      "Uid": 183,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 181,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 180,
+      "WaitClick": false,
+      "WaitTime": -1.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 179,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "실례지만 본업은 예언가 아니셨는지?",
+          "JumpAnchorStringId_JPN": "失礼ですが、本業は予言者では？"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "괜찮아, 괜찮아. 중요한 건 화려한 퍼포먼스니까.",
+      "UnitTalk_JPN": "大丈夫、大丈夫。大事なのは派手なパフォーマンスだから。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "하지만 관객들의 시선을 사로잡으려면 유능한 조수가 꼭 있어야 한다구!",
+      "UnitTalk_JPN": "でも…観客の視線を引きつけるには、有能なアシスタントが絶対に必要なんだって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "방탕한 생활을 청산하고 노동으로 변제하려는 자세는 인정할 만합니다만…",
+      "UnitTalk_JPN": "これまでのだらしない生活に区切りをつけ、労働で返済しようという心構えは認めますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "저에게는 선임 메이드로서 할 일이 우선입니다.",
+      "UnitTalk_JPN": "私には、ノーブルメイドとしてすべきことが優先です。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "으으… 야박해…",
+      "UnitTalk_JPN": "うぅ…冷たいなぁ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "도와주는 편이 어때?",
+          "JumpAnchorStringId_JPN": "手伝ってあげたら？"
+        }
+      ]
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "네?",
+      "UnitTalk_JPN": "はい？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "이번 기회로 마음을 고쳐먹을 수도 있잖아.",
+          "JumpAnchorStringId_JPN": "これを機会に、心を改めるかもしれないし。"
+        }
+      ]
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그 말씀은… 일리가 있군요.",
+      "UnitTalk_JPN": "そのお言葉は…一理ありますね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "구원자분들을 도와 더 많은 사람들을 구하도록 보좌하는 것이 저희들의 사명…",
+      "UnitTalk_JPN": "救援者の方々をサポートし、より多くの人々を救えるように支えること。それが私たちの使命…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "루나님이 건전한 생활을 할 수 있도록 돕는 것도 같은 맥락이겠죠.",
+      "UnitTalk_JPN": "ルナ様が健全な生活を送れるよう、お助けするのも同じことでしょう。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "알겠습니다. 공연을 성공적으로 끝낼 수 있게 돕겠습니다.",
+      "UnitTalk_JPN": "承知しました。ショーが上手くいくよう、お手伝いいたします。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "단, 특혜는 이번 한 번만입니다.",
+      "UnitTalk_JPN": "ただし、特例は今回限りです。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "역시! 그럴 줄 알았다니까!",
+      "UnitTalk_JPN": "やっぱりね！そう言ってくれると思ってたよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "앗, 말 나온 김에 단장도 함께하는 건 어때?",
+      "UnitTalk_JPN": "あっ、ついでに団長も一緒にやらない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나는 관객으로 만족할게.",
+          "JumpAnchorStringId_JPN": "私は観客として楽しむよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 184,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 185,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_STAGE.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 186,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_CLAP.wav",
+      "UnitTalk_KOR": "그로부터 얼마 뒤, 공연에 초대를 받게 되었다.",
+      "UnitTalk_JPN": "しばらくして、ショーに招待された。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "주최 측이 편의를 봐 줘서 무대가 잘 보이는 좌석에 앉을 수 있었는데…",
+      "UnitTalk_JPN": "主催者側の配慮で、舞台がよく見える席に座ることができたのだが……",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "소개합니다! 오늘 무대를 함께해 줄 조수 씨!",
+      "UnitTalk_JPN": "ご紹介します！今日のショーを共にしてくれる、アシスタントさんでーす！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_01.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "대…! 대대, 대체 뭡니까! 이 파렴치한 복장은?!",
+      "UnitTalk_JPN": "ど…！どど、どういうことですか！この破廉恥な衣装は！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "어쩔 수 없잖아! 마술 공연 같은 거 처음이니까!",
+      "UnitTalk_JPN": "仕方ないでしょ！マジックショーなんて初めてなんだから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "나한테서 시선을 돌리려면 그 유능한 가슴이 반드시 필요해!",
+      "UnitTalk_JPN": "アタシから視線をそらすには、その有能な胸が絶対に必要なの！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "그런 꿍꿍이로 도와 달라고 했던 건가요?!",
+      "UnitTalk_JPN": "そんな企みで、手伝うように言ったのですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "사양할 것 없어! 모두한테 잔뜩 과시해 줘!",
+      "UnitTalk_JPN": "遠慮なんていらないから！みんなにたっぷり見せつけてあげて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "당신 거나 과시하세요!!",
+      "UnitTalk_JPN": "見せつけるのは、あなたのものにしてください！！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "단장님! 가만히 지켜만 보실 겁니까?",
+      "UnitTalk_JPN": "団長！黙って見ているおつもりですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "이 여자한테 따끔하게 한마디 해 주세요!",
+      "UnitTalk_JPN": "この女に、きつく言ってください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇지만…",
+          "JumpAnchorStringId_JPN": "でも…"
+        }
+      ]
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "잘 어울리는 건 사실인걸.",
+          "JumpAnchorStringId_JPN": "似合ってるのは事実だ。"
+        }
+      ]
+    },
+    {
+      "Uid": 53,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 54,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "헤에, 단장도 마음에 드나 본데?",
+      "UnitTalk_JPN": "へぇ～、団長も気に入ったみたいだね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 55,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "개, 객석이 시끄러워서 잘못 들린 거겠죠!",
+      "UnitTalk_JPN": "き、客席が騒がしいですから、聞き間違えでしょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자, 자! 알겠으니까 일단은 공연에 집중하자구! 관객들이 보고 있잖아!",
+      "UnitTalk_JPN": "はいはい！分かったから、今はショーに集中するよ！お客さんが見てるでしょ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "모처럼 즐기러 온 사람들을 실망시켜도 되겠어? 응?",
+      "UnitTalk_JPN": "せっかく楽しみに来た人たちを、がっかりさせちゃってもいいの？うん？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "큭…! 끝나고 나서 두고 봐요!",
+      "UnitTalk_JPN": "くっ…！終わったら、ただじゃおきませんからね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 189,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_03.wav",
+      "CutsceneClear": "CLEARALL",
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 188,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그렇게, 공연이 시작되었는데…",
+      "UnitTalk_JPN": "こうして、ショーが始まったが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "CameraOffset": "TWIN_3",
+      "UnitMotion": "SMILE",
+      "UnitPos": "POS8",
+      "UnitTalk_KOR": "이렇게 망토 뒤로 잠깐 들어간 사이, 모자에 들어간 비둘기는…",
+      "UnitTalk_JPN": "帽子の中の鳩を、こうしてマントの裏に一瞬隠すと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "이럴 수가! 성숙한 토끼로 성장해 버렸잖아!",
+      "UnitTalk_JPN": "なーんと！立派なウサギに成長しちゃった！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 191,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_CLAP.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_6",
+      "CameraOffsetTime": "NR",
+      "UnitMotion": "NORMAL",
+      "UnitPos": "POS7"
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "…그렇게 됐군요.",
+      "UnitTalk_JPN": "…そういうことですか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "잠깐! 조금 더 호응해 줘야지!",
+      "UnitTalk_JPN": "ちょっと！もっと盛り上げてよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "지금도 차고 넘친다고 생각합니다만…",
+      "UnitTalk_JPN": "今でも十分だと思いますが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "어허! 안 돼!",
+      "UnitTalk_JPN": "ううん！ダメダメ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "이렇게 손을 올리고 귀처럼 쫑긋쫑긋하면서 바니바니 거린다거나~",
+      "UnitTalk_JPN": "こうやって手を耳みたいにして、ぴょんぴょんって言ってみたり～…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "죽고 싶다는 수신호인가요, 그건?",
+      "UnitTalk_JPN": "それは、死にたいという手信号ですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "히익! 그 창 치워! 어서!",
+      "UnitTalk_JPN": "ヒィッ！その槍、どっかやってよ！はやく！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 192,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav"
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "생각보다 그럴싸한데…?",
+          "JumpAnchorStringId_JPN": "思ったよりそれっぽいけど…？"
+        }
+      ]
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "촉박하게 준비한 공연인데도 반응은 나쁘지 않았다. ",
+      "UnitTalk_JPN": "慌ただしく準備したショーだが、反応は悪くなかった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "마술도 마술이지만, 관객들은 두 사람의 말다툼이 좀 더 마음에 드는 모양이다…",
+      "UnitTalk_JPN": "マジックもマジックだが、観客たちは二人の言い争いの方が気に入ったようだ…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 오늘 공연의 하이라이트! 수조 탈출입니다!",
+      "UnitTalk_JPN": "それでは本日のショーのハイライト！水槽からの脱出です！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "함께 들어갈 커다란 슬라임에게 짓눌리기 전에, 조수 씨는 무사히 탈출할 수 있을 것인지!",
+      "UnitTalk_JPN": "巨大なスライムに押しつぶされる前に、アシスタントさんは無事に脱出できるのでしょーか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "잠시만요!",
+      "UnitTalk_JPN": "お待ちください！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "뭔가요? 리허설 때는 이런 얘기 한마디도 없었잖습니까!",
+      "UnitTalk_JPN": "どういうことですか？リハーサルでは、このような話はありませんでしたが！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "EmotionEffect": "FUN",
+      "UnitTalk_KOR": "어라? 말 안했던가?",
+      "UnitTalk_JPN": "あれぇ？言ってなかったっけ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "안 했어요! 절대로!",
+      "UnitTalk_JPN": "絶対に！言ってません！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "에이, 걱정은.",
+      "UnitTalk_JPN": "もう、心配いらないって。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "수조 바닥에 탈출 장치가 있어. 비싸게 빌려 온 거니까 안심해.",
+      "UnitTalk_JPN": "水槽の底に脱出装置があるの。高くで借りてきたものだから安心していいよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "그런 문제가 아니잖아요! 당신은…!",
+      "UnitTalk_JPN": "そういう問題じゃないでしょう！本当にあなたは…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "힘내, 클레어!",
+          "JumpAnchorStringId_JPN": "頑張れ、クレア！"
+        }
+      ]
+    },
+    {
+      "Uid": 193,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "이번 공연이 성공한다면, 루나도 도박에서 손을 씻을 수 있을지도 모른다…",
+      "UnitTalk_JPN": "今回のショーが成功すれば、ルナもギャンブルから足を洗えるかもしれない…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 85,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "저 도박중독자를 갱생시킬 수 있다면, 메이드로서는 자랑할 만한 위업 아닐까!",
+      "UnitTalk_JPN": "あのギャンブル依存症を更生させられるなら、メイドとして誇れる偉業ではないだろうか！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "어째서, 단장님마저 그런 기대된다는 듯한 눈으로…",
+      "UnitTalk_JPN": "どうして、団長までそんな期待に満ちた目で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "안 들어갈 거야? 단장도 기대하는 눈치인데?",
+      "UnitTalk_JPN": "入らないの？団長も期待してるみたいだけど？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "정말…",
+      "UnitTalk_JPN": "本当に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "정말로 아무 문제 없는 거겠죠?",
+      "UnitTalk_JPN": "本当に、何の問題もないのですよね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "그렇다니까. 내가 언제 못 믿을 소리 하는 거 본 적 있어?",
+      "UnitTalk_JPN": "もっちろん。アタシが信用できないこと言ったことある？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "못 믿겠으면 예언가로서 장담할게! 반드시 화려하게 탈출할 거야!",
+      "UnitTalk_JPN": "信じられないなら、予言者として断言する！必ず華麗に脱出できるって！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 92,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "STRESS",
+      "UnitTalk_KOR": "당신 말을 믿느니 저 슬라임을 믿죠.",
+      "UnitTalk_JPN": "あなたの言葉より、あのスライムを信じます。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SAD",
+      "UnitTalk_KOR": "앗, 그 말 조금 상처 받았어~",
+      "UnitTalk_JPN": "えぇーん、ちょっと傷ついちゃったよ～。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitNameString": [
+        "SI_AUDIENCE_A"
+      ],
+      "UnitTalk_KOR": "왜 저러지? 무슨 문제라도 생겼나?",
+      "UnitTalk_JPN": "どうしたんだ？何か問題でも起きたのか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_AUDIENCE_B"
+      ],
+      "UnitTalk_KOR": "이봐! 어서 보여 줘!",
+      "UnitTalk_JPN": "おーい！早く見せてくれ！",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "…큭.",
+      "UnitTalk_JPN": "…くっ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitTalk_KOR": "마음에 안 들지만 한번 시작한 이상 끝을 봐야겠죠.",
+      "UnitTalk_JPN": "気に入りませんが…一度始めた以上、最後までやり遂げなければなりませんね。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "좋아요. 들어가겠습니다.",
+      "UnitTalk_JPN": "分かりました。入ります。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 208,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE"
+    },
+    {
+      "Uid": 194,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "TWIN_3",
+      "CameraOffsetTime": "NR"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "클레어가 수조 안으로 들어가자, 그 위로 커다란 천이 덮였다.",
+      "UnitTalk_JPN": "クレアが水槽の中に入ると、その上に大きな布が被せられた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "그럼 시작하겠습니다! 다 함께 셋부터 외쳐 주세요!",
+      "UnitTalk_JPN": "それでは始めます！みんなで一緒にカウントダウンをしましょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 102,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_AUDIENCE_CROWD"
+      ],
+      "UnitTalk_KOR": "셋─! ",
+      "UnitTalk_JPN": "さーん！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 196,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "둘!",
+          "JumpAnchorStringId_JPN": "にー！"
+        }
+      ]
+    },
+    {
+      "Uid": 104,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "하나!",
+      "UnitTalk_JPN": "いちっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_WHOOSH_11.wav",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 106,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 천이 걷히면서 드러난 수조 안에는 슬라임만이─",
+      "UnitTalk_JPN": "そして布がめくられ…水槽の中にいたのはスライムだけだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 107,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 198,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_JOURNEY_BUNNY_SPEAR_01.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_13.mp3"
+    },
+    {
+      "Uid": 197,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 108,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "탈출 실패?!",
+          "JumpAnchorStringId_JPN": "脱出失敗！？"
+        }
+      ]
+    },
+    {
+      "Uid": 110,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CROWD_NOISE_02.wav",
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "크윽…!?",
+      "UnitTalk_JPN": "くっ…！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 111,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "뭐 하는 거야, 클레어! 어서 나와!",
+      "UnitTalk_JPN": "何してるの、クレア！早く出てきて！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 112,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "열리지 않는단 말입니다! 당신이 말한 탈출 장치요!",
+      "UnitTalk_JPN": "開きません！あなたが言った脱出装置が！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 113,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "그럴 리가! 고물상 아저씨가 제대로 작동할 거라고 했는데?",
+      "UnitTalk_JPN": "まさか！ガラクタ屋のおじさんが、ちゃんと動くって言ってたのに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 114,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "고물상한테 빌려 온 거였습니까?!",
+      "UnitTalk_JPN": "ガラクタ屋から借りたものだったんですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 115,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "당신이란 사람은 정말이지… 윽!",
+      "UnitTalk_JPN": "あなたって人は本当に…うっ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 116,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "루나를 윽박지르던 클레어의 몸이 슬라임에 짓눌려 유리벽으로 바짝 붙었다.",
+      "UnitTalk_JPN": "ルナに怒りをぶつけていたクレアの身体はスライムに押しつぶされ、ガラスにぴたりと張り付いた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 117,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "SL",
+      "UnitTalk_KOR": "그 바람에 특정 부위가 남들 앞에서 보여 주기 부끄러운 형태로…",
+      "UnitTalk_JPN": "そのせいで、ある部分が人前ではとても見せられない姿に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 118,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "…다, 단장님? 지금 시선을 어디다 두고 계신 거죠?",
+      "UnitTalk_JPN": "…だ、団長？今、視線をどこに向けていらっしゃるのですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 119,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "단원이 이런 상황에 처했는데, 그런 음흉한 눈빛으로…!",
+      "UnitTalk_JPN": "団員がこのような状況にあるというのに、そんな陰険な目つきで…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 120,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "적극적으로 들이민 건 클레어잖아!",
+          "JumpAnchorStringId_JPN": "積極的に押し付けたのはクレアじゃないか！"
+        }
+      ]
+    },
+    {
+      "Uid": 121,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게 들이미는데 안 보는 쪽이 이상하다고!",
+          "JumpAnchorStringId_JPN": "そんなに押し付けておいて、見ない方がおかしいだろ！"
+        }
+      ]
+    },
+    {
+      "Uid": 122,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "누가 들이밀었다는 겁니까?!",
+      "UnitTalk_JPN": "誰が押し付けたと言うのですか！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 123,
+      "WaitClick": false,
+      "WaitTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav"
+    },
+    {
+      "Uid": 124,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "이, 이 소리는 또 뭐죠?",
+      "UnitTalk_JPN": "こ、この音は？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 125,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "아. 슬라임의 체액 때문에 옷이 녹는 소리야.",
+      "UnitTalk_JPN": "あっ。スライムの体液で、服が溶ける音だよ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 126,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "안에 계속 있으면 전부 녹아 버릴지도.",
+      "UnitTalk_JPN": "中にずっといたら、全部溶けちゃうかも？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 127,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "그런 말은 일찍 해 줬어야죠!",
+      "UnitTalk_JPN": "そんなことはもっと早く言うべきでしょう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 128,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "후후… 화내도 괜찮겠어?",
+      "UnitTalk_JPN": "フフ…怒ってもいいの？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 129,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "뭐라고요?",
+      "UnitTalk_JPN": "どういうことですか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 130,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "슬라임한테 짓눌려서 옴짝달싹할 수 없는 상황인데다가…",
+      "UnitTalk_JPN": "スライムに押しつぶされて、身動きも取れない状況なのに…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 131,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CUTSCENE_TITLE_102051"
+      ],
+      "UnitTalk_KOR": "이대로 있으면 관중들 앞에서 홀딱 벗게 된다고?",
+      "UnitTalk_JPN": "このままだと観客の前で丸裸になっちゃうよ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 132,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "지금 급한 쪽은 누굴까?",
+      "UnitTalk_JPN": "今、焦らないといけないのはどっちの方だろうねー？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 133,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "다, 당신은 염치도 없는 건가요!",
+      "UnitTalk_JPN": "あ、あなたは本当に恥知らずなのですね！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 134,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.4,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_SPELL_DARK_75.wav",
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "큭…! 자, 잠깐…!",
+      "UnitTalk_JPN": "くっ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 135,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "슬라임이 비좁은 수조 안에서 몸을 뒤척이자, 클레어는 얼굴이 붉게 물들어 간다.",
+      "UnitTalk_JPN": "スライムが狭い水槽の中で体をくねらせると、クレアの顔が赤く染まっていく。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 136,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "유리벽에 밀착된 클레어의 신체가 움직일 공간을 찾아 움찔거리는 광경은─",
+      "UnitTalk_JPN": "ガラスに密着したクレアの身体が、空間を探して動く光景は──",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 137,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "자… 장난 그만치고 자물쇠를 푸세요! 어서!",
+      "UnitTalk_JPN": "ふ…ふざけるのはやめて、鍵を開けてください！早く！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 138,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "으응? 뭐라고?",
+      "UnitTalk_JPN": "えー？何て？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 139,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "도와 달라고 부탁할 때는 좀 더 공손할 줄 알아야지, 조수 씨?",
+      "UnitTalk_JPN": "人にお願いする時は、もっと謙虚な態度を取ったほうがいいんじゃない？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 140,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "완전 비겁해…",
+          "JumpAnchorStringId_JPN": "卑怯がすぎる…"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "은혜도 모르는 쓰레기…!",
+          "JumpAnchorStringId_JPN": "恩知らずのクズだ…！"
+        }
+      ]
+    },
+    {
+      "Uid": 142,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CUTSCENE_TITLE_102051"
+      ],
+      "UnitTalk_KOR": "후후, 손에 들어온 패도 못 써먹는 얼간이가 도박판에 낄 자격이 있을 것 같아?",
+      "UnitTalk_JPN": "フフ、手に入れた札も使いこなせない間抜けが、賭博場にいる資格があると思う？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 143,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "이 기회에 잔뜩 놀려 주겠어!",
+      "UnitTalk_JPN": "この機会に、たっぷりからかってあげるんだから！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 144,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "다, 당신이란 인간은 정말이지…!",
+      "UnitTalk_JPN": "あ、あなたって人は本当に…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 145,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ROCK_CRUMBLE.wav"
+    },
+    {
+      "Uid": 146,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "CameraOffset": "DEFAULT",
+      "CameraOffsetTime": "FA",
+      "UnitTalk_KOR": "클레어의 손에 힘이 들어가자 유리벽에 금이 가기 시작했다!",
+      "UnitTalk_JPN": "クレアが手に力を込めると、ガラスにヒビが入った！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 147,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "엣?",
+      "UnitTalk_JPN": "えっ？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 148,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "어, 어떻게 된 거야? 수조에 금이 가잖아?",
+      "UnitTalk_JPN": "ど、どういうこと？水槽にヒビが入ってるけど？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 149,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_LUNA"
+      ],
+      "UnitTalk_KOR": "말도 안 돼! 마법으로 특수 코팅돼서 절대 깨질 리 없는데!",
+      "UnitTalk_JPN": "ありえない！魔法で特殊コーティングされてるから、絶対に割れるはずないのに！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 150,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ROCK_CRUMBLE.wav",
+      "UnitNameString": [
+        "SI_CLAIRE"
+      ],
+      "UnitTalk_KOR": "이까짓 유리벽…! 근성만 있으면…!",
+      "UnitTalk_JPN": "この程度のガラス…！根性さえあれば…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 152,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ROCK_CRUMBLE.wav"
+    },
+    {
+      "Uid": 204,
+      "WaitClick": false,
+      "WaitTime": 0.3,
+      "BgFlashBang": 0.5,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.75,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BREAK_GLASS.wav",
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 205,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_PARK_STAGE.png"
+    },
+    {
+      "Uid": 206,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 153,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.3,
+      "BgCrashTime": 0.5,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_ROCK_DEBRIS_15.wav",
+      "UnitTalk_KOR": "유리벽이 부서지면서, 안에 들어차 있던 슬라임이 객석으로 쏟아져 내렸다!",
+      "UnitTalk_JPN": "ガラスが砕け散ると、中にいたスライムが客席へ溢れ出した！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 155,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "으윽…",
+          "JumpAnchorStringId_JPN": "うっ…"
+        }
+      ]
+    },
+    {
+      "Uid": 156,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "휩쓸려서 넘어진 내 위로, 묵직한 무게감이 걸쳤다.",
+      "UnitTalk_JPN": "巻き込まれて倒れた私の身体に、ずっしりとした重みがのしかかった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 207,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "CameraOffset": "ONE_3",
+      "UnitMotion": "SPECIAL2_LOOP"
+    },
+    {
+      "Uid": 157,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "슬라임인가 싶어서 눈을 뜨자, 클레어의 얼굴이 숨결이 닿을 만큼 가까이 있었다.",
+      "UnitTalk_JPN": "スライムかと思って目を開けると、クレアの顔が息がかかるほど近くにあった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 158,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "그리고 자연스럽게 내려가는 시선에, 분홍빛으로 물든 새하얀 피부가─",
+      "UnitTalk_JPN": "そして自然に下がる視線の先に、ピンク色に染まった真っ白な肌が──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 159,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SPEAR",
+      "UnitMotion": "SPECIAL3",
+      "UnitTalk_KOR": "꺄아앗!",
+      "UnitTalk_JPN": "キャーーッ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 160,
+      "WaitClick": false,
+      "WaitTime": 0.5,
+      "BgFadeInStartCol": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "BgFadeInCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeInTime": 0.5,
+      "BgFlashBang": 0.3,
+      "BgCrash": 0.5,
+      "BgCrashTime": 0.5,
+      "StartBgmFileName": "AMB_01.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CARTOON_HIT.wav",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 161,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FALL_DOWN_04.wav",
+      "UnitTalk_KOR": "날카로운 비명과 함께, 눈앞이 번쩍 하면서 정신을 잃고 말았다.",
+      "UnitTalk_JPN": "鋭い悲鳴と共に目の前が真っ白になり、意識を失ってしまった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 209,
+      "WaitClick": false,
+      "WaitTime": 1.5,
+      "BgFadeOutCol": [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "BgFadeOutTime": 1.5,
+      "BgFileName": "ILLUST_BG_SKY_SUNSET.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 164,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "…결과적으로, 공연은 선정성을 이유로 중단되었다.",
+      "UnitTalk_JPN": "…結果から言うと、ショーは扇情性を理由に中止された。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 165,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "だが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 210,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 201,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "StartBgmFileName": "MUSIC_CUTSCENE_11.mp3",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 211,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 203,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS8"
+    },
+    {
+      "Uid": 166,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS7",
+      "UnitTalk_KOR": "클레어! 그러지 말고 한 번만 더 하자, 응?",
+      "UnitTalk_JPN": "クレア！そう言わずに、もう一回だけやろう！ね？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 167,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "정말이지…",
+      "UnitTalk_JPN": "本当に…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 168,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitTalk_KOR": "질리지도 않는 건가요, 당신은?",
+      "UnitTalk_JPN": "懲りないのですか、あなたは？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 169,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "NOA의 모든 남성들이 기다리고 있다니까!",
+      "UnitTalk_JPN": "NOAの男の人全員が待ってるんだよ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 170,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitTalk_KOR": "그날 무대를 뜨겁게 달궜던 유능한 조수 씨가 돌아오기를!",
+      "UnitTalk_JPN": "あの日ステージを熱く盛り上げた、有能なアシスタントさんが戻ってくることを！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 171,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_VOYAGER_ORACLE",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "나는 그 감동적인 재회의 순간을 주선해 주는 대신 밑천만 조금 챙기는 거지.",
+      "UnitTalk_JPN": "アタシはその感動的な再会の瞬間をセッティングする代わりに、ちょっとだけ資金をもらうってわけ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 172,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "나도 기다리고 있어.",
+          "JumpAnchorStringId_JPN": "私も待ってるよ。"
+        }
+      ]
+    },
+    {
+      "Uid": 173,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_MAID_SPEAR",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "단장니임!!",
+      "UnitTalk_JPN": "団長！！",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 213,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 214,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_MAIN.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 215,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 212,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_BAND_BASS_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SPECIAL",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

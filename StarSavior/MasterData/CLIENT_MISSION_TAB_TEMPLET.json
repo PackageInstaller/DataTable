@@ -57,6 +57,25 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ActiveIntervalId" : "DATE_STORY_EVENT_CASINO_01",
+          "MissionGroupId" : 1001,
+          "MissionViewType" : "MGT_STORY_EVENT",
+          "MissionTabId" : 201,
+          "MissionTabType" : "MT_NORMAL",
+          "MissionTabName" : "SI_MISSION_SPECIAL"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ActiveIntervalId" : "DATE_STORY_EVENT_CASINO_01",
+          "MissionGroupId" : 1001,
+          "MissionViewType" : "MGT_STORY_EVENT",
+          "MissionTabId" : 202,
+          "MissionTabType" : "MT_DAILY",
+          "PointItemId" : 163,
+          "MissionTabName" : "SI_MISSION_DAILY"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ActiveIntervalId" : "DATE_MISSION_NEW_USER_01",
           "MissionGroupId" : 3001,
           "MissionViewType" : "MGT_EVENT_BANNER",
@@ -710,6 +729,14 @@
           "MissionTabId" : 1090201,
           "MissionTabType" : "MT_NORMAL",
           "MissionTabName" : "SI_LIMIT_MISSION"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionGroupId" : 11001,
+          "MissionViewType" : "MGT_ATTENDANCE",
+          "MissionTabId" : 1011001,
+          "MissionTabType" : "MT_NORMAL",
+          "MissionTabName" : "SI_EVENT_ATTENDANCE_CASINO"
         }
     ]
 }

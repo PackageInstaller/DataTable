@@ -819,7 +819,7 @@
       "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
       "UnitMotion": "NORMAL",
       "UnitTalk_KOR": "헹! 착각하지 마. 도와주는 게 아니니까.",
-      "UnitTalk_JPN": "勘違いすんなよ！助けを貸す訳じゃねぇ。",
+      "UnitTalk_JPN": "勘違いすんなよ！手伝ってやる訳じゃねぇ。",
       "TalkTime": 0.03
     },
     {
@@ -1101,7 +1101,7 @@
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "토끼 흉내를 내는 마수가 돌아다닌대!",
-          "JumpAnchorStringId_JPN": "ウサギの真似をする魔獣が徘徊しているらしい！",
+          "JumpAnchorStringId_JPN": "ウサギの真似をする魔獣がうろついてるらしい！",
           "JumpAnchorId": "REWARD_ANCHOR_2"
         }
       ]
@@ -1602,26 +1602,26 @@
       "Uid": 134,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_WRENCH_01",
-      "WaitClick": false,
+      "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
       "UnitMotion": "SURPRISE",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "뭣…!",
-      "UnitTalk_JPN": "なにっ！？",
+      "UnitTalk_JPN": "あぁん…！？",
       "TalkTime": 0.03
     },
     {
       "Uid": 139,
       "ContentsTag": "DEV_OPEN",
       "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_CONSTRUCT_WRENCH_01",
-      "WaitClick": false,
+      "WaitClick": true,
       "WaitTime": 0.0,
       "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
       "UnitMotion": "ANGRY",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "무슨 소릴 하는 거냐, 이 바보 자식!",
-      "UnitTalk_JPN": "何を言ってやがる、このバカ野郎！",
+      "UnitTalk_JPN": "何言ってやがる、こんにゃろぉ！",
       "TalkTime": 0.03
     },
     {
@@ -1629,7 +1629,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "역시 이런 어설픈 변명에는 넘어오지 않는 건가…!",
-      "UnitTalk_JPN": "やっぱりこんな下手な言い訳には乗らないのか…！",
+      "UnitTalk_JPN": "やっぱりこんな嘘は通用しないか…！",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -1646,7 +1646,7 @@
       "UnitPos": "POS7",
       "EmotionEffect": "UPSET",
       "UnitTalk_KOR": "뭘 미적거리고 앉았어! 그런 말은 빨리했어야지! ",
-      "UnitTalk_JPN": "何ぐずぐずしてる！そんなこと早く言うべきだっただろ！",
+      "UnitTalk_JPN": "何グズグズしてんだ！そんなことなら、もっと早く言えよな！",
       "TalkTime": 0.03
     },
     {
@@ -1654,7 +1654,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "넘어왔다?!",
-      "UnitTalk_JPN": "騙されたのか？！",
+      "UnitTalk_JPN": "通用した！？",
       "TalkTime": 0.03,
       "AutoHighlight": "DARK"
     },
@@ -1667,7 +1667,7 @@
       "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "그런 게 헤집고 다니면, 애꿎은 토끼들이 오해를 살 거 아냐.",
-      "UnitTalk_JPN": "そんなものがうろついていると、罪のないのウサギたちが誤解されるだろう。",
+      "UnitTalk_JPN": "そんなのがうろついてたら、罪のないウサギたちが誤解されるだろ。",
       "TalkTime": 0.03
     },
     {
@@ -1679,7 +1679,7 @@
       "UnitStrId": "NKM_UNIT_NPC_CONSTRUCT_WRENCH",
       "UnitPos": "POS7",
       "UnitTalk_KOR": "함부로 얼쩡거리지 못하게 혼쭐을 내 버리겠어!",
-      "UnitTalk_JPN": "むやみにうろつけないよう、懲らしめてやる！",
+      "UnitTalk_JPN": "むやみにうろちょろできないように、懲らしめてやるぜ！",
       "TalkTime": 0.03
     },
     {
@@ -1703,7 +1703,7 @@
       "CameraOffset": "POS8_2X",
       "UnitMotion": "SMILE",
       "UnitTalk_KOR": "역시 단장이야. 여심을 흔들 줄 안다니까?",
-      "UnitTalk_JPN": "さすが団長、女心を動かす術を知ってるぅ？",
+      "UnitTalk_JPN": "さすが団長さん、女心を分かってるねー？",
       "TalkTime": 0.03
     },
     {
@@ -1714,7 +1714,7 @@
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "가슴이 철렁했으니까 그만둬…",
-          "JumpAnchorStringId_JPN": "心臓がひやっとしたんだから、やめて…"
+          "JumpAnchorStringId_JPN": "やめてくれ、心臓が止まるかと思ったよ…"
         }
       ]
     },

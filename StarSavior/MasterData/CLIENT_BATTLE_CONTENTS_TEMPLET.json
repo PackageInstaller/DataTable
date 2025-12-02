@@ -94,6 +94,45 @@
           "BattleContentsNameENG" : "SI_COSMO_GATE_ENG",
           "BattleContentsComment" : "SI_COSMO_GATE_COMMENT",
           "BattleContentsDesc" : "SI_COSMO_GATE_DESC"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_CASINO_01",
+          "BattleContentsID" : 201,
+          "OrderList" : 1,
+          "BattleContentsType" : "EVENT",
+          "BattleContentsIcon" : "I_CM_BG_EXPLORE.png",
+          "BattleContentsThumbnail" : "HUB_EC_CASINO.png",
+          "BattleContentsListPrefab" : "WIDGET_EC_CASINO.prefab",
+          "StoryEventBgm" : "MUSIC_CASINO_01.mp3",
+          "BattleContentsName" : "SI_EVENT",
+          "BattleContentsNameENG" : "SI_EVENT_ENG",
+          "BattleContentsComment" : "SI_EVENT_COMMENT",
+          "BattleContentsDesc" : "SI_EVENT_CASINO_DESC",
+          "ShopTabStrId" : "SHOP_EVENT_CASINO",
+          "ShopTabIndex" : 0,
+          "ShopThumbnail" : "EC_B_CASINO_SHOP.png",
+          "MissionTabGroupId" : 1001,
+          "MissionThumbnail" : "EC_B_CASINO_MISSION.png",
+          "EventPointGroupId" : 1,
+          "TopbarViewItemData" : 
+          [
+            {
+              "TopbarViewItemId" : 2010203
+            },
+
+            {
+              "TopbarViewItemId" : 2010201
+            },
+
+            {
+              "TopbarViewItemId" : 101
+            },
+
+            {
+              "TopbarViewItemId" : 103
+            }
+          ]
         }
     ]
 }

@@ -1,0 +1,1059 @@
+﻿{
+  "$schema": "../../../../../DataSchema/Exported.jsonc",
+  "$comment": "name: JOURNEY_NKM_UNIT_S_BUNNY_SCISSORS_01",
+  "_Version": 4,
+  "Data": [
+    {
+      "Uid": 1,
+      "RewardAnchor": "REWARD_ANCHOR_1",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "AMB_13.mp3"
+    },
+    {
+      "Uid": 2,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "맡기로 한 의뢰가 취소되어 일정이 붕 뜬 날이었다.",
+      "UnitTalk_JPN": "引き受けることになっていた依頼がキャンセルになり、予定が空いた日のことだった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 3,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "오래간만의 휴일이라고 생각하고, 숙소에서 느긋하게 잠을 자고 있었는데…",
+      "UnitTalk_JPN": "久しぶりの休日だと思い、宿でゆっくり眠っていると…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 5,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "StartBgmFileName": "MUSIC_CUTSCENE_19.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "인간 단장! 여기 있느냐!",
+      "UnitTalk_JPN": "人間の団長よ！ここにいるのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 6,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛이 기세 좋게 문을 열고 들이닥쳤다.",
+      "UnitTalk_JPN": "スカーレットが勢いよくドアを開けて飛び込んできた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 7,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "EmotionEffect": "QMARK",
+      "UnitTalk_KOR": "으응? 해가 중천에 떴는데 아직도 자고 있는 것이냐?",
+      "UnitTalk_JPN": "うむ？もう昼だというのに、まだ眠っているのか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 8,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "USN_UI_REST",
+      "UnitTalk_KOR": "단장은 정말 그… 뭐라더라…",
+      "UnitTalk_JPN": "団長はまるで…えぇと…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 9,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "그래! 거북이처럼 게으르구나!",
+      "UnitTalk_JPN": "そうだ！亀のように怠惰なのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 10,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛은 최근 아이들에게 빌린 토끼와 거북이 동화책을 감명 깊게 읽었다…",
+      "UnitTalk_JPN": "スカーレットは最近、子どもから借りたウサギとカメの童話に深く感銘を受けたらしい…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 11,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그런데 그 복장은…?",
+          "JumpAnchorStringId_JPN": "ところで、その服装は…？"
+        }
+      ]
+    },
+    {
+      "Uid": 12,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "오, 바로 알아보는구나!",
+      "UnitTalk_JPN": "おっ、すぐに気づいたのだな！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 13,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "그야 동화책에도 나와 있지 않더냐.",
+      "UnitTalk_JPN": "ほら、童話にも出てくるではないか。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 14,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "일찍 일어나는 토끼가 거북이를 잡아 먹는다고.",
+      "UnitTalk_JPN": "早起きしたウサギが、カメを食べてしまうのだろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 15,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "틀려.",
+          "JumpAnchorStringId_JPN": "違う。"
+        },
+        {
+          "Uid": 2,
+          "JumpAnchorStringId_KOR": "뭔가 단단히 잘못됐어.",
+          "JumpAnchorStringId_JPN": "完全に間違っている。"
+        }
+      ]
+    },
+    {
+      "Uid": 17,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그래서 이 몸도 결심한 것이다!",
+      "UnitTalk_JPN": "だからわがはいも決心したのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 18,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "여정을 끝마치기 위해, 토끼 녀석처럼 하루하루를 치열하게 보내기로!",
+      "UnitTalk_JPN": "旅を完遂するために、ウサギのように日々を激しく過ごすことを！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 19,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "그 첫걸음이 바로 이 옷이지.",
+      "UnitTalk_JPN": "その第一歩が、まさにこの服なのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 20,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "아침부터 재빠르게 만들어 버렸다! 대단하지 않느냐?",
+      "UnitTalk_JPN": "朝からパパッと作ったのだぞ！すごいであろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 21,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그러셨군요…",
+          "JumpAnchorStringId_JPN": "そうでしたか…"
+        }
+      ]
+    },
+    {
+      "Uid": 22,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "창문으로 스며든 햇살이 코르셋의 수려한 곡선을 따라 흘러내리고 있다. ",
+      "UnitTalk_JPN": "窓から差し込む日差しが、コルセットのしなやかな曲線をなぞるように照らしている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 23,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "납득하기 어려운 이유지만… 여정을 향한 의욕으로 이해하면 문제 없을까?",
+      "UnitTalk_JPN": "納得しがたい理由だが…旅に対する意欲だと解釈すればいいのだろうか？",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 24,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "크하하! 단장도 이 몸의 작품에 시선을 빼앗겼구나!",
+      "UnitTalk_JPN": "ふはは！団長も、わがはいの作品に目を奪われたのか！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 25,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "NORMAL",
+      "UnitTalk_KOR": "모처럼 실력을 발휘할 기회라 희귀한 심해 마수의 가죽을 원단으로 썼다.",
+      "UnitTalk_JPN": "せっかくの実力を発揮する機会だしのう。珍しい深海魔獣の皮を生地に使ったのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 26,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "촉감도 착용감도 평범한 옷들과는 전혀 다르지.",
+      "UnitTalk_JPN": "手触りも着心地も、普通の服とは全く違うのだぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 27,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_02.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "CameraOffset": "ONE_3",
+      "CameraOffsetTime": "FA",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "자, 직접 만져 보거라!",
+      "UnitTalk_JPN": "さあ、触ってみるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 28,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "스칼렛이 당당하게 허리를 들이밀었다.",
+      "UnitTalk_JPN": "スカーレットが、堂々と腰を突き出してきた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 29,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "확실히 자랑스러워할 만큼, 재질도 마감도 고급스럽다.",
+      "UnitTalk_JPN": "確かに自慢するだけのことはあり、素材も仕立ても高級感がある。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 30,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "굉장한데…",
+          "JumpAnchorStringId_JPN": "すごい…"
+        }
+      ]
+    },
+    {
+      "Uid": 31,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "실력을 제대로 발휘했구나.",
+          "JumpAnchorStringId_JPN": "実力を存分に発揮したな。"
+        }
+      ]
+    },
+    {
+      "Uid": 32,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "후후, 코르셋으로 끝이 아니다.",
+      "UnitTalk_JPN": "ふっふっふ、コルセットだけではないぞ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 33,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "이 꼬리가 보이느냐? 무려 웬디고의 털로 만든 것이다!",
+      "UnitTalk_JPN": "このシッポが見えるか？なんと、ウェンディゴの毛で作ったのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 34,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "엄청 부드럽고 엄청 푹신푹신하지!",
+      "UnitTalk_JPN": "柔らかくて、フワフワなのだぞ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 35,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "EndFxSoundName": "SFX_CUTSCENE_COMMON_CUTE_02.wav",
+      "UnitTalk_KOR": "엉덩이에 달린 토끼 꼬리가 스칼렛의 허리에 맞춰 흔들거린다.",
+      "UnitTalk_JPN": "お尻についたウサギの尻尾が、スカーレットの腰に合わせて揺れている。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF",
+      "EndFxLoopControl": "NCSC_STOP"
+    },
+    {
+      "Uid": 36,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "보고만 있어도 그 푹신푹신한 감촉이 손끝에 전해지는 것 같다.",
+      "UnitTalk_JPN": "見ているだけで、そのフワフワした感触が指先に伝わってくるようだ。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 37,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "감탄을 하면서 손을 가져가는 순간…",
+      "UnitTalk_JPN": "感嘆しながら手を伸ばした瞬間…",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 38,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL3",
+      "EmotionEffect": "HEART",
+      "UnitTalk_KOR": "흐잇?!",
+      "UnitTalk_JPN": "ひゃあっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 39,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "실수로 살랑거리던 꼬리에 손이 닿자, 스칼렛의 등줄기가 쭉 펴졌다.",
+      "UnitTalk_JPN": "ふわりと揺れていた尻尾に、誤って手が触れた途端…スカーレットの背筋がピンと伸びた。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 40,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마, 많이 놀랐어?",
+          "JumpAnchorStringId_JPN": "び、びっくりした？"
+        }
+      ]
+    },
+    {
+      "Uid": 41,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "생각보다 더 민감한 부위인가 보네.",
+          "JumpAnchorStringId_JPN": "思ったより敏感なところだったんだな。"
+        }
+      ]
+    },
+    {
+      "Uid": 42,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "EmotionEffect": "UPSET",
+      "UnitTalk_KOR": "크흠! 노, 놀라다니!",
+      "UnitTalk_JPN": "こほん！び、びっくりなどしていない！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 43,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SURPRISE",
+      "UnitTalk_KOR": "꼬… 꼬리를 건드린다고 호들갑 떠는 건 해츨링들이나 하는 짓이지.",
+      "UnitTalk_JPN": "シ…シッポを触られたくらいで大騒ぎするのは、孵化したてのやつらがやることなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 44,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "이 몸은 성숙하니까… 아무렇지 않은 것이다!",
+      "UnitTalk_JPN": "わがはいは成熟している…だから、何ともないのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 45,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그래…?",
+          "JumpAnchorStringId_JPN": "そう…？"
+        }
+      ]
+    },
+    {
+      "Uid": 46,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "EMARK",
+      "UnitTalk_KOR": "……!?",
+      "UnitTalk_JPN": "……！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 47,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "꼬리 끝에 달린 리본을 잡아당기자, 스칼렛의 맨어깨가 흠칫 떨린다.",
+      "UnitTalk_JPN": "尻尾の先についたリボンを引っ張ると、スカーレットの肩がぴくっと震える。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 48,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SMILE",
+      "UnitTalk_KOR": "흐하, 하하하하…!",
+      "UnitTalk_JPN": "ふ、ふははははは…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 49,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "이제 알겠느냐, 단장! 그 정도로 이 몸은 놀라지 않는다!",
+      "UnitTalk_JPN": "分かったか、人間の団長よ！その程度のことで、わがはいは動じないのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 50,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL",
+      "UnitTalk_KOR": "자, 이만하면 충분히 감상했겠지?",
+      "UnitTalk_JPN": "さあ、もう十分堪能したであろう？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 51,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "아무렇지 않은척 하는 스칼렛의 태도에, 조금 장난을 치고 싶어졌다.",
+      "UnitTalk_JPN": "平気なふりをするスカーレットの態度に、少しいたずらをしたくなった。",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 52,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "내 손길에서 도망치려는 듯이 말려 들어가는 스칼렛의 통통한 꼬리를, 강하게 쥔 순간─",
+      "UnitTalk_JPN": "私の手から逃れるかのように巻かれる、スカーレットのふっくらとした尻尾を強く握りしめた瞬間──",
+      "TalkTime": 0.03,
+      "AutoHighlight": "OFF"
+    },
+    {
+      "Uid": 53,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgFlashBang": 0.15,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "BgFileName": "ILLUST_BG_JOURNEY_BUNNY_SCISSORS_01.png",
+      "StartBgmFileName": "AMB_13.mp3",
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_06.wav",
+      "CutsceneClear": "CLEARUNIT",
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "하읏!?",
+      "UnitTalk_JPN": "はうっ！？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 56,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "너, 너너…! 너무해! 인간 단장!",
+      "UnitTalk_JPN": "お、お主…！ひどいぞ、人間の団長よ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 57,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "그렇게 세게 잡으면 나같이 성숙한 용족이라도 참을 수 없단 말이다!",
+      "UnitTalk_JPN": "そんなに強く掴まれたら、わがはいのように成熟した竜族でも我慢できないのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 58,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "미안. 나쁜 뜻은 없었어.",
+          "JumpAnchorStringId_JPN": "ごめん。悪気はなかったんだ。"
+        }
+      ]
+    },
+    {
+      "Uid": 59,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "괜찮아?",
+          "JumpAnchorStringId_JPN": "大丈夫？"
+        }
+      ]
+    },
+    {
+      "Uid": 60,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "으읏…",
+      "UnitTalk_JPN": "ううっ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 61,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_CLOTH_92.wav",
+      "UnitTalk_KOR": "눈이 마주치자, 스칼렛은 꼬리를 품 안에 더욱 꼬옥 끌어안았다.",
+      "UnitTalk_JPN": "目が合うと、スカーレットは尻尾をぎゅっと抱きしめた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 62,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "야, 약한 게 아니라 조금 놀랐을 뿐이야.",
+      "UnitTalk_JPN": "い、嫌な気分ではない…少し驚いただけなのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 63,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "이렇게 강하게 잡히면… 온몸의 힘이 쭉 빠지는 기분이라…",
+      "UnitTalk_JPN": "こんなに強く掴まれると…全身の力が抜けるような気分で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 64,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "그래. 한 번도 못 느껴 본 굉장히 이상한 기분이라서…",
+      "UnitTalk_JPN": "そうなのだ。一度も感じたことのない、すごく変な気分で…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 65,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "침묵이 흐른다.",
+      "UnitTalk_JPN": "沈黙が流れた。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 66,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "정오가 가까워진 시간대라, 인기척이 없는 조용한 숙소에 스칼렛의 가쁜 숨소리만 울려 퍼진다.",
+      "UnitTalk_JPN": "正午に差し掛かった時間帯。人気のない静かな宿に、スカーレットの荒い息遣いだけが響き渡る。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 67,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartBgmFileName": "MUSIC_CUTSCENE_22.mp3",
+      "UnitTalk_KOR": "눈앞에서 흔들리는 꼬리 끝은, 어쩐지…  ",
+      "UnitTalk_JPN": "目の前で揺れる尻尾の先は、どうにも…  ",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 68,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "그… 그래서 말이다만…",
+      "UnitTalk_JPN": "そ…それでだが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 69,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "한 번 더 만지면, 어떤 기분인지…",
+      "UnitTalk_JPN": "もう一度触れたら、どんな気分になるのか…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 70,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "응…?",
+          "JumpAnchorStringId_JPN": "うん…？"
+        }
+      ]
+    },
+    {
+      "Uid": 71,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "아, 아니! 그러니까…!",
+      "UnitTalk_JPN": "ち、違うのだ！つまり…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 72,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "그렇지! 후, 훈련! 훈련이다!",
+      "UnitTalk_JPN": "そうだ！ト、トレーニングだ！これはトレーニングなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 73,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "위대한 용족인 이 몸이, 꼬리를 잡혔다고 약한 꼴을 보일 수는 없지 않느냐!",
+      "UnitTalk_JPN": "偉大な竜族であるわがはいが、尻尾を掴まれたくらいで弱い姿を見せるわけにはいかんだろう！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 74,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "일리가 있기는 한데…",
+          "JumpAnchorStringId_JPN": "一理あるけど…"
+        }
+      ]
+    },
+    {
+      "Uid": 75,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "정말로 꼬리가 약점이라면, 이대로 놔둬서는 안 될 것이다.",
+      "UnitTalk_JPN": "もし本当に尻尾が弱点なら、このまま放っておくわけにはいかない。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 76,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "하지만…",
+      "UnitTalk_JPN": "だが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 77,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "그, 그래! 이 뭔지 모를 감각에 충분히 익숙해지지 않으면 큰일이 날 거다!",
+      "UnitTalk_JPN": "そ、そうだ！この正体の分からない感覚に慣れておかないと、大変なことになるのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 78,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "그러니 단장, 이번엔 조금만…",
+      "UnitTalk_JPN": "だから団長、今度はもう少し…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 79,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "조금만 더… 세게 쥐어 줄 수는 없느냐…?",
+      "UnitTalk_JPN": "もう少しだけ…強く握ってはくれぬか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 80,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "그렇게까지 말한다면…",
+          "JumpAnchorStringId_JPN": "そこまで言うなら…"
+        }
+      ]
+    },
+    {
+      "Uid": 81,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "마음의 준비는 됐어, 스칼렛?",
+          "JumpAnchorStringId_JPN": "スカーレット、心の準備はできた？"
+        }
+      ]
+    },
+    {
+      "Uid": 82,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "으, 으음! 물론이고 말고…!",
+      "UnitTalk_JPN": "う、うむ！もちろんなのだ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 83,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitNameString": [
+        "SI_SCARLET"
+      ],
+      "UnitTalk_KOR": "이번엔 이 몸을 신경 쓰지 말고, 잔뜩 주무르는 거다…!",
+      "UnitTalk_JPN": "わがはいのことは気にせず、思いっきり揉むのだ…！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 84,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "새로운 훈련을 앞둔 스칼렛의 눈빛은, 언제나 보던 활기찬 눈빛과 다르게 미열을 머금고 있었다…",
+      "UnitTalk_JPN": "新たなトレーニングを控えたスカーレットの瞳は、いつもの活発な目つきとは違い、微熱を帯びていた…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 85,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 102,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_HOTEL_2.png",
+      "StartBgmFileName": "AMB_13.mp3",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS"
+    },
+    {
+      "Uid": 86,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "WIPE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 87,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_BODYFALL_06.wav",
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SPECIAL3",
+      "UnitTalk_KOR": "후우, 후…",
+      "UnitTalk_JPN": "ふ、ふぅ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 88,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "힘든 훈련이었어…",
+          "JumpAnchorStringId_JPN": "きついトレーニングだった…"
+        }
+      ]
+    },
+    {
+      "Uid": 89,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "어때, 좀 익숙해졌어?",
+          "JumpAnchorStringId_JPN": "どう、少しは慣れた？"
+        }
+      ]
+    },
+    {
+      "Uid": 103,
+      "WaitClick": false,
+      "WaitTime": 0.75,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "EmotionEffect": "EMARK"
+    },
+    {
+      "Uid": 90,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "그, 글쎄… 묘하게 조금 알 것 같기도 하다만…",
+      "UnitTalk_JPN": "う、うぅむ…少し分かったような気もするが…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 91,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "역시 아직은… 잘 모르겠는데…",
+      "UnitTalk_JPN": "やはりまだ…よく分からないのだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 104,
+      "WaitClick": false,
+      "WaitTime": 0.75,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SAD",
+      "EmotionEffect": "THINK2"
+    },
+    {
+      "Uid": 93,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "혹시, 단장이 괜찮다면…",
+      "UnitTalk_JPN": "団長さえよかったら…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 94,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "다음에 또… 부탁해도 되겠느냐?",
+      "UnitTalk_JPN": "また…今度頼んでもよいか？",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 95,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "JumpAnchorData": [
+        {
+          "Uid": 1,
+          "JumpAnchorStringId_KOR": "훈련 말이지?",
+          "JumpAnchorStringId_JPN": "トレーニングのこと？"
+        }
+      ]
+    },
+    {
+      "Uid": 96,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "다, 당연하지!",
+      "UnitTalk_JPN": "も、もちろんなのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 97,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "SERIOUS",
+      "UnitTalk_KOR": "거북이한테 맥을 못 추는 토끼라니, 용납할 수 없다.",
+      "UnitTalk_JPN": "カメに負けるウサギなど、許せないのだ。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 98,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitTalk_KOR": "하지만 단장 말고 다른 녀석한테 꼬리를 내 주는 것도 싫으니까…",
+      "UnitTalk_JPN": "しかし、団長以外のやつに尻尾を出すのも嫌なのだ…",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 99,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitStrId": "NKM_UNIT_NPC_BUNNY_SCISSORS",
+      "UnitMotion": "ANGRY",
+      "UnitTalk_KOR": "그래! 그러니 다음 훈련도 잘 부탁한다!",
+      "UnitTalk_JPN": "うむ！次のトレーニングもよろしく頼むのだ！",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 105,
+      "WaitClick": false,
+      "WaitTime": 1.0,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_MOVEMENT_FOOT_STEP_CHASE.wav",
+      "CutsceneClear": "CLEARUNIT"
+    },
+    {
+      "Uid": 100,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "BgCrash": 0.2,
+      "BgCrashTime": 0.3,
+      "StartFxSoundName": "SFX_CUTSCENE_COMMON_DOOR_OPEN_2.wav",
+      "UnitTalk_KOR": "스칼렛은 그 말을 남기고 도망치듯 방을 나가 버렸다.",
+      "UnitTalk_JPN": "スカーレットはそう言い残し、逃げるように部屋を出ていった。",
+      "TalkTime": 0.03
+    },
+    {
+      "Uid": 101,
+      "WaitClick": true,
+      "WaitTime": 0.0,
+      "UnitTalk_KOR": "덕분에 잠이 확 깨는 바람에, 환기부터 하기로 마음 먹었다…",
+      "UnitTalk_JPN": "おかげで完全に目が覚めた。まずは換気からしよう…",
+      "TalkTime": 0.03,
+      "DictionaryFinalCut": true
+    },
+    {
+      "Uid": 110,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "IN"
+    },
+    {
+      "Uid": 111,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "BgFileName": "ILLUST_BG_CANDLE_REST.png",
+      "CutsceneClear": "CLEARALL"
+    },
+    {
+      "Uid": 112,
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "TransitionEffect": "FADE",
+      "TransitionControl": "OUT"
+    },
+    {
+      "Uid": 113,
+      "ContentsTag": "DEV_OPEN",
+      "CutsceneStrId": "JOURNEY_NKM_UNIT_S_BAND_BASS_04",
+      "WaitClick": false,
+      "WaitTime": 0.0,
+      "CutsceneClear": "CLEARTEXT",
+      "UnitStrId": "CURRENT_CHARACTER",
+      "CameraOffset": "TWIN_6",
+      "UnitMotion": "SAD",
+      "UnitPos": "POS3",
+      "AutoHighlight": "LIGHT"
+    }
+  ]
+}

@@ -7568,6 +7568,55 @@
           }
         },
         {
+          "m_SEID" : 22500111,
+          "m_SEStrID" : "COND_MAID_BELL_EVENT_ATTACK_01",
+          "m_BuffTargetType" : "NSETT_SELF",
+          "m_BuffStrID" : "BI_ADJUSTTYPE_RESOURCE_STAR",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
+          "m_SEID" : 22500121,
+          "m_SEStrID" : "COND_MAID_BELL_EVENT_SPECIAL_01",
+          "m_fBuffActiveRate" : 5000,
+          "m_BuffTargetType" : "NSETT_ENEMY_ALL",
+          "m_BuffStrID" : "BI_RATE_HIT_DECREASE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END"
+          }
+        },
+        {
+          "m_SEID" : 22500131,
+          "m_SEStrID" : "COND_MAID_BELL_EVENT_HYPER_01",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_SILENCE",
+          "m_BuffLifeTurn" : 1,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 7500
+          }
+        },
+        {
+          "m_SEID" : 22500132,
+          "m_SEStrID" : "COND_MAID_BELL_EVENT_HYPER_02",
+          "m_BuffTargetType" : "NSETT_TARGET",
+          "m_BuffStrID" : "BI_SPEED_GAUGE_DOWN",
+          "m_BuffLifeTurn" : 0,
+          "SpeedGaugeRate" : 2000,
+          "m_Condition" : 
+          {
+            "m_ActiveType" : "NSEAT_SKILL_END",
+            "m_fActiveRate" : 10000
+          }
+        },
+        {
           "m_SEID" : 220001101,
           "m_SEStrID" : "COND_MON_MAID_BELL_TUTORIAL_01_ATTACK_01",
           "SkillConditionId" : 1007,

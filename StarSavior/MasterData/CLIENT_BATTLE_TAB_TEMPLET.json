@@ -276,7 +276,7 @@
 
             {
               "BattleUnlockType" : "BATTLE_CLEAR",
-              "BattleUnlockReqId" : 11006032
+              "BattleUnlockReqId" : 11004025
             }
           ]
         },
@@ -302,7 +302,7 @@
 
             {
               "BattleUnlockType" : "BATTLE_CLEAR",
-              "BattleUnlockReqId" : 11012060
+              "BattleUnlockReqId" : 11008040
             }
           ]
         },
@@ -607,6 +607,46 @@
           "BattleTabThumbnail" : "UI_COSMO_BOSS_MOGULUS_CROWN_BLACK_01.png",
           "BattleTabName" : "SI_MOGULUS",
           "BattleTabDesc" : "SI_BATTLE_TAB_DESC_COSMO_GATE_1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_CASINO_01",
+          "BattleTabID" : 20101,
+          "OrderList" : 1,
+          "BattleContentsId" : 201,
+          "BattleTabType" : "EVENT_STORY",
+          "BattleTabIcon" : "UI_DAILY_BATTLE_CATEGORY_ICON_01.png",
+          "BattleTabThumbnail" : "UI_DAILY_BATTLE_CATEGORY_THUMB_01.png",
+          "BattleTabBackground" : "UI_MAINSTREAM_BG_NORMAL_00.png",
+          "BattleTabName" : "SI_EVENT_STORY",
+          "BattleTabDesc" : "SI_STORY_EVENT_CASINO_BATTLE_TAB_DESC_1"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_CASINO_01",
+          "BattleTabID" : 20102,
+          "OrderList" : 2,
+          "BattleContentsId" : 201,
+          "BattleTabType" : "EVENT_RAID",
+          "IsOverlap" : true,
+          "BattleTabIcon" : "UI_DAILY_BATTLE_CATEGORY_ICON_01.png",
+          "BattleTabThumbnail" : "UI_DAILY_BATTLE_CATEGORY_THUMB_01.png",
+          "BattleTabBackground" : "UI_MAINSTREAM_BG_NORMAL_00.png",
+          "BattleTabName" : "SI_EVENT_RAID",
+          "BattleTabDesc" : "SI_STORY_EVENT_CASINO_BATTLE_TAB_DESC_2"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "IntervalID" : "DATE_STORY_EVENT_CASINO_01",
+          "BattleTabID" : 20103,
+          "OrderList" : 3,
+          "BattleContentsId" : 201,
+          "BattleTabType" : "EVENT_CHALLENGE",
+          "BattleTabIcon" : "UI_DAILY_BATTLE_CATEGORY_ICON_01.png",
+          "BattleTabThumbnail" : "UI_DAILY_BATTLE_CATEGORY_THUMB_01.png",
+          "BattleTabBackground" : "UI_MAINSTREAM_BG_NORMAL_00.png",
+          "BattleTabName" : "SI_EVENT_CHALLENGE",
+          "BattleTabDesc" : "SI_STORY_EVENT_CASINO_BATTLE_TAB_DESC_3"
         }
     ]
 }

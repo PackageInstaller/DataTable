@@ -20,7 +20,7 @@
           "ItemId" : 102,
           "NormalItemSubType" : "STN_INVISIBLE",
           "ItemGrade" : "IG_COMMON",
-          "StackMax" : 999,
+          "StackMax" : 2000000000000000,
           "ItemIconImg" : "ICON_ITEM_NORMAL_INVISIBLE_102.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_102",
           "ItemDesc" : "SI_NORMAL_ITEM_DESC_102"
@@ -1524,6 +1524,16 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 2600002,
+          "NormalItemSubType" : "STN_NORMAL",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999,
+          "ItemIconImg" : "ICON_ITEM_USER_NAME_CHANGE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_2600002",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_2600002"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ItemId" : 30000001,
           "NormalItemSubType" : "STN_CONSUME",
           "ItemGrade" : "IG_RARE",
@@ -2301,6 +2311,19 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100077,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100077,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_NORMAL_PACKAGE_TRISH_GET_BOX.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100076",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100076"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ItemId" : 32100079,
           "NormalItemSubType" : "STN_CONSUME",
           "ItemGrade" : "IG_UNIQUE",
@@ -2794,6 +2817,19 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100617,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100617,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_NORMAL_PACKAGE_BOX_CASINO_PIECE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100617",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100617"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ItemId" : 32100618,
           "NormalItemSubType" : "STN_CONSUME",
           "ItemGrade" : "IG_LEGENDARY",
@@ -2875,6 +2911,115 @@
           "ItemIconImg" : "ICON_ITEM_NORMAL_PACKAGE_RANDOM_STAR_SAVIOR_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_32100620",
           "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100620"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100624,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100624,
+          "ProbabilityHide" : true,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SELECT_SAVIOR_COSMIC_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100624",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100624"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100625,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100625,
+          "ProbabilityHide" : true,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_NORMAL_PACKAGE_BOX_CASINO_ARCANA.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100625",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100617"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100626,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100626,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_RANDOM_SAVIOR_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100626",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100626"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100627,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100627,
+          "ProbabilityHide" : true,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_RANDOM_SAVIOR_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100626",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100626"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100628,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100628,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_RANDOM_ARCANA_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100628",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100628"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100629,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100629,
+          "ProbabilityHide" : true,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_RANDOM_ARCANA_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100628",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100628"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100630,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100630,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_NEWBIE_CELECT_SAVIOR_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100630",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100624"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 32100631,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 32100631,
+          "ProbabilityHide" : true,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_NEWBIE_CELECT_SAVIOR_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_32100630",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_32100624"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3135,6 +3280,19 @@
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_NEWBIE_CELECT_ARCANA_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000013",
           "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000013"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000014,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000014,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_OPEN_OBSERVE_FOCUS_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000014",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000003"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3602,7 +3760,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_EVENT_OBSERVE_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000402",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3615,7 +3773,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_EVENT_OBSERVE_02.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000403",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3628,7 +3786,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_EVENT_OBSERVE_03.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000404",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3641,7 +3799,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SAVIOR_ARCANA_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000405",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3654,7 +3812,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SAVIOR_RESONANCE_MATERIAL_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000406",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3667,7 +3825,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SAVIOR_TACTICS_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000407",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3680,7 +3838,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SAVIOR_SUPPORT_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000408",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3693,7 +3851,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SAVIOR_EQUIP_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000409",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3706,7 +3864,7 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SAVIOR_SKILL_UP_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000410",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -3719,7 +3877,85 @@
           "UseStack" : 1,
           "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SAVIOR_SKILL_UP_02.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_35000411",
-          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000401"
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000412,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000412,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_RED_DRAGON_OBSERVE_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000412",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000413,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000413,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_RED_DRAGON_OBSERVE_02.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000413",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000414,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000414,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_RED_DRAGON_OBSERVE_03.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000414",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000415,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000415,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_BLUE_ROSE_OBSERVE_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000415",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000416,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000416,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_BLUE_ROSE_OBSERVE_02.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000416",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000417,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000417,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_BLUE_ROSE_OBSERVE_03.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000417",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000402"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -4542,6 +4778,84 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000571,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000571,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SP_OPERATION_1_RE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000521",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000521"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000572,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000572,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SP_OPERATION_1_RE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000521",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000521"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000573,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000573,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SP_OPERATION_1_RE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000521",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000521"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000574,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000574,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SP_OPERATION_1_RE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000521",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000521"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000575,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000575,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SP_OPERATION_1_RE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000521",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000521"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 35000576,
+          "NormalItemSubType" : "STN_CONSUME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999999,
+          "NormalUseType" : "NUT_PACKAGE",
+          "NormalUseValue" : 35000576,
+          "UseStack" : 1,
+          "ItemIconImg" : "ICON_ITEM_CASH_PACKAGE_SP_OPERATION_1_RE.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_35000521",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_35000521"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ItemId" : 1000,
           "NormalItemSubType" : "STN_UNIT_PIECE",
           "ItemGrade" : "IG_LEGENDARY",
@@ -4728,6 +5042,26 @@
           "StackMax" : 9999,
           "ItemIconImg" : "ICON_ITEM_NORMAL_PIECE_S_CONSTRUCT_BOMB.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_1042",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_STAR_PIECE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 1043,
+          "NormalItemSubType" : "STN_UNIT_PIECE",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999,
+          "ItemIconImg" : "ICON_ITEM_NORMAL_PIECE_S_BUNNY_SCISSORS.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_1043",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_STAR_PIECE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 1044,
+          "NormalItemSubType" : "STN_UNIT_PIECE",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999,
+          "ItemIconImg" : "ICON_ITEM_NORMAL_PIECE_S_BUNNY_SPEAR.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_1044",
           "ItemDesc" : "SI_NORMAL_ITEM_DESC_STAR_PIECE"
         },
         {
@@ -5312,6 +5646,26 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 7104301,
+          "NormalItemSubType" : "STN_ARCANA_PIECE",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999,
+          "ItemIconImg" : "ICON_ITEM_NORMAL_ARCANA_PIECE_BUNNY_SCISSORS_SSR_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_7104301",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_MEMORY_PIECE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 7104401,
+          "NormalItemSubType" : "STN_ARCANA_PIECE",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 9999,
+          "ItemIconImg" : "ICON_ITEM_NORMAL_ARCANA_PIECE_BUNNY_SPEAR_SSR_01.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_7104401",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_MEMORY_PIECE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ItemId" : 7104901,
           "NormalItemSubType" : "STN_ARCANA_PIECE",
           "ItemGrade" : "IG_LEGENDARY",
@@ -5389,6 +5743,36 @@
           "ItemIconImg" : "ICON_ITEM_NORMAL_ARCANA_PIECE_NOA_OBSERVER_SSR_01.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_7150801",
           "ItemDesc" : "SI_NORMAL_ITEM_DESC_MEMORY_PIECE"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 2010201,
+          "NormalItemSubType" : "STN_NORMAL",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 2000000000,
+          "ItemIconImg" : "ICON_ITEM_STORY_EVENT_CASINO.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_2010201",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_2010201"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 2010202,
+          "NormalItemSubType" : "STN_EVENT_POINT",
+          "ItemGrade" : "IG_COMMON",
+          "StackMax" : 9999,
+          "ItemIconImg" : "ICON_ITEM_RAID_STORY_EVENT_POINT_CASINO.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_2010202",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_2010202"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 2010203,
+          "NormalItemSubType" : "STN_NORMAL",
+          "ItemGrade" : "IG_COMMON",
+          "StackMax" : 2000000000,
+          "ItemIconImg" : "ICON_ITEM_STORY_EVENT_CASINO_TICKET.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_2010203",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_2010203"
         },
         {
           "ContentsTag" : "MAIN_OPEN",
@@ -5760,6 +6144,28 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 60104301,
+          "NormalItemSubType" : "STN_ICON",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "IgnoreOverStack" : true,
+          "ItemIconImg" : "UFS_NKM_UNIT_S_BUNNY_SCISSORS.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_60104301",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_60151001"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 60104401,
+          "NormalItemSubType" : "STN_ICON",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "IgnoreOverStack" : true,
+          "ItemIconImg" : "UFS_NKM_UNIT_S_BUNNY_SPEAR.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_60104401",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_60150901"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ItemId" : 60104901,
           "NormalItemSubType" : "STN_ICON",
           "ItemGrade" : "IG_LEGENDARY",
@@ -6079,6 +6485,17 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 60020101,
+          "NormalItemSubType" : "STN_ICON",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "IgnoreOverStack" : true,
+          "ItemIconImg" : "ICON_ITEM_STORY_EVENT_ICON_CASINO.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_60020101",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_60020101"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "ItemId" : 70000001,
           "NormalItemSubType" : "STN_FRAME",
           "ItemGrade" : "IG_COMMON",
@@ -6307,6 +6724,17 @@
           "ItemIconImg" : "ICON_ITEM_NORMAL_PROFILE_FRAME_INFLUENCER.png",
           "ItemName" : "SI_NORMAL_ITEM_NAME_70010001",
           "ItemDesc" : "SI_NORMAL_ITEM_DESC_70010001"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "ItemId" : 70020101,
+          "NormalItemSubType" : "STN_FRAME",
+          "ItemGrade" : "IG_LEGENDARY",
+          "StackMax" : 1,
+          "IgnoreOverStack" : true,
+          "ItemIconImg" : "ICON_ITEM_STORY_EVENT_FRAME_CASINO.png",
+          "ItemName" : "SI_NORMAL_ITEM_NAME_70020101",
+          "ItemDesc" : "SI_NORMAL_ITEM_DESC_70020101"
         },
         {
           "ContentsTag" : "MAIN_OPEN",

@@ -144,7 +144,7 @@
       "UnitStrId": "NKM_UNIT_NPC_VOYAGER_STRANIS",
       "UnitMotion": "SURPRISE",
       "UnitTalk_KOR": "<color=#F7BE45>당신의 눈 앞에 펼쳐지는 믿을 수 없는 최신 무대 효과. 새롭게 재해석한 별의 구원자의 이야기!</color>",
-      "UnitTalk_JPN": "「目の前に広がる、アンビリバボーな舞台演出。新たな解釈で楽しむ、星の救援者の物語！」",
+      "UnitTalk_JPN": "「目の前に広がる、アンビリバボーな舞台演出。\n新たな解釈で楽しむ、星の救援者の物語！」",
       "TalkTime": 0.03
     },
     {
@@ -193,22 +193,19 @@
       "AutoHighlight": "DARK"
     },
     {
-      "Uid": 16,
-      "ContentsTag": "DEV_OPEN",
-      "CutsceneStrId": "JOURNEY_ARCANA_NKM_UNIT_S_VOYAGER_STRANIS_01",
+      "Uid": 72,
       "WaitClick": true,
       "WaitTime": 0.0,
-      "UnitTalk_JPN": "アセラの言うとおりに星の救世主の話には興味がないが、「信じがたい最新の舞台効果」という部分には興味が引かれた。",
       "JumpAnchorData": [
         {
           "Uid": 1,
           "JumpAnchorStringId_KOR": "연극 자체에는 흥미가 가는걸.",
-          "JumpAnchorStringId_JPN": "演劇そのものには興味あるよ。"
+          "JumpAnchorStringId_JPN": "演劇そのものには興味あるかも。"
         },
         {
           "Uid": 2,
           "JumpAnchorStringId_KOR": "보러 갈까?",
-          "JumpAnchorStringId_JPN": "観に行ってみる？"
+          "JumpAnchorStringId_JPN": "観に行く？"
         }
       ]
     },
@@ -368,7 +365,7 @@
       "WaitTime": 0.0,
       "BgFileName": "ILLUST_BG_THEATER_NIGHT.png",
       "UnitTalk_KOR": "처음에는 어둡고 작은 무대를 보고 실망했지만, 연극이 시작되자 순식간에 바뀌는 화려한 무대 미술이 눈을 사로잡았다.",
-      "UnitTalk_JPN": "最初は暗くて小さな舞台にガッカリしたが…演劇が始まると、一瞬で変化する華麗な舞台演出に目を奪われた。",
+      "UnitTalk_JPN": "最初は暗くて小さな舞台にガッカリしたが…\n演劇が始まると、一瞬で変化する華麗な舞台演出に目を奪われた。",
       "TalkTime": 0.03
     },
     {
@@ -378,7 +375,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "간단한 소품과 판넬, 조명을 교체할 뿐인 작은 무대는 아가논의 유적지부터 나중에는 우주까지 나아가는 어마어마한 스케일감을 연출했다.",
-      "UnitTalk_JPN": "シンプルな小道具とパネル、照明で構成された小さな舞台は、アガノン遺跡から宇宙へ飛び立つという壮大なスケール感を演出していた。",
+      "UnitTalk_JPN": "シンプルな小道具とパネル、照明で構成された小さな舞台は、\nアガノン遺跡から宇宙へ飛び立つという壮大なスケール感を演出していた。",
       "TalkTime": 0.03
     },
     {
@@ -413,7 +410,7 @@
       "WaitClick": true,
       "WaitTime": 0.0,
       "UnitTalk_KOR": "마지막 피날레인 별의 구원자의 승천 장면에서는 나도 모르게 주먹을 꽉 쥐어가며 몰입했다.",
-      "UnitTalk_JPN": "フィナーレで星の救援者が天に昇るシーンでは、思わず拳を握り締めるほどにのめり込んでいた。",
+      "UnitTalk_JPN": "フィナーレで星の救援者が天に昇るシーンでは、\n思わず拳を握り締めるほどにのめり込んでいた。",
       "TalkTime": 0.03
     },
     {

@@ -144,9 +144,22 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "MissionTabId" : 101,
-          "MissionId" : 101111,
+          "MissionId" : 101118,
           "StepIndex" : 0,
           "MissionSort" : 10,
+          "MissionType" : "EQUIP_CRAFT_COUNT",
+          "MissionCount" : 1,
+          "RewardPoint" : 20,
+          "ShortCutType" : "SC_CRAFT",
+          "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
+          "MissionDesc" : "SI_MISSION_DESC_EQUIP_CRAFT"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 101,
+          "MissionId" : 101111,
+          "StepIndex" : 0,
+          "MissionSort" : 11,
           "MissionType" : "EQUIP_ENCHANT_TRY_COUNT",
           "MissionCount" : 1,
           "RewardPoint" : 10,
@@ -160,7 +173,7 @@
           "MissionTabId" : 101,
           "MissionId" : 101112,
           "StepIndex" : 0,
-          "MissionSort" : 11,
+          "MissionSort" : 12,
           "MissionType" : "DISPATCH_PLAY_COUNT",
           "MissionCount" : 2,
           "RewardPoint" : 10,
@@ -173,9 +186,9 @@
           "MissionTabId" : 101,
           "MissionId" : 101113,
           "StepIndex" : 0,
-          "MissionSort" : 12,
+          "MissionSort" : 13,
           "MissionType" : "PVP_ASYNC_PLAY",
-          "MissionCount" : 3,
+          "MissionCount" : 1,
           "RewardPoint" : 10,
           "ShortCutType" : "SC_GUNTLET_LOBBY",
           "MissionIcon" : "ICON_MISSION_TYPE_GUNTLET.png",
@@ -184,22 +197,9 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "MissionTabId" : 101,
-          "MissionId" : 101114,
-          "StepIndex" : 0,
-          "MissionSort" : 13,
-          "MissionType" : "PVP_RANK_PLAY",
-          "MissionCount" : 1,
-          "RewardPoint" : 20,
-          "ShortCutType" : "SC_GUNTLET_LOBBY",
-          "MissionIcon" : "ICON_MISSION_TYPE_GUNTLET.png",
-          "MissionDesc" : "SI_MISSION_DESC_GUNTLET_RANK"
-        },
-        {
-          "ContentsTag" : "MAIN_OPEN",
-          "MissionTabId" : 101,
           "MissionId" : 101115,
           "StepIndex" : 0,
-          "MissionSort" : 14,
+          "MissionSort" : 15,
           "MissionType" : "JOURNEY_BATTLE_CLEAR_COUNT",
           "MissionCount" : 1,
           "MissionStringValue" : ["EVALUATION"],
@@ -214,10 +214,10 @@
           "MissionTabId" : 101,
           "MissionId" : 101116,
           "StepIndex" : 0,
-          "MissionSort" : 15,
+          "MissionSort" : 16,
           "MissionType" : "JOURNEY_END_COUNT",
           "MissionCount" : 1,
-          "RewardPoint" : 10,
+          "RewardPoint" : 20,
           "ShortCutType" : "SC_JOURNEY",
           "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_JOURNEY.png",
@@ -228,13 +228,13 @@
           "MissionTabId" : 101,
           "MissionId" : 101117,
           "StepIndex" : 0,
-          "MissionSort" : 16,
+          "MissionSort" : 17,
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 60,
           "MissionIntValue" : [102],
-          "RewardPoint" : 10,
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "RewardPoint" : 20,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER"
         },
@@ -246,7 +246,7 @@
           "MissionSort" : 0,
           "MissionType" : "ATTENDANCE_COUNT",
           "MissionCount" : 5,
-          "RewardPoint" : 10,
+          "RewardPoint" : 30,
           "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
           "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE"
         },
@@ -258,7 +258,7 @@
           "MissionSort" : 1,
           "MissionType" : "OBSERVE_COUNT",
           "MissionCount" : 10,
-          "RewardPoint" : 10,
+          "RewardPoint" : 20,
           "ShortCutType" : "SC_OBSERVE",
           "ShortCutValue" : 100,
           "MissionIcon" : "ICON_MISSION_TYPE_OBSERVE.png",
@@ -299,7 +299,7 @@
           "MissionType" : "NORMAL_BATTLE_CLEAR_COUNT",
           "MissionCount" : 5,
           "MissionIntValue" : [10401],
-          "RewardPoint" : 10,
+          "RewardPoint" : 20,
           "ShortCutType" : "SC_CAMPAIGN",
           "ShortCutValue" : 104,
           "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
@@ -349,9 +349,23 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "MissionTabId" : 102,
-          "MissionId" : 102109,
+          "MissionId" : 102114,
           "StepIndex" : 0,
           "MissionSort" : 8,
+          "MissionType" : "EQUIP_ENCHANT_TRY_COUNT",
+          "MissionCount" : 10,
+          "RewardPoint" : 10,
+          "ShortCutType" : "SC_INVENTORY",
+          "ShortCutValue" : 2,
+          "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
+          "MissionDesc" : "SI_MISSION_DESC_EQUIP_ENCHANT"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 102,
+          "MissionId" : 102109,
+          "StepIndex" : 0,
+          "MissionSort" : 9,
           "MissionType" : "SAVIOR_FAVOR_GIFT_COUNT",
           "MissionCount" : 10,
           "RewardPoint" : 10,
@@ -364,7 +378,7 @@
           "MissionTabId" : 102,
           "MissionId" : 102110,
           "StepIndex" : 0,
-          "MissionSort" : 9,
+          "MissionSort" : 10,
           "MissionType" : "DISPATCH_PLAY_COUNT",
           "MissionCount" : 12,
           "RewardPoint" : 10,
@@ -377,7 +391,7 @@
           "MissionTabId" : 102,
           "MissionId" : 102111,
           "StepIndex" : 0,
-          "MissionSort" : 10,
+          "MissionSort" : 11,
           "MissionType" : "PVP_PLAY_COUNT",
           "MissionCount" : 12,
           "RewardPoint" : 10,
@@ -390,7 +404,7 @@
           "MissionTabId" : 102,
           "MissionId" : 102112,
           "StepIndex" : 0,
-          "MissionSort" : 11,
+          "MissionSort" : 12,
           "MissionType" : "JOURNEY_END_COUNT",
           "MissionCount" : 3,
           "RewardPoint" : 10,
@@ -404,13 +418,13 @@
           "MissionTabId" : 102,
           "MissionId" : 102113,
           "StepIndex" : 0,
-          "MissionSort" : 12,
+          "MissionSort" : 13,
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 1200,
           "MissionIntValue" : [102],
           "RewardPoint" : 10,
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER"
         },
@@ -1034,8 +1048,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 10000,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -1055,8 +1069,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 30000,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -1750,10 +1764,10 @@
         {
           "ContentsTag" : "MAIN_OPEN",
           "MissionTabId" : 104,
-          "MissionId" : 104104,
+          "MissionId" : 104109,
           "StepIndex" : 0,
           "MissionSort" : 3,
-          "MissionType" : "PVP_RANK_PLAY",
+          "MissionType" : "PVP_PLAY_COUNT",
           "MissionCount" : 5,
           "RewardPoint" : 10,
           "GuildMedalCount" : 500,
@@ -1761,7 +1775,7 @@
           "GuildExpCount" : 30,
           "ShortCutType" : "SC_GUNTLET_LOBBY",
           "MissionIcon" : "ICON_MISSION_TYPE_GUNTLET.png",
-          "MissionDesc" : "SI_MISSION_DESC_GUNTLET_RANK",
+          "MissionDesc" : "SI_MISSION_DESC_GUNTLET",
           "RewardData" : 
           [
             {
@@ -9439,6 +9453,474 @@
         },
         {
           "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201101,
+          "StepIndex" : 0,
+          "MissionSort" : 0,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20103006],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_ALL_STAGE_CLEAR_CHALLENGE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 70020101,
+              "RewardQuantity" : 1
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201102,
+          "StepIndex" : 0,
+          "MissionSort" : 1,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102008],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_ALL_STAGE_CLEAR_RAID",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 60020101,
+              "RewardQuantity" : 1
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201103,
+          "StepIndex" : 0,
+          "MissionSort" : 2,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20101010],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_ALL_STAGE_CLEAR_SCENARIO",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 500
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201104,
+          "StepIndex" : 0,
+          "MissionSort" : 3,
+          "MissionType" : "JOURNEY_END_COUNT",
+          "MissionCount" : 4,
+          "MissionIcon" : "ICON_MISSION_TYPE_JOURNEY.png",
+          "MissionDesc" : "SI_MISSION_DESC_JOURNEY_CLEAR",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201105,
+          "StepIndex" : 0,
+          "MissionSort" : 4,
+          "MissionType" : "JOURNEY_END_COUNT",
+          "MissionCount" : 8,
+          "MissionIcon" : "ICON_MISSION_TYPE_JOURNEY.png",
+          "MissionDesc" : "SI_MISSION_DESC_JOURNEY_CLEAR",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 600
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201106,
+          "StepIndex" : 0,
+          "MissionSort" : 5,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20103001],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_CHALLENGE_STAGE_CLEAR@@Ⅰ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201107,
+          "StepIndex" : 0,
+          "MissionSort" : 6,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20103002],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_CHALLENGE_STAGE_CLEAR@@Ⅱ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201108,
+          "StepIndex" : 0,
+          "MissionSort" : 7,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20103003],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_CHALLENGE_STAGE_CLEAR@@Ⅲ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201109,
+          "StepIndex" : 0,
+          "MissionSort" : 8,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20103004],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_CHALLENGE_STAGE_CLEAR@@Ⅳ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201110,
+          "StepIndex" : 0,
+          "MissionSort" : 9,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20103005],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_CHALLENGE_STAGE_CLEAR@@Ⅴ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201111,
+          "StepIndex" : 0,
+          "MissionSort" : 10,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20103006],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_CHALLENGE_STAGE_CLEAR@@Ⅵ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201112,
+          "StepIndex" : 0,
+          "MissionSort" : 11,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102001],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅰ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201113,
+          "StepIndex" : 0,
+          "MissionSort" : 12,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102002],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅱ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201114,
+          "StepIndex" : 0,
+          "MissionSort" : 13,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102003],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅲ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201115,
+          "StepIndex" : 0,
+          "MissionSort" : 14,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102004],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅳ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201116,
+          "StepIndex" : 0,
+          "MissionSort" : 15,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102005],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅴ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201117,
+          "StepIndex" : 0,
+          "MissionSort" : 16,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102006],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅵ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201118,
+          "StepIndex" : 0,
+          "MissionSort" : 17,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102007],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅶ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 201,
+          "MissionId" : 201119,
+          "StepIndex" : 0,
+          "MissionSort" : 18,
+          "MissionType" : "NORMAL_BATTLE_CLEARED",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102008],
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_CASINO_RAID_STAGE_CLEAR@@Ⅷ",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 2010201,
+              "RewardQuantity" : 200
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202101,
+          "StepIndex" : 0,
+          "MissionSort" : 0,
+          "MissionType" : "NORMAL_BATTLE_CLEAR_COUNT",
+          "MissionCount" : 1,
+          "MissionIntValue" : [20102],
+          "RewardPoint" : 20,
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_EVENT_RAID_STAGE_CLEAR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202102,
+          "StepIndex" : 0,
+          "MissionSort" : 1,
+          "MissionType" : "GET_NORMAL_ITEM",
+          "MissionCount" : 100,
+          "MissionIntValue" : [2010201],
+          "RewardPoint" : 20,
+          "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
+          "MissionDesc" : "SI_GET_EVENT_ITEM_2010201"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202103,
+          "StepIndex" : 0,
+          "MissionSort" : 2,
+          "MissionType" : "ACCRUE_REWARD",
+          "MissionCount" : 1,
+          "RewardPoint" : 20,
+          "ShortCutType" : "SC_ACCRUE",
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ACCRUE_REWARD"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202104,
+          "StepIndex" : 0,
+          "MissionSort" : 3,
+          "MissionType" : "NORMAL_BATTLE_CLEAR_COUNT",
+          "MissionCount" : 1,
+          "MissionIntValue" : [10401],
+          "RewardPoint" : 30,
+          "ShortCutType" : "SC_CAMPAIGN",
+          "ShortCutValue" : 104,
+          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
+          "MissionDesc" : "SI_MISSION_DESC_CUBE_CLEAR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202105,
+          "StepIndex" : 0,
+          "MissionSort" : 4,
+          "MissionType" : "SAVIOR_FAVOR_GIFT_COUNT",
+          "MissionCount" : 1,
+          "RewardPoint" : 30,
+          "ShortCutType" : "SC_SAVIOR",
+          "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
+          "MissionDesc" : "SI_MISSION_DESC_SAVIOR_GIFT"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202106,
+          "StepIndex" : 0,
+          "MissionSort" : 5,
+          "MissionType" : "PVP_PLAY_COUNT",
+          "MissionCount" : 3,
+          "RewardPoint" : 30,
+          "ShortCutType" : "SC_GUNTLET_LOBBY",
+          "MissionIcon" : "ICON_MISSION_TYPE_GUNTLET.png",
+          "MissionDesc" : "SI_MISSION_DESC_GUNTLET"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202107,
+          "StepIndex" : 0,
+          "MissionSort" : 6,
+          "MissionType" : "JOURNEY_END_COUNT",
+          "MissionCount" : 1,
+          "RewardPoint" : 30,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
+          "MissionIcon" : "ICON_MISSION_TYPE_JOURNEY.png",
+          "MissionDesc" : "SI_MISSION_DESC_JOURNEY_CLEAR"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 202,
+          "MissionId" : 202108,
+          "StepIndex" : 0,
+          "MissionSort" : 7,
+          "MissionType" : "USE_NORMAL_ITEM",
+          "MissionCount" : 100,
+          "MissionIntValue" : [102],
+          "RewardPoint" : 30,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
+          "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
+          "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER"
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
           "MissionTabId" : 301,
           "MissionId" : 301101,
           "StepIndex" : 0,
@@ -12007,12 +12489,12 @@
           "MissionSort" : 4,
           "MissionType" : "CLOISTER_BATTLE_CLEARED",
           "MissionCount" : 1,
-          "MissionIntValue" : [45],
+          "MissionIntValue" : [40],
           "MissionStringValue" : ["CLOISTER_NORMAL"],
           "ShortCutType" : "SC_CAMPAIGN",
           "ShortCutValue" : 103,
           "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
-          "MissionDesc" : "SI_MISSION_CLOISTER_INTERSTELLAR_CLEAR@@45",
+          "MissionDesc" : "SI_MISSION_CLOISTER_INTERSTELLAR_CLEAR@@40",
           "RewardData" : 
           [
             {
@@ -12178,12 +12660,12 @@
           "MissionSort" : 4,
           "MissionType" : "CLOISTER_BATTLE_CLEARED",
           "MissionCount" : 1,
-          "MissionIntValue" : [70],
+          "MissionIntValue" : [60],
           "MissionStringValue" : ["CLOISTER_NORMAL"],
           "ShortCutType" : "SC_CAMPAIGN",
           "ShortCutValue" : 103,
           "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
-          "MissionDesc" : "SI_MISSION_CLOISTER_INTERSTELLAR_CLEAR@@70",
+          "MissionDesc" : "SI_MISSION_CLOISTER_INTERSTELLAR_CLEAR@@60",
           "RewardData" : 
           [
             {
@@ -14370,8 +14852,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 120,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14428,8 +14910,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 300,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14449,8 +14931,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 600,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14470,8 +14952,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 900,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14668,8 +15150,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 120,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14726,8 +15208,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 300,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14747,8 +15229,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 600,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14768,8 +15250,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 900,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -14966,8 +15448,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 120,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15024,8 +15506,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 300,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15045,8 +15527,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 600,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15066,8 +15548,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 900,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15242,8 +15724,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 60,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15263,8 +15745,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 300,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15499,8 +15981,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 60,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15520,8 +16002,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 300,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15756,8 +16238,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 60,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -15777,8 +16259,8 @@
           "MissionType" : "USE_NORMAL_ITEM",
           "MissionCount" : 300,
           "MissionIntValue" : [102],
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 101,
+          "ShortCutType" : "SC_JOURNEY",
+          "ShortCutValue" : 1,
           "MissionIcon" : "ICON_MISSION_TYPE_ITEM.png",
           "MissionDesc" : "SI_MISSION_DESC_USE_WILL_POWER",
           "RewardData" : 
@@ -17062,6 +17544,186 @@
             {
               "RewardItemId" : 168,
               "RewardQuantity" : 100
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100101,
+          "StepIndex" : 0,
+          "MissionSort" : 0,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 1,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 301,
+              "RewardQuantity" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100102,
+          "StepIndex" : 0,
+          "MissionSort" : 1,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 2,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 200,
+              "RewardQuantity" : 30
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100103,
+          "StepIndex" : 0,
+          "MissionSort" : 2,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 3,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 204,
+              "RewardQuantity" : 30
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100104,
+          "StepIndex" : 0,
+          "MissionSort" : 3,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 4,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 32100613,
+              "RewardQuantity" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100105,
+          "StepIndex" : 0,
+          "MissionSort" : 4,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 5,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 205,
+              "RewardQuantity" : 10
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100106,
+          "StepIndex" : 0,
+          "MissionSort" : 5,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 6,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 303,
+              "RewardQuantity" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100107,
+          "StepIndex" : 0,
+          "MissionSort" : 6,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 7,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 200,
+              "RewardQuantity" : 30
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100108,
+          "StepIndex" : 0,
+          "MissionSort" : 7,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 8,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 206,
+              "RewardQuantity" : 5
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100109,
+          "StepIndex" : 0,
+          "MissionSort" : 8,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 9,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 32100613,
+              "RewardQuantity" : 3
+            }
+          ]
+        },
+        {
+          "ContentsTag" : "MAIN_OPEN",
+          "MissionTabId" : 1011001,
+          "MissionId" : 101100110,
+          "StepIndex" : 0,
+          "MissionSort" : 9,
+          "MissionType" : "ATTENDANCE_COUNT",
+          "MissionCount" : 10,
+          "MissionIcon" : "ICON_MISSION_TYPE_ACCRUE_REWARD.png",
+          "MissionDesc" : "SI_MISSION_DESC_ATTENDANCE",
+          "RewardData" : 
+          [
+            {
+              "RewardItemId" : 207,
+              "RewardQuantity" : 1
             }
           ]
         },
@@ -34103,29 +34765,6 @@
           "ShortCutValue" : 103,
           "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
           "MissionDesc" : "SI_MISSION_CLOISTER_STAR_CLEAR@@200",
-          "RewardData" : 
-          [
-            {
-              "RewardItemId" : 209,
-              "RewardQuantity" : 20
-            }
-          ]
-        },
-        {
-          "ContentsTag" : "DEV_OPEN",
-          "MissionTabId" : 103,
-          "MissionId" : 1031018,
-          "StepIndex" : 0,
-          "MissionSort" : 25,
-          "MissionType" : "CLOISTER_BATTLE_CLEARED",
-          "MissionCount" : 1,
-          "MissionIntValue" : [5],
-          "MissionStringValue" : ["CLOISTER_ORDER"],
-          "RewardPoint" : 10,
-          "ShortCutType" : "SC_CAMPAIGN",
-          "ShortCutValue" : 103,
-          "MissionIcon" : "ICON_MISSION_TYPE_BATTLE.png",
-          "MissionDesc" : "SI_MISSION_CLOISTER_ORDER_CLEAR@@5",
           "RewardData" : 
           [
             {
