@@ -1068,6 +1068,18 @@
       "scale_set": 1.0
     },
     {
+      "no": 2090,
+      "type_sno": 520102,
+      "name_sno": 520190,
+      "hero_no": 6540,
+      "prefab_path": "Apollyon",
+      "timeline_path": "Apollyon",
+      "icon_path": "YuriaApollyon_Icon_Costume_00",
+      "portrait_path": "YuriaApollyon",
+      "controller_path": "Apollyon",
+      "scale_set": 1.0
+    },
+    {
       "no": 2201,
       "type_sno": 710000,
       "name_sno": 520401,
@@ -3533,7 +3545,7 @@
       "name_sno": 520609,
       "prefab_path": "Hazel_Costume02",
       "timeline_path": "Hazel_Costume02",
-      "icon_path": "Hazel_Costume02",
+      "icon_path": "Hazel_Icon_Costume_02",
       "portrait_path": "Hazel_Costume02",
       "controller_path": "Hazel",
       "scale_set": 1.0
@@ -3544,7 +3556,7 @@
       "name_sno": 520610,
       "prefab_path": "Eve_Costume03",
       "timeline_path": "Eve_Costume03",
-      "icon_path": "Eve_Costume03",
+      "icon_path": "Eve_Icon_Costume_03",
       "portrait_path": "Eve_Costume03",
       "controller_path": "Eve",
       "scale_set": 1.0
@@ -3555,7 +3567,7 @@
       "name_sno": 520611,
       "prefab_path": "Sigrid_Costume02",
       "timeline_path": "Sigrid_Costume02",
-      "icon_path": "Sigrid_Costume02",
+      "icon_path": "Sigrid_Icon_Costume_02",
       "portrait_path": "Sigrid_Costume02",
       "controller_path": "Sigrid",
       "scale_set": 1.0
@@ -3566,7 +3578,7 @@
       "name_sno": 520612,
       "prefab_path": "Larimar_Costume03",
       "timeline_path": "Larimar_Costume03",
-      "icon_path": "Larimar_Costume03",
+      "icon_path": "Larimar_Icon_Costume_03",
       "portrait_path": "Larimar_Costume03",
       "controller_path": "Larimar",
       "scale_set": 1.0
@@ -3577,7 +3589,7 @@
       "name_sno": 520613,
       "prefab_path": "Onyx_Costume02",
       "timeline_path": "Onyx_Costume02",
-      "icon_path": "Onyx_Costume02",
+      "icon_path": "Onyx_Icon_Costume_02",
       "portrait_path": "Onyx_Costume02",
       "controller_path": "Onyx",
       "scale_set": 1.0
@@ -3588,7 +3600,7 @@
       "name_sno": 520614,
       "prefab_path": "Dominique_Costume03",
       "timeline_path": "Dominique_Costume03",
-      "icon_path": "Dominique_Costume03",
+      "icon_path": "Dominique_Icon_Costume_03",
       "portrait_path": "Dominique_Costume03",
       "controller_path": "Dominique",
       "scale_set": 1.0
@@ -3632,11 +3644,71 @@
       "no": 2418,
       "type_sno": 710009,
       "name_sno": 520618,
+      "hero_no": 1010,
       "prefab_path": "Mephisto_Costume04",
       "timeline_path": "Mephisto_Costume04",
       "icon_path": "Mephisto_Icon_Costume_04",
       "portrait_path": "Mephisto_Costume04",
       "controller_path": "Mephisto",
+      "scale_set": 1.0
+    },
+    {
+      "no": 2419,
+      "type_sno": 710012,
+      "name_sno": 520619,
+      "prefab_path": "LinzyThanatos_Costume03",
+      "timeline_path": "LinzyThanatos_Costume03",
+      "icon_path": "LinzyThanatos_Icon_Costume_03",
+      "portrait_path": "LinzyThanatos_Costume03",
+      "controller_path": "LinzyThanatos",
+      "scale_set": 1.0
+    },
+    {
+      "no": 2420,
+      "type_sno": 710011,
+      "name_sno": 520620,
+      "hero_no": 6540,
+      "prefab_path": "Apollyon_Costume02",
+      "timeline_path": "Apollyon_Costume02",
+      "icon_path": "YuriaApollyon_Icon_Costume_02",
+      "portrait_path": "YuriaApollyon_Costume02",
+      "controller_path": "Apollyon",
+      "scale_set": 1.0
+    },
+    {
+      "no": 2421,
+      "type_sno": 710012,
+      "name_sno": 520621,
+      "hero_no": 6540,
+      "prefab_path": "Apollyon_Costume01",
+      "timeline_path": "Apollyon_Costume01",
+      "icon_path": "YuriaApollyon_Icon_Costume_01",
+      "portrait_path": "YuriaApollyon_Costume01",
+      "controller_path": "Apollyon",
+      "scale_set": 1.0
+    },
+    {
+      "no": 2422,
+      "type_sno": 710009,
+      "name_sno": 520622,
+      "hero_no": 2140,
+      "prefab_path": "Onyx_Costume02",
+      "timeline_path": "Onyx_Costume02",
+      "icon_path": "Onyx_Icon_Costume_02",
+      "portrait_path": "Onyx_Costume02",
+      "controller_path": "Onyx",
+      "scale_set": 1.0
+    },
+    {
+      "no": 2423,
+      "type_sno": 710009,
+      "name_sno": 520623,
+      "hero_no": 6540,
+      "prefab_path": "Apollyon_Costume03",
+      "timeline_path": "Apollyon_Costume03",
+      "icon_path": "YuriaApollyon_Icon_Costume_03",
+      "portrait_path": "YuriaApollyon_Costume03",
+      "controller_path": "Apollyon",
       "scale_set": 1.0
     },
     {
@@ -4853,6 +4925,15 @@
       "portrait_path": "CherrieRomanRaid",
       "controller_path": "CherrieRoman",
       "scale_set": 1.3
+    },
+    {
+      "no": 2835,
+      "prefab_path": "GiantOnyx",
+      "timeline_path": "GiantOnyx",
+      "icon_path": "Onyxraid",
+      "portrait_path": "Onyxraid",
+      "controller_path": "GiantOnyx",
+      "scale_set": 1.0
     },
     {
       "no": 2998,

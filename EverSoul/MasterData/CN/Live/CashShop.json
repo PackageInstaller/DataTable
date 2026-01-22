@@ -1527,7 +1527,7 @@
       "type": "event_pickup",
       "type_value": 2,
       "limit_hour": 336,
-      "schedule_key": "EventInfo_SelectPickup_Season_cn",
+      "schedule_key": "Cashshop_Special_Select_Pickup_02",
       "check_contents_limit": 1
     },
     {
@@ -1875,7 +1875,144 @@
       "tab": 21000,
       "shop_no": 21000,
       "type": "event",
-      "schedule_key": "Cashshop_Special_CN_Lunch_Pack"
+      "schedule_key": "Cashshop_Special_CN_Lunch_Pack",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 236,
+      "tab": 21010,
+      "shop_no": 21010,
+      "type": "bundle",
+      "schedule_key": "Cashshop_Daily_CN_Lunch_Pack",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 237,
+      "tab": 21020,
+      "shop_no": 21020,
+      "type": "step",
+      "schedule_key": "Cashshop_Special_CN_Lunch_step",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 238,
+      "tab": 30000,
+      "shop_no": 30000,
+      "type": "event",
+      "schedule_key": "Cashshop_Pickup_Aki_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 239,
+      "tab": 30010,
+      "shop_no": 30010,
+      "type": "event",
+      "schedule_key": "Cashshop_Pickup_Linzythanatos_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 240,
+      "tab": 30020,
+      "shop_no": 30020,
+      "type": "event",
+      "schedule_key": "Cashshop_Pickup_Yuria_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 241,
+      "tab": 30030,
+      "shop_no": 30030,
+      "type": "event",
+      "schedule_key": "Cashshop_Pickup_Nia_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 242,
+      "tab": 30040,
+      "shop_no": 30040,
+      "type": "event",
+      "schedule_key": "Cashshop_Pickup_Wheri_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 243,
+      "tab": 40000,
+      "shop_no": 40000,
+      "type": "hero_pass",
+      "schedule_key": "Cashshop_Heropass_Linzythanatos_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 244,
+      "tab": 40010,
+      "shop_no": 40010,
+      "type": "hero_pass",
+      "schedule_key": "Cashshop_Heropass_Yuria_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 245,
+      "tab": 40020,
+      "shop_no": 40020,
+      "type": "hero_pass",
+      "schedule_key": "Cashshop_Heropass_Nia_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 246,
+      "tab": 40030,
+      "shop_no": 40030,
+      "type": "hero_pass",
+      "schedule_key": "Cashshop_Heropass_Wheri_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 247,
+      "tab": 50000,
+      "shop_no": 50000,
+      "type": "period",
+      "schedule_key": "Cashshop_EventPeriod_NewYear1_2026_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 248,
+      "tab": 171,
+      "shop_no": 50010,
+      "type": "period",
+      "schedule_key": "Cashshop_Daily_NewYear1_2026_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 249,
+      "tab": 50020,
+      "shop_no": 50020,
+      "type": "period",
+      "schedule_key": "Cashshop_EventPeriod_NewYear2_2026_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 250,
+      "tab": 50040,
+      "shop_no": 50040,
+      "type": "period",
+      "schedule_key": "Cashshop_EventPeriod_Valentine1_2026_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 251,
+      "tab": 50060,
+      "shop_no": 50060,
+      "type": "period",
+      "schedule_key": "Cashshop_EventPeriod_Valentine2_2026_CN",
+      "check_contents_limit": 1
+    },
+    {
+      "no": 252,
+      "tab": 171,
+      "shop_no": 50070,
+      "type": "period",
+      "schedule_key": "Cashshop_Daily_Valentine2_2026_CN",
+      "check_contents_limit": 1
     }
   ]
 }
