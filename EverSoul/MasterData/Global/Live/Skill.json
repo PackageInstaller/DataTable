@@ -36521,7 +36521,6 @@
       "hero_level": 1,
       "level": 1,
       "code_1": 1100431,
-      "code_2": 1100432,
       "code_3": 3,
       "code_extend": "0",
       "global_cooltime": 1.0,
@@ -94520,6 +94519,40 @@
       "range": 20.0,
       "anim_path": "None",
       "icon_prefab": 2
+    },
+    {
+      "index": 5012,
+      "no": 8760,
+      "type": 110503,
+      "is_ally": 1,
+      "hero_level": 1,
+      "level": 1,
+      "code_1": 876010,
+      "code_extend": "0",
+      "target": 110607,
+      "cool_time": 999.0,
+      "range": 20.0,
+      "anim_path": "None",
+      "icon_prefab": 2
+    },
+    {
+      "index": 5013,
+      "no": 8761,
+      "name_sno": 348761,
+      "tooltip_sno": 358761,
+      "type": 110504,
+      "hero_level": 1,
+      "level": 1,
+      "code_1": 654510,
+      "code_2": 654511,
+      "code_3": 654512,
+      "code_extend": "0",
+      "target": 110601,
+      "range": 20.0,
+      "scene_target_key": 1208,
+      "anim_path": "Ultimate",
+      "icon_prefab": 2,
+      "skill_string": 386542
     }
   ]
 }
