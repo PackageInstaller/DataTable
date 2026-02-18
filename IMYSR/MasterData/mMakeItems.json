@@ -1,0 +1,49 @@
+{
+    "name": "mMakeItems",
+    "data": [
+        {
+            "id": 1,
+            "sceneIndex": 1,
+            "mItemId": 1113001,
+            "materialGroupId": 10,
+            "costType": 1,
+            "cost": 10000,
+            "limitSettingId": 0,
+            "startAt": null,
+            "endAt": null
+        },
+        {
+            "id": 2,
+            "sceneIndex": 1,
+            "mItemId": 1114001,
+            "materialGroupId": 11,
+            "costType": 1,
+            "cost": 50000,
+            "limitSettingId": 0,
+            "startAt": null,
+            "endAt": null
+        },
+        {
+            "id": 3,
+            "sceneIndex": 2,
+            "mItemId": 1114003,
+            "materialGroupId": 12,
+            "costType": 1,
+            "cost": 100000,
+            "limitSettingId": 1,
+            "startAt": "2023-08-23 00:00:00",
+            "endAt": "2099-12-31 23:59:59"
+        },
+        {
+            "id": 4,
+            "sceneIndex": 2,
+            "mItemId": 1114003,
+            "materialGroupId": 13,
+            "costType": 1,
+            "cost": 100000,
+            "limitSettingId": 1,
+            "startAt": "2023-08-23 00:00:00",
+            "endAt": "2099-12-31 23:59:59"
+        }
+    ]
+}

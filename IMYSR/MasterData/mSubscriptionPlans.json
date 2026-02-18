@@ -1,0 +1,104 @@
+{
+    "name": "mSubscriptionPlans",
+    "data": [
+        {
+            "id": 1,
+            "planId": 10001,
+            "pfType": 1,
+            "name": "フレアライト×160（サブスク）",
+            "description": "フレアライト×160（サブスク）",
+            "validPeriod": 7,
+            "planGroup": 99,
+            "mShopChargeId": 11398,
+            "order": 1
+        },
+        {
+            "id": 2,
+            "planId": 10101,
+            "pfType": 1,
+            "name": "プレミアム7日サブスクパス",
+            "description": "有償フレアライト480個 + 7日間毎日無償フレアライト50個配布と6種の特典付き",
+            "validPeriod": 7,
+            "planGroup": 1,
+            "mShopChargeId": 11380,
+            "order": 2
+        },
+        {
+            "id": 3,
+            "planId": 10102,
+            "pfType": 1,
+            "name": "プレミアム30日サブスクパスSP",
+            "description": "有償フレアライト1500個 + 30日間毎日無償フレアライト150個配布と10種の特典付き",
+            "validPeriod": 30,
+            "planGroup": 2,
+            "mShopChargeId": 11381,
+            "order": 1
+        },
+        {
+            "id": 4,
+            "planId": 10201,
+            "pfType": 1,
+            "name": "冒険サブスクパス",
+            "description": "有償フレアライト480個 + 14日間毎日BP回復薬1個配布",
+            "validPeriod": 14,
+            "planGroup": 3,
+            "mShopChargeId": 11382,
+            "order": 3
+        },
+        {
+            "id": 5,
+            "planId": 10202,
+            "pfType": 1,
+            "name": "学園サブスクパス",
+            "description": "有償フレアライト480個 + 14日間毎日AP回復薬1個配布",
+            "validPeriod": 14,
+            "planGroup": 4,
+            "mShopChargeId": 11383,
+            "order": 4
+        },
+        {
+            "id": 6,
+            "planId": 20101,
+            "pfType": 2,
+            "name": "プレミアム7日パス",
+            "description": "有償フレアライト480個 + 7日間毎日無償フレアライト50個配布と6種の特典付き",
+            "validPeriod": 7,
+            "planGroup": 1,
+            "mShopChargeId": 11380,
+            "order": 2
+        },
+        {
+            "id": 7,
+            "planId": 20102,
+            "pfType": 2,
+            "name": "プレミアム30日パスSP",
+            "description": "有償フレアライト1500個 + 30日間毎日無償フレアライト150個配布と10種の特典付き",
+            "validPeriod": 30,
+            "planGroup": 2,
+            "mShopChargeId": 11381,
+            "order": 1
+        },
+        {
+            "id": 8,
+            "planId": 20201,
+            "pfType": 2,
+            "name": "冒険パス",
+            "description": "有償フレアライト480個 + 14日間毎日BP回復薬1個配布",
+            "validPeriod": 14,
+            "planGroup": 3,
+            "mShopChargeId": 11382,
+            "order": 3
+        },
+        {
+            "id": 9,
+            "planId": 20202,
+            "pfType": 2,
+            "name": "学園パス",
+            "description": "有償フレアライト480個 + 14日間毎日AP回復薬1個配布",
+            "validPeriod": 14,
+            "planGroup": 4,
+            "mShopChargeId": 11383,
+            "order": 4
+        }
+    ]
+}
