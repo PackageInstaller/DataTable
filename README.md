@@ -30,3 +30,4 @@
 |   Echonox 24/36   |    时序残响    |           国服 LuaJIT           |
 |     StarSavior     |    星之救援    |           国际服 Json           |
 |       IMYSR       |   爱丽丝圣礼   |            Dmm Json            |
+|    Techcronoss    |    铁扣连接    |            Dmm Json            |
