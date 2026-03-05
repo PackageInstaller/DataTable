@@ -31,3 +31,4 @@
 |     StarSavior     |    星之救援    |           国际服 Json           |
 |       IMYSR       |   爱丽丝圣礼   |            Dmm Json            |
 |    Techcronossx    |    铁扣连接    |            Dmm Json            |
+|   TaimaninSquad   |  对魔忍特遣队  |           国际服 Json           |
