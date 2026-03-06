@@ -21,15 +21,10 @@ def decrypt_filename(hex_name):
 def decrypt_and_export(input_file_path, output_dir):
     base_name = os.path.basename(input_file_path)
 
-    # 排除解密前的文件名是 master_catalog.json 的情况
     if base_name == "master_catalog.json":
         return
 
-    try:
-        real_name = decrypt_filename(base_name)
-    except Exception:
-        # 非加密 hex 文件名，跳过
-        return
+    real_name = decrypt_filename(base_name)
 
     with open(input_file_path, "rb") as f:
         data = f.read()
