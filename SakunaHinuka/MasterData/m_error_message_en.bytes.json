@@ -1,0 +1,3532 @@
+[
+    {
+        "error_message_key": "ACCOUNT_LINKAGE_DATA_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "連携されたアカウントが存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ACCOUNT_LINKAGE_PASS_CTYPE_ALNUM_CHECK_FAILED",
+        "title": "通信エラー",
+        "button_1": "",
+        "button_2": "",
+        "message": "数字、大文字、小文字を組み合わせた8～16文字で記入してください。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ACCOUNT_LINKAGE_PROVIDER_INVALID",
+        "title": "通信エラー",
+        "button_1": "",
+        "button_2": "",
+        "message": "連携に失敗しました。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ACCOUNT_LINKAGE_SET_SERVICE_ALREADY_EXEC",
+        "title": "通信エラー",
+        "button_1": "",
+        "button_2": "",
+        "message": "すでに連携済みのデータです。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ACCOUNT_LINKAGE_TOKEN_INVALID",
+        "title": "通信エラー",
+        "button_1": "",
+        "button_2": "",
+        "message": "連携に失敗しました。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ADDITIONAL_PARAM_CANNOT_EMPTY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "additionalEntityのjson化ができていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ADVERTISEMENT_USER_NOT_FOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "広告視聴データなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "API_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効なAPI",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ARRANGEMENT_MASTER_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索　配置データなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "AUTH_USER_DATA_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "存在しないユーザーです",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BANNER_TYPE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効なバナー指定",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_EDIT_BRAN_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "所持していないぬかをぬか床に投入しようとしている。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_EDIT_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ぬか床の投入重複。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_EDIT_OVER_SLOT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ぬか床の枠数を超えている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_EDIT_SPECIAL_FOOD_EFFECT_TYPE_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ぬか床に投入しようとしている特殊食材の効果種別が重複",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_EDIT_SPECIAL_FOOD_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "所持していない特殊食材をぬか床に投入しようとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_FIX_ABILITY_CAN_NOT_INHERIT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "継承不可のアビリティを確定抽選対象にしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_FIX_ABILITY_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "確定抽選アビリティと特殊食材のデータ・リクエスト不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_INHERIT_NO_BRAN",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ぬか床にぬかが入っていないのに継承しようとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_LOCK_SLOT_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "継承保護枠設定が異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_BED_RECOMMEND_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ぬか床おすすめ設定が異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_INVENTORY_ACQUIRE_OVER_TOTAL_RECORD",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ぬかの総レコード数上限を超えて作成しようとしています。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_INVENTORY_SPEND_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "消費するぬかが足りません。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "BRAN_NONE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ぬかの指定がありません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CACHE_ERROR",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "キャッシュ取得エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CAN_NOT_USE_BACKGROUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "使用できない背景を使おうとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_CLOSENESS_REWARD_MASTER_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "親密度報酬マスタ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_EDIT_DATA_DUPLICATE_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "重複したキャラ指定",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_EQUIP_ALREADY_SLOT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "既に装備されている料理枠に対して装備しようとしています。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_EQUIP_COOKING_CREATE_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "同じ料理を重複して作成しようとしました。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_EQUIP_COOKING_NOT_CREATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "作成していない料理を装備しようとしました。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_EQUIP_MASTER_NONE_SLOT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "装備する想定がない枠に装備しようとしています。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_EQUIP_RANK_UP_CANNOT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ランクアップできないキャラにランクアップしようとしました。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_INHERIT_RESULT_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "継承結果がありません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_INVENTORY_ACQUIRE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "キャラクター付与失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_INVENTORY_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "キャラクターデータが見つかりません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_INVENTORY_ILLEGAL_BY_SPEND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "キャラクター消費操作",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARACTER_OVERLIMIT_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "キャラクター　レアリティ上昇異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CHARCOAL_USED_LIMIT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "炭の使用上限超過",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "COMMON_USER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "共通ユーザが見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "CONFIG_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "コンフィグマスタない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_CATEGORY_MASTER_DATA_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "デイリークエストカテゴリマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_CONTINUE_COUNT_ILLEGAL",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "デイリークエスト コンティニュー回数異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_DATA_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ユーザデイリークエストデータなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_DATA_NOT_RELEASED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ユーザデイリークエスト未解放",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_DISABLE_CONTINUE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "デイリークエスト コンティニュー実行できない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_DISABLE_SKIP",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "デイリークエスト スキップ実行できない状態",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_MASTER_DATA_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "デイリークエストマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DAILY_QUEST_NOT_PLAYING",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "デイリークエスト START実行した状態でない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "DATE_OVER_ERROR",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "日跨ぎ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_ACQUIRE_OVER_TOTAL_RECORD",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬総レコード数が上限を超えている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_DATA_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "該当の絵馬を持っていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_ENHANCE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬強化に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_LOCK_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬ロックに失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_OVERLIMIT_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬上限解放に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_OVERLIMIT_NOT_EQUAL",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬違う種類の絵馬を素材に上限解放しようとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_SPEND_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬消費に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EMA_UNLOCK_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬アンロックに失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ERROR_MESSAGE_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "通信エラーが発生しました。\n（仮メッセージとなります。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_BONUS_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "イベント特効が存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_BONUS_TARGET_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "イベント特効対象が存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_COOKING_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定された料理が存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_FOOD_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定された食材が存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_MARKET_NOT_ENOUGH_SELL_ITEM",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "売却に十分な食材，お米を持っていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_MARKET_NOT_ENOUGH_TRADE_POINT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "交換に十分な交易ポイントを持っていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_CANT_MATCH_COOKING",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "献上した料理が要件を満たしていません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_COOKING_NOT_UNLOCKED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定されたイベント料理は開放されていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_DEFAULT_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定された初期配布の献立が設定されていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_NOT_ENOUGH_DELIVERY_FOOD",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "献上に必要なイベント食材を持っていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定された献立が存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_NOT_HAS_RICE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定されたお米を所持していない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_NOT_MATCH_RANK",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "正答数に応じたランクが見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_NOT_MATCH_USE_RICE_COUNT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "献上した料理に使うお米の数と使われたお米の数が一致しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_RANK_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定されたランクが存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_RANK_REWARD_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定されたランク報酬が存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_ORDER_REACTION_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定されたリアクションが定義されていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_POINT_REWARD_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "受け取れないポイント報酬を受け取ろうとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_POINT_REWARD_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ポイント報酬が存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_REACTION_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定されたヒントが存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DELIVERY_SPECIAL_REACTION_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定された特殊ヒントが存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_DUPLICATE_OPEN",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "同タイプのイベントの同時開催は許容していない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_FULL_CLOSED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "すでに終了しているイベント",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EVENT_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "イベントが存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "EXPLORE_AREA_MASTER_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索地マスタ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_ADVERTISEMENT_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 広告報酬が出来ない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_ADVERTISEMENT_REWARD_MAX",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 広告報酬MAX達している",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_DATA_DOING_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 実行中稲作DBなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 稲作DBなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_DISEASE_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "病気マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_FUNC_STATUS_ILLEGAL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作の実行状態が不正",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_INTERACTIVE_EVENT_MASTER_NOT_FOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "親密度イベントのマスタ不正",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_INTERACTIVE_FUNC_EXEC_LIMIT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作親密度イベント　キャラ実行回数上限",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_MASTER_WEATHER_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "天気用マスタが見つかりません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_NEXT_SEASON_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "次の季節が存在していません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_NOT_COMPLETE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作が完了していない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_NOT_COMPLETE_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作が完了時刻になっていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_NOT_PHASE_STOP_SETTING",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 フェーズ毎設定ではありません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_PHASE_END_ALREADY_COMPLETE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 フェーズ終了処理がすでに完了しています",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_PHASE_FERTILIZER_SPEND_QUANTITY_MAX_OVER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 肥料最大消費数を超えています",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_PHASE_ORDER_SAVE_CREATE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 保存用稲作シミュレーションデータ作成失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_EVENT_DELIVER_MASTER_NOT_FOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作イベント納品マスタ不正",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_EVENT_FUNC_LIMIT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 稲作イベント　イベント期限切れ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_EVENT_MASTER_ANSWER_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 稲作イベント　解答選択肢なし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_EVENT_MASTER_EVENT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 稲作イベント　イベントマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_FIELD_ENVIRONMENT_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "田んぼ環境が存在していません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_FIELD_ENVIRONMENT_REWARD_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "田んぼ環境相性報酬マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_FIELD_NEED_NUTRIENT_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "田んぼ 必要栄養素マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_FIELD_NEED_NUTRIENT_REWARD_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "田んぼ栄養素報酬マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_FIELD_PH_REWARD_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "田んぼPh差分報酬マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_FIELD_WATER_AMOUNT_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "水量レベルマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_PLANTS_PHOTOSYNTHETIC_RATE_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "光合成マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_PLANTS_PHOTOSYNTHETIC_RATE_REWARD_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "光合成報酬マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_PLANTS_TEMPERATURE_REWARD_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲の積算温度状態報酬マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_PLANTS_VARIETY_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲の品質マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_RICE_PLANTS_WATER_AMOUNT_STATUS_REWARD_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲の保水状態マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_SHORTENING_COIN_COUNT_MAX",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 石消費による時短回数が最大に達している",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_SHORTENING_SELECT_GROWTH_RATE_ILLEGAL",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作時短 異常な成長率選択です",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_SIMULATION_AUTO_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作自動シミュレーションマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_SIMULATION_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作シミュレーションマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_SIMULATION_REWARD_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "シミュレーション内容の報酬が存在していません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_SIMULATION_TYPE_NOT_FOUND_IN_SEASON",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "シミュレーション内容が指定季節に存在していません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_TERMS_CREATE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作 稲作周期データ作成失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_WEATHER_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効な天候設定",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FARMING_WEATHER_TEMPERATURE_RANGE_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "天気抽選範囲マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "FUNCTION_NOT_RELEASED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "解放されていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_BUTTON_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ガチャ実行できません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_EXCHANGE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "交換実行できません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_EXCHANGE_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "交換に必要なガチャポイントが不足しています",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_EXEC_DAILY_COUNT_OVER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ガチャ実行回数上限に達しました",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_EXEC_TOTAL_COUNT_OVER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ガチャ実行回数上限に達しました",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_EXPIRED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ガチャ期限が切れました",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_LACK_COST",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ガチャ実行できません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GACHA_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ガチャマスタ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_ACQUIRE_EMBLEM_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合のエンブレムを獲得できない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_CHANGE_JOB",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の役職変更できない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_JOIN_APPLY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合に参加申請を送ることができない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_JOIN_APPLY_CANCEL",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の参加申請をキャンセルすることができない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_JOIN_APPROVE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の参加申請の承認ができない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_LEAVE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合から脱退できない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_LEAVE_FORCE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合から強制脱退できない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_SEARCH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合検索することができない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CAN_NOT_USE_EMBLEM",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "該当のエンブレムを使うことができない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CHANGE_JOB_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の役職変更エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CHAT_MESSAGE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合のチャット内容が異常値",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CHAT_SEND_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合のチャット送信に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CHAT_STAMP_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合のチャットのスタンプが異常値",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CONTACT_MESSAGE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の連絡メッセージの異常値",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_CREATE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合作成に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_DELIVERY_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の納品が足りない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_DELIVERY_RICE_PARTY_SET",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の納品する米が装備されている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_DIFFERENT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "異なる組合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_DISAPPROVE_JOIN_APPLY_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の参加申請の不承認で異常値",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_EDIT_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合編集に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_ALREADY_JOIN_TASK",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 既にタスク参加済み",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_NOT_EQUAL_CYCLE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 サイクル不一致",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_SUB_TASK_CAN_NOT_FINISH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 完了できないサブタスク",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_SUB_TASK_NOT_HAPPEN",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 発生していないサブタスク",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_SUB_TASK_OVER_JOIN_COUNT_MAX",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 サブタスク参加可能人数上限超え",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_TASK_PERIOD_FINISH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 タスク参加可能期間が終了している",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_TASK_PERIOD_NOT_MATCH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 タスク種類と参加可能期間が不一致",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_FARMING_UPDATE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ソーシャル稲作 更新エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_ID_CREATE_MAX_OVER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合IDの作成試行回数上限を突破",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_JOB_PERMISSION_CONTACT_MESSAGE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の連絡メッセージを更新する権限がない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_JOIN_APPROVE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の参加申請の承認エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合が見つかりません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_NOT_FOUND_LEADER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の団長が見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_RICE_SPEND_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ギルド米消費に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_SEARCH_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合検索に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_SETTING_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の設定が異常値",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_TRANSFER_LEADER_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の団長権限譲渡エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "GUILD_UPDATE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "組合の更新エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOME_BACKGROUND_ALL_CLEAR",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ホーム背景設定を全てクリアしようとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOME_ILLEGAL_PARAMETER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効なパラメータ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOME_VOICE_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ホームボイスマスタがない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_BUILD_INCOMPLETE_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭建築完了していない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_BUILD_REWARD_MAX_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭建築の広告視聴上限",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_DATA_GENERAL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　通常施設データなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_DATA_PRODUCT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　生産施設データなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_FUNC_GENERAL_STATUS_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　施設ステータス",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_FUNC_LEVEL_LIMIT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　生産施設のレベル上限",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_FUNC_LIMIT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　通常施設数上限",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_FUNC_POSITION_DUPLICATE_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　通常施設　配置被り",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_FUNC_TARGET_MISS_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　指定施設種別エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_MASTER_FACILITY_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　施設マスタ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_MASTER_GENERAL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　通常施設マスタ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_MASTER_PRODUCT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　施設　生産施設マスタ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_PARTY_INVALID_SLOT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "生産施設編成枠指定異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_PARTY_WORKER_OVER_LIMIT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭 施設 生産施設の編成上限",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_FACILITY_QUEST_CONDITION_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭クエストクリア条件達成してない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_HOUSE_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　拠点　拠点レコード",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_HOUSE_FUNC_LEVEL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　拠点　拠点レベル不足",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_HOUSE_FUNC_WORKERNUM_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭　拠点　働き手",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "HOUSE_MAP_MASTER_NOT_FOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "箱庭エリアなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "INFO_CATEGORY_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効なお知らせ指定",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "INFO_CONFIG_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "config指定ミス",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "INFO_OS_TYPE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効なOS指定",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "INVENTORY_ITEM_BUILD_MATERIAL_ENOUGH_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "建築資材が足りません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "INVENTORY_ITEM_FOOD_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "インベントリ アイテム 食材 不足",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_ACQUIRE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテム獲得失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_CONSUMABLE_ACQUIRE_FAILURE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "消費アイテムの獲得失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_CONSUMABLE_EXPIRE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "消費アイテムの期限切れ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_CONSUMABLE_SPEND_FAILURE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "消費アイテムの消費失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_ID_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテムIDがおかしい",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_INFO_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテム情報がおかしい",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_LOG_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテムログ失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_LOG_GROUP_NO_OVERWRITE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテムロググループ番号を上書きしようとした",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_LOG_NO_OVERWRITE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテムログIDを上書きしようとした",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_MASTER_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテムマスタが見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_SALE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテム売却失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_SPEND_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテム消費失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_SPEND_UNSUPPORTED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "消費処理未対応のアイテム",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "ITEM_TABLE_TYPE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アイテムテーブルタイプがおかしい",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "JAILBREAK_ANDROID_ACCOUNT_NOT_LICENSED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "[仮エラー文言]PlayIntergrityAPI : アプリ利用資格がない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "JAILBREAK_ANDROID_CERTIFICATE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "[仮エラー文言]PlayIntergrityAPI : アプリ証明書エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "JAILBREAK_ANDROID_DEVICE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "[仮エラー文言]PlayIntergrityAPI : デバイス異常値",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "JAILBREAK_BUNDLE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "[仮エラー文言]PlayIntegrityAPI：パッケージ名が異なる",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "JAILBREAK_GOOGLE_SERVICE_ACCOUNT_ERROR",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "[仮エラー文言]PlayIntegrityAPI：グーグルサービスアカウント認証ファイルがありません。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "JAILBREAK_TIMESTAMP_TOO_LONG",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "[仮エラー文言]PlayIntegrityAPI : 認証に時間がかかりすぎる",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "JAILBREAK_TOKEN_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "[仮エラー文言]PlayIntegrityAPI：グーグルサービスアカウント認証エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "LOG_ITEM_META_PARAM_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "登録されていないログタイプのログを予約しようとした",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "LOG_REASON_COLUMN_ASSIGN_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ログ理由パラメータ設定が見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "LOG_REASON_PARAM_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ログ理由パラメータが見つからない(LogReasonData)",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "MASTER_DATA_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "マスタデータが見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "MISSION_CANT_RECEIVE_BY_EXPIRATION",
+        "title": "期限切れ",
+        "button_1": "母屋前へ",
+        "button_2": "",
+        "message": "任務の期限が切れたため、受け取れませんでした",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "MISSION_FIRST_CLEAR_REWARD_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ミッション初回報酬マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "OBJECT_INFO_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "オブジェクト情報不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "OBJECT_QUANTITY_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "オブジェクト数不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "OBJECT_SPEND_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "オブジェクトの消費に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "OBJECT_TABLE_TYPE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "オブジェクトテーブルタイプ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "OBJECT_TYPE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "オブジェクトタイプ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_CHARACTER_INVALID_REMOVE_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "操作キャラは外せません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_DATA_ILLEGAL_SLOT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定スロット不正",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "指定編成がない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_EDIT_EMA_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "絵馬が重複",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_EDIT_EMA_NOT_HAS",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "所持していない絵馬を編成",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_EDIT_RICE_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索編成で米装備が重複",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_EDIT_RICE_NOT_HAS",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索編成で未所持の米を装備",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PARTY_EDIT_SPIRIT_NOT_HAS",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "所持していない稲の精霊を編成",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PASSIVE_ABILITY_MASTER_DATA_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アビリティマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PHP_METHOD_ERROR",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "標準関数実行時のエラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PLAYER_ID_CREATE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "プレイヤーIDの生成に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PURCHASE_DEFERRED_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "後払い購入情報が見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PURCHASE_DEFERRED_RESERVED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "支払い待ち状態の商品を別途購入しようとした",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PURCHASE_EXCEED_LIMIT_AMOUNT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "年齢による課金額制限",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PURCHASE_INVALID_BIRTHDAY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効な生年月",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PURCHASE_REGISTERED_BIRTHDAY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "生年月登録済",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PURCHASE_UNREGISTERED_BIRTHDAY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "生年月未登録",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PURCHASE_USER_DATA_NO_CHANGES",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "変更点がない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_ARENA_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "pvpアリーナ無効エラー",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_ARENA_NOT_HELD",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "pvpアリーナ未開催",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_DUMMY_MASTER_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ダミーデータマスタ見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_OPPONENT_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "マッチングしたユーザではない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_PARTY_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "pvp編成エラーです",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_PARTY_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "編成が見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_PARTY_PARTY_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "編成が見つからない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_PARTY_REMOVE_LEADER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "pvp編成リーダー外し",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_STATE_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "PVPステート異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "PVP_USER_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ユーザレコード不一致",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_CONTINUE_COUNT_ILLEGAL",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト コンティニュー回数異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_DATA_NOT_FOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索　ユーザクエストデータなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_DATA_NOT_RELEASED_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト　ユーザクエスト解放されていない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_DISABLE_CONTINUE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト コンティニュー実行できない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_DISABLE_SKIP_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエストスキップ実行できません。。。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_DUPLICATE_DROP_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "フラグ設定あるドロップが多重設定",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_DUPLICATE_EVENT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト　フラグイベント多重実行",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_ILLEGAL_DROP_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ドロップ詳細不正",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_ILLEGAL_EVENT_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト　マップイベント異常",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_MASTER_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索 クエストマスタ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_MASTER_ILLEGAL_COST_TYPE_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト　消費物の設定不備",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_MASTER_MISSION_NOT_FOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "不明なクエストミッション",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_MISSION_MASTER_TYPE_ILLEGAL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエストミッションマスタ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_MISSION_REQUEST_ILLEGAL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエストミッションリクエスト不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "QUEST_NOT_PLAYING_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト　START実行後でない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RELEASE_FUNCTION_DUPLICATE_EVENT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "機能解放多重実行",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RELEASE_FUNCTION_MASTER_DATA_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "機能解放マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "REQUEST_KEY_PARAMETER_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効なリクエストキーパラメータ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "REQUEST_PARAMETER_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無効なリクエストパラメータ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "REWARD_FORMAT_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "報酬フォーマットがおかしい",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_ACQUIRE_FAILURE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "米の獲得に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_ACQUIRE_OVER_TOTAL_RECORD",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "米の所持上限重複獲得",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_DATA_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "米のデータが見つかりません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_INVENTORY_SPEND_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "お米 消費が足りない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_LOCK_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "米の保護に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_LOCK_ID_DUPLICATION",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "米の重複しているID操作",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_MILLING_CREATE_MAX_OVER",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "精米乱数作成試行回数が上限を突破",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_SPEND_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "米の消費に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "RICE_UNLOCK_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "米の保護解除に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_COMMON_RELEASE_CONSUME_ITEM_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "汎用種もみ解放に必要なアイテムが足りない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_COMMON_RELEASE_NOT_COMMON",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "汎用種もみではないのに汎用種もみ解放しようとしていた",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVALID_FARMING_PARTY_EDIT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作編成した種もみが精霊種もみではない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVALID_FARMING_PARTY_EDIT ",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作編成した種もみが精霊種もみではない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVENTORY_ACQUIRE_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "既に種所持済み",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVENTORY_ACQUIRE_DUPLICATE ",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "既に所持済み",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVENTORY_ACQUIRE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "種付与失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVENTORY_ACQUIRE_FAILED ",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "付与失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVENTORY_DATA_NULL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作編成所持していない種",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVENTORY_ILLEGAL_BY_SPEND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "種消費操作",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_INVENTORY_ILLEGAL_BY_SPEND ",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "消費操作",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_SYNTHESIS_CONDITION_NOT_CLEAR",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "配合条件未達成",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEED_SYNTHESIS_SEED_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "配合リストに存在しない種もみを配合しようとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SEND_SELF_PLAYER_ID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "他ユーザプロフィール取得時自身のプレイヤーIDが送られている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SHOP_OVER_BUY_LIMIT_COUNT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "購入回数制限を超えています",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SHOP_OVER_ITEM_LIMIT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "所持上限超過しています。(所持上限超過禁止商品のチェック)",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SHOP_PRODUCT_NOT_OPENED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ショップ商品の販売期間外",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SHOP_RESET_TYPE_UNDEFINED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "未定義のリセット種類",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SHOP_USER_DATA_NO_CHANGES",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "変更点がない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SHOP_USER_DATA_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ユーザーショップ情報が見つかりません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SPECIAL_FOOD_EFFECT_CHANGE_PROBABILITY_INVALID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "特殊食材 確率変動設定が異常値",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SPECIAL_FOOD_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "特殊食材 足りない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SPIRIT_INVENTORY_ACQUIRE_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲の精霊　既に所持済み",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SPIRIT_INVENTORY_ACQUIRE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲の精霊　付与失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SPIRIT_INVENTORY_DATA_NULL_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作編成所持していない精霊",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SPIRIT_INVENTORY_ILLEGAL_BY_SPEND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲の精霊　消費操作",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SPIRIT_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "精霊マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "SUPPORT_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "稲作　編成　サポートデータ＊他参照になる",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TREASURE_MASTER_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "クエスト　ドロップ抽選マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TROPHY_ACQUIRE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "称号 付与失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TROPHY_DATA_ACQUIRE_DUPLICATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "称号を重複獲得しようとした",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TROPHY_DATA_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "称号 未所持",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TROPHY_ILLEGAL_BY_SPEND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "称号 消費操作",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TROPHY_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "称号 マスタ不整合",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TUTORIAL_ALREADY_CLEARED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "すでにチュートリアルをクリアしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TUTORIAL_DONT_MATCH_STEP_ID",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "現在のステップと一致しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TUTORIAL_STEP_ALREADY_EXISTS",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "すでにチュートリアルデータが作成されている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TUTORIAL_STEP_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "チュートリアルステップマスタが存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "TUTORIAL_STEP_REWARD_MASTER_NOT_FOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "チュートリアルステップ報酬マスタが存在しない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "UNIQUE_WEAPON_ENHANCE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "固有武器強化に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "UNIQUE_WEAPON_MASTER_DATA_NOTFOUND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "マスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "UNIQUE_WEAPON_NOT_RELEASED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "固有武器未解放",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "UNIQUE_WEAPON_OVERLIMIT_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "固有武器上限解放に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "UNIQUE_WEAPON_RELEASE_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "固有武器解放に失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_ALREADY_EXIT",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ユーザがすでに存在している",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_CREATION_FAILED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ユーザ作成失敗",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_EXP_ILLEGAL_BY_SPEND",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "経験値を消費しようとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_FREE_COIN_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "無償石が足りない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_GOLD_NOT_ENOUGH_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ゲーム通貨が足りません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_MIXED_COIN_CAN_NOT_ACQUIRE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "想定していないアイテムを受け取ろうとしています。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_MIXED_COIN_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "石が足りません。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_NOT_FOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "ユーザが見つかりません",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_PAID_COIN_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "有償石が足りない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_STAMINA_ACQUIRE_OVER_MAX",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "スタミナ最大値を超えて受け取ろうとしている",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_STAMINA_CURE_FAILED",
+        "title": "行動力回復",
+        "button_1": "閉じる",
+        "button_2": "",
+        "message": "持ち物を使用することができませんでした",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "USER_STAMINA_NOT_ENOUGH",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "スタミナが足りない",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "UUID_IS_NOT_EXISTS",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "アカウントが存在しません。\\n新規でゲームを始める場合は\\nアプリを再インストールしてください。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "VERSION_ENTITY_IS_FORCE_UPDATE",
+        "title": "アップデート",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "新しいバージョンのゲームが公開されています。\\nストアでアップデートを行ってください。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "VERSION_TERMS_OF_USE_UPDATED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "規約の更新が行われました。",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "Vip_PASS_ALREADY_SHORTENING",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "本日実行済み",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "Vip_PASS_EXPIRED",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "期限切れ",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "Vip_PASS_INVALID_TYPE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "VIP PASS TYPE不正",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "Vip_PASS_MASTER_PRODUCT_RATE",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "プレミアムパス生産ボーナス値不正",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "WORLD_ILLEGAL_DATA_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索　ワールド解放されていないデータ進行",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "WORLD_MASTER_DATA_NOTFOUND_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索ワールドマスタなし",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    },
+    {
+        "error_message_key": "WORLD_MASTER_DATA_OUT_TERM_KEY",
+        "title": "通信エラー",
+        "button_1": "タイトルに戻る",
+        "button_2": "",
+        "message": "探索ワールド未解放",
+        "created_at": "2026-01-21 22:14:40",
+        "updated_at": "2026-01-21 22:14:40",
+        "deleted_at": null
+    }
+]

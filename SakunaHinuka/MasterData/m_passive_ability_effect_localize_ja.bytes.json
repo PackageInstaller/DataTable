@@ -1,0 +1,863 @@
+[
+    {
+        "effect_group_id": 601,
+        "description": "攻撃力<color=#4076E2>{0}%減少</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 602,
+        "description": "攻撃力<color=#4076E2>{0}%減少</color>(最大20%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 801,
+        "description": "防御力<color=#4076E2>{0}%減少</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 802,
+        "description": "防御力<color=#4076E2>{0}%減少</color>(最大20%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2201,
+        "description": "被撃値<color=#35B409>{0}%軽減</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4201,
+        "description": "木属性攻撃の被撃値<color=#35B409>{0}%軽減</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4301,
+        "description": "火属性攻撃の被撃値<color=#35B409>{0}%軽減</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4401,
+        "description": "土属性攻撃の被撃値<color=#35B409>{0}%軽減</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4501,
+        "description": "金属性攻撃の被撃値<color=#35B409>{0}%軽減</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4601,
+        "description": "水属性攻撃の被撃値<color=#35B409>{0}%軽減</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 50101,
+        "description": "一定時間ごとに、一定の生命力を失う",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 50201,
+        "description": "一定確率で通常攻撃、特技の発動が失敗する",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 50701,
+        "description": "移動速度<color=#4076E2>{0}%減少</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 50901,
+        "description": "特定の敵を狙いやすくなる",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 60101,
+        "description": "毒無効",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 60201,
+        "description": "麻痺無効",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 90201,
+        "description": "集合命令",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000100,
+        "description": "最大生命力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000300,
+        "description": "生命力<color=#35B409>{0}%回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000301,
+        "description": "生命力<color=#35B409>{0}%回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000302,
+        "description": "生命力<color=#35B409>{0}%回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000303,
+        "description": "生命力<color=#35B409>{0}%回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000500,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000501,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000502,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>(最大20%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000503,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000700,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000701,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000702,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000703,
+        "description": "防御力<color=#35B409>{0}%上昇</color>(重複不可)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000900,
+        "description": "会心率<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000901,
+        "description": "会心率<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1000902,
+        "description": "会心率<color=#35B409>{0}%上昇</color>(最大10%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1001100,
+        "description": "会心威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1001500,
+        "description": "奥義ゲージ獲得量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1001700,
+        "description": "奥義ゲージ<color=#35B409>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1001701,
+        "description": "奥義ゲージ<color=#35B409>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1002500,
+        "description": "火属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1002700,
+        "description": "金属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1002800,
+        "description": "水属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1005300,
+        "description": "回復威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 1006300,
+        "description": "効果付帯の持続時間を<color=#35B409>{0}秒延長</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000100,
+        "description": "最大生命力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000300,
+        "description": "生命力<color=#35B409>{0}%回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000301,
+        "description": "生命力<color=#35B409>{0}%回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000500,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000501,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000502,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000503,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>(最大20%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000700,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000701,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000702,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000703,
+        "description": "防御力<color=#35B409>{0}%上昇</color>(最大20%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000900,
+        "description": "会心率<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000901,
+        "description": "会心率<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2000902,
+        "description": "会心率<color=#35B409>{0}%上昇</color>(最大10%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2001100,
+        "description": "会心威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2001500,
+        "description": "奥義ゲージ獲得量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2001501,
+        "description": "奥義ゲージ獲得量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2001700,
+        "description": "奥義ゲージ<color=#35B409>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2001701,
+        "description": "奥義ゲージ<color=#35B409>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2001900,
+        "description": "攻撃威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2002100,
+        "description": "被撃値<color=#4076E2>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2002400,
+        "description": "木属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2002500,
+        "description": "火属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2002600,
+        "description": "土属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2002700,
+        "description": "金属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2002800,
+        "description": "水属性威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2004700,
+        "description": "通常攻撃威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2004900,
+        "description": "特技威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2005100,
+        "description": "奥義威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2005101,
+        "description": "奥義威力<color=#35B409>{0}%上昇</color>(最大40%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2005300,
+        "description": "回復威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2005500,
+        "description": "回復量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2050300,
+        "description": "自身の生命力の<color=#35B409>{0}%継続して回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 2050301,
+        "description": "自身の生命力の<color=#35B409>{0}%継続して回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3000100,
+        "description": "最大生命力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3000101,
+        "description": "最大生命力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3000500,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3000501,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3000700,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3004700,
+        "description": "通常攻撃威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3004701,
+        "description": "通常攻撃威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 3005500,
+        "description": "回復量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4000500,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4000700,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4000900,
+        "description": "会心率<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4001900,
+        "description": "攻撃威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4002100,
+        "description": "被撃値<color=#4076E2>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4002200,
+        "description": "被撃値<color=#35B409>{0}%軽減</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4003600,
+        "description": "木属性攻撃の被撃値<color=#4076E2>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4005300,
+        "description": "回復威力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4005500,
+        "description": "回復量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4007700,
+        "description": "状態異常を{0}個回復",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4050800,
+        "description": "生命力を継続して回復",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4051000,
+        "description": "効果付帯「通常攻撃時、25%の確率で敵の攻撃力<color=#4076E2>5.5%減少</color>(最大20%)(5秒)」",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4090100,
+        "description": "召喚した機巧兵を使役する",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4090500,
+        "description": "召喚した機巧兵に命令を出す",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 4090600,
+        "description": "命令を出す",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 5000500,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 5000700,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 5007600,
+        "description": "命令を解除",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 5007601,
+        "description": "命令を解除",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6000300,
+        "description": "生命力<color=#35B409>{0}%回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6000500,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6000700,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6000701,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6000900,
+        "description": "会心率<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6001500,
+        "description": "奥義ゲージ獲得量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6001700,
+        "description": "奥義ゲージ<color=#35B409>{0}%増加</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6005500,
+        "description": "回復量<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 6050300,
+        "description": "自身の生命力の<color=#35B409>{0}%継続して回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 8050301,
+        "description": "自身の生命力の<color=#35B409>{0}%継続して回復</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000100,
+        "description": "最大生命力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000101,
+        "description": "最大生命力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000500,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000501,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000502,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>(最大50%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000503,
+        "description": "攻撃力<color=#35B409>{0}%上昇</color>(重複不可)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000700,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000701,
+        "description": "防御力<color=#35B409>{0}%上昇</color>",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000702,
+        "description": "防御力<color=#35B409>{0}%上昇</color>(最大50%)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    },
+    {
+        "effect_group_id": 9000703,
+        "description": "防御力<color=#35B409>{0}%上昇</color>(重複不可)",
+        "created_at": "2026-02-24 12:57:30",
+        "updated_at": "2026-02-24 12:57:30",
+        "deleted_at": null
+    }
+]
