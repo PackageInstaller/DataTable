@@ -13,43 +13,52 @@ from rich.progress import (
     BarColumn,
     TextColumn,
     TimeRemainingColumn,
-    TimeElapsedColumn
+    TimeElapsedColumn,
 )
 
 MAX_THREADS = 32
-ASSET_ROOT  = "Asset"
+ASSET_ROOT = "Asset"
 UPDATE_ROOT = "AssetUpdate"
 TABLES_ROOT = "MasterData"
 TABLES_UPDATE_ROOT = "MasterUpdate"
 APP_INFO_URL = "https://api.store.games.dmm.com/freeapp/688044"
-VERSION_API  = "https://gapi.game-monmusu-td.net/api/asset_bundle/version"
-UNITY_HEADER = b"\x55\x6E\x69\x74\x79"
+VERSION_API = "https://gapi.game-monmusu-td.net/api/asset_bundle/version"
+UNITY_HEADER = b"\x55\x6e\x69\x74\x79"
 console = Console()
 
 
 def base_key(src: str) -> bytes:
-    s2  = bytes(b ^ 0x55 for b in src.encode('ascii'))
+    s2 = bytes(b ^ 0x55 for b in src.encode("ascii"))
     sha = hashlib.sha256(s2).digest()
-    s4  = bytes(b ^ 0xAA for b in sha)
+    s4 = bytes(b ^ 0xAA for b in sha)
     even, odd = s4[::2], s4[1::2]
     return even + odd
 
 
 def xor_stream(data: bytes, key: bytes) -> bytes:
     klen = len(key)
-    return bytes(b ^ key[i % klen] for i, b in enumerate(data))
+    key_int = int.from_bytes(key, "little")
+    out = bytearray(len(data))
+    for i in range(0, len(data), klen):
+        chunk = data[i : i + klen]
+        if len(chunk) == klen:
+            chunk_int = int.from_bytes(chunk, "little") ^ key_int
+            out[i : i + klen] = chunk_int.to_bytes(klen, "little")
+        else:
+            out[i:] = bytes(b ^ key[j] for j, b in enumerate(chunk))
+    return bytes(out)
 
 
 def decrypt_table_file(src_path: str, dest_path: str) -> bool:
     try:
         FIRST32 = base_key("KYSSTMDL")
         FULL64 = FIRST32 + FIRST32[::-1]
-        
+
         with open(src_path, "rb") as f:
             enc_data = f.read()
-            
+
         dec_data = xor_stream(enc_data, FULL64)
-        
+
         ensure_dir(dest_path)
         with open(dest_path, "wb") as f:
             f.write(dec_data)
@@ -101,7 +110,7 @@ def process_downloaded_file(src_path: str, asset_path: str, is_update: bool) -> 
             dest_path = os.path.join(TABLES_UPDATE_ROOT, asset_path)
         else:
             dest_path = os.path.join(TABLES_ROOT, asset_path)
-        
+
         if decrypt_table_file(src_path, dest_path):
             console.print(f"[blue]已解密数据表: {asset_path}[/blue]")
 
@@ -130,8 +139,8 @@ def download_one(
             if real_size != expect_size:
                 os.remove(dest_path)
                 raise ValueError(f"文件大小不符 {real_size} ≠ {expect_size}")
-            
-            process_downloaded_file(dest_path, asset['path'], is_update)
+
+            process_downloaded_file(dest_path, asset["path"], is_update)
             return True, "完成"
         except Exception as e:
             if attempt < retries:
@@ -141,7 +150,14 @@ def download_one(
     return False, "未知错误"
 
 
-def worker(q: Queue, base_url: str, progress: Progress, task_id, lock: threading.Lock, download_failures: dict):
+def worker(
+    q: Queue,
+    base_url: str,
+    progress: Progress,
+    task_id,
+    lock: threading.Lock,
+    download_failures: dict,
+):
     sess = requests.Session()
     while True:
         item = q.get()
@@ -191,9 +207,11 @@ def main():
         console.print(f"[red]获取 ablist.json 失败：{e}[/red]")
         return
 
-    base_ver  = ab["baseVersion"]
-    base_url  = f"https://assets.game-monmusu-td.net/assetbundles/ver_{base_ver}/webgl_r18"
-    assets    = ab["data"]
+    base_ver = ab["baseVersion"]
+    base_url = (
+        f"https://assets.game-monmusu-td.net/assetbundles/ver_{base_ver}/webgl_r18"
+    )
+    assets = ab["data"]
 
     console.print(
         f"[bold yellow]远端资源版本：{bundle_version}[/bold yellow]\n"
@@ -213,8 +231,8 @@ def main():
         if asset_path in processed_files:
             continue
         processed_files.add(asset_path)
-            
-        local_path  = os.path.join(ASSET_ROOT, asset_path)
+
+        local_path = os.path.join(ASSET_ROOT, asset_path)
         remote_size = int(asset["size"])
 
         if args.force or not os.path.exists(local_path):
@@ -238,7 +256,7 @@ def main():
                         continue
                 except OSError:
                     pass
-            
+
             task_key = (asset_path, True)
             if task_key not in processed_tasks:
                 tasks.append((asset, upd_path, remote_size, True))
@@ -249,16 +267,18 @@ def main():
         console.print("[green]所有资源已是最新，无需下载。[/green]")
         return
 
-    console.print(f"[cyan]共需下载 {total} 个文件，线程数：{min(args.threads, total)}[/cyan]")
+    console.print(
+        f"[cyan]共需下载 {total} 个文件，线程数：{min(args.threads, total)}[/cyan]"
+    )
 
     download_failures = {}
-    
+
     q: Queue = Queue()
     for t in tasks:
         q.put(t)
 
-    lock     = threading.Lock()
-    workers  = []
+    lock = threading.Lock()
+    workers = []
     progress = Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -289,16 +309,17 @@ def main():
             t.join()
 
     console.print("[bold green]全部下载完成！[/bold green]")
-    
+
     failed_files = []
     for asset_path in processed_files:
         local_path = os.path.join(ASSET_ROOT, asset_path)
         upd_path = os.path.join(UPDATE_ROOT, asset_path)
-        
+
         if os.path.exists(upd_path):
             console.print(f"[blue]更新文件: {asset_path}[/blue]")
         elif not os.path.exists(local_path) or asset_path in download_failures:
             failed_files.append(asset_path)
+
 
 if __name__ == "__main__":
     main()

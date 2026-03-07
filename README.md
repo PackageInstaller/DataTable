@@ -33,3 +33,4 @@
 |    Techcronossx    |    铁扣连接    |            Dmm Json            |
 |   TaimaninSquad   |  对魔忍特遣队  |           国际服 Json           |
 |    SakunaHinuka    |    天穗手游    |            日服 Json            |
+|  RlyehShoujotaiX  |      邪神      |            Dmm Json            |
