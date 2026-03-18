@@ -1,3588 +1,2332 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 7075998227999178452
-  },
-  "m_Name": "quest_training_data",
-  "records": [
-    {
-      "trainingId": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の攻撃力50％アップ"
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "trainingId": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 7075998227999178452
+    },
+    "m_Name": "quest_training_data",
+    "records": [
         {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 1,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "敵の攻撃力50％アップ"
         },
         {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 4,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物防魔防50％アップ"
-    },
-    {
-      "trainingId": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の耐久力100％アップ"
-    },
-    {
-      "trainingId": {
-        "hash": -278701055,
-        "hiddenValue": 8,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の移動速度100％アップ"
-    },
-    {
-      "trainingId": {
-        "hash": 1322013681,
-        "hiddenValue": 25,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の魔法防御50％アップ"
-    },
-    {
-      "trainingId": {
-        "hash": -1087481247,
-        "hiddenValue": 34,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1920176001,
-            "hiddenValue": 64,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵が常時リジェネ(耐久力1%)"
-    },
-    {
-      "trainingId": {
-        "hash": -204561295,
-        "hiddenValue": 33,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "敵の物防魔防50％アップ"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 5,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -2044540959,
-                  "hiddenValue": 122,
-                  "currentCryptoKey": 1
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 8,
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "味方が与える物理ダメージ20%アップ"
-    },
-    {
-      "trainingId": {
-        "hash": 1441646145,
-        "hiddenValue": 36,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "敵の耐久力100％アップ"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 6,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -2044540959,
-                  "hiddenValue": 122,
-                  "currentCryptoKey": 1
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 7,
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "味方が与える魔法ダメージ20%アップ"
-    },
-    {
-      "trainingId": {
-        "hash": -1970401199,
-        "hiddenValue": 35,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "敵の移動速度100％アップ"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 25,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -2044540959,
-                  "hiddenValue": 122,
-                  "currentCryptoKey": 1
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 8,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "敵が与える魔法ダメージ20％アップ"
-    },
-    {
-      "trainingId": {
-        "hash": -324193759,
-        "hiddenValue": 38,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "敵の魔法防御50％アップ"
         },
         {
-          "talentId": {
-            "hash": -753241607,
-            "hiddenValue": 1022,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 32,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
+                    "talentId": 62,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            },
-            {
-              "type": 2001,
-              "num": [
-                {
-                  "hash": -608951391,
-                  "hiddenValue": 62,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                "%"
-              ]
-            }
-          ],
-          "activeData": []
-        }
-      ],
-      "trainingText": "味方全員が2秒毎に100の継続ダメージ"
-    },
-    {
-      "trainingId": {
-        "hash": 558726193,
-        "hiddenValue": 37,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -891049487,
-            "hiddenValue": 514,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "回復禁止"
-    },
-    {
-      "trainingId": {
-        "hash": 1800543537,
-        "hiddenValue": 53,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1002,
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                "!"
-              ]
-            }
-          ]
+            ],
+            "trainingText": "敵が常時リジェネ(耐久力1%)"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 33,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                120
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 8,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 1002,
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                "!"
-              ]
-            }
-          ]
+            ],
+            "trainingText": "味方が与える物理ダメージ20%アップ"
         },
         {
-          "talentId": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 34,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 1475337441,
-                  "hiddenValue": 202,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                120
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 7,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 1002,
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                "!"
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "火属性以外の味方の与ダメージ50%ダウン・被ダメージ50%増加"
-    },
-    {
-      "trainingId": {
-        "hash": 2039808465,
-        "hiddenValue": 59,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 786464545,
-            "hiddenValue": 1032,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "エントリーID100召喚"
-    },
-    {
-      "trainingId": {
-        "hash": 1920176001,
-        "hiddenValue": 64,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "味方が与える魔法ダメージ20%アップ"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 35,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                120
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 8,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 7,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "味方が与える物理ダメージ50%ダウン"
-    },
-    {
-      "trainingId": {
-        "hash": -1491871343,
-        "hiddenValue": 63,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "敵が与える魔法ダメージ20％アップ"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 36,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 1020,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 2001,
+                            "num": [
+                                60
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 8,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "味方が与える魔法ダメージ50%ダウン"
-    },
-    {
-      "trainingId": {
-        "hash": 51549281,
-        "hiddenValue": 66,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "味方全員が2秒毎に100の継続ダメージ"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 37,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -951003135,
-                  "hiddenValue": 72,
-                  "currentCryptoKey": 1
+                    "talentId": 512,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 10,
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "味方が与えるメージ30%ダウン"
-    },
-    {
-      "trainingId": {
-        "hash": 142534689,
-        "hiddenValue": 134,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 357416697,
-            "hiddenValue": 2016,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -868609935,
-                  "hiddenValue": 2702,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "制限時間90秒"
-    },
-    {
-      "trainingId": {
-        "hash": 1025454641,
-        "hiddenValue": 133,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 357416697,
-            "hiddenValue": 2016,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1450238353,
-                  "hiddenValue": 3602,
-                  "currentCryptoKey": 1
-                }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            },
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "制限時間120秒"
-    },
-    {
-      "trainingId": {
-        "hash": -1623305215,
-        "hiddenValue": 136,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1475025695,
-            "hiddenValue": 74,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 16,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "スキルチャージ速度2倍"
-    },
-    {
-      "trainingId": {
-        "hash": -740385263,
-        "hiddenValue": 135,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1459509815,
-            "hiddenValue": 911,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 16,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": ""
-    },
-    {
-      "trainingId": {
-        "hash": -2147327775,
-        "hiddenValue": 138,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1611503807,
-                  "hiddenValue": 52,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の攻撃力50%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -1264407823,
-        "hiddenValue": 137,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 34703633,
-                  "hiddenValue": 55,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の攻撃力55%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 381799617,
-        "hiddenValue": 140,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -608951391,
-                  "hiddenValue": 62,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の攻撃力60%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 1264719569,
-        "hiddenValue": 139,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 934469233,
-                  "hiddenValue": 65,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の攻撃力65%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -1384040287,
-        "hiddenValue": 142,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -951003135,
-                  "hiddenValue": 72,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の攻撃力70%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -501120335,
-        "hiddenValue": 141,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理防御100%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 1145087105,
-        "hiddenValue": 144,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -2044540959,
-                  "hiddenValue": 122,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理防御120%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 2028007057,
-        "hiddenValue": 143,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1384040287,
-                  "hiddenValue": 142,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理防御140%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 621064545,
-        "hiddenValue": 146,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1862881889,
-                  "hiddenValue": 162,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理防御160%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 1503984497,
-        "hiddenValue": 145,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -426980575,
-                  "hiddenValue": 182,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理防御180%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -1144775359,
-        "hiddenValue": 148,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -608951391,
-                  "hiddenValue": 62,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "回復禁止"
         },
         {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 53,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -608951391,
-                  "hiddenValue": 62,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                "!"
+                            ]
+                        }
+                    ]
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理&魔法防御60%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -261855407,
-        "hiddenValue": 147,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                "!"
+                            ]
+                        }
+                    ]
+                },
                 {
-                  "hash": -951003135,
-                  "hiddenValue": 72,
-                  "currentCryptoKey": 1
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                200
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                "!"
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "火属性以外の味方の与ダメージ50%ダウン・被ダメージ50%増加"
         },
         {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 59,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -951003135,
-                  "hiddenValue": 72,
-                  "currentCryptoKey": 1
+                    "talentId": 1030,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理&魔法防御70%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 1384352033,
-        "hiddenValue": 150,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1293366625,
-                  "hiddenValue": 82,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "エントリーID100召喚"
         },
         {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 62,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 1293366625,
-                  "hiddenValue": 82,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 7,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理&魔法防御80%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -2027695311,
-        "hiddenValue": 149,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1999048255,
-                  "hiddenValue": 92,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "味方が与える物理ダメージ50%ダウン"
         },
         {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 63,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -1999048255,
-                  "hiddenValue": 92,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 8,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理&魔法防御90%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -381487871,
-        "hiddenValue": 152,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "味方が与える魔法ダメージ50%ダウン"
         },
         {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 64,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 10,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の物理&魔法防御100%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 501432081,
-        "hiddenValue": 151,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -608951391,
-                  "hiddenValue": 62,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "味方が与えるメージ30%ダウン"
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 132,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -608951391,
-                  "hiddenValue": 62,
-                  "currentCryptoKey": 1
+                    "talentId": 2014,
+                    "param": [
+                        {
+                            "num": [
+                                2700
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の移動速度と攻撃速度60%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -905510431,
-        "hiddenValue": 154,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -951003135,
-                  "hiddenValue": 72,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "制限時間90秒"
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 133,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -951003135,
-                  "hiddenValue": 72,
-                  "currentCryptoKey": 1
+                    "talentId": 2014,
+                    "param": [
+                        {
+                            "num": [
+                                3600
+                            ]
+                        },
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の移動速度と攻撃速度70%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -22590479,
-        "hiddenValue": 153,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1293366625,
-                  "hiddenValue": 82,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "制限時間120秒"
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 134,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 1293366625,
-                  "hiddenValue": 82,
-                  "currentCryptoKey": 1
+                    "talentId": 72,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 16,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の移動速度と攻撃速度80%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 1623616961,
-        "hiddenValue": 156,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1999048255,
-                  "hiddenValue": 92,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "スキルチャージ速度2倍"
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 135,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -1999048255,
-                  "hiddenValue": 92,
-                  "currentCryptoKey": 1
+                    "talentId": 911,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 16,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の移動速度と攻撃速度90%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -1788430383,
-        "hiddenValue": 155,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": ""
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 136,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -996495839,
-                  "hiddenValue": 102,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の移動速度と攻撃速度100%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -142222943,
-        "hiddenValue": 158,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1014,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "ルルイエ勢力の攻撃力5%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 740697009,
-        "hiddenValue": 157,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1014,
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "カルコサ勢力の攻撃力5%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -1908062847,
-        "hiddenValue": 160,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1014,
-              "num": [
-                {
-                  "hash": -159068591,
-                  "hiddenValue": 3,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "アーカム勢力の攻撃力5%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -1025142895,
-        "hiddenValue": 159,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1014,
-              "num": [
-                {
-                  "hash": 1487138849,
-                  "hiddenValue": 6,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "ケイオス勢力の攻撃力5%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": 1862881889,
-        "hiddenValue": 162,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1014,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "ルルイエ勢力の攻撃力20%上昇"
-    },
-    {
-      "trainingId": {
-        "hash": -1549165455,
-        "hiddenValue": 161,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1459509815,
-            "hiddenValue": 911,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "ノックバック無効"
-    },
-    {
-      "trainingId": {
-        "hash": 1636748137,
-        "hiddenValue": 302,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1920176001,
-            "hiddenValue": 64,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 6,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "敵の耐久が3秒ごとに5%回復"
-    },
-    {
-      "trainingId": {
-        "hash": -1775299207,
-        "hiddenValue": 301,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1002,
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
+            ],
+            "trainingText": "敵の攻撃力50%上昇"
         },
         {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 137,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": -951003135,
-                  "hiddenValue": 72,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                55
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 40000,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 1002,
-              "num": [
-                {
-                  "hash": -1041988543,
-                  "hiddenValue": 4,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
+            ],
+            "trainingText": "敵の攻撃力55%上昇"
         },
         {
-          "talentId": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 138,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 3,
-          "triggerData": [],
-          "activeData": [
-            {
-              "type": 1002,
-              "num": [
-                {
-                  "hash": -159068591,
-                  "hiddenValue": 3,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "trainingText": "水属性の味方の与ダメージ70%ダウン"
-    },
-    {
-      "trainingId": {
-        "hash": 1018869737,
-        "hiddenValue": 9999,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
+            ],
+            "trainingText": "敵の攻撃力60%上昇"
+        },
         {
-          "talentId": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 139,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                65
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 0,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "<color=#ed0707>ボスエネミー出現（魔法攻撃、水属性が有効）</color>"
-    },
-    {
-      "trainingId": {
-        "hash": 1063895801,
-        "hiddenValue": 10000,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
+            ],
+            "trainingText": "敵の攻撃力65%上昇"
+        },
         {
-          "talentId": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 140,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 0,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "<color=#ed0707>ボスエネミー出現（物理攻撃、火属性が有効）</color>"
-    },
-    {
-      "trainingId": {
-        "hash": 517158857,
-        "hiddenValue": 9997,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
+            ],
+            "trainingText": "敵の攻撃力70%上昇"
+        },
         {
-          "talentId": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 141,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 0,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "<color=#ed0707>ボスエネミー出現（土属性が有効）</color>"
-    },
-    {
-      "trainingId": {
-        "hash": 836624089,
-        "hiddenValue": 9998,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
+            ],
+            "trainingText": "敵の物理防御100%上昇"
+        },
         {
-          "talentId": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 142,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                120
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 0,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "trainingText": "<color=#ed0707>ボスエネミー出現（水属性が有効）</color>"
-    },
-    {
-      "trainingId": {
-        "hash": 255582249,
-        "hiddenValue": 9995,
-        "currentCryptoKey": 1
-      },
-      "start": -1,
-      "duration": -1,
-      "talentList": [
+            ],
+            "trainingText": "敵の物理防御120%上昇"
+        },
         {
-          "talentId": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "trainingId": 143,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                140
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+            ],
+            "trainingText": "敵の物理防御140%上昇"
+        },
+        {
+            "trainingId": 144,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                160
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "timing": 0,
-          "range": 0,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "trainingText": "敵の物理防御160%上昇"
+        },
+        {
+            "trainingId": 145,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                180
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の物理防御180%上昇"
+        },
+        {
+            "trainingId": 146,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の物理&魔法防御60%上昇"
+        },
+        {
+            "trainingId": 147,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の物理&魔法防御70%上昇"
+        },
+        {
+            "trainingId": 148,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の物理&魔法防御80%上昇"
+        },
+        {
+            "trainingId": 149,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の物理&魔法防御90%上昇"
+        },
+        {
+            "trainingId": 150,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の物理&魔法防御100%上昇"
+        },
+        {
+            "trainingId": 151,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の移動速度と攻撃速度60%上昇"
+        },
+        {
+            "trainingId": 152,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の移動速度と攻撃速度70%上昇"
+        },
+        {
+            "trainingId": 153,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の移動速度と攻撃速度80%上昇"
+        },
+        {
+            "trainingId": 154,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の移動速度と攻撃速度90%上昇"
+        },
+        {
+            "trainingId": 155,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の移動速度と攻撃速度100%上昇"
+        },
+        {
+            "trainingId": 156,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "ルルイエ勢力の攻撃力5%上昇"
+        },
+        {
+            "trainingId": 157,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "カルコサ勢力の攻撃力5%上昇"
+        },
+        {
+            "trainingId": 158,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "アーカム勢力の攻撃力5%上昇"
+        },
+        {
+            "trainingId": 159,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                4
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "ケイオス勢力の攻撃力5%上昇"
+        },
+        {
+            "trainingId": 160,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "ルルイエ勢力の攻撃力20%上昇"
+        },
+        {
+            "trainingId": 161,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 911,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "ノックバック無効"
+        },
+        {
+            "trainingId": 300,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 62,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "敵の耐久が3秒ごとに5%回復"
+        },
+        {
+            "trainingId": 301,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                70
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "trainingText": "水属性の味方の与ダメージ70%ダウン"
+        },
+        {
+            "trainingId": 9999,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 3,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 0,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "<color=#ed0707>ボスエネミー出現（魔法攻撃、水属性が有効）</color>"
+        },
+        {
+            "trainingId": 9998,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 3,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 0,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "<color=#ed0707>ボスエネミー出現（物理攻撃、火属性が有効）</color>"
+        },
+        {
+            "trainingId": 9997,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 3,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 0,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "<color=#ed0707>ボスエネミー出現（土属性が有効）</color>"
+        },
+        {
+            "trainingId": 9996,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 3,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 0,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "<color=#ed0707>ボスエネミー出現（水属性が有効）</color>"
+        },
+        {
+            "trainingId": 9995,
+            "start": -1,
+            "duration": -1,
+            "talentList": [
+                {
+                    "talentId": 3,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 0,
+                    "range": 0,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "trainingText": "<color=#ed0707>一定時間毎に攻撃力が上昇</color>"
         }
-      ],
-      "trainingText": "<color=#ed0707>一定時間毎に攻撃力が上昇</color>"
-    }
-  ]
+    ]
 }

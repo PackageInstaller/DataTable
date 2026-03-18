@@ -1,70 +1,70 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": -2740062397781637878
-  },
-  "m_Name": "gacha_extra_prize_data",
-  "records": [
-    {
-      "id": "ex_monthly_sr",
-      "prizes": [
-        {
-          "group_id": "ex_monthly_sr",
-          "no": 9,
-          "prize_num": 1,
-          "prize_type": "point",
-          "prize_name": "gold",
-          "lottery_num": 0,
-          "loop_flag": 0
-        }
-      ]
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "id": "standard",
-      "prizes": [
-        {
-          "group_id": "standard",
-          "no": 10,
-          "prize_num": 15,
-          "prize_type": "point",
-          "prize_name": "chaos_piece",
-          "lottery_num": 100,
-          "loop_flag": 1
-        }
-      ]
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2740062397781637878
     },
-    {
-      "id": "pickup1",
-      "prizes": [
+    "m_Name": "gacha_extra_prize_data",
+    "records": [
         {
-          "group_id": "pickup1",
-          "no": 11,
-          "prize_num": 1,
-          "prize_type": "unit",
-          "prize_name": "30",
-          "lottery_num": 200,
-          "loop_flag": 1
-        }
-      ]
-    },
-    {
-      "id": "pickup2",
-      "prizes": [
+            "id": "ex_monthly_sr",
+            "prizes": [
+                {
+                    "group_id": "ex_monthly_sr",
+                    "no": 9,
+                    "prize_num": 1,
+                    "prize_type": "point",
+                    "prize_name": "gold",
+                    "lottery_num": 0,
+                    "loop_flag": 0
+                }
+            ]
+        },
         {
-          "group_id": "pickup2",
-          "no": 12,
-          "prize_num": 1,
-          "prize_type": "unit",
-          "prize_name": "40",
-          "lottery_num": 200,
-          "loop_flag": 1
+            "id": "standard",
+            "prizes": [
+                {
+                    "group_id": "standard",
+                    "no": 10,
+                    "prize_num": 15,
+                    "prize_type": "point",
+                    "prize_name": "chaos_piece",
+                    "lottery_num": 100,
+                    "loop_flag": 1
+                }
+            ]
+        },
+        {
+            "id": "pickup1",
+            "prizes": [
+                {
+                    "group_id": "pickup1",
+                    "no": 11,
+                    "prize_num": 1,
+                    "prize_type": "unit",
+                    "prize_name": "30",
+                    "lottery_num": 200,
+                    "loop_flag": 1
+                }
+            ]
+        },
+        {
+            "id": "pickup2",
+            "prizes": [
+                {
+                    "group_id": "pickup2",
+                    "no": 12,
+                    "prize_num": 1,
+                    "prize_type": "unit",
+                    "prize_name": "40",
+                    "lottery_num": 200,
+                    "loop_flag": 1
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

@@ -1,37 +1,37 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": -7225681366333924241
-  },
-  "m_Name": "event_effect_table_data",
-  "records": [
-    {
-      "category": 1,
-      "eventId": 1,
-      "effectDatas": [
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -7225681366333924241
+    },
+    "m_Name": "event_effect_table_data",
+    "records": [
         {
-          "effectType": 1,
-          "targetDatas": [
-            {
-              "effectValue": 30,
-              "targetUnitIds": [
-                39
-              ]
-            },
-            {
-              "effectValue": 70,
-              "targetUnitIds": [
-                40
-              ]
-            }
-          ]
+            "category": 1,
+            "eventId": 1,
+            "effectDatas": [
+                {
+                    "effectType": 1,
+                    "targetDatas": [
+                        {
+                            "effectValue": 30,
+                            "targetUnitIds": [
+                                39
+                            ]
+                        },
+                        {
+                            "effectValue": 70,
+                            "targetUnitIds": [
+                                40
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

@@ -1,76 +1,76 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 5987273658702872274
-  },
-  "m_Name": "login_bonus",
-  "records": [
-    {
-      "id": 1,
-      "category": "monthly_vip",
-      "box_message": "開発用(恒常)",
-      "name": "開発用(恒常)",
-      "table_id": 100001,
-      "layout_id": 1,
-      "line_value": 0,
-      "priority": 1,
-      "start_dt": "",
-      "end_dt": "",
-      "months": [
-        1,
-        2,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ],
-      "title_logo_resources": "",
-      "bg_resources": "Event1_Bg",
-      "story_id": 0
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "id": 2,
-      "category": "monthly_vip",
-      "box_message": "開発用(暫定対応用)",
-      "name": "開発用(暫定対応用)",
-      "table_id": 100002,
-      "layout_id": 1,
-      "line_value": 0,
-      "priority": 1,
-      "start_dt": "",
-      "end_dt": "",
-      "months": [
-        3
-      ],
-      "title_logo_resources": "",
-      "bg_resources": "Event1_Bg",
-      "story_id": 0
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 5987273658702872274
     },
-    {
-      "id": 1001,
-      "category": "beginner",
-      "box_message": "リリース記念ログインボーナス",
-      "name": "リリース記念ログインボーナス",
-      "table_id": 200001,
-      "layout_id": 1,
-      "line_value": 3,
-      "priority": 2,
-      "start_dt": "2026/03/18",
-      "end_dt": "2026/04/17 11:00:00",
-      "months": [],
-      "title_logo_resources": "",
-      "bg_resources": "Event1_Bg",
-      "story_id": 0
-    }
-  ]
+    "m_Name": "login_bonus",
+    "records": [
+        {
+            "id": 1,
+            "category": "monthly_vip",
+            "box_message": "開発用(恒常)",
+            "name": "開発用(恒常)",
+            "table_id": 100001,
+            "layout_id": 1,
+            "line_value": 0,
+            "priority": 1,
+            "start_dt": "",
+            "end_dt": "",
+            "months": [
+                1,
+                2,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "title_logo_resources": "",
+            "bg_resources": "Event1_Bg",
+            "story_id": 0
+        },
+        {
+            "id": 2,
+            "category": "monthly_vip",
+            "box_message": "開発用(暫定対応用)",
+            "name": "開発用(暫定対応用)",
+            "table_id": 100002,
+            "layout_id": 1,
+            "line_value": 0,
+            "priority": 1,
+            "start_dt": "",
+            "end_dt": "",
+            "months": [
+                3
+            ],
+            "title_logo_resources": "",
+            "bg_resources": "Event1_Bg",
+            "story_id": 0
+        },
+        {
+            "id": 1001,
+            "category": "beginner",
+            "box_message": "リリース記念ログインボーナス",
+            "name": "リリース記念ログインボーナス",
+            "table_id": 200001,
+            "layout_id": 1,
+            "line_value": 3,
+            "priority": 2,
+            "start_dt": "2026/03/18",
+            "end_dt": "2026/04/17 11:00:00",
+            "months": [],
+            "title_logo_resources": "",
+            "bg_resources": "Event1_Bg",
+            "story_id": 0
+        }
+    ]
 }

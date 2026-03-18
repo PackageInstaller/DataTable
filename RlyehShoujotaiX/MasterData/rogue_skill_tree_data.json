@@ -1,1219 +1,571 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 8056083611097761516
-  },
-  "m_Name": "rogue_skill_tree_data",
-  "records": [
-    {
-      "theme_id": 1,
-      "nodes": [
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 8056083611097761516
+    },
+    "m_Name": "rogue_skill_tree_data",
+    "records": [
         {
-          "no": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            2,
-            3,
-            4
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            5,
-            6
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            5,
-            6
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1487138849,
-            "hiddenValue": 6,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            5,
-            6
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1924908495,
-            "hiddenValue": 5,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            7,
-            8
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            9,
-            10
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 604218897,
-            "hiddenValue": 7,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            11
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -802723615,
-            "hiddenValue": 10,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇",
-          "price": 1,
-          "next_ids": [
-            12
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 80196337,
-            "hiddenValue": 9,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            13
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1726403777,
-            "hiddenValue": 12,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            14
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            15
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -39436127,
-            "hiddenValue": 14,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇",
-          "price": 1,
-          "next_ids": [
-            15
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 843483825,
-            "hiddenValue": 13,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            16
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1805276031,
-            "hiddenValue": 16,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            16
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -922356079,
-            "hiddenValue": 15,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            17
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            17
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1446378639,
-            "hiddenValue": 17,
-            "currentCryptoKey": 1
-          },
-          "name": "開始時の恩寵選択に［ガンナー強化］を追加",
-          "price": 1,
-          "next_ids": [
-            18,
-            19
-          ],
-          "buff_type": {
-            "hash": 938458537,
-            "hiddenValue": 2003,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 199828801,
-            "hiddenValue": 20,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            20,
-            21
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1082748753,
-            "hiddenValue": 19,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            22,
-            23
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1566011103,
-            "hiddenValue": 22,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            24
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            25
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 963116289,
-            "hiddenValue": 24,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅰ",
-          "price": 1,
-          "next_ids": [
-            26
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1846036241,
-            "hiddenValue": 23,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            27
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 439093729,
-            "hiddenValue": 26,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            28
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1322013681,
-            "hiddenValue": 25,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            28
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            29
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -443826223,
-            "hiddenValue": 27,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            29
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1202381217,
-            "hiddenValue": 30,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            30,
-            31
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 2085301169,
-            "hiddenValue": 29,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            32,
-            33
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -563458687,
-            "hiddenValue": 32,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            34
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 319461265,
-            "hiddenValue": 31,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            35
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1087481247,
-            "hiddenValue": 34,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            36
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -204561295,
-            "hiddenValue": 33,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            37
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1441646145,
-            "hiddenValue": 36,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            38
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1970401199,
-            "hiddenValue": 35,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            38
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -324193759,
-            "hiddenValue": 38,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            39
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 558726193,
-            "hiddenValue": 37,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            39
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -2090033663,
-            "hiddenValue": 40,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            40,
-            41
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1207113711,
-            "hiddenValue": 39,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            42,
-            43
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1680911073,
-            "hiddenValue": 42,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            44
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1731136271,
-            "hiddenValue": 41,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            45
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -84928831,
-            "hiddenValue": 44,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            46
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 797991121,
-            "hiddenValue": 43,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            47
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1850768735,
-            "hiddenValue": 46,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            48
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -967848783,
-            "hiddenValue": 45,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            49
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 678358657,
-            "hiddenValue": 48,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            50
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1561278609,
-            "hiddenValue": 47,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            51
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 154336097,
-            "hiddenValue": 50,
-            "currentCryptoKey": 1
-          },
-          "name": "最大耐久上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            52
-          ],
-          "buff_type": {
-            "hash": 1536620857,
-            "hiddenValue": 1002,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1037256049,
-            "hiddenValue": 49,
-            "currentCryptoKey": 1
-          },
-          "name": "攻撃力上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            52
-          ],
-          "buff_type": {
-            "hash": -229219047,
-            "hiddenValue": 1004,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -1611503807,
-            "hiddenValue": 52,
-            "currentCryptoKey": 1
-          },
-          "name": "物理防御上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            53
-          ],
-          "buff_type": {
-            "hash": -1995058951,
-            "hiddenValue": 1006,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -728583855,
-            "hiddenValue": 51,
-            "currentCryptoKey": 1
-          },
-          "name": "魔法防御上昇Ⅲ",
-          "price": 3,
-          "next_ids": [
-            53
-          ],
-          "buff_type": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 917623585,
-            "hiddenValue": 54,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            54
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": 1800543537,
-            "hiddenValue": 53,
-            "currentCryptoKey": 1
-          },
-          "name": "城壁の最大耐久上昇Ⅱ",
-          "price": 2,
-          "next_ids": [
-            54
-          ],
-          "buff_type": {
-            "hash": 10045881,
-            "hiddenValue": 1010,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          }
-        },
-        {
-          "no": {
-            "hash": -848216319,
-            "hiddenValue": 56,
-            "currentCryptoKey": 1
-          },
-          "name": "開始時の恩寵選択に［勝利時獲得コイン増加］を追加",
-          "price": 1,
-          "next_ids": [],
-          "buff_type": {
-            "hash": 938458537,
-            "hiddenValue": 2003,
-            "currentCryptoKey": 1
-          },
-          "buff_value": {
-            "hash": 2085301169,
-            "hiddenValue": 29,
-            "currentCryptoKey": 1
-          }
+            "theme_id": 1,
+            "nodes": [
+                {
+                    "no": 1,
+                    "name": "最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        2,
+                        3,
+                        4
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 1
+                },
+                {
+                    "no": 2,
+                    "name": "攻撃力上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        5,
+                        6
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 1
+                },
+                {
+                    "no": 3,
+                    "name": "物理防御上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        5,
+                        6
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 1
+                },
+                {
+                    "no": 4,
+                    "name": "魔法防御上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        5,
+                        6
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 1
+                },
+                {
+                    "no": 5,
+                    "name": "城壁の最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        7,
+                        8
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 1
+                },
+                {
+                    "no": 6,
+                    "name": "城壁の最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        9,
+                        10
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 1
+                },
+                {
+                    "no": 7,
+                    "name": "最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        11
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 1
+                },
+                {
+                    "no": 8,
+                    "name": "攻撃力上昇",
+                    "price": 1,
+                    "next_ids": [
+                        12
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 1
+                },
+                {
+                    "no": 9,
+                    "name": "物理防御上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        13
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 1
+                },
+                {
+                    "no": 10,
+                    "name": "魔法防御上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        14
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 1
+                },
+                {
+                    "no": 11,
+                    "name": "最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        15
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 1
+                },
+                {
+                    "no": 12,
+                    "name": "攻撃力上昇",
+                    "price": 1,
+                    "next_ids": [
+                        15
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 1
+                },
+                {
+                    "no": 13,
+                    "name": "物理防御上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        16
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 1
+                },
+                {
+                    "no": 14,
+                    "name": "魔法防御上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        16
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 1
+                },
+                {
+                    "no": 15,
+                    "name": "城壁の最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        17
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 1
+                },
+                {
+                    "no": 16,
+                    "name": "城壁の最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        17
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 1
+                },
+                {
+                    "no": 17,
+                    "name": "開始時の恩寵選択に［ガンナー強化］を追加",
+                    "price": 1,
+                    "next_ids": [
+                        18,
+                        19
+                    ],
+                    "buff_type": 2003,
+                    "buff_value": 16
+                },
+                {
+                    "no": 18,
+                    "name": "物理防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        20,
+                        21
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 2
+                },
+                {
+                    "no": 19,
+                    "name": "魔法防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        22,
+                        23
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 2
+                },
+                {
+                    "no": 20,
+                    "name": "最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        24
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 2
+                },
+                {
+                    "no": 21,
+                    "name": "城壁の最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        25
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 1
+                },
+                {
+                    "no": 22,
+                    "name": "城壁の最大耐久上昇Ⅰ",
+                    "price": 1,
+                    "next_ids": [
+                        26
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 1
+                },
+                {
+                    "no": 23,
+                    "name": "攻撃力上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        27
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 2
+                },
+                {
+                    "no": 24,
+                    "name": "最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        28
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 2
+                },
+                {
+                    "no": 25,
+                    "name": "物理防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        28
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 2
+                },
+                {
+                    "no": 26,
+                    "name": "魔法防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        29
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 2
+                },
+                {
+                    "no": 27,
+                    "name": "攻撃力上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        29
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 2
+                },
+                {
+                    "no": 28,
+                    "name": "城壁の最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        30,
+                        31
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 2
+                },
+                {
+                    "no": 29,
+                    "name": "城壁の最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        32,
+                        33
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 2
+                },
+                {
+                    "no": 30,
+                    "name": "最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        34
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 2
+                },
+                {
+                    "no": 31,
+                    "name": "攻撃力上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        35
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 2
+                },
+                {
+                    "no": 32,
+                    "name": "物理防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        36
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 2
+                },
+                {
+                    "no": 33,
+                    "name": "魔法防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        37
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 2
+                },
+                {
+                    "no": 34,
+                    "name": "最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        38
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 2
+                },
+                {
+                    "no": 35,
+                    "name": "攻撃力上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        38
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 2
+                },
+                {
+                    "no": 36,
+                    "name": "物理防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        39
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 2
+                },
+                {
+                    "no": 37,
+                    "name": "魔法防御上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        39
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 2
+                },
+                {
+                    "no": 38,
+                    "name": "城壁の最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        40,
+                        41
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 2
+                },
+                {
+                    "no": 39,
+                    "name": "城壁の最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        42,
+                        43
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 2
+                },
+                {
+                    "no": 40,
+                    "name": "最大耐久上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        44
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 3
+                },
+                {
+                    "no": 41,
+                    "name": "攻撃力上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        45
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 3
+                },
+                {
+                    "no": 42,
+                    "name": "物理防御上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        46
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 3
+                },
+                {
+                    "no": 43,
+                    "name": "魔法防御上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        47
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 3
+                },
+                {
+                    "no": 44,
+                    "name": "最大耐久上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        48
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 3
+                },
+                {
+                    "no": 45,
+                    "name": "攻撃力上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        49
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 3
+                },
+                {
+                    "no": 46,
+                    "name": "物理防御上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        50
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 3
+                },
+                {
+                    "no": 47,
+                    "name": "魔法防御上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        51
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 3
+                },
+                {
+                    "no": 48,
+                    "name": "最大耐久上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        52
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 3
+                },
+                {
+                    "no": 49,
+                    "name": "攻撃力上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        52
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 3
+                },
+                {
+                    "no": 50,
+                    "name": "物理防御上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        53
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 3
+                },
+                {
+                    "no": 51,
+                    "name": "魔法防御上昇Ⅲ",
+                    "price": 3,
+                    "next_ids": [
+                        53
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 3
+                },
+                {
+                    "no": 52,
+                    "name": "城壁の最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        54
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 2
+                },
+                {
+                    "no": 53,
+                    "name": "城壁の最大耐久上昇Ⅱ",
+                    "price": 2,
+                    "next_ids": [
+                        54
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 2
+                },
+                {
+                    "no": 54,
+                    "name": "開始時の恩寵選択に［勝利時獲得コイン増加］を追加",
+                    "price": 1,
+                    "next_ids": [],
+                    "buff_type": 2003,
+                    "buff_value": 29
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

@@ -1,1817 +1,560 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 7629319356841564172
-  },
-  "m_Name": "citadel_skill_data",
-  "records": [
-    {
-      "id": 1,
-      "skillDataList": [
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680441,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1906630791,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              49,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": 1726403777,
-                      "hiddenValue": 12,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            },
-            {
-              "talentId": {
-                "hash": -159068591,
-                "hiddenValue": 3,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": -996495839,
-                      "hiddenValue": 102,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 1
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680441,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 384155365,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              50,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": -922356079,
-                      "hiddenValue": 15,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 2
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680441,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1365577541,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              51,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": -1566011103,
-                      "hiddenValue": 22,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 3
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680441,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1743040675,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              52,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": 1322013681,
-                      "hiddenValue": 25,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 4
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680441,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1742929923,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              53,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              49,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": -563458687,
-                      "hiddenValue": 32,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 5
-        }
-      ]
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "id": 2,
-      "skillDataList": [
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1906630085,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              49,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": -1924908495,
-                      "hiddenValue": 5,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 1
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 384148135,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              50,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": 1726403777,
-                      "hiddenValue": 12,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 2
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1365605255,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              51,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": -922356079,
-                      "hiddenValue": 15,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 3
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1743037793,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              52,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": -1566011103,
-                      "hiddenValue": 22,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 4
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1742961985,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              53,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              50,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
-                {
-                  "num": [
-                    {
-                      "hash": 1322013681,
-                      "hiddenValue": 25,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 5
-        }
-      ]
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 7629319356841564172
     },
-    {
-      "id": 3,
-      "skillDataList": [
+    "m_Name": "citadel_skill_data",
+    "records": [
         {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1906628869,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              49,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
+            "id": 1,
+            "skillDataList": [
                 {
-                  "num": [
-                    {
-                      "hash": -1924908495,
-                      "hiddenValue": 5,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル1",
+                    "kana": "",
+                    "text": "レベル1の城壁スキル1です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 3,
+                            "param": [
+                                {
+                                    "num": [
+                                        100
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
                 {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル1",
+                    "kana": "",
+                    "text": "レベル2の城壁スキル1です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル1",
+                    "kana": "",
+                    "text": "レベル3の城壁スキル1です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル1",
+                    "kana": "",
+                    "text": "レベル4の城壁スキル1です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル1",
+                    "kana": "",
+                    "text": "レベル5の城壁スキル1です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        30
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
                 }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 1
+            ]
         },
         {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 384149351,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              50,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
+            "id": 2,
+            "skillDataList": [
                 {
-                  "num": [
-                    {
-                      "hash": 1726403777,
-                      "hiddenValue": 12,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル2",
+                    "kana": "",
+                    "text": "レベル1の城壁スキル2です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        5
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
                 {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル2",
+                    "kana": "",
+                    "text": "レベル2の城壁スキル2です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
+                {
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル2",
+                    "kana": "",
+                    "text": "レベル3の城壁スキル2です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
+                {
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル2",
+                    "kana": "",
+                    "text": "レベル4の城壁スキル2です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
+                {
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル2",
+                    "kana": "",
+                    "text": "レベル5の城壁スキル2です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
                 }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 2
+            ]
         },
         {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1365604295,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              51,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
+            "id": 3,
+            "skillDataList": [
                 {
-                  "num": [
-                    {
-                      "hash": -922356079,
-                      "hiddenValue": 15,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル3",
+                    "kana": "",
+                    "text": "レベル1の城壁スキル3です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        5
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 1
+                },
                 {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 3
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1743038753,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              52,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル3",
+                    "kana": "",
+                    "text": "レベル2の城壁スキル3です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        10
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 2
+                },
                 {
-                  "num": [
-                    {
-                      "hash": -1566011103,
-                      "hiddenValue": 22,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "maxParam": [
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル3",
+                    "kana": "",
+                    "text": "レベル3の城壁スキル3です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        15
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 3
+                },
                 {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 4
-        },
-        {
-          "id": {
-            "hash": 723851361,
-            "hiddenValue": 2,
-            "currentCryptoKey": 1
-          },
-          "rarity": 0,
-          "name": {
-            "hash": 1538680443,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "kana": {
-            "hash": 2117564857,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "text": {
-            "hash": 1742960769,
-            "cryptoKey": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "hiddenChars": [
-              12524,
-              12505,
-              12523,
-              53,
-              12398,
-              22478,
-              22721,
-              12473,
-              12461,
-              12523,
-              51,
-              12391,
-              12377
-            ],
-            "currentCryptoKey": "",
-            "hiddenValue": []
-          },
-          "maxLevel": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "recipeId": 0,
-          "skipend": 0,
-          "talentList": [
-            {
-              "talentId": {
-                "hash": -1685643567,
-                "hiddenValue": 11,
-                "currentCryptoKey": 1
-              },
-              "param": [
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル3",
+                    "kana": "",
+                    "text": "レベル4の城壁スキル3です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        20
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 4
+                },
                 {
-                  "num": [
-                    {
-                      "hash": 1322013681,
-                      "hiddenValue": 25,
-                      "currentCryptoKey": 1
-                    }
-                  ]
+                    "id": 0,
+                    "rarity": 0,
+                    "name": "城壁スキル3",
+                    "kana": "",
+                    "text": "レベル5の城壁スキル3です",
+                    "maxLevel": 1,
+                    "recipeId": 0,
+                    "skipend": 0,
+                    "talentList": [
+                        {
+                            "talentId": 11,
+                            "param": [
+                                {
+                                    "num": [
+                                        25
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        }
+                    ],
+                    "level": 5
                 }
-              ],
-              "maxParam": [
-                {
-                  "num": [
-                    {
-                      "hash": 723851361,
-                      "hiddenValue": 2,
-                      "currentCryptoKey": 1
-                    }
-                  ]
-                }
-              ],
-              "timing": 1,
-              "range": 1,
-              "triggerData": [],
-              "activeData": []
-            }
-          ],
-          "level": 5
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

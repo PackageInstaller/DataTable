@@ -1,143 +1,115 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 1794805180792578634
-  },
-  "m_Name": "rogue_stage_data",
-  "records": [
-    {
-      "theme_id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "stages": [
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 1794805180792578634
+    },
+    "m_Name": "rogue_stage_data",
+    "records": [
         {
-          "stage_no": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "name": "ステージ1/5",
-          "text": "ルルイエに深紅の花びらが降り積もった日、街の人々は長い眠りについた。\r\n突然の「眠り病」が蔓延するルルイエで、継承者はまだ眠りについていなかったヴァイス・クアローラとともに、事件の原因と解決策を探して奔走する。",
-          "logo_image": "Theme_1/stage_logo_1",
-          "still_no": 10,
-          "event_table": 6,
-          "shop_chara_id": 1,
-          "shop_relic_min": 2,
-          "shop_relic_max": 3,
-          "shop_slot_min": 4,
-          "shop_slot_max": 6,
-          "shop_relic_table": 1000,
-          "shop_artifact_table": 2000,
-          "entrySkitId": 1
-        },
-        {
-          "stage_no": {
-            "hash": -1041988543,
-            "hiddenValue": 4,
-            "currentCryptoKey": 1
-          },
-          "name": "ステージ2/5",
-          "text": "ルルイエは、謎の病に侵されたばかりではなく、見知らぬ異世界へと転移していた。\r\n近くの街で出会った少女・ミャウラから、ここは幻夢郷と呼ばれる場所であり、ルルイエはとあるカミによって呼び寄せられたことを告げられる。",
-          "logo_image": "Theme_1/stage_logo_2",
-          "still_no": 10,
-          "event_table": 6,
-          "shop_chara_id": 1,
-          "shop_relic_min": 2,
-          "shop_relic_max": 3,
-          "shop_slot_min": 4,
-          "shop_slot_max": 6,
-          "shop_relic_table": 1000,
-          "shop_artifact_table": 2000,
-          "entrySkitId": 2
-        },
-        {
-          "stage_no": {
-            "hash": -159068591,
-            "hiddenValue": 3,
-            "currentCryptoKey": 1
-          },
-          "name": "ステージ3/5",
-          "text": "＜眠りの大帝＞と呼ばれるカミの呪縛から解き放たれるため、継承者たちはミャウラが語るアーティファクトを探し始める。\r\nしかし、敵がそれを許すはずはなく、大帝の魔の手が継承者に迫る。",
-          "logo_image": "Theme_1/stage_logo_3",
-          "still_no": 10,
-          "event_table": 6,
-          "shop_chara_id": 1,
-          "shop_relic_min": 2,
-          "shop_relic_max": 3,
-          "shop_slot_min": 5,
-          "shop_slot_max": 6,
-          "shop_relic_table": 1000,
-          "shop_artifact_table": 2000,
-          "entrySkitId": 3
-        },
-        {
-          "stage_no": {
-            "hash": 1487138849,
-            "hiddenValue": 6,
-            "currentCryptoKey": 1
-          },
-          "name": "ステージ4/5",
-          "text": "ついに＜眠りの大帝＞の魔術で眠らされてしまった継承者たち。\r\nしかし継承者は、なぜか見知らぬ花畑で目を覚ます。\r\nそこでは、とある少女が美しい花々に囲まれて幸せそうな時を過ごしていた。",
-          "logo_image": "Theme_1/stage_logo_3",
-          "still_no": 10,
-          "event_table": 7,
-          "shop_chara_id": 1,
-          "shop_relic_min": 2,
-          "shop_relic_max": 3,
-          "shop_slot_min": 5,
-          "shop_slot_max": 6,
-          "shop_relic_table": 1000,
-          "shop_artifact_table": 2000,
-          "entrySkitId": 4
-        },
-        {
-          "stage_no": {
-            "hash": -1924908495,
-            "hiddenValue": 5,
-            "currentCryptoKey": 1
-          },
-          "name": "ステージ5/5",
-          "text": "どうにか眠りから覚めた継承者だったが、身代わりとなってネオンが「眠り病」に侵されてしまった。\r\n彼女を助けて決着をつけるため、病を免れたクアローラとともに、ついに＜眠りの大帝＞へと迫る。",
-          "logo_image": "Theme_1/stage_logo_3",
-          "still_no": 10,
-          "event_table": 7,
-          "shop_chara_id": 1,
-          "shop_relic_min": 2,
-          "shop_relic_max": 3,
-          "shop_slot_min": 5,
-          "shop_slot_max": 6,
-          "shop_relic_table": 1000,
-          "shop_artifact_table": 2000,
-          "entrySkitId": 5
-        },
-        {
-          "stage_no": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "name": "ステージ6/6",
-          "text": "どうにか眠りから覚めた継承者だったが、身代わりとなってネオンが「眠り病」に侵されてしまった。\r\n彼女を助けて決着をつけるため、病を免れたクアローラとともに、ついに＜眠りの大帝＞へと迫る。",
-          "logo_image": "Theme_1/stage_logo_3",
-          "still_no": 10,
-          "event_table": 7,
-          "shop_chara_id": 1,
-          "shop_relic_min": 2,
-          "shop_relic_max": 3,
-          "shop_slot_min": 5,
-          "shop_slot_max": 6,
-          "shop_relic_table": 1000,
-          "shop_artifact_table": 2000,
-          "entrySkitId": 0
+            "theme_id": 1,
+            "stages": [
+                {
+                    "stage_no": 1,
+                    "name": "ステージ1/5",
+                    "text": "ルルイエに深紅の花びらが降り積もった日、街の人々は長い眠りについた。\r\n突然の「眠り病」が蔓延するルルイエで、継承者はまだ眠りについていなかったヴァイス・クアローラとともに、事件の原因と解決策を探して奔走する。",
+                    "logo_image": "Theme_1/stage_logo_1",
+                    "still_no": 10,
+                    "event_table": 6,
+                    "shop_chara_id": 1,
+                    "shop_relic_min": 2,
+                    "shop_relic_max": 3,
+                    "shop_slot_min": 4,
+                    "shop_slot_max": 6,
+                    "shop_relic_table": 1000,
+                    "shop_artifact_table": 2000,
+                    "entrySkitId": 1
+                },
+                {
+                    "stage_no": 2,
+                    "name": "ステージ2/5",
+                    "text": "ルルイエは、謎の病に侵されたばかりではなく、見知らぬ異世界へと転移していた。\r\n近くの街で出会った少女・ミャウラから、ここは幻夢郷と呼ばれる場所であり、ルルイエはとあるカミによって呼び寄せられたことを告げられる。",
+                    "logo_image": "Theme_1/stage_logo_2",
+                    "still_no": 10,
+                    "event_table": 6,
+                    "shop_chara_id": 1,
+                    "shop_relic_min": 2,
+                    "shop_relic_max": 3,
+                    "shop_slot_min": 4,
+                    "shop_slot_max": 6,
+                    "shop_relic_table": 1000,
+                    "shop_artifact_table": 2000,
+                    "entrySkitId": 2
+                },
+                {
+                    "stage_no": 3,
+                    "name": "ステージ3/5",
+                    "text": "＜眠りの大帝＞と呼ばれるカミの呪縛から解き放たれるため、継承者たちはミャウラが語るアーティファクトを探し始める。\r\nしかし、敵がそれを許すはずはなく、大帝の魔の手が継承者に迫る。",
+                    "logo_image": "Theme_1/stage_logo_3",
+                    "still_no": 10,
+                    "event_table": 6,
+                    "shop_chara_id": 1,
+                    "shop_relic_min": 2,
+                    "shop_relic_max": 3,
+                    "shop_slot_min": 5,
+                    "shop_slot_max": 6,
+                    "shop_relic_table": 1000,
+                    "shop_artifact_table": 2000,
+                    "entrySkitId": 3
+                },
+                {
+                    "stage_no": 4,
+                    "name": "ステージ4/5",
+                    "text": "ついに＜眠りの大帝＞の魔術で眠らされてしまった継承者たち。\r\nしかし継承者は、なぜか見知らぬ花畑で目を覚ます。\r\nそこでは、とある少女が美しい花々に囲まれて幸せそうな時を過ごしていた。",
+                    "logo_image": "Theme_1/stage_logo_3",
+                    "still_no": 10,
+                    "event_table": 7,
+                    "shop_chara_id": 1,
+                    "shop_relic_min": 2,
+                    "shop_relic_max": 3,
+                    "shop_slot_min": 5,
+                    "shop_slot_max": 6,
+                    "shop_relic_table": 1000,
+                    "shop_artifact_table": 2000,
+                    "entrySkitId": 4
+                },
+                {
+                    "stage_no": 5,
+                    "name": "ステージ5/5",
+                    "text": "どうにか眠りから覚めた継承者だったが、身代わりとなってネオンが「眠り病」に侵されてしまった。\r\n彼女を助けて決着をつけるため、病を免れたクアローラとともに、ついに＜眠りの大帝＞へと迫る。",
+                    "logo_image": "Theme_1/stage_logo_3",
+                    "still_no": 10,
+                    "event_table": 7,
+                    "shop_chara_id": 1,
+                    "shop_relic_min": 2,
+                    "shop_relic_max": 3,
+                    "shop_slot_min": 5,
+                    "shop_slot_max": 6,
+                    "shop_relic_table": 1000,
+                    "shop_artifact_table": 2000,
+                    "entrySkitId": 5
+                },
+                {
+                    "stage_no": 6,
+                    "name": "ステージ6/6",
+                    "text": "どうにか眠りから覚めた継承者だったが、身代わりとなってネオンが「眠り病」に侵されてしまった。\r\n彼女を助けて決着をつけるため、病を免れたクアローラとともに、ついに＜眠りの大帝＞へと迫る。",
+                    "logo_image": "Theme_1/stage_logo_3",
+                    "still_no": 10,
+                    "event_table": 7,
+                    "shop_chara_id": 1,
+                    "shop_relic_min": 2,
+                    "shop_relic_max": 3,
+                    "shop_slot_min": 5,
+                    "shop_slot_max": 6,
+                    "shop_relic_table": 1000,
+                    "shop_artifact_table": 2000,
+                    "entrySkitId": 0
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

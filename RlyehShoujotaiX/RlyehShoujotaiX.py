@@ -72,6 +72,27 @@ def decrypt_table_bytes(enc_data: bytes) -> bytes | None:
     return xor_stream(enc_data, FULL64)
 
 
+def decode_obscured_data(obj: Any) -> Any:
+    if isinstance(obj, dict):
+        if 'hiddenChars' in obj and isinstance(obj['hiddenChars'], list):
+            return "".join(chr(c) for c in obj['hiddenChars'])
+        
+        if 'hiddenValue' in obj and 'currentCryptoKey' in obj:
+            hidden_val = obj['hiddenValue']
+            crypto_key = obj['currentCryptoKey']
+
+            if isinstance(hidden_val, int) and isinstance(crypto_key, int):
+                return (hidden_val - crypto_key) ^ crypto_key
+
+        return {k: decode_obscured_data(v) for k, v in obj.items()}
+        
+    elif isinstance(obj, list):
+        return [decode_obscured_data(item) for item in obj]
+        
+    else:
+        return obj
+
+
 def extract_master_data(bundle_data: bytes, output_dir: str) -> None:
     try:
         import UnityPy
@@ -97,9 +118,10 @@ def extract_master_data(bundle_data: bytes, output_dir: str) -> None:
                 if not name:
                     name = f"MonoBehaviour_{obj.path_id}"
 
+                clean_tree = decode_obscured_data(tree)
                 out_path = os.path.join(output_dir, f"{name}.json")
                 with open(out_path, "w", encoding="utf-8") as f:
-                    json.dump(tree, f, ensure_ascii=False, indent=2)
+                    json.dump(clean_tree, f, ensure_ascii=False, indent=4)
                 count += 1
             except Exception as e:
                 console.print(

@@ -1,158 +1,78 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": -8057614536295430997
-  },
-  "m_Name": "rogue_relic_talent_data",
-  "records": [
-    {
-      "talent_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "talents": [
-        {
-          "type": 33,
-          "values": [
-            {
-              "hash": -1611503807,
-              "hiddenValue": 52,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            }
-          ],
-          "stringValue": "",
-          "timing": 1
-        }
-      ]
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "talent_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "talents": [
-        {
-          "type": 33,
-          "values": [
-            {
-              "hash": 1937021649,
-              "hiddenValue": 75,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            }
-          ],
-          "stringValue": "",
-          "timing": 1
-        }
-      ]
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -8057614536295430997
     },
-    {
-      "talent_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "talents": [
+    "m_Name": "rogue_relic_talent_data",
+    "records": [
         {
-          "type": 33,
-          "values": [
-            {
-              "hash": -996495839,
-              "hiddenValue": 102,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            }
-          ],
-          "stringValue": "",
-          "timing": 1
-        }
-      ]
-    },
-    {
-      "talent_id": {
-        "hash": -278701055,
-        "hiddenValue": 8,
-        "currentCryptoKey": 1
-      },
-      "talents": [
+            "talent_id": 2,
+            "talents": [
+                {
+                    "type": 33,
+                    "values": [
+                        50,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stringValue": "",
+                    "timing": 1
+                }
+            ]
+        },
         {
-          "type": 29,
-          "values": [
-            {
-              "hash": -563458687,
-              "hiddenValue": 32,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            },
-            {
-              "hash": 723851361,
-              "hiddenValue": 2,
-              "currentCryptoKey": 1
-            }
-          ],
-          "stringValue": "",
-          "timing": 7
+            "talent_id": 3,
+            "talents": [
+                {
+                    "type": 33,
+                    "values": [
+                        75,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stringValue": "",
+                    "timing": 1
+                }
+            ]
+        },
+        {
+            "talent_id": 4,
+            "talents": [
+                {
+                    "type": 33,
+                    "values": [
+                        100,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stringValue": "",
+                    "timing": 1
+                }
+            ]
+        },
+        {
+            "talent_id": 6,
+            "talents": [
+                {
+                    "type": 29,
+                    "values": [
+                        30,
+                        0,
+                        0,
+                        0
+                    ],
+                    "stringValue": "",
+                    "timing": 7
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

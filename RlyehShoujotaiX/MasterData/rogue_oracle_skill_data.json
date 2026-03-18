@@ -1,6007 +1,1877 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": -3771936546307380935
-  },
-  "m_Name": "rogue_oracle_skill_data",
-  "records": [
-    {
-      "id": {
-        "hash": -120849659,
-        "hiddenValue": 100001,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1672669769,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12473,
-          12486,
-          12540,
-          12479,
-          12473,
-          24375,
-          21270
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1576724371,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          12289,
-          25915,
-          25731,
-          21147,
-          12289,
-          29289,
-          29702,
-          38450,
-          24481,
-          12289,
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -3771936546307380935
+    },
+    "m_Name": "rogue_oracle_skill_data",
+    "records": [
         {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 100001,
+            "rarity": 0,
+            "name": "敵ステータス強化",
+            "kana": "",
+            "text": "敵の最大耐久、攻撃力、物理防御、魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 2
         },
         {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 100002,
+            "rarity": 0,
+            "name": "敵最大耐久増加",
+            "kana": "",
+            "text": "敵の最大耐久+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 2
         },
         {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 100003,
+            "rarity": 0,
+            "name": "敵攻撃力増加",
+            "kana": "",
+            "text": "敵の攻撃力+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 2
         },
         {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -122991051,
-        "hiddenValue": 100004,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1418418633,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          26368,
-          22823,
-          32784,
-          20037,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1952267551,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 243641637,
-        "hiddenValue": 100003,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -376630407,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          25915,
-          25731,
-          21147,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1908622447,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 824683477,
-        "hiddenValue": 100006,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1266912729,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          29289,
-          29702,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -248624463,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 93559493,
-        "hiddenValue": 100005,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1976066025,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          39764,
-          27861,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1720030783,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 101120631,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          26368,
-          22823,
-          32784,
-          20037,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1538489409,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -846899993,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          25915,
-          25731,
-          21147,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1187311407,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 951313305,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          29289,
-          29702,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1092342703,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 582452887,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          39764,
-          27861,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 175327265,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -133760365,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          31227,
-          21205,
-          36895,
-          24230,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -335567771,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          31227,
-          21205,
-          36895,
-          24230,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": -278701055,
-        "hiddenValue": 8,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 101120631,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          26368,
-          22823,
-          32784,
-          20037,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1538489317,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": 604218897,
-        "hiddenValue": 7,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -846899993,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          25915,
-          25731,
-          21147,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1187311435,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": -802723615,
-        "hiddenValue": 10,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 951313305,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          29289,
-          29702,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1092342731,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": 80196337,
-        "hiddenValue": 9,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 582452887,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          39764,
-          27861,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 175327045,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": 1726403777,
-        "hiddenValue": 12,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -133760365,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          31227,
-          21205,
-          36895,
-          24230,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -335567679,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          31227,
-          21205,
-          36895,
-          24230,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 1
-    },
-    {
-      "id": {
-        "hash": -1772703607,
-        "hiddenValue": 10001,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1198265591,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          22238,
-          24489,
-          29575,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -771921785,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          22238,
-          24489,
-          29575,
-          45,
-          50,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 649711601,
-            "hiddenValue": 89,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1088747079,
-        "hiddenValue": 10004,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 2085165879,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          19982,
-          12480,
-          12513,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1309732987,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          19982,
-          12480,
-          12513,
-          45,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1999048255,
-                  "hiddenValue": 92,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1270992727,
-        "hiddenValue": 10003,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 348168629,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          34987,
-          12480,
-          12513,
-          19978,
-          26119
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -448838567,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          34987,
-          12480,
-          12513,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 6056577,
-                  "hiddenValue": 112,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -827170471,
-        "hiddenValue": 10006,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -2095937497,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          20250,
-          24515,
-          29575,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 322006443,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          20250,
-          24515,
-          29575,
-          45,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1594658159,
-            "hiddenValue": 79,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1009416119,
-        "hiddenValue": 10005,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1955133533,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          20250,
-          24515,
-          12480,
-          12513,
-          12540,
-          12472,
-          29575,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1650403053,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          20250,
-          24515,
-          12480,
-          12513,
-          12540,
-          12472,
-          29575,
-          45,
-          50,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -2118680719,
-            "hiddenValue": 81,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -325459591,
-        "hiddenValue": 10008,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -477218119,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          25915,
-          25731,
-          36895,
-          24230,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1259920715,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          25915,
-          25731,
-          36895,
-          24230,
-          45,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -443826223,
-            "hiddenValue": 27,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -507705239,
-        "hiddenValue": 10007,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1418418633,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          26368,
-          22823,
-          32784,
-          20037,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1952267551,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 1177934361,
-        "hiddenValue": 10010,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -376630407,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          25915,
-          25731,
-          21147,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1908622447,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 1132908297,
-        "hiddenValue": 10009,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1266912729,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          29289,
-          29702,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -248624463,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 1679645241,
-        "hiddenValue": 10012,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1976066025,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          39764,
-          27861,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1720030783,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 1360180009,
-        "hiddenValue": 10011,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -768778771,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          31227,
-          21205,
-          36895,
-          24230,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -929020421,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          31227,
-          21205,
-          36895,
-          24230,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 1941221849,
-        "hiddenValue": 10014,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1418418633,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          26368,
-          22823,
-          32784,
-          20037,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1952267771,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 1896195785,
-        "hiddenValue": 10013,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -376630407,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          25915,
-          25731,
-          21147,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1908622475,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1852034567,
-        "hiddenValue": 10016,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1266912729,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          29289,
-          29702,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -248624619,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 2123467497,
-        "hiddenValue": 10015,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1976066025,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          39764,
-          27861,
-          38450,
-          24481,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1720030875,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -211421031,
-        "hiddenValue": 10018,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -768778771,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          31227,
-          21205,
-          36895,
-          24230,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -929020641,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          31227,
-          21205,
-          36895,
-          24230,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -393666679,
-        "hiddenValue": 10017,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 972275021,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          36011,
-          36890,
-          29575,
-          22679,
-          21152
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1800987559,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          36011,
-          36890,
-          29575,
-          43,
-          50,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 290814209,
-            "hiddenValue": 88,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 15850681,
-        "hiddenValue": 10020,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1198265591,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          22238,
-          24489,
-          29575,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -771921565,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          22238,
-          24489,
-          29575,
-          45,
-          50,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 649711601,
-            "hiddenValue": 89,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1322013681,
-                  "hiddenValue": 25,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -166394967,
-        "hiddenValue": 10019,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 2085165879,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          19982,
-          12480,
-          12513,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1309732831,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          19982,
-          12480,
-          12513,
-          45,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1355393231,
-                  "hiddenValue": 85,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 551866457,
-        "hiddenValue": 10022,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 348168629,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          34987,
-          12480,
-          12513,
-          19978,
-          26119
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -448838659,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          34987,
-          12480,
-          12513,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1400885935,
-                  "hiddenValue": 115,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 369620809,
-        "hiddenValue": 10021,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -2095937497,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          20250,
-          24515,
-          29575,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 322006223,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          20250,
-          24515,
-          29575,
-          45,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1594658159,
-            "hiddenValue": 79,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 779138169,
-        "hiddenValue": 10024,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1955133533,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          20250,
-          24515,
-          12480,
-          12513,
-          12540,
-          12472,
-          29575,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1650403081,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          20250,
-          24515,
-          12480,
-          12513,
-          12540,
-          12472,
-          29575,
-          45,
-          50,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -2118680719,
-            "hiddenValue": 81,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1322013681,
-                  "hiddenValue": 25,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 596892521,
-        "hiddenValue": 10023,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -477218119,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          25915,
-          25731,
-          36895,
-          24230,
-          28187,
-          23569
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1259915337,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          25915,
-          25731,
-          36895,
-          24230,
-          45,
-          50,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -443826223,
-            "hiddenValue": 27,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1737996007,
-        "hiddenValue": 10026,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 352201443,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          32784,
-          20037,
-          29305,
-          21270
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -792967891,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          52,
-          48,
-          37,
-          13,
-          10,
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          45,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1680911073,
-                  "hiddenValue": 42,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            "id": 100004,
+            "rarity": 0,
+            "name": "敵物理防御増加",
+            "kana": "",
+            "text": "敵の物理防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
         },
         {
-          "talentId": {
-            "hash": 604218897,
-            "hiddenValue": 7,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 100005,
+            "rarity": 0,
+            "name": "敵魔法防御増加",
+            "kana": "",
+            "text": "敵の魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -2057461239,
-        "hiddenValue": 10025,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1127326379,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          29305,
-          21270
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 227949891,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          52,
-          48,
-          37,
-          13,
-          10,
-          25973,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          45,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1680911073,
-                  "hiddenValue": 42,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 2
         },
         {
-          "talentId": {
-            "hash": -39436127,
-            "hiddenValue": 14,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 1,
+            "rarity": 0,
+            "name": "味方最大耐久増加",
+            "kana": "",
+            "text": "味方の最大耐久+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1510724295,
-        "hiddenValue": 10028,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": -1126973093,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          24375,
-          21270
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1908617161,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          50,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1322013681,
-                  "hiddenValue": 25,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1555750359,
-        "hiddenValue": 10027,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 352368237,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          32784,
-          20037,
-          24375,
-          21270
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1952264505,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          50,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1322013681,
-                  "hiddenValue": 25,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -974708519,
-        "hiddenValue": 10030,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 660470399,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          38859,
-          39364,
-          22825
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -693699527,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          48,
-          37,
-          13,
-          10,
-          25973,
-          12398,
-          31227,
-          21205,
-          36895,
-          24230,
-          43,
-          50,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 1
         },
         {
-          "talentId": {
-            "hash": -683091151,
-            "hiddenValue": 21,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 2,
+            "rarity": 0,
+            "name": "味方攻撃力増加",
+            "kana": "",
+            "text": "味方の攻撃力+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -1294173751,
-        "hiddenValue": 10029,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 382382353,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          32854,
-          12394,
-          12427,
-          30462
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1676646871,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          48,
-          37,
-          13,
-          10,
-          25973,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          50,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 1
         },
         {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 3,
+            "rarity": 0,
+            "name": "味方物理防御増加",
+            "kana": "",
+            "text": "味方の物理防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1322013681,
-                  "hiddenValue": 25,
-                  "currentCryptoKey": 1
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -747436807,
-        "hiddenValue": 10032,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1876055745,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25126,
-          21147,
-          20302,
-          19979
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -81672387,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          19982,
-          12480,
-          12513,
-          12540,
-          12472,
-          45,
-          49,
-          48,
-          37,
-          13,
-          10,
-          21619,
-          26041,
-          12398,
-          34987,
-          12480,
-          12513,
-          12540,
-          12472,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 2117662697,
-            "hiddenValue": 1005,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 55065579,
-                  "hiddenValue": -8,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 1
         },
         {
-          "talentId": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 4,
+            "rarity": 0,
+            "name": "味方魔法防御増加",
+            "kana": "",
+            "text": "味方の魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": -792462871,
-        "hiddenValue": 10031,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1470833925,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          38450,
-          24481,
-          28961,
-          21177,
-          21270
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1659555597,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          48,
-          37,
-          13,
-          10,
-          25973,
-          12398,
-          36011,
-          36890,
-          29575,
-          43,
-          50,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 1
         },
         {
-          "talentId": {
-            "hash": 290814209,
-            "hiddenValue": 88,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 5,
+            "rarity": 0,
+            "name": "味方移動速度増加",
+            "kana": "",
+            "text": "味方の移動速度+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1322013681,
-                  "hiddenValue": 25,
-                  "currentCryptoKey": 1
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 893176729,
-        "hiddenValue": 10034,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 1740202347,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          31070,
-          36557,
-          24375,
-          21270
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1111901595,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25973,
-          12398,
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          53,
-          37,
-          13,
-          10,
-          25973,
-          12398,
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          53,
-          37,
-          13,
-          10,
-          25973,
-          12398,
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 1
         },
         {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 6,
+            "rarity": 0,
+            "name": "味方最大耐久増加",
+            "kana": "",
+            "text": "味方の最大耐久+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 1
         },
         {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 7,
+            "rarity": 0,
+            "name": "味方攻撃力増加",
+            "kana": "",
+            "text": "味方の攻撃力+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 11,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "polarity": 2
-    },
-    {
-      "id": {
-        "hash": 710931081,
-        "hiddenValue": 10033,
-        "currentCryptoKey": 1
-      },
-      "rarity": 0,
-      "name": {
-        "hash": 661391367,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          33268,
-          21629,
-          20663
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -342086113,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          21619,
-          26041,
-          12398,
-          34987,
-          12480,
-          12513,
-          12540,
-          12472,
-          43,
-          51,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
+            ],
+            "polarity": 1
+        },
         {
-          "talentId": {
-            "hash": 534068441,
-            "hiddenValue": 1008,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 8,
+            "rarity": 0,
+            "name": "味方物理防御増加",
+            "kana": "",
+            "text": "味方の物理防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -563458687,
-                  "hiddenValue": 32,
-                  "currentCryptoKey": 1
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 9,
+            "rarity": 0,
+            "name": "味方魔法防御増加",
+            "kana": "",
+            "text": "味方の魔法防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 10,
-          "triggerData": [],
-          "activeData": []
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 10,
+            "rarity": 0,
+            "name": "味方移動速度増加",
+            "kana": "",
+            "text": "味方の移動速度+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 1
+        },
+        {
+            "id": 10001,
+            "rarity": 0,
+            "name": "味方回復率減少",
+            "kana": "",
+            "text": "味方の回復率-20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 89,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10002,
+            "rarity": 0,
+            "name": "味方与ダメ減少",
+            "kana": "",
+            "text": "味方の与ダメ-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10003,
+            "rarity": 0,
+            "name": "味方被ダメ上昇",
+            "kana": "",
+            "text": "味方の被ダメ+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                110
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10004,
+            "rarity": 0,
+            "name": "味方会心率減少",
+            "kana": "",
+            "text": "味方の会心率-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 79,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10005,
+            "rarity": 0,
+            "name": "味方会心ダメージ率減少",
+            "kana": "",
+            "text": "味方の会心ダメージ率-20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 81,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10006,
+            "rarity": 0,
+            "name": "味方攻撃速度減少",
+            "kana": "",
+            "text": "味方の攻撃速度-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 27,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10007,
+            "rarity": 0,
+            "name": "敵最大耐久増加",
+            "kana": "",
+            "text": "敵の最大耐久+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10008,
+            "rarity": 0,
+            "name": "敵攻撃力増加",
+            "kana": "",
+            "text": "敵の攻撃力+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10009,
+            "rarity": 0,
+            "name": "敵物理防御増加",
+            "kana": "",
+            "text": "敵の物理防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10010,
+            "rarity": 0,
+            "name": "敵魔法防御増加",
+            "kana": "",
+            "text": "敵の魔法防御+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10011,
+            "rarity": 0,
+            "name": "敵移動速度増加",
+            "kana": "",
+            "text": "敵の移動速度+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10012,
+            "rarity": 0,
+            "name": "敵最大耐久増加",
+            "kana": "",
+            "text": "敵の最大耐久+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10013,
+            "rarity": 0,
+            "name": "敵攻撃力増加",
+            "kana": "",
+            "text": "敵の攻撃力+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10014,
+            "rarity": 0,
+            "name": "敵物理防御増加",
+            "kana": "",
+            "text": "敵の物理防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10015,
+            "rarity": 0,
+            "name": "敵魔法防御増加",
+            "kana": "",
+            "text": "敵の魔法防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10016,
+            "rarity": 0,
+            "name": "敵移動速度増加",
+            "kana": "",
+            "text": "敵の移動速度+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10017,
+            "rarity": 0,
+            "name": "敵貫通率増加",
+            "kana": "",
+            "text": "敵の貫通率+20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 86,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10018,
+            "rarity": 0,
+            "name": "味方回復率減少",
+            "kana": "",
+            "text": "味方の回復率-25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 89,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10019,
+            "rarity": 0,
+            "name": "味方与ダメ減少",
+            "kana": "",
+            "text": "味方の与ダメ-15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                85
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10020,
+            "rarity": 0,
+            "name": "味方被ダメ上昇",
+            "kana": "",
+            "text": "味方の被ダメ+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                115
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10021,
+            "rarity": 0,
+            "name": "味方会心率減少",
+            "kana": "",
+            "text": "味方の会心率-15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 79,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10022,
+            "rarity": 0,
+            "name": "味方会心ダメージ率減少",
+            "kana": "",
+            "text": "味方の会心ダメージ率-25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 81,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10023,
+            "rarity": 0,
+            "name": "味方攻撃速度減少",
+            "kana": "",
+            "text": "味方の攻撃速度-20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 27,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10024,
+            "rarity": 0,
+            "name": "耐久特化",
+            "kana": "",
+            "text": "敵の最大耐久+40%\r\n敵の攻撃力-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 7,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10025,
+            "rarity": 0,
+            "name": "攻撃力特化",
+            "kana": "",
+            "text": "敵の攻撃力+40%\r\n敵の物理防御-10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 12,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10026,
+            "rarity": 0,
+            "name": "攻撃力強化",
+            "kana": "",
+            "text": "敵の攻撃力+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10027,
+            "rarity": 0,
+            "name": "耐久強化",
+            "kana": "",
+            "text": "敵の最大耐久+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10028,
+            "rarity": 0,
+            "name": "韋駄天",
+            "kana": "",
+            "text": "敵の最大耐久+10%\r\n敵の移動速度+20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 21,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10029,
+            "rarity": 0,
+            "name": "聖なる盾",
+            "kana": "",
+            "text": "敵の最大耐久+10%\r\n敵の物理防御+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10030,
+            "rarity": 0,
+            "name": "戦力低下",
+            "kana": "",
+            "text": "味方の与ダメージ-10%\r\n味方の被ダメージ+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                -10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10031,
+            "rarity": 0,
+            "name": "防御無効化",
+            "kana": "",
+            "text": "敵の攻撃力+10%\r\n敵の貫通率+25%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 86,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10032,
+            "rarity": 0,
+            "name": "神軍強化",
+            "kana": "",
+            "text": "敵の最大耐久+15%\r\n敵の攻撃力+15%\r\n敵の物理防御+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 11,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
+        },
+        {
+            "id": 10033,
+            "rarity": 0,
+            "name": "致命傷",
+            "kana": "",
+            "text": "味方の被ダメージ+30%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 10,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "polarity": 2
         }
-      ],
-      "polarity": 2
-    }
-  ]
+    ]
 }

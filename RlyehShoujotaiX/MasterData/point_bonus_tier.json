@@ -1,159 +1,159 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 7806310355708394181
-  },
-  "m_Name": "point_bonus_tier",
-  "records": [
-    {
-      "TableId": 101,
-      "Tiers": [
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 7806310355708394181
+    },
+    "m_Name": "point_bonus_tier",
+    "records": [
         {
-          "Tier": 1,
-          "Req": 20,
-          "Rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "bonus_pass",
-                "m_walletName": "point.4",
-                "m_count": 40
-              },
-              {
-                "m_walletCategory": "instant",
-                "m_walletName": "pexp",
-                "m_count": 500
-              },
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 10
-              },
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 1000
-              }
+            "TableId": 101,
+            "Tiers": [
+                {
+                    "Tier": 1,
+                    "Req": 20,
+                    "Rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "bonus_pass",
+                                "m_walletName": "point.4",
+                                "m_count": 40
+                            },
+                            {
+                                "m_walletCategory": "instant",
+                                "m_walletName": "pexp",
+                                "m_count": 500
+                            },
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 10
+                            },
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 1000
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Tier": 2,
+                    "Req": 40,
+                    "Rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "bonus_pass",
+                                "m_walletName": "point.4",
+                                "m_count": 40
+                            },
+                            {
+                                "m_walletCategory": "instant",
+                                "m_walletName": "pexp",
+                                "m_count": 500
+                            },
+                            {
+                                "m_walletCategory": "ugift",
+                                "m_walletName": "m_f",
+                                "m_count": 1
+                            },
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "gold_1h",
+                                "m_count": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Tier": 3,
+                    "Req": 60,
+                    "Rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "bonus_pass",
+                                "m_walletName": "point.4",
+                                "m_count": 40
+                            },
+                            {
+                                "m_walletCategory": "instant",
+                                "m_walletName": "pexp",
+                                "m_count": 500
+                            },
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 10
+                            },
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 1000
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Tier": 4,
+                    "Req": 80,
+                    "Rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "bonus_pass",
+                                "m_walletName": "point.4",
+                                "m_count": 40
+                            },
+                            {
+                                "m_walletCategory": "instant",
+                                "m_walletName": "pexp",
+                                "m_count": 500
+                            },
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_exp_1h",
+                                "m_count": 1
+                            },
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_threshold_1h",
+                                "m_count": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Tier": 5,
+                    "Req": 100,
+                    "Rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "bonus_pass",
+                                "m_walletName": "point.4",
+                                "m_count": 40
+                            },
+                            {
+                                "m_walletCategory": "instant",
+                                "m_walletName": "pexp",
+                                "m_count": 500
+                            },
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 30
+                            },
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "growth_1h",
+                                "m_count": 1
+                            }
+                        ]
+                    }
+                }
             ]
-          }
-        },
-        {
-          "Tier": 2,
-          "Req": 40,
-          "Rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "bonus_pass",
-                "m_walletName": "point.4",
-                "m_count": 40
-              },
-              {
-                "m_walletCategory": "instant",
-                "m_walletName": "pexp",
-                "m_count": 500
-              },
-              {
-                "m_walletCategory": "ugift",
-                "m_walletName": "m_f",
-                "m_count": 1
-              },
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "gold_1h",
-                "m_count": 1
-              }
-            ]
-          }
-        },
-        {
-          "Tier": 3,
-          "Req": 60,
-          "Rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "bonus_pass",
-                "m_walletName": "point.4",
-                "m_count": 40
-              },
-              {
-                "m_walletCategory": "instant",
-                "m_walletName": "pexp",
-                "m_count": 500
-              },
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 10
-              },
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 1000
-              }
-            ]
-          }
-        },
-        {
-          "Tier": 4,
-          "Req": 80,
-          "Rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "bonus_pass",
-                "m_walletName": "point.4",
-                "m_count": 40
-              },
-              {
-                "m_walletCategory": "instant",
-                "m_walletName": "pexp",
-                "m_count": 500
-              },
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_exp_1h",
-                "m_count": 1
-              },
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_threshold_1h",
-                "m_count": 1
-              }
-            ]
-          }
-        },
-        {
-          "Tier": 5,
-          "Req": 100,
-          "Rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "bonus_pass",
-                "m_walletName": "point.4",
-                "m_count": 40
-              },
-              {
-                "m_walletCategory": "instant",
-                "m_walletName": "pexp",
-                "m_count": 500
-              },
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 30
-              },
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "growth_1h",
-                "m_count": 1
-              }
-            ]
-          }
         }
-      ]
-    }
-  ]
+    ]
 }

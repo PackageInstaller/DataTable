@@ -1,4661 +1,1550 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 7530588004733788967
-  },
-  "m_Name": "artifact_skill_data",
-  "records": [
-    {
-      "id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": 657829269,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          37504,
-          12398,
-          21091
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1439410529,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          43,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 4,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "所持する者の力を高めてくれる魔力を帯びた剣",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "id": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": 657829269,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          37504,
-          12398,
-          21091
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 255258837,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          48,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 4,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "所持する者の力を高めてくれる魔力を帯びた剣",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 7530588004733788967
     },
-    {
-      "id": {
-        "hash": -278701055,
-        "hiddenValue": 8,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": 657829269,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          37504,
-          12398,
-          21091
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 255258481,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
+    "m_Name": "artifact_skill_data",
+    "records": [
         {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 4,
+            "rarity": 17201,
+            "name": "銀の剣",
+            "kana": "",
+            "text": "攻撃力+5％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 4,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "所持する者の力を高めてくれる魔力を帯びた剣",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 604218897,
-        "hiddenValue": 7,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": -2018890005,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          24093,
-          22269,
-          39438,
-          22763,
-          12398,
-          25163,
-          30002
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1933764061,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          20250,
-          24515,
-          29575,
-          43,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1817389185,
-            "hiddenValue": 80,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 7,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "失われた帝国の戦士が身に着けたと伝わる手甲\r\n宿魂が導き、会心の力を引き出す",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -802723615,
-        "hiddenValue": 10,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": -2018890005,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          24093,
-          22269,
-          39438,
-          22763,
-          12398,
-          25163,
-          30002
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -610291767,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          20250,
-          24515,
-          29575,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1817389185,
-            "hiddenValue": 80,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 7,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "失われた帝国の戦士が身に着けたと伝わる手甲\r\n宿った魂の導きで会心の力を引き出す",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 80196337,
-        "hiddenValue": 9,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": -2018890005,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          24093,
-          22269,
-          39438,
-          22763,
-          12398,
-          25163,
-          30002
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -610291859,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          20250,
-          24515,
-          29575,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1817389185,
-            "hiddenValue": 80,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 7,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "失われた帝国の戦士が身に着けたと伝わる手甲\r\n宿った魂の導きで会心の力を引き出す",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 1726403777,
-        "hiddenValue": 12,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": -370447483,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          40658,
-          34030
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1732949581,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          20250,
-          24515,
-          12480,
-          12513,
-          12540,
-          12472,
-          29575,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1293366625,
-            "hiddenValue": 82,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 10,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "闇夜にのみ花開くとされる禁忌の蓮\r\n秘めた力が会心の効果を増幅させる",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -1685643567,
-        "hiddenValue": 11,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": -370447483,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          40658,
-          34030
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1732949801,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          20250,
-          24515,
-          12480,
-          12513,
-          12540,
-          12472,
-          29575,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1293366625,
-            "hiddenValue": 82,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 10,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "闇夜にのみ花開くとされる禁忌の蓮\r\n秘めた力が会心の効果を増幅させる",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -39436127,
-        "hiddenValue": 14,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": -370447483,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          40658,
-          34030
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1732950735,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          20250,
-          24515,
-          12480,
-          12513,
-          12540,
-          12472,
-          29575,
-          43,
-          50,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1293366625,
-            "hiddenValue": 82,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 10,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "闇夜にのみ花開くとされる禁忌の蓮\r\n秘めた力が会心の効果を増幅させる",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 843483825,
-        "hiddenValue": 13,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": -1976070659,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          26178,
-          12398,
-          30722,
-          26178,
-          35336
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 165687255,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          36895,
-          24230,
-          43,
-          49,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 13,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "銀色の砂時計\r\n時を操る力がある",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -1805276031,
-        "hiddenValue": 16,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": -1976070659,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          26178,
-          12398,
-          30722,
-          26178,
-          35336
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 165687475,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          36895,
-          24230,
-          43,
-          49,
-          53,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 13,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "銀色の砂時計\r\n時を操る力がある",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -922356079,
-        "hiddenValue": 15,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": -1976070659,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          26178,
-          12398,
-          30722,
-          26178,
-          35336
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 165684053,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          36895,
-          24230,
-          43,
-          50,
-          48,
-          37
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 13,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "銀色の砂時計\r\n時を操る力がある",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 1965668705,
-        "hiddenValue": 18,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": 346712141,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          39764,
-          27861,
-          12398,
-          31515
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -888838991,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 16,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -1446378639,
-        "hiddenValue": 17,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": 346712141,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          39764,
-          27861,
-          12398,
-          31515
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 733479973,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 16,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 199828801,
-        "hiddenValue": 20,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": 346712141,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          39764,
-          27861,
-          12398,
-          31515
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 733480065,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          39764,
-          27861,
-          38450,
-          24481,
-          43,
-          49,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1965668705,
-            "hiddenValue": 18,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 16,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 1,
-      "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 1082748753,
-        "hiddenValue": 19,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": -1321095153,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          40644,
-          37329,
-          12398,
-          34562,
-          34588,
-          37202
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 2085802001,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 19,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "旧き支配者への供物として伝わる金色の酒\r\nその一滴を喉に受ければ、肉体の耐久が増す",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -1566011103,
-        "hiddenValue": 22,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": -1321095153,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          40644,
-          37329,
-          12398,
-          34562,
-          34588,
-          37202
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 110689733,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          48,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 19,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "旧き支配者への供物として伝わる金色の酒\r\nその一滴を喉に受ければ、肉体の耐久が増す",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": -683091151,
-        "hiddenValue": 21,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": -1321095153,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          40644,
-          37329,
-          12398,
-          34562,
-          34588,
-          37202
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 110689313,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          26368,
-          22823,
-          32784,
-          20037,
-          43,
-          49,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 1606771313,
-            "hiddenValue": 1,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 19,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "旧き支配者への供物として伝わる金色の酒\r\nその一滴を喉に受ければ、肉体の耐久が増す",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 963116289,
-        "hiddenValue": 24,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": 1500591445,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          24093,
-          22269,
-          39438,
-          22763,
-          12398,
-          37799
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -107622593,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 22,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "失われた帝国の守護者が身に着けた精鋼の鎧\r\n身を包む者の防御力を高める",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 1846036241,
-        "hiddenValue": 23,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": 1500591445,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          24093,
-          22269,
-          39438,
-          22763,
-          12398,
-          37799
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 742112619,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          48,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 22,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "失われた帝国の守護者が身に着けた精鋼の鎧\r\n身を包む者の防御力を高める",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 439093729,
-        "hiddenValue": 26,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": 1500591445,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          24093,
-          22269,
-          39438,
-          22763,
-          12398,
-          37799
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 742112975,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          29289,
-          29702,
-          38450,
-          24481,
-          43,
-          49,
-          53,
-          65285
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": -1685643567,
-            "hiddenValue": 11,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 22,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "失われた帝国の守護者が身に着けた精鋼の鎧\r\n身を包む者の防御力を高める",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 0
-    },
-    {
-      "id": {
-        "hash": 1037256049,
-        "hiddenValue": 49,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": 1012626641,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          12463,
-          12488,
-          12453,
-          12523,
-          12501,
-          12398,
-          37034,
-          31070,
-          20687
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 385385875,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          43,
-          53,
-          65285,
-          13,
-          10,
-          21069,
-          34907,
-          12364,
-          35013,
-          20633,
-          26178,
-          12463,
-          12488,
-          12453,
-          12523,
-          12501,
-          12398,
-          21270,
-          36523,
-          12434,
-          20184,
-          19982,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 773333369,
-            "hiddenValue": 1014,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -507922351,
-                  "hiddenValue": 34001,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 3,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": []
+            ],
+            "seriesId": 4,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "所持する者の力を高めてくれる魔力を帯びた剣",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
         },
         {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 5,
+            "rarity": 21041,
+            "name": "銀の剣",
+            "kana": "",
+            "text": "攻撃力+10％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -1924908495,
-                  "hiddenValue": 5,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 49,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 3,
-      "flavorText": "持つ者の理性を試す深海の闇を象った石像\r\n呼び声に応じて化身が出現する",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": -1611503807,
-        "hiddenValue": 52,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": 1012626641,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          12463,
-          12488,
-          12453,
-          12523,
-          12501,
-          12398,
-          37034,
-          31070,
-          20687
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1195609881,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          48,
-          65285,
-          13,
-          10,
-          21069,
-          34907,
-          12364,
-          35013,
-          20633,
-          26178,
-          12463,
-          12488,
-          12453,
-          12523,
-          12501,
-          12398,
-          21270,
-          36523,
-          12434,
-          20184,
-          19982,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 773333369,
-            "hiddenValue": 1014,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -507922351,
-                  "hiddenValue": 34001,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 3,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": []
+            ],
+            "seriesId": 4,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "所持する者の力を高めてくれる魔力を帯びた剣",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
         },
         {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 6,
+            "rarity": 5460529,
+            "name": "銀の剣",
+            "kana": "",
+            "text": "攻撃力+15％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 49,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 3,
-      "flavorText": "持つ者の理性を試す深海の闇を象った石像\r\n呼び声に応じて化身が出現する",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": -728583855,
-        "hiddenValue": 51,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": 1012626641,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          12463,
-          12488,
-          12453,
-          12523,
-          12501,
-          12398,
-          37034,
-          31070,
-          20687
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 991749315,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          21147,
-          43,
-          49,
-          53,
-          65285,
-          13,
-          10,
-          21069,
-          34907,
-          12364,
-          35013,
-          20633,
-          26178,
-          12463,
-          12488,
-          12453,
-          12523,
-          12501,
-          12398,
-          21270,
-          36523,
-          12434,
-          20184,
-          19982,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 773333369,
-            "hiddenValue": 1014,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -507922351,
-                  "hiddenValue": 34001,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 3,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": []
+            ],
+            "seriesId": 4,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "所持する者の力を高めてくれる魔力を帯びた剣",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
         },
         {
-          "talentId": {
-            "hash": -278701055,
-            "hiddenValue": 8,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 7,
+            "rarity": 17201,
+            "name": "帝国騎士の手甲",
+            "kana": "",
+            "text": "会心率+5%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 49,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 3,
-      "flavorText": "持つ者の理性を試す深海の闇を象った石像\r\n呼び声に応じて化身が出現する",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": 917623585,
-        "hiddenValue": 54,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": 354664281,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          12495,
-          12473,
-          12479,
-          12540,
-          12398,
-          37034,
-          31070,
-          20687
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -1911914835,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          36895,
-          24230,
-          43,
-          49,
-          48,
-          37,
-          13,
-          10,
-          24460,
-          34907,
-          12364,
-          35013,
-          20633,
-          26178,
-          12495,
-          12473,
-          12479,
-          12540,
-          12398,
-          21270,
-          36523,
-          12434,
-          20184,
-          19982,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 773333369,
-            "hiddenValue": 1014,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1026351007,
-                  "hiddenValue": 34004,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 4,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": []
+            ],
+            "seriesId": 7,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "失われた帝国の戦士が身に着けたと伝わる手甲\r\n宿魂が導き、会心の力を引き出す",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 8,
+            "rarity": 21041,
+            "name": "帝国騎士の手甲",
+            "kana": "",
+            "text": "会心率+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1726403777,
-                  "hiddenValue": 12,
-                  "currentCryptoKey": 1
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 52,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 3,
-      "flavorText": "黄衣をまとった王を象る細身の像\r\n呼び声に応じて化身が出現する",
-      "acquireLocationText": "不明",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": 1800543537,
-        "hiddenValue": 53,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": 354664281,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          12495,
-          12473,
-          12479,
-          12540,
-          12398,
-          37034,
-          31070,
-          20687
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 1590470697,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          36895,
-          24230,
-          43,
-          49,
-          53,
-          37,
-          13,
-          10,
-          24460,
-          34907,
-          12364,
-          35013,
-          20633,
-          26178,
-          12495,
-          12473,
-          12479,
-          12540,
-          12398,
-          21270,
-          36523,
-          12434,
-          20184,
-          19982,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 773333369,
-            "hiddenValue": 1014,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1026351007,
-                  "hiddenValue": 34004,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 4,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": []
+            ],
+            "seriesId": 7,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "失われた帝国の戦士が身に着けたと伝わる手甲\r\n宿った魂の導きで会心の力を引き出す",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 9,
+            "rarity": 17201,
+            "name": "帝国騎士の手甲",
+            "kana": "",
+            "text": "会心率+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -922356079,
-                  "hiddenValue": 15,
-                  "currentCryptoKey": 1
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 52,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 3,
-      "flavorText": "黄衣をまとった王を象る細身の像\r\n呼び声に応じて化身が出現する",
-      "acquireLocationText": "不明",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": -848216319,
-        "hiddenValue": 56,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": 354664281,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          12495,
-          12473,
-          12479,
-          12540,
-          12398,
-          37034,
-          31070,
-          20687
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 2125058575,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          25915,
-          25731,
-          36895,
-          24230,
-          43,
-          50,
-          48,
-          37,
-          13,
-          10,
-          24460,
-          34907,
-          12364,
-          35013,
-          20633,
-          26178,
-          12495,
-          12473,
-          12479,
-          12540,
-          12398,
-          21270,
-          36523,
-          12434,
-          20184,
-          19982,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
-        {
-          "talentId": {
-            "hash": 773333369,
-            "hiddenValue": 1014,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
-                {
-                  "hash": -1026351007,
-                  "hiddenValue": 34004,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 4,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": []
+            ],
+            "seriesId": 7,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "失われた帝国の戦士が身に着けたと伝わる手甲\r\n宿った魂の導きで会心の力を引き出す",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
         },
         {
-          "talentId": {
-            "hash": -1326746175,
-            "hiddenValue": 28,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 10,
+            "rarity": 17201,
+            "name": "黒蓮",
+            "kana": "",
+            "text": "会心ダメージ率+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [],
-          "activeData": []
-        }
-      ],
-      "seriesId": 52,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 3,
-      "flavorText": "黄衣をまとった王を象る細身の像\r\n呼び声に応じて化身が出現する",
-      "acquireLocationText": "ウェルカム☆3ヴァイスパックの特典",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": 34703633,
-        "hiddenValue": 55,
-        "currentCryptoKey": 1
-      },
-      "rarity": 17201,
-      "name": {
-        "hash": 374869969,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          22818,
-          12398,
-          12463,
-          12522,
-          12473,
-          12479,
-          12521,
-          12452,
-          12470,
-          12540
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 864981189,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          32784,
-          20037,
-          12364,
-          48,
-          12395,
-          12394,
-          12427,
-          12392,
-          19968,
-          24230,
-          12384,
-          12369,
-          26368,
-          22823,
-          32784,
-          20037,
-          12398,
-          50,
-          48,
-          37,
-          20998,
-          12434,
-          22238,
-          24489,
-          12375,
-          12289,
-          21363,
-          24489,
-          27963,
-          12377,
-          12427,
-          65288,
-          21069,
-          34907,
-          12398,
-          12415,
-          65289,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
+            ],
+            "seriesId": 10,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "闇夜にのみ花開くとされる禁忌の蓮\r\n秘めた力が会心の効果を増幅させる",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
         {
-          "talentId": {
-            "hash": 1783423057,
-            "hiddenValue": 1041,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 11,
+            "rarity": 21041,
+            "name": "黒蓮",
+            "kana": "",
+            "text": "会心ダメージ率+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -1566011103,
-                  "hiddenValue": 22,
-                  "currentCryptoKey": 1
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 3,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 40002,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "seriesId": 55,
-      "grade": 1,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "淡い光を内に宿す結晶体\r\n一度だけ悪夢を打ち消し、再び立ち上がる力を得る",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": -1372238879,
-        "hiddenValue": 58,
-        "currentCryptoKey": 1
-      },
-      "rarity": 21041,
-      "name": {
-        "hash": 374869969,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          22818,
-          12398,
-          12463,
-          12522,
-          12473,
-          12479,
-          12521,
-          12452,
-          12470,
-          12540
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": 192966661,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          32784,
-          20037,
-          12364,
-          48,
-          12395,
-          12394,
-          12427,
-          12392,
-          19968,
-          24230,
-          12384,
-          12369,
-          26368,
-          22823,
-          32784,
-          20037,
-          12398,
-          51,
-          48,
-          37,
-          20998,
-          12434,
-          22238,
-          24489,
-          12375,
-          12289,
-          21363,
-          24489,
-          27963,
-          12377,
-          12427,
-          65288,
-          21069,
-          34907,
-          12398,
-          12415,
-          65289,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
+            ],
+            "seriesId": 10,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "闇夜にのみ花開くとされる禁忌の蓮\r\n秘めた力が会心の効果を増幅させる",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
         {
-          "talentId": {
-            "hash": 1783423057,
-            "hiddenValue": 1041,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 12,
+            "rarity": 5460529,
+            "name": "黒蓮",
+            "kana": "",
+            "text": "会心ダメージ率+20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": -563458687,
-                  "hiddenValue": 32,
-                  "currentCryptoKey": 1
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
-                {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
-                }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 3,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 40002,
-              "num": [
-                {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
-                }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "seriesId": 55,
-      "grade": 2,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "淡い光を内に宿す結晶体\r\n一度だけ悪夢を打ち消し、再び立ち上がる力を得る",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    },
-    {
-      "id": {
-        "hash": -489318927,
-        "hiddenValue": 57,
-        "currentCryptoKey": 1
-      },
-      "rarity": 5460529,
-      "name": {
-        "hash": 374869969,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          22818,
-          12398,
-          12463,
-          12522,
-          12473,
-          12479,
-          12521,
-          12452,
-          12470,
-          12540
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "kana": {
-        "hash": 2117564857,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "text": {
-        "hash": -73160253,
-        "cryptoKey": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "hiddenChars": [
-          32784,
-          20037,
-          12364,
-          48,
-          12395,
-          12394,
-          12427,
-          12392,
-          19968,
-          24230,
-          12384,
-          12369,
-          26368,
-          22823,
-          32784,
-          20037,
-          12398,
-          52,
-          48,
-          37,
-          20998,
-          12434,
-          22238,
-          24489,
-          12375,
-          12289,
-          21363,
-          24489,
-          27963,
-          12377,
-          12427,
-          65288,
-          21069,
-          34907,
-          12398,
-          12415,
-          65289,
-          13,
-          10,
-          60,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62,
-          12481,
-          12540,
-          12512,
-          20869,
-          12395,
-          19968,
-          12388,
-          12414,
-          12391,
-          12375,
-          12363,
-          35013,
-          20633,
-          12391,
-          12365,
-          12414,
-          12379,
-          12435,
-          60,
-          47,
-          99,
-          111,
-          108,
-          111,
-          114,
-          61,
-          35,
-          102,
-          102,
-          97,
-          53,
-          48,
-          48,
-          62
-        ],
-        "currentCryptoKey": "",
-        "hiddenValue": []
-      },
-      "maxLevel": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "recipeId": 0,
-      "skipend": 0,
-      "talentList": [
+            ],
+            "seriesId": 10,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "闇夜にのみ花開くとされる禁忌の蓮\r\n秘めた力が会心の効果を増幅させる",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
         {
-          "talentId": {
-            "hash": 1783423057,
-            "hiddenValue": 1041,
-            "currentCryptoKey": 1
-          },
-          "param": [
-            {
-              "num": [
+            "id": 13,
+            "rarity": 17201,
+            "name": "時の砂時計",
+            "kana": "",
+            "text": "攻撃速度+10%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1680911073,
-                  "hiddenValue": 42,
-                  "currentCryptoKey": 1
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "maxParam": [
-            {
-              "num": [
+            ],
+            "seriesId": 13,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "銀色の砂時計\r\n時を操る力がある",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 14,
+            "rarity": 21041,
+            "name": "時の砂時計",
+            "kana": "",
+            "text": "攻撃速度+15%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 723851361,
-                  "hiddenValue": 2,
-                  "currentCryptoKey": 1
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ]
-            }
-          ],
-          "timing": 1,
-          "range": 1,
-          "triggerData": [
-            {
-              "type": 3,
-              "num": [
+            ],
+            "seriesId": 13,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "銀色の砂時計\r\n時を操る力がある",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 15,
+            "rarity": 5460529,
+            "name": "時の砂時計",
+            "kana": "",
+            "text": "攻撃速度+20%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ],
-          "activeData": [
-            {
-              "type": 40002,
-              "num": [
+            ],
+            "seriesId": 13,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "銀色の砂時計\r\n時を操る力がある",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 16,
+            "rarity": 17201,
+            "name": "魔法の笛",
+            "kana": "",
+            "text": "魔法防御+5％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
                 {
-                  "hash": 1606771313,
-                  "hiddenValue": 1,
-                  "currentCryptoKey": 1
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
                 }
-              ],
-              "option": [
-                ""
-              ]
-            }
-          ]
+            ],
+            "seriesId": 16,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 17,
+            "rarity": 21041,
+            "name": "魔法の笛",
+            "kana": "",
+            "text": "魔法防御+10％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 16,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 18,
+            "rarity": 5460529,
+            "name": "魔法の笛",
+            "kana": "",
+            "text": "魔法防御+15％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 16,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 16,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 1,
+            "flavorText": "その由来すら定かではない、太古より伝わる笛\r\n奏でられる微かな音色が魔法への抵抗力を高める",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 19,
+            "rarity": 17201,
+            "name": "黄金の蜂蜜酒",
+            "kana": "",
+            "text": "最大耐久+5％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 19,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "旧き支配者への供物として伝わる金色の酒\r\nその一滴を喉に受ければ、肉体の耐久が増す",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 20,
+            "rarity": 21041,
+            "name": "黄金の蜂蜜酒",
+            "kana": "",
+            "text": "最大耐久+10％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 19,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "旧き支配者への供物として伝わる金色の酒\r\nその一滴を喉に受ければ、肉体の耐久が増す",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 21,
+            "rarity": 5460529,
+            "name": "黄金の蜂蜜酒",
+            "kana": "",
+            "text": "最大耐久+15％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 19,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "旧き支配者への供物として伝わる金色の酒\r\nその一滴を喉に受ければ、肉体の耐久が増す",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 22,
+            "rarity": 17201,
+            "name": "帝国騎士の鎧",
+            "kana": "",
+            "text": "物理防御+5％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 22,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "失われた帝国の守護者が身に着けた精鋼の鎧\r\n身を包む者の防御力を高める",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 23,
+            "rarity": 21041,
+            "name": "帝国騎士の鎧",
+            "kana": "",
+            "text": "物理防御+10％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 22,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "失われた帝国の守護者が身に着けた精鋼の鎧\r\n身を包む者の防御力を高める",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 24,
+            "rarity": 5460529,
+            "name": "帝国騎士の鎧",
+            "kana": "",
+            "text": "物理防御+15％",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 22,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "失われた帝国の守護者が身に着けた精鋼の鎧\r\n身を包む者の防御力を高める",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 0
+        },
+        {
+            "id": 49,
+            "rarity": 17201,
+            "name": "クトゥルフの邪神像",
+            "kana": "",
+            "text": "攻撃力+5％\r\n前衛が装備時クトゥルフの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                34001
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 49,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 3,
+            "flavorText": "持つ者の理性を試す深海の闇を象った石像\r\n呼び声に応じて化身が出現する",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 50,
+            "rarity": 21041,
+            "name": "クトゥルフの邪神像",
+            "kana": "",
+            "text": "攻撃力+10％\r\n前衛が装備時クトゥルフの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                34001
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 49,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 3,
+            "flavorText": "持つ者の理性を試す深海の闇を象った石像\r\n呼び声に応じて化身が出現する",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 51,
+            "rarity": 5460529,
+            "name": "クトゥルフの邪神像",
+            "kana": "",
+            "text": "攻撃力+15％\r\n前衛が装備時クトゥルフの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                34001
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 49,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 3,
+            "flavorText": "持つ者の理性を試す深海の闇を象った石像\r\n呼び声に応じて化身が出現する",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 52,
+            "rarity": 17201,
+            "name": "ハスターの邪神像",
+            "kana": "",
+            "text": "攻撃速度+10%\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                34002
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 4,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 52,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 3,
+            "flavorText": "黄衣をまとった王を象る細身の像\r\n呼び声に応じて化身が出現する",
+            "acquireLocationText": "不明",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 53,
+            "rarity": 21041,
+            "name": "ハスターの邪神像",
+            "kana": "",
+            "text": "攻撃速度+15%\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                34002
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 4,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                15
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 52,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 3,
+            "flavorText": "黄衣をまとった王を象る細身の像\r\n呼び声に応じて化身が出現する",
+            "acquireLocationText": "不明",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 54,
+            "rarity": 5460529,
+            "name": "ハスターの邪神像",
+            "kana": "",
+            "text": "攻撃速度+20%\r\n後衛が装備時ハスターの化身を付与\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                34002
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 4,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "seriesId": 52,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 3,
+            "flavorText": "黄衣をまとった王を象る細身の像\r\n呼び声に応じて化身が出現する",
+            "acquireLocationText": "ウェルカム☆3ヴァイスパックの特典",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 55,
+            "rarity": 17201,
+            "name": "夢のクリスタライザー",
+            "kana": "",
+            "text": "耐久が0になると一度だけ最大耐久の20%分を回復し、即復活する（前衛のみ）\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1041,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 40002,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "seriesId": 55,
+            "grade": 1,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "淡い光を内に宿す結晶体\r\n一度だけ悪夢を打ち消し、再び立ち上がる力を得る",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 56,
+            "rarity": 21041,
+            "name": "夢のクリスタライザー",
+            "kana": "",
+            "text": "耐久が0になると一度だけ最大耐久の30%分を回復し、即復活する（前衛のみ）\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1041,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 40002,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "seriesId": 55,
+            "grade": 2,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "淡い光を内に宿す結晶体\r\n一度だけ悪夢を打ち消し、再び立ち上がる力を得る",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
+        },
+        {
+            "id": 57,
+            "rarity": 5460529,
+            "name": "夢のクリスタライザー",
+            "kana": "",
+            "text": "耐久が0になると一度だけ最大耐久の40%分を回復し、即復活する（前衛のみ）\r\n<color=#ffa500>チーム内に一つまでしか装備できません</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1041,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 3,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 40002,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "seriesId": 55,
+            "grade": 3,
+            "restrictionForClass": 0,
+            "restrictionForTribe": 0,
+            "restrictionForElement": 0,
+            "category": 2,
+            "flavorText": "淡い光を内に宿す結晶体\r\n一度だけ悪夢を打ち消し、再び立ち上がる力を得る",
+            "acquireLocationText": "アポカリプスモードで入手可能",
+            "canBeUnknown": 0,
+            "isUnique": 1
         }
-      ],
-      "seriesId": 55,
-      "grade": 3,
-      "restrictionForClass": 0,
-      "restrictionForTribe": 0,
-      "restrictionForElement": 0,
-      "category": 2,
-      "flavorText": "淡い光を内に宿す結晶体\r\n一度だけ悪夢を打ち消し、再び立ち上がる力を得る",
-      "acquireLocationText": "アポカリプスモードで入手可能",
-      "canBeUnknown": 0,
-      "isUnique": 1
-    }
-  ]
+    ]
 }

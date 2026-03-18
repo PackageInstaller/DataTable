@@ -1,526 +1,194 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 1953359691599935121
-  },
-  "m_Name": "special_action",
-  "records": [
-    {
-      "id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "type": 5,
-      "waitMotion": "sp_wait",
-      "mainMotion": "sp_action",
-      "waitTime": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "posX": 0.0,
-      "posY": 0.0,
-      "posZ": 0.0,
-      "rotation": 0,
-      "omenFlag": 0,
-      "missile": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "attackRate": {
-        "hash": -381487871,
-        "hiddenValue": 152,
-        "currentCryptoKey": 1
-      },
-      "attackFixed": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "targetNum": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "sortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "filterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastTargetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastSortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastFilterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "hitType": 1,
-      "abilityIds": [
-        {
-          "hash": 1606771313,
-          "hiddenValue": 1,
-          "currentCryptoKey": 1
-        }
-      ],
-      "shotBoneIndexes": []
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "type": 6,
-      "waitMotion": "sp_wait",
-      "mainMotion": "sp_action",
-      "waitTime": {
-        "hash": -2044540959,
-        "hiddenValue": 122,
-        "currentCryptoKey": 1
-      },
-      "posX": 0.0,
-      "posY": 0.0,
-      "posZ": 0.0,
-      "rotation": 0,
-      "omenFlag": 0,
-      "missile": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "attackRate": {
-        "hash": 1475337441,
-        "hiddenValue": 202,
-        "currentCryptoKey": 1
-      },
-      "attackFixed": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "targetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "sortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "filterConfig": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "blastTargetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastSortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastFilterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "hitType": 2,
-      "abilityIds": [
-        {
-          "hash": -1041988543,
-          "hiddenValue": 4,
-          "currentCryptoKey": 1
-        }
-      ],
-      "shotBoneIndexes": []
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 1953359691599935121
     },
-    {
-      "id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "type": 6,
-      "waitMotion": "sp_wait",
-      "mainMotion": "sp_action",
-      "waitTime": {
-        "hash": -426980575,
-        "hiddenValue": 182,
-        "currentCryptoKey": 1
-      },
-      "posX": 0.0,
-      "posY": 0.0,
-      "posZ": 0.0,
-      "rotation": 0,
-      "omenFlag": 1,
-      "missile": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "attackRate": {
-        "hash": 1636748137,
-        "hiddenValue": 302,
-        "currentCryptoKey": 1
-      },
-      "attackFixed": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "targetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "sortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "filterConfig": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "blastTargetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastSortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastFilterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "hitType": 1,
-      "abilityIds": [
+    "m_Name": "special_action",
+    "records": [
         {
-          "hash": 1487138849,
-          "hiddenValue": 6,
-          "currentCryptoKey": 1
-        }
-      ],
-      "shotBoneIndexes": []
-    },
-    {
-      "id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "type": 6,
-      "waitMotion": "sp_wait",
-      "mainMotion": "sp_action",
-      "waitTime": {
-        "hash": -426980575,
-        "hiddenValue": 182,
-        "currentCryptoKey": 1
-      },
-      "posX": 0.0,
-      "posY": 0.0,
-      "posZ": 0.0,
-      "rotation": 0,
-      "omenFlag": 1,
-      "missile": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "attackRate": {
-        "hash": -2043211191,
-        "hiddenValue": 352,
-        "currentCryptoKey": 1
-      },
-      "attackFixed": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "targetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "sortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "filterConfig": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "blastTargetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastSortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastFilterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "hitType": 1,
-      "abilityIds": [],
-      "shotBoneIndexes": []
-    },
-    {
-      "id": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "type": 6,
-      "waitMotion": "sp_wait",
-      "mainMotion": "sp_action",
-      "waitTime": {
-        "hash": -426980575,
-        "hiddenValue": 182,
-        "currentCryptoKey": 1
-      },
-      "posX": 0.0,
-      "posY": 0.0,
-      "posZ": 0.0,
-      "rotation": 0,
-      "omenFlag": 1,
-      "missile": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "attackRate": {
-        "hash": -2043211191,
-        "hiddenValue": 352,
-        "currentCryptoKey": 1
-      },
-      "attackFixed": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "targetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "sortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "filterConfig": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "blastTargetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastSortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastFilterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "hitType": 2,
-      "abilityIds": [
+            "id": 1,
+            "type": 5,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 0,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 0,
+            "missile": 1,
+            "attackRate": 150,
+            "attackFixed": 0,
+            "targetNum": 2,
+            "sortConfig": 0,
+            "filterConfig": 0,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 1,
+            "abilityIds": [
+                1
+            ],
+            "shotBoneIndexes": []
+        },
         {
-          "hash": -159068591,
-          "hiddenValue": 3,
-          "currentCryptoKey": 1
-        }
-      ],
-      "shotBoneIndexes": []
-    },
-    {
-      "id": {
-        "hash": -278701055,
-        "hiddenValue": 8,
-        "currentCryptoKey": 1
-      },
-      "type": 6,
-      "waitMotion": "sp_wait",
-      "mainMotion": "sp_action",
-      "waitTime": {
-        "hash": -426980575,
-        "hiddenValue": 182,
-        "currentCryptoKey": 1
-      },
-      "posX": 0.0,
-      "posY": 0.0,
-      "posZ": 0.0,
-      "rotation": 0,
-      "omenFlag": 1,
-      "missile": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "attackRate": {
-        "hash": 1636748137,
-        "hiddenValue": 302,
-        "currentCryptoKey": 1
-      },
-      "attackFixed": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "targetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "sortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "filterConfig": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "blastTargetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastSortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastFilterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "hitType": 1,
-      "abilityIds": [
+            "id": 2,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 120,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 0,
+            "missile": 2,
+            "attackRate": 200,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 2,
+            "abilityIds": [
+                2
+            ],
+            "shotBoneIndexes": []
+        },
         {
-          "hash": -1924908495,
-          "hiddenValue": 5,
-          "currentCryptoKey": 1
-        }
-      ],
-      "shotBoneIndexes": []
-    },
-    {
-      "id": {
-        "hash": 604218897,
-        "hiddenValue": 7,
-        "currentCryptoKey": 1
-      },
-      "type": 6,
-      "waitMotion": "sp_wait",
-      "mainMotion": "sp_action",
-      "waitTime": {
-        "hash": -426980575,
-        "hiddenValue": 182,
-        "currentCryptoKey": 1
-      },
-      "posX": 0.0,
-      "posY": 0.0,
-      "posZ": 0.0,
-      "rotation": 0,
-      "omenFlag": 1,
-      "missile": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "attackRate": {
-        "hash": -996495839,
-        "hiddenValue": 102,
-        "currentCryptoKey": 1
-      },
-      "attackFixed": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "targetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "sortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "filterConfig": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "blastTargetNum": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastSortConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "blastFilterConfig": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "hitType": 2,
-      "abilityIds": [
+            "id": 3,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 1,
+            "attackRate": 300,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 1,
+            "abilityIds": [
+                4
+            ],
+            "shotBoneIndexes": []
+        },
         {
-          "hash": -278701055,
-          "hiddenValue": 8,
-          "currentCryptoKey": 1
+            "id": 4,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 2,
+            "attackRate": 350,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 1,
+            "abilityIds": [],
+            "shotBoneIndexes": []
+        },
+        {
+            "id": 5,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 3,
+            "attackRate": 350,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 2,
+            "abilityIds": [
+                3
+            ],
+            "shotBoneIndexes": []
+        },
+        {
+            "id": 6,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 4,
+            "attackRate": 300,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 1,
+            "abilityIds": [
+                5
+            ],
+            "shotBoneIndexes": []
+        },
+        {
+            "id": 7,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 5,
+            "attackRate": 100,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 2,
+            "abilityIds": [
+                6
+            ],
+            "shotBoneIndexes": []
         }
-      ],
-      "shotBoneIndexes": []
-    }
-  ]
+    ]
 }

@@ -1,1137 +1,1137 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": -1661986907141320640
-  },
-  "m_Name": "login_bonus_cell",
-  "records": [
-    {
-      "dayData": [
-        {
-          "id": 200001,
-          "day": 1,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ticket",
-                "m_walletName": "gacha_common_10",
-                "m_count": 1
-              }
-            ]
-          },
-          "chara_id": 2,
-          "voice_id": 4,
-          "speech_text": "オトトドケモノなのだ！　……うん？"
-        },
-        {
-          "id": 200001,
-          "day": 2,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 1000
-              }
-            ]
-          },
-          "chara_id": 2,
-          "voice_id": 4,
-          "speech_text": "オトトドケモノなのだ！　……うん？"
-        },
-        {
-          "id": 200001,
-          "day": 3,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ticket",
-                "m_walletName": "gacha_special",
-                "m_count": 1
-              }
-            ]
-          },
-          "chara_id": 2,
-          "voice_id": 4,
-          "speech_text": "オトトドケモノなのだ！　……うん？"
-        },
-        {
-          "id": 200001,
-          "day": 4,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ticket",
-                "m_walletName": "gacha_common_10",
-                "m_count": 1
-              }
-            ]
-          },
-          "chara_id": 2,
-          "voice_id": 4,
-          "speech_text": "オトトドケモノなのだ！　……うん？"
-        },
-        {
-          "id": 200001,
-          "day": 5,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 2000
-              }
-            ]
-          },
-          "chara_id": 2,
-          "voice_id": 4,
-          "speech_text": "オトトドケモノなのだ！　……うん？"
-        }
-      ]
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "dayData": [
-        {
-          "id": 300000,
-          "day": 1,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 1000
-              }
-            ]
-          },
-          "chara_id": 1,
-          "voice_id": 4,
-          "speech_text": "待ってたよぉ。そろそろ駆け落ちしちゃう？"
-        },
-        {
-          "id": 300000,
-          "day": 2,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 1000
-              }
-            ]
-          },
-          "chara_id": 1,
-          "voice_id": 4,
-          "speech_text": "待ってましたよ、ご主人くん。\r\nお姉ちゃんと一緒にイイことしましょ。"
-        },
-        {
-          "id": 300000,
-          "day": 3,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 500
-              }
-            ]
-          },
-          "chara_id": 1,
-          "voice_id": 4,
-          "speech_text": "あ～、待ちくたびれたよご主人くん。\r\nねぇ今日は何から始める？"
-        },
-        {
-          "id": 300000,
-          "day": 4,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 250
-              }
-            ]
-          },
-          "chara_id": 1,
-          "voice_id": 4,
-          "speech_text": "今度こそ駆け落ちだね！？\r\nキミとなら世界の果てまで\r\nランデブーだよぉ♪"
-        },
-        {
-          "id": 300000,
-          "day": 5,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 500
-              }
-            ]
-          },
-          "chara_id": 1,
-          "voice_id": 4,
-          "speech_text": "さすがご主人くん♪\r\nお姉ちゃんがご褒美をあげますよぉ。"
-        },
-        {
-          "id": 300000,
-          "day": 6,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 250
-              }
-            ]
-          },
-          "chara_id": 1,
-          "voice_id": 4,
-          "speech_text": "もしかして、お疲れかな？たまには、\r\nお空をのんびり散歩でもしようよ。"
-        },
-        {
-          "id": 300000,
-          "day": 7,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 1000
-              }
-            ]
-          },
-          "chara_id": 1,
-          "voice_id": 4,
-          "speech_text": "さすがだな、ご主人。\r\n私の目に狂いはなかったぜ。"
-        }
-      ]
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -1661986907141320640
     },
-    {
-      "dayData": [
+    "m_Name": "login_bonus_cell",
+    "records": [
         {
-          "id": 300001,
-          "day": 1,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 1500
-              },
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "gold",
-                "m_count": 1000
-              }
+            "dayData": [
+                {
+                    "id": 200001,
+                    "day": 1,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ticket",
+                                "m_walletName": "gacha_common_10",
+                                "m_count": 1
+                            }
+                        ]
+                    },
+                    "chara_id": 2,
+                    "voice_id": 4,
+                    "speech_text": "オトトドケモノなのだ！　……うん？"
+                },
+                {
+                    "id": 200001,
+                    "day": 2,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 1000
+                            }
+                        ]
+                    },
+                    "chara_id": 2,
+                    "voice_id": 4,
+                    "speech_text": "オトトドケモノなのだ！　……うん？"
+                },
+                {
+                    "id": 200001,
+                    "day": 3,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ticket",
+                                "m_walletName": "gacha_special",
+                                "m_count": 1
+                            }
+                        ]
+                    },
+                    "chara_id": 2,
+                    "voice_id": 4,
+                    "speech_text": "オトトドケモノなのだ！　……うん？"
+                },
+                {
+                    "id": 200001,
+                    "day": 4,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ticket",
+                                "m_walletName": "gacha_common_10",
+                                "m_count": 1
+                            }
+                        ]
+                    },
+                    "chara_id": 2,
+                    "voice_id": 4,
+                    "speech_text": "オトトドケモノなのだ！　……うん？"
+                },
+                {
+                    "id": 200001,
+                    "day": 5,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 2000
+                            }
+                        ]
+                    },
+                    "chara_id": 2,
+                    "voice_id": 4,
+                    "speech_text": "オトトドケモノなのだ！　……うん？"
+                }
             ]
-          },
-          "chara_id": 19,
-          "voice_id": 4,
-          "speech_text": "お届け物はそこよ。自分で持ってって。"
         },
         {
-          "id": 300001,
-          "day": 2,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 200
-              }
+            "dayData": [
+                {
+                    "id": 300000,
+                    "day": 1,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 1000
+                            }
+                        ]
+                    },
+                    "chara_id": 1,
+                    "voice_id": 4,
+                    "speech_text": "待ってたよぉ。そろそろ駆け落ちしちゃう？"
+                },
+                {
+                    "id": 300000,
+                    "day": 2,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 1000
+                            }
+                        ]
+                    },
+                    "chara_id": 1,
+                    "voice_id": 4,
+                    "speech_text": "待ってましたよ、ご主人くん。\r\nお姉ちゃんと一緒にイイことしましょ。"
+                },
+                {
+                    "id": 300000,
+                    "day": 3,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 500
+                            }
+                        ]
+                    },
+                    "chara_id": 1,
+                    "voice_id": 4,
+                    "speech_text": "あ～、待ちくたびれたよご主人くん。\r\nねぇ今日は何から始める？"
+                },
+                {
+                    "id": 300000,
+                    "day": 4,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 250
+                            }
+                        ]
+                    },
+                    "chara_id": 1,
+                    "voice_id": 4,
+                    "speech_text": "今度こそ駆け落ちだね！？\r\nキミとなら世界の果てまで\r\nランデブーだよぉ♪"
+                },
+                {
+                    "id": 300000,
+                    "day": 5,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 500
+                            }
+                        ]
+                    },
+                    "chara_id": 1,
+                    "voice_id": 4,
+                    "speech_text": "さすがご主人くん♪\r\nお姉ちゃんがご褒美をあげますよぉ。"
+                },
+                {
+                    "id": 300000,
+                    "day": 6,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 250
+                            }
+                        ]
+                    },
+                    "chara_id": 1,
+                    "voice_id": 4,
+                    "speech_text": "もしかして、お疲れかな？たまには、\r\nお空をのんびり散歩でもしようよ。"
+                },
+                {
+                    "id": 300000,
+                    "day": 7,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 1000
+                            }
+                        ]
+                    },
+                    "chara_id": 1,
+                    "voice_id": 4,
+                    "speech_text": "さすがだな、ご主人。\r\n私の目に狂いはなかったぜ。"
+                }
             ]
-          },
-          "chara_id": 19,
-          "voice_id": 4,
-          "speech_text": "お届け物はそこよ。自分で持ってって。"
         },
         {
-          "id": 300001,
-          "day": 3,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 200
-              }
+            "dayData": [
+                {
+                    "id": 300001,
+                    "day": 1,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 1500
+                            },
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "gold",
+                                "m_count": 1000
+                            }
+                        ]
+                    },
+                    "chara_id": 19,
+                    "voice_id": 4,
+                    "speech_text": "お届け物はそこよ。自分で持ってって。"
+                },
+                {
+                    "id": 300001,
+                    "day": 2,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 200
+                            }
+                        ]
+                    },
+                    "chara_id": 19,
+                    "voice_id": 4,
+                    "speech_text": "お届け物はそこよ。自分で持ってって。"
+                },
+                {
+                    "id": 300001,
+                    "day": 3,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 200
+                            }
+                        ]
+                    },
+                    "chara_id": 19,
+                    "voice_id": 4,
+                    "speech_text": "お届け物はそこよ。自分で持ってって。"
+                },
+                {
+                    "id": 300001,
+                    "day": 4,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 200
+                            }
+                        ]
+                    },
+                    "chara_id": 19,
+                    "voice_id": 4,
+                    "speech_text": "お届け物はそこよ。自分で持ってって。"
+                },
+                {
+                    "id": 300001,
+                    "day": 5,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 200
+                            }
+                        ]
+                    },
+                    "chara_id": 19,
+                    "voice_id": 4,
+                    "speech_text": "お届け物はそこよ。自分で持ってって。"
+                },
+                {
+                    "id": 300001,
+                    "day": 6,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 200
+                            }
+                        ]
+                    },
+                    "chara_id": 19,
+                    "voice_id": 4,
+                    "speech_text": "お届け物はそこよ。自分で持ってって。"
+                },
+                {
+                    "id": 300001,
+                    "day": 7,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 500
+                            }
+                        ]
+                    },
+                    "chara_id": 19,
+                    "voice_id": 4,
+                    "speech_text": "お届け物はそこよ。自分で持ってって。"
+                }
             ]
-          },
-          "chara_id": 19,
-          "voice_id": 4,
-          "speech_text": "お届け物はそこよ。自分で持ってって。"
         },
         {
-          "id": 300001,
-          "day": 4,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 200
-              }
+            "dayData": [
+                {
+                    "id": 100001,
+                    "day": 1,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "gold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 2,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_exp_2h",
+                                "m_count": 7
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 3,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 50
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 4,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 3000
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 5,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_threshold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 6,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ugift",
+                                "m_walletName": "s_f",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 7,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 150
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 8,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "gold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 9,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_exp_2h",
+                                "m_count": 7
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 10,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 50
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 11,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 3000
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 12,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_threshold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 13,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ugift",
+                                "m_walletName": "s_f",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 14,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 150
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 15,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "gold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 16,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_exp_2h",
+                                "m_count": 7
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 17,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 50
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 18,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 3000
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 19,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_threshold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 20,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ugift",
+                                "m_walletName": "s_f",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 21,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 150
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 22,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "gold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 23,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_exp_2h",
+                                "m_count": 7
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 24,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 3000
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 25,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_threshold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 26,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ugift",
+                                "m_walletName": "s_f",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 27,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "growth_1h",
+                                "m_count": 1
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100001,
+                    "day": 28,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "growth_1h",
+                                "m_count": 1
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                }
             ]
-          },
-          "chara_id": 19,
-          "voice_id": 4,
-          "speech_text": "お届け物はそこよ。自分で持ってって。"
         },
         {
-          "id": 300001,
-          "day": 5,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 200
-              }
+            "dayData": [
+                {
+                    "id": 100002,
+                    "day": 1,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "gold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 2,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_exp_2h",
+                                "m_count": 7
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 3,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 50
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 4,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 3000
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 5,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_threshold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 6,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ugift",
+                                "m_walletName": "s_f",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 7,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 150
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 8,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "gold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 9,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_exp_2h",
+                                "m_count": 7
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 10,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 50
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 11,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "explore_pt",
+                                "m_count": 3000
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 12,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "material_bag",
+                                "m_walletName": "unit_threshold_2h",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 13,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "ugift",
+                                "m_walletName": "s_f",
+                                "m_count": 10
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                },
+                {
+                    "id": 100002,
+                    "day": 14,
+                    "layout_id": 1,
+                    "item_id": 102,
+                    "rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "point",
+                                "m_walletName": "free_coin",
+                                "m_count": 150
+                            }
+                        ]
+                    },
+                    "chara_id": 11,
+                    "voice_id": 4,
+                    "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
+                }
             ]
-          },
-          "chara_id": 19,
-          "voice_id": 4,
-          "speech_text": "お届け物はそこよ。自分で持ってって。"
-        },
-        {
-          "id": 300001,
-          "day": 6,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 200
-              }
-            ]
-          },
-          "chara_id": 19,
-          "voice_id": 4,
-          "speech_text": "お届け物はそこよ。自分で持ってって。"
-        },
-        {
-          "id": 300001,
-          "day": 7,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 500
-              }
-            ]
-          },
-          "chara_id": 19,
-          "voice_id": 4,
-          "speech_text": "お届け物はそこよ。自分で持ってって。"
         }
-      ]
-    },
-    {
-      "dayData": [
-        {
-          "id": 100001,
-          "day": 1,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "gold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 2,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_exp_2h",
-                "m_count": 7
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 3,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 50
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 4,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 3000
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 5,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_threshold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 6,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ugift",
-                "m_walletName": "s_f",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 7,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 150
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 8,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "gold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 9,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_exp_2h",
-                "m_count": 7
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 10,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 50
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 11,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 3000
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 12,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_threshold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 13,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ugift",
-                "m_walletName": "s_f",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 14,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 150
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 15,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "gold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 16,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_exp_2h",
-                "m_count": 7
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 17,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 50
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 18,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 3000
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 19,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_threshold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 20,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ugift",
-                "m_walletName": "s_f",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 21,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 150
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 22,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "gold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 23,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_exp_2h",
-                "m_count": 7
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 24,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 3000
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 25,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_threshold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 26,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ugift",
-                "m_walletName": "s_f",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 27,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "growth_1h",
-                "m_count": 1
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100001,
-          "day": 28,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "growth_1h",
-                "m_count": 1
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        }
-      ]
-    },
-    {
-      "dayData": [
-        {
-          "id": 100002,
-          "day": 1,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "gold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 2,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_exp_2h",
-                "m_count": 7
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 3,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 50
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 4,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 3000
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 5,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_threshold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 6,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ugift",
-                "m_walletName": "s_f",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 7,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 150
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 8,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "gold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 9,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_exp_2h",
-                "m_count": 7
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 10,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 50
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 11,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "explore_pt",
-                "m_count": 3000
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 12,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "material_bag",
-                "m_walletName": "unit_threshold_2h",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 13,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "ugift",
-                "m_walletName": "s_f",
-                "m_count": 10
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        },
-        {
-          "id": 100002,
-          "day": 14,
-          "layout_id": 1,
-          "item_id": 102,
-          "rewards": {
-            "m_rewards": [
-              {
-                "m_walletCategory": "point",
-                "m_walletName": "free_coin",
-                "m_count": 150
-              }
-            ]
-          },
-          "chara_id": 11,
-          "voice_id": 4,
-          "speech_text": "坊やに贈り物よ。これじゃあ足りないかしら？"
-        }
-      ]
-    }
-  ]
+    ]
 }

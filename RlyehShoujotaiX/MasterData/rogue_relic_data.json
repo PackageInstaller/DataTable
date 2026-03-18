@@ -1,1884 +1,784 @@
 {
-  "m_GameObject": {
-    "m_FileID": 0,
-    "m_PathID": 0
-  },
-  "m_Enabled": 1,
-  "m_Script": {
-    "m_FileID": 0,
-    "m_PathID": 5832821262581799659
-  },
-  "m_Name": "rogue_relic_data",
-  "records": [
-    {
-      "unique_id": {
-        "hash": -113575887,
-        "hiddenValue": 101,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "耐久強化Lv.1",
-      "rarity": 17201,
-      "category": 101,
-      "ability_text": "味方全員の最大耐久+10%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
     },
-    {
-      "unique_id": {
-        "hash": 1532631553,
-        "hiddenValue": 104,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "耐久強化Lv.2",
-      "rarity": 5587761,
-      "category": 101,
-      "ability_text": "味方全員の最大耐久+20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 5832821262581799659
     },
-    {
-      "unique_id": {
-        "hash": -1879415791,
-        "hiddenValue": 103,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "耐久強化Lv.3",
-      "rarity": 21041,
-      "category": 101,
-      "ability_text": "味方全員の最大耐久+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1008608993,
-        "hiddenValue": 106,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "name": "耐久強化Lv.4",
-      "rarity": 5460529,
-      "category": 101,
-      "ability_text": "味方全員の最大耐久+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1891528945,
-        "hiddenValue": 105,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "name": "耐久強化Lv.5",
-      "rarity": 1397969457,
-      "category": 101,
-      "ability_text": "味方全員の最大耐久+75%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1936709903,
-        "hiddenValue": 201,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "攻撃強化Lv.1",
-      "rarity": 17201,
-      "category": 101,
-      "ability_text": "味方全員の攻撃力+10%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -278701055,
-        "hiddenValue": 8,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -290502463,
-        "hiddenValue": 204,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "攻撃強化Lv.2",
-      "rarity": 5587761,
-      "category": 101,
-      "ability_text": "味方全員の攻撃力+20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 604218897,
-        "hiddenValue": 7,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 592417489,
-        "hiddenValue": 203,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "攻撃強化Lv.3",
-      "rarity": 21041,
-      "category": 101,
-      "ability_text": "味方全員の攻撃力+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -802723615,
-        "hiddenValue": 10,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -2056342367,
-        "hiddenValue": 206,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "name": "攻撃強化Lv.4",
-      "rarity": 5460529,
-      "category": 101,
-      "ability_text": "味方全員の攻撃力+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 80196337,
-        "hiddenValue": 9,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1173422415,
-        "hiddenValue": 205,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "name": "攻撃強化Lv.5",
-      "rarity": 1397969457,
-      "category": 101,
-      "ability_text": "味方全員の攻撃力+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1726403777,
-        "hiddenValue": 12,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1775299207,
-        "hiddenValue": 301,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "物理防御強化Lv.1",
-      "rarity": 17201,
-      "category": 101,
-      "ability_text": "味方全員の物理防御+10%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1685643567,
-        "hiddenValue": 11,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -129091767,
-        "hiddenValue": 304,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "物理防御強化Lv.2",
-      "rarity": 5587761,
-      "category": 101,
-      "ability_text": "味方全員の物理防御+20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -39436127,
-        "hiddenValue": 14,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 753828185,
-        "hiddenValue": 303,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "物理防御強化Lv.3",
-      "rarity": 21041,
-      "category": 101,
-      "ability_text": "味方全員の物理防御+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 843483825,
-        "hiddenValue": 13,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -653114327,
-        "hiddenValue": 306,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "name": "物理防御強化Lv.4",
-      "rarity": 5460529,
-      "category": 101,
-      "ability_text": "味方全員の物理防御+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1805276031,
-        "hiddenValue": 16,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 229805625,
-        "hiddenValue": 305,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "name": "物理防御強化Lv.5",
-      "rarity": 1397969457,
-      "category": 101,
-      "ability_text": "味方全員の物理防御+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -922356079,
-        "hiddenValue": 15,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 696534073,
-        "hiddenValue": 401,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "魔法防御強化Lv.1",
-      "rarity": 17201,
-      "category": 101,
-      "ability_text": "味方全員の魔法防御+10%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1965668705,
-        "hiddenValue": 18,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1952225783,
-        "hiddenValue": 404,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "魔法防御強化Lv.2",
-      "rarity": 5587761,
-      "category": 101,
-      "ability_text": "味方全員の魔法防御+20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1446378639,
-        "hiddenValue": 17,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1069305831,
-        "hiddenValue": 403,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "魔法防御強化Lv.3",
-      "rarity": 21041,
-      "category": 101,
-      "ability_text": "味方全員の魔法防御+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 199828801,
-        "hiddenValue": 20,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 576901609,
-        "hiddenValue": 406,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "name": "魔法防御強化Lv.4",
-      "rarity": 5460529,
-      "category": 101,
-      "ability_text": "味方全員の魔法防御+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1082748753,
-        "hiddenValue": 19,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1459821561,
-        "hiddenValue": 405,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1924908495,
-        "hiddenValue": 5,
-        "currentCryptoKey": 1
-      },
-      "name": "魔法防御強化Lv.5",
-      "rarity": 1397969457,
-      "category": 101,
-      "ability_text": "味方全員の魔法防御+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1566011103,
-        "hiddenValue": 22,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1832905065,
-        "hiddenValue": 901,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 80196337,
-        "hiddenValue": 9,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "ウェポンマスター強化Lv.1",
-      "rarity": 21041,
-      "category": 201,
-      "ability_text": "ウェポンマスターの攻撃速度+50%、物理防御+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1731136271,
-        "hiddenValue": 41,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 249310809,
-        "hiddenValue": 904,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 80196337,
-        "hiddenValue": 9,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "ウェポンマスター強化Lv.2",
-      "rarity": 5460529,
-      "category": 201,
-      "ability_text": "ウェポンマスターの攻撃速度+75%、物理防御+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -84928831,
-        "hiddenValue": 44,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 67065161,
-        "hiddenValue": 903,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 80196337,
-        "hiddenValue": 9,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "ウェポンマスター強化Lv.3",
-      "rarity": 1397969457,
-      "category": 201,
-      "ability_text": "ウェポンマスターの攻撃速度+100%、物理防御+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 797991121,
-        "hiddenValue": 43,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1354375209,
-        "hiddenValue": 1001,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1726403777,
-        "hiddenValue": 12,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "バーサーカー強化Lv.1",
-      "rarity": 21041,
-      "category": 201,
-      "ability_text": "バーサーカーの攻撃速度+50%、移動速度+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1850768735,
-        "hiddenValue": 46,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -229219047,
-        "hiddenValue": 1004,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1726403777,
-        "hiddenValue": 12,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "バーサーカー強化Lv.2",
-      "rarity": 5460529,
-      "category": 201,
-      "ability_text": "バーサーカーの攻撃速度+75%、移動速度+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -967848783,
-        "hiddenValue": 45,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -411464695,
-        "hiddenValue": 1003,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1726403777,
-        "hiddenValue": 12,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "バーサーカー強化Lv.3",
-      "rarity": 1397969457,
-      "category": 201,
-      "ability_text": "バーサーカーの攻撃速度+100%、移動速度+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 678358657,
-        "hiddenValue": 48,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -893983855,
-        "hiddenValue": 1101,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1685643567,
-        "hiddenValue": 11,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "ヘビーシールダー強化Lv.1",
-      "rarity": 21041,
-      "category": 201,
-      "ability_text": "ヘビーシールダーのブロック数+1、最大耐久と物理防御+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1561278609,
-        "hiddenValue": 47,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1412412511,
-        "hiddenValue": 1104,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1685643567,
-        "hiddenValue": 11,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "ヘビーシールダー強化Lv.2",
-      "rarity": 5460529,
-      "category": 201,
-      "ability_text": "ヘビーシールダーがブロック数+2、最大耐久と物理防御+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 154336097,
-        "hiddenValue": 50,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -529492559,
-        "hiddenValue": 1103,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1685643567,
-        "hiddenValue": 11,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "ヘビーシールダー強化Lv.3",
-      "rarity": 1397969457,
-      "category": 201,
-      "ability_text": "ヘビーシールダーがブロック数+3、最大耐久と物理防御+75%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1037256049,
-        "hiddenValue": 49,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1739260121,
-        "hiddenValue": 1301,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 843483825,
-        "hiddenValue": 13,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "レンジャー強化Lv.1",
-      "rarity": 21041,
-      "category": 201,
-      "ability_text": "レンジャーの会心率+10%、攻撃対象数+1",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1800543537,
-        "hiddenValue": 53,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1220831465,
-        "hiddenValue": 1304,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 843483825,
-        "hiddenValue": 13,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "レンジャー強化Lv.2",
-      "rarity": 5460529,
-      "category": 201,
-      "ability_text": "レンジャーの会心率+15%、レンジャーの攻撃対象数+2",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -848216319,
-        "hiddenValue": 56,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 2103751417,
-        "hiddenValue": 1303,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 843483825,
-        "hiddenValue": 13,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "レンジャー強化Lv.3",
-      "rarity": 1397969457,
-      "category": 201,
-      "ability_text": "レンジャーの会心率+20%、レンジャーの攻撃対象数+3",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 34703633,
-        "hiddenValue": 55,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1804221095,
-        "hiddenValue": 1501,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -922356079,
-        "hiddenValue": 15,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "アーチャー強化Lv.1",
-      "rarity": 21041,
-      "category": 201,
-      "ability_text": "アーチャーの攻撃対象数+1、攻撃力+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 2039808465,
-        "hiddenValue": 59,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1972317545,
-        "hiddenValue": 1504,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -922356079,
-        "hiddenValue": 15,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "アーチャー強化Lv.2",
-      "rarity": 5460529,
-      "category": 201,
-      "ability_text": "アーチャーの攻撃対象数+2、攻撃力+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -608951391,
-        "hiddenValue": 62,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1439729799,
-        "hiddenValue": 1503,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -922356079,
-        "hiddenValue": 15,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "アーチャー強化Lv.3",
-      "rarity": 1397969457,
-      "category": 201,
-      "ability_text": "アーチャーの攻撃対象数+3、攻撃力+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 273968561,
-        "hiddenValue": 61,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1484204481,
-        "hiddenValue": 1601,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1965668705,
-        "hiddenValue": 18,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "ガンナー強化Lv.1",
-      "rarity": 21041,
-      "category": 201,
-      "ability_text": "ガンナーの攻撃力、攻撃速度+30%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1920176001,
-        "hiddenValue": 64,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 10,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 2030941425,
-        "hiddenValue": 1604,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1965668705,
-        "hiddenValue": 18,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "ガンナー強化Lv.2",
-      "rarity": 5460529,
-      "category": 201,
-      "ability_text": "ガンナーの攻撃力、攻撃速度+40%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1491871343,
-        "hiddenValue": 63,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1848695777,
-        "hiddenValue": 1603,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1965668705,
-        "hiddenValue": 18,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "ガンナー強化Lv.3",
-      "rarity": 1397969457,
-      "category": 201,
-      "ability_text": "ガンナーの攻撃力、攻撃速度+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 51549281,
-        "hiddenValue": 66,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -177518839,
-        "hiddenValue": 1801,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 199828801,
-        "hiddenValue": 20,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "アークメイジ強化Lv.1",
-      "rarity": 21041,
-      "category": 201,
-      "ability_text": "アークメイジの攻撃力+30%、ダメージ範囲+50%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 814836769,
-        "hiddenValue": 70,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 369218105,
-        "hiddenValue": 1804,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 199828801,
-        "hiddenValue": 20,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "アークメイジ強化Lv.2",
-      "rarity": 5460529,
-      "category": 201,
-      "ability_text": "アークメイジの攻撃力+40%、ダメージ範囲+75%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1697756721,
-        "hiddenValue": 69,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 186972457,
-        "hiddenValue": 1803,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 199828801,
-        "hiddenValue": 20,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "アークメイジ強化Lv.3",
-      "rarity": 1397969457,
-      "category": 201,
-      "ability_text": "アークメイジの攻撃力+50%、ダメージ範囲+150%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -951003135,
-        "hiddenValue": 72,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1897866039,
-        "hiddenValue": 1901,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1082748753,
-        "hiddenValue": 19,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "クトゥルフの化身強化Lv.1",
-      "rarity": 21041,
-      "category": 301,
-      "ability_text": "クトゥルフの化身の攻撃範囲と攻撃力+50%、周囲の敵に攻撃力25%分の継続ダメージを与える",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -68083183,
-        "hiddenValue": 71,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1351129095,
-        "hiddenValue": 1904,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1082748753,
-        "hiddenValue": 19,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "クトゥルフの化身強化Lv.2",
-      "rarity": 5460529,
-      "category": 301,
-      "ability_text": "クトゥルフの化身の攻撃範囲と攻撃力+75%、周囲の敵に攻撃力50%分の継続ダメージを与える",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1475025695,
-        "hiddenValue": 74,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1533374743,
-        "hiddenValue": 1903,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1082748753,
-        "hiddenValue": 19,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "クトゥルフの化身強化Lv.3",
-      "rarity": 1397969457,
-      "category": 301,
-      "ability_text": "クトゥルフの化身の攻撃範囲と攻撃力+100%、周囲の敵に攻撃力100%分の継続ダメージを与える",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -592105743,
-        "hiddenValue": 73,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -364092559,
-        "hiddenValue": 2101,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -683091151,
-        "hiddenValue": 21,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "敵物理被ダメ上昇",
-      "rarity": 1397969457,
-      "category": 401,
-      "ability_text": "敵が受ける物理のダメージ+20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 171181745,
-        "hiddenValue": 77,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 387393521,
-        "hiddenValue": 2301,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1846036241,
-        "hiddenValue": 23,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "敵攻撃低下",
-      "rarity": 1397969457,
-      "category": 401,
-      "ability_text": "敵の攻撃-20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -1594658159,
-        "hiddenValue": 79,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 480322297,
-        "hiddenValue": 2401,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 439093729,
-        "hiddenValue": 26,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "敵最大耐久低下",
-      "rarity": 1397969457,
-      "category": 401,
-      "ability_text": "敵の最大耐久力-20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 1293366625,
-        "hiddenValue": 82,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1676033337,
-        "hiddenValue": 2501,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1322013681,
-        "hiddenValue": 25,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "敵防御低下",
-      "rarity": 1397969457,
-      "category": 401,
-      "ability_text": "敵の物理防御と魔法防御-20%",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -2118680719,
-        "hiddenValue": 81,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 2048400673,
-        "hiddenValue": 2601,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1326746175,
-        "hiddenValue": 28,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "城壁最大耐久上昇",
-      "rarity": 21041,
-      "category": 501,
-      "ability_text": "城壁の最大耐久+50%",
-      "relic_talent_id": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 464806417,
-        "hiddenValue": 2604,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1326746175,
-        "hiddenValue": 28,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "城壁最大耐久上昇",
-      "rarity": 5460529,
-      "category": 501,
-      "ability_text": "城壁の最大耐久+75%",
-      "relic_talent_id": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 282560769,
-        "hiddenValue": 2603,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": -1326746175,
-        "hiddenValue": 28,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "城壁最大耐久上昇",
-      "rarity": 1397969457,
-      "category": 501,
-      "ability_text": "城壁の最大耐久+100%",
-      "relic_talent_id": {
-        "hash": 1487138849,
-        "hiddenValue": 6,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": -1495080543,
-        "hiddenValue": 2801,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1202381217,
-        "hiddenValue": 30,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "前衛魔法防御強化",
-      "rarity": 21041,
-      "category": 102,
-      "ability_text": "前衛の魔法防御力+150",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": -472473279,
-        "hiddenValue": 84,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1216292497,
-        "hiddenValue": 2804,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1202381217,
-        "hiddenValue": 30,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -1041988543,
-        "hiddenValue": 4,
-        "currentCryptoKey": 1
-      },
-      "name": "前衛魔法防御強化",
-      "rarity": 5460529,
-      "category": 102,
-      "ability_text": "前衛の魔法防御力+250",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 410446673,
-        "hiddenValue": 83,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1034046849,
-        "hiddenValue": 2803,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 1202381217,
-        "hiddenValue": 30,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": -159068591,
-        "hiddenValue": 3,
-        "currentCryptoKey": 1
-      },
-      "name": "前衛魔法防御強化",
-      "rarity": 1397969457,
-      "category": 102,
-      "ability_text": "前衛の魔法防御力+400",
-      "relic_talent_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 2056654113,
-        "hiddenValue": 86,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 0,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    },
-    {
-      "unique_id": {
-        "hash": 1582388393,
-        "hiddenValue": 2901,
-        "currentCryptoKey": 1
-      },
-      "relic_id": {
-        "hash": 2085301169,
-        "hiddenValue": 29,
-        "currentCryptoKey": 1
-      },
-      "level": {
-        "hash": 1606771313,
-        "hiddenValue": 1,
-        "currentCryptoKey": 1
-      },
-      "name": "勝利時獲得コイン増加",
-      "rarity": 1397969457,
-      "category": 501,
-      "ability_text": "勝利時に獲得するアポカリプスコイン+30%",
-      "relic_talent_id": {
-        "hash": -278701055,
-        "hiddenValue": 8,
-        "currentCryptoKey": 1
-      },
-      "ability_id": {
-        "hash": 723851361,
-        "hiddenValue": 2,
-        "currentCryptoKey": 1
-      },
-      "starter_condition_id": 10,
-      "starter_condition_text": "",
-      "sp_mutate_table_id": 0
-    }
-  ]
+    "m_Name": "rogue_relic_data",
+    "records": [
+        {
+            "unique_id": 101,
+            "relic_id": 1,
+            "level": 1,
+            "name": "耐久強化Lv.1",
+            "rarity": 17201,
+            "category": 101,
+            "ability_text": "味方全員の最大耐久+10%",
+            "relic_talent_id": 0,
+            "ability_id": 1,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 102,
+            "relic_id": 1,
+            "level": 2,
+            "name": "耐久強化Lv.2",
+            "rarity": 5587761,
+            "category": 101,
+            "ability_text": "味方全員の最大耐久+20%",
+            "relic_talent_id": 0,
+            "ability_id": 2,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 103,
+            "relic_id": 1,
+            "level": 3,
+            "name": "耐久強化Lv.3",
+            "rarity": 21041,
+            "category": 101,
+            "ability_text": "味方全員の最大耐久+30%",
+            "relic_talent_id": 0,
+            "ability_id": 3,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 104,
+            "relic_id": 1,
+            "level": 4,
+            "name": "耐久強化Lv.4",
+            "rarity": 5460529,
+            "category": 101,
+            "ability_text": "味方全員の最大耐久+50%",
+            "relic_talent_id": 0,
+            "ability_id": 4,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 105,
+            "relic_id": 1,
+            "level": 5,
+            "name": "耐久強化Lv.5",
+            "rarity": 1397969457,
+            "category": 101,
+            "ability_text": "味方全員の最大耐久+75%",
+            "relic_talent_id": 0,
+            "ability_id": 5,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 201,
+            "relic_id": 2,
+            "level": 1,
+            "name": "攻撃強化Lv.1",
+            "rarity": 17201,
+            "category": 101,
+            "ability_text": "味方全員の攻撃力+10%",
+            "relic_talent_id": 0,
+            "ability_id": 6,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 202,
+            "relic_id": 2,
+            "level": 2,
+            "name": "攻撃強化Lv.2",
+            "rarity": 5587761,
+            "category": 101,
+            "ability_text": "味方全員の攻撃力+20%",
+            "relic_talent_id": 0,
+            "ability_id": 7,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 203,
+            "relic_id": 2,
+            "level": 3,
+            "name": "攻撃強化Lv.3",
+            "rarity": 21041,
+            "category": 101,
+            "ability_text": "味方全員の攻撃力+30%",
+            "relic_talent_id": 0,
+            "ability_id": 8,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 204,
+            "relic_id": 2,
+            "level": 4,
+            "name": "攻撃強化Lv.4",
+            "rarity": 5460529,
+            "category": 101,
+            "ability_text": "味方全員の攻撃力+40%",
+            "relic_talent_id": 0,
+            "ability_id": 9,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 205,
+            "relic_id": 2,
+            "level": 5,
+            "name": "攻撃強化Lv.5",
+            "rarity": 1397969457,
+            "category": 101,
+            "ability_text": "味方全員の攻撃力+50%",
+            "relic_talent_id": 0,
+            "ability_id": 10,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 301,
+            "relic_id": 3,
+            "level": 1,
+            "name": "物理防御強化Lv.1",
+            "rarity": 17201,
+            "category": 101,
+            "ability_text": "味方全員の物理防御+10%",
+            "relic_talent_id": 0,
+            "ability_id": 11,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 302,
+            "relic_id": 3,
+            "level": 2,
+            "name": "物理防御強化Lv.2",
+            "rarity": 5587761,
+            "category": 101,
+            "ability_text": "味方全員の物理防御+20%",
+            "relic_talent_id": 0,
+            "ability_id": 12,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 303,
+            "relic_id": 3,
+            "level": 3,
+            "name": "物理防御強化Lv.3",
+            "rarity": 21041,
+            "category": 101,
+            "ability_text": "味方全員の物理防御+30%",
+            "relic_talent_id": 0,
+            "ability_id": 13,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 304,
+            "relic_id": 3,
+            "level": 4,
+            "name": "物理防御強化Lv.4",
+            "rarity": 5460529,
+            "category": 101,
+            "ability_text": "味方全員の物理防御+40%",
+            "relic_talent_id": 0,
+            "ability_id": 14,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 305,
+            "relic_id": 3,
+            "level": 5,
+            "name": "物理防御強化Lv.5",
+            "rarity": 1397969457,
+            "category": 101,
+            "ability_text": "味方全員の物理防御+50%",
+            "relic_talent_id": 0,
+            "ability_id": 15,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 401,
+            "relic_id": 4,
+            "level": 1,
+            "name": "魔法防御強化Lv.1",
+            "rarity": 17201,
+            "category": 101,
+            "ability_text": "味方全員の魔法防御+10%",
+            "relic_talent_id": 0,
+            "ability_id": 16,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 402,
+            "relic_id": 4,
+            "level": 2,
+            "name": "魔法防御強化Lv.2",
+            "rarity": 5587761,
+            "category": 101,
+            "ability_text": "味方全員の魔法防御+20%",
+            "relic_talent_id": 0,
+            "ability_id": 17,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 403,
+            "relic_id": 4,
+            "level": 3,
+            "name": "魔法防御強化Lv.3",
+            "rarity": 21041,
+            "category": 101,
+            "ability_text": "味方全員の魔法防御+30%",
+            "relic_talent_id": 0,
+            "ability_id": 18,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 404,
+            "relic_id": 4,
+            "level": 4,
+            "name": "魔法防御強化Lv.4",
+            "rarity": 5460529,
+            "category": 101,
+            "ability_text": "味方全員の魔法防御+40%",
+            "relic_talent_id": 0,
+            "ability_id": 19,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 405,
+            "relic_id": 4,
+            "level": 5,
+            "name": "魔法防御強化Lv.5",
+            "rarity": 1397969457,
+            "category": 101,
+            "ability_text": "味方全員の魔法防御+50%",
+            "relic_talent_id": 0,
+            "ability_id": 20,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 901,
+            "relic_id": 9,
+            "level": 1,
+            "name": "ウェポンマスター強化Lv.1",
+            "rarity": 21041,
+            "category": 201,
+            "ability_text": "ウェポンマスターの攻撃速度+50%、物理防御+30%",
+            "relic_talent_id": 0,
+            "ability_id": 41,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 902,
+            "relic_id": 9,
+            "level": 2,
+            "name": "ウェポンマスター強化Lv.2",
+            "rarity": 5460529,
+            "category": 201,
+            "ability_text": "ウェポンマスターの攻撃速度+75%、物理防御+40%",
+            "relic_talent_id": 0,
+            "ability_id": 42,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 903,
+            "relic_id": 9,
+            "level": 3,
+            "name": "ウェポンマスター強化Lv.3",
+            "rarity": 1397969457,
+            "category": 201,
+            "ability_text": "ウェポンマスターの攻撃速度+100%、物理防御+50%",
+            "relic_talent_id": 0,
+            "ability_id": 43,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1001,
+            "relic_id": 10,
+            "level": 1,
+            "name": "バーサーカー強化Lv.1",
+            "rarity": 21041,
+            "category": 201,
+            "ability_text": "バーサーカーの攻撃速度+50%、移動速度+30%",
+            "relic_talent_id": 0,
+            "ability_id": 44,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1002,
+            "relic_id": 10,
+            "level": 2,
+            "name": "バーサーカー強化Lv.2",
+            "rarity": 5460529,
+            "category": 201,
+            "ability_text": "バーサーカーの攻撃速度+75%、移動速度+40%",
+            "relic_talent_id": 0,
+            "ability_id": 45,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1003,
+            "relic_id": 10,
+            "level": 3,
+            "name": "バーサーカー強化Lv.3",
+            "rarity": 1397969457,
+            "category": 201,
+            "ability_text": "バーサーカーの攻撃速度+100%、移動速度+50%",
+            "relic_talent_id": 0,
+            "ability_id": 46,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1101,
+            "relic_id": 11,
+            "level": 1,
+            "name": "ヘビーシールダー強化Lv.1",
+            "rarity": 21041,
+            "category": 201,
+            "ability_text": "ヘビーシールダーのブロック数+1、最大耐久と物理防御+40%",
+            "relic_talent_id": 0,
+            "ability_id": 47,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1102,
+            "relic_id": 11,
+            "level": 2,
+            "name": "ヘビーシールダー強化Lv.2",
+            "rarity": 5460529,
+            "category": 201,
+            "ability_text": "ヘビーシールダーがブロック数+2、最大耐久と物理防御+50%",
+            "relic_talent_id": 0,
+            "ability_id": 48,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1103,
+            "relic_id": 11,
+            "level": 3,
+            "name": "ヘビーシールダー強化Lv.3",
+            "rarity": 1397969457,
+            "category": 201,
+            "ability_text": "ヘビーシールダーがブロック数+3、最大耐久と物理防御+75%",
+            "relic_talent_id": 0,
+            "ability_id": 49,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1301,
+            "relic_id": 13,
+            "level": 1,
+            "name": "レンジャー強化Lv.1",
+            "rarity": 21041,
+            "category": 201,
+            "ability_text": "レンジャーの会心率+10%、攻撃対象数+1",
+            "relic_talent_id": 0,
+            "ability_id": 53,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1302,
+            "relic_id": 13,
+            "level": 2,
+            "name": "レンジャー強化Lv.2",
+            "rarity": 5460529,
+            "category": 201,
+            "ability_text": "レンジャーの会心率+15%、レンジャーの攻撃対象数+2",
+            "relic_talent_id": 0,
+            "ability_id": 54,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1303,
+            "relic_id": 13,
+            "level": 3,
+            "name": "レンジャー強化Lv.3",
+            "rarity": 1397969457,
+            "category": 201,
+            "ability_text": "レンジャーの会心率+20%、レンジャーの攻撃対象数+3",
+            "relic_talent_id": 0,
+            "ability_id": 55,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1501,
+            "relic_id": 15,
+            "level": 1,
+            "name": "アーチャー強化Lv.1",
+            "rarity": 21041,
+            "category": 201,
+            "ability_text": "アーチャーの攻撃対象数+1、攻撃力+30%",
+            "relic_talent_id": 0,
+            "ability_id": 59,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1502,
+            "relic_id": 15,
+            "level": 2,
+            "name": "アーチャー強化Lv.2",
+            "rarity": 5460529,
+            "category": 201,
+            "ability_text": "アーチャーの攻撃対象数+2、攻撃力+40%",
+            "relic_talent_id": 0,
+            "ability_id": 60,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1503,
+            "relic_id": 15,
+            "level": 3,
+            "name": "アーチャー強化Lv.3",
+            "rarity": 1397969457,
+            "category": 201,
+            "ability_text": "アーチャーの攻撃対象数+3、攻撃力+50%",
+            "relic_talent_id": 0,
+            "ability_id": 61,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1601,
+            "relic_id": 16,
+            "level": 1,
+            "name": "ガンナー強化Lv.1",
+            "rarity": 21041,
+            "category": 201,
+            "ability_text": "ガンナーの攻撃力、攻撃速度+30%",
+            "relic_talent_id": 0,
+            "ability_id": 62,
+            "starter_condition_id": 10,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1602,
+            "relic_id": 16,
+            "level": 2,
+            "name": "ガンナー強化Lv.2",
+            "rarity": 5460529,
+            "category": 201,
+            "ability_text": "ガンナーの攻撃力、攻撃速度+40%",
+            "relic_talent_id": 0,
+            "ability_id": 63,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1603,
+            "relic_id": 16,
+            "level": 3,
+            "name": "ガンナー強化Lv.3",
+            "rarity": 1397969457,
+            "category": 201,
+            "ability_text": "ガンナーの攻撃力、攻撃速度+50%",
+            "relic_talent_id": 0,
+            "ability_id": 64,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1801,
+            "relic_id": 18,
+            "level": 1,
+            "name": "アークメイジ強化Lv.1",
+            "rarity": 21041,
+            "category": 201,
+            "ability_text": "アークメイジの攻撃力+30%、ダメージ範囲+50%",
+            "relic_talent_id": 0,
+            "ability_id": 68,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1802,
+            "relic_id": 18,
+            "level": 2,
+            "name": "アークメイジ強化Lv.2",
+            "rarity": 5460529,
+            "category": 201,
+            "ability_text": "アークメイジの攻撃力+40%、ダメージ範囲+75%",
+            "relic_talent_id": 0,
+            "ability_id": 69,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1803,
+            "relic_id": 18,
+            "level": 3,
+            "name": "アークメイジ強化Lv.3",
+            "rarity": 1397969457,
+            "category": 201,
+            "ability_text": "アークメイジの攻撃力+50%、ダメージ範囲+150%",
+            "relic_talent_id": 0,
+            "ability_id": 70,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1901,
+            "relic_id": 19,
+            "level": 1,
+            "name": "クトゥルフの化身強化Lv.1",
+            "rarity": 21041,
+            "category": 301,
+            "ability_text": "クトゥルフの化身の攻撃範囲と攻撃力+50%、周囲の敵に攻撃力25%分の継続ダメージを与える",
+            "relic_talent_id": 0,
+            "ability_id": 71,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1902,
+            "relic_id": 19,
+            "level": 2,
+            "name": "クトゥルフの化身強化Lv.2",
+            "rarity": 5460529,
+            "category": 301,
+            "ability_text": "クトゥルフの化身の攻撃範囲と攻撃力+75%、周囲の敵に攻撃力50%分の継続ダメージを与える",
+            "relic_talent_id": 0,
+            "ability_id": 72,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 1903,
+            "relic_id": 19,
+            "level": 3,
+            "name": "クトゥルフの化身強化Lv.3",
+            "rarity": 1397969457,
+            "category": 301,
+            "ability_text": "クトゥルフの化身の攻撃範囲と攻撃力+100%、周囲の敵に攻撃力100%分の継続ダメージを与える",
+            "relic_talent_id": 0,
+            "ability_id": 73,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2101,
+            "relic_id": 21,
+            "level": 1,
+            "name": "敵物理被ダメ上昇",
+            "rarity": 1397969457,
+            "category": 401,
+            "ability_text": "敵が受ける物理のダメージ+20%",
+            "relic_talent_id": 0,
+            "ability_id": 77,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2301,
+            "relic_id": 23,
+            "level": 1,
+            "name": "敵攻撃低下",
+            "rarity": 1397969457,
+            "category": 401,
+            "ability_text": "敵の攻撃-20%",
+            "relic_talent_id": 0,
+            "ability_id": 79,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2401,
+            "relic_id": 24,
+            "level": 1,
+            "name": "敵最大耐久低下",
+            "rarity": 1397969457,
+            "category": 401,
+            "ability_text": "敵の最大耐久力-20%",
+            "relic_talent_id": 0,
+            "ability_id": 80,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2501,
+            "relic_id": 25,
+            "level": 1,
+            "name": "敵防御低下",
+            "rarity": 1397969457,
+            "category": 401,
+            "ability_text": "敵の物理防御と魔法防御-20%",
+            "relic_talent_id": 0,
+            "ability_id": 81,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2601,
+            "relic_id": 26,
+            "level": 1,
+            "name": "城壁最大耐久上昇",
+            "rarity": 21041,
+            "category": 501,
+            "ability_text": "城壁の最大耐久+50%",
+            "relic_talent_id": 2,
+            "ability_id": 0,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2602,
+            "relic_id": 26,
+            "level": 2,
+            "name": "城壁最大耐久上昇",
+            "rarity": 5460529,
+            "category": 501,
+            "ability_text": "城壁の最大耐久+75%",
+            "relic_talent_id": 3,
+            "ability_id": 0,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2603,
+            "relic_id": 26,
+            "level": 3,
+            "name": "城壁最大耐久上昇",
+            "rarity": 1397969457,
+            "category": 501,
+            "ability_text": "城壁の最大耐久+100%",
+            "relic_talent_id": 4,
+            "ability_id": 0,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2801,
+            "relic_id": 28,
+            "level": 1,
+            "name": "前衛魔法防御強化",
+            "rarity": 21041,
+            "category": 102,
+            "ability_text": "前衛の魔法防御力+150",
+            "relic_talent_id": 0,
+            "ability_id": 82,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2802,
+            "relic_id": 28,
+            "level": 2,
+            "name": "前衛魔法防御強化",
+            "rarity": 5460529,
+            "category": 102,
+            "ability_text": "前衛の魔法防御力+250",
+            "relic_talent_id": 0,
+            "ability_id": 83,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2803,
+            "relic_id": 28,
+            "level": 3,
+            "name": "前衛魔法防御強化",
+            "rarity": 1397969457,
+            "category": 102,
+            "ability_text": "前衛の魔法防御力+400",
+            "relic_talent_id": 0,
+            "ability_id": 84,
+            "starter_condition_id": 0,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        },
+        {
+            "unique_id": 2901,
+            "relic_id": 29,
+            "level": 1,
+            "name": "勝利時獲得コイン増加",
+            "rarity": 1397969457,
+            "category": 501,
+            "ability_text": "勝利時に獲得するアポカリプスコイン+30%",
+            "relic_talent_id": 6,
+            "ability_id": 0,
+            "starter_condition_id": 10,
+            "starter_condition_text": "",
+            "sp_mutate_table_id": 0
+        }
+    ]
 }
