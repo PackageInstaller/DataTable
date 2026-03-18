@@ -2,7 +2,6 @@ import os
 import sys
 import io
 import time
-import argparse
 import threading
 import contextlib
 import requests
@@ -28,7 +27,7 @@ from rich.progress import (
 
 console = Console()
 
-# API 获取版本号
+
 VERSION_API_URL = "https://api.cthulhu-rog.net/api/asset_bundle/version"
 VERSION_API_PAYLOAD = {"cvr": "1.0.2", "provider": "dmm"}
 VERSION_API_HEADERS = {
@@ -67,13 +66,9 @@ def xor_stream(data: bytes, key: bytes) -> bytes:
     return bytes(out)
 
 
-def decrypt_table_bytes(src_path: str) -> bytes | None:
+def decrypt_table_bytes(enc_data: bytes) -> bytes | None:
     FIRST32 = base_key("KYSSTMDL")
     FULL64 = FIRST32 + FIRST32[::-1]
-
-    with open(src_path, "rb") as f:
-        enc_data = f.read()
-
     return xor_stream(enc_data, FULL64)
 
 
@@ -229,23 +224,6 @@ def worker(
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(
-        description="资源下载与解密导出工具（基于 API JSON）",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-    )
-    ap.add_argument("-t", "--threads", type=int, default=MAX_THREADS, help="下载线程数")
-    ap.add_argument(
-        "-o",
-        "--output",
-        type=str,
-        default=DEFAULT_OUTPUT_DIR,
-        help="主输出目录(Assets)",
-    )
-    ap.add_argument(
-        "-f", "--force", action="store_true", help="强制重新下载已存在的文件"
-    )
-    args = ap.parse_args()
-
     sess = requests.Session()
     catalog_hash = fetch_catalog_hash(sess)
     if not catalog_hash:
@@ -267,7 +245,7 @@ def main() -> None:
     base_version = catalog_data.get("baseVersion", "1")
     assets = catalog_data.get("data", [])
 
-    output_dir = Path(args.output).resolve()
+    output_dir = Path(DEFAULT_OUTPUT_DIR).resolve()
     updates_dir = Path("Updates").resolve()
 
     is_first_run = True
@@ -292,7 +270,8 @@ def main() -> None:
     seen_paths = set()
 
     master_file_name = "c8fe981361f54d5d4315a3394281a458.bytes"
-    master_changed = False
+    master_bytes: bytes | None = None
+    master_info: tuple | None = None
 
     for asset in assets:
         rel_path = asset.get("path")
@@ -302,92 +281,119 @@ def main() -> None:
         if not rel_path or rel_path in seen_paths:
             continue
         seen_paths.add(rel_path)
-        # 只下载数据包，跳过其他资产，如果想要下载全资产，直接把下面的注释掉即可
-        if Path(rel_path).name != master_file_name:
+
+        is_master = Path(rel_path).name == master_file_name
+
+        # 只下载数据表，跳过其他资产，如果需要全资产，把这里注释掉
+        if not is_master:
             continue
 
         final_dest = output_dir / rel_path
-
         hash_matched = old_catalog_data.get(rel_path) == asset_hash
-        file_exists_and_size_matched = final_dest.exists() and (
-            expect_size == 0 or final_dest.stat().st_size == expect_size
-        )
+        needs_update = not hash_matched
+        if not is_master:
+            file_exists_and_size_matched = final_dest.exists() and (
+                expect_size == 0 or final_dest.stat().st_size == expect_size
+            )
+            if hash_matched and file_exists_and_size_matched:
+                continue
 
-        if not old_catalog_path.exists():
-            hash_matched = True
-
-        if rel_path == master_file_name:
-            if not hash_matched or not file_exists_and_size_matched:
-                master_changed = True
-
-        if not args.force and hash_matched and file_exists_and_size_matched:
-            continue
+        if not needs_update and is_master:
+            masterdata_out_dir = SCRIPT_DIR / "MasterData"
+            if masterdata_out_dir.exists():
+                continue
 
         download_filename = f"{asset_hash}{rel_path}"
         url = f"{BASE_URL}/ver_{base_version}/{PLATFORM_DIR}/{download_filename}"
 
-        if is_first_run:
-            download_dest = final_dest
+        if is_master:
+            master_info = (url, expect_size)
         else:
-            download_dest = updates_dir / rel_path
+            if is_first_run:
+                download_dest = final_dest
+            else:
+                download_dest = updates_dir / rel_path
+            tasks.append(
+                (url, str(download_dest), str(final_dest), expect_size, rel_path)
+            )
 
-        tasks.append((url, str(download_dest), str(final_dest), expect_size, rel_path))
+    if master_info:
+        url, expect_size = master_info
+        console.print(f"[cyan]正在下载数据表...[/cyan]")
+        try:
+            resp = sess.get(url, headers=DOWNLOAD_HEADERS, timeout=60)
+            resp.raise_for_status()
+            master_bytes = resp.content
+            if expect_size > 0 and len(master_bytes) != expect_size:
+                console.print(
+                    f"[red]数据表大小校验失败: {len(master_bytes)} != {expect_size}[/red]"
+                )
+                master_bytes = None
+        except Exception as e:
+            console.print(f"[red]下载数据表失败: {e}[/red]")
 
     total = len(tasks)
-    if total == 0:
+    if total == 0 and not master_bytes:
         console.print("[green]所有资源已是最新，无需下载。[/green]")
     else:
-        console.print(f"[cyan]共需下载 {total} 个文件[/cyan]")
-        download_failures: Dict[str, str] = {}
-        q: Queue = Queue()
-        for t in tasks:
-            q.put(t)
+        if total > 0:
+            console.print(f"[cyan]共需下载 {total} 个其他资产文件[/cyan]")
+            download_failures: Dict[str, str] = {}
+            q: Queue = Queue()
+            for t in tasks:
+                q.put(t)
 
-        lock = threading.Lock()
-        workers: List[threading.Thread] = []
-        progress = Progress(
-            SpinnerColumn(),
-            TextColumn("[progress.description]{task.description}"),
-            BarColumn(),
-            "[progress.percentage]{task.percentage:>3.0f}%",
-            TimeRemainingColumn(compact=True),
-            TimeElapsedColumn(),
-            console=console,
-            transient=True,
-        )
+            lock = threading.Lock()
+            workers: List[threading.Thread] = []
+            progress = Progress(
+                SpinnerColumn(),
+                TextColumn("[progress.description]{task.description}"),
+                BarColumn(),
+                "[progress.percentage]{task.percentage:>3.0f}%",
+                TimeRemainingColumn(compact=True),
+                TimeElapsedColumn(),
+                console=console,
+                transient=True,
+            )
 
-        with progress:
-            task_id = progress.add_task("[cyan]正在下载...[/cyan]", total=total)
-            for _ in range(min(args.threads, total)):
-                t = threading.Thread(
-                    target=worker,
-                    args=(q, progress, task_id, lock, download_failures),
-                    daemon=True,
+            with progress:
+                task_id = progress.add_task(
+                    "[cyan]正在下载其他资产...[/cyan]", total=total
                 )
-                t.start()
-                workers.append(t)
+                for _ in range(min(MAX_THREADS, total)):
+                    t = threading.Thread(
+                        target=worker,
+                        args=(q, progress, task_id, lock, download_failures),
+                        daemon=True,
+                    )
+                    t.start()
+                    workers.append(t)
 
-            q.join()
-            for _ in workers:
-                q.put(None)
-            for t in workers:
-                t.join()
+                q.join()
+                for _ in workers:
+                    q.put(None)
+                for t in workers:
+                    t.join()
 
-        if download_failures:
-            console.print(f"[yellow]失败 {len(download_failures)} 个文件[/yellow]")
+            if download_failures:
+                console.print(f"[yellow]失败 {len(download_failures)} 个文件[/yellow]")
 
     ensure_dir(str(old_catalog_path))
     with open(old_catalog_path, "wb") as f:
         f.write(catalog_bytes)
 
-    master_file_path = output_dir / master_file_name
     masterdata_out_dir = SCRIPT_DIR / "MasterData"
-    if master_file_path.exists() and (
-        master_changed or not masterdata_out_dir.exists() or is_first_run
-    ):
-        decrypted_bytes = decrypt_table_bytes(str(master_file_path))
+    if master_bytes:
+        decrypted_bytes = decrypt_table_bytes(master_bytes)
         if decrypted_bytes:
             extract_master_data(decrypted_bytes, str(masterdata_out_dir))
+    elif not masterdata_out_dir.exists():
+        master_file_path = output_dir / master_file_name
+        if master_file_path.exists():
+            with open(master_file_path, "rb") as f:
+                decrypted_bytes = decrypt_table_bytes(f.read())
+            if decrypted_bytes:
+                extract_master_data(decrypted_bytes, str(masterdata_out_dir))
 
 
 if __name__ == "__main__":
