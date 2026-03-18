@@ -34,6 +34,12 @@ PLATFORM_DIR = "android_r18"
 MAX_THREADS = 16
 DEFAULT_OUTPUT_DIR = "Assets"
 
+
+FIXED_ADVSCENE_ASSETS = {
+    "advscene-scenariochapter-config.chapter",  # AdvScene/ScenarioChapter/config.chapter.asset
+    "advscene-scenarioexcel-option.book",       # AdvScene/ScenarioExcel/option.book.asset
+}
+
 master_file_names = {
     "c8fe981361f54d5d4315a3394281a458.bytes",  # MasterData/Data
     "01cca872ea5621dcd6457b12ee93f940.bytes",  # MasterData/Message
@@ -46,6 +52,7 @@ master_file_names = {
 
 def get_md5_string(source: str) -> str:
     return hashlib.md5(source.encode("utf-8")).hexdigest()
+
 
 def base_key(src: str) -> bytes:
     s2 = bytes(b ^ 0x55 for b in src.encode("ascii"))
@@ -77,21 +84,21 @@ def decrypt_table_bytes(enc_data: bytes) -> bytes | None:
 
 def decode_obscured_data(obj: Any) -> Any:
     if isinstance(obj, dict):
-        if 'hiddenChars' in obj and isinstance(obj['hiddenChars'], list):
-            return "".join(chr(c) for c in obj['hiddenChars'])
-        
-        if 'hiddenValue' in obj and 'currentCryptoKey' in obj:
-            hidden_val = obj['hiddenValue']
-            crypto_key = obj['currentCryptoKey']
+        if "hiddenChars" in obj and isinstance(obj["hiddenChars"], list):
+            return "".join(chr(c) for c in obj["hiddenChars"])
+
+        if "hiddenValue" in obj and "currentCryptoKey" in obj:
+            hidden_val = obj["hiddenValue"]
+            crypto_key = obj["currentCryptoKey"]
 
             if isinstance(hidden_val, int) and isinstance(crypto_key, int):
                 return (hidden_val - crypto_key) ^ crypto_key
 
         return {k: decode_obscured_data(v) for k, v in obj.items()}
-        
+
     elif isinstance(obj, list):
         return [decode_obscured_data(item) for item in obj]
-        
+
     else:
         return obj
 
@@ -107,7 +114,7 @@ def extract_master_data(bundle_data: bytes, output_dir: str) -> None:
         return
 
     env = UnityPy.load(bundle_data)
-    
+
     obj_to_container = {}
     for container_path, obj in env.container.items():
         obj_to_container[obj.path_id] = container_path
@@ -130,7 +137,7 @@ def extract_master_data(bundle_data: bytes, output_dir: str) -> None:
                 if container_path:
                     idx = container_path.lower().find("masterdata/")
                     if idx != -1:
-                        after_masterdata = container_path[idx + len("masterdata/"):]
+                        after_masterdata = container_path[idx + len("masterdata/") :]
                         sub_dir = os.path.dirname(after_masterdata)
 
                 final_dir = os.path.join(output_dir, sub_dir) if sub_dir else output_dir
@@ -150,7 +157,6 @@ def extract_master_data(bundle_data: bytes, output_dir: str) -> None:
 
 
 def extract_advscene_data(bundle_data: bytes, output_base_dir: str) -> None:
-    """从剧情包中提取 AdvScene 剧情设定到 JSON"""
     try:
         import UnityPy
         from UnityPy.enums import ClassIDType
@@ -188,7 +194,7 @@ def extract_advscene_data(bundle_data: bytes, output_base_dir: str) -> None:
             if container_path:
                 idx = container_path.lower().find("advscene/")
                 if idx != -1:
-                    after_keyword = container_path[idx + len("advscene/"):]
+                    after_keyword = container_path[idx + len("advscene/") :]
                     sub_dir = os.path.dirname(after_keyword)
 
             final_dir = (
@@ -218,9 +224,7 @@ def scan_masterdata_for_scenario_names(master_dir: Path) -> Set[str]:
             if not f.endswith(".json"):
                 continue
             try:
-                with open(
-                    os.path.join(root, f), "r", encoding="utf-8"
-                ) as file:
+                with open(os.path.join(root, f), "r", encoding="utf-8") as file:
                     data = json.load(file)
 
                     def find_scenario_names(obj: Any) -> None:
@@ -287,7 +291,6 @@ def fetch_catalog_bytes(session: requests.Session, catalog_hash: str) -> bytes |
         return None
 
 
-
 def download_one(
     session: requests.Session,
     url: str,
@@ -350,7 +353,6 @@ def run_download_workers(
     tasks: List[Tuple[str, str, str, int, str]],
     desc: str = "正在下载...",
 ) -> Dict[str, str]:
-    """多线程下载任务，返回失败记录"""
     download_failures: Dict[str, str] = {}
     total = len(tasks)
     if total == 0:
@@ -470,9 +472,7 @@ def main() -> None:
 
     master_bytes_list: List[Tuple[str, bytes]] = []
     if master_info_list:
-        console.print(
-            f"[cyan]正在下载 {len(master_info_list)} 个数据表文件...[/cyan]"
-        )
+        console.print(f"[cyan]正在下载 {len(master_info_list)} 个数据表文件...[/cyan]")
         for rel_path, url, expect_size in master_info_list:
             try:
                 resp = sess.get(url, timeout=60)
@@ -509,14 +509,14 @@ def main() -> None:
     for sn in scenario_names:
         asset_name = f"advscene-scenarioexcel-{sn.lower()}.book"
         target_advscene_files.add(f"{get_md5_string(asset_name)}.bytes")
+    for fixed_name in FIXED_ADVSCENE_ASSETS:
+        target_advscene_files.add(f"{get_md5_string(fixed_name)}.bytes")
 
     advscene_tasks = [
-        t for t in other_asset_infos
-        if Path(t[4]).name in target_advscene_files
+        t for t in other_asset_infos if Path(t[4]).name in target_advscene_files
     ]
     other_tasks = [
-        t for t in other_asset_infos
-        if Path(t[4]).name not in target_advscene_files
+        t for t in other_asset_infos if Path(t[4]).name not in target_advscene_files
     ]
     files_to_extract = [
         str(output_dir / a.get("path"))
@@ -525,9 +525,7 @@ def main() -> None:
     ]
 
     if advscene_tasks:
-        console.print(
-            f"[cyan]正在下载 {len(advscene_tasks)} 个剧情包...[/cyan]"
-        )
+        console.print(f"[cyan]正在下载 {len(advscene_tasks)} 个剧情包...[/cyan]")
         fails = run_download_workers(advscene_tasks, "正在下载剧情包...")
         if fails:
             console.print(f"[yellow]失败 {len(fails)} 个剧情文件[/yellow]")
@@ -548,9 +546,7 @@ def main() -> None:
             )
 
     if other_tasks:
-        console.print(
-            f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]"
-        )
+        console.print(f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]")
         fails = run_download_workers(other_tasks, "正在下载其他资产...")
         if fails:
             console.print(f"[yellow]失败 {len(fails)} 个文件[/yellow]")
