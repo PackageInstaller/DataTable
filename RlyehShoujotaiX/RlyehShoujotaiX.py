@@ -28,11 +28,19 @@ from rich.progress import (
 
 console = Console()
 
-# 自己获取
-CATALOG_HASH = ""
+# API 获取版本号
+VERSION_API_URL = "https://api.cthulhu-rog.net/api/asset_bundle/version"
+VERSION_API_PAYLOAD = {"cvr": "1.0.2", "provider": "dmm"}
+VERSION_API_HEADERS = {
+    "User-Agent": "UnityPlayer/6000.3.5f2 (UnityWebRequest/1.0, libcurl/8.10.1-DEV)",
+    "Accept": "application/json",
+    "Accept-Encoding": "deflate, gzip",
+    "Content-Type": "application/json",
+    "x-unity-version": "6000.3.5f2",
+}
+
 BASE_URL = "https://assets.cthulhu-rog.net/assetbundles/production"
 PLATFORM_DIR = "android_r18"
-CATALOG_URL = f"{BASE_URL}/{CATALOG_HASH}/{PLATFORM_DIR}/ablist.json"
 MAX_THREADS = 16
 DEFAULT_OUTPUT_DIR = "Assets"
 
@@ -120,10 +128,36 @@ def ensure_dir(fp: str) -> None:
     os.makedirs(os.path.dirname(fp), exist_ok=True)
 
 
-def fetch_catalog_bytes(session: requests.Session) -> bytes | None:
+def fetch_catalog_hash(session: requests.Session) -> str | None:
+    """从版本 API 获取 catalog hash（data.version 中 production/ 后面的部分）"""
+    try:
+        resp = session.post(
+            VERSION_API_URL,
+            data=json.dumps(VERSION_API_PAYLOAD),
+            headers=VERSION_API_HEADERS,
+            timeout=30,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("status", {}).get("code") != 1:
+            console.print(f"[red]版本 API 返回错误: {data}[/red]")
+            return None
+        version = data.get("data", {}).get("version", "")
+        if not version:
+            console.print("[red]版本 API 未返回 version 字段[/red]")
+            return None
+        catalog_hash = version.split("/")[-1] if "/" in version else version
+        return catalog_hash
+    except Exception as e:
+        console.print(f"[red]获取版本号失败: {e}[/red]")
+        return None
+
+
+def fetch_catalog_bytes(session: requests.Session, catalog_hash: str) -> bytes | None:
+    catalog_url = f"{BASE_URL}/{catalog_hash}/{PLATFORM_DIR}/ablist.json"
     headers = {"User-Agent": "UnityPlayer/2022.3 (UnityWebRequest/1.0, libcurl/8.4.0)"}
     try:
-        resp = session.get(CATALOG_URL, headers=headers, timeout=30)
+        resp = session.get(catalog_url, headers=headers, timeout=30)
         resp.raise_for_status()
         return resp.content
     except Exception as e:
@@ -212,9 +246,13 @@ def main() -> None:
     )
     args = ap.parse_args()
 
-    console.print(f"[cyan]catalog: {CATALOG_URL}...[/cyan]")
     sess = requests.Session()
-    catalog_bytes = fetch_catalog_bytes(sess)
+    catalog_hash = fetch_catalog_hash(sess)
+    if not catalog_hash:
+        sess.close()
+        sys.exit(1)
+    console.print(f"[cyan]catalog hash: {catalog_hash}[/cyan]")
+    catalog_bytes = fetch_catalog_bytes(sess, catalog_hash)
     sess.close()
 
     if not catalog_bytes:
@@ -264,6 +302,9 @@ def main() -> None:
         if not rel_path or rel_path in seen_paths:
             continue
         seen_paths.add(rel_path)
+        # 只下载数据包，跳过其他资产，如果想要下载全资产，直接把下面的注释掉即可
+        if Path(rel_path).name != master_file_name:
+            continue
 
         final_dest = output_dir / rel_path
 
