@@ -86,5 +86,34 @@
         "PrivilegeIcon": "ui/atlas/bpcard/bpcard_icon_honor_coin",
         "IsShowAccelerated": false,
         "Sort": 1
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "Note": "荣誉币加成20%",
+        "PrivilegeConfig": [
+            [
+                1,
+                10006,
+                2000
+            ]
+        ],
+        "PrivilegeIcon": "",
+        "IsShowAccelerated": false,
+        "Sort": 0
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "Note": "活跃度加成20%",
+        "PrivilegeConfig": [
+            [
+                2,
+                2000
+            ]
+        ],
+        "PrivilegeIcon": "",
+        "IsShowAccelerated": false,
+        "Sort": 0
     }
 }

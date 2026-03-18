@@ -149,7 +149,7 @@
     "100601": {
         "Key": 100601,
         "Id": 100601,
-        "Title": "情感动作入口",
+        "Title": "使用情感动作入口-移动端",
         "SystemPlace": [
             2
         ],
@@ -170,7 +170,7 @@
     "100605": {
         "Key": 100605,
         "Id": 100605,
-        "Title": "情感动作PC端入口",
+        "Title": "使用情感动作入口-PC端",
         "SystemPlace": [
             0
         ],
@@ -187,6 +187,27 @@
         "Icon": "ui/atlas/mainui/main_btn_emo_lobby",
         "PCIcon": "ui/atlas/esc_icon/esc_icon_action_normal",
         "Path": ""
+    },
+    "100607": {
+        "Key": 100607,
+        "Id": 100607,
+        "Title": "情感动作图鉴",
+        "SystemPlace": [
+            4
+        ],
+        "PCSystemPlace": [
+            4
+        ],
+        "GroupId": 3,
+        "MobileGroupId": 1,
+        "EnlargeIcon": false,
+        "PCEnlargeIcon": false,
+        "SortId": 23,
+        "PCSortId": 23,
+        "Atlas": "",
+        "Icon": "ui/atlas/esc_icon/esc_action_editor",
+        "PCIcon": "ui/atlas/esc_icon/esc_action_editor",
+        "Path": "sys_main_funcs_in"
     },
     "100701": {
         "Key": 100701,
@@ -395,6 +416,90 @@
         "Atlas": "",
         "Icon": "ui/atlas/mainui/main_btn_home",
         "PCIcon": "ui/atlas/mainui/main_btn_home",
+        "Path": "sys_main_setting_in"
+    },
+    "102515": {
+        "Key": 102515,
+        "Id": 102515,
+        "Title": "家园蓝图",
+        "SystemPlace": [
+            3
+        ],
+        "PCSystemPlace": [
+            3
+        ],
+        "GroupId": 0,
+        "MobileGroupId": 0,
+        "EnlargeIcon": false,
+        "PCEnlargeIcon": false,
+        "SortId": 0,
+        "PCSortId": 0,
+        "Atlas": "",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_271",
+        "PCIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_271",
+        "Path": "sys_main_setting_in"
+    },
+    "102516": {
+        "Key": 102516,
+        "Id": 102516,
+        "Title": "保存",
+        "SystemPlace": [
+            3
+        ],
+        "PCSystemPlace": [
+            3
+        ],
+        "GroupId": 0,
+        "MobileGroupId": 0,
+        "EnlargeIcon": false,
+        "PCEnlargeIcon": false,
+        "SortId": 0,
+        "PCSortId": 0,
+        "Atlas": "",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_270",
+        "PCIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_270",
+        "Path": "sys_main_setting_in"
+    },
+    "102517": {
+        "Key": 102517,
+        "Id": 102517,
+        "Title": "家具列表",
+        "SystemPlace": [
+            3
+        ],
+        "PCSystemPlace": [
+            3
+        ],
+        "GroupId": 0,
+        "MobileGroupId": 0,
+        "EnlargeIcon": false,
+        "PCEnlargeIcon": false,
+        "SortId": 0,
+        "PCSortId": 0,
+        "Atlas": "",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_277",
+        "PCIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_277",
+        "Path": "sys_main_setting_in"
+    },
+    "102518": {
+        "Key": 102518,
+        "Id": 102518,
+        "Title": "退出预览",
+        "SystemPlace": [
+            3
+        ],
+        "PCSystemPlace": [
+            3
+        ],
+        "GroupId": 0,
+        "MobileGroupId": 0,
+        "EnlargeIcon": false,
+        "PCEnlargeIcon": false,
+        "SortId": 0,
+        "PCSortId": 0,
+        "Atlas": "",
+        "Icon": "ui/atlas/item/c_tab_icon/com_icon_tab_272",
+        "PCIcon": "ui/atlas/item/c_tab_icon/com_icon_tab_272",
         "Path": "sys_main_setting_in"
     },
     "102800": {
@@ -1029,5 +1134,26 @@
         "Icon": "ui/atlas/esc_icon/esc_icon_questionnaire_normal",
         "PCIcon": "ui/atlas/esc_icon/esc_icon_questionnaire_normal",
         "Path": "sys_main_search_in"
+    },
+    "1100001": {
+        "Key": 1100001,
+        "Id": 1100001,
+        "Title": "乐队演奏",
+        "SystemPlace": [
+            4
+        ],
+        "PCSystemPlace": [
+            4
+        ],
+        "GroupId": 5,
+        "MobileGroupId": 1,
+        "EnlargeIcon": false,
+        "PCEnlargeIcon": false,
+        "SortId": 17,
+        "PCSortId": 17,
+        "Atlas": "",
+        "Icon": "ui/atlas/esc_icon/esc_icon_fish",
+        "PCIcon": "ui/atlas/esc_icon/esc_icon_fish",
+        "Path": "sys_main_funcs_in"
     }
 }

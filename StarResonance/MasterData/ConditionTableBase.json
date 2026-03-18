@@ -938,5 +938,145 @@
         "RefreshNum": "1已开启，0未开启",
         "FailureMessage": 0,
         "ShowPurview": ""
+    },
+    "113": {
+        "Key": 113,
+        "Type": 113,
+        "Param": "是否在巡游队伍中",
+        "ImplStatus": 1,
+        "Example": "113=1",
+        "RefreshNum": "0不在巡游，1在巡游队伍中",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "114": {
+        "Key": 114,
+        "Type": 114,
+        "Param": "跳层层数大于等于某层",
+        "ImplStatus": 2,
+        "Example": "114=0",
+        "RefreshNum": "当前跳层>0",
+        "FailureMessage": 1005903,
+        "ShowPurview": ""
+    },
+    "115": {
+        "Key": 115,
+        "Type": 115,
+        "Param": "爬塔跳层奖励是否领取完了",
+        "ImplStatus": 2,
+        "Example": "115=0",
+        "RefreshNum": "0未领取完，1领取完了",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "116": {
+        "Key": 116,
+        "Type": 116,
+        "Param": "是否贴地（未知改变不会刷新，需走远返回触发交互才刷新）",
+        "ImplStatus": 1,
+        "Example": "116",
+        "RefreshNum": "无需参数，是贴地",
+        "FailureMessage": 1044036,
+        "ShowPurview": ""
+    },
+    "117": {
+        "Key": 117,
+        "Type": 117,
+        "Param": "是否XZ轴旋转=0（未知改变不会刷新，需走远返回触发交互才刷新）",
+        "ImplStatus": 1,
+        "Example": "117",
+        "RefreshNum": "无需参数，是xz旋转=0",
+        "FailureMessage": 1044037,
+        "ShowPurview": ""
+    },
+    "118": {
+        "Key": 118,
+        "Type": 118,
+        "Param": "肉鸽职业",
+        "ImplStatus": 0,
+        "Example": "118=1",
+        "RefreshNum": "判断词条id=词条配置的职业id是否符合玩家当前职业（返回ture/false）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "119": {
+        "Key": 119,
+        "Type": 119,
+        "Param": "肉鸽流派",
+        "ImplStatus": 0,
+        "Example": "119=1=1=10",
+        "RefreshNum": "判断流派id=（词条配置的流派id数量）大于等于/小于=玩家需要拥有该流派的词条数量（1是大于等于，0是小于）",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "120": {
+        "Key": 120,
+        "Type": 120,
+        "Param": "背包空间是否足够",
+        "ImplStatus": 1,
+        "Example": "120=1=5",
+        "RefreshNum": "120=容器id=剩余空位数量，当指定容器实际剩余空位数量>5时通过，<=5时不满足条件",
+        "FailureMessage": 1004017,
+        "ShowPurview": ""
+    },
+    "121": {
+        "Key": 121,
+        "Type": 121,
+        "Param": "在磁吸跟随乘客中",
+        "ImplStatus": 1,
+        "Example": "121=1",
+        "RefreshNum": "1满足条件，0不满足",
+        "FailureMessage": 5712,
+        "ShowPurview": ""
+    },
+    "122": {
+        "Key": 122,
+        "Type": 122,
+        "Param": "当前不在视野层级中",
+        "ImplStatus": 0,
+        "Example": "122=0",
+        "RefreshNum": "判断不在视野层级ID=视野层级ID",
+        "FailureMessage": 100124,
+        "ShowPurview": ""
+    },
+    "123": {
+        "Key": 123,
+        "Type": 123,
+        "Param": "交互对象的巡游队列长度是否小于上限",
+        "ImplStatus": 0,
+        "Example": "123=50",
+        "RefreshNum": "123=长度上限",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "124": {
+        "Key": 124,
+        "Type": 124,
+        "Param": "指定喵特赏是否已搬空",
+        "ImplStatus": 0,
+        "Example": "124=1001=1",
+        "RefreshNum": "类型ID=奖池ID=1（1表示已搬空，0表示未搬空）",
+        "FailureMessage": 0,
+        "ShowPurview": "{*val*}奖池被抽光"
+    },
+    "125": {
+        "Key": 125,
+        "Type": 125,
+        "Param": "大世界场景玩法状态",
+        "ImplStatus": 0,
+        "Example": "125=1002=1",
+        "RefreshNum": "125=活动ID=场景玩法状态，1等待状态，2即将开启 3进行 4结束 5结算",
+        "FailureMessage": 0,
+        "ShowPurview": ""
+    },
+    "126": {
+        "Key": 126,
+        "Type": 126,
+        "Param": "是否激活通行证",
+        "ImplStatus": 0,
+        "Example": "126=1",
+        "RefreshNum": "126=是否激活，1激活，2没激活",
+        "FailureMessage": 0,
+        "ShowPurview": ""
     }
 }

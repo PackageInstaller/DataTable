@@ -104,7 +104,7 @@
             7886
         ],
         "DungeonId": 7055,
-        "Type": 2,
+        "Type": 1,
         "TimerId": 683,
         "Award": 11000010,
         "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_2"
@@ -170,7 +170,7 @@
             21000
         ],
         "DungeonId": 7072,
-        "Type": 0,
+        "Type": 2,
         "TimerId": 0,
         "Award": 11000010,
         "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_10"
@@ -302,9 +302,141 @@
             18728
         ],
         "DungeonId": 7095,
-        "Type": 2,
+        "Type": 3,
         "TimerId": 682,
         "Award": 11000010,
         "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_9"
+    },
+    "8001": {
+        "Key": 8001,
+        "EventId": 8001,
+        "Name": "机像巡防战",
+        "Desc": "虽然人类还没搞明白机像怎么启动，但民间专家照着遗产仿了几台出来……号称威力可达原版的66%。请协助测试，击退裂隙中的怪物。",
+        "Target": [
+            1,
+            1,
+            0,
+            8001
+        ],
+        "Scene": 9,
+        "Entity": [
+            3,
+            3913
+        ],
+        "DungeonId": 8001,
+        "Type": 4,
+        "TimerId": 681,
+        "Award": 11000030,
+        "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_13"
+    },
+    "8002": {
+        "Key": 8002,
+        "EventId": 8002,
+        "Name": "机像钢拳战",
+        "Desc": "为验证仿制机像的近战性能，民间遗产专家发起了实战测试。击退裂隙中的强敌，完成最终评估。",
+        "Target": [
+            1,
+            1,
+            0,
+            8002
+        ],
+        "Scene": 9,
+        "Entity": [
+            3,
+            3915
+        ],
+        "DungeonId": 8002,
+        "Type": 4,
+        "TimerId": 681,
+        "Award": 11000030,
+        "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_14"
+    },
+    "8005": {
+        "Key": 8005,
+        "EventId": 8005,
+        "Name": "快递紧急运输：高地篇",
+        "Desc": "运货员在高原地带遭遇突发阻碍，请冒险者们护送物资继续前行，确保路线畅通。",
+        "Target": [
+            1,
+            1,
+            0,
+            8005
+        ],
+        "Scene": 9,
+        "Entity": [
+            3,
+            3918
+        ],
+        "DungeonId": 8005,
+        "Type": 5,
+        "TimerId": 681,
+        "Award": 11000030,
+        "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_12"
+    },
+    "8006": {
+        "Key": 8006,
+        "EventId": 8006,
+        "Name": "快递紧急运输：山地篇",
+        "Desc": "崎岖的山地路线上再度生变，请冒险者们协助运货员穿越险途，将物资安全送达。",
+        "Target": [
+            1,
+            1,
+            0,
+            8006
+        ],
+        "Scene": 9,
+        "Entity": [
+            3,
+            3921
+        ],
+        "DungeonId": 8006,
+        "Type": 5,
+        "TimerId": 681,
+        "Award": 11000030,
+        "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_12"
+    },
+    "8020": {
+        "Key": 8020,
+        "EventId": 8020,
+        "Name": "纷争裁定：其一",
+        "Desc": "当怪物内部产生矛盾时，它们会邀请强者介入。选择立场，协助一方压制对手，结束这场纷争。",
+        "Target": [
+            1,
+            1,
+            0,
+            8020
+        ],
+        "Scene": 9,
+        "Entity": [
+            3,
+            3924
+        ],
+        "DungeonId": 8020,
+        "Type": 6,
+        "TimerId": 681,
+        "Award": 11000030,
+        "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_15"
+    },
+    "8021": {
+        "Key": 8021,
+        "EventId": 8021,
+        "Name": "纷争裁定：其二",
+        "Desc": "纷争再次出现！这一次，双方都希望借助你的力量。选定阵营，直接参战，让冲突在压制中落幕。",
+        "Target": [
+            1,
+            1,
+            0,
+            8021
+        ],
+        "Scene": 9,
+        "Entity": [
+            3,
+            3927
+        ],
+        "DungeonId": 8021,
+        "Type": 6,
+        "TimerId": 681,
+        "Award": 11000030,
+        "EventBanner": "ui/textures/worldquest/dungeon_worldevent_picture_15"
     }
 }

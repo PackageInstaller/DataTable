@@ -295,6 +295,57 @@
             9007
         ]
     },
+    "200111": {
+        "Key": 200111,
+        "Id": 200111,
+        "Question": "村民对神秘海百合的看法是？",
+        "Answer": [
+            1,
+            2
+        ],
+        "QuestionBubble": "看看村民怎么想。",
+        "QuestionBubbleAction": 9033,
+        "WrongBubble": [
+            "这里不是重要线索……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "200112": {
+        "Key": 200112,
+        "Id": 200112,
+        "Question": "商人提供了哪些线索？",
+        "Answer": [
+            3,
+            4
+        ],
+        "QuestionBubble": "商人会有可靠的情报吗？",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "这里不是重要线索……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "200113": {
+        "Key": 200113,
+        "Id": 200113,
+        "Question": "巡礼者对神秘海百合的看法是？",
+        "Answer": [
+            5,
+            6
+        ],
+        "QuestionBubble": "还剩下最后一人的情报了。",
+        "QuestionBubbleAction": 9026,
+        "WrongBubble": [
+            "这里不是重要线索……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
     "200201": {
         "Key": 200201,
         "Id": 200201,
@@ -706,6 +757,223 @@
             "好像哪里不对……",
             "可恶！没有头绪！",
             "还是再仔细想想吧……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000111": {
+        "Key": 1000111,
+        "Id": 1000111,
+        "Question": "委托人提供的线索是正确的吗？",
+        "Answer": [
+            1
+        ],
+        "QuestionBubble": "得从中抽取有用的信息才行啊……",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "好像哪里不对……",
+            "可恶！没有头绪！",
+            "还是再仔细想想吧……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000112": {
+        "Key": 1000112,
+        "Id": 1000112,
+        "Question": "莓色果在月影之野吗？",
+        "Answer": [
+            2,
+            3
+        ],
+        "QuestionBubble": "还不够啊。",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "好像哪里不对……",
+            "可恶！没有头绪！",
+            "还是再仔细想想吧……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000113": {
+        "Key": 1000113,
+        "Id": 1000113,
+        "Question": "至今没有人见过莓色果，它到底在哪里？",
+        "Answer": [
+            4,
+            5,
+            6
+        ],
+        "QuestionBubble": "结论就快出来了！",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，再想想……",
+            "可恶！没有头绪！"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000211": {
+        "Key": 1000211,
+        "Id": 1000211,
+        "Question": "谁见过莓色果？",
+        "Answer": [
+            1
+        ],
+        "QuestionBubble": "得从中抽取有用的信息才行啊……",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "好像哪里不对……",
+            "可恶！没有头绪！",
+            "还是再仔细想想吧……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000212": {
+        "Key": 1000212,
+        "Id": 1000212,
+        "Question": "贝克马尔运输站是否存在莓色果？",
+        "Answer": [
+            2,
+            3
+        ],
+        "QuestionBubble": "还不够啊。",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，再想想……",
+            "可恶！没有头绪！"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000213": {
+        "Key": 1000213,
+        "Id": 1000213,
+        "Question": "乐团粉丝得病与莓色果有关吗？",
+        "Answer": [
+            4,
+            5
+        ],
+        "QuestionBubble": "结论就快出来了！",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，再想想……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000311": {
+        "Key": 1000311,
+        "Id": 1000311,
+        "Question": "年轻矿工的态度？",
+        "Answer": [
+            1
+        ],
+        "QuestionBubble": "得从中抽取有用的信息才行啊……",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "好像哪里不对……",
+            "可恶！没有头绪！",
+            "还是再仔细想想吧……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000312": {
+        "Key": 1000312,
+        "Id": 1000312,
+        "Question": "年长矿工的态度？",
+        "Answer": [
+            2,
+            3
+        ],
+        "QuestionBubble": "还不够啊。",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，再想想……",
+            "可恶！没有头绪！"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000313": {
+        "Key": 1000313,
+        "Id": 1000313,
+        "Question": "与班哈尔特人成家的矿工的态度？",
+        "Answer": [
+            4
+        ],
+        "QuestionBubble": "结论就快出来了！",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，再想想……"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000411": {
+        "Key": 1000411,
+        "Id": 1000411,
+        "Question": "「名单」在这条流程里，究竟扮演什么角色？",
+        "Answer": [
+            1,
+            2
+        ],
+        "QuestionBubble": "或许继续调查会比较好……",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，线索对不上。",
+            "再想想吧，思绪乱了。"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000412": {
+        "Key": 1000412,
+        "Id": 1000412,
+        "Question": "「塔」与「王冠」意味着什么？",
+        "Answer": [
+            3,
+            4,
+            5
+        ],
+        "QuestionBubble": "假设名单存在，那非常可能在「塔」里。",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，线索对不上。",
+            "再想想吧，思绪乱了。"
+        ],
+        "WrongBubbleAction": [
+            9007
+        ]
+    },
+    "1000413": {
+        "Key": 1000413,
+        "Id": 1000413,
+        "Question": "想要找到「王冠」的话，下一步应该怎么走？",
+        "Answer": [
+            6,
+            7,
+            8
+        ],
+        "QuestionBubble": "想要找到名单，还是得顺着足迹进入塔中调查。",
+        "QuestionBubbleAction": 9047,
+        "WrongBubble": [
+            "不对，线索对不上。",
+            "再想想吧，思绪乱了。"
         ],
         "WrongBubbleAction": [
             9007

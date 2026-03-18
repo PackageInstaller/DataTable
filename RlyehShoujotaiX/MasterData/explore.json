@@ -1,0 +1,2759 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 2407057940768705765
+  },
+  "m_Name": "explore",
+  "records": [
+    {
+      "id": 1,
+      "rank": 1,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 500,
+          "m_exploreTime": 1,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 800,
+          "m_exploreTime": 2,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1000,
+          "m_exploreTime": 4,
+          "m_probability": 40
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "rank": 1,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 1500,
+          "m_exploreTime": 1,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 2500,
+          "m_exploreTime": 2,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 3100,
+          "m_exploreTime": 4,
+          "m_probability": 30
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "rank": 1,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 110,
+          "m_exploreTime": 2,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 130,
+          "m_exploreTime": 4,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "rank": 1,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1,
+          "m_exploreTime": 4,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "rank": 1,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 10,
+          "m_exploreTime": 4,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "rank": 2,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 500,
+          "m_exploreTime": 1,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 800,
+          "m_exploreTime": 2,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1000,
+          "m_exploreTime": 4,
+          "m_probability": 40
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "rank": 2,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 1500,
+          "m_exploreTime": 1,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 2500,
+          "m_exploreTime": 2,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 3100,
+          "m_exploreTime": 4,
+          "m_probability": 30
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "rank": 2,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 110,
+          "m_exploreTime": 2,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 130,
+          "m_exploreTime": 4,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "rank": 2,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1,
+          "m_exploreTime": 4,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "rank": 2,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 10,
+          "m_exploreTime": 4,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "rank": 3,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 500,
+          "m_exploreTime": 1,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 800,
+          "m_exploreTime": 2,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1000,
+          "m_exploreTime": 4,
+          "m_probability": 40
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "rank": 3,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 1500,
+          "m_exploreTime": 1,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 2500,
+          "m_exploreTime": 2,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 3100,
+          "m_exploreTime": 4,
+          "m_probability": 30
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "rank": 3,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 110,
+          "m_exploreTime": 2,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 130,
+          "m_exploreTime": 4,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "rank": 3,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1,
+          "m_exploreTime": 4,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "rank": 3,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 10,
+          "m_exploreTime": 4,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "rank": 4,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 800,
+          "m_exploreTime": 2,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1000,
+          "m_exploreTime": 4,
+          "m_probability": 40
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1200,
+          "m_exploreTime": 6,
+          "m_probability": 36
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "rank": 4,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 2500,
+          "m_exploreTime": 2,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 3100,
+          "m_exploreTime": 4,
+          "m_probability": 30
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3600,
+          "m_exploreTime": 6,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "rank": 4,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 110,
+          "m_exploreTime": 2,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 130,
+          "m_exploreTime": 4,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 150,
+          "m_exploreTime": 6,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "rank": 4,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1,
+          "m_exploreTime": 4,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3,
+          "m_exploreTime": 6,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "rank": 4,
+      "name": "投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_1h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "rank": 4,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 20,
+          "m_exploreTime": 6,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "rank": 4,
+      "name": "邪神様の怒りを鎮める",
+      "reward_category": "ticket",
+      "reward_name": "gacha_common",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 1
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "rank": 5,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 800,
+          "m_exploreTime": 2,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1000,
+          "m_exploreTime": 4,
+          "m_probability": 40
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1200,
+          "m_exploreTime": 6,
+          "m_probability": 36
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "rank": 5,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 50
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 2500,
+          "m_exploreTime": 2,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 3100,
+          "m_exploreTime": 4,
+          "m_probability": 30
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3600,
+          "m_exploreTime": 6,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "rank": 5,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 110,
+          "m_exploreTime": 2,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 130,
+          "m_exploreTime": 4,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 150,
+          "m_exploreTime": 6,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "rank": 5,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1,
+          "m_exploreTime": 4,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3,
+          "m_exploreTime": 6,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "rank": 5,
+      "name": "投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_1h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 4,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "rank": 5,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 20,
+          "m_exploreTime": 6,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "rank": 5,
+      "name": "邪神様の怒りを鎮める",
+      "reward_category": "ticket",
+      "reward_name": "gacha_common",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 1
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "rank": 6,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1000,
+          "m_exploreTime": 4,
+          "m_probability": 40
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1200,
+          "m_exploreTime": 6,
+          "m_probability": 36
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1400,
+          "m_exploreTime": 8,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "rank": 6,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 3100,
+          "m_exploreTime": 4,
+          "m_probability": 30
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3600,
+          "m_exploreTime": 6,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 4000,
+          "m_exploreTime": 8,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "rank": 6,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 130,
+          "m_exploreTime": 4,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 150,
+          "m_exploreTime": 6,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 170,
+          "m_exploreTime": 8,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "rank": 6,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1,
+          "m_exploreTime": 4,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3,
+          "m_exploreTime": 6,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 5,
+          "m_exploreTime": 8,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "rank": 6,
+      "name": "投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_1h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 4,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 2,
+          "m_exploreTime": 8,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "rank": 6,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 20,
+          "m_exploreTime": 6,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 30,
+          "m_exploreTime": 8,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "rank": 6,
+      "name": "邪神様の怒りを鎮める",
+      "reward_category": "ticket",
+      "reward_name": "gacha_common",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 1
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1,
+          "m_exploreTime": 8,
+          "m_probability": 2
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "rank": 7,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1000,
+          "m_exploreTime": 4,
+          "m_probability": 40
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1200,
+          "m_exploreTime": 6,
+          "m_probability": 36
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1400,
+          "m_exploreTime": 8,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "rank": 7,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 3100,
+          "m_exploreTime": 4,
+          "m_probability": 30
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3600,
+          "m_exploreTime": 6,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 4000,
+          "m_exploreTime": 8,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "rank": 7,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 130,
+          "m_exploreTime": 4,
+          "m_probability": 15
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 150,
+          "m_exploreTime": 6,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 170,
+          "m_exploreTime": 8,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "rank": 7,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 1,
+          "m_exploreTime": 4,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3,
+          "m_exploreTime": 6,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 5,
+          "m_exploreTime": 8,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "rank": 7,
+      "name": "投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_1h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 4,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 2,
+          "m_exploreTime": 8,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "rank": 7,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 20,
+          "m_exploreTime": 6,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 30,
+          "m_exploreTime": 8,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "rank": 7,
+      "name": "邪神様の怒りを鎮める",
+      "reward_category": "ticket",
+      "reward_name": "gacha_common",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 1
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1,
+          "m_exploreTime": 8,
+          "m_probability": 2
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "rank": 8,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1200,
+          "m_exploreTime": 6,
+          "m_probability": 36
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1400,
+          "m_exploreTime": 8,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 1600,
+          "m_exploreTime": 10,
+          "m_probability": 35
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "rank": 8,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3600,
+          "m_exploreTime": 6,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 4000,
+          "m_exploreTime": 8,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 4600,
+          "m_exploreTime": 10,
+          "m_probability": 27
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "rank": 8,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 150,
+          "m_exploreTime": 6,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 170,
+          "m_exploreTime": 8,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 190,
+          "m_exploreTime": 10,
+          "m_probability": 14
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "rank": 8,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3,
+          "m_exploreTime": 6,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 5,
+          "m_exploreTime": 8,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "rank": 8,
+      "name": "投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_1h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 2,
+          "m_exploreTime": 8,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "rank": 8,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 20,
+          "m_exploreTime": 6,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 30,
+          "m_exploreTime": 8,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 40,
+          "m_exploreTime": 10,
+          "m_probability": 5
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "rank": 8,
+      "name": "邪神様の怒りを鎮める",
+      "reward_category": "ticket",
+      "reward_name": "gacha_common",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 1
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1,
+          "m_exploreTime": 8,
+          "m_probability": 2
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 1,
+          "m_exploreTime": 10,
+          "m_probability": 3
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "rank": 8,
+      "name": "崇高な儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_SR",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 5,
+          "m_exploreTime": 10,
+          "m_probability": 10
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "rank": 8,
+      "name": "より強力な投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_2h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 2,
+          "m_exploreTime": 10,
+          "m_probability": 6
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "rank": 9,
+      "name": "戦闘訓練を実施する",
+      "reward_category": "point",
+      "reward_name": "gold",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1200,
+          "m_exploreTime": 6,
+          "m_probability": 36
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1400,
+          "m_exploreTime": 8,
+          "m_probability": 35
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 1600,
+          "m_exploreTime": 10,
+          "m_probability": 35
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "rank": 9,
+      "name": "神殿を清める",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.common_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3600,
+          "m_exploreTime": 6,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 4000,
+          "m_exploreTime": 8,
+          "m_probability": 27
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 4600,
+          "m_exploreTime": 10,
+          "m_probability": 27
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "rank": 9,
+      "name": "邪神様に供物を献上する",
+      "reward_category": "item",
+      "reward_name": "item.unit_exp.threshold_item",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 150,
+          "m_exploreTime": 6,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 170,
+          "m_exploreTime": 8,
+          "m_probability": 14
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 190,
+          "m_exploreTime": 10,
+          "m_probability": 14
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "rank": 9,
+      "name": "儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_R",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 3,
+          "m_exploreTime": 6,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 5,
+          "m_exploreTime": 8,
+          "m_probability": 10
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "rank": 9,
+      "name": "投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_1h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 2,
+          "m_exploreTime": 8,
+          "m_probability": 7
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "rank": 9,
+      "name": "アーティファクト研究を行う",
+      "reward_category": "point",
+      "reward_name": "free_coin",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 20,
+          "m_exploreTime": 6,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 30,
+          "m_exploreTime": 8,
+          "m_probability": 5
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 40,
+          "m_exploreTime": 10,
+          "m_probability": 5
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "rank": 9,
+      "name": "邪神様の怒りを鎮める",
+      "reward_category": "ticket",
+      "reward_name": "gacha_common",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 1,
+          "m_exploreTime": 6,
+          "m_probability": 1
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 1,
+          "m_exploreTime": 8,
+          "m_probability": 2
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 1,
+          "m_exploreTime": 10,
+          "m_probability": 3
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "rank": 9,
+      "name": "崇高な儀式の準備を行う",
+      "reward_category": "item",
+      "reward_name": "item.lottery_fragment.unit_faction_SR",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 5,
+          "m_exploreTime": 10,
+          "m_probability": 10
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "rank": 9,
+      "name": "より強力な投薬実験を行う",
+      "reward_category": "material_bag",
+      "reward_name": "growth_2h",
+      "RarityDatas": [
+        {
+          "m_rarity": 1,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 2,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 3,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 4,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 5,
+          "m_rewardNum": 0,
+          "m_exploreTime": 0,
+          "m_probability": 0
+        },
+        {
+          "m_rarity": 6,
+          "m_rewardNum": 2,
+          "m_exploreTime": 10,
+          "m_probability": 6
+        }
+      ]
+    }
+  ]
+}

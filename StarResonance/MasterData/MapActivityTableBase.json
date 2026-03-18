@@ -22,7 +22,9 @@
             73,
             74,
             75,
-            9
+            9,
+            93,
+            94
         ],
         "Icon": "ui/atlas/explore_monster/explore_monster_btn_icon_3",
         "FunctionId": 100804,
@@ -83,5 +85,51 @@
         "FunctionId": 800900,
         "RedDotId": 5102,
         "Note": "高原地区声望入口"
+    },
+    "7": {
+        "Key": 7,
+        "Id": 7,
+        "Name": "玩法指南",
+        "Scene": [],
+        "Icon": "ui/atlas/map_anime_icon/map_anime_icon_wanfazhinan",
+        "FunctionId": 0,
+        "RedDotId": 0,
+        "Note": ""
+    },
+    "8": {
+        "Key": 8,
+        "Id": 8,
+        "Name": "点亮旅程",
+        "Scene": [
+            11
+        ],
+        "Icon": "ui/atlas/map_anime_icon/map_anime_icon_dianlianglvcheng",
+        "FunctionId": 900122,
+        "RedDotId": 1203,
+        "Note": "动漫岛点亮旅程入口"
+    },
+    "9": {
+        "Key": 9,
+        "Id": 9,
+        "Name": "嘉年华",
+        "Scene": [
+            11
+        ],
+        "Icon": "ui/atlas/map_anime_icon/map_anime_icon_huodongrili",
+        "FunctionId": 800517,
+        "RedDotId": 0,
+        "Note": ""
+    },
+    "10": {
+        "Key": 10,
+        "Id": 10,
+        "Name": "嘉年华商店",
+        "Scene": [
+            11
+        ],
+        "Icon": "ui/atlas/map_anime_icon/map_anime_icon_wanfashangdian",
+        "FunctionId": 100274,
+        "RedDotId": 0,
+        "Note": ""
     }
 }

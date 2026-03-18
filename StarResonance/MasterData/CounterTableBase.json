@@ -280,7 +280,7 @@
         "Name": "助战刷新",
         "TimeTableId": 350,
         "RefreshNum": 0,
-        "Limit": 1000,
+        "Limit": 2000,
         "MonthCardLimit": 0,
         "AccumulateLimit": 0,
         "AccumulateRefreshNum": 0
@@ -357,7 +357,18 @@
         "Name": "友情点休闲活动刷新",
         "TimeTableId": 350,
         "RefreshNum": 0,
-        "Limit": 1000,
+        "Limit": 2000,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
+    "36": {
+        "Key": 36,
+        "Id": 36,
+        "Name": "友情点总上限",
+        "TimeTableId": 350,
+        "RefreshNum": 0,
+        "Limit": 2000,
         "MonthCardLimit": 0,
         "AccumulateLimit": 0,
         "AccumulateRefreshNum": 0
@@ -747,6 +758,17 @@
         "AccumulateLimit": 0,
         "AccumulateRefreshNum": 0
     },
+    "85": {
+        "Key": 85,
+        "Id": 85,
+        "Name": "萌新回归定制玩法刷新次数限制",
+        "TimeTableId": 282,
+        "RefreshNum": 0,
+        "Limit": 3,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
     "201": {
         "Key": 201,
         "Id": 201,
@@ -868,6 +890,28 @@
         "AccumulateLimit": 0,
         "AccumulateRefreshNum": 0
     },
+    "213": {
+        "Key": 213,
+        "Id": 213,
+        "Name": "小伊鼓乐队",
+        "TimeTableId": 100,
+        "RefreshNum": 0,
+        "Limit": 1,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
+    "214": {
+        "Key": 214,
+        "Id": 214,
+        "Name": "游星岛流光律动",
+        "TimeTableId": 100,
+        "RefreshNum": 0,
+        "Limit": 1,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
     "401": {
         "Key": 401,
         "Id": 401,
@@ -901,6 +945,39 @@
         "AccumulateLimit": 0,
         "AccumulateRefreshNum": 0
     },
+    "405": {
+        "Key": 405,
+        "Id": 405,
+        "Name": "幻形派对",
+        "TimeTableId": 100,
+        "RefreshNum": 0,
+        "Limit": 1,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
+    "408": {
+        "Key": 408,
+        "Id": 408,
+        "Name": "焰彩试放",
+        "TimeTableId": 100,
+        "RefreshNum": 0,
+        "Limit": 1,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
+    "409": {
+        "Key": 409,
+        "Id": 409,
+        "Name": "喧春灯会",
+        "TimeTableId": 100,
+        "RefreshNum": 0,
+        "Limit": 1,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
     "501": {
         "Key": 501,
         "Id": 501,
@@ -908,6 +985,17 @@
         "TimeTableId": 100010,
         "RefreshNum": 0,
         "Limit": 1,
+        "MonthCardLimit": 0,
+        "AccumulateLimit": 0,
+        "AccumulateRefreshNum": 0
+    },
+    "502": {
+        "Key": 502,
+        "Id": 502,
+        "Name": "第二期限时技能重置返还进阶之书任选箱的次数（timeID变了，次数会被刷新）",
+        "TimeTableId": 100012,
+        "RefreshNum": 0,
+        "Limit": 3,
         "MonthCardLimit": 0,
         "AccumulateLimit": 0,
         "AccumulateRefreshNum": 0

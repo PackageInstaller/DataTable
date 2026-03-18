@@ -126,6 +126,27 @@
         "Guarantee": 3,
         "IsHidePlayerModel": true
     },
+    "2001": {
+        "Key": 2001,
+        "Id": 2001,
+        "InvestigationTheme": "神秘海百合的情报",
+        "UnlockCondition": [
+            [
+                2,
+                186521,
+                186521003
+            ]
+        ],
+        "InvestigationStep": [
+            20011
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "在拉尔帕尔村的大树下，出现了一束神秘的海百合。尝试收集和它有关的情报吧。",
+        "IockedTips": "推进任务<style=\"emph-quest\">收集情报</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
     "2020": {
         "Key": 2020,
         "Id": 2020,
@@ -290,6 +311,90 @@
         "CompletionConditions": [],
         "ThemeIntroduction": "身为商队的一员，内卫勒手中却有绯红矿髓；只是稍加逼问，他就落荒而逃。然而事情没这么简单，黑石军团的士兵竟然在暗中协助他。背后到底藏着怎样的阴谋呢……",
         "IockedTips": "推进任务<style=\"emph-quest\">那时怀疑便是确定</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
+    "10001": {
+        "Key": 10001,
+        "Id": 10001,
+        "InvestigationTheme": "莓色果是否真的存在？",
+        "UnlockCondition": [
+            [
+                2,
+                40501,
+                40501022
+            ]
+        ],
+        "InvestigationStep": [
+            100011
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "黑石军团士兵们的遭遇令达雅对莓色果的存在产生了怀疑。<br>请根据之前调查的线索，分析出真相。",
+        "IockedTips": "推进任务<style=\"emph-quest\">莓色果奇遇</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
+    "10002": {
+        "Key": 10002,
+        "Id": 10002,
+        "InvestigationTheme": "莓色果是否只是传闻？",
+        "UnlockCondition": [
+            [
+                2,
+                40501,
+                40501053
+            ]
+        ],
+        "InvestigationStep": [
+            100021
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "一系列的消息让达雅开始怀疑莓色果的真实性。<br>请根据之前调查的线索，分析出真相。",
+        "IockedTips": "推进任务<style=\"emph-quest\">莓色果奇遇</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
+    "10003": {
+        "Key": 10003,
+        "Id": 10003,
+        "InvestigationTheme": "矿工们的现状",
+        "UnlockCondition": [
+            [
+                2,
+                20026,
+                20026010
+            ]
+        ],
+        "InvestigationStep": [
+            100031
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "矿工们是否愿意离开这里，回到阿斯特里斯？<br>请根据之前调查的线索，分析出真相。",
+        "IockedTips": "推进任务<style=\"emph-quest\">归途</style>解锁调查",
+        "ThemePic": "ui/textures/investigation/investigation_common_bg",
+        "Guarantee": 3,
+        "IsHidePlayerModel": false
+    },
+    "10004": {
+        "Key": 10004,
+        "Id": 10004,
+        "InvestigationTheme": "寻找「名单」的下落",
+        "UnlockCondition": [
+            [
+                2,
+                20025,
+                20025062
+            ]
+        ],
+        "InvestigationStep": [
+            100041
+        ],
+        "CompletionConditions": [],
+        "ThemeIntroduction": "反省室里残留着审讯与拖拽的痕迹，这里显然不是探秘的终点。但「名单」的下落，或许就藏在这些线索中……",
+        "IockedTips": "推进任务<style=\"emph-quest\">空冠之座</style>解锁调查",
         "ThemePic": "ui/textures/investigation/investigation_common_bg",
         "Guarantee": 3,
         "IsHidePlayerModel": false

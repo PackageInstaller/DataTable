@@ -24,7 +24,16 @@
         "AdditionalTargetIdleScore": [
             3
         ],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [
+            2
+        ],
+        "AdditionalTargetCompleteMaxNum": [
+            999
+        ],
+        "AdditionalTargetCompleteCoolDown": [
+            1
+        ]
     },
     "1002": {
         "Key": 1002,
@@ -51,7 +60,16 @@
         "AdditionalTargetIdleScore": [
             3
         ],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [
+            2
+        ],
+        "AdditionalTargetCompleteMaxNum": [
+            999
+        ],
+        "AdditionalTargetCompleteCoolDown": [
+            1
+        ]
     },
     "1003": {
         "Key": 1003,
@@ -78,7 +96,16 @@
         "AdditionalTargetIdleScore": [
             3
         ],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [
+            2
+        ],
+        "AdditionalTargetCompleteMaxNum": [
+            999
+        ],
+        "AdditionalTargetCompleteCoolDown": [
+            1
+        ]
     },
     "2001": {
         "Key": 2001,
@@ -104,7 +131,10 @@
         "AdditionalTargetIdleScore": [
             15
         ],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [],
+        "AdditionalTargetCompleteCoolDown": []
     },
     "2002": {
         "Key": 2002,
@@ -119,9 +149,10 @@
         "AdditionalTargetName": [
             "1.在区域内能周期获得积分",
             "2.每隔150秒获得1张投票",
-            "3.被投票者获得1点人气，投票/被投都能获得额外积分",
-            "4.达到5/10/15/20点人气时将变大",
-            "5.已有人气会在10分钟后消失，获得新人气时会刷新该时间"
+            "3.被投票者获得1点人气，投票能获得额外积分 ({*val1*}/{*val2*})",
+            "4.被投票者也能获得额外积分 ({*val1*}/{*val2*})",
+            "5.达到5/10/15/20点人气时将变大",
+            "6.已有人气会在5分钟后消失，获得新人气时会刷新该时间"
         ],
         "AdditionalTarget": [
             [
@@ -141,7 +172,19 @@
             50,
             25
         ],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [
+            3,
+            4
+        ],
+        "AdditionalTargetCompleteMaxNum": [
+            50,
+            100
+        ],
+        "AdditionalTargetCompleteCoolDown": [
+            5,
+            0
+        ]
     },
     "2003": {
         "Key": 2003,
@@ -159,7 +202,10 @@
         ],
         "AdditionalTarget": [],
         "AdditionalTargetIdleScore": [],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [],
+        "AdditionalTargetCompleteCoolDown": []
     },
     "2004": {
         "Key": 2004,
@@ -176,7 +222,151 @@
         ],
         "AdditionalTarget": [],
         "AdditionalTargetIdleScore": [],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [],
+        "AdditionalTargetCompleteCoolDown": []
+    },
+    "2005": {
+        "Key": 2005,
+        "Id": 2005,
+        "Name": "幻形派对",
+        "BubbleType": 1,
+        "TargetScore": 500,
+        "ScoreCycle": [
+            3,
+            5
+        ],
+        "AdditionalTargetName": [
+            "1.在区域内能周期获得积分",
+            "2.在活动区域有两个可以幻形的区域，前往交互可以变成随机冰雪节物件"
+        ],
+        "AdditionalTarget": [],
+        "AdditionalTargetIdleScore": [],
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [],
+        "AdditionalTargetCompleteCoolDown": []
+    },
+    "2008": {
+        "Key": 2008,
+        "Id": 2008,
+        "Name": "焰彩试放",
+        "BubbleType": 1,
+        "TargetScore": 500,
+        "ScoreCycle": [
+            3,
+            5
+        ],
+        "AdditionalTargetName": [
+            "1.在区域内能周期获得积分",
+            "2.一共有红绿蓝三种烟花，每隔15秒会获得1个随机的烟花",
+            "3.给烟花底座填充烟花可以获得额外积分 ({*val1*}/{*val2*})",
+            "4.发射填充好的烟花筒，区域内所有玩家都将获得额外积分 ({*val1*}/{*val2*})"
+        ],
+        "AdditionalTarget": [
+            [
+                24,
+                1,
+                8,
+                200801
+            ],
+            [
+                24,
+                1,
+                8,
+                200802
+            ]
+        ],
+        "AdditionalTargetIdleScore": [
+            200,
+            100
+        ],
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [
+            3,
+            4
+        ],
+        "AdditionalTargetCompleteMaxNum": [
+            10,
+            20
+        ],
+        "AdditionalTargetCompleteCoolDown": [
+            5,
+            1
+        ]
+    },
+    "2009": {
+        "Key": 2009,
+        "Id": 2009,
+        "Name": "喧春灯会",
+        "BubbleType": 1,
+        "TargetScore": 500,
+        "ScoreCycle": [
+            3,
+            5
+        ],
+        "AdditionalTargetName": [
+            "1.在区域内能周期获得积分",
+            "2.在区域内每隔100秒获得1个灯笼碎片，集齐3个碎片能够召唤喧春灯笼",
+            "3.放飞灯笼可获得额外积分 ({*val1*}/{*val2*})"
+        ],
+        "AdditionalTarget": [
+            [
+                24,
+                1,
+                7,
+                200901
+            ]
+        ],
+        "AdditionalTargetIdleScore": [
+            300
+        ],
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [
+            3
+        ],
+        "AdditionalTargetCompleteMaxNum": [
+            10
+        ],
+        "AdditionalTargetCompleteCoolDown": [
+            5
+        ]
+    },
+    "2010": {
+        "Key": 2010,
+        "Id": 2010,
+        "Name": "流光律动",
+        "BubbleType": 1,
+        "TargetScore": 500,
+        "ScoreCycle": [
+            3,
+            5
+        ],
+        "AdditionalTargetName": [
+            "1.在区域内能周期获得积分",
+            "2.舞团每十分钟切换一次舞蹈，切记跟上节奏别掉队哦！",
+            "3.跟随领舞一起律动可周期获得额外积分 ({*val1*}/{*val2*})"
+        ],
+        "AdditionalTarget": [
+            [
+                24,
+                1,
+                11,
+                201001
+            ]
+        ],
+        "AdditionalTargetIdleScore": [
+            10
+        ],
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [
+            240
+        ],
+        "AdditionalTargetCompleteCoolDown": [
+            0
+        ]
     },
     "3001": {
         "Key": 3001,
@@ -193,7 +383,10 @@
         ],
         "AdditionalTarget": [],
         "AdditionalTargetIdleScore": [],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [],
+        "AdditionalTargetCompleteCoolDown": []
     },
     "3002": {
         "Key": 3002,
@@ -210,6 +403,29 @@
         ],
         "AdditionalTarget": [],
         "AdditionalTargetIdleScore": [],
-        "TargetCompleteClientBuff": []
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [],
+        "AdditionalTargetCompleteCoolDown": []
+    },
+    "3003": {
+        "Key": 3003,
+        "Id": 3003,
+        "Name": "小伊鼓乐队",
+        "BubbleType": 1,
+        "TargetScore": 500,
+        "ScoreCycle": [
+            3,
+            5
+        ],
+        "AdditionalTargetName": [
+            "跟随小伊领队以获得积分"
+        ],
+        "AdditionalTarget": [],
+        "AdditionalTargetIdleScore": [],
+        "TargetCompleteClientBuff": [],
+        "AdditionalTargetToEntriesMessage": [],
+        "AdditionalTargetCompleteMaxNum": [],
+        "AdditionalTargetCompleteCoolDown": []
     }
 }

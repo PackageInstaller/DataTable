@@ -75,11 +75,11 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通，使消耗雷之印的技能伤害+2.5%<br>"
+                "每1%精通，使消耗雷之印的技能伤害+2.8%<br>"
             ],
             [
                 "1",
-                "每1%精通提供1.5%霹雳连斩、雷霆之镰、神罚之镰伤害<br>"
+                "每1%精通提供1.2%霹雳连斩、雷霆之镰、神罚之镰伤害<br>"
             ]
         ],
         "AttackShow": [
@@ -208,8 +208,8 @@
         "Key": 3,
         "Id": 3,
         "ProfessionId": 3,
-        "Name": "涤罪恶火·战斧",
-        "LineFeedName": "涤罪恶火·战斧",
+        "Name": "赤炎狂战士",
+        "LineFeedName": "赤炎狂战士",
         "Icon": "ui/atlas/profession/profession_horizontal_01",
         "Intro": "近距离武器，拥有出色的攻击能力。<br>攻击可以施加<color=#fcbe03>点燃</color>效果，可以造成<color=#fcbe03>特性伤害</color>。<br>通过积攒能量释放<color=#fcbe03>终极技能</color>，进入强大的爆发阶段。追求<color=#fcbe03>攻击速度</color>可以增强在爆发阶段造成的伤害。",
         "Element": 1,
@@ -234,16 +234,26 @@
             1601
         ],
         "SpecialSkill": [
-            1610
+            1605
         ],
         "UltimateSkill": [
-            1614
+            1618
         ],
         "NormalSkill": [
-            1611
+            1607,
+            1608,
+            1612,
+            1613,
+            1614,
+            1615,
+            1616,
+            1617
         ],
         "TalentSkill": [],
-        "ShowTalentStage": [],
+        "ShowTalentStage": [
+            124,
+            125
+        ],
         "Create": 0,
         "IsOpen": false,
         "Index": 9,
@@ -366,7 +376,7 @@
         "MasteryDes": [
             [
                 "0",
-                "每1%精通提供0.65%风元素加成<br>"
+                "每1%精通提供0.72%风元素加成<br>"
             ],
             [
                 "1",

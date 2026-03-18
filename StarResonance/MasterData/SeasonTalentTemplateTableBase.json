@@ -17,7 +17,8 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 5,
-        "NoteRootId": 1001
+        "NoteRootId": 1001,
+        "EffectiveGameplayType": []
     },
     "2": {
         "Key": 2,
@@ -37,7 +38,8 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 6,
-        "NoteRootId": 1101
+        "NoteRootId": 1101,
+        "EffectiveGameplayType": []
     },
     "3": {
         "Key": 3,
@@ -57,7 +59,8 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 7,
-        "NoteRootId": 1201
+        "NoteRootId": 1201,
+        "EffectiveGameplayType": []
     },
     "4": {
         "Key": 4,
@@ -77,7 +80,8 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 8,
-        "NoteRootId": 1301
+        "NoteRootId": 1301,
+        "EffectiveGameplayType": []
     },
     "5": {
         "Key": 5,
@@ -91,7 +95,8 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 1,
-        "NoteRootId": 1401
+        "NoteRootId": 1401,
+        "EffectiveGameplayType": []
     },
     "6": {
         "Key": 6,
@@ -111,7 +116,8 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 4,
-        "NoteRootId": 1501
+        "NoteRootId": 1501,
+        "EffectiveGameplayType": []
     },
     "7": {
         "Key": 7,
@@ -131,7 +137,8 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 2,
-        "NoteRootId": 1601
+        "NoteRootId": 1601,
+        "EffectiveGameplayType": []
     },
     "8": {
         "Key": 8,
@@ -151,6 +158,95 @@
         "BelongFunction": 800522,
         "BelongSeasonId": 2,
         "SortId": 3,
-        "NoteRootId": 1701
+        "NoteRootId": 1701,
+        "EffectiveGameplayType": []
+    },
+    "20001": {
+        "Key": 20001,
+        "Id": 20001,
+        "TemplateName": "超载暴击",
+        "BigIconNormal": "ui/textures/season_talent/s2talent051_01",
+        "BigIconActive": "ui/textures/season_talent/s2talent051_01sel",
+        "UnlockCondition": [
+            [
+                9,
+                40201
+            ]
+        ],
+        "AdvancedEffectId": 0,
+        "EffectiveScene": [],
+        "BelongFunction": 800523,
+        "BelongSeasonId": 2,
+        "SortId": 1,
+        "NoteRootId": 5001,
+        "EffectiveGameplayType": [
+            19
+        ]
+    },
+    "20002": {
+        "Key": 20002,
+        "Id": 20002,
+        "TemplateName": "命运洪流",
+        "BigIconNormal": "ui/textures/season_talent/s2talent052_01",
+        "BigIconActive": "ui/textures/season_talent/s2talent052_01sel",
+        "UnlockCondition": [
+            [
+                9,
+                40201
+            ]
+        ],
+        "AdvancedEffectId": 0,
+        "EffectiveScene": [],
+        "BelongFunction": 800523,
+        "BelongSeasonId": 2,
+        "SortId": 2,
+        "NoteRootId": 5101,
+        "EffectiveGameplayType": [
+            19
+        ]
+    },
+    "20003": {
+        "Key": 20003,
+        "Id": 20003,
+        "TemplateName": "幻想加速",
+        "BigIconNormal": "ui/textures/season_talent/s2talent053_01",
+        "BigIconActive": "ui/textures/season_talent/s2talent053_01sel",
+        "UnlockCondition": [
+            [
+                9,
+                40201
+            ]
+        ],
+        "AdvancedEffectId": 0,
+        "EffectiveScene": [],
+        "BelongFunction": 800523,
+        "BelongSeasonId": 2,
+        "SortId": 3,
+        "NoteRootId": 5201,
+        "EffectiveGameplayType": [
+            19
+        ]
+    },
+    "20004": {
+        "Key": 20004,
+        "Id": 20004,
+        "TemplateName": "协同打击",
+        "BigIconNormal": "ui/textures/season_talent/s2talent054_01",
+        "BigIconActive": "ui/textures/season_talent/s2talent054_01sel",
+        "UnlockCondition": [
+            [
+                9,
+                40201
+            ]
+        ],
+        "AdvancedEffectId": 0,
+        "EffectiveScene": [],
+        "BelongFunction": 800523,
+        "BelongSeasonId": 2,
+        "SortId": 4,
+        "NoteRootId": 5301,
+        "EffectiveGameplayType": [
+            19
+        ]
     }
 }

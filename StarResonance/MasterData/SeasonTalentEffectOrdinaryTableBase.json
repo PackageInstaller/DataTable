@@ -2082,13 +2082,13 @@
     "1503": {
         "Key": 1503,
         "Id": 1503,
-        "Name": "幻梦执念",
+        "Name": "环域压制",
         "GroupId": 1503,
         "Level": 1,
         "Effect": [
             [
                 3,
-                3003030,
+                3003070,
                 1
             ]
         ],
@@ -2282,13 +2282,13 @@
     "1508": {
         "Key": 1508,
         "Id": 1508,
-        "Name": "环域压制",
+        "Name": "幻梦执念",
         "GroupId": 1508,
         "Level": 1,
         "Effect": [
             [
                 3,
-                3003070,
+                3003030,
                 1
             ]
         ],
@@ -3186,6 +3186,1446 @@
         "FightValue": 260,
         "IconNormal": "ui/atlas/season_talent_icon/s2talent08_08",
         "IconActive": "ui/atlas/season_talent_icon/s2talent08_08sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5001": {
+        "Key": 5001,
+        "Id": 5001,
+        "Name": "超载暴击",
+        "GroupId": 5001,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004410,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent/s2talent051_01",
+        "IconActive": "ui/atlas/season_talent/s2talent051_01sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5002": {
+        "Key": 5002,
+        "Id": 5002,
+        "Name": "暴击渴望",
+        "GroupId": 5002,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004420,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5003": {
+        "Key": 5003,
+        "Id": 5003,
+        "Name": "暴击传承",
+        "GroupId": 5003,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004430,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_03",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_03sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5004": {
+        "Key": 5004,
+        "Id": 5004,
+        "Name": "暴击天命",
+        "GroupId": 5004,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004440,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_04",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_04sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5005": {
+        "Key": 5005,
+        "Id": 5005,
+        "Name": "稀有福星",
+        "GroupId": 5005,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5006": {
+        "Key": 5006,
+        "Id": 5006,
+        "Name": "史诗加倍",
+        "GroupId": 5006,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004460,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_06",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_06sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5007": {
+        "Key": 5007,
+        "Id": 5007,
+        "Name": "暴击渴望",
+        "GroupId": 5007,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004420,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5008": {
+        "Key": 5008,
+        "Id": 5008,
+        "Name": "暴击渴望",
+        "GroupId": 5008,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004420,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5009": {
+        "Key": 5009,
+        "Id": 5009,
+        "Name": "稀有福星",
+        "GroupId": 5009,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5101": {
+        "Key": 5101,
+        "Id": 5101,
+        "Name": "命运洪流",
+        "GroupId": 5101,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3003810,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent/s2talent052_01",
+        "IconActive": "ui/atlas/season_talent/s2talent052_01sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5102": {
+        "Key": 5102,
+        "Id": 5102,
+        "Name": "幸运眷顾",
+        "GroupId": 5102,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3003820,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent052_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent052_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5103": {
+        "Key": 5103,
+        "Id": 5103,
+        "Name": "天选之人",
+        "GroupId": 5103,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3003830,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent052_03",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent052_03sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5104": {
+        "Key": 5104,
+        "Id": 5104,
+        "Name": "开门鸿运",
+        "GroupId": 5104,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3003840,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent052_04",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent052_04sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5105": {
+        "Key": 5105,
+        "Id": 5105,
+        "Name": "稀有福星",
+        "GroupId": 5105,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5106": {
+        "Key": 5106,
+        "Id": 5106,
+        "Name": "史诗加倍",
+        "GroupId": 5106,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004460,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_06",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_06sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5107": {
+        "Key": 5107,
+        "Id": 5107,
+        "Name": "幸运眷顾",
+        "GroupId": 5107,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3003820,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent052_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent052_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5108": {
+        "Key": 5108,
+        "Id": 5108,
+        "Name": "幸运眷顾",
+        "GroupId": 5108,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3003820,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent052_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent052_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5109": {
+        "Key": 5109,
+        "Id": 5109,
+        "Name": "稀有福星",
+        "GroupId": 5109,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5201": {
+        "Key": 5201,
+        "Id": 5201,
+        "Name": "幻想加速",
+        "GroupId": 5201,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004010,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent/s2talent053_01",
+        "IconActive": "ui/atlas/season_talent/s2talent053_01sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5202": {
+        "Key": 5202,
+        "Id": 5202,
+        "Name": "幻想共鸣",
+        "GroupId": 5202,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004020,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent053_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent053_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5203": {
+        "Key": 5203,
+        "Id": 5203,
+        "Name": "心象雏形",
+        "GroupId": 5203,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004030,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent053_03",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent053_03sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5204": {
+        "Key": 5204,
+        "Id": 5204,
+        "Name": "梦境初现",
+        "GroupId": 5204,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004040,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent053_04",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent053_04sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5205": {
+        "Key": 5205,
+        "Id": 5205,
+        "Name": "稀有福星",
+        "GroupId": 5205,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5206": {
+        "Key": 5206,
+        "Id": 5206,
+        "Name": "史诗加倍",
+        "GroupId": 5206,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004460,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_06",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_06sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5207": {
+        "Key": 5207,
+        "Id": 5207,
+        "Name": "幻想共鸣",
+        "GroupId": 5207,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004020,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent053_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent053_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5208": {
+        "Key": 5208,
+        "Id": 5208,
+        "Name": "幻想共鸣",
+        "GroupId": 5208,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004020,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent053_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent053_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5209": {
+        "Key": 5209,
+        "Id": 5209,
+        "Name": "稀有福星",
+        "GroupId": 5209,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5301": {
+        "Key": 5301,
+        "Id": 5301,
+        "Name": "协同打击",
+        "GroupId": 5301,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004210,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent/s2talent054_01",
+        "IconActive": "ui/atlas/season_talent/s2talent054_01sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5302": {
+        "Key": 5302,
+        "Id": 5302,
+        "Name": "团队引力",
+        "GroupId": 5302,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004220,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent054_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent054_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5303": {
+        "Key": 5303,
+        "Id": 5303,
+        "Name": "天生领袖",
+        "GroupId": 5303,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004230,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent054_03",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent054_03sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5304": {
+        "Key": 5304,
+        "Id": 5304,
+        "Name": "精准支援",
+        "GroupId": 5304,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004240,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent054_04",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent054_04sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5305": {
+        "Key": 5305,
+        "Id": 5305,
+        "Name": "稀有福星",
+        "GroupId": 5305,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5306": {
+        "Key": 5306,
+        "Id": 5306,
+        "Name": "史诗加倍",
+        "GroupId": 5306,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004460,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_06",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_06sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5307": {
+        "Key": 5307,
+        "Id": 5307,
+        "Name": "团队引力",
+        "GroupId": 5307,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004220,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent054_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent054_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5308": {
+        "Key": 5308,
+        "Id": 5308,
+        "Name": "团队引力",
+        "GroupId": 5308,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004220,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent054_02",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent054_02sel",
+        "UnlockCondition": [
+            [
+                1,
+                10
+            ]
+        ],
+        "UnlockConsume": [
+            [
+                1220004,
+                1
+            ]
+        ]
+    },
+    "5309": {
+        "Key": 5309,
+        "Id": 5309,
+        "Name": "稀有福星",
+        "GroupId": 5309,
+        "Level": 1,
+        "Effect": [
+            [
+                3,
+                3004450,
+                1
+            ]
+        ],
+        "BuffValueKey": [
+            [
+                "a"
+            ]
+        ],
+        "BuffPar": [
+            [
+                0
+            ]
+        ],
+        "EffectDes": "",
+        "FightValue": 0,
+        "IconNormal": "ui/atlas/season_talent_icon/s2talent051_05",
+        "IconActive": "ui/atlas/season_talent_icon/s2talent051_05sel",
         "UnlockCondition": [
             [
                 1,

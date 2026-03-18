@@ -106,21 +106,28 @@
         "Key": 4,
         "Id": 4,
         "ResIDs": [
+            13011,
             13001
         ],
-        "Desc": "双斧精力条",
+        "Desc": "双斧|狂意/炎魂/赤痕",
         "IntParams": [],
         "IntParams1": [],
         "IntParams2": [],
         "UIType": [
-            2
+            2,
+            1
         ],
         "SecondsCost": [],
-        "BindElemental": [],
+        "BindElemental": [
+            [
+                "1",
+                "#f8ac39"
+            ]
+        ],
         "OpenBuff": [],
-        "ResIcon": "",
-        "ResEffect": "",
-        "PrefabPath": "",
+        "ResIcon": "ui/atlas/battle_weapon_thunder/main_thunder_",
+        "ResEffect": "ui/uieffect/prefab/ui_sfx_battle_001/ui_sfx_group_battle_001_purple",
+        "PrefabPath": "ui/prefabs/main/battle_weapon/main_thunder_tpl",
         "EffectShowBuff": []
     },
     "5": {
@@ -528,6 +535,25 @@
             90001
         ],
         "Desc": "公共资源模版",
+        "IntParams": [],
+        "IntParams1": [],
+        "IntParams2": [],
+        "UIType": [],
+        "SecondsCost": [],
+        "BindElemental": [],
+        "OpenBuff": [],
+        "ResIcon": "",
+        "ResEffect": "",
+        "PrefabPath": "",
+        "EffectShowBuff": []
+    },
+    "90011": {
+        "Key": 90011,
+        "Id": 90011,
+        "ResIDs": [
+            90011
+        ],
+        "Desc": "肉鸽大秘境公共资源模版",
         "IntParams": [],
         "IntParams1": [],
         "IntParams2": [],

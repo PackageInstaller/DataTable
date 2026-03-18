@@ -181,6 +181,19 @@
         "DataStorage": 0,
         "Link": ""
     },
+    "15": {
+        "Key": 15,
+        "Id": 15,
+        "Name": "乐队音量",
+        "SystemId": 1100001,
+        "TypesId": 10021,
+        "OperateType": 4,
+        "DescribeKey": "DefaultBandVolume",
+        "Des": "默认收听乐队音量百分比",
+        "Value": "100",
+        "DataStorage": 0,
+        "Link": ""
+    },
     "101": {
         "Key": 101,
         "Id": 101,
@@ -696,7 +709,7 @@
         "TypesId": 10022,
         "OperateType": 6,
         "DescribeKey": "DefaultSelfSpecialEffect",
-        "Des": "自身特效LOD等级（PC:流畅=清晰=高清=极致 | 移动:流畅=清晰=高清=极致）\n平台特效等级定义(PC:-1关闭，0极简，2普通，4精致)(移动：-1关闭，0极简，1普通，3精致)",
+        "Des": "自身特效LOD等级（PC:流畅=清晰=高清=极致 | 移动:流畅=清晰=高清=极致）\r\r\n平台特效等级定义(PC:-1关闭，0极简，2普通，4精致)(移动：-1关闭，0极简，1普通，3精致)",
         "Value": "2=2=4=4|0=1=3=3",
         "DataStorage": 0,
         "Link": ""
@@ -800,8 +813,8 @@
         "TypesId": 0,
         "OperateType": 0,
         "DescribeKey": "PlayerHeadInformation",
-        "Des": "自己头顶信息（A=1,B=0，A为1=名字，2=称号，3 = 功能相关信息，1为开启，0为关闭）",
-        "Value": "1=0,2=0",
+        "Des": "自己头顶信息（A=1,B=0，A为1=名字，2=称号，3 = 功能相关信息，4=称号底图，1为开启，0为关闭）",
+        "Value": "1=0,2=0,4=0",
         "DataStorage": 3,
         "Link": ""
     },
@@ -813,8 +826,8 @@
         "TypesId": 0,
         "OperateType": 0,
         "DescribeKey": "OtherPlayerHeadInformation",
-        "Des": "其他玩家头顶信息（A=1,B=0，A为1=名字，2=称号，3 = 功能相关信息，1为开启，0为关闭）",
-        "Value": "1=1,2=1",
+        "Des": "其他玩家头顶信息（A=1,B=0，A为1=名字，2=称号，3 = 功能相关信息，4=称号底图，1为开启，0为关闭）",
+        "Value": "1=1,2=1,4=1",
         "DataStorage": 3,
         "Link": ""
     },
@@ -840,6 +853,19 @@
         "OperateType": 0,
         "DescribeKey": "",
         "Des": "任务目标为NPC时，玩家与NPC之间的连线",
+        "Value": "1",
+        "DataStorage": 3,
+        "Link": ""
+    },
+    "4006": {
+        "Key": 4006,
+        "Id": 4006,
+        "Name": "非战斗状态下隐藏武器",
+        "SystemId": 0,
+        "TypesId": 0,
+        "OperateType": 0,
+        "DescribeKey": "",
+        "Des": "非战斗状态下隐藏武器（0为隐藏，1为显示）",
         "Value": "1",
         "DataStorage": 3,
         "Link": ""

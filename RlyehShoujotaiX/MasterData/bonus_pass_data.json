@@ -1,0 +1,35 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -5726625195675061955
+  },
+  "m_Name": "bonus_pass_data",
+  "records": [
+    {
+      "id": 4,
+      "display_name": "ミッションパス",
+      "chara_id": 0,
+      "layout_id": 0,
+      "sub_window_resource": "",
+      "start_dt": "",
+      "end_dt": "",
+      "close_dt": "",
+      "system": "point",
+      "ref_premium_track_unlock_rid": "passmission.unlock_premium.pay",
+      "unlock_item_name": "ミッションパス",
+      "unlock_item_text": "パスミッション内の上級報酬枠が開放されます。",
+      "ref_prog_point_rid": "bonus_pass.point.4",
+      "prog_point_name": "ミッションpt",
+      "prog_point_text": "パスミッションが進捗します",
+      "ref_shop_id_dmm": 600000,
+      "ref_shop_id_play_store": 0,
+      "ref_shop_id_app_store": 0,
+      "my_page_btn": 0
+    }
+  ]
+}

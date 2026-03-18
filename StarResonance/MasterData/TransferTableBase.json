@@ -224,6 +224,36 @@
         "IsOn": false,
         "SceneTag": 501
     },
+    "50016": {
+        "Key": 50016,
+        "Id": 50016,
+        "Name": "传送-洞窟1",
+        "TransferType": 1,
+        "MapId": 91,
+        "PivotId": 0,
+        "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
+        "ScenePoint": 1,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 501
+    },
+    "50017": {
+        "Key": 50017,
+        "Id": 50017,
+        "Name": "传送-洞窟2",
+        "TransferType": 1,
+        "MapId": 92,
+        "PivotId": 0,
+        "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
+        "ScenePoint": 1,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 501
+    },
     "50018": {
         "Key": 50018,
         "Id": 50018,
@@ -248,6 +278,21 @@
         "PivotId": 0,
         "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
         "ScenePoint": 7,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 501
+    },
+    "50020": {
+        "Key": 50020,
+        "Id": 50020,
+        "Name": "传送-夕照林野",
+        "TransferType": 1,
+        "MapId": 95,
+        "PivotId": 0,
+        "TransferDec": "这片区域星元能量汇聚之处，冒险者可以与其共鸣从而感知整片区域星元能量的流动，从而获得该区域的地图信息；<br>利用星元能力可在已激活的枢纽和传送点间快速移动；",
+        "ScenePoint": 1,
         "AwardId": [
             10002000
         ],
@@ -311,7 +356,7 @@
         "AwardId": [
             10002000
         ],
-        "IsOn": false,
+        "IsOn": true,
         "SceneTag": 105
     },
     "50705": {
@@ -1318,9 +1363,9 @@
     "50945": {
         "Key": 50945,
         "Id": 50945,
-        "Name": "传送-迷星之径传送点5",
-        "TransferType": 0,
-        "MapId": 0,
+        "Name": "传送-夕照林野1",
+        "TransferType": 1,
+        "MapId": 95,
         "PivotId": 0,
         "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
         "ScenePoint": 0,
@@ -1344,6 +1389,201 @@
         ],
         "IsOn": false,
         "SceneTag": 105
+    },
+    "50947": {
+        "Key": 50947,
+        "Id": 50947,
+        "Name": "传送-夕照林野2",
+        "TransferType": 1,
+        "MapId": 95,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 0,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 0
+    },
+    "50948": {
+        "Key": 50948,
+        "Id": 50948,
+        "Name": "传送-夕照林野3",
+        "TransferType": 1,
+        "MapId": 95,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 0,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 0
+    },
+    "50949": {
+        "Key": 50949,
+        "Id": 50949,
+        "Name": "传送-夕照林野4",
+        "TransferType": 1,
+        "MapId": 95,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 0,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 0
+    },
+    "50950": {
+        "Key": 50950,
+        "Id": 50950,
+        "Name": "传送-夕照林野5",
+        "TransferType": 1,
+        "MapId": 95,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 0,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 0
+    },
+    "51111": {
+        "Key": 51111,
+        "Id": 51111,
+        "Name": "传送-游星小镇",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 324,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": true,
+        "SceneTag": 1101
+    },
+    "51112": {
+        "Key": 51112,
+        "Id": 51112,
+        "Name": "传送-游星俱乐部",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 326,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1102
+    },
+    "51113": {
+        "Key": 51113,
+        "Id": 51113,
+        "Name": "传送-小猪圆舞",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 328,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1103
+    },
+    "51114": {
+        "Key": 51114,
+        "Id": 51114,
+        "Name": "传送-星之灯",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 330,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1104
+    },
+    "51115": {
+        "Key": 51115,
+        "Id": 51115,
+        "Name": "传送-梦之馆「白昼」",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 332,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1105
+    },
+    "51116": {
+        "Key": 51116,
+        "Id": 51116,
+        "Name": "传送-远山",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 334,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1106
+    },
+    "51117": {
+        "Key": 51117,
+        "Id": 51117,
+        "Name": "传送-银鸥海滩西",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 336,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1107
+    },
+    "51118": {
+        "Key": 51118,
+        "Id": 51118,
+        "Name": "传送-环星号",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 338,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1108
+    },
+    "51119": {
+        "Key": 51119,
+        "Id": 51119,
+        "Name": "传送-极光舞台",
+        "TransferType": 1,
+        "MapId": 11,
+        "PivotId": 0,
+        "TransferDec": "布法利亚神族留下的传送装置，激活传送装置后，可以利用该装置进行远距离传送。",
+        "ScenePoint": 340,
+        "AwardId": [
+            10002000
+        ],
+        "IsOn": false,
+        "SceneTag": 1109
     },
     "512001": {
         "Key": 512001,

@@ -3767,7 +3767,7 @@
         "Key": 205,
         "Id": 205,
         "Name": "迷梦具象·狩猎",
-        "Description": "迷境值涨满时，出现迷梦具象·崩裂攻击玩家，击败会获得大幅战斗增益。",
+        "Description": "迷境值涨满时，出现迷梦具象·狩猎攻击玩家，击败会获得大幅战斗增益。",
         "Remark": "S2核心词缀",
         "Icon": "ui/atlas/affix/com_affix_waiqiangzhonggan",
         "EffectType": 2,
@@ -4059,7 +4059,7 @@
         "Name": "净化光幕",
         "Description": "场景中间歇性出现净化光幕，需要开启保护罩躲避",
         "Remark": "爬塔事件",
-        "Icon": "ui/atlas/affix/com_affix_tanhuang",
+        "Icon": "ui/atlas/affix/com_affix_s1_flux_decoy1",
         "EffectType": 2,
         "TargetType": 3,
         "Level": 1,
@@ -5467,6 +5467,346 @@
         "EffectTime": [
             [
                 1,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2101": {
+        "Key": 2101,
+        "Id": 2101,
+        "Name": "沉梦之面·狂言",
+        "Description": "首领攻击<style=\"accent-gn\">+30%</style>，生命值<style=\"accent-gn\">+20%</style>；<br>首领掉落「沉梦契文」必定为史诗",
+        "Remark": "娜宝面具1肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997265,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2102": {
+        "Key": 2102,
+        "Id": 2102,
+        "Name": "沉梦之面·梦呓",
+        "Description": "玩家生命值不满时，受到伤害<style=\"accent-gn\">+30%</style>；<br>玩家生命值满时，受到伤害<style=\"accent-gn\">-30%</style>",
+        "Remark": "娜宝面具2肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                997815,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2103": {
+        "Key": 2103,
+        "Id": 2103,
+        "Name": "沉梦之面·惑心",
+        "Description": "玩家攻击力<style=\"accent-gn\">-20%</style>，防御力<style=\"accent-gn\">-20%</style>；<br>怪物攻击力<style=\"accent-gn\">-30%</style>",
+        "Remark": "娜宝面具3肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997812,
+                0
+            ],
+            [
+                1,
+                1,
+                997811,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ],
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2104": {
+        "Key": 2104,
+        "Id": 2104,
+        "Name": "沉梦之面·变节",
+        "Description": "精英和首领生命值<style=\"accent-gn\">+100%</style>，攻击力<style=\"accent-gn\">+50%</style>；<br>精英和首领掉落「沉梦残像」提升<style=\"accent-gn\">60%</style>",
+        "Remark": "娜宝面具4肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997821,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2105": {
+        "Key": 2105,
+        "Id": 2105,
+        "Name": "沉梦之面·梦魇",
+        "Description": "怪物被虚蚀侵蚀（生命值<style=\"accent-gn\">+20%</style>，攻击<style=\"accent-gn\">+20%</style>）；<br>怪物掉落「沉梦契文」概率翻倍",
+        "Remark": "娜宝面具5肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997267,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2106": {
+        "Key": 2106,
+        "Id": 2106,
+        "Name": "沉梦之面·窃笑",
+        "Description": "玩家当前生命值无法超过生命值上限的<style=\"accent-gn\">50%</style>；<br>怪物最大生命值<style=\"accent-gn\">-30%</style>",
+        "Remark": "娜宝面具6肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997814,
+                0
+            ],
+            [
+                1,
+                1,
+                997813,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ],
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2107": {
+        "Key": 2107,
+        "Id": 2107,
+        "Name": "沉梦之面·胧月",
+        "Description": "处于非战斗状态「沉梦值」提升速度<style=\"accent-gn\">+100%</style>；<br>处于战斗状态「沉梦值」提升速度<style=\"accent-gn\">-20%</style>",
+        "Remark": "娜宝面具7肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                1,
+                997305,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2108": {
+        "Key": 2108,
+        "Id": 2108,
+        "Name": "沉梦之面·回响",
+        "Description": "所有单位受到伤害将会缓存，每<style=\"accent-gn\">5秒</style>结算一次；<br>怪物受到伤害<style=\"accent-gn\">+15%</style>",
+        "Remark": "娜宝面具8肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997823,
+                0
+            ],
+            [
+                1,
+                4,
+                997817,
+                0
+            ],
+            [
+                1,
+                1,
+                997816,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ],
+            [
+                5,
+                0
+            ],
+            [
+                2,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2109": {
+        "Key": 2109,
+        "Id": 2109,
+        "Name": "沉梦之面·终幕",
+        "Description": "怪物攻击力、生命值<style=\"accent-gn\">+10%</style>，精英及以上额外获得<style=\"accent-gn\">10%</style>；<br>战斗获得的「沉梦残像」提升<style=\"accent-gn\">40%</style>",
+        "Remark": "娜宝面具9肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997822,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ]
+        ],
+        "GsChange": 0,
+        "IsShowUI": true,
+        "PauseLogic": []
+    },
+    "2110": {
+        "Key": 2110,
+        "Id": 2110,
+        "Name": "沉梦之面·对称",
+        "Description": "怪物获得[保护]：伤害减免<style=\"accent-gn\">+50%</style>，每受到一次伤害，效果降低<style=\"accent-gn\">0.5%</style>；<br>玩家受到伤害<style=\"accent-gn\">-30%</style>",
+        "Remark": "娜宝面具10肉鸽大秘境",
+        "Icon": "ui/atlas/affix/com_affix_zhadanren",
+        "EffectType": 3,
+        "TargetType": 3,
+        "Level": 1,
+        "Mutex": [],
+        "Effect": [
+            [
+                1,
+                4,
+                997818,
+                0
+            ],
+            [
+                1,
+                1,
+                997819,
+                0
+            ]
+        ],
+        "EffectTime": [
+            [
+                5,
+                0
+            ],
+            [
+                2,
                 0
             ]
         ],

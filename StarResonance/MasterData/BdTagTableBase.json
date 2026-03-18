@@ -106,8 +106,8 @@
     "14": {
         "Key": 14,
         "Id": 14,
-        "TagName": "激昂",
-        "TagString": "持续小段时间，强力提升战斗能力的效果",
+        "TagName": "战斗幻想增益",
+        "TagString": "战斗幻想释放主动技能后带来的增益效果",
         "TagType": 2,
         "ParentTag": 1004
     },
@@ -706,7 +706,7 @@
     "89": {
         "Key": 89,
         "Id": 89,
-        "TagName": "幸运一击治疗",
+        "TagName": "幸运效果治疗",
         "TagString": "技能触发的幸运效果所产生的治疗（使用职业技能，且造成直接伤害或治疗时，会以等同于幸运几率的概率触发自身拥有的所有幸运效果）",
         "TagType": 2,
         "ParentTag": 1003
@@ -756,15 +756,15 @@
         "Id": 95,
         "TagName": "诅咒词条",
         "TagString": "用于肉鸽玩法的buff词条类型",
-        "TagType": 1,
-        "ParentTag": 0
+        "TagType": 2,
+        "ParentTag": 1011
     },
     "96": {
         "Key": 96,
         "Id": 96,
         "TagName": "弹跳子弹",
         "TagString": "用于肉鸽玩法的技能标记",
-        "TagType": 0,
+        "TagType": 1,
         "ParentTag": 0
     },
     "97": {
@@ -772,24 +772,24 @@
         "Id": 97,
         "TagName": "血怒词条",
         "TagString": "用于肉鸽玩法的buff词条类型",
-        "TagType": 0,
-        "ParentTag": 0
+        "TagType": 2,
+        "ParentTag": 1011
     },
     "98": {
         "Key": 98,
         "Id": 98,
         "TagName": "无伤词条",
         "TagString": "用于肉鸽玩法的buff词条类型",
-        "TagType": 0,
-        "ParentTag": 0
+        "TagType": 2,
+        "ParentTag": 1011
     },
     "99": {
         "Key": 99,
         "Id": 99,
         "TagName": "幸运词条",
         "TagString": "用于肉鸽玩法的buff词条类型",
-        "TagType": 0,
-        "ParentTag": 0
+        "TagType": 2,
+        "ParentTag": 1011
     },
     "100": {
         "Key": 100,
@@ -804,7 +804,47 @@
         "Id": 101,
         "TagName": "全能",
         "TagString": "处于全能提升的有利状态",
-        "TagType": 0,
+        "TagType": 2,
+        "ParentTag": 1004
+    },
+    "102": {
+        "Key": 102,
+        "Id": 102,
+        "TagName": "怪物携带异常",
+        "TagString": "专给野外怪物用的针对A，B类tag的标记",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "103": {
+        "Key": 103,
+        "Id": 103,
+        "TagName": "职责技能",
+        "TagString": "根据所属的守护、攻击、辅助职责而获得的特殊技能",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "104": {
+        "Key": 104,
+        "Id": 104,
+        "TagName": "异常状态解除",
+        "TagString": "控制状态，可以被解控技能解除",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "105": {
+        "Key": 105,
+        "Id": 105,
+        "TagName": "暴虐词条",
+        "TagString": "用于肉鸽玩法的buff词条类型",
+        "TagType": 2,
+        "ParentTag": 1011
+    },
+    "106": {
+        "Key": 106,
+        "Id": 106,
+        "TagName": "幸运一击",
+        "TagString": "职业天生附带的基础幸运效果",
+        "TagType": 1,
         "ParentTag": 0
     },
     "140": {
@@ -1044,6 +1084,14 @@
         "Id": 1010,
         "TagName": "职业技能",
         "TagString": "职业本身所拥有的技能",
+        "TagType": 1,
+        "ParentTag": 0
+    },
+    "1011": {
+        "Key": 1011,
+        "Id": 1011,
+        "TagName": "肉鸽词条",
+        "TagString": "用于肉鸽玩法的buff词条类型",
         "TagType": 1,
         "ParentTag": 0
     },

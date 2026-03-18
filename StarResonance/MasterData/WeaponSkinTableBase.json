@@ -60,7 +60,7 @@
         "DefaultEffect": [],
         "ProfessionId": 1,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 8,
         "Score": 30,
         "LongIcon": "ch_wp_olvera_02_01_t",
         "OpenCondition": [],
@@ -83,7 +83,7 @@
         "DefaultEffect": [],
         "ProfessionId": 1,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 9,
         "Score": 160,
         "LongIcon": "ch_wp_olvera_02_01_t",
         "OpenCondition": [],
@@ -145,7 +145,7 @@
         ],
         "ProfessionId": 1,
         "Original": 1,
-        "SortID": 9,
+        "SortID": 11,
         "Score": 320,
         "LongIcon": "ch_wp_olvera_06_01_t",
         "OpenCondition": [],
@@ -168,7 +168,7 @@
         "DefaultEffect": [],
         "ProfessionId": 1,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_olvera_02_01_t",
         "OpenCondition": [],
@@ -210,15 +210,31 @@
         "WeaponModelId": [
             1310090
         ],
-        "EffectSwitch": [],
-        "DefaultEffect": [],
+        "EffectSwitch": [
+            [
+                1
+            ]
+        ],
+        "DefaultEffect": [
+            [
+                "0",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_olvera_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        ],
         "ProfessionId": 1,
         "Original": 0,
         "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_olvera_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -232,6 +248,29 @@
         ],
         "WeaponModelId": [
             1310100
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 1,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_olvera_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7310011": {
+        "Key": 7310011,
+        "Id": 7310011,
+        "Name": "星与雪之歌·刀",
+        "Intro": "星与雪之歌·刀",
+        "Model": [
+            "ch_wp_olvera-11_01"
+        ],
+        "WeaponModelId": [
+            1310110
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -306,7 +345,7 @@
         "DefaultEffect": [],
         "ProfessionId": 2,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 8,
         "Score": 30,
         "LongIcon": "ch_wp_boyce_02_01_t",
         "OpenCondition": [],
@@ -329,7 +368,7 @@
         "DefaultEffect": [],
         "ProfessionId": 2,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 9,
         "Score": 160,
         "LongIcon": "ch_wp_boyce_02_01_t",
         "OpenCondition": [],
@@ -391,7 +430,7 @@
         ],
         "ProfessionId": 2,
         "Original": 1,
-        "SortID": 9,
+        "SortID": 11,
         "Score": 320,
         "LongIcon": "ch_wp_boyce_06_01_t",
         "OpenCondition": [],
@@ -414,7 +453,7 @@
         "DefaultEffect": [],
         "ProfessionId": 2,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_boyce_02_01_t",
         "OpenCondition": [],
@@ -456,15 +495,31 @@
         "WeaponModelId": [
             1320090
         ],
-        "EffectSwitch": [],
-        "DefaultEffect": [],
+        "EffectSwitch": [
+            [
+                1
+            ]
+        ],
+        "DefaultEffect": [
+            [
+                "0",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_boyce_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        ],
         "ProfessionId": 2,
         "Original": 0,
         "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_boyce_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -478,6 +533,29 @@
         ],
         "WeaponModelId": [
             1320100
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 2,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_boyce_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7320011": {
+        "Key": 7320011,
+        "Id": 7320011,
+        "Name": "星与雪之歌·杖",
+        "Intro": "星与雪之歌·杖",
+        "Model": [
+            "ch_wp_boyce-11_01"
+        ],
+        "WeaponModelId": [
+            1320110
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -577,7 +655,7 @@
         "DefaultEffect": [],
         "ProfessionId": 4,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 8,
         "Score": 30,
         "LongIcon": "ch_wp_tina_02_01_t",
         "OpenCondition": [],
@@ -600,7 +678,7 @@
         "DefaultEffect": [],
         "ProfessionId": 4,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 9,
         "Score": 160,
         "LongIcon": "ch_wp_tina_02_01_t",
         "OpenCondition": [],
@@ -662,7 +740,7 @@
         ],
         "ProfessionId": 4,
         "Original": 1,
-        "SortID": 9,
+        "SortID": 11,
         "Score": 320,
         "LongIcon": "ch_wp_tina_06_01_t",
         "OpenCondition": [],
@@ -685,7 +763,7 @@
         "DefaultEffect": [],
         "ProfessionId": 4,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_tina_02_01_t",
         "OpenCondition": [],
@@ -727,15 +805,31 @@
         "WeaponModelId": [
             1340090
         ],
-        "EffectSwitch": [],
-        "DefaultEffect": [],
+        "EffectSwitch": [
+            [
+                1
+            ]
+        ],
+        "DefaultEffect": [
+            [
+                "0",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_tina_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        ],
         "ProfessionId": 4,
         "Original": 0,
         "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_tina_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -749,6 +843,29 @@
         ],
         "WeaponModelId": [
             1340100
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 4,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_tina_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7340011": {
+        "Key": 7340011,
+        "Id": 7340011,
+        "Name": "星与雪之歌·枪",
+        "Intro": "星与雪之歌·枪",
+        "Model": [
+            "ch_wp_tina-11_01"
+        ],
+        "WeaponModelId": [
+            1340110
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -829,7 +946,7 @@
         "DefaultEffect": [],
         "ProfessionId": 5,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 8,
         "Score": 30,
         "LongIcon": "ch_wp_iruna_02_01_t",
         "OpenCondition": [],
@@ -854,7 +971,7 @@
         "DefaultEffect": [],
         "ProfessionId": 5,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 9,
         "Score": 160,
         "LongIcon": "ch_wp_iruna_02_01_t",
         "OpenCondition": [],
@@ -934,7 +1051,7 @@
         ],
         "ProfessionId": 5,
         "Original": 1,
-        "SortID": 9,
+        "SortID": 11,
         "Score": 320,
         "LongIcon": "ch_wp_iruna_06_01_t",
         "OpenCondition": [],
@@ -959,7 +1076,7 @@
         "DefaultEffect": [],
         "ProfessionId": 5,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_iruna_02_01_t",
         "OpenCondition": [],
@@ -1005,15 +1122,45 @@
             1350090,
             1350090
         ],
-        "EffectSwitch": [],
-        "DefaultEffect": [],
+        "EffectSwitch": [
+            [
+                1
+            ],
+            [
+                2
+            ]
+        ],
+        "DefaultEffect": [
+            [
+                "0",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_iruna_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ],
+            [
+                "1",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_iruna_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        ],
         "ProfessionId": 5,
         "Original": 0,
         "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_iruna_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -1029,6 +1176,31 @@
         "WeaponModelId": [
             1350100,
             1350100
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 5,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_iruna_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7350011": {
+        "Key": 7350011,
+        "Id": 7350011,
+        "Name": "星与雪之歌·环",
+        "Intro": "星与雪之歌·环",
+        "Model": [
+            "ch_wp_iruna-11_01",
+            "ch_wp_iruna-11_01"
+        ],
+        "WeaponModelId": [
+            1350110,
+            1350110
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -1139,7 +1311,7 @@
         "DefaultEffect": [],
         "ProfessionId": 9,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 8,
         "Score": 30,
         "LongIcon": "ch_wp_comeau_02_01_t",
         "OpenCondition": [],
@@ -1162,7 +1334,7 @@
         "DefaultEffect": [],
         "ProfessionId": 9,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 9,
         "Score": 160,
         "LongIcon": "ch_wp_comeau_02_01_t",
         "OpenCondition": [],
@@ -1224,7 +1396,7 @@
         ],
         "ProfessionId": 9,
         "Original": 1,
-        "SortID": 9,
+        "SortID": 11,
         "Score": 320,
         "LongIcon": "ch_wp_comeau_06_01_t",
         "OpenCondition": [],
@@ -1247,7 +1419,7 @@
         "DefaultEffect": [],
         "ProfessionId": 9,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_comeau_02_01_t",
         "OpenCondition": [],
@@ -1289,15 +1461,31 @@
         "WeaponModelId": [
             1370090
         ],
-        "EffectSwitch": [],
-        "DefaultEffect": [],
+        "EffectSwitch": [
+            [
+                1
+            ]
+        ],
+        "DefaultEffect": [
+            [
+                "0",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_comeau_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        ],
         "ProfessionId": 9,
         "Original": 0,
         "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_comeau_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -1311,6 +1499,29 @@
         ],
         "WeaponModelId": [
             1370100
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 9,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_comeau_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7370011": {
+        "Key": 7370011,
+        "Id": 7370011,
+        "Name": "星与雪之歌·刃",
+        "Intro": "星与雪之歌·刃",
+        "Model": [
+            "ch_wp_comeau-11_01"
+        ],
+        "WeaponModelId": [
+            1370110
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -1458,7 +1669,7 @@
         ],
         "ProfessionId": 11,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 8,
         "Score": 30,
         "LongIcon": "ch_wp_rodri_02_01_t",
         "OpenCondition": [],
@@ -1502,7 +1713,7 @@
         ],
         "ProfessionId": 11,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 9,
         "Score": 160,
         "LongIcon": "ch_wp_rodri_02_01_t",
         "OpenCondition": [],
@@ -1601,7 +1812,7 @@
         ],
         "ProfessionId": 11,
         "Original": 1,
-        "SortID": 9,
+        "SortID": 11,
         "Score": 320,
         "LongIcon": "ch_wp_rodri_06_01_t",
         "OpenCondition": [],
@@ -1645,7 +1856,7 @@
         ],
         "ProfessionId": 11,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_rodri_02_01_t",
         "OpenCondition": [],
@@ -1717,16 +1928,34 @@
             0,
             1390090
         ],
-        "EffectSwitch": [],
+        "EffectSwitch": [
+            [
+                1
+            ],
+            [
+                2
+            ]
+        ],
         "DefaultEffect": [
             [
                 "1",
                 "ep_weapon_effect02_point",
                 "effect/skill/rodri/p_fx_skill_rodri-01_bowstring",
-                "0.071",
-                "0.015",
-                "0.018",
+                "0.073",
+                "0.02",
+                "0.01",
                 "90",
+                "0",
+                "0"
+            ],
+            [
+                "1",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_rodri_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
                 "0",
                 "0"
             ]
@@ -1737,7 +1966,7 @@
         "Score": 160,
         "LongIcon": "ch_wp_rodri_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [
             [
                 "ep_weapon_effect02_point",
@@ -1760,6 +1989,50 @@
         "WeaponModelId": [
             0,
             1390100
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [
+            [
+                "1",
+                "ep_weapon_effect02_point",
+                "effect/skill/rodri/p_fx_skill_rodri-01_bowstring",
+                "0.071",
+                "0.015",
+                "0.018",
+                "90",
+                "0",
+                "0"
+            ]
+        ],
+        "ProfessionId": 11,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_rodri_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [
+            [
+                "ep_weapon_effect02_point",
+                "1",
+                "1.1",
+                "1"
+            ]
+        ],
+        "EquipToPlay": 0
+    },
+    "7390011": {
+        "Key": 7390011,
+        "Id": 7390011,
+        "Name": "星与雪之歌·弓",
+        "Intro": "星与雪之歌·弓",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_rodri-11_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1390110
         ],
         "EffectSwitch": [],
         "DefaultEffect": [
@@ -1859,7 +2132,7 @@
         "DefaultEffect": [],
         "ProfessionId": 12,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 5,
         "Score": 30,
         "LongIcon": "ch_wp_farfara_02_01_t",
         "OpenCondition": [],
@@ -1884,7 +2157,7 @@
         "DefaultEffect": [],
         "ProfessionId": 12,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_farfara_02_01_t",
         "OpenCondition": [],
@@ -1909,7 +2182,7 @@
         "DefaultEffect": [],
         "ProfessionId": 12,
         "Original": 0,
-        "SortID": 10,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_farfara_02_01_t",
         "OpenCondition": [],
@@ -1989,7 +2262,7 @@
         "DefaultEffect": [],
         "ProfessionId": 12,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 5,
         "Score": 30,
         "LongIcon": "ch_wp_farfara_02_01_t",
         "OpenCondition": [],
@@ -2035,15 +2308,45 @@
             1400090,
             1400091
         ],
-        "EffectSwitch": [],
-        "DefaultEffect": [],
+        "EffectSwitch": [
+            [
+                1
+            ],
+            [
+                2
+            ]
+        ],
+        "DefaultEffect": [
+            [
+                "0",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_farfara01_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ],
+            [
+                "1",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_farfara02_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        ],
         "ProfessionId": 12,
         "Original": 0,
         "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_farfara_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -2059,6 +2362,31 @@
         "WeaponModelId": [
             1400100,
             1400101
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 12,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_farfara_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7400011": {
+        "Key": 7400011,
+        "Id": 7400011,
+        "Name": "星与雪之歌·盾",
+        "Intro": "星与雪之歌·盾",
+        "Model": [
+            "ch_wp_farfara01-11_01",
+            "ch_wp_farfara02-11_01"
+        ],
+        "WeaponModelId": [
+            1400110,
+            1400111
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],
@@ -2139,7 +2467,7 @@
         "DefaultEffect": [],
         "ProfessionId": 13,
         "Original": 0,
-        "SortID": 7,
+        "SortID": 8,
         "Score": 30,
         "LongIcon": "ch_wp_guitar_02_01_t",
         "OpenCondition": [],
@@ -2164,7 +2492,7 @@
         "DefaultEffect": [],
         "ProfessionId": 13,
         "Original": 0,
-        "SortID": 8,
+        "SortID": 9,
         "Score": 160,
         "LongIcon": "ch_wp_guitar_02_01_t",
         "OpenCondition": [],
@@ -2233,7 +2561,7 @@
         ],
         "ProfessionId": 13,
         "Original": 1,
-        "SortID": 9,
+        "SortID": 11,
         "Score": 320,
         "LongIcon": "ch_wp_guitar_06_01_t",
         "OpenCondition": [],
@@ -2258,7 +2586,7 @@
         "DefaultEffect": [],
         "ProfessionId": 13,
         "Original": 0,
-        "SortID": 4,
+        "SortID": 7,
         "Score": 30,
         "LongIcon": "ch_wp_guitar_02_01_t",
         "OpenCondition": [],
@@ -2304,15 +2632,34 @@
             0,
             1410090
         ],
-        "EffectSwitch": [],
-        "DefaultEffect": [],
+        "EffectSwitch": [
+            [
+                1
+            ],
+            [
+                1
+            ]
+        ],
+        "DefaultEffect": [
+            [
+                "1",
+                "ep_weapon_effect01_point",
+                "effect/skill/skin_sea/p_fx_wp_guitar_09_01_skin02",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+            ]
+        ],
         "ProfessionId": 13,
         "Original": 0,
         "SortID": 6,
         "Score": 160,
         "LongIcon": "ch_wp_guitar_02_01_t",
         "OpenCondition": [],
-        "IsOpen": false,
+        "IsOpen": true,
         "EffectScale": [],
         "EquipToPlay": 0
     },
@@ -2328,6 +2675,31 @@
         "WeaponModelId": [
             0,
             1410100
+        ],
+        "EffectSwitch": [],
+        "DefaultEffect": [],
+        "ProfessionId": 13,
+        "Original": 0,
+        "SortID": 4,
+        "Score": 30,
+        "LongIcon": "ch_wp_guitar_02_01_t",
+        "OpenCondition": [],
+        "IsOpen": true,
+        "EffectScale": [],
+        "EquipToPlay": 0
+    },
+    "7410011": {
+        "Key": 7410011,
+        "Id": 7410011,
+        "Name": "星与雪之歌·吉他",
+        "Intro": "星与雪之歌·吉他",
+        "Model": [
+            "empty_weapon",
+            "ch_wp_guitar-11_01"
+        ],
+        "WeaponModelId": [
+            0,
+            1410110
         ],
         "EffectSwitch": [],
         "DefaultEffect": [],

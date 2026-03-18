@@ -264,7 +264,7 @@
         "CountGrow": [],
         "AttrMapping": [],
         "LowerLimit": 0,
-        "UpperLimit": 100,
+        "UpperLimit": 11000,
         "InitialValue": 0,
         "RefreshTime": 0
     },
@@ -276,8 +276,8 @@
         "ParaTwo": [],
         "CountGrow": [],
         "AttrMapping": [],
-        "LowerLimit": 0,
-        "UpperLimit": 10000,
+        "LowerLimit": -250,
+        "UpperLimit": 23000,
         "InitialValue": 0,
         "RefreshTime": 0
     },
@@ -289,8 +289,8 @@
         "ParaTwo": [],
         "CountGrow": [],
         "AttrMapping": [],
-        "LowerLimit": 0,
-        "UpperLimit": 100,
+        "LowerLimit": -50,
+        "UpperLimit": 10000,
         "InitialValue": 0,
         "RefreshTime": 0
     },
@@ -303,7 +303,7 @@
         "CountGrow": [],
         "AttrMapping": [],
         "LowerLimit": 0,
-        "UpperLimit": 100,
+        "UpperLimit": 11000,
         "InitialValue": 0,
         "RefreshTime": 0
     },
@@ -1206,6 +1206,19 @@
         "InitialValue": 0,
         "RefreshTime": 0
     },
+    "2009": {
+        "Key": 2009,
+        "Id": 2009,
+        "EventType": 0,
+        "ParaOne": [],
+        "ParaTwo": [],
+        "CountGrow": [],
+        "AttrMapping": [],
+        "LowerLimit": -10000,
+        "UpperLimit": 10000,
+        "InitialValue": 0,
+        "RefreshTime": 0
+    },
     "3001": {
         "Key": 3001,
         "Id": 3001,
@@ -1459,6 +1472,19 @@
                 500000
             ]
         ],
+        "AttrMapping": [],
+        "LowerLimit": 0,
+        "UpperLimit": 190000,
+        "InitialValue": 0,
+        "RefreshTime": 0
+    },
+    "3009": {
+        "Key": 3009,
+        "Id": 3009,
+        "EventType": 0,
+        "ParaOne": [],
+        "ParaTwo": [],
+        "CountGrow": [],
         "AttrMapping": [],
         "LowerLimit": 0,
         "UpperLimit": 190000,

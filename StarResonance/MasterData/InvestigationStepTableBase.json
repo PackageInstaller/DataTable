@@ -184,6 +184,37 @@
         ],
         "QuickReasoning": true
     },
+    "20011": {
+        "Key": 20011,
+        "Id": 20011,
+        "Clue": [
+            200111,
+            200112,
+            200113
+        ],
+        "InferenceStep": [
+            200111,
+            200112,
+            200113
+        ],
+        "Conclusion": "大家的看法各不相同，和艾露娜商量一下吧。",
+        "ConclusionTips": "和艾露娜商量一下",
+        "ConclusionBubble": "接下来去和艾露娜聊聊。",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "只有这些线索的话……没什么头绪啊。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "当时的情况真是错综复杂……"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
+    },
     "20020": {
         "Key": 20020,
         "Id": 20020,
@@ -425,6 +456,130 @@
         ],
         "ReviewBubble": [
             "成功看穿一切。"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
+    },
+    "100011": {
+        "Key": 100011,
+        "Id": 100011,
+        "Clue": [
+            1000111,
+            1000112,
+            1000113
+        ],
+        "InferenceStep": [
+            1000111,
+            1000112,
+            1000113
+        ],
+        "Conclusion": "月影之野的狐狸跳舞现象与莓色果无关，相关信息属于传闻误传。<br>士兵们见到莓色果属于“幻祸”的影响。<br>所以，传闻之中谁也没见过的莓色果并不存在。",
+        "ConclusionTips": "和达雅一起回忆被调查者对莓色果的描述。",
+        "ConclusionBubble": "将推论告诉达雅吧。",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "还需要再想想。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "教科书般的推理。"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
+    },
+    "100021": {
+        "Key": 100021,
+        "Id": 100021,
+        "Clue": [
+            1000211,
+            1000212,
+            1000213
+        ],
+        "InferenceStep": [
+            1000211,
+            1000212,
+            1000213
+        ],
+        "Conclusion": "只有得了“幻祸”的两人见过莓色果。<br>几百人吃了伯格的饭菜都没事，所以伯格没有使用莓色果作为食材。<br>莓色果并不存在。",
+        "ConclusionTips": "和达雅一起回忆被调查者对莓色果的描述。",
+        "ConclusionBubble": "将推论告诉达雅吧。",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "还需要再想想。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "教科书般的推理。"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
+    },
+    "100031": {
+        "Key": 100031,
+        "Id": 100031,
+        "Clue": [
+            1000311,
+            1000312,
+            1000313
+        ],
+        "InferenceStep": [
+            1000311,
+            1000312,
+            1000313
+        ],
+        "Conclusion": "矿工们有家人需要安排，还要考虑自身情况。<br>所以无法确定他们是否都愿意回到阿斯特里斯。",
+        "ConclusionTips": "回忆矿工们的信息。",
+        "ConclusionBubble": "先思考一下该怎么说服矿工们吧。",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "不行，现在还没办法得出结论。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "教科书般的推理。"
+        ],
+        "ReviewBubbleAction": [
+            9047
+        ],
+        "QuickReasoning": true
+    },
+    "100041": {
+        "Key": 100041,
+        "Id": 100041,
+        "Clue": [
+            1000411,
+            1000412,
+            1000413
+        ],
+        "InferenceStep": [
+            1000411,
+            1000412,
+            1000413
+        ],
+        "Conclusion": "「名单」这个词在记录中确实出现过，但并未找到实物。「塔」看起来是莱纳保存重要之物的地方，因此下一步应该沿着靴印，前往塔内调查「名单」的真相。",
+        "ConclusionTips": "沿着靴印前进，前往「塔」中探明「名单」的真相。",
+        "ConclusionBubble": "找到了……这不是名单的答案，但这是通往答案的路。",
+        "ConclusionAction": 9033,
+        "IockedBubble": [
+            "线索还不够……现在下结论，只会害死自己。"
+        ],
+        "IockedBubbleAction": [
+            9019
+        ],
+        "ReviewBubble": [
+            "现在回头看……他们真正害怕的，从来都不是「名单」。"
         ],
         "ReviewBubbleAction": [
             9047

@@ -848,6 +848,44 @@
         "AuToClose": false,
         "OnOff": false
     },
+    "1039": {
+        "Key": 1039,
+        "Id": 1039,
+        "GMGroup": 1,
+        "Type": 3,
+        "Command": "addCounter",
+        "ParameterOrContent": [
+            "counterId",
+            "addCount"
+        ],
+        "OptionalParameter": [],
+        "ParameterCheck": [],
+        "ButtonShow": "增加指定counterID数量（能正常触发添加）",
+        "CommandOrParameterRemark": [
+            "增加指定counterID数量（能正常触发添加）"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "1040": {
+        "Key": 1040,
+        "Id": 1040,
+        "GMGroup": 1,
+        "Type": 3,
+        "Command": "setCounter",
+        "ParameterOrContent": [
+            "counterId",
+            "countNum"
+        ],
+        "OptionalParameter": [],
+        "ParameterCheck": [],
+        "ButtonShow": "设置指定counterID数量",
+        "CommandOrParameterRemark": [
+            "设置指定counterID数量"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
     "2001": {
         "Key": 2001,
         "Id": 2001,
@@ -1224,7 +1262,18 @@
             "addItem 12010064,1",
             "addItem 12010065,1",
             "addItem 12010066,1",
-            "addItem 12010067,1"
+            "addItem 12010067,1",
+            "addItem 12010068,1",
+            "addItem 12010069,1",
+            "addItem 12010070,1",
+            "addItem 12010071,1",
+            "addItem 12010072,1",
+            "addItem 12010073,1",
+            "addItem 12010074,1",
+            "addItem 12010075,1",
+            "addItem 12010076,1",
+            "addItem 12010077,1",
+            "addItem 12010078,1"
         ],
         "OptionalParameter": [],
         "ParameterCheck": [],
@@ -1273,7 +1322,11 @@
             "addItem 1073129,99",
             "addItem 1073130,99",
             "addItem 1073131,99",
-            "addItem 1073132,99"
+            "addItem 1073132,99",
+            "addItem 1073133,99",
+            "addItem 1073134,99",
+            "addItem 1073135,99",
+            "addItem 1073136,99"
         ],
         "OptionalParameter": [],
         "ParameterCheck": [],
@@ -1364,16 +1417,20 @@
         "Command": "GMStartRideVehicle",
         "ParameterOrContent": [
             "vehicleUuid",
-            "index"
+            "seatIndex"
         ],
-        "OptionalParameter": [],
+        "OptionalParameter": [
+            "seatGroupIndex"
+        ],
         "ParameterCheck": [
+            "number",
             "number",
             "number"
         ],
         "ButtonShow": "乘坐载具的指定位置",
         "CommandOrParameterRemark": [
-            "乘坐载具的指定位置"
+            "乘坐载具的指定位置",
+            "载具的实体Id,座位索引,[座位组索引.0]"
         ],
         "AuToClose": false,
         "OnOff": false
@@ -1552,7 +1609,8 @@
         "ParameterOrContent": [
             "addBuff 500103",
             "addGMAttr 11332|5000",
-            "addGMAttr 11342|5000"
+            "addGMAttr 11342|5000",
+            "addGMAttr 11442|5000"
         ],
         "OptionalParameter": [],
         "ParameterCheck": [],
@@ -1572,7 +1630,8 @@
         "ParameterOrContent": [
             "addBuff 521001 0 1 0",
             "addGMAttr 11332|10000000",
-            "addGMAttr 11342|10000000"
+            "addGMAttr 11342|10000000",
+            "addGMAttr 11442|500000"
         ],
         "OptionalParameter": [],
         "ParameterCheck": [],
@@ -3992,9 +4051,9 @@
         "Id": 2089,
         "GMGroup": 2,
         "Type": 2,
-        "Command": "snakeboss",
+        "Command": "snakeBOSS",
         "ParameterOrContent": [
-            "moveSelf -43.1,101.1,204.1"
+            "moveSelf -48,102,200"
         ],
         "OptionalParameter": [],
         "ParameterCheck": [],
@@ -4012,13 +4071,136 @@
         "Type": 2,
         "Command": "nappoboss",
         "ParameterOrContent": [
-            "moveSelf -54.1,87.1,-578.1"
+            "triggerSceneCustomEvent nappo_test"
         ],
         "OptionalParameter": [],
         "ParameterCheck": [],
         "ButtonShow": "幻幻花BOSS战（需在幻幻花副本内）",
         "CommandOrParameterRemark": [
             "传送到幻祸娜宝boss"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "2091": {
+        "Key": 2091,
+        "Id": 2091,
+        "GMGroup": 2,
+        "Type": 2,
+        "Command": "snakeZaiJu",
+        "ParameterOrContent": [
+            "triggerSceneCustomEvent testzaiju",
+            "dungeonSetStageTarget 1501014"
+        ],
+        "OptionalParameter": [],
+        "ParameterCheck": [],
+        "ButtonShow": "岩蛇载具流程（需在岩蛇副本内）",
+        "CommandOrParameterRemark": [],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "2092": {
+        "Key": 2092,
+        "Id": 2092,
+        "GMGroup": 2,
+        "Type": 2,
+        "Command": "mengyanBOSS",
+        "ParameterOrContent": [
+            "triggerSceneCustomEvent test_mengyan_fast_born",
+            "moveSelf 75,117,-118"
+        ],
+        "OptionalParameter": [],
+        "ParameterCheck": [],
+        "ButtonShow": "衰败深处BOSS战（需在衰败深处副本内）",
+        "CommandOrParameterRemark": [],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "2093": {
+        "Key": 2093,
+        "Id": 2093,
+        "GMGroup": 2,
+        "Type": 3,
+        "Command": "GMRogueRandom",
+        "ParameterOrContent": [
+            "objUuid"
+        ],
+        "OptionalParameter": [],
+        "ParameterCheck": [
+            "number"
+        ],
+        "ButtonShow": "随机词条",
+        "CommandOrParameterRemark": [
+            "随机词条",
+            "交互物uuid"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "2094": {
+        "Key": 2094,
+        "Id": 2094,
+        "GMGroup": 2,
+        "Type": 3,
+        "Command": "GMRogueGetCoin",
+        "ParameterOrContent": [],
+        "OptionalParameter": [
+            "targetUuid"
+        ],
+        "ParameterCheck": [
+            "number"
+        ],
+        "ButtonShow": "获取货币",
+        "CommandOrParameterRemark": [
+            "获取货币",
+            "[目标uuid.0]"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "2095": {
+        "Key": 2095,
+        "Id": 2095,
+        "GMGroup": 2,
+        "Type": 3,
+        "Command": "GMRogueSetRandom",
+        "ParameterOrContent": [
+            "entryId"
+        ],
+        "OptionalParameter": [],
+        "ParameterCheck": [
+            "number"
+        ],
+        "ButtonShow": "设置下次随机第一个结果",
+        "CommandOrParameterRemark": [
+            "设置下次随机第一个结果",
+            "词条Id"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "2096": {
+        "Key": 2096,
+        "Id": 2096,
+        "GMGroup": 2,
+        "Type": 3,
+        "Command": "GMRogueChangeCoin",
+        "ParameterOrContent": [
+            "coinId",
+            "val"
+        ],
+        "OptionalParameter": [
+            "targetUuid"
+        ],
+        "ParameterCheck": [
+            "number",
+            "number",
+            "number"
+        ],
+        "ButtonShow": "改变货币",
+        "CommandOrParameterRemark": [
+            "改变货币",
+            "货币变量Id,改变值,[目标uuid.0]"
         ],
         "AuToClose": false,
         "OnOff": false
@@ -7486,6 +7668,62 @@
         "AuToClose": false,
         "OnOff": false
     },
+    "7063": {
+        "Key": 7063,
+        "Id": 7063,
+        "GMGroup": 7,
+        "Type": 1,
+        "Command": "openSinglePlayerMahjong",
+        "ParameterOrContent": [],
+        "OptionalParameter": [],
+        "ParameterCheck": [],
+        "ButtonShow": "单机版麻将",
+        "CommandOrParameterRemark": [
+            "打开单机版麻将"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "7064": {
+        "Key": 7064,
+        "Id": 7064,
+        "GMGroup": 7,
+        "Type": 1,
+        "Command": "mahjongStartCards",
+        "ParameterOrContent": [],
+        "OptionalParameter": [],
+        "ParameterCheck": [
+            "string"
+        ],
+        "ButtonShow": "下局麻将起始手牌",
+        "CommandOrParameterRemark": [
+            "下局麻将起始手牌：手牌ID",
+            "手牌ID",
+            "手牌ID…(1~9是万字，11~19是筒，21~29是条，31~37是东南西北白发中)"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "7065": {
+        "Key": 7065,
+        "Id": 7065,
+        "GMGroup": 7,
+        "Type": 1,
+        "Command": "mahjongNextCards",
+        "ParameterOrContent": [],
+        "OptionalParameter": [],
+        "ParameterCheck": [
+            "string"
+        ],
+        "ButtonShow": "当局麻将后续摸牌",
+        "CommandOrParameterRemark": [
+            "当局麻将后续摸牌：手牌ID",
+            "手牌ID",
+            "手牌ID…(1~9是万字，11~19是筒，21~29是条，31~37是东南西北白发中)"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
     "8001": {
         "Key": 8001,
         "Id": 8001,
@@ -8207,6 +8445,22 @@
         "Key": 10013,
         "Id": 10013,
         "GMGroup": 10,
+        "Type": 1,
+        "Command": "checkInvestigationData ",
+        "ParameterOrContent": [],
+        "OptionalParameter": [],
+        "ParameterCheck": [],
+        "ButtonShow": "解锁调查配置",
+        "CommandOrParameterRemark": [
+            "解锁调查配置"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "10014": {
+        "Key": 10014,
+        "Id": 10014,
+        "GMGroup": 10,
         "Type": 2,
         "Command": "addALLToys",
         "ParameterOrContent": [
@@ -8240,7 +8494,12 @@
             "addItem 1073128,99",
             "addItem 1073129,99",
             "addItem 1073130,99",
-            "addItem 1073131,99"
+            "addItem 1073131,99",
+            "addItem 1073132,99",
+            "addItem 1073133,99",
+            "addItem 1073134,99",
+            "addItem 1073135,99",
+            "addItem 1073136,99"
         ],
         "OptionalParameter": [],
         "ParameterCheck": [],
@@ -8976,6 +9235,22 @@
         "ButtonShow": "保存家园数据到本地",
         "CommandOrParameterRemark": [
             "保存家园数据到本地"
+        ],
+        "AuToClose": false,
+        "OnOff": false
+    },
+    "11006": {
+        "Key": 11006,
+        "Id": 11006,
+        "GMGroup": 11,
+        "Type": 3,
+        "Command": "addItem 1070037 1",
+        "ParameterOrContent": [],
+        "OptionalParameter": [],
+        "ParameterCheck": [],
+        "ButtonShow": "来张家园凭证，登岛！",
+        "CommandOrParameterRemark": [
+            "获得1个家园凭证道具"
         ],
         "AuToClose": false,
         "OnOff": false

@@ -941,7 +941,7 @@
         "Text": "终极一斩",
         "Type": 3,
         "Par": 3401105,
-        "Description": "根据过去<style=\"accent-gn\">10</style>秒内消耗的<style=\"accent-gn\">雷之印</style>数量，造成巨额伤害。<br>每消耗<style=\"accent-gn\">1</style>枚<style=\"accent-gn\">雷之印</style>造成<style=\"accent-gn\">100%</style>攻击力<style=\"physical\">物理伤害</style>，最高不超过<style=\"accent-gn\">1000%</style>。",
+        "Description": "根据过去<style=\"accent-gn\">10</style>秒内消耗的<style=\"accent-gn\">雷之印</style>数量，造成巨额伤害。<br>每消耗<style=\"accent-gn\">1</style>枚<style=\"accent-gn\">雷之印</style>造成<style=\"accent-gn\">100%</style>攻击力<style=\"physical\">物理伤害</style>，最高不超过<style=\"accent-gn\">15000%</style>。",
         "ShowRule": 1
     },
     "1106": {
@@ -959,7 +959,7 @@
         "Text": "鼓舞",
         "Type": 3,
         "Par": 3401107,
-        "Description": "为祝福目标附加<style=\"accent-gn\">100</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>。",
+        "Description": "为祝福目标附加<style=\"accent-gn\">100</style>点<style=\"accent-gn\">智力</style>、<style=\"accent-gn\">力量</style>、<style=\"accent-gn\">敏捷</style>、<style=\"accent-gn\">耐力</style>和<style=\"accent-gn\">1.5%</style><style=\"accent-gn\">暴击</style>、<style=\"accent-gn\">急速</style>、<style=\"accent-gn\">幸运</style>、<style=\"accent-gn\">精通</style>、<style=\"accent-gn\">全能</style>。",
         "ShowRule": 1
     },
     "1108": {
@@ -1166,7 +1166,7 @@
         "Text": "涌能法则",
         "Type": 3,
         "Par": 3401130,
-        "Description": "每秒回复<style=\"accent-gn\">5%</style>最大<style=\"accent-gn\">寒冰能量</style>上限（该回复受到精通和急速影响），持续<style=\"accent-gn\">5</style>秒。",
+        "Description": "每秒回复<style=\"accent-gn\">3%</style>最大<style=\"accent-gn\">寒冰能量</style>上限（该回复受到精通和急速影响），持续<style=\"accent-gn\">10</style>秒。",
         "ShowRule": 1
     },
     "1131": {
@@ -1175,7 +1175,7 @@
         "Text": "岩弹",
         "Type": 3,
         "Par": 3401131,
-        "Description": "打击最近的<style=\"accent-gn\">1</style>个敌方目标，造成<style=\"accent-gn\">30%</style>攻击力<style=\"physical\">物理伤害</style>。",
+        "Description": "打击最近的<style=\"accent-gn\">1</style>个敌方目标，造成<style=\"accent-gn\">70%</style>攻击力<style=\"physical\">物理伤害</style>。",
         "ShowRule": 1
     },
     "1132": {
@@ -1229,7 +1229,7 @@
         "Text": "沙石区域",
         "Type": 3,
         "Par": 3401137,
-        "Description": "圈内自身<style=\"magic\">魔法伤害</style>减免+<style=\"accent-gn\">50%</style>，圈内队友（最多<style=\"accent-gn\">10</style>名）受到伤害的<style=\"accent-gn\">50%</style>由自身承担。",
+        "Description": "圈内自身<style=\"magic\">魔法伤害</style>减免+<style=\"accent-gn\">50%</style>，圈内队友（最多<style=\"accent-gn\">10</style>名）受到伤害的<style=\"accent-gn\">50%</style>将被直接吸收。",
         "ShowRule": 1
     },
     "1138": {
@@ -1328,7 +1328,7 @@
         "Text": "钢制喙",
         "Type": 3,
         "Par": 3401148,
-        "Description": "当<style=\"accent-gn\">钢制喙</style>层数大于等于<style=\"accent-gn\">5</style>时，每次叠加<style=\"accent-gn\">钢制喙</style>有<style=\"accent-gn\">30%</style>固定几率触发一次<style=\"accent-gn\">内爆</style>对范围内敌方目标造成<style=\"accent-gn\">60%</style>攻击力<style=\"physical\">物理伤害</style>。<style=\"accent-gn\">钢制喙</style>每<style=\"accent-gn\">1</style>秒层数-<style=\"accent-gn\">1</style>，最多叠加<style=\"accent-gn\">20</style>层。",
+        "Description": "当<style=\"accent-gn\">钢制喙</style>层数大于等于<style=\"accent-gn\">5</style>时，每次叠加<style=\"accent-gn\">钢制喙</style>有<style=\"accent-gn\">30%</style>固定几率触发一次<style=\"accent-gn\">内爆</style>对范围内敌方目标造成<style=\"accent-gn\">100%</style>攻击力<style=\"physical\">物理伤害</style>。<style=\"accent-gn\">钢制喙</style>每<style=\"accent-gn\">1</style>秒层数-<style=\"accent-gn\">1</style>，最多叠加<style=\"accent-gn\">20</style>层。",
         "ShowRule": 1
     },
     "1149": {
@@ -1418,7 +1418,7 @@
         "Text": "龙卷风",
         "Type": 3,
         "Par": 3401158,
-        "Description": "对范围内敌方目标造成<style=\"accent-gn\">350%</style>攻击力的<style=\"physical\">物理伤害</style>。伤害会随每次攻击衰减<style=\"accent-gn\">20%</style>，最多可衰减至原始伤害的<style=\"accent-gn\">40%</style>。每个龙卷风独立计算。",
+        "Description": "对范围内敌方目标造成<style=\"accent-gn\">350%</style>攻击力的<style=\"physical\">物理伤害</style>。",
         "ShowRule": 1
     },
     "1159": {
@@ -1472,7 +1472,7 @@
         "Text": "贯穿冰矛",
         "Type": 3,
         "Par": 3401164,
-        "Description": "一支可以穿透目标的<style=\"accent-gn\">冰霜之矛</style>，对敌方目标造成<style=\"accent-gn\">250%</style>攻击力<style=\"magic\">魔法伤害</style>。",
+        "Description": "一支可以穿透目标的<style=\"accent-gn\">长矛</style>，对敌方目标造成<style=\"accent-gn\">250%</style>攻击力<style=\"magic\">魔法伤害</style>。",
         "ShowRule": 1
     },
     "1165": {
@@ -1805,7 +1805,7 @@
         "Text": "幻梦处决",
         "Type": 3,
         "Par": 3401201,
-        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">432%</style>攻击力自适应伤害，且暴击伤害始终以<style=\"accent-gn\">450%</style>进行结算。",
+        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">650%</style>攻击力自适应伤害，且暴击伤害始终以<style=\"accent-gn\">500%</style>进行结算。",
         "ShowRule": 1
     },
     "1202": {
@@ -1814,7 +1814,7 @@
         "Text": "梦幻之箭",
         "Type": 3,
         "Par": 3401202,
-        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">100%</style>攻击力自适应伤害。",
+        "Description": "对<style=\"accent-gn\">3</style>米范围内敌方目标造成<style=\"accent-gn\">165%</style>攻击力自适应伤害。",
         "ShowRule": 1
     },
     "1203": {
@@ -1823,7 +1823,7 @@
         "Text": "迷幻梦境",
         "Type": 3,
         "Par": 3401203,
-        "Description": "每层攻击力+<style=\"accent-gn\">18</style>（随赛季等级提高最多+<style=\"accent-gn\">38</style>）。",
+        "Description": "每层攻击力+<style=\"accent-gn\">18</style>（随赛季等级提高最多+<style=\"accent-gn\">50</style>）。",
         "ShowRule": 1
     },
     "1204": {
@@ -1868,7 +1868,7 @@
         "Text": "虚妄裁定",
         "Type": 3,
         "Par": 3401208,
-        "Description": "对自身<style=\"accent-gn\">5</style>米内敌方目标造成<style=\"accent-gn\">225%</style>物理防御力自适应伤害。",
+        "Description": "对自身<style=\"accent-gn\">5</style>米内敌方目标造成<style=\"accent-gn\">330%</style>物理防御力自适应伤害。",
         "ShowRule": 1
     },
     "1209": {
@@ -1888,6 +1888,60 @@
         "Par": 0,
         "Description": "每<style=\"accent-gn\">2</style>点力量、智力、敏捷，转化为<style=\"accent-gn\">1</style>点攻击力<br>每<style=\"accent-gn\">1</style>点耐力转化为<style=\"accent-gn\">8</style>点生命上限<br>每<style=\"accent-gn\">1%</style>急速转化为<style=\"accent-gn\">0.6%</style>攻击速度和<style=\"accent-gn\">1%</style>施法速度<br>每<style=\"accent-gn\">1%</style>全能提高<style=\"accent-gn\">0.35%</style>造成伤害、治疗和施加护盾时的百分比加成，以及<style=\"accent-gn\">0.15%</style>受到伤害时的伤害减免<br>每<style=\"accent-gn\">1%</style>精通转化为<style=\"accent-gn\">0.5%</style>通用伤害提升",
         "ShowRule": 2
+    },
+    "1211": {
+        "Key": 1211,
+        "Id": 1211,
+        "Text": "业火连击",
+        "Type": 3,
+        "Par": 3401211,
+        "Description": "<style=\"accent-gn\">专精技能</style>攻击速度+<style=\"accent-gn\">5%</style>，持续<style=\"accent-gn\">10</style>秒，最多叠加<style=\"accent-gn\">5</style>层。",
+        "ShowRule": 1
+    },
+    "1212": {
+        "Key": 1212,
+        "Id": 1212,
+        "Text": "炽炎",
+        "Type": 3,
+        "Par": 3401212,
+        "Description": "火元素加成+<style=\"accent-gn\">10%</style>，持续<style=\"accent-gn\">8</style>秒。",
+        "ShowRule": 1
+    },
+    "1213": {
+        "Key": 1213,
+        "Id": 1213,
+        "Text": "燃烧",
+        "Type": 3,
+        "Par": 3401213,
+        "Description": "每<style=\"accent-gn\">2</style>秒造成<style=\"accent-gn\">30%*层数</style>点攻击力<style=\"physical\">物理伤害</style>，持续<style=\"accent-gn\">10</style>秒，最多叠加<style=\"accent-gn\">10</style>层；当<style=\"accent-gn\">燃烧</style>达到最大层数时新添加的<style=\"accent-gn\">燃烧</style>将立即造成一次<style=\"accent-gn\">30%</style>攻击力<style=\"physical\">物理伤害</style>。",
+        "ShowRule": 1
+    },
+    "1214": {
+        "Key": 1214,
+        "Id": 1214,
+        "Text": "炎爆",
+        "Type": 3,
+        "Par": 3401214,
+        "Description": "对范围内敌方目标造成<style=\"accent-gn\">60%</style>攻击力<style=\"physical\">物理伤害</style>，同时获得<style=\"accent-gn\">10</style>点<style=\"accent-gn\">炎魂</style>。",
+        "ShowRule": 1
+    },
+    "1215": {
+        "Key": 1215,
+        "Id": 1215,
+        "Text": "地火流星",
+        "Type": 3,
+        "Par": 3401215,
+        "Description": "对敌方目标造成<style=\"accent-gn\">300%</style>攻击力<style=\"physical\">物理伤害</style>。",
+        "ShowRule": 1
+    },
+    "1216": {
+        "Key": 1216,
+        "Id": 1216,
+        "Text": "无相火斩",
+        "Type": 3,
+        "Par": 3401216,
+        "Description": "每次伤害附带额外段数，其几率如下：<br>无相火斩<style=\"accent-gn\">1</style>段几率：<style=\"accent-gn\">30%</style>。<br>无相火斩<style=\"accent-gn\">2</style>段几率：<style=\"accent-gn\">10%</style>。<br>无相火斩<style=\"accent-gn\">3</style>段几率：<style=\"accent-gn\">3%</style>。",
+        "ShowRule": 1
     },
     "1500": {
         "Key": 1500,
@@ -2951,6 +3005,114 @@
         "Description": "0",
         "ShowRule": 1
     },
+    "1619": {
+        "Key": 1619,
+        "Id": 1619,
+        "Text": "炽烈升腾",
+        "Type": 2,
+        "Par": 1605,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1620": {
+        "Key": 1620,
+        "Id": 1620,
+        "Text": "飞腾炎华",
+        "Type": 2,
+        "Par": 1619,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1621": {
+        "Key": 1621,
+        "Id": 1621,
+        "Text": "狂乱斩击",
+        "Type": 2,
+        "Par": 1606,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1622": {
+        "Key": 1622,
+        "Id": 1622,
+        "Text": "炽焰突袭",
+        "Type": 2,
+        "Par": 1607,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1623": {
+        "Key": 1623,
+        "Id": 1623,
+        "Text": "暴怒劈斩",
+        "Type": 2,
+        "Par": 1608,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1624": {
+        "Key": 1624,
+        "Id": 1624,
+        "Text": "旋风斩",
+        "Type": 2,
+        "Par": 1612,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1625": {
+        "Key": 1625,
+        "Id": 1625,
+        "Text": "荒川之寂灭",
+        "Type": 2,
+        "Par": 1615,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1626": {
+        "Key": 1626,
+        "Id": 1626,
+        "Text": "迷狂炎舞",
+        "Type": 2,
+        "Par": 1613,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1627": {
+        "Key": 1627,
+        "Id": 1627,
+        "Text": "无羁坠星",
+        "Type": 2,
+        "Par": 1614,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1628": {
+        "Key": 1628,
+        "Id": 1628,
+        "Text": "炎魔天落杀",
+        "Type": 2,
+        "Par": 1621,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1629": {
+        "Key": 1629,
+        "Id": 1629,
+        "Text": "无尽之炎魔",
+        "Type": 2,
+        "Par": 1617,
+        "Description": "0",
+        "ShowRule": 1
+    },
+    "1630": {
+        "Key": 1630,
+        "Id": 1630,
+        "Text": "如川流华斩",
+        "Type": 2,
+        "Par": 1616,
+        "Description": "0",
+        "ShowRule": 1
+    },
     "3000": {
         "Key": 3000,
         "Id": 3000,
@@ -3092,7 +3254,7 @@
         "Text": "异常状态",
         "Type": 3,
         "Par": 3403020,
-        "Description": "包含<style=\"accent-gn\">眩晕</style>、<style=\"accent-gn\">冻结</style>、<style=\"accent-gn\">石化</style>、<style=\"accent-gn\">麻痹</style>、<style=\"accent-gn\">眩目</style>、<style=\"accent-gn\">恐惧</style>、<style=\"accent-gn\">沉默</style>、<style=\"accent-gn\">减速</style>、<style=\"accent-gn\">定身</style>、<style=\"accent-gn\">重伤</style>、<style=\"accent-gn\">中毒</style>、<style=\"accent-gn\">流血</style>、<style=\"accent-gn\">灼烧</style>。",
+        "Description": "包含<style=\"accent-gn\">眩晕</style>、<style=\"accent-gn\">冻结</style>、<style=\"accent-gn\">石化</style>、<style=\"accent-gn\">麻痹</style>、<style=\"accent-gn\">眩目</style>、<style=\"accent-gn\">恐惧</style>。",
         "ShowRule": 1
     },
     "3021": {

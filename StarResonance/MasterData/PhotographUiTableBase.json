@@ -4,7 +4,9 @@
         "Id": 1,
         "Platform": 3,
         "LoadType": 1,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -13,6 +15,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -22,7 +25,9 @@
         "Id": 2,
         "Platform": 3,
         "LoadType": 1,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -31,6 +36,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 0,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -40,7 +46,9 @@
         "Id": 3,
         "Platform": 3,
         "LoadType": 1,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -49,6 +57,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -58,7 +67,9 @@
         "Id": 4,
         "Platform": 3,
         "LoadType": 1,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -67,6 +78,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -76,7 +88,9 @@
         "Id": 5,
         "Platform": 3,
         "LoadType": 1,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -85,6 +99,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -94,7 +109,9 @@
         "Id": 101,
         "Platform": 2,
         "LoadType": 2,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -103,6 +120,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -112,7 +130,9 @@
         "Id": 102,
         "Platform": 1,
         "LoadType": 2,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -121,6 +141,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 0,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -130,7 +151,9 @@
         "Id": 103,
         "Platform": 1,
         "LoadType": 2,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -139,6 +162,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -148,7 +172,9 @@
         "Id": 104,
         "Platform": 1,
         "LoadType": 2,
-        "ParentId": 0,
+        "ParentIds": [
+            0
+        ],
         "SortId": 0,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -157,6 +183,28 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
+        "Name": "",
+        "Des": "",
+        "Icon": ""
+    },
+    "105": {
+        "Key": 105,
+        "Id": 105,
+        "Platform": 1,
+        "LoadType": 2,
+        "ParentIds": [
+            0
+        ],
+        "SortId": 0,
+        "GeneralMode": false,
+        "SelfPhotoMode": false,
+        "FightMode": false,
+        "VrMode": false,
+        "IdCardMode": false,
+        "SceneryMode": false,
+        "OthersModel": 0,
+        "WhenPartnerModel": 1,
         "Name": "",
         "Des": "",
         "Icon": ""
@@ -166,7 +214,9 @@
         "Id": 1001,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 102,
+        "ParentIds": [
+            102
+        ],
         "SortId": 1001,
         "GeneralMode": true,
         "SelfPhotoMode": false,
@@ -175,6 +225,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 0,
+        "WhenPartnerModel": 0,
         "Name": "cameraMenu1",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_1"
@@ -184,7 +235,9 @@
         "Id": 1002,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 102,
+        "ParentIds": [
+            102
+        ],
         "SortId": 1002,
         "GeneralMode": true,
         "SelfPhotoMode": false,
@@ -193,6 +246,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 0,
+        "WhenPartnerModel": 0,
         "Name": "cameraMenu2",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_2"
@@ -202,7 +256,9 @@
         "Id": 1003,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 102,
+        "ParentIds": [
+            102
+        ],
         "SortId": 1003,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -211,6 +267,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 0,
+        "WhenPartnerModel": 0,
         "Name": "cameraMenu3",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_3"
@@ -220,8 +277,11 @@
         "Id": 1004,
         "Platform": 3,
         "LoadType": 3,
-        "ParentId": 102,
-        "SortId": 1004,
+        "ParentIds": [
+            102,
+            105
+        ],
+        "SortId": 1005,
         "GeneralMode": true,
         "SelfPhotoMode": true,
         "FightMode": true,
@@ -229,6 +289,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "PhotoGaze",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_13"
@@ -238,7 +299,9 @@
         "Id": 1005,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 103,
+        "ParentIds": [
+            103
+        ],
         "SortId": 1005,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -247,6 +310,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "PhotoFrame",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_4"
@@ -256,7 +320,9 @@
         "Id": 1006,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 103,
+        "ParentIds": [
+            103
+        ],
         "SortId": 1006,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -265,6 +331,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "PhotoStickers",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_5"
@@ -274,7 +341,9 @@
         "Id": 1007,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 103,
+        "ParentIds": [
+            103
+        ],
         "SortId": 1007,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -283,6 +352,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "PhotoFont",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_6"
@@ -292,7 +362,9 @@
         "Id": 1008,
         "Platform": 3,
         "LoadType": 3,
-        "ParentId": 104,
+        "ParentIds": [
+            104
+        ],
         "SortId": 1009,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -301,6 +373,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "Camera",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_9"
@@ -310,7 +383,9 @@
         "Id": 1009,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 104,
+        "ParentIds": [
+            104
+        ],
         "SortId": 1010,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -319,6 +394,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "ScreenAdjustment",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_7"
@@ -328,7 +404,9 @@
         "Id": 1010,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 104,
+        "ParentIds": [
+            104
+        ],
         "SortId": 1011,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -337,6 +415,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "PhotoFilter",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_8"
@@ -346,7 +425,9 @@
         "Id": 1011,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 104,
+        "ParentIds": [
+            104
+        ],
         "SortId": 1012,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -355,6 +436,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "ShowHideSet",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_10"
@@ -364,7 +446,9 @@
         "Id": 1012,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 104,
+        "ParentIds": [
+            104
+        ],
         "SortId": 1013,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -373,6 +457,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 1,
+        "WhenPartnerModel": 1,
         "Name": "CustomScheme",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_11"
@@ -382,7 +467,9 @@
         "Id": 1013,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 104,
+        "ParentIds": [
+            104
+        ],
         "SortId": 1008,
         "GeneralMode": false,
         "SelfPhotoMode": false,
@@ -391,6 +478,7 @@
         "IdCardMode": true,
         "SceneryMode": false,
         "OthersModel": 0,
+        "WhenPartnerModel": 0,
         "Name": "PhotoBackground",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_14"
@@ -400,7 +488,9 @@
         "Id": 1014,
         "Platform": 1,
         "LoadType": 3,
-        "ParentId": 102,
+        "ParentIds": [
+            102
+        ],
         "SortId": 1014,
         "GeneralMode": true,
         "SelfPhotoMode": false,
@@ -409,16 +499,103 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 0,
+        "WhenPartnerModel": 0,
         "Name": "TheActionDryingFish",
         "Des": "",
         "Icon": "ui/atlas/photograph/camera_menu_21"
+    },
+    "1015": {
+        "Key": 1015,
+        "Id": 1015,
+        "Platform": 1,
+        "LoadType": 3,
+        "ParentIds": [
+            105
+        ],
+        "SortId": 1001,
+        "GeneralMode": false,
+        "SelfPhotoMode": false,
+        "FightMode": false,
+        "VrMode": false,
+        "IdCardMode": false,
+        "SceneryMode": false,
+        "OthersModel": 0,
+        "WhenPartnerModel": 1,
+        "Name": "cameraMenu1",
+        "Des": "",
+        "Icon": "ui/atlas/photograph/camera_menu_1"
+    },
+    "1016": {
+        "Key": 1016,
+        "Id": 1016,
+        "Platform": 1,
+        "LoadType": 3,
+        "ParentIds": [
+            105
+        ],
+        "SortId": 1002,
+        "GeneralMode": false,
+        "SelfPhotoMode": false,
+        "FightMode": false,
+        "VrMode": false,
+        "IdCardMode": false,
+        "SceneryMode": false,
+        "OthersModel": 0,
+        "WhenPartnerModel": 1,
+        "Name": "cameraMenu2",
+        "Des": "",
+        "Icon": "ui/atlas/photograph/camera_menu_2"
+    },
+    "1017": {
+        "Key": 1017,
+        "Id": 1017,
+        "Platform": 1,
+        "LoadType": 3,
+        "ParentIds": [
+            105
+        ],
+        "SortId": 1003,
+        "GeneralMode": false,
+        "SelfPhotoMode": false,
+        "FightMode": false,
+        "VrMode": false,
+        "IdCardMode": false,
+        "SceneryMode": false,
+        "OthersModel": 0,
+        "WhenPartnerModel": 1,
+        "Name": "cameraMenu3",
+        "Des": "",
+        "Icon": "ui/atlas/photograph/camera_menu_3"
+    },
+    "1018": {
+        "Key": 1018,
+        "Id": 1018,
+        "Platform": 1,
+        "LoadType": 3,
+        "ParentIds": [
+            102
+        ],
+        "SortId": 1004,
+        "GeneralMode": true,
+        "SelfPhotoMode": false,
+        "FightMode": true,
+        "VrMode": false,
+        "IdCardMode": false,
+        "SceneryMode": false,
+        "OthersModel": 0,
+        "WhenPartnerModel": 0,
+        "Name": "cameraMenu6",
+        "Des": "",
+        "Icon": "ui/atlas/photograph/camera_menu_22"
     },
     "10001": {
         "Key": 10001,
         "Id": 10001,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10001,
         "GeneralMode": true,
         "SelfPhotoMode": false,
@@ -427,6 +604,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Self",
         "Des": "",
         "Icon": ""
@@ -436,7 +614,9 @@
         "Id": 10002,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10002,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -445,6 +625,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Stranger",
         "Des": "",
         "Icon": ""
@@ -454,7 +635,9 @@
         "Id": 10003,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10003,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -463,6 +646,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Photograph_Display_NPC",
         "Des": "",
         "Icon": ""
@@ -472,7 +656,9 @@
         "Id": 10004,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10004,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -481,6 +667,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Enemy",
         "Des": "",
         "Icon": ""
@@ -490,7 +677,9 @@
         "Id": 10005,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10006,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -499,6 +688,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Weapon",
         "Des": "",
         "Icon": ""
@@ -508,7 +698,9 @@
         "Id": 10006,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10007,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -517,6 +709,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Friend",
         "Des": "",
         "Icon": ""
@@ -526,7 +719,9 @@
         "Id": 10007,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10008,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -535,6 +730,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Team",
         "Des": "",
         "Icon": ""
@@ -544,7 +740,9 @@
         "Id": 10008,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10009,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -553,6 +751,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Union",
         "Des": "",
         "Icon": ""
@@ -562,7 +761,9 @@
         "Id": 10009,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10010,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -571,6 +772,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Name",
         "Des": "",
         "Icon": ""
@@ -580,7 +782,9 @@
         "Id": 10010,
         "Platform": 1,
         "LoadType": 4,
-        "ParentId": 1011,
+        "ParentIds": [
+            1011
+        ],
         "SortId": 10005,
         "GeneralMode": true,
         "SelfPhotoMode": true,
@@ -589,6 +793,7 @@
         "IdCardMode": false,
         "SceneryMode": false,
         "OthersModel": 2,
+        "WhenPartnerModel": 2,
         "Name": "Collection",
         "Des": "",
         "Icon": ""

@@ -8,6 +8,12 @@
             16000010,
             70900040
         ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
+        ],
         "AwardCount": 61,
         "UPAwardCount": 61,
         "TimerId": 276,
@@ -27,6 +33,12 @@
         "PassAward": [
             16000040,
             70900040
+        ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
         ],
         "AwardCount": 64,
         "UPAwardCount": 64,
@@ -48,6 +60,12 @@
             16000070,
             70900040
         ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
+        ],
         "AwardCount": 73,
         "UPAwardCount": 73,
         "TimerId": 276,
@@ -67,6 +85,12 @@
         "PassAward": [
             16000020,
             70900040
+        ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
         ],
         "AwardCount": 62,
         "UPAwardCount": 62,
@@ -88,6 +112,12 @@
             16000050,
             70900040
         ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
+        ],
         "AwardCount": 65,
         "UPAwardCount": 65,
         "TimerId": 276,
@@ -107,6 +137,12 @@
         "PassAward": [
             16000080,
             70900040
+        ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
         ],
         "AwardCount": 74,
         "UPAwardCount": 74,
@@ -128,6 +164,12 @@
             16000030,
             70900040
         ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
+        ],
         "AwardCount": 63,
         "UPAwardCount": 63,
         "TimerId": 276,
@@ -147,6 +189,12 @@
         "PassAward": [
             16000060,
             70900040
+        ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
         ],
         "AwardCount": 66,
         "UPAwardCount": 66,
@@ -168,6 +216,12 @@
             16000090,
             70900040
         ],
+        "Condition": [
+            [
+                105,
+                1
+            ]
+        ],
         "AwardCount": 75,
         "UPAwardCount": 75,
         "TimerId": 276,
@@ -182,10 +236,16 @@
     "102800": {
         "Key": 102800,
         "BossId": 102800,
-        "Name": "月影与阳炎",
+        "Name": "角羊·花与刃",
         "FirstPassAward": [],
         "PassAward": [
             16000110
+        ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
         ],
         "AwardCount": 76,
         "UPAwardCount": 76,
@@ -193,7 +253,7 @@
         "OpenTimerId": 2321,
         "RecommendFightValue": 35190,
         "AssessId": 102801,
-        "Content": "幻华与炎光本就是同族王者，在幻幻花侵蚀前曾有明确的王位继承顺序。幻华被幻幻花寄生后，原本的族群秩序彻底崩坏，炎光将其视为亵渎血脉的存在，而幻华则本能地想夺回旧王的领地与统御权。即使在面对外来威胁时，它们也无法压下对彼此的敌意，王权之争比外来者更重要。",
+        "Content": "月影与阳炎本就是同族王者，在幻幻花侵蚀前曾有明确的王位继承顺序。月影被幻幻花寄生后，原本的族群秩序彻底崩坏，阳炎将其视为亵渎血脉的存在，而月影则本能地想夺回旧王的领地与统御权。即使在面对外来威胁时，它们也无法压下对彼此的敌意，王权之争比外来者更重要。",
         "BossIcon": "ui/atlas/monster_avatar/head_mon_raid02_01",
         "Background": "ui/textures/feature_preview/feature_preview_picture_48",
         "HelpID": 4504
@@ -206,16 +266,22 @@
         "PassAward": [
             16000140
         ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
+        ],
         "AwardCount": 79,
         "UPAwardCount": 79,
         "TimerId": 0,
         "OpenTimerId": 2324,
         "RecommendFightValue": 42240,
         "AssessId": 102821,
-        "Content": "幻华与炎光本就是同族王者，在幻幻花侵蚀前曾有明确的王位继承顺序。幻华被幻幻花寄生后，原本的族群秩序彻底崩坏，炎光将其视为亵渎血脉的存在，而幻华则本能地想夺回旧王的领地与统御权。即使在面对外来威胁时，它们也无法压下对彼此的敌意，王权之争比外来者更重要。",
+        "Content": "月影与阳炎本就是同族王者，在幻幻花侵蚀前曾有明确的王位继承顺序。月影被幻幻花寄生后，原本的族群秩序彻底崩坏，阳炎将其视为亵渎血脉的存在，而月影则本能地想夺回旧王的领地与统御权。即使在面对外来威胁时，它们也无法压下对彼此的敌意，王权之争比外来者更重要。",
         "BossIcon": "ui/atlas/monster_avatar/head_mon_raid02_01",
         "Background": "ui/textures/feature_preview/feature_preview_picture_48",
-        "HelpID": 4504
+        "HelpID": 4508
     },
     "102831": {
         "Key": 102831,
@@ -225,16 +291,22 @@
         "PassAward": [
             16000170
         ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
+        ],
         "AwardCount": 82,
         "UPAwardCount": 82,
         "TimerId": 0,
         "OpenTimerId": 2327,
         "RecommendFightValue": 44000,
         "AssessId": 102831,
-        "Content": "幻华与炎光本就是同族王者，在幻幻花侵蚀前曾有明确的王位继承顺序。幻华被幻幻花寄生后，原本的族群秩序彻底崩坏，炎光将其视为亵渎血脉的存在，而幻华则本能地想夺回旧王的领地与统御权。即使在面对外来威胁时，它们也无法压下对彼此的敌意，王权之争比外来者更重要。",
+        "Content": "月影与阳炎本就是同族王者，在幻幻花侵蚀前曾有明确的王位继承顺序。月影被幻幻花寄生后，原本的族群秩序彻底崩坏，阳炎将其视为亵渎血脉的存在，而月影则本能地想夺回旧王的领地与统御权。即使在面对外来威胁时，它们也无法压下对彼此的敌意，王权之争比外来者更重要。",
         "BossIcon": "ui/atlas/monster_avatar/head_mon_raid02_01",
         "Background": "ui/textures/feature_preview/feature_preview_picture_48",
-        "HelpID": 4504
+        "HelpID": 4509
     },
     "102901": {
         "Key": 102901,
@@ -243,6 +315,12 @@
         "FirstPassAward": [],
         "PassAward": [
             16000120
+        ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
         ],
         "AwardCount": 77,
         "UPAwardCount": 77,
@@ -253,7 +331,7 @@
         "Content": "以星元为核心的活动的残骸，但核心被赫鲁加的意志寄生，构成身体的组织也呈现出部分与幻幻花相近的材质。",
         "BossIcon": "ui/atlas/monster_avatar/head_mon_raid02_02",
         "Background": "ui/textures/raid/raid_02_02",
-        "HelpID": 4505
+        "HelpID": 4506
     },
     "102911": {
         "Key": 102911,
@@ -262,6 +340,12 @@
         "FirstPassAward": [],
         "PassAward": [
             16000150
+        ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
         ],
         "AwardCount": 80,
         "UPAwardCount": 80,
@@ -272,7 +356,7 @@
         "Content": "以星元为核心的活动的残骸，但核心被赫鲁加的意志寄生，构成身体的组织也呈现出部分与幻幻花相近的材质。",
         "BossIcon": "ui/atlas/monster_avatar/head_mon_raid02_02",
         "Background": "ui/textures/raid/raid_02_02",
-        "HelpID": 4505
+        "HelpID": 4506
     },
     "102921": {
         "Key": 102921,
@@ -281,6 +365,12 @@
         "FirstPassAward": [],
         "PassAward": [
             16000180
+        ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
         ],
         "AwardCount": 83,
         "UPAwardCount": 83,
@@ -301,6 +391,12 @@
         "PassAward": [
             16000130
         ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
+        ],
         "AwardCount": 78,
         "UPAwardCount": 78,
         "TimerId": 0,
@@ -310,7 +406,7 @@
         "Content": "布法利亚神族遗落的自走战甲。原本的职责是守护这个布法利亚设施，但随着时光流逝，设施荒废，战甲也陷入沉寂。如今，它的能量核心已被幻幻花寄生，但还保留着守护设施的本能，会不计代价地攻击一切试图侵入设施的外来者。",
         "BossIcon": "ui/atlas/monster_avatar/head_mon_raid02_03",
         "Background": "ui/textures/raid/raid_02_03",
-        "HelpID": 4503
+        "HelpID": 4507
     },
     "103011": {
         "Key": 103011,
@@ -319,6 +415,12 @@
         "FirstPassAward": [],
         "PassAward": [
             16000160
+        ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
         ],
         "AwardCount": 81,
         "UPAwardCount": 81,
@@ -329,7 +431,7 @@
         "Content": "布法利亚神族遗落的自走战甲。原本的职责是守护这个布法利亚设施，但随着时光流逝，设施荒废，战甲也陷入沉寂。如今，它的能量核心已被幻幻花寄生，但还保留着守护设施的本能，会不计代价地攻击一切试图侵入设施的外来者。",
         "BossIcon": "ui/atlas/monster_avatar/head_mon_raid02_03",
         "Background": "ui/textures/raid/raid_02_03",
-        "HelpID": 4503
+        "HelpID": 4507
     },
     "103021": {
         "Key": 103021,
@@ -338,6 +440,12 @@
         "FirstPassAward": [],
         "PassAward": [
             16000190
+        ],
+        "Condition": [
+            [
+                105,
+                2
+            ]
         ],
         "AwardCount": 84,
         "UPAwardCount": 84,

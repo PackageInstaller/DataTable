@@ -296,49 +296,147 @@
     "13001": {
         "Key": 13001,
         "Id": 13001,
-        "Name": "当前战斗资源量-塔塔能量值",
+        "Name": "当前战斗资源量-双斧_狂意",
         "CanCost": true,
         "ExactValue": 1
     },
     "13002": {
         "Key": 13002,
         "Id": 13002,
-        "Name": "当前战斗资源上限-塔塔能量值_自身总值",
+        "Name": "当前战斗资源上限-双斧_狂意_自身总值",
         "CanCost": false,
         "ExactValue": 1
     },
     "13003": {
         "Key": 13003,
         "Id": 13003,
-        "Name": "当前战斗资源上限-塔塔能量值_加值",
+        "Name": "当前战斗资源上限-双斧_狂意_加值",
         "CanCost": false,
         "ExactValue": 1
     },
     "13004": {
         "Key": 13004,
         "Id": 13004,
-        "Name": "当前战斗资源上限-塔塔能量值_乘值",
+        "Name": "当前战斗资源上限-双斧_狂意_乘值",
         "CanCost": false,
         "ExactValue": 1
     },
     "13005": {
         "Key": 13005,
         "Id": 13005,
-        "Name": "当前战斗资源上限-塔塔能量值_额外加值",
+        "Name": "当前战斗资源上限-双斧_狂意_额外加值",
         "CanCost": false,
         "ExactValue": 1
     },
     "13006": {
         "Key": 13006,
         "Id": 13006,
-        "Name": "当前战斗资源上限-塔塔能量值_额外乘值",
+        "Name": "当前战斗资源上限-双斧_狂意_额外乘值",
         "CanCost": false,
         "ExactValue": 1
     },
     "13007": {
         "Key": 13007,
         "Id": 13007,
-        "Name": "当前战斗资源上限-塔塔能量值",
+        "Name": "当前战斗资源上限-双斧_狂意",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13011": {
+        "Key": 13011,
+        "Id": 13011,
+        "Name": "当前战斗资源量-双斧_炎魂",
+        "CanCost": true,
+        "ExactValue": 100
+    },
+    "13012": {
+        "Key": 13012,
+        "Id": 13012,
+        "Name": "当前战斗资源上限-双斧_炎魂_自身总值",
+        "CanCost": false,
+        "ExactValue": 100
+    },
+    "13013": {
+        "Key": 13013,
+        "Id": 13013,
+        "Name": "当前战斗资源上限-双斧_炎魂_加值",
+        "CanCost": false,
+        "ExactValue": 100
+    },
+    "13014": {
+        "Key": 13014,
+        "Id": 13014,
+        "Name": "当前战斗资源上限-双斧_炎魂_乘值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13015": {
+        "Key": 13015,
+        "Id": 13015,
+        "Name": "当前战斗资源上限-双斧_炎魂_额外加值",
+        "CanCost": false,
+        "ExactValue": 100
+    },
+    "13016": {
+        "Key": 13016,
+        "Id": 13016,
+        "Name": "当前战斗资源上限-双斧_炎魂_额外乘值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13017": {
+        "Key": 13017,
+        "Id": 13017,
+        "Name": "当前战斗资源上限-双斧_炎魂",
+        "CanCost": false,
+        "ExactValue": 100
+    },
+    "13021": {
+        "Key": 13021,
+        "Id": 13021,
+        "Name": "当前战斗资源量-双斧_赤痕",
+        "CanCost": true,
+        "ExactValue": 1
+    },
+    "13022": {
+        "Key": 13022,
+        "Id": 13022,
+        "Name": "当前战斗资源上限-双斧_赤痕_自身总值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13023": {
+        "Key": 13023,
+        "Id": 13023,
+        "Name": "当前战斗资源上限-双斧_赤痕_加值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13024": {
+        "Key": 13024,
+        "Id": 13024,
+        "Name": "当前战斗资源上限-双斧_赤痕_乘值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13025": {
+        "Key": 13025,
+        "Id": 13025,
+        "Name": "当前战斗资源上限-双斧_赤痕_额外加值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13026": {
+        "Key": 13026,
+        "Id": 13026,
+        "Name": "当前战斗资源上限-双斧_赤痕_额外乘值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "13027": {
+        "Key": 13027,
+        "Id": 13027,
+        "Name": "当前战斗资源上限-双斧_赤痕",
         "CanCost": false,
         "ExactValue": 1
     },
@@ -1319,6 +1417,55 @@
         "Key": 90007,
         "Id": 90007,
         "Name": "当前战斗资源上限-公共资源_幻梦值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "90011": {
+        "Key": 90011,
+        "Id": 90011,
+        "Name": "当前战斗资源量-肉鸽大秘境_幻梦值",
+        "CanCost": true,
+        "ExactValue": 1
+    },
+    "90012": {
+        "Key": 90012,
+        "Id": 90012,
+        "Name": "当前战斗资源上限-肉鸽大秘境_幻梦值_自身总值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "90013": {
+        "Key": 90013,
+        "Id": 90013,
+        "Name": "当前战斗资源上限-肉鸽大秘境_幻梦值_加值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "90014": {
+        "Key": 90014,
+        "Id": 90014,
+        "Name": "当前战斗资源上限-肉鸽大秘境_幻梦值_乘值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "90015": {
+        "Key": 90015,
+        "Id": 90015,
+        "Name": "当前战斗资源上限-肉鸽大秘境_幻梦值_额外加值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "90016": {
+        "Key": 90016,
+        "Id": 90016,
+        "Name": "当前战斗资源上限-肉鸽大秘境_幻梦值_额外乘值",
+        "CanCost": false,
+        "ExactValue": 1
+    },
+    "90017": {
+        "Key": 90017,
+        "Id": 90017,
+        "Name": "当前战斗资源上限-肉鸽大秘境_幻梦值",
         "CanCost": false,
         "ExactValue": 1
     }
