@@ -62296,7 +62296,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -62326,7 +62331,7 @@
                     {
                         "m_walletCategory": "event",
                         "m_walletName": "pt_ev20260320",
-                        "m_count": 100,
+                        "m_count": 550,
                         "m_probability": 100,
                         "m_firstProbability": 0
                     }
@@ -62399,7 +62404,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -62429,7 +62439,7 @@
                     {
                         "m_walletCategory": "event",
                         "m_walletName": "pt_ev20260320",
-                        "m_count": 150,
+                        "m_count": 620,
                         "m_probability": 100,
                         "m_firstProbability": 0
                     }
@@ -62502,7 +62512,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -62532,7 +62547,7 @@
                     {
                         "m_walletCategory": "event",
                         "m_walletName": "pt_ev20260320",
-                        "m_count": 200,
+                        "m_count": 740,
                         "m_probability": 100,
                         "m_firstProbability": 0
                     }
@@ -62605,7 +62620,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -62635,7 +62655,7 @@
                     {
                         "m_walletCategory": "event",
                         "m_walletName": "pt_ev20260320",
-                        "m_count": 250,
+                        "m_count": 800,
                         "m_probability": 100,
                         "m_firstProbability": 0
                     }
@@ -62660,418 +62680,6 @@
             "advantageAttributeId": 3,
             "advantageDefenseType": 2,
             "enemyTotalPower": "1"
-        },
-        {
-            "id": 700005,
-            "code": "E-00-05",
-            "name": "亡霊大陸との遭遇 E-5",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "event",
-            "bfrBtlStoryChapterId": "700005Nml",
-            "afrBtlStoryId": "event",
-            "afrBtlStoryChapterId": "700006Nml",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 90,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": -1,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700005,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 767,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 3229,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 3498,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 1215,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 350,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "5"
-        },
-        {
-            "id": 700006,
-            "code": "E-00-06",
-            "name": "亡霊大陸との遭遇 E-6",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "",
-            "bfrBtlStoryChapterId": "",
-            "afrBtlStoryId": "",
-            "afrBtlStoryChapterId": "",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 90,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": 700005,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700006,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 833,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 3875,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 4198,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 1458,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 400,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "5"
-        },
-        {
-            "id": 700007,
-            "code": "E-00-07",
-            "name": "亡霊大陸との遭遇 E-7",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "",
-            "bfrBtlStoryChapterId": "",
-            "afrBtlStoryId": "",
-            "afrBtlStoryChapterId": "",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 100,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": 700006,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700007,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 900,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 4650,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 5038,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 1750,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 450,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "5"
-        },
-        {
-            "id": 700008,
-            "code": "E-00-08",
-            "name": "亡霊大陸との遭遇 E-8",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "event",
-            "bfrBtlStoryChapterId": "700007Nml",
-            "afrBtlStoryId": "event",
-            "afrBtlStoryChapterId": "700008Nml",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 100,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": 700007,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700008,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 967,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 5580,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 6045,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 2100,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 500,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "10"
         },
         {
             "id": 700010,
@@ -63120,7 +62728,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -63223,7 +62836,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -63253,7 +62871,7 @@
                     {
                         "m_walletCategory": "event",
                         "m_walletName": "pt_ev20260320",
-                        "m_count": 1100,
+                        "m_count": 1050,
                         "m_probability": 100,
                         "m_firstProbability": 0
                     }
@@ -63326,7 +62944,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -63356,7 +62979,7 @@
                     {
                         "m_walletCategory": "event",
                         "m_walletName": "pt_ev20260320",
-                        "m_count": 1200,
+                        "m_count": 1100,
                         "m_probability": 100,
                         "m_firstProbability": 0
                     }
@@ -63429,7 +63052,12 @@
                     {
                         "m_walletCategory": "point",
                         "m_walletName": "free_coin",
-                        "m_count": 30
+                        "m_count": 50
+                    },
+                    {
+                        "m_walletCategory": "event",
+                        "m_walletName": "pt_ev20260320",
+                        "m_count": 500
                     }
                 ]
             },
@@ -63459,419 +63087,7 @@
                     {
                         "m_walletCategory": "event",
                         "m_walletName": "pt_ev20260320",
-                        "m_count": 1300,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "51"
-        },
-        {
-            "id": 700014,
-            "code": "EX-00-05",
-            "name": "亡霊大陸との遭遇 EX5",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "",
-            "bfrBtlStoryChapterId": "",
-            "afrBtlStoryId": "",
-            "afrBtlStoryChapterId": "",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 110,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": 700008,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700014,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 1300,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 17303,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 19965,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 19965,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 1400,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "51"
-        },
-        {
-            "id": 700015,
-            "code": "EX-00-06",
-            "name": "亡霊大陸との遭遇 EX6",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "",
-            "bfrBtlStoryChapterId": "",
-            "afrBtlStoryId": "",
-            "afrBtlStoryChapterId": "",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 110,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": 700014,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "2026/03/28 05:00:00",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700015,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 1367,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 20764,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 23958,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 23958,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 1500,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "51"
-        },
-        {
-            "id": 700016,
-            "code": "EX-00-07",
-            "name": "亡霊大陸との遭遇 EX7",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "",
-            "bfrBtlStoryChapterId": "",
-            "afrBtlStoryId": "",
-            "afrBtlStoryChapterId": "",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 110,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": 700015,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "2026/03/29 05:00:00",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700016,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 1433,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 24917,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 28750,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 28750,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 1600,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    }
-                ]
-            },
-            "trainingIds": [
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "questLimitTiming": "",
-            "questLimitMaxTimes": 0,
-            "countupTargets": [
-                0,
-                0,
-                0
-            ],
-            "targetNumCheckList": [],
-            "banAutoChallenge": 1,
-            "advantageAttributeId": 3,
-            "advantageDefenseType": 2,
-            "enemyTotalPower": "51"
-        },
-        {
-            "id": 700017,
-            "code": "EX-00-08",
-            "name": "亡霊大陸との遭遇 EX8",
-            "text": "",
-            "category": 4,
-            "isEndless": 0,
-            "buffId": 0,
-            "mapType": 0,
-            "chapter": 100000,
-            "bfrBtlStoryId": "",
-            "bfrBtlStoryChapterId": "",
-            "afrBtlStoryId": "",
-            "afrBtlStoryChapterId": "",
-            "beforeStoryId": "",
-            "beforeStoryChapterId": "",
-            "afterStoryId": "",
-            "afterStoryChapterId": "",
-            "enemyRevision": 115,
-            "consumptionCategory": "",
-            "consumptionName": "",
-            "battleNpcId": 0,
-            "needRank": 0,
-            "needQuestId": 700016,
-            "releaseCondId": 0,
-            "limitMemberId": 0,
-            "openTime": "2026/03/30 05:00:00",
-            "closeTime": "",
-            "unlockWeeks": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "mapId": 700017,
-            "bgmId": 50010,
-            "bgmPriority": 0,
-            "playerExp": 1500,
-            "gold": 0,
-            "beginningRewardtable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "free_coin",
-                        "m_count": 30
-                    }
-                ]
-            },
-            "cleartable": {
-                "m_rewards": [
-                    {
-                        "m_walletCategory": "point",
-                        "m_walletName": "gold",
-                        "m_count": 29900,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.common_item",
-                        "m_count": 34500,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "item",
-                        "m_walletName": "item.unit_exp.threshold_item",
-                        "m_count": 34500,
-                        "m_probability": 100,
-                        "m_firstProbability": 0
-                    },
-                    {
-                        "m_walletCategory": "event",
-                        "m_walletName": "pt_ev20260320",
-                        "m_count": 1700,
+                        "m_count": 1150,
                         "m_probability": 100,
                         "m_firstProbability": 0
                     }

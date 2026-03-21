@@ -545,11 +545,11 @@ def main() -> None:
                 f"[bold green]已从 {extracted_count} 个剧情包导出 AdvScene 到 {advscene_out_dir}[/bold green]"
             )
 
-    if other_tasks:
-        console.print(f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]")
-        fails = run_download_workers(other_tasks, "正在下载其他资产...")
-        if fails:
-            console.print(f"[yellow]失败 {len(fails)} 个文件[/yellow]")
+    # if other_tasks:
+    #     console.print(f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]")
+    #     fails = run_download_workers(other_tasks, "正在下载其他资产...")
+    #     if fails:
+    #         console.print(f"[yellow]失败 {len(fails)} 个文件[/yellow]")
     elif not master_bytes_list and not advscene_tasks:
         console.print("[green]所有资源已是最新，无需下载。[/green]")
 
