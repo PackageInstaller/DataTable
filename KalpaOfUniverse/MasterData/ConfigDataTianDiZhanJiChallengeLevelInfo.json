@@ -1,0 +1,552 @@
+[
+  {
+    "ID": 1001,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_01.png@Guanka_Xiao_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321100
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371301,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371401,
+    "NameStrKey": "ST:161774",
+    "DescStrKey": "ST:162670"
+  },
+  {
+    "ID": 1002,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_01.png@Guanka_Da_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 1001,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321220
+      },
+      {
+        "Key": 40,
+        "Value": 24321240
+      },
+      {
+        "Key": 60,
+        "Value": 24321260
+      },
+      {
+        "Key": 70,
+        "Value": 24321200
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105003
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:161775",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 1003,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_01.png@Guanka_Xiao_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 1002,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321300
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371302,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371402,
+    "NameStrKey": "ST:161776",
+    "DescStrKey": "ST:162671"
+  },
+  {
+    "ID": 1004,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_01.png@Guanka_Da_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 1003,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321420
+      },
+      {
+        "Key": 40,
+        "Value": 24321440
+      },
+      {
+        "Key": 60,
+        "Value": 24321460
+      },
+      {
+        "Key": 70,
+        "Value": 24321400
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105004
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "SweepPlayerExp": 20,
+    "NameStrKey": "ST:161777",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 1005,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_02.png@Guanka_Xiao_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 1004,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321500
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371303,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371403,
+    "NameStrKey": "ST:103645",
+    "DescStrKey": "ST:162672"
+  },
+  {
+    "ID": 1006,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_02.png@Guanka_Da_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 1005,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321620
+      },
+      {
+        "Key": 40,
+        "Value": 24321640
+      },
+      {
+        "Key": 60,
+        "Value": 24321660
+      },
+      {
+        "Key": 70,
+        "Value": 24321600
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105005
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:161778",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 1007,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_02.png@Guanka_Xiao_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 1006,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321700
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371304,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371404,
+    "NameStrKey": "ST:161779",
+    "DescStrKey": "ST:162673"
+  },
+  {
+    "ID": 1008,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_02.png@Guanka_Da_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 1007,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321820
+      },
+      {
+        "Key": 40,
+        "Value": 24321840
+      },
+      {
+        "Key": 60,
+        "Value": 24321860
+      },
+      {
+        "Key": 70,
+        "Value": 24321800
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105006
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:161780",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 1009,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_03.png@Guanka_Xiao_03",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 1008,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321900
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371305,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371405,
+    "NameStrKey": "ST:161781",
+    "DescStrKey": "ST:162674"
+  },
+  {
+    "ID": 1010,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_03.png@Guanka_Da_03",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 1009,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24322020
+      },
+      {
+        "Key": 40,
+        "Value": 24322040
+      },
+      {
+        "Key": 60,
+        "Value": 24322060
+      },
+      {
+        "Key": 70,
+        "Value": 24322000
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105007
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:7706",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 2001,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_01.png@Guanka_Xiao_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321100
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371301,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371401,
+    "NameStrKey": "ST:161774",
+    "DescStrKey": "ST:162670"
+  },
+  {
+    "ID": 2002,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_01.png@Guanka_Da_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 2001,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321220
+      },
+      {
+        "Key": 40,
+        "Value": 24321240
+      },
+      {
+        "Key": 60,
+        "Value": 24321260
+      },
+      {
+        "Key": 70,
+        "Value": 24321200
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105003
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:161775",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 2003,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_01.png@Guanka_Xiao_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 2002,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321300
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371302,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371402,
+    "NameStrKey": "ST:161776",
+    "DescStrKey": "ST:162671"
+  },
+  {
+    "ID": 2004,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_01.png@Guanka_Da_01",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 2003,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321420
+      },
+      {
+        "Key": 40,
+        "Value": 24321440
+      },
+      {
+        "Key": 60,
+        "Value": 24321460
+      },
+      {
+        "Key": 70,
+        "Value": 24321400
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105004
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "SweepPlayerExp": 20,
+    "NameStrKey": "ST:161777",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 2005,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_02.png@Guanka_Xiao_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 2004,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321500
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371303,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371403,
+    "NameStrKey": "ST:103645",
+    "DescStrKey": "ST:162672"
+  },
+  {
+    "ID": 2006,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_02.png@Guanka_Da_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 2005,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321620
+      },
+      {
+        "Key": 40,
+        "Value": 24321640
+      },
+      {
+        "Key": 60,
+        "Value": 24321660
+      },
+      {
+        "Key": 70,
+        "Value": 24321600
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105005
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:161778",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 2007,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_02.png@Guanka_Xiao_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 2006,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321700
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371304,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371404,
+    "NameStrKey": "ST:161779",
+    "DescStrKey": "ST:162673"
+  },
+  {
+    "ID": 2008,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_02.png@Guanka_Da_02",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 2007,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321820
+      },
+      {
+        "Key": 40,
+        "Value": 24321840
+      },
+      {
+        "Key": 60,
+        "Value": 24321860
+      },
+      {
+        "Key": 70,
+        "Value": 24321800
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105006
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:161780",
+    "DescStrKey": "ST:162097"
+  },
+  {
+    "ID": 2009,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Xiao_03.png@Guanka_Xiao_03",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Small",
+    "UnlockPreID": 2008,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24321900
+      }
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "FirstRewardDropId": 351371305,
+    "SweepEnergy": 20,
+    "SweepPlayerExp": 20,
+    "SweepRewardDropId": 351371405,
+    "NameStrKey": "ST:161781",
+    "DescStrKey": "ST:162674"
+  },
+  {
+    "ID": 2010,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Tiandizhanji_ABS/NoTag/Guanka_Da_03.png@Guanka_Da_03",
+    "ChallengeType": "TianDiZhanJiChallengeLeveType_Big",
+    "UnlockPreID": 2009,
+    "Battle": [
+      {
+        "Key": 20,
+        "Value": 24322020
+      },
+      {
+        "Key": 40,
+        "Value": 24322040
+      },
+      {
+        "Key": 60,
+        "Value": 24322060
+      },
+      {
+        "Key": 70,
+        "Value": 24322000
+      }
+    ],
+    "AffixIdPool": [
+      105001,
+      105002,
+      105007
+    ],
+    "FirstEnergy": 20,
+    "FirstPlayerExp": 20,
+    "FirstCharExp": 20,
+    "NameStrKey": "ST:7706",
+    "DescStrKey": "ST:162097"
+  }
+]

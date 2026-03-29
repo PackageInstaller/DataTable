@@ -1,0 +1,79 @@
+{
+  "ID": 1,
+  "PVPStartDate": "2024/9/25 5:00:00",
+  "PVPEndDate": "2099/3/11 23:59:59",
+  "MatchTimes": [
+    {
+      "BeginWeekDay": 3,
+      "BeginTime": 1200,
+      "EndWeekDay": 3,
+      "EndTime": 1400
+    },
+    {
+      "BeginWeekDay": 3,
+      "BeginTime": 2000,
+      "EndWeekDay": 4,
+      "EndTime": 100
+    },
+    {
+      "BeginWeekDay": 4,
+      "BeginTime": 1200,
+      "EndWeekDay": 4,
+      "EndTime": 1400
+    },
+    {
+      "BeginWeekDay": 4,
+      "BeginTime": 2000,
+      "EndWeekDay": 5,
+      "EndTime": 100
+    },
+    {
+      "BeginWeekDay": 5,
+      "BeginTime": 1200,
+      "EndWeekDay": 5,
+      "EndTime": 1400
+    },
+    {
+      "BeginWeekDay": 5,
+      "BeginTime": 2000,
+      "EndWeekDay": 6,
+      "EndTime": 100
+    },
+    {
+      "BeginWeekDay": 6,
+      "BeginTime": 1200,
+      "EndWeekDay": 6,
+      "EndTime": 1400
+    },
+    {
+      "BeginWeekDay": 6,
+      "BeginTime": 2000,
+      "EndWeekDay": 7,
+      "EndTime": 100
+    }
+  ],
+  "battleSceneIds": [
+    24530611,
+    24530612,
+    24530613,
+    24530614,
+    24530615,
+    24530616
+  ],
+  "AlterEffectBeginTime": "09/25/2024 05:00:00",
+  "alterEffectGroupId": 4,
+  "matchStepSecond": 7,
+  "matchWaitMax": 120,
+  "WeekFirstWinDate": "3:5",
+  "weekFirstWinReward": 351432101,
+  "weekFirstWinMailId": 40100,
+  "reportSaveMax": 20,
+  "LoadingTimeout": 100,
+  "FormationTimeout": 60,
+  "TeamInputTimeout": 100,
+  "TeamInputFireTimeout": 20,
+  "AutoActionTime": 20,
+  "MaxOfflineTimeout": 100,
+  "DescriptionStrKey": "ST:215432",
+  "MatchDescStrKey": "ST:211225"
+}

@@ -1,0 +1,596 @@
+[
+  {
+    "ID": 1,
+    "NextID": 2,
+    "NeedTalentPoints": 10,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 1
+      }
+    ],
+    "EffectDescStrKey": "ST:137283"
+  },
+  {
+    "ID": 2,
+    "NextID": 3,
+    "NeedTalentPoints": 20,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 2
+      }
+    ],
+    "EffectDescStrKey": "ST:137284"
+  },
+  {
+    "ID": 3,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 3
+      }
+    ],
+    "EffectDescStrKey": "ST:137285"
+  },
+  {
+    "ID": 4,
+    "UsedTalentPoints": 10,
+    "NeedTalentPoints": 20,
+    "EffectType": "ClimbTowerTalentType_InitCurrency",
+    "EffectParam": [
+      {
+        "P1": 14,
+        "P2": 100
+      }
+    ],
+    "EffectDescStrKey": "ST:142395"
+  },
+  {
+    "ID": 5,
+    "NextID": 6,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 10,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 4
+      }
+    ],
+    "EffectDescStrKey": "ST:137287"
+  },
+  {
+    "ID": 6,
+    "NextID": 7,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 40,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 5
+      }
+    ],
+    "EffectDescStrKey": "ST:137288"
+  },
+  {
+    "ID": 7,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 80,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 6
+      }
+    ],
+    "EffectDescStrKey": "ST:137289"
+  },
+  {
+    "ID": 8,
+    "NextID": 9,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 10,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 7
+      }
+    ],
+    "EffectDescStrKey": "ST:142531"
+  },
+  {
+    "ID": 9,
+    "NextID": 10,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 40,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 8
+      }
+    ],
+    "EffectDescStrKey": "ST:142532"
+  },
+  {
+    "ID": 10,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 80,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 9
+      }
+    ],
+    "EffectDescStrKey": "ST:142533"
+  },
+  {
+    "ID": 11,
+    "NextID": 12,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 10,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 10
+      }
+    ],
+    "EffectDescStrKey": "ST:137293"
+  },
+  {
+    "ID": 12,
+    "NextID": 13,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 40,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 11
+      }
+    ],
+    "EffectDescStrKey": "ST:137294"
+  },
+  {
+    "ID": 13,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 80,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 12
+      }
+    ],
+    "EffectDescStrKey": "ST:137295"
+  },
+  {
+    "ID": 14,
+    "NextID": 15,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 10,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 13
+      }
+    ],
+    "EffectDescStrKey": "ST:142070"
+  },
+  {
+    "ID": 15,
+    "NextID": 16,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 40,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 14
+      }
+    ],
+    "EffectDescStrKey": "ST:137298"
+  },
+  {
+    "ID": 16,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 80,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 15
+      }
+    ],
+    "EffectDescStrKey": "ST:142071"
+  },
+  {
+    "ID": 17,
+    "NextID": 18,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 10,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 16
+      }
+    ],
+    "EffectDescStrKey": "ST:137299"
+  },
+  {
+    "ID": 18,
+    "NextID": 19,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 40,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 17
+      }
+    ],
+    "EffectDescStrKey": "ST:137300"
+  },
+  {
+    "ID": 19,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 80,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 18
+      }
+    ],
+    "EffectDescStrKey": "ST:137301"
+  },
+  {
+    "ID": 20,
+    "NextID": 21,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 10,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 19
+      }
+    ],
+    "EffectDescStrKey": "ST:137302"
+  },
+  {
+    "ID": 21,
+    "NextID": 22,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 40,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 20
+      }
+    ],
+    "EffectDescStrKey": "ST:137303"
+  },
+  {
+    "ID": 22,
+    "UsedTalentPoints": 50,
+    "NeedTalentPoints": 80,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 21
+      }
+    ],
+    "EffectDescStrKey": "ST:137304"
+  },
+  {
+    "ID": 23,
+    "NextID": 24,
+    "UsedTalentPoints": 80,
+    "NeedTalentPoints": 20,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 22
+      }
+    ],
+    "EffectDescStrKey": "ST:137283"
+  },
+  {
+    "ID": 24,
+    "NextID": 25,
+    "UsedTalentPoints": 80,
+    "NeedTalentPoints": 50,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 23
+      }
+    ],
+    "EffectDescStrKey": "ST:137284"
+  },
+  {
+    "ID": 25,
+    "UsedTalentPoints": 80,
+    "NeedTalentPoints": 100,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 24
+      }
+    ],
+    "EffectDescStrKey": "ST:137285"
+  },
+  {
+    "ID": 26,
+    "UsedTalentPoints": 150,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_UnlockTreasureCard",
+    "EffectDescStrKey": "ST:142582"
+  },
+  {
+    "ID": 27,
+    "NextID": 28,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 25
+      }
+    ],
+    "EffectDescStrKey": "ST:137287"
+  },
+  {
+    "ID": 28,
+    "NextID": 29,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 60,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 26
+      }
+    ],
+    "EffectDescStrKey": "ST:137288"
+  },
+  {
+    "ID": 29,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 90,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 27
+      }
+    ],
+    "EffectDescStrKey": "ST:137289"
+  },
+  {
+    "ID": 30,
+    "NextID": 31,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 28
+      }
+    ],
+    "EffectDescStrKey": "ST:142531"
+  },
+  {
+    "ID": 31,
+    "NextID": 32,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 60,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 29
+      }
+    ],
+    "EffectDescStrKey": "ST:142532"
+  },
+  {
+    "ID": 32,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 90,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 30
+      }
+    ],
+    "EffectDescStrKey": "ST:142533"
+  },
+  {
+    "ID": 33,
+    "NextID": 34,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 31
+      }
+    ],
+    "EffectDescStrKey": "ST:142072"
+  },
+  {
+    "ID": 34,
+    "NextID": 35,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 60,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 32
+      }
+    ],
+    "EffectDescStrKey": "ST:142073"
+  },
+  {
+    "ID": 35,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 90,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 33
+      }
+    ],
+    "EffectDescStrKey": "ST:142074"
+  },
+  {
+    "ID": 36,
+    "NextID": 37,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 34
+      }
+    ],
+    "EffectDescStrKey": "ST:142070"
+  },
+  {
+    "ID": 37,
+    "NextID": 38,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 60,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 35
+      }
+    ],
+    "EffectDescStrKey": "ST:137298"
+  },
+  {
+    "ID": 38,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 90,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 36
+      }
+    ],
+    "EffectDescStrKey": "ST:142071"
+  },
+  {
+    "ID": 39,
+    "NextID": 40,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 37
+      }
+    ],
+    "EffectDescStrKey": "ST:137299"
+  },
+  {
+    "ID": 40,
+    "NextID": 41,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 60,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 38
+      }
+    ],
+    "EffectDescStrKey": "ST:137300"
+  },
+  {
+    "ID": 41,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 90,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 39
+      }
+    ],
+    "EffectDescStrKey": "ST:137301"
+  },
+  {
+    "ID": 42,
+    "NextID": 43,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 30,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 40
+      }
+    ],
+    "EffectDescStrKey": "ST:137302"
+  },
+  {
+    "ID": 43,
+    "NextID": 44,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 60,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 41
+      }
+    ],
+    "EffectDescStrKey": "ST:137303"
+  },
+  {
+    "ID": 44,
+    "UsedTalentPoints": 180,
+    "NeedTalentPoints": 90,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 42
+      }
+    ],
+    "EffectDescStrKey": "ST:137304"
+  },
+  {
+    "ID": 45,
+    "NextID": 46,
+    "UsedTalentPoints": 210,
+    "NeedTalentPoints": 20,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 43
+      }
+    ],
+    "EffectDescStrKey": "ST:137283"
+  },
+  {
+    "ID": 46,
+    "NextID": 47,
+    "UsedTalentPoints": 210,
+    "NeedTalentPoints": 50,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 44
+      }
+    ],
+    "EffectDescStrKey": "ST:137284"
+  },
+  {
+    "ID": 47,
+    "UsedTalentPoints": 210,
+    "NeedTalentPoints": 100,
+    "EffectType": "ClimbTowerTalentType_Trigger",
+    "EffectParam": [
+      {
+        "P1": 45
+      }
+    ],
+    "EffectDescStrKey": "ST:137285"
+  },
+  {
+    "ID": 48,
+    "UsedTalentPoints": 260,
+    "NeedTalentPoints": 50,
+    "EffectType": "ClimbTowerTalentType_UnlockTreasureCard",
+    "EffectDescStrKey": "ST:142583"
+  }
+]

@@ -1,0 +1,621 @@
+[
+  {
+    "InitHp": 10000,
+    "HpMax": 10000,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 1,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      700010010
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      700000102
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 3,
+    "RestoreInterval": 99,
+    "AttachBufIdOnRestore": [
+      742223090
+    ],
+    "AttachBufIdOnBroken": [
+      600000050
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 1001,
+    "HpMax": 1,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763150015
+    ],
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 1002,
+    "HpMax": 2,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763150015
+    ],
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 1003,
+    "HpMax": 3,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763150015
+    ],
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 1004,
+    "HpMax": 4,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763150015
+    ],
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 1005,
+    "HpMax": 5,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763150015
+    ],
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 1006,
+    "HpMax": 6,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763150015
+    ],
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 216001,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      763159200,
+      763159204
+    ],
+    "AttachBufIdOnBroken": [
+      763159201,
+      763159203
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240000,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      742400090,
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742400099,
+      700000102
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240111,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401199,
+      700000102
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240121,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401299,
+      700000102
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240131,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401399,
+      700000102
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240141,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401499,
+      700000102
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240501,
+    "RestoreInterval": 3,
+    "AttachBufIdOnRestore": [
+      742405014,
+      742405015,
+      742405016,
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742405013,
+      700000102,
+      742405019
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240502,
+    "RestoreInterval": 3,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      700000102
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240601,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401199
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240602,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401299
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240603,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401499
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 240604,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      700019999
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      742401199
+    ]
+  },
+  {
+    "ID": 240730,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763152015,
+      763152029,
+      763152030,
+      763152031
+    ],
+    "ShieldHpAddByHpMaxPercent": 300
+  },
+  {
+    "ID": 240731,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763152015,
+      763152029,
+      763152030,
+      763152031
+    ],
+    "ShieldHpAddByHpMaxPercent": 1200
+  },
+  {
+    "ID": 240732,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763152015,
+      763152029,
+      763152030,
+      763152031
+    ],
+    "ShieldHpAddByHpMaxPercent": 2000
+  },
+  {
+    "ID": 240733,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763152015,
+      763152029,
+      763152030,
+      763152031
+    ],
+    "ShieldHpAddByHpMaxPercent": 1000
+  },
+  {
+    "ID": 240734,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763152015,
+      763152029,
+      763152030,
+      763152031
+    ],
+    "ShieldHpAddByHpMaxPercent": 900
+  },
+  {
+    "ID": 240800,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      763156105
+    ],
+    "AttachBufIdOnBroken": [
+      763156110
+    ],
+    "ShieldHpAddByHpMaxPercent": 10000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 241202,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      700000100,
+      700031144
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 241401,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      743135370
+    ],
+    "AttachBufIdOnBroken": [
+      743135375,
+      743135376,
+      700000687
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 400001,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 500000,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 5000
+  },
+  {
+    "ID": 500001,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 5000
+  },
+  {
+    "ID": 600000,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 10000
+  },
+  {
+    "ID": 21107100,
+    "HpMax": 3,
+    "RestoreInterval": 3,
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 21107101,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000
+  },
+  {
+    "ID": 27021900,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      759001011
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 27022000,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      759001020,
+      759001021
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 27022100,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      759001031
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 27022200,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      759001041
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 27022300,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      759001051
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 27022400,
+    "RestoreInterval": 2,
+    "AttachBufIdOnRestore": [
+      759001061
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 3000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 28012100,
+    "HpMax": 3,
+    "RestoreInterval": 3,
+    "AttachBufIdOnRestore": [
+      759001102
+    ],
+    "AttachBufIdOnBroken": [
+      759001103
+    ],
+    "DisperseBufCategorySetId": 2,
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1
+  },
+  {
+    "ID": 100150100,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 10000,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 152100260,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      763150015
+    ],
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 153001330,
+    "RestoreInterval": 3,
+    "AttachBufIdOnRestore": [
+      700019999,
+      750111120,
+      750111129
+    ],
+    "AttachBufIdOnBroken": [
+      600000050,
+      700000102,
+      750111130,
+      750111139
+    ],
+    "DisperseBufCategorySetId": 30,
+    "HpWhenBattleBegin": 1
+  },
+  {
+    "ID": 199999974,
+    "InitHp": 30,
+    "HpMax": 30,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "HpWhenBattleBegin": 1,
+    "ShieldType": "ShieldType_SpecialShield",
+    "FixedDamage": 1,
+    "ImmuneAbsoluteDamage": 1,
+    "ImmuneBufDamage": 1
+  },
+  {
+    "ID": 352090224,
+    "RestoreInterval": -1,
+    "AttachBufIdOnRestore": [
+      0
+    ],
+    "AttachBufIdOnBroken": [
+      0
+    ],
+    "ShieldHpAddByHpMaxPercent": 10000,
+    "HpWhenBattleBegin": 1
+  }
+]

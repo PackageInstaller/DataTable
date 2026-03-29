@@ -1,0 +1,638 @@
+[
+  {
+    "ID": 1001,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_66.png@Fabaoyangcheng_66",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_65.png@Fabaoyangcheng_65",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_16.png@Fight_16",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1001.png@Artifact_1001",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1001_ABS/FX_Artifact1001_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Fire",
+    "CareerTypes": [
+      "CareerType_Rogue",
+      "CareerType_Warlock"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      1001010,
+      1001020,
+      1001030,
+      1001040,
+      1001050,
+      1001060,
+      1001070
+    ],
+    "EnchantSlots": [
+      100101,
+      100102,
+      100103
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group12",
+    "LineDummy": "LineGroup12",
+    "Sort": 1,
+    "NameStrKey": "ST:182182",
+    "RichNameStrKey": "ST:182182",
+    "FaBaoDescStrKey": "ST:182182"
+  },
+  {
+    "ID": 1002,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_50.png@Fabaoyangcheng_50",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_49.png@Fabaoyangcheng_49",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_15.png@Fight_15",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1002.png@Artifact_1002",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1002_ABS/FX_Artifact1002_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_None",
+    "CareerTypes": [
+      "CareerType_Physician",
+      "CareerType_Warlock"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      1002010,
+      1002020,
+      1002030,
+      1002040,
+      1002050,
+      1002060,
+      1002070
+    ],
+    "EnchantSlots": [
+      100201,
+      100202,
+      100203
+    ],
+    "UnlockCondInfoList": [
+      {
+        "Type": "FaBaoConditionType_PlayerLevel",
+        "P1": 62
+      },
+      {
+        "Type": "FaBaoConditionType_CliqueChallengeLevel",
+        "P1": 408
+      }
+    ],
+    "UnlockNeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000501,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000301,
+        "Count": 32
+      }
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group7",
+    "LineDummy": "LineGroup7",
+    "Sort": 4,
+    "NameStrKey": "ST:182386",
+    "RichNameStrKey": "ST:182386",
+    "FaBaoDescStrKey": "ST:182386",
+    "UnLockTipStrKey": "ST:186614"
+  },
+  {
+    "ID": 1003,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_62.png@Fabaoyangcheng_62",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_61.png@Fabaoyangcheng_61",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_28.png@Fight_28",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1003.png@Artifact_1003",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1003_ABS/FX_Artifact1003_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_None",
+    "CareerTypes": [
+      "CareerType_Guard",
+      "CareerType_Melee"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      1003010,
+      1003020,
+      1003030,
+      1003040,
+      1003050,
+      1003060,
+      1003070
+    ],
+    "EnchantSlots": [
+      100301,
+      100302,
+      100303
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group9",
+    "LineDummy": "LineGroup9",
+    "Sort": 2,
+    "NameStrKey": "ST:182183",
+    "RichNameStrKey": "ST:182183",
+    "FaBaoDescStrKey": "ST:182183"
+  },
+  {
+    "ID": 1004,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_64.png@Fabaoyangcheng_64",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_63.png@Fabaoyangcheng_63",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_26.png@Fight_26",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1004.png@Artifact_1004",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1004_ABS/FX_Artifact1004_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_None",
+    "CareerTypes": [
+      "CareerType_Melee",
+      "CareerType_Guard"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      1004010,
+      1004020,
+      1004030,
+      1004040,
+      1004050,
+      1004060,
+      1004070
+    ],
+    "EnchantSlots": [
+      100401,
+      100402,
+      100403
+    ],
+    "UnlockCondInfoList": [
+      {
+        "Type": "FaBaoConditionType_PlayerLevel",
+        "P1": 62
+      },
+      {
+        "Type": "FaBaoConditionType_CliqueChallengeLevel",
+        "P1": 608
+      }
+    ],
+    "UnlockNeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000401,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000201,
+        "Count": 32
+      }
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group11",
+    "LineDummy": "LineGroup11",
+    "Sort": 5,
+    "NameStrKey": "ST:182184",
+    "RichNameStrKey": "ST:182184",
+    "FaBaoDescStrKey": "ST:182184",
+    "UnLockTipStrKey": "ST:183588"
+  },
+  {
+    "ID": 1005,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_70.png@Fabaoyangcheng_70",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_69.png@Fabaoyangcheng_69",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_27.png@Fight_27",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1005.png@Artifact_1005",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1005_ABS/FX_Artifact1005_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Electricity",
+    "CareerTypes": [
+      "CareerType_Warlock",
+      "CareerType_Assassin"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      1005010,
+      1005020,
+      1005030,
+      1005040,
+      1005050,
+      1005060,
+      1005070
+    ],
+    "EnchantSlots": [
+      100501,
+      100502,
+      100503
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group10",
+    "LineDummy": "LineGroup10",
+    "Sort": 3,
+    "NameStrKey": "ST:162224",
+    "RichNameStrKey": "ST:162224",
+    "FaBaoDescStrKey": "ST:162224"
+  },
+  {
+    "ID": 1006,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_68.png@Fabaoyangcheng_68",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_67.png@Fabaoyangcheng_67",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_29.png@Fight_29",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1006.png@Artifact_1006",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1006_ABS/FX_Artifact1006_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Light",
+    "CareerTypes": [
+      "CareerType_Swordsman",
+      "CareerType_Assassin"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      1006010,
+      1006020,
+      1006030,
+      1006040,
+      1006050,
+      1006060,
+      1006070
+    ],
+    "EnchantSlots": [
+      100601,
+      100602,
+      100603
+    ],
+    "UnlockCondInfoList": [
+      {
+        "Type": "FaBaoConditionType_PlayerLevel",
+        "P1": 62
+      },
+      {
+        "Type": "FaBaoConditionType_CliqueChallengeLevel",
+        "P1": 508
+      }
+    ],
+    "UnlockNeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000501,
+        "Count": 24
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000301,
+        "Count": 48
+      }
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group8",
+    "LineDummy": "LineGroup8",
+    "Sort": 6,
+    "NameStrKey": "ST:182385",
+    "RichNameStrKey": "ST:182385",
+    "FaBaoDescStrKey": "ST:182385",
+    "UnLockTipStrKey": "ST:183589"
+  },
+  {
+    "ID": 1007,
+    "Type": "FaBaoType_Challenge",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1011.png@Artifact_1011",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1007_ABS/FX_Artifact1007_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:219875",
+    "RichNameStrKey": "ST:219875",
+    "FaBaoDescStrKey": "ST:219875"
+  },
+  {
+    "ID": 1008,
+    "Type": "FaBaoType_Challenge",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:195358",
+    "RichNameStrKey": "ST:195358",
+    "FaBaoDescStrKey": "ST:195358"
+  },
+  {
+    "ID": 1009,
+    "Type": "FaBaoType_Challenge",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:226586",
+    "RichNameStrKey": "ST:226586",
+    "FaBaoDescStrKey": "ST:226586"
+  },
+  {
+    "ID": 1010,
+    "Type": "FaBaoType_Challenge",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:160416",
+    "RichNameStrKey": "ST:160416",
+    "FaBaoDescStrKey": "ST:160416"
+  },
+  {
+    "ID": 1011,
+    "Type": "FaBaoType_Challenge",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:226587",
+    "RichNameStrKey": "ST:226587",
+    "FaBaoDescStrKey": "ST:226587"
+  },
+  {
+    "ID": 1012,
+    "Type": "FaBaoType_Challenge",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:227074",
+    "RichNameStrKey": "ST:227074",
+    "FaBaoDescStrKey": "ST:227074"
+  },
+  {
+    "ID": 1013,
+    "Type": "FaBaoType_Challenge",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:226588",
+    "RichNameStrKey": "ST:226588",
+    "FaBaoDescStrKey": "ST:226588"
+  },
+  {
+    "ID": 2001,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_72.png@Fabaoyangcheng_72",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_71.png@Fabaoyangcheng_71",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_30.png@Fight_30",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1012.png@Artifact_1012",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1008_ABS/FX_Artifact1008_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Light",
+    "CareerTypes": [
+      "CareerType_Assassin",
+      "CareerType_Melee"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      2001010,
+      2001020,
+      2001030,
+      2001040,
+      2001050,
+      2001060,
+      2001070
+    ],
+    "EnchantSlots": [
+      200101,
+      200102,
+      200103
+    ],
+    "UnlockCondInfoList": [
+      {
+        "Type": "FaBaoConditionType_PlayerLevel",
+        "P1": 62
+      },
+      {
+        "Type": "FaBaoConditionType_CliqueChallengeLevel",
+        "P1": 1101
+      }
+    ],
+    "UnlockNeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000401,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000201,
+        "Count": 32
+      }
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group14",
+    "LineDummy": "LineGroup14",
+    "Sort": 8,
+    "NameStrKey": "ST:224155",
+    "RichNameStrKey": "ST:224155",
+    "FaBaoDescStrKey": "ST:224155",
+    "UnLockTipStrKey": "ST:223854"
+  },
+  {
+    "ID": 2002,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_74.png@Fabaoyangcheng_74",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_73.png@Fabaoyangcheng_73",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_31.png@Fight_31",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1013.png@Artifact_1013",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1009_ABS/FX_Artifact1009_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Dusk",
+    "CareerTypes": [
+      "CareerType_Swordsman",
+      "CareerType_Guard"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      2002010,
+      2002020,
+      2002030,
+      2002040,
+      2002050,
+      2002060,
+      2002070
+    ],
+    "EnchantSlots": [
+      200201,
+      200202,
+      200203
+    ],
+    "UnlockCondInfoList": [
+      {
+        "Type": "FaBaoConditionType_PlayerLevel",
+        "P1": 62
+      },
+      {
+        "Type": "FaBaoConditionType_CliqueChallengeLevel",
+        "P1": 1001
+      }
+    ],
+    "UnlockNeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000401,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000201,
+        "Count": 32
+      }
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group13",
+    "LineDummy": "LineGroup13",
+    "Sort": 7,
+    "NameStrKey": "ST:222136",
+    "RichNameStrKey": "ST:222136",
+    "FaBaoDescStrKey": "ST:222136",
+    "UnLockTipStrKey": "ST:223855"
+  },
+  {
+    "ID": 2003,
+    "Type": "FaBaoType_Development",
+    "SelIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_76.png@Fabaoyangcheng_76",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Fabaoyangcheng_75.png@Fabaoyangcheng_75",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_32.png@Fight_32",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1014.png@Artifact_1014",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1010_ABS/FX_Artifact1010_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Ice",
+    "CareerTypes": [
+      "CareerType_Physician",
+      "CareerType_Rogue"
+    ],
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      2003010,
+      2003020,
+      2003030,
+      2003040,
+      2003050,
+      2003060,
+      2003070
+    ],
+    "EnchantSlots": [
+      200301,
+      200302,
+      200303
+    ],
+    "UnlockCondInfoList": [
+      {
+        "Type": "FaBaoConditionType_PlayerLevel",
+        "P1": 62
+      },
+      {
+        "Type": "FaBaoConditionType_CliqueChallengeLevel",
+        "P1": 1201
+      }
+    ],
+    "UnlockNeedItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000501,
+        "Count": 32
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000301,
+        "Count": 32
+      }
+    ],
+    "CharacterID": 120010,
+    "GroupDummy": "Group15",
+    "LineDummy": "LineGroup15",
+    "Sort": 9,
+    "NameStrKey": "ST:227090",
+    "RichNameStrKey": "ST:227090",
+    "FaBaoDescStrKey": "ST:227090",
+    "UnLockTipStrKey": "ST:229188"
+  },
+  {
+    "ID": 2004,
+    "Type": "FaBaoType_Challenge",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1015.png@Artifact_1015",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1011_ABS/FX_Artifact1011_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:230274",
+    "RichNameStrKey": "ST:230274",
+    "FaBaoDescStrKey": "ST:230274"
+  },
+  {
+    "ID": 2005,
+    "Type": "FaBaoType_Challenge",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1016.png@Artifact_1016",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1012_ABS/FX_Artifact1012_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_None",
+    "DefaultBtName": "FaBao",
+    "CharacterID": 120010,
+    "NameStrKey": "ST:244464",
+    "RichNameStrKey": "ST:244464",
+    "FaBaoDescStrKey": "ST:244464"
+  },
+  {
+    "ID": 5101,
+    "Type": "FaBaoType_Challenge",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_27.png@Fight_27",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_5101.png@Artifact_5101",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1005_ABS/FX_Artifact1005_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Electricity",
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      51011000
+    ],
+    "CharacterID": 120010,
+    "NameStrKey": "ST:162224",
+    "RichNameStrKey": "ST:162224",
+    "FaBaoDescStrKey": "ST:162224"
+  },
+  {
+    "ID": 5201,
+    "Type": "FaBaoType_Challenge",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_16.png@Fight_16",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1001.png@Artifact_1001",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1001_ABS/FX_Artifact1001_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Fire",
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      52011000
+    ],
+    "CharacterID": 120010,
+    "NameStrKey": "ST:182182",
+    "RichNameStrKey": "ST:182182",
+    "FaBaoDescStrKey": "ST:182182"
+  },
+  {
+    "ID": 5301,
+    "Type": "FaBaoType_Challenge",
+    "BattleIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/NoTag/Fight_30.png@Fight_30",
+    "SmallIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/MagicWeapon_ABS/Icon/Artifact_1012.png@Artifact_1012",
+    "Spine": "Assets/GameProject/RuntimeAssets/Spine/Fabao/FX_Artifact1008_ABS/FX_Artifact1008_Graphic_Prefab.prefab",
+    "ActorSign": "ActorSign_Light",
+    "DefaultBtName": "FaBao",
+    "SoulSlots": [
+      53011000
+    ],
+    "CharacterID": 120010,
+    "NameStrKey": "ST:224155",
+    "RichNameStrKey": "ST:224155",
+    "FaBaoDescStrKey": "ST:224155"
+  }
+]

@@ -32,8 +32,6 @@ class Config:
     )
     ASSET_JSON_FILES = [
         "master.json",
-        "assetbundle.json",
-        "advvoice.json",
     ]  # 这里去掉了 "assetbundle.json" "advvoice.json"，有需要可以自己加上
     DOWNLOAD_DIR = "downloads"
     MASTER_DATA_DIR = "MasterData"

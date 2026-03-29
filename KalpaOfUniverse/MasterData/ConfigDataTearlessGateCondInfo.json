@@ -1,0 +1,408 @@
+[
+  {
+    "ID": 1001,
+    "CondType": "TearlessGateCondType_MonsterDead",
+    "TargetType": 1
+  },
+  {
+    "ID": 1002,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 1,
+    "CompareType": 3,
+    "CompareValue": 5000
+  },
+  {
+    "ID": 1003,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 1,
+    "CompareType": 1,
+    "CompareValue": 10000
+  },
+  {
+    "ID": 1004,
+    "CondType": "TearlessGateCondType_MonsterDeadCountCompare",
+    "CompareType": 5
+  },
+  {
+    "ID": 1005,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 2,
+    "CompareType": 3,
+    "CompareValue": 5000
+  },
+  {
+    "ID": 1006,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 2,
+    "CompareType": 3,
+    "CompareValue": 3000
+  },
+  {
+    "ID": 1007,
+    "CondType": "TearlessGateCondType_MonsterSignCompare",
+    "TargetType": 1,
+    "CompareType": 6,
+    "CompareValue": 16
+  },
+  {
+    "ID": 1008,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 1,
+    "CompareType": 1,
+    "CompareValue": 5000
+  },
+  {
+    "ID": 1009,
+    "CondType": "TearlessGateCondType_DamageSign",
+    "P1": 1
+  },
+  {
+    "ID": 1010,
+    "CondType": "TearlessGateCondType_DamageSign",
+    "P1": 2
+  },
+  {
+    "ID": 1011,
+    "CondType": "TearlessGateCondType_DamageSign",
+    "P1": 4
+  },
+  {
+    "ID": 1012,
+    "CondType": "TearlessGateCondType_DamageSign",
+    "P1": 8
+  },
+  {
+    "ID": 1013,
+    "CondType": "TearlessGateCondType_DamageSign",
+    "P1": 16
+  },
+  {
+    "ID": 1014,
+    "CondType": "TearlessGateCondType_DamageSign",
+    "P1": 32
+  },
+  {
+    "ID": 1015,
+    "CondType": "TearlessGateCondType_DamageSign",
+    "P1": 64
+  },
+  {
+    "ID": 1016,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "CompareType": 1,
+    "CompareValue": 2
+  },
+  {
+    "ID": 1017,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P2": 101005,
+    "CompareType": 2
+  },
+  {
+    "ID": 1018,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "CompareType": 2,
+    "CompareValue": 2
+  },
+  {
+    "ID": 1019,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "CompareType": 4,
+    "CompareValue": 3
+  },
+  {
+    "ID": 1020,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P2": 101005,
+    "CompareType": 2,
+    "CompareValue": 2
+  },
+  {
+    "ID": 1021,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 2,
+    "CompareType": 2,
+    "CompareValue": 5000
+  },
+  {
+    "ID": 1022,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 2,
+    "CompareType": 4,
+    "CompareValue": 5000
+  },
+  {
+    "ID": 1023,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 2,
+    "CompareType": 4,
+    "CompareValue": 3000
+  },
+  {
+    "ID": 1024,
+    "CondType": "TearlessGateCondType_DamageFlag",
+    "P1": 4,
+    "P2": 2
+  },
+  {
+    "ID": 1025,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P2": 101011,
+    "CompareType": 2,
+    "CompareValue": 2
+  },
+  {
+    "ID": 1026,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 2,
+    "CompareType": 4,
+    "CompareValue": 10000
+  },
+  {
+    "ID": 1027,
+    "CondType": "TearlessGateCondType_MonsterDeadCountCompare",
+    "CompareType": 2
+  },
+  {
+    "ID": 9101,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 9101
+  },
+  {
+    "ID": 9102,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 9102
+  },
+  {
+    "ID": 9103,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 9103
+  },
+  {
+    "ID": 9104,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 9104
+  },
+  {
+    "ID": 9105,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 9105
+  },
+  {
+    "ID": 9106,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 9106
+  },
+  {
+    "ID": 9107,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 9107
+  },
+  {
+    "ID": 10031,
+    "CondType": "TearlessGateCondType_MonsterHpPercentCompare",
+    "TargetType": 2,
+    "CompareType": 1,
+    "CompareValue": 10000
+  },
+  {
+    "ID": 81010,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 1,
+    "CompareType": 2
+  },
+  {
+    "ID": 81013,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 1,
+    "CompareType": 2
+  },
+  {
+    "ID": 81020,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 2,
+    "CompareType": 2
+  },
+  {
+    "ID": 81023,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 2,
+    "CompareType": 2
+  },
+  {
+    "ID": 81030,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 4,
+    "CompareType": 2
+  },
+  {
+    "ID": 81033,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 4,
+    "CompareType": 2
+  },
+  {
+    "ID": 81040,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 8,
+    "CompareType": 2
+  },
+  {
+    "ID": 81043,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 8,
+    "CompareType": 2
+  },
+  {
+    "ID": 81050,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 16,
+    "CompareType": 2
+  },
+  {
+    "ID": 81053,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 16,
+    "CompareType": 2
+  },
+  {
+    "ID": 81060,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 64,
+    "CompareType": 2
+  },
+  {
+    "ID": 81063,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P1": 64,
+    "CompareType": 2
+  },
+  {
+    "ID": 91051,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 91051
+  },
+  {
+    "ID": 91052,
+    "CondType": "TearlessGateCondType_ItemGroup",
+    "P1": 91052
+  },
+  {
+    "ID": 201000,
+    "CondType": "TearlessGateCondType_FaBaoId"
+  },
+  {
+    "ID": 201001,
+    "CondType": "TearlessGateCondType_FaBaoId",
+    "P1": 1001
+  },
+  {
+    "ID": 201002,
+    "CondType": "TearlessGateCondType_FaBaoId",
+    "P1": 1003
+  },
+  {
+    "ID": 201003,
+    "CondType": "TearlessGateCondType_FaBaoId",
+    "P1": 1005
+  },
+  {
+    "ID": 201004,
+    "CondType": "TearlessGateCondType_FaBaoId",
+    "P1": 1002
+  },
+  {
+    "ID": 201005,
+    "CondType": "TearlessGateCondType_FaBaoId",
+    "P1": 1004
+  },
+  {
+    "ID": 201006,
+    "CondType": "TearlessGateCondType_FaBaoId",
+    "P1": 1006
+  },
+  {
+    "ID": 202001,
+    "CondType": "TearlessGateCondType_ExistSignRestrained",
+    "P1": 1,
+    "TargetType": 1
+  },
+  {
+    "ID": 202002,
+    "CondType": "TearlessGateCondType_ExistSignRestrained",
+    "P1": 2,
+    "TargetType": 1
+  },
+  {
+    "ID": 203001,
+    "CondType": "TearlessGateCondType_MonsterType",
+    "TargetType": 1,
+    "CompareType": 6,
+    "CompareValue": 3
+  },
+  {
+    "ID": 203002,
+    "CondType": "TearlessGateCondType_MonsterType",
+    "TargetType": 1,
+    "CompareType": 6,
+    "CompareValue": 2
+  },
+  {
+    "ID": 203003,
+    "CondType": "TearlessGateCondType_MonsterType",
+    "TargetType": 1,
+    "CompareType": 6,
+    "CompareValue": 1
+  },
+  {
+    "ID": 203004,
+    "CondType": "TearlessGateCondType_MonsterType",
+    "TargetType": 1,
+    "CompareType": 6,
+    "CompareValue": 4
+  },
+  {
+    "ID": 204100,
+    "CondType": "TearlessGateCondType_FishCoinCount",
+    "CompareType": 2,
+    "CompareValue": 100
+  },
+  {
+    "ID": 204150,
+    "CondType": "TearlessGateCondType_FishCoinCount",
+    "CompareType": 2,
+    "CompareValue": 150
+  },
+  {
+    "ID": 204300,
+    "CondType": "TearlessGateCondType_FishCoinCount",
+    "CompareType": 2,
+    "CompareValue": 300
+  },
+  {
+    "ID": 204500,
+    "CondType": "TearlessGateCondType_FishCoinCount",
+    "CompareType": 2,
+    "CompareValue": 500
+  },
+  {
+    "ID": 207001,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P2": 201001,
+    "CompareType": 2
+  },
+  {
+    "ID": 207002,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P2": 201005,
+    "CompareType": 2,
+    "CompareValue": 2
+  },
+  {
+    "ID": 207003,
+    "CondType": "TearlessGateCondType_MonsterCountCompare",
+    "P2": 201011,
+    "CompareType": 2,
+    "CompareValue": 2
+  }
+]

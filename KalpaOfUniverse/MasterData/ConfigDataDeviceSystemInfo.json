@@ -1,0 +1,747 @@
+[
+  {
+    "ID": 1,
+    "GpuNameMatchStr": "(?:Adreno).*(?:200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 2,
+    "GpuNameMatchStr": "(?:Adreno).*(?:202\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 3,
+    "GpuNameMatchStr": "(?:Adreno).*(?:205\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 4,
+    "GpuNameMatchStr": "(?:Adreno).*(?:220\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 5,
+    "GpuNameMatchStr": "(?:Adreno).*(?:225\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 6,
+    "GpuNameMatchStr": "(?:Adreno).*(?:304\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 7,
+    "GpuNameMatchStr": "(?:Adreno).*(?:305\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 8,
+    "GpuNameMatchStr": "(?:Adreno).*(?:306\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 9,
+    "GpuNameMatchStr": "(?:Adreno).*(?:308\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 10,
+    "GpuNameMatchStr": "(?:Adreno).*(?:320\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 11,
+    "GpuNameMatchStr": "(?:Adreno).*(?:320\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 12,
+    "GpuNameMatchStr": "(?:Adreno).*(?:330\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 13,
+    "GpuNameMatchStr": "(?:Adreno).*(?:405\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 14,
+    "GpuNameMatchStr": "(?:Adreno).*(?:418\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 15,
+    "GpuNameMatchStr": "(?:Adreno).*(?:420\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 16,
+    "GpuNameMatchStr": "(?:Adreno).*(?:430\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 17,
+    "GpuNameMatchStr": "(?:Adreno).*(?:505\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 18,
+    "GpuNameMatchStr": "(?:Adreno).*(?:506\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 19,
+    "GpuNameMatchStr": "(?:Adreno).*(?:508\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 20,
+    "GpuNameMatchStr": "(?:Adreno).*(?:509\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 21,
+    "GpuNameMatchStr": "(?:Adreno).*(?:510\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 22,
+    "GpuNameMatchStr": "(?:Adreno).*(?:512\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 23,
+    "GpuNameMatchStr": "(?:Adreno).*(?:530\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 24,
+    "GpuNameMatchStr": "(?:Adreno).*(?:540\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 25,
+    "GpuNameMatchStr": "(?:Adreno).*(?:605\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 26,
+    "GpuNameMatchStr": "(?:Adreno).*(?:610\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 27,
+    "GpuNameMatchStr": "(?:Adreno).*(?:612\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 28,
+    "GpuNameMatchStr": "(?:Adreno).*(?:615\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 29,
+    "GpuNameMatchStr": "(?:Adreno).*(?:616\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 30,
+    "GpuNameMatchStr": "(?:Adreno).*(?:618\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 31,
+    "GpuNameMatchStr": "(?:Adreno).*(?:620\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 32,
+    "GpuNameMatchStr": "(?:Adreno).*(?:630\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 33,
+    "GpuNameMatchStr": "(?:Adreno).*(?:640\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 34,
+    "GpuNameMatchStr": "(?:Adreno).*(?:650\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 35,
+    "GpuNameMatchStr": "(?:Adreno).*(?:675\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 36,
+    "GpuNameMatchStr": "(?:Adreno).*(?:680\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 37,
+    "GpuNameMatchStr": "(?:Adreno).*(?:685\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 50,
+    "GpuNameMatchStr": "(?:Mali).*(?:55/100\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 51,
+    "GpuNameMatchStr": "(?:Malil).*(?:200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 52,
+    "GpuNameMatchStr": "(?:Mali).*(?:300\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 53,
+    "GpuNameMatchStr": "(?:Mali).*(?:400)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 54,
+    "GpuNameMatchStr": "(?:Mali).*(?:450)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 55,
+    "GpuNameMatchStr": "(?:Mali).*(?:470)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 56,
+    "GpuNameMatchStr": "(?:Mali).*(?:T604\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 57,
+    "GpuNameMatchStr": "(?:Mali).*(?:T658\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 58,
+    "GpuNameMatchStr": "(?:Mali).*(?:T622\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 59,
+    "GpuNameMatchStr": "(?:Mali).*(?:T624\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 60,
+    "GpuNameMatchStr": "(?:Mali).*(?:T628\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 61,
+    "GpuNameMatchStr": "(?:Mali).*(?:T678\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 62,
+    "GpuNameMatchStr": "(?:Mali).*(?:T720\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 63,
+    "GpuNameMatchStr": "(?:Mali).*(?:T760\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 64,
+    "GpuNameMatchStr": "(?:Mali).*(?:T820\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 65,
+    "GpuNameMatchStr": "(?:Mali).*(?:T830\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 66,
+    "GpuNameMatchStr": "(?:Mali).*(?:T860\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 67,
+    "GpuNameMatchStr": "(?:Mali).*(?:T880\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 68,
+    "GpuNameMatchStr": "(?:Mali).*(?:G31\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 69,
+    "GpuNameMatchStr": "(?:Mali).*(?:G51\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 70,
+    "GpuNameMatchStr": "(?:Mali).*(?:G52\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 71,
+    "GpuNameMatchStr": "(?:Mali).*(?:G71\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 72,
+    "GpuNameMatchStr": "(?:Mali).*(?:G72\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 73,
+    "GpuNameMatchStr": "(?:Mali).*(?:G76\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Perfect"
+  },
+  {
+    "ID": 100,
+    "GpuNameMatchStr": "(?:SGX).*(?:520\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 101,
+    "GpuNameMatchStr": "(?:SGX).*(?:530\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 102,
+    "GpuNameMatchStr": "(?:SGX).*(?:531\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 103,
+    "GpuNameMatchStr": "(?:SGX).*(?:535\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 104,
+    "GpuNameMatchStr": "(?:SGX).*(?:540\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 105,
+    "GpuNameMatchStr": "(?:SGX).*(?:545\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 106,
+    "GpuNameMatchStr": "(?:SGX).*(?:543\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 107,
+    "GpuNameMatchStr": "(?:SGX).*(?:544\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 108,
+    "GpuNameMatchStr": "(?:SGX).*(?:554\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 109,
+    "GpuNameMatchStr": "(?:G6100\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 110,
+    "GpuNameMatchStr": "(?:G6200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 111,
+    "GpuNameMatchStr": "(?:G6230\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 112,
+    "GpuNameMatchStr": "(?:G6400\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 113,
+    "GpuNameMatchStr": "(?:G6430\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 114,
+    "GpuNameMatchStr": "(?:G6630\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 115,
+    "GpuNameMatchStr": "(?:G6050\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 116,
+    "GpuNameMatchStr": "(?:G6060\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 117,
+    "GpuNameMatchStr": "(?:G6100\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 118,
+    "GpuNameMatchStr": "(?:G6110\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 119,
+    "GpuNameMatchStr": "(?:GX).*(?:6240\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 120,
+    "GpuNameMatchStr": "(?:GX).*(?:6250\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 121,
+    "GpuNameMatchStr": "(?:GX).*(?:6450\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 122,
+    "GpuNameMatchStr": "(?:GX).*(?:6650\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 123,
+    "GpuNameMatchStr": "(?:GE).*(?:7400\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 124,
+    "GpuNameMatchStr": "(?:GE).*(?:7800\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 125,
+    "GpuNameMatchStr": "(?:GT).*(?:7200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 126,
+    "GpuNameMatchStr": "(?:GT).*(?:7400\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 127,
+    "GpuNameMatchStr": "(?:GT).*(?:7600\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 128,
+    "GpuNameMatchStr": "(?:GT).*(?:7800\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 129,
+    "GpuNameMatchStr": "(?:GT).*(?:7900\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 130,
+    "GpuNameMatchStr": "(?:GT).*(?:7200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 131,
+    "GpuNameMatchStr": "(?:GT).*(?:7400\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 132,
+    "GpuNameMatchStr": "(?:GT).*(?:7600\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 133,
+    "GpuNameMatchStr": "(?:GE).*(?:8100\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 134,
+    "GpuNameMatchStr": "(?:GE).*(?:8200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 135,
+    "GpuNameMatchStr": "(?:GE).*(?:8300\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 136,
+    "GpuNameMatchStr": "(?:GE).*(?:8310\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 137,
+    "GpuNameMatchStr": "(?:GE).*(?:8430\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 138,
+    "GpuNameMatchStr": "(?:GE).*(?:8320\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 139,
+    "GpuNameMatchStr": "(?:GE).*(?:8325\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 140,
+    "GpuNameMatchStr": "(?:GE).*(?:8340\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 141,
+    "GpuNameMatchStr": "(?:GE).*(?:8525\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 142,
+    "GpuNameMatchStr": "(?:GE).*(?:8450\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 143,
+    "GpuNameMatchStr": "(?:GE).*(?:9000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 144,
+    "GpuNameMatchStr": "(?:GE).*(?:9100\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 145,
+    "GpuNameMatchStr": "(?:GE).*(?:9115\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 146,
+    "GpuNameMatchStr": "(?:GE).*(?:9210\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 147,
+    "GpuNameMatchStr": "(?:GE).*(?:9215\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 148,
+    "GpuNameMatchStr": "(?:GE).*(?:9420\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 149,
+    "GpuNameMatchStr": "(?:GE).*(?:9220\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 150,
+    "GpuNameMatchStr": "(?:GE).*(?:9240\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 180,
+    "GpuNameMatchStr": "(?:GC200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 181,
+    "GpuNameMatchStr": "(?:GC400\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 182,
+    "GpuNameMatchStr": "(?:GC500\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 183,
+    "GpuNameMatchStr": "(?:GC600\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 184,
+    "GpuNameMatchStr": "(?:GC800\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 185,
+    "GpuNameMatchStr": "(?:GC860\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 186,
+    "GpuNameMatchStr": "(?:GC880\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 187,
+    "GpuNameMatchStr": "(?:GC).*(?:1000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 188,
+    "GpuNameMatchStr": "(?:GC).*(?:2000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 189,
+    "GpuNameMatchStr": "(?:GC).*(?:4000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 190,
+    "GpuNameMatchStr": "(?:GC).*(?:3000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 191,
+    "GpuNameMatchStr": "(?:GC).*(?:5000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 192,
+    "GpuNameMatchStr": "(?:GC).*(?:6000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 193,
+    "GpuNameMatchStr": "(?:GC).*(?:6400\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 194,
+    "GpuNameMatchStr": "(?:GC).*(?:7000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 195,
+    "GpuNameMatchStr": "(?:GC).*(?:7200\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 196,
+    "GpuNameMatchStr": "(?:GC).*(?:7400\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 197,
+    "GpuNameMatchStr": "(?:GC).*(?:7600\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 198,
+    "GpuNameMatchStr": "(?:GC).*(?:8000\\b)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 220,
+    "GpuNameMatchStr": "(?:AP20H)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 221,
+    "GpuNameMatchStr": "(?:T20)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 222,
+    "GpuNameMatchStr": "(?:AP25H)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 223,
+    "GpuNameMatchStr": "(?:T25)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 224,
+    "GpuNameMatchStr": "(?:T30L)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 225,
+    "GpuNameMatchStr": "(?:T30)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 226,
+    "GpuNameMatchStr": "(?:AP33)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 227,
+    "GpuNameMatchStr": "(?:T33)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 228,
+    "GpuNameMatchStr": "(?:T114)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 229,
+    "GpuNameMatchStr": "(?:T148)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 230,
+    "GpuNameMatchStr": "(?:T124)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 231,
+    "GpuNameMatchStr": "(?:T132)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 240,
+    "GpuNameMatchStr": "(?:T210)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 241,
+    "GpuNameMatchStr": "(?:T186)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Medium"
+  },
+  {
+    "ID": 242,
+    "GpuNameMatchStr": "(?:T194)",
+    "DeviceRatingLevel": "DeviceRatingLevel_High"
+  },
+  {
+    "ID": 243,
+    "GpuNameMatchStr": "(?:P90)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 244,
+    "GpuNameMatchStr": "(?:P22)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  },
+  {
+    "ID": 245,
+    "GpuNameMatchStr": "(?:MT6762)",
+    "DeviceRatingLevel": "DeviceRatingLevel_Low"
+  }
+]

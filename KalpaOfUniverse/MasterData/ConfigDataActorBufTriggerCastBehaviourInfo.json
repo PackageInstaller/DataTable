@@ -1,0 +1,274 @@
+[
+  {
+    "ID": 1,
+    "FuncType": "BufFuncType_AttachBuf2Opponents"
+  },
+  {
+    "ID": 2,
+    "FuncType": "BufFuncType_AttachBuf4Self"
+  },
+  {
+    "ID": 3,
+    "FuncType": "BufFuncType_AttachBuf4SelfBeforeAttack"
+  },
+  {
+    "ID": 4,
+    "FuncType": "BufFuncType_AttachBuf4SelfOnOtherDead"
+  },
+  {
+    "ID": 5,
+    "FuncType": "BufFuncType_AttachBuf4SelfOnStage"
+  },
+  {
+    "ID": 6,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill"
+  },
+  {
+    "ID": 7,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkillStage2"
+  },
+  {
+    "ID": 8,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkillVersion2"
+  },
+  {
+    "ID": 9,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill2Probability"
+  },
+  {
+    "ID": 10,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkillByDamange"
+  },
+  {
+    "ID": 11,
+    "FuncType": "BufFuncType_AttachBufBeforeCastSkill"
+  },
+  {
+    "ID": 12,
+    "FuncType": "BufFuncType_AttachBufBySelfAfterCastSkill"
+  },
+  {
+    "ID": 13,
+    "FuncType": "BufFuncType_AttachBufBySelfBeforeCastSkill"
+  },
+  {
+    "ID": 14,
+    "FuncType": "BufFuncType_AttachBufBySelfOnStage"
+  },
+  {
+    "ID": 15,
+    "FuncType": "BufFuncType_AttachBufByTargetAfterCastSkill"
+  },
+  {
+    "ID": 16,
+    "FuncType": "BufFuncType_AttachBufImm"
+  },
+  {
+    "ID": 17,
+    "FuncType": "BufFuncType_AttachBufOrConvertBeforeCastSkill"
+  },
+  {
+    "ID": 18,
+    "FuncType": "BufFuncType_AttachBufOrConvertAfterCastSkill"
+  },
+  {
+    "ID": 19,
+    "FuncType": "BufFuncType_AttachBufOrConvert4SelfOnStage"
+  },
+  {
+    "ID": 20,
+    "FuncType": "BufFuncType_AttachBufOrConvert2SrcActorAfterCastSkill"
+  },
+  {
+    "ID": 21,
+    "FuncType": "BufFuncType_RemoveCD4ActiveSkillBySkillType"
+  },
+  {
+    "ID": 22,
+    "FuncType": "BufFuncType_RemoveCD4ActiveSkillImm"
+  },
+  {
+    "ID": 23,
+    "FuncType": "BufFuncType_RemoveCD4ActiveSkillImmVersion2"
+  },
+  {
+    "ID": 24,
+    "FuncType": "BufFuncType_Bloodsuck"
+  },
+  {
+    "ID": 25,
+    "FuncType": "BufFuncType_BloodsuckBySelf"
+  },
+  {
+    "ID": 26,
+    "FuncType": "BufFuncType_TeleportOpponentsNearSelfAfterCastSkill"
+  },
+  {
+    "ID": 27,
+    "FuncType": "BufFuncType_TeleportToRandomTargetAfterCastSkill"
+  },
+  {
+    "ID": 28,
+    "FuncType": "BufFuncType_PassiveMoveAfterCastSkill"
+  },
+  {
+    "ID": 29,
+    "FuncType": "BufFuncType_PassiveMoveBySelfAfterCastSkill"
+  },
+  {
+    "ID": 30,
+    "FuncType": "BufFuncType_PassiveMoveBySelfOnStage"
+  },
+  {
+    "ID": 31,
+    "FuncType": "BufFuncType_PassiveMoveByTargetAfterCastSkill"
+  },
+  {
+    "ID": 32,
+    "FuncType": "BufFuncType_PassiveMoveBySelfImm"
+  },
+  {
+    "ID": 33,
+    "FuncType": "BufFuncType_RandomShiftSingleBySelfOnStage"
+  },
+  {
+    "ID": 34,
+    "FuncType": "BufFuncType_RandomShiftSingleAfterCastSkill"
+  },
+  {
+    "ID": 35,
+    "FuncType": "BufFuncType_CostSelfHpBeforeCastSkill"
+  },
+  {
+    "ID": 36,
+    "FuncType": "BufFuncType_CostSelfHpAfterCastSkill"
+  },
+  {
+    "ID": 37,
+    "FuncType": "BufFuncType_DuplicateBufAfterCastSkill"
+  },
+  {
+    "ID": 38,
+    "FuncType": "BufFuncType_DuplicateBufBeforeCastSkill"
+  },
+  {
+    "ID": 39,
+    "FuncType": "BufFuncType_DuplicateBufBySelfAfterCastSkill"
+  },
+  {
+    "ID": 40,
+    "FuncType": "BufFuncType_AttachBuf4SelfFromCooperateAfterCastSkill"
+  },
+  {
+    "ID": 41,
+    "FuncType": "BufFuncType_StealBufFromOpponentsBeforeCastSkill"
+  },
+  {
+    "ID": 42,
+    "FuncType": "BufFuncType_DisperseBuf4SelfOnStage"
+  },
+  {
+    "ID": 43,
+    "FuncType": "BufFuncType_ReplaceOtherBySelfOnStage"
+  },
+  {
+    "ID": 44,
+    "FuncType": "BufFuncType_BanlanceHpAndHealByMagitAttackOnStage"
+  },
+  {
+    "ID": 45,
+    "FuncType": "BufFuncType_BanlanceHpOnStage"
+  },
+  {
+    "ID": 46,
+    "FuncType": "BufFuncType_SummonOnStage"
+  },
+  {
+    "ID": 47,
+    "FuncType": "BufFuncType_RemoveCD4CurActiveSkill"
+  },
+  {
+    "ID": 48,
+    "FuncType": "BufFuncType_SummonWeatherBufAfterCastSkill"
+  },
+  {
+    "ID": 49,
+    "FuncType": "BufFuncType_DivertBufBySelfOnStage"
+  },
+  {
+    "ID": 50,
+    "FuncType": "BufFuncType_DamageBySelfByStoreValueBuffPercentImm"
+  },
+  {
+    "ID": 51,
+    "FuncType": "BufFuncType_AttachBuf2SrcActorAfterCastSkill"
+  },
+  {
+    "ID": 52,
+    "FuncType": "BufFuncType_ExtraSkill"
+  },
+  {
+    "ID": 53,
+    "FuncType": "BufFuncType_CreateGroundBufBySpecialActorImm"
+  },
+  {
+    "ID": 54,
+    "FuncType": "BufFuncType_DisperseBufByTargetAfterCastSkill"
+  },
+  {
+    "ID": 55,
+    "FuncType": "BufFuncType_TurnBackTime"
+  },
+  {
+    "ID": 56,
+    "FuncType": "BufFuncType_ExchangeHpImm"
+  },
+  {
+    "ID": 57,
+    "FuncType": "BufFuncType_DamageBySelfHurtAfterCastSkill"
+  },
+  {
+    "ID": 58,
+    "FuncType": "BufFuncType_StealBuffBySelfImm"
+  },
+  {
+    "ID": 59,
+    "FuncType": "BufFuncType_TeleportToRandomTargetOnStage"
+  },
+  {
+    "ID": 60,
+    "FuncType": "BufFuncType_PassiveMoveByDirImm"
+  },
+  {
+    "ID": 61,
+    "FuncType": "BufFuncType_ShieldHeal4SelfImmVersion2"
+  },
+  {
+    "ID": 62,
+    "FuncType": "BufFuncType_PassiveMoveImm"
+  },
+  {
+    "ID": 63,
+    "FuncType": "BufFuncType_DamageBySelfByStoreValueBuffPercentTriggerable"
+  },
+  {
+    "ID": 64,
+    "FuncType": "BufFuncType_DeleteFacilityAndGroundBuffImm"
+  },
+  {
+    "ID": 65,
+    "FuncType": "BufFuncType_TriggerBuffAfterCastSkill"
+  },
+  {
+    "ID": 66,
+    "FuncType": "BufFuncType_TeleportToRandomTargetImm"
+  },
+  {
+    "ID": 67,
+    "FuncType": "BufFuncType_TransformToCharacterNewImm"
+  },
+  {
+    "ID": 68,
+    "FuncType": "BufFuncType_TransformToCharacterNew"
+  }
+]

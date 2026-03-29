@@ -1,0 +1,310 @@
+[
+  {
+    "ID": 1,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗1000点行动力,对所有光系敌方单位生效",
+    "ValidTargetFilterId": 514,
+    "CostAddForValidTarget": 1000
+  },
+  {
+    "ID": 2,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗1000点行动力,对所有敌方角色生效",
+    "ValidTargetFilterId": 5,
+    "CostAddForValidTarget": 1000
+  },
+  {
+    "ID": 3,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对所有友方角色生效",
+    "ValidTargetFilterId": 1
+  },
+  {
+    "ID": 4,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对友方九色鹿生效",
+    "ValidTargetFilterId": 106300
+  },
+  {
+    "ID": 5,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗1000点行动力,对敌方非飞行单位生效",
+    "ValidTargetFilterId": 40,
+    "CostAddForValidTarget": 1000
+  },
+  {
+    "ID": 6,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对友方飞行单位生效",
+    "ValidTargetFilterId": 101,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 7,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对友方飞行单位生效",
+    "ValidTargetFilterId": 101
+  },
+  {
+    "ID": 8,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗1000点行动力,对所有光属相非飞行敌方单位生效",
+    "ValidTargetFilterId": 41,
+    "CostAddForValidTarget": 1000
+  },
+  {
+    "ID": 9,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,蛛网专用",
+    "ValidTargetFilterId": 743130031
+  },
+  {
+    "ID": 10,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对「咒师」「羽士」「祝由」友方单位生效（太玄灵狐ZOC）",
+    "ValidTargetFilterId": 137,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 11,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对全体角色生效",
+    "ValidTargetFilterId": 3
+  },
+  {
+    "ID": 12,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,夏侯仪3C滑火专用",
+    "ValidTargetFilterId": 741110220
+  },
+  {
+    "ID": 13,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,地界挑战黑狼专用",
+    "ValidTargetFilterId": 743135693
+  },
+  {
+    "ID": 14,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗1000点行动力,对所有关卡内标记buff生效700004531",
+    "ValidTargetFilterId": 711,
+    "CostAddForValidTarget": 1000
+  },
+  {
+    "ID": 15,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力，相胤踏风用",
+    "ValidTargetFilterId": 741151101
+  },
+  {
+    "ID": 16,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力，相胤雷鸟用",
+    "ValidTargetFilterId": 741151112
+  },
+  {
+    "ID": 17,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗9000点行动力,对携带负极状态的其他友方生效",
+    "ValidTargetFilterId": 743140001,
+    "CostAddForValidTarget": 9000
+  },
+  {
+    "ID": 18,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗9000点行动力,对携带正极状态的其他友方生效",
+    "ValidTargetFilterId": 743140002,
+    "CostAddForValidTarget": 9000
+  },
+  {
+    "ID": 21,
+    "Type": "ZocType_BanCreateFacilityAndGround",
+    "Describe": "阻止召唤机关",
+    "Params": [
+      1
+    ]
+  },
+  {
+    "ID": 22,
+    "Type": "ZocType_BanCreateFacilityAndGround",
+    "Describe": "阻止召唤地形",
+    "Params": [
+      2
+    ]
+  },
+  {
+    "ID": 23,
+    "Type": "ZocType_BanCreateFacilityAndGround",
+    "Describe": "阻止召唤机关或地形",
+    "Params": [
+      0
+    ]
+  },
+  {
+    "ID": 24,
+    "Type": "ZocType_BanCreateFacilityAndGround",
+    "Describe": "阻止召唤敌方阵营的机关或地形",
+    "ValidTargetFilterId": 5,
+    "Params": [
+      0
+    ]
+  },
+  {
+    "ID": 25,
+    "Type": "ZocType_BanCreateFacilityAndGround",
+    "Describe": "阻止召唤敌方地形",
+    "ValidTargetFilterId": 5,
+    "Params": [
+      2
+    ]
+  },
+  {
+    "ID": 26,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "风漩涡地形飞行单位不消耗移动力",
+    "ValidTargetFilterId": 719
+  },
+  {
+    "ID": 27,
+    "Type": "ZocType_BanCreateFacilityAndGround",
+    "Describe": "阻止召唤敌方机关",
+    "ValidTargetFilterId": 5,
+    "Params": [
+      1
+    ]
+  },
+  {
+    "ID": 31,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "携带「正极」状态角色移动力消耗+1",
+    "ValidTargetFilterId": 759000082,
+    "CostAddForValidTarget": 1000
+  },
+  {
+    "ID": 32,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "携带「负极」状态角色移动力消耗+1",
+    "ValidTargetFilterId": 759000092,
+    "CostAddForValidTarget": 1000
+  },
+  {
+    "ID": 33,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗2000点行动力,对所有敌方角色生效",
+    "ValidTargetFilterId": 5,
+    "CostAddForValidTarget": 2000
+  },
+  {
+    "ID": 34,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对所有友方单位生效",
+    "ValidTargetFilterId": 2,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 35,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对友方杨戬生效",
+    "ValidTargetFilterId": 742024002,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 36,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "长明灯妲己不消耗移动力",
+    "ValidTargetFilterId": 742026007
+  },
+  {
+    "ID": 37,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "朱明剑周围2格不消耗移动力",
+    "ValidTargetFilterId": 763156208
+  },
+  {
+    "ID": 38,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对敌方生效",
+    "ValidTargetFilterId": 5,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 420,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对友方胧妖生效",
+    "ValidTargetFilterId": 420010,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 1080,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对敌方陆文生生效（陆文生ZOC）",
+    "ValidTargetFilterId": 741080000,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 1083,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "少消耗1000点行动力,对「侠客」「铁卫」友方单位生效",
+    "ValidTargetFilterId": 741083030,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 1155,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "食梦貘消耗行动力-1",
+    "ValidTargetFilterId": 115504,
+    "CostAddForValidTarget": -1000
+  },
+  {
+    "ID": 1401,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对友方火赵云生效",
+    "ValidTargetFilterId": 140101
+  },
+  {
+    "ID": 1402,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对友方火赵云生效",
+    "ValidTargetFilterId": 140102
+  },
+  {
+    "ID": 1403,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对友方火赵云生效",
+    "ValidTargetFilterId": 140103
+  },
+  {
+    "ID": 4901,
+    "Type": "ZocType_CostMoreMovePoint",
+    "Describe": "多消耗1000点行动力,对雀使·哭生效",
+    "ValidTargetFilterId": 743149250,
+    "CostAddForValidTarget": 2000
+  },
+  {
+    "ID": 216002,
+    "Type": "ZocType_BanCreateFacilityAndGround",
+    "Describe": "阻止召唤敌方地形",
+    "ValidTargetFilterId": 721600230,
+    "Params": [
+      2
+    ]
+  },
+  {
+    "ID": 250601,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力，对敌方剑心无邪生效",
+    "ValidTargetFilterId": 742506000
+  },
+  {
+    "ID": 250602,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力，对友方剑心无邪生效",
+    "ValidTargetFilterId": 742506001
+  },
+  {
+    "ID": 763160511,
+    "Type": "ZocType_CostNoMovePoint",
+    "Describe": "不消耗行动力,对所有带标记角色生效",
+    "ValidTargetFilterId": 763160511
+  }
+]

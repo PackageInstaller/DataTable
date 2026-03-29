@@ -1,0 +1,284 @@
+[
+  {
+    "ID": 1001,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      }
+    ],
+    "MonsterLevel": 68,
+    "BattleSceneId": 22350000,
+    "MonsterSignActor": [
+      "ActorSign_Fire"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss1",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Fengxi.png@CourseZoo_Fengxi",
+    "SpineCharId": 152041683,
+    "DropSoulGroupID": 110600995,
+    "DamageGroupId": 1,
+    "NameStrKey": "ST:157393"
+  },
+  {
+    "ID": 1002,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      }
+    ],
+    "MonsterLevel": 68,
+    "BattleSceneId": 22370000,
+    "MonsterSignActor": [
+      "ActorSign_Ice"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss3",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Huqi.png@CourseZoo_Huqi",
+    "SpineCharId": 121600241,
+    "DropSoulGroupID": 110600996,
+    "DamageGroupId": 2,
+    "NameStrKey": "ST:31118"
+  },
+  {
+    "ID": 1003,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      }
+    ],
+    "MonsterLevel": 68,
+    "BattleSceneId": 22360000,
+    "MonsterSignActor": [
+      "ActorSign_Electricity"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss5",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Angmao.png@CourseZoo_Angmao",
+    "SpineCharId": 152041656,
+    "DropSoulGroupID": 110600994,
+    "DamageGroupId": 3,
+    "NameStrKey": "ST:31119"
+  },
+  {
+    "ID": 1004,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      }
+    ],
+    "MonsterLevel": 68,
+    "BattleSceneId": 22380000,
+    "MonsterSignActor": [
+      "ActorSign_Light"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss6",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Bailian.png@CourseZoo_Bailian",
+    "SpineCharId": 152042500,
+    "DropSoulGroupID": 110600998,
+    "DamageGroupId": 7,
+    "NameStrKey": "ST:178312"
+  },
+  {
+    "ID": 1005,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      }
+    ],
+    "MonsterLevel": 68,
+    "BattleSceneId": 22390000,
+    "MonsterSignActor": [
+      "ActorSign_Shadow"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss2",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Mingdu.png@CourseZoo_Mingdu",
+    "SpineCharId": 152042410,
+    "DropSoulGroupID": 110600997,
+    "DamageGroupId": 8,
+    "NameStrKey": "ST:31120"
+  },
+  {
+    "ID": 1006,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      }
+    ],
+    "MonsterLevel": 68,
+    "BattleSceneId": 22400000,
+    "MonsterSignActor": [
+      "ActorSign_Dusk"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss4",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Huohou.png@CourseZoo_Huohou",
+    "SpineCharId": 152042450,
+    "DropSoulGroupID": 110600999,
+    "DamageGroupId": 9,
+    "NameStrKey": "ST:178950"
+  },
+  {
+    "ID": 2001,
+    "ChallengeType": "AbysslChallengeType_Hard",
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      },
+      {
+        "CondType": "ConditionType_AbysslChallengeDamageStage",
+        "P1": 1001,
+        "P2": 5
+      }
+    ],
+    "MonsterLevel": 68,
+    "SweepEnergy": -1,
+    "BattleSceneId": 22350000,
+    "MonsterSignActor": [
+      "ActorSign_Fire"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss1",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Fengxi.png@CourseZoo_Fengxi",
+    "SpineCharId": 152041683,
+    "DropSoulGroupID": 110600995,
+    "DamageGroupId": 4,
+    "NameStrKey": "ST:158281"
+  },
+  {
+    "ID": 2002,
+    "ChallengeType": "AbysslChallengeType_Hard",
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      },
+      {
+        "CondType": "ConditionType_AbysslChallengeDamageStage",
+        "P1": 1002,
+        "P2": 5
+      }
+    ],
+    "MonsterLevel": 68,
+    "SweepEnergy": -1,
+    "BattleSceneId": 22370000,
+    "MonsterSignActor": [
+      "ActorSign_Ice"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss3",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Huqi.png@CourseZoo_Huqi",
+    "SpineCharId": 121600241,
+    "DropSoulGroupID": 110600996,
+    "DamageGroupId": 5,
+    "NameStrKey": "ST:158282"
+  },
+  {
+    "ID": 2003,
+    "ChallengeType": "AbysslChallengeType_Hard",
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      },
+      {
+        "CondType": "ConditionType_AbysslChallengeDamageStage",
+        "P1": 1003,
+        "P2": 5
+      }
+    ],
+    "MonsterLevel": 68,
+    "SweepEnergy": -1,
+    "BattleSceneId": 22360000,
+    "MonsterSignActor": [
+      "ActorSign_Electricity"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss5",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Angmao.png@CourseZoo_Angmao",
+    "SpineCharId": 152041656,
+    "DropSoulGroupID": 110600994,
+    "DamageGroupId": 6,
+    "NameStrKey": "ST:158283"
+  },
+  {
+    "ID": 2004,
+    "ChallengeType": "AbysslChallengeType_Hard",
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      },
+      {
+        "CondType": "ConditionType_AbysslChallengeDamageStage",
+        "P1": 1004,
+        "P2": 5
+      }
+    ],
+    "MonsterLevel": 68,
+    "SweepEnergy": -1,
+    "BattleSceneId": 22380000,
+    "MonsterSignActor": [
+      "ActorSign_Light"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss6",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Bailian.png@CourseZoo_Bailian",
+    "SpineCharId": 152042500,
+    "DropSoulGroupID": 110600998,
+    "DamageGroupId": 10,
+    "NameStrKey": "ST:178951"
+  },
+  {
+    "ID": 2005,
+    "ChallengeType": "AbysslChallengeType_Hard",
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      },
+      {
+        "CondType": "ConditionType_AbysslChallengeDamageStage",
+        "P1": 1005,
+        "P2": 5
+      }
+    ],
+    "MonsterLevel": 68,
+    "SweepEnergy": -1,
+    "BattleSceneId": 22390000,
+    "MonsterSignActor": [
+      "ActorSign_Shadow"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss2",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Mingdu.png@CourseZoo_Mingdu",
+    "SpineCharId": 152042410,
+    "DropSoulGroupID": 110600997,
+    "DamageGroupId": 11,
+    "NameStrKey": "ST:178952"
+  },
+  {
+    "ID": 2006,
+    "ChallengeType": "AbysslChallengeType_Hard",
+    "Conditions": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      },
+      {
+        "CondType": "ConditionType_AbysslChallengeDamageStage",
+        "P1": 1006,
+        "P2": 5
+      }
+    ],
+    "MonsterLevel": 68,
+    "SweepEnergy": -1,
+    "BattleSceneId": 22400000,
+    "MonsterSignActor": [
+      "ActorSign_Dusk"
+    ],
+    "ESType": "EquipSeparatorType_SoulAbyssBoss4",
+    "ItemIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/NoTag/CourseZoo_Huohou.png@CourseZoo_Huohou",
+    "SpineCharId": 152042450,
+    "DropSoulGroupID": 110600999,
+    "DamageGroupId": 12,
+    "NameStrKey": "ST:178953"
+  }
+]

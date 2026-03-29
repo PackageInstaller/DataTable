@@ -1,0 +1,46 @@
+[
+  {
+    "ID": 1,
+    "ConditonType": "BattleStatCondType_PlayerActorReachPosition",
+    "P1": [
+      1
+    ],
+    "P3": [
+      {
+        "X": 4
+      },
+      {
+        "X": 5
+      },
+      {
+        "X": 6
+      },
+      {
+        "X": 7
+      },
+      {
+        "X": 8
+      }
+    ],
+    "CanRepeat": true
+  },
+  {
+    "ID": 2,
+    "ConditonType": "BattleStatCondType_TeamActorDead",
+    "P1": [
+      4
+    ],
+    "P2": [
+      0
+    ],
+    "CanRepeat": true
+  },
+  {
+    "ID": 3,
+    "ConditonType": "BattleStatCondType_FacilitieTrigger",
+    "P1": [
+      111020
+    ],
+    "CanRepeat": true
+  }
+]

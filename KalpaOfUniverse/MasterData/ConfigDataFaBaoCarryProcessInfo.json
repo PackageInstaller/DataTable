@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 1000,
+    "UnlockSortId": 1
+  },
+  {
+    "ID": 1001,
+    "UnlockSortId": 2,
+    "UnlockConds": [
+      {
+        "CondType": "ConditionType_FaBaoReachLevel",
+        "P1": 6,
+        "P2": 12
+      }
+    ],
+    "UnlockCondStr": "将6个法宝的境界提升至拾贰重"
+  },
+  {
+    "ID": 1002,
+    "UnlockSortId": 3,
+    "UnlockConds": [
+      {
+        "CondType": "ConditionType_FaBaoReachLevel",
+        "P1": 7,
+        "P2": 15
+      }
+    ],
+    "UnlockCondStr": "将7个法宝的境界提升至拾伍重"
+  },
+  {
+    "ID": 1003,
+    "UnlockSortId": 4,
+    "UnlockConds": [
+      {
+        "CondType": "ConditionType_FaBaoReachLevel",
+        "P1": 9,
+        "P2": 15
+      }
+    ],
+    "UnlockCondStr": "将9个法宝的境界提升至拾伍重"
+  }
+]

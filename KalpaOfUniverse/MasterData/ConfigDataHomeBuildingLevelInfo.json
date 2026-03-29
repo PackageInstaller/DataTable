@@ -1,0 +1,2583 @@
+[
+  {
+    "ID": 1100,
+    "BuildingId": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02_L0.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02_L0.prefab",
+    "NeedTime": 1800,
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1101,
+    "BuildingId": 1,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 165
+      }
+    ],
+    "NeedTime": 3600,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1108
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Huachi_07.png@Huachi_07",
+    "BuildingDescGroupPerLevel": [
+      1101,
+      1102
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:134926",
+    "ConditioStringStrKey": "ST:133808"
+  },
+  {
+    "ID": 1102,
+    "BuildingId": 1,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 475
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 240
+      }
+    ],
+    "NeedTime": 7200,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1209
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Huachi_07.png@Huachi_07",
+    "BuildingDescGroupPerLevel": [
+      1103,
+      1104
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:134927",
+    "ConditioStringStrKey": "ST:133815"
+  },
+  {
+    "ID": 1103,
+    "BuildingId": 1,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1050
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 515
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 515
+      }
+    ],
+    "NeedTime": 14400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1310
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Huachi_08.png@Huachi_08",
+    "BuildingDescGroupPerLevel": [
+      1105,
+      1106
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:134928",
+    "ConditioStringStrKey": "ST:133823"
+  },
+  {
+    "ID": 1104,
+    "BuildingId": 1,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 2515
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1250
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1250
+      }
+    ],
+    "NeedTime": 28800,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1411
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Huachi_08.png@Huachi_08",
+    "BuildingDescGroupPerLevel": [
+      1107
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:134929",
+    "ConditioStringStrKey": "ST:133833"
+  },
+  {
+    "ID": 1105,
+    "BuildingId": 1,
+    "Level": 5,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 5400
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 2700
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2700
+      }
+    ],
+    "NeedTime": 57600,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1511
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Huachi_09.png@Huachi_09",
+    "BuildingDescGroupPerLevel": [
+      1108,
+      1109
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:134930",
+    "ConditioStringStrKey": "ST:133842"
+  },
+  {
+    "ID": 1106,
+    "BuildingId": 1,
+    "Level": 6,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_FlowerPool_Camp_02B.prefab",
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Huachi_09.png@Huachi_09",
+    "BuildingDescGroupPerLevel": [
+      1110
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:134931"
+  },
+  {
+    "ID": 1200,
+    "BuildingId": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Fields_Camp_00.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_Field_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 5
+      }
+    ],
+    "NeedTime": 1,
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1201,
+    "BuildingId": 2,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 10
+      }
+    ],
+    "NeedTime": 480,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 1
+      },
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 5,
+        "P2": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_01.png@Nongtian_01",
+    "BuildingDescGroupPerLevel": [
+      1201
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133770",
+    "ConditioStringStrKey": "ST:136415"
+  },
+  {
+    "ID": 1202,
+    "BuildingId": 2,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 16
+      }
+    ],
+    "NeedTime": 900,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_01.png@Nongtian_01",
+    "BuildingDescGroupPerLevel": [
+      1202
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:148940",
+    "ConditioStringStrKey": "ST:144936"
+  },
+  {
+    "ID": 1203,
+    "BuildingId": 2,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 30
+      }
+    ],
+    "NeedTime": 1500,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_01.png@Nongtian_01",
+    "BuildingDescGroupPerLevel": [
+      1203
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133772",
+    "ConditioStringStrKey": "ST:144936"
+  },
+  {
+    "ID": 1204,
+    "BuildingId": 2,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 55
+      }
+    ],
+    "NeedTime": 2400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_01.png@Nongtian_01",
+    "BuildingDescGroupPerLevel": [
+      1204
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:148941",
+    "ConditioStringStrKey": "ST:144937"
+  },
+  {
+    "ID": 1205,
+    "BuildingId": 2,
+    "Level": 5,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 95
+      }
+    ],
+    "NeedTime": 3600,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_02.png@Nongtian_02",
+    "BuildingDescGroupPerLevel": [
+      1205
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133774",
+    "ConditioStringStrKey": "ST:144937"
+  },
+  {
+    "ID": 1206,
+    "BuildingId": 2,
+    "Level": 6,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 170
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 35
+      }
+    ],
+    "NeedTime": 4800,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_02.png@Nongtian_02",
+    "BuildingDescGroupPerLevel": [
+      1206
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:148942",
+    "ConditioStringStrKey": "ST:144938"
+  },
+  {
+    "ID": 1207,
+    "BuildingId": 2,
+    "Level": 7,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 290
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 60
+      }
+    ],
+    "NeedTime": 6000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_02.png@Nongtian_02",
+    "BuildingDescGroupPerLevel": [
+      1207
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133776",
+    "ConditioStringStrKey": "ST:144938"
+  },
+  {
+    "ID": 1208,
+    "BuildingId": 2,
+    "Level": 8,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 450
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 90
+      }
+    ],
+    "NeedTime": 9000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 5
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_02.png@Nongtian_02",
+    "BuildingDescGroupPerLevel": [
+      1208
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:148943",
+    "ConditioStringStrKey": "ST:144939"
+  },
+  {
+    "ID": 1209,
+    "BuildingId": 2,
+    "Level": 9,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 720
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 150
+      }
+    ],
+    "NeedTime": 12600,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 5
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_02.png@Nongtian_02",
+    "BuildingDescGroupPerLevel": [
+      1209
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133778",
+    "ConditioStringStrKey": "ST:144939"
+  },
+  {
+    "ID": 1210,
+    "BuildingId": 2,
+    "Level": 10,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 960
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 220
+      }
+    ],
+    "NeedTime": 14400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 6
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_02.png@Nongtian_02",
+    "BuildingDescGroupPerLevel": [
+      1210
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144327",
+    "ConditioStringStrKey": "ST:144940"
+  },
+  {
+    "ID": 1211,
+    "BuildingId": 2,
+    "Level": 11,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1220
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 280
+      }
+    ],
+    "NeedTime": 16200,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 6
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_03.png@Nongtian_03",
+    "BuildingDescGroupPerLevel": [
+      1211
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144328",
+    "ConditioStringStrKey": "ST:144940"
+  },
+  {
+    "ID": 1212,
+    "BuildingId": 2,
+    "Level": 12,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1540
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 360
+      }
+    ],
+    "NeedTime": 18000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 6
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_03.png@Nongtian_03",
+    "BuildingDescGroupPerLevel": [
+      1212
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144329",
+    "ConditioStringStrKey": "ST:144940"
+  },
+  {
+    "ID": 1213,
+    "BuildingId": 2,
+    "Level": 13,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1850
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 450
+      }
+    ],
+    "NeedTime": 21000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 7
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_03.png@Nongtian_03",
+    "BuildingDescGroupPerLevel": [
+      1213
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:148944",
+    "ConditioStringStrKey": "ST:144941"
+  },
+  {
+    "ID": 1214,
+    "BuildingId": 2,
+    "Level": 14,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 2380
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 600
+      }
+    ],
+    "NeedTime": 24000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 7
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_03.png@Nongtian_03",
+    "BuildingDescGroupPerLevel": [
+      1214
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144331",
+    "ConditioStringStrKey": "ST:144941"
+  },
+  {
+    "ID": 1215,
+    "BuildingId": 2,
+    "Level": 15,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Props_ABS/Prefabs/JiaYuan01_Field_Camp_02_Stc.prefab",
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Nongtian_03.png@Nongtian_03",
+    "BuildingDescGroupPerLevel": [
+      1215
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:148945"
+  },
+  {
+    "ID": 1300,
+    "BuildingId": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_Cooking_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 10
+      }
+    ],
+    "NeedTime": 1,
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1301,
+    "BuildingId": 3,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 25
+      }
+    ],
+    "NeedTime": 300,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      },
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 2,
+        "P2": 1
+      }
+    ],
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083203
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockCookingSeasoning",
+        "P1": 1
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockCookingSeasoning",
+        "P1": 2
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockCookingSeasoning",
+        "P1": 3
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockCookingSeasoning",
+        "P1": 4
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockAutoFood",
+        "P1": 402083301
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Penren_01.png@Penren_01",
+    "BuildingDescGroupPerLevel": [
+      1301
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144424",
+    "ConditioStringStrKey": "ST:145182"
+  },
+  {
+    "ID": 1302,
+    "BuildingId": 3,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 45
+      }
+    ],
+    "NeedTime": 720,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083204
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockAutoFood",
+        "P1": 402083302
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Penren_01.png@Penren_01",
+    "BuildingDescGroupPerLevel": [
+      1302
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144425",
+    "ConditioStringStrKey": "ST:133793"
+  },
+  {
+    "ID": 1303,
+    "BuildingId": 3,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01_upgrade_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 95
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 80
+      }
+    ],
+    "NeedTime": 1200,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083205
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockAutoFood",
+        "P1": 402083303
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Penren_01.png@Penren_01",
+    "BuildingDescGroupPerLevel": [
+      1303
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144426",
+    "ConditioStringStrKey": "ST:133794"
+  },
+  {
+    "ID": 1304,
+    "BuildingId": 3,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 285
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 285
+      }
+    ],
+    "NeedTime": 2100,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 4
+      }
+    ],
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083206
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockAutoFood",
+        "P1": 402083304
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Penren_02.png@Penren_02",
+    "BuildingDescGroupPerLevel": [
+      1304
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144427",
+    "ConditioStringStrKey": "ST:133795"
+  },
+  {
+    "ID": 1305,
+    "BuildingId": 3,
+    "Level": 5,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01B_upgrade_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 630
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 540
+      }
+    ],
+    "NeedTime": 3300,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083207
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083208
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockAutoFood",
+        "P1": 402083305
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Penren_02.png@Penren_02",
+    "BuildingDescGroupPerLevel": [
+      1305
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144428",
+    "ConditioStringStrKey": "ST:133796"
+  },
+  {
+    "ID": 1306,
+    "BuildingId": 3,
+    "Level": 6,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01C_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1150
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 940
+      }
+    ],
+    "NeedTime": 5400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 6
+      }
+    ],
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083209
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockAutoFood",
+        "P1": 402083306
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Penren_03.png@Penren_03",
+    "BuildingDescGroupPerLevel": [
+      1306
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144429",
+    "ConditioStringStrKey": "ST:133797"
+  },
+  {
+    "ID": 1307,
+    "BuildingId": 3,
+    "Level": 7,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cooking_Camp_01C_Stc.prefab",
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_AddFoodRecipes",
+        "P1": 402083210
+      },
+      {
+        "FuncType": "HomeBuildingFuncType_UnlockAutoFood",
+        "P1": 402083307
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Penren_03.png@Penren_03",
+    "BuildingDescGroupPerLevel": [
+      1307
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:144430"
+  },
+  {
+    "ID": 1400,
+    "BuildingId": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_Warehouse_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 8
+      }
+    ],
+    "NeedTime": 1,
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1401,
+    "BuildingId": 4,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 10
+      }
+    ],
+    "NeedTime": 240,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_01.png@Cangku_01",
+    "BuildingDescGroupPerLevel": [
+      1401
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133792"
+  },
+  {
+    "ID": 1402,
+    "BuildingId": 4,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 15
+      }
+    ],
+    "NeedTime": 420,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_01.png@Cangku_01",
+    "BuildingDescGroupPerLevel": [
+      1402
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133792"
+  },
+  {
+    "ID": 1403,
+    "BuildingId": 4,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 30
+      }
+    ],
+    "NeedTime": 600,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_01.png@Cangku_01",
+    "BuildingDescGroupPerLevel": [
+      1403
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133792"
+  },
+  {
+    "ID": 1404,
+    "BuildingId": 4,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 50
+      }
+    ],
+    "NeedTime": 900,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_01.png@Cangku_01",
+    "BuildingDescGroupPerLevel": [
+      1404
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133792"
+  },
+  {
+    "ID": 1405,
+    "BuildingId": 4,
+    "Level": 5,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 75
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 12
+      }
+    ],
+    "NeedTime": 1200,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_01.png@Cangku_01",
+    "BuildingDescGroupPerLevel": [
+      1405
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133793"
+  },
+  {
+    "ID": 1406,
+    "BuildingId": 4,
+    "Level": 6,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 95
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 20
+      }
+    ],
+    "NeedTime": 1500,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_01.png@Cangku_01",
+    "BuildingDescGroupPerLevel": [
+      1406
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133793"
+  },
+  {
+    "ID": 1407,
+    "BuildingId": 4,
+    "Level": 7,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01_upgrade_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 140
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 25
+      }
+    ],
+    "NeedTime": 1800,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_01.png@Cangku_01",
+    "BuildingDescGroupPerLevel": [
+      1407
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133793"
+  },
+  {
+    "ID": 1408,
+    "BuildingId": 4,
+    "Level": 8,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 170
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 30
+      }
+    ],
+    "NeedTime": 2400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_02.png@Cangku_02",
+    "BuildingDescGroupPerLevel": [
+      1408
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133793"
+  },
+  {
+    "ID": 1409,
+    "BuildingId": 4,
+    "Level": 9,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 200
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 40
+      }
+    ],
+    "NeedTime": 3000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_02.png@Cangku_02",
+    "BuildingDescGroupPerLevel": [
+      1409
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133794"
+  },
+  {
+    "ID": 1410,
+    "BuildingId": 4,
+    "Level": 10,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 285
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 100
+      }
+    ],
+    "NeedTime": 3600,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_02.png@Cangku_02",
+    "BuildingDescGroupPerLevel": [
+      1410
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133794"
+  },
+  {
+    "ID": 1411,
+    "BuildingId": 4,
+    "Level": 11,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 365
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 125
+      }
+    ],
+    "NeedTime": 4500,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_02.png@Cangku_02",
+    "BuildingDescGroupPerLevel": [
+      1411
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133794"
+  },
+  {
+    "ID": 1412,
+    "BuildingId": 4,
+    "Level": 12,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 530
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 150
+      }
+    ],
+    "NeedTime": 5400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_02.png@Cangku_02",
+    "BuildingDescGroupPerLevel": [
+      1412
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133794"
+  },
+  {
+    "ID": 1413,
+    "BuildingId": 4,
+    "Level": 13,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 515
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 215
+      }
+    ],
+    "NeedTime": 6300,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_02.png@Cangku_02",
+    "BuildingDescGroupPerLevel": [
+      1413
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133795"
+  },
+  {
+    "ID": 1414,
+    "BuildingId": 4,
+    "Level": 14,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01B_upgrade_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 720
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 250
+      }
+    ],
+    "NeedTime": 7200,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_02.png@Cangku_02",
+    "BuildingDescGroupPerLevel": [
+      1414
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133795"
+  },
+  {
+    "ID": 1415,
+    "BuildingId": 4,
+    "Level": 15,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 900
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 450
+      }
+    ],
+    "NeedTime": 8400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_03.png@Cangku_03",
+    "BuildingDescGroupPerLevel": [
+      1415
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133795"
+  },
+  {
+    "ID": 1416,
+    "BuildingId": 4,
+    "Level": 16,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1300
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 650
+      }
+    ],
+    "NeedTime": 9600,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_03.png@Cangku_03",
+    "BuildingDescGroupPerLevel": [
+      1416
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133796"
+  },
+  {
+    "ID": 1417,
+    "BuildingId": 4,
+    "Level": 17,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1615
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 800
+      }
+    ],
+    "NeedTime": 10800,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_03.png@Cangku_03",
+    "BuildingDescGroupPerLevel": [
+      1417
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133796"
+  },
+  {
+    "ID": 1418,
+    "BuildingId": 4,
+    "Level": 18,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 2250
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1100
+      }
+    ],
+    "NeedTime": 12000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_03.png@Cangku_03",
+    "BuildingDescGroupPerLevel": [
+      1418
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133796"
+  },
+  {
+    "ID": 1419,
+    "BuildingId": 4,
+    "Level": 19,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 2800
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1385
+      }
+    ],
+    "NeedTime": 14400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 6
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_03.png@Cangku_03",
+    "BuildingDescGroupPerLevel": [
+      1419
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785",
+    "ConditioStringStrKey": "ST:133797"
+  },
+  {
+    "ID": 1420,
+    "BuildingId": 4,
+    "Level": 20,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Warehouse_Camp_01C_Stc.prefab",
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Cangku_03.png@Cangku_03",
+    "BuildingDescGroupPerLevel": [
+      1420
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:133785"
+  },
+  {
+    "ID": 1500,
+    "BuildingId": 5,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_Cart_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 15
+      }
+    ],
+    "NeedTime": 1,
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:133792"
+  },
+  {
+    "ID": 1501,
+    "BuildingId": 5,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 30
+      }
+    ],
+    "NeedTime": 2400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      },
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 4,
+        "P2": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shangdian_01.png@Shangdian_01",
+    "BuildingDescGroupPerLevel": [
+      1501
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:136263",
+    "ConditioStringStrKey": "ST:144682"
+  },
+  {
+    "ID": 1502,
+    "BuildingId": 5,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 190
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 190
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 160
+      }
+    ],
+    "NeedTime": 4800,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shangdian_01.png@Shangdian_01",
+    "BuildingDescGroupPerLevel": [
+      1502
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:136264",
+    "ConditioStringStrKey": "ST:133794"
+  },
+  {
+    "ID": 1503,
+    "BuildingId": 5,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 570
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 570
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 455
+      }
+    ],
+    "NeedTime": 10800,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shangdian_02.png@Shangdian_02",
+    "BuildingDescGroupPerLevel": [
+      1503
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:136265",
+    "ConditioStringStrKey": "ST:133795"
+  },
+  {
+    "ID": 1504,
+    "BuildingId": 5,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1450
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1450
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1450
+      }
+    ],
+    "NeedTime": 18000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shangdian_02.png@Shangdian_02",
+    "BuildingDescGroupPerLevel": [
+      1504
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:136266",
+    "ConditioStringStrKey": "ST:133796"
+  },
+  {
+    "ID": 1505,
+    "BuildingId": 5,
+    "Level": 5,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01C_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Cart_Camp_01C_Stc.prefab",
+    "Conditions": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 6
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shangdian_03.png@Shangdian_03",
+    "BuildingDescGroupPerLevel": [
+      1505
+    ],
+    "BuildingLevelFuncDescStrKey": "ST:136267",
+    "ConditioStringStrKey": "ST:133797"
+  },
+  {
+    "ID": 1600,
+    "BuildingId": 6,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Regret_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_Regret_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 5815
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 5815
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 5000
+      }
+    ],
+    "NeedTime": 108000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1603
+      }
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Shiluntai_01.png@Suolvetu_Shiluntai_01",
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:133798"
+  },
+  {
+    "ID": 1601,
+    "BuildingId": 6,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Regret_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Regret_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 17000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 17000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 13600
+      }
+    ],
+    "NeedTime": 180000,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Regret",
+        "P1": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shiluntai_01.png@Shiluntai_01",
+    "BuildingDescGroupPerLevel": [
+      1601
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Shiluntai_01.png@Suolvetu_Shiluntai_01",
+    "BuildingLevelFuncDescStrKey": "ST:133721",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1602,
+    "BuildingId": 6,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Regret_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Regret_Camp_01B_Stc.prefab",
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Regret",
+        "P1": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shiluntai_02.png@Shiluntai_02",
+    "BuildingDescGroupPerLevel": [
+      1602
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Shiluntai_01.png@Suolvetu_Shiluntai_01",
+    "BuildingLevelFuncDescStrKey": "ST:133722",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1700,
+    "BuildingId": 7,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_List_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 160
+      }
+    ],
+    "NeedTime": 7200,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1104
+      }
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Xiayibangi_01.png@Suolvetu_Xiayibangi_01",
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:133799"
+  },
+  {
+    "ID": 1701,
+    "BuildingId": 7,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 400
+      }
+    ],
+    "NeedTime": 10800,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_SecretsDailySweep",
+        "P1": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Xiayibang_01.png@Xiayibang_01",
+    "BuildingDescGroupPerLevel": [
+      1701
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Xiayibangi_01.png@Suolvetu_Xiayibangi_01",
+    "BuildingLevelFuncDescStrKey": "ST:133723",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1702,
+    "BuildingId": 7,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1100
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 445
+      }
+    ],
+    "NeedTime": 18000,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_SecretsDailySweep",
+        "P1": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Xiayibang_01.png@Xiayibang_01",
+    "BuildingDescGroupPerLevel": [
+      1702
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Xiayibangi_01.png@Suolvetu_Xiayibangi_01",
+    "BuildingLevelFuncDescStrKey": "ST:133724",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1703,
+    "BuildingId": 7,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 3070
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1230
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 3850
+      }
+    ],
+    "NeedTime": 28800,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_SecretsDailySweep",
+        "P1": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Xiayibang_01.png@Xiayibang_01",
+    "BuildingDescGroupPerLevel": [
+      1703
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Xiayibangi_01.png@Suolvetu_Xiayibangi_01",
+    "BuildingLevelFuncDescStrKey": "ST:133725",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1704,
+    "BuildingId": 7,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 7750
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 3100
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 7750
+      }
+    ],
+    "NeedTime": 43200,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_SecretsDailySweep",
+        "P1": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Xiayibang_02.png@Xiayibang_02",
+    "BuildingDescGroupPerLevel": [
+      1704
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Xiayibangi_01.png@Suolvetu_Xiayibangi_01",
+    "BuildingLevelFuncDescStrKey": "ST:133726",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1705,
+    "BuildingId": 7,
+    "Level": 5,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_List_Camp_01B_Stc.prefab",
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_SecretsDailySweep",
+        "P1": 5
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/Xiayibang_02.png@Xiayibang_02",
+    "BuildingDescGroupPerLevel": [
+      1705
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Xiayibangi_01.png@Suolvetu_Xiayibangi_01",
+    "BuildingLevelFuncDescStrKey": "ST:133727",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1800,
+    "BuildingId": 8,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_DelegateMission_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 475
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 95
+      }
+    ],
+    "NeedTime": 18000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1304
+      }
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Chemayii_01.png@Suolvetu_Chemayii_01",
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:133800"
+  },
+  {
+    "ID": 1801,
+    "BuildingId": 8,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1340
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 285
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 910
+      }
+    ],
+    "NeedTime": 28800,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_DelegateMission",
+        "P1": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Chemayi_01.png@Chemayi_01",
+    "BuildingDescGroupPerLevel": [
+      1801
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Chemayii_01.png@Suolvetu_Chemayii_01",
+    "BuildingLevelFuncDescStrKey": "ST:133728",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1802,
+    "BuildingId": 8,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 3250
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 650
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 2580
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 1080
+      }
+    ],
+    "NeedTime": 43200,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_DelegateMission",
+        "P1": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Chemayi_01.png@Chemayi_01",
+    "BuildingDescGroupPerLevel": [
+      1802
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Chemayii_01.png@Suolvetu_Chemayii_01",
+    "BuildingLevelFuncDescStrKey": "ST:133729",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1803,
+    "BuildingId": 8,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 8075
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1615
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 6450
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 3450
+      }
+    ],
+    "NeedTime": 57600,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_DelegateMission",
+        "P1": 6
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Chemayi_02.png@Chemayi_02",
+    "BuildingDescGroupPerLevel": [
+      1803
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Chemayii_01.png@Suolvetu_Chemayii_01",
+    "BuildingLevelFuncDescStrKey": "ST:133730",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1804,
+    "BuildingId": 8,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_DelegateMission_Camp_01B_Stc.prefab",
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_DelegateMission",
+        "P1": 8
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Chemayi_02.png@Chemayi_02",
+    "BuildingDescGroupPerLevel": [
+      1804
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Chemayii_01.png@Suolvetu_Chemayii_01",
+    "BuildingLevelFuncDescStrKey": "ST:133731",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1900,
+    "BuildingId": 9,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_Tea_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 440
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 880
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 180
+      }
+    ],
+    "NeedTime": 24000,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1404
+      }
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Jianghuzhi_01.png@Suolvetu_Jianghuzhi_01",
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:133801"
+  },
+  {
+    "ID": 1901,
+    "BuildingId": 9,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 1500
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 3000
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 600
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 1500
+      }
+    ],
+    "NeedTime": 36000,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Prestige",
+        "P1": 50
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Jianghuzhi_01.png@Jianghuzhi_01",
+    "BuildingDescGroupPerLevel": [
+      1901
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Jianghuzhi_01.png@Suolvetu_Jianghuzhi_01",
+    "BuildingLevelFuncDescStrKey": "ST:144817",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1902,
+    "BuildingId": 9,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 5600
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 1130
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 4250
+      }
+    ],
+    "NeedTime": 50400,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Prestige",
+        "P1": 100
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Jianghuzhi_01.png@Jianghuzhi_01",
+    "BuildingDescGroupPerLevel": [
+      1902
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Jianghuzhi_01.png@Suolvetu_Jianghuzhi_01",
+    "BuildingLevelFuncDescStrKey": "ST:144818",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1903,
+    "BuildingId": 9,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 13200
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081004,
+        "Count": 2650
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 10600
+      }
+    ],
+    "NeedTime": 72000,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Prestige",
+        "P1": 150
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Jianghuzhi_02.png@Jianghuzhi_02",
+    "BuildingDescGroupPerLevel": [
+      1903
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Jianghuzhi_01.png@Suolvetu_Jianghuzhi_01",
+    "BuildingLevelFuncDescStrKey": "ST:144819",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 1904,
+    "BuildingId": 9,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Tea_Camp_01B_Stc.prefab",
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Prestige",
+        "P1": 200
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Jianghuzhi_02.png@Jianghuzhi_02",
+    "BuildingDescGroupPerLevel": [
+      1904
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Jianghuzhi_01.png@Suolvetu_Jianghuzhi_01",
+    "BuildingLevelFuncDescStrKey": "ST:144820",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 2000,
+    "BuildingId": 10,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_00_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Common_ABS/FX/Prefabs/FX_JY01_Terminal_Camp_01.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 320
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 200
+      }
+    ],
+    "NeedTime": 14400,
+    "Conditions": [
+      {
+        "CondType": "ConditionType_FlowerPoolPreNode",
+        "P1": 1204
+      }
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Bolvtui_01.png@Suolvetu_Bolvtui_01",
+    "BuildingLevelFuncDescStrKey": "ST:3245",
+    "ConditioStringStrKey": "ST:133802"
+  },
+  {
+    "ID": 2001,
+    "BuildingId": 10,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 900
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 540
+      }
+    ],
+    "NeedTime": 24000,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Mountain",
+        "P1": 1
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Bolvwu_01.png@Bolvwu_01",
+    "BuildingDescGroupPerLevel": [
+      2001
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Bolvtui_01.png@Suolvetu_Bolvtui_01",
+    "BuildingLevelFuncDescStrKey": "ST:145178",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 2002,
+    "BuildingId": 10,
+    "Level": 2,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 2640
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 1580
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 3950
+      }
+    ],
+    "NeedTime": 36000,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Mountain",
+        "P1": 2
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Bolvwu_01.png@Bolvwu_01",
+    "BuildingDescGroupPerLevel": [
+      2002
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Bolvtui_01.png@Suolvetu_Bolvtui_01",
+    "BuildingLevelFuncDescStrKey": "ST:145179",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 2003,
+    "BuildingId": 10,
+    "Level": 3,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01B_Stc.prefab",
+    "Materials": [
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081002,
+        "Count": 6440
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081003,
+        "Count": 3850
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081005,
+        "Count": 7750
+      },
+      {
+        "ItemType": "ItemType_HomeMaterial",
+        "ItemId": 402081006,
+        "Count": 920
+      }
+    ],
+    "NeedTime": 50400,
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Mountain",
+        "P1": 3
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Bolvwu_02.png@Bolvwu_02",
+    "BuildingDescGroupPerLevel": [
+      2003
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Bolvtui_01.png@Suolvetu_Bolvtui_01",
+    "BuildingLevelFuncDescStrKey": "ST:145180",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 2004,
+    "BuildingId": 10,
+    "Level": 4,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01B_Stc.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_Terminal_Camp_01B_Stc.prefab",
+    "Functions": [
+      {
+        "FuncType": "HomeBuildingFuncType_Mountain",
+        "P1": 4
+      }
+    ],
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Bolvwu_02.png@Bolvwu_02",
+    "BuildingDescGroupPerLevel": [
+      2004
+    ],
+    "MainPageBuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Suolvetu_Bolvtui_01.png@Suolvetu_Bolvtui_01",
+    "BuildingLevelFuncDescStrKey": "ST:145181",
+    "ConditioStringStrKey": "ST:3245"
+  },
+  {
+    "ID": 2101,
+    "BuildingId": 11,
+    "Level": 1,
+    "Model": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_TravelFakePrefab.prefab",
+    "UpgradeModel": "Assets/GameProject/RuntimeAssets/Scenes/JiaYuan01Series/Building_ABS/Prefabs/JiaYuan01_TravelFakePrefab.prefab",
+    "BuildingIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Home_ABS/NoTag/Shenji_02.png@Shenji_02",
+    "BuildingLevelFuncDescStrKey": "ST:92873",
+    "ConditioStringStrKey": "ST:3245"
+  }
+]

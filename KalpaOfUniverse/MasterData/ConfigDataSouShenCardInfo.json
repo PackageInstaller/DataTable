@@ -1,0 +1,6203 @@
+[
+  {
+    "ID": 40042001,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_BackBone",
+      "SouShenTag_Spider"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster210306_MountainsAndRivers.png@Monster210306_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207391",
+    "DescriptionStrKey": "ST:203561"
+  },
+  {
+    "ID": 40042002,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Tags": [
+      "SouShenTag_BackBone"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220402_MountainsAndRivers.png@Monster220402_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:31124",
+    "DescriptionStrKey": "ST:203562"
+  },
+  {
+    "ID": 40042003,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 500,
+    "Tags": [
+      "SouShenTag_BackBone",
+      "SouShenTag_Spider"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster210306_MountainsAndRivers.png@Monster210306_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "ID": 1,
+        "Name": 200276
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207392",
+    "DescriptionStrKey": "ST:203563"
+  },
+  {
+    "ID": 40042004,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster222000_MountainsAndRivers.png@Monster222000_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203533",
+    "DescriptionStrKey": "ST:203564"
+  },
+  {
+    "ID": 40042005,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster222000_MountainsAndRivers.png@Monster222000_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203534",
+    "DescriptionStrKey": "ST:203565"
+  },
+  {
+    "ID": 40042006,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster311172_MountainsAndRivers.png@Monster311172_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207393",
+    "DescriptionStrKey": "ST:203566"
+  },
+  {
+    "ID": 40042007,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster311172_MountainsAndRivers.png@Monster311172_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:207394",
+    "DescriptionStrKey": "ST:203567"
+  },
+  {
+    "ID": 40042008,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster311172_MountainsAndRivers.png@Monster311172_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207395",
+    "DescriptionStrKey": "ST:203568"
+  },
+  {
+    "ID": 40042009,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221200_MountainsAndRivers.png@Monster221200_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203537",
+    "DescriptionStrKey": "ST:203569"
+  },
+  {
+    "ID": 40042010,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Sup"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221501_MountainsAndRivers.png@Monster221501_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207396",
+    "DescriptionStrKey": "ST:208828"
+  },
+  {
+    "ID": 40042011,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Sup"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster214000_MountainsAndRivers.png@Monster214000_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203539",
+    "DescriptionStrKey": "ST:208829"
+  },
+  {
+    "ID": 40042012,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 400,
+    "Tags": [
+      "SouShenTag_Sup"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster214000_MountainsAndRivers.png@Monster214000_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208889",
+    "DescriptionStrKey": "ST:208890"
+  },
+  {
+    "ID": 40042013,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster214000_MountainsAndRivers.png@Monster214000_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207398",
+    "DescriptionStrKey": "ST:203573"
+  },
+  {
+    "ID": 40042014,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster222101_MountainsAndRivers.png@Monster222101_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203542",
+    "DescriptionStrKey": "ST:203574"
+  },
+  {
+    "ID": 40042015,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221300_MountainsAndRivers.png@Monster221300_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207399",
+    "DescriptionStrKey": "ST:203575"
+  },
+  {
+    "ID": 40042016,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220301_MountainsAndRivers.png@Monster220301_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:207400",
+    "DescriptionStrKey": "ST:203576"
+  },
+  {
+    "ID": 40042017,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster216011_MountainsAndRivers.png@Monster216011_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:31119",
+    "DescriptionStrKey": "ST:203577"
+  },
+  {
+    "ID": 40042018,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster231001_MountainsAndRivers.png@Monster231001_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203545",
+    "DescriptionStrKey": "ST:203578"
+  },
+  {
+    "ID": 40042019,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221202_MountainsAndRivers.png@Monster221202_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203546",
+    "DescriptionStrKey": "ST:203579"
+  },
+  {
+    "ID": 40042020,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221200_MountainsAndRivers.png@Monster221200_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:207401",
+    "DescriptionStrKey": "ST:203580"
+  },
+  {
+    "ID": 40042021,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221200_MountainsAndRivers.png@Monster221200_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:207402",
+    "DescriptionStrKey": "ST:203581"
+  },
+  {
+    "ID": 40042022,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221200_MountainsAndRivers.png@Monster221200_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203549",
+    "DescriptionStrKey": "ST:203582"
+  },
+  {
+    "ID": 40042023,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221202_MountainsAndRivers.png@Monster221202_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207403",
+    "DescriptionStrKey": "ST:203583"
+  },
+  {
+    "ID": 40042024,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster231004_MountainsAndRivers.png@Monster231004_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207404",
+    "DescriptionStrKey": "ST:203584"
+  },
+  {
+    "ID": 40042025,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 500,
+    "Tags": [
+      "SouShenTag_BackBone"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221103_MountainsAndRivers.png@Monster221103_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208773",
+    "DescriptionStrKey": "ST:207221"
+  },
+  {
+    "ID": 40042026,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 400,
+    "Tags": [
+      "SouShenTag_BackBone"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221001_MountainsAndRivers.png@Monster221001_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "ID": 3,
+        "Name": 200278
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203553",
+    "DescriptionStrKey": "ST:203586"
+  },
+  {
+    "ID": 40042027,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220101_MountainsAndRivers.png@Monster220101_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203554",
+    "DescriptionStrKey": "ST:203587"
+  },
+  {
+    "ID": 40042028,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220200_MountainsAndRivers.png@Monster220200_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203555",
+    "DescriptionStrKey": "ST:203588"
+  },
+  {
+    "ID": 40042029,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster311170_MountainsAndRivers.png@Monster311170_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:207406",
+    "DescriptionStrKey": "ST:203589"
+  },
+  {
+    "ID": 40042030,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster311170_MountainsAndRivers.png@Monster311170_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:207407",
+    "DescriptionStrKey": "ST:203590"
+  },
+  {
+    "ID": 40042031,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_BackBone"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220001_MountainsAndRivers.png@Monster220001_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203558",
+    "DescriptionStrKey": "ST:203591"
+  },
+  {
+    "ID": 40042032,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 500,
+    "Tags": [
+      "SouShenTag_BackBone"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220002_MountainsAndRivers.png@Monster220002_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203559",
+    "DescriptionStrKey": "ST:203592"
+  },
+  {
+    "ID": 40042033,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster212001_MountainsAndRivers.png@Monster212001_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211074",
+    "DescriptionStrKey": "ST:209979"
+  },
+  {
+    "ID": 40042034,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster239905_MountainsAndRivers.png@Monster239905_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211075",
+    "DescriptionStrKey": "ST:209980"
+  },
+  {
+    "ID": 40042035,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220200_MountainsAndRivers.png@Monster220200_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211481",
+    "DescriptionStrKey": "ST:212196"
+  },
+  {
+    "ID": 40042036,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster230900_MountainsAndRivers.png@Monster230900_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211482",
+    "DescriptionStrKey": "ST:212528"
+  },
+  {
+    "ID": 40042037,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Draw"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221200_MountainsAndRivers.png@Monster221200_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211076",
+    "DescriptionStrKey": "ST:209983"
+  },
+  {
+    "ID": 40044000,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Mix"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster210301_MountainsAndRivers.png@Monster210301_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207413"
+  },
+  {
+    "ID": 40044001,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2021_MountainsAndRivers.png@Hero2021_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsDisabled": true,
+    "NameStrKey": "ST:213123"
+  },
+  {
+    "ID": 40044002,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2021_MountainsAndRivers.png@Hero2021_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsDisabled": true,
+    "NameStrKey": "ST:213124"
+  },
+  {
+    "ID": 40045000,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster310532_MountainsAndRivers.png@Monster310532_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217878",
+    "DescriptionStrKey": "ST:217904"
+  },
+  {
+    "ID": 40045001,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster310531_MountainsAndRivers.png@Monster310531_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "P1": 202445107,
+        "Name": 200295
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217879",
+    "DescriptionStrKey": "ST:217905"
+  },
+  {
+    "ID": 40045002,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster310531_MountainsAndRivers.png@Monster310531_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217880",
+    "DescriptionStrKey": "ST:217906"
+  },
+  {
+    "ID": 40045003,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster239905_MountainsAndRivers.png@Monster239905_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "P1": 202445102,
+        "Name": 200292
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:218033",
+    "DescriptionStrKey": "ST:217907"
+  },
+  {
+    "ID": 40045004,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster310532_MountainsAndRivers.png@Monster310532_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217882",
+    "DescriptionStrKey": "ST:217908"
+  },
+  {
+    "ID": 40045005,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster310926_MountainsAndRivers.png@Monster310926_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "P1": 202445103,
+        "Name": 200293
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217883",
+    "DescriptionStrKey": "ST:217909"
+  },
+  {
+    "ID": 40045006,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 900,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster310926_MountainsAndRivers.png@Monster310926_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217884",
+    "DescriptionStrKey": "ST:217910"
+  },
+  {
+    "ID": 40045007,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_YinMaBuddy"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster212004_Skin02_MountainsAndRivers.png@Monster212004_Skin02_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217885",
+    "DescriptionStrKey": "ST:216907"
+  },
+  {
+    "ID": 40045008,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_YinMaBuddy"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster212000_MountainsAndRivers.png@Monster212000_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217886",
+    "DescriptionStrKey": "ST:216316"
+  },
+  {
+    "ID": 40045009,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_YinMaBuddy"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster212002_MountainsAndRivers.png@Monster212002_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217887",
+    "DescriptionStrKey": "ST:216317"
+  },
+  {
+    "ID": 40045010,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_YinMaBuddy"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster212001_MountainsAndRivers.png@Monster212001_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217888",
+    "DescriptionStrKey": "ST:217911"
+  },
+  {
+    "ID": 40045011,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_YinMaBuddy"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster212003_MountainsAndRivers.png@Monster212003_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217889",
+    "DescriptionStrKey": "ST:216318"
+  },
+  {
+    "ID": 40045012,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221001_MountainsAndRivers.png@Monster221001_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217890",
+    "DescriptionStrKey": "ST:216917"
+  },
+  {
+    "ID": 40045013,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster311172_MountainsAndRivers.png@Monster311172_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217891",
+    "DescriptionStrKey": "ST:217912"
+  },
+  {
+    "ID": 40045014,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster311172_MountainsAndRivers.png@Monster311172_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217892",
+    "DescriptionStrKey": "ST:217913"
+  },
+  {
+    "ID": 41000000,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster210000_MountainsAndRivers.png@Monster210000_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:34153"
+  },
+  {
+    "ID": 41000001,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster211200_MountainsAndRivers.png@Monster211200_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:1210"
+  },
+  {
+    "ID": 41000002,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Sup"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221501_MountainsAndRivers.png@Monster221501_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:2493"
+  },
+  {
+    "ID": 41000003,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster221201_MountainsAndRivers.png@Monster221201_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208774",
+    "DescriptionStrKey": "ST:208607"
+  },
+  {
+    "ID": 41000004,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220301_MountainsAndRivers.png@Monster220301_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:4639"
+  },
+  {
+    "ID": 41000005,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster220301_MountainsAndRivers.png@Monster220301_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208921",
+    "DescriptionStrKey": "ST:208767"
+  },
+  {
+    "ID": 41000006,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster230900_MountainsAndRivers.png@Monster230900_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:31146"
+  },
+  {
+    "ID": 41000007,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster230900_MountainsAndRivers.png@Monster230900_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208922"
+  },
+  {
+    "ID": 41000008,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221202_MountainsAndRivers.png@Monster221202_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208658"
+  },
+  {
+    "ID": 41000014,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221103_MountainsAndRivers.png@Monster221103_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208679",
+    "DescriptionStrKey": "ST:208669"
+  },
+  {
+    "ID": 41000015,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster222104_MountainsAndRivers.png@Monster222104_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208664",
+    "DescriptionStrKey": "ST:208670"
+  },
+  {
+    "ID": 41000016,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster221100_MountainsAndRivers.png@Monster221100_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208665",
+    "DescriptionStrKey": "ST:208671"
+  },
+  {
+    "ID": 41000017,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster210301_MountainsAndRivers.png@Monster210301_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208666",
+    "DescriptionStrKey": "ST:208672"
+  },
+  {
+    "ID": 41000018,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Monster222000_MountainsAndRivers.png@Monster222000_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208667",
+    "DescriptionStrKey": "ST:208831"
+  },
+  {
+    "ID": 41044001,
+    "CardType": "SouShenCardType_Monster",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Monster212001_MountainsAndRivers.png@Monster212001_MountainsAndRivers",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:211661"
+  },
+  {
+    "ID": 50042000,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Light_1004.png@Skill_Light_1004",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:207423",
+    "DescriptionStrKey": "ST:203593"
+  },
+  {
+    "ID": 50042001,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1015.png@GPassive_1015",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203686",
+    "DescriptionStrKey": "ST:203754"
+  },
+  {
+    "ID": 50042002,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Fire_1012.png@Skill_Fire_1012",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203687",
+    "DescriptionStrKey": "ST:203755"
+  },
+  {
+    "ID": 50042003,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Electricity_1009.png@Skill_Electricity_1009",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:5735",
+    "DescriptionStrKey": "ST:203756"
+  },
+  {
+    "ID": 50042004,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1008.png@Skill_Shadow_1008",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203689",
+    "DescriptionStrKey": "ST:203757"
+  },
+  {
+    "ID": 50042005,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ice_1008.png@Skill_Ice_1008",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208925",
+    "DescriptionStrKey": "ST:203758"
+  },
+  {
+    "ID": 50042006,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1004.png@Skill_Ranger_1004",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203691",
+    "DescriptionStrKey": "ST:203759"
+  },
+  {
+    "ID": 50042007,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Tags": [
+      "SouShenTag_Temp"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1004.png@Skill_Ranger_1004",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203691",
+    "DescriptionStrKey": "ST:203760"
+  },
+  {
+    "ID": 50042008,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1023.png@Skill_Shadow_1023",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:5483",
+    "DescriptionStrKey": "ST:203761"
+  },
+  {
+    "ID": 50042009,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Tags": [
+      "SouShenTag_Temp"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1023.png@Skill_Shadow_1023",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:5483",
+    "DescriptionStrKey": "ST:203762"
+  },
+  {
+    "ID": 50042010,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1279.png@EXSkill_1279",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203693",
+    "DescriptionStrKey": "ST:203763"
+  },
+  {
+    "ID": 50042011,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 1000,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1001.png@Skill_Ranger_1001",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203694",
+    "DescriptionStrKey": "ST:203764"
+  },
+  {
+    "ID": 50042012,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1500.png@EXSkill_1500",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "ID": 2,
+        "Name": 200277
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203695",
+    "DescriptionStrKey": "ST:203765"
+  },
+  {
+    "ID": 50042013,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1316.png@EXSkill_1316",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203696",
+    "DescriptionStrKey": "ST:203766"
+  },
+  {
+    "ID": 50042014,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1064.png@EXSkill_1064",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203697",
+    "DescriptionStrKey": "ST:203767"
+  },
+  {
+    "ID": 50042015,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1336.png@EXSkill_1336",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203698",
+    "DescriptionStrKey": "ST:203768"
+  },
+  {
+    "ID": 50042016,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1052.png@EXSkill_1052",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:204891",
+    "DescriptionStrKey": "ST:203769"
+  },
+  {
+    "ID": 50042017,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1005.png@Skill_None_1005",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203700",
+    "DescriptionStrKey": "ST:203770"
+  },
+  {
+    "ID": 50042018,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1006.png@Skill_None_1006",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203701",
+    "DescriptionStrKey": "ST:203771"
+  },
+  {
+    "ID": 50042019,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 800,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1283.png@EXSkill_1283",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "ID": 5,
+        "Name": 200280
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203702",
+    "DescriptionStrKey": "ST:209158"
+  },
+  {
+    "ID": 50042020,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Assassin_1003.png@Skill_Assassin_1003",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203703",
+    "DescriptionStrKey": "ST:203773"
+  },
+  {
+    "ID": 50042021,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1021.png@Skill_None_1021",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203704",
+    "DescriptionStrKey": "ST:203774"
+  },
+  {
+    "ID": 50042022,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1294.png@EXSkill_1294",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203705",
+    "DescriptionStrKey": "ST:203775"
+  },
+  {
+    "ID": 50042023,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1022.png@Skill_None_1022",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203706",
+    "DescriptionStrKey": "ST:203776"
+  },
+  {
+    "ID": 50042024,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1004.png@Skill_Guard_1004",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203707",
+    "DescriptionStrKey": "ST:203777"
+  },
+  {
+    "ID": 50042025,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1482.png@EXSkill_1482",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203708",
+    "DescriptionStrKey": "ST:208775"
+  },
+  {
+    "ID": 50042026,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1008_1.png@Skill_None_1008_1",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203709",
+    "DescriptionStrKey": "ST:203779"
+  },
+  {
+    "ID": 50042027,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1532.png@EXSkill_1532",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203710",
+    "DescriptionStrKey": "ST:203780"
+  },
+  {
+    "ID": 50042028,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1075.png@EXSkill_1075",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203711",
+    "DescriptionStrKey": "ST:203781"
+  },
+  {
+    "ID": 50042029,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_2407.png@Skill_Boss_2407",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203712",
+    "DescriptionStrKey": "ST:203782"
+  },
+  {
+    "ID": 50042030,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1006_1.png@Skill_None_1006_1",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:18181",
+    "DescriptionStrKey": "ST:203783"
+  },
+  {
+    "ID": 50042031,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1522.png@EXSkill_1522",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203713",
+    "DescriptionStrKey": "ST:207508"
+  },
+  {
+    "ID": 50042032,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1009.png@Skill_Swordsman_1009",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203714",
+    "DescriptionStrKey": "ST:202706"
+  },
+  {
+    "ID": 50042033,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1009.png@Skill_Swordsman_1009",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203715",
+    "DescriptionStrKey": "ST:203785"
+  },
+  {
+    "ID": 50042034,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1004.png@Skill_None_1004",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203716",
+    "DescriptionStrKey": "ST:203786"
+  },
+  {
+    "ID": 50042035,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ice_1002.png@Skill_Ice_1002",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203717",
+    "DescriptionStrKey": "ST:203286"
+  },
+  {
+    "ID": 50042036,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Echo"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1006.png@Skill_Shadow_1006",
+    "IsDisabled": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203718",
+    "DescriptionStrKey": "ST:203787"
+  },
+  {
+    "ID": 50042037,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1006.png@Skill_Shadow_1006",
+    "IsNPCOnly": true,
+    "IsDisabled": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203719",
+    "DescriptionStrKey": "ST:203788"
+  },
+  {
+    "ID": 50042038,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1067.png@Skill_Boss_1067",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:36252",
+    "DescriptionStrKey": "ST:207408"
+  },
+  {
+    "ID": 50042039,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1010.png@Skill_Guard_1010",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203721",
+    "DescriptionStrKey": "ST:203790"
+  },
+  {
+    "ID": 50042040,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1208.png@EXSkill_1208",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203722",
+    "DescriptionStrKey": "ST:203791"
+  },
+  {
+    "ID": 50042041,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1033.png@Skill_Boss_1033",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203723",
+    "DescriptionStrKey": "ST:203792"
+  },
+  {
+    "ID": 50042042,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1066.png@Skill_Boss_1066",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203724",
+    "DescriptionStrKey": "ST:203793"
+  },
+  {
+    "ID": 50042043,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1452.png@EXSkill_1452",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203725",
+    "DescriptionStrKey": "ST:203794"
+  },
+  {
+    "ID": 50042044,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1096.png@Skill_Boss_1096",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:5754",
+    "DescriptionStrKey": "ST:203795"
+  },
+  {
+    "ID": 50042045,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Trap"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1026.png@GPassive_1026",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203726",
+    "DescriptionStrKey": "ST:207409"
+  },
+  {
+    "ID": 50042046,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Tags": [
+      "SouShenTag_Trap"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203727",
+    "DescriptionStrKey": "ST:207410"
+  },
+  {
+    "ID": 50042047,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Trap"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1041.png@EXSkill_1041",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203728",
+    "DescriptionStrKey": "ST:207411"
+  },
+  {
+    "ID": 50042048,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Trap"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1013.png@Skill_Ranger_1013",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203729",
+    "DescriptionStrKey": "ST:207412"
+  },
+  {
+    "ID": 50042049,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Trap"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203730",
+    "DescriptionStrKey": "ST:203800"
+  },
+  {
+    "ID": 50042050,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Trap"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1499.png@EXSkill_1499",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203731",
+    "DescriptionStrKey": "ST:204461"
+  },
+  {
+    "ID": 50042051,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Area"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1312.png@EXSkill_1312",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:204892",
+    "DescriptionStrKey": "ST:203802"
+  },
+  {
+    "ID": 50042052,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Area"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1185.png@EXSkill_1185",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:204893",
+    "DescriptionStrKey": "ST:203803"
+  },
+  {
+    "ID": 50042053,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_Area"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1312.png@EXSkill_1312",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "ID": 4,
+        "Name": 200279
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:204894",
+    "DescriptionStrKey": "ST:203804"
+  },
+  {
+    "ID": 50042054,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_Area"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1185.png@EXSkill_1185",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:204895",
+    "DescriptionStrKey": "ST:203805"
+  },
+  {
+    "ID": 50042055,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1038.png@GPassive_1038",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203736",
+    "DescriptionStrKey": "ST:203806"
+  },
+  {
+    "ID": 50042056,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1040.png@GPassive_1040",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203737",
+    "DescriptionStrKey": "ST:203807"
+  },
+  {
+    "ID": 50042057,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1031.png@GPassive_1031",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:203738",
+    "DescriptionStrKey": "ST:203808"
+  },
+  {
+    "ID": 50042058,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1189.png@EXSkill_1189",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203739",
+    "DescriptionStrKey": "ST:203809"
+  },
+  {
+    "ID": 50042059,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1241.png@EXSkill_1241",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203740",
+    "DescriptionStrKey": "ST:203810"
+  },
+  {
+    "ID": 50042060,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1110.png@EXSkill_1110",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:204896",
+    "DescriptionStrKey": "ST:203811"
+  },
+  {
+    "ID": 50042061,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1209.png@EXSkill_1209",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203742",
+    "DescriptionStrKey": "ST:203812"
+  },
+  {
+    "ID": 50042062,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1004.png@Skill_Guard_1004",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203743",
+    "DescriptionStrKey": "ST:203813"
+  },
+  {
+    "ID": 50042063,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1008.png@Skill_None_1008",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203744",
+    "DescriptionStrKey": "ST:203814"
+  },
+  {
+    "ID": 50042064,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1065.png@EXSkill_1065",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203745",
+    "DescriptionStrKey": "ST:208832"
+  },
+  {
+    "ID": 50042065,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1019.png@EXSkill_1019",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203746",
+    "DescriptionStrKey": "ST:203816"
+  },
+  {
+    "ID": 50042066,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1384.png@EXSkill_1384",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203747",
+    "DescriptionStrKey": "ST:203817"
+  },
+  {
+    "ID": 50042067,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1271.png@EXSkill_1271",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203748",
+    "DescriptionStrKey": "ST:203818"
+  },
+  {
+    "ID": 50042068,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Echo",
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1270.png@EXSkill_1270",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203749",
+    "DescriptionStrKey": "ST:203819"
+  },
+  {
+    "ID": 50042069,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1102.png@Skill_Boss_1102",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203750",
+    "DescriptionStrKey": "ST:203820"
+  },
+  {
+    "ID": 50042070,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1588.png@EXSkill_1588",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:145927",
+    "DescriptionStrKey": "ST:203821"
+  },
+  {
+    "ID": 50042071,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1050.png@Skill_Boss_1050",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203751",
+    "DescriptionStrKey": "ST:203822"
+  },
+  {
+    "ID": 50042072,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1020.png@Skill_None_1020",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203752",
+    "DescriptionStrKey": "ST:203823"
+  },
+  {
+    "ID": 50042073,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1600.png@EXSkill_1600",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203753",
+    "DescriptionStrKey": "ST:203824"
+  },
+  {
+    "ID": 50042074,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_104.png@Gift_104",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:204365",
+    "DescriptionStrKey": "ST:208900"
+  },
+  {
+    "ID": 50042075,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_104.png@Gift_104",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:204365",
+    "DescriptionStrKey": "ST:208900"
+  },
+  {
+    "ID": 50042076,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_104.png@Gift_104",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:204365",
+    "DescriptionStrKey": "ST:208900"
+  },
+  {
+    "ID": 50042080,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Light_1004.png@Skill_Light_1004",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:209104",
+    "DescriptionStrKey": "ST:207819"
+  },
+  {
+    "ID": 50042081,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Light_1004.png@Skill_Light_1004",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:209105",
+    "DescriptionStrKey": "ST:207820"
+  },
+  {
+    "ID": 50042082,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 900,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1006.png@Skill_Shadow_1006",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:203719",
+    "DescriptionStrKey": "ST:203788"
+  },
+  {
+    "ID": 50042083,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1075.png@EXSkill_1075",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:207817",
+    "DescriptionStrKey": "ST:207821"
+  },
+  {
+    "ID": 50042090,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1001.png@Skill_Swordsman_1001",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208689",
+    "DescriptionStrKey": "ST:208695"
+  },
+  {
+    "ID": 50042091,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1006.png@Skill_Swordsman_1006",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208690",
+    "DescriptionStrKey": "ST:208696"
+  },
+  {
+    "ID": 50042092,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1030.png@Skill_Guard_1030",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208691",
+    "DescriptionStrKey": "ST:208697"
+  },
+  {
+    "ID": 50042093,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1019.png@Skill_Guard_1019",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208692",
+    "DescriptionStrKey": "ST:208698"
+  },
+  {
+    "ID": 50042094,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1014.png@Skill_Ranger_1014",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208693",
+    "DescriptionStrKey": "ST:208699"
+  },
+  {
+    "ID": 50042095,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1038.png@GPassive_1038",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:208694",
+    "DescriptionStrKey": "ST:208700"
+  },
+  {
+    "ID": 50042101,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Ranger_1004.png@Skill_Ranger_1004",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:207818",
+    "DescriptionStrKey": "ST:207835"
+  },
+  {
+    "ID": 50042102,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1015.png@GPassive_1015",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208641",
+    "DescriptionStrKey": "ST:208645"
+  },
+  {
+    "ID": 50042103,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1009.png@Skill_Swordsman_1009",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:91894",
+    "DescriptionStrKey": "ST:208646"
+  },
+  {
+    "ID": 50042104,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Evloution"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1008.png@GPassive_1008",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208642",
+    "DescriptionStrKey": "ST:209332"
+  },
+  {
+    "ID": 50042105,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1002.png@GPassive_1002",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208643",
+    "DescriptionStrKey": "ST:209397"
+  },
+  {
+    "ID": 50042106,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1007.png@Skill_Shadow_1007",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208644",
+    "DescriptionStrKey": "ST:208019"
+  },
+  {
+    "ID": 50042107,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1003.png@Skill_Shadow_1003",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:208654",
+    "DescriptionStrKey": "ST:209328"
+  },
+  {
+    "ID": 50042110,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1005.png@Skill_None_1005",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:215643"
+  },
+  {
+    "ID": 50042111,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1004.png",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208668",
+    "DescriptionStrKey": "ST:208674"
+  },
+  {
+    "ID": 50042112,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1009.png@Skill_Guard_1009",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208823",
+    "DescriptionStrKey": "ST:208833"
+  },
+  {
+    "ID": 50042113,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_3c_100201.png@EXSkill_3c_100201",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208824",
+    "DescriptionStrKey": "ST:208834"
+  },
+  {
+    "ID": 50042114,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1017.PNG@Skill_Guard_1017",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208825",
+    "DescriptionStrKey": "ST:208835"
+  },
+  {
+    "ID": 50042115,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1006.png@Skill_Shadow_1006",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208826",
+    "DescriptionStrKey": "ST:208836"
+  },
+  {
+    "ID": 50042116,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Monster_2010.png@Skill_Monster_2010",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:208827",
+    "DescriptionStrKey": "ST:209984"
+  },
+  {
+    "ID": 50042117,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1636.png@EXSkill_1636",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211077",
+    "DescriptionStrKey": "ST:211667"
+  },
+  {
+    "ID": 50042118,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1009.PNG@Skill_Swordsman_1009",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211078",
+    "DescriptionStrKey": "ST:210884"
+  },
+  {
+    "ID": 50042119,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Assassin_1010.PNG@Skill_Assassin_1010",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211079",
+    "DescriptionStrKey": "ST:211668"
+  },
+  {
+    "ID": 50042120,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1504.png@EXSkill_1504",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211080",
+    "DescriptionStrKey": "ST:209988"
+  },
+  {
+    "ID": 50042121,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1092.png@Skill_Boss_1092",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211081",
+    "DescriptionStrKey": "ST:211669"
+  },
+  {
+    "ID": 50042122,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1565.png@EXSkill_1565",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211082",
+    "DescriptionStrKey": "ST:210887"
+  },
+  {
+    "ID": 50042123,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 700,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1106.png@EXSkill_1106",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211083",
+    "DescriptionStrKey": "ST:211670"
+  },
+  {
+    "ID": 50042124,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Assassin_1026.png@Skill_Assassin_1026",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211084",
+    "DescriptionStrKey": "ST:209992"
+  },
+  {
+    "ID": 50042125,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Draw"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1018.PNG@GPassive_1018",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200272
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211085",
+    "DescriptionStrKey": "ST:209993"
+  },
+  {
+    "ID": 50043000,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1606.png@EXSkill_1606",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211273",
+    "DescriptionStrKey": "ST:211229"
+  },
+  {
+    "ID": 50043001,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1608.png@EXSkill_1608",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211274",
+    "DescriptionStrKey": "ST:211230"
+  },
+  {
+    "ID": 50043002,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1666.png@EXSkill_1666",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211064",
+    "DescriptionStrKey": "ST:211331"
+  },
+  {
+    "ID": 50044000,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Weapon",
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1661.png@EXSkill_1661",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211390"
+  },
+  {
+    "ID": 50044001,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Assassin_1009.png@Skill_Assassin_1009",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211605"
+  },
+  {
+    "ID": 50044002,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1662.png@EXSkill_1662",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:58857"
+  },
+  {
+    "ID": 50044003,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1360.png@EXSkill_1360",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:188948"
+  },
+  {
+    "ID": 50044004,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_114803.png@EXSkill_3c_114803",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211613"
+  },
+  {
+    "ID": 50044005,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_Fes_1007.png@EXSkill_Fes_1007",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:148193"
+  },
+  {
+    "ID": 50044006,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 1000,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1271.png@EXSkill_1271",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:132854"
+  },
+  {
+    "ID": 50044007,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1270.png@EXSkill_1270",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211614"
+  },
+  {
+    "ID": 50044008,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Tags": [
+      "SouShenTag_Weapon",
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1661.png@EXSkill_1661",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211390"
+  },
+  {
+    "ID": 50044009,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Tags": [
+      "SouShenTag_Weapon",
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1661.png@EXSkill_1661",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211390"
+  },
+  {
+    "ID": 50044010,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1664.png@EXSkill_1664",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211865"
+  },
+  {
+    "ID": 50044011,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Electricity_1012.png@Skill_Electricity_1012",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:50232"
+  },
+  {
+    "ID": 50044012,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1005.png@Skill_None_1005",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211866"
+  },
+  {
+    "ID": 50044013,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1665.png@EXSkill_1665",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211612"
+  },
+  {
+    "ID": 50044014,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Tags": [
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1010.png@Skill_Swordsman_1010",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:55107"
+  },
+  {
+    "ID": 50044015,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1664.png@EXSkill_1664",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211939"
+  },
+  {
+    "ID": 50044016,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1666.png@EXSkill_1666",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211940"
+  },
+  {
+    "ID": 50044017,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1649.png@EXSkill_1649",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211941"
+  },
+  {
+    "ID": 50044018,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1643.png@EXSkill_1643",
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211942"
+  },
+  {
+    "ID": 50044019,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1270.png@EXSkill_1270",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:113097"
+  },
+  {
+    "ID": 50044020,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211951",
+    "DescriptionStrKey": "ST:212007"
+  },
+  {
+    "ID": 50044021,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211951",
+    "DescriptionStrKey": "ST:212008"
+  },
+  {
+    "ID": 50044022,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211951",
+    "DescriptionStrKey": "ST:212009"
+  },
+  {
+    "ID": 50044023,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212003",
+    "DescriptionStrKey": "ST:212010"
+  },
+  {
+    "ID": 50044024,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212003",
+    "DescriptionStrKey": "ST:212011"
+  },
+  {
+    "ID": 50044025,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212003",
+    "DescriptionStrKey": "ST:212012"
+  },
+  {
+    "ID": 50044026,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212003",
+    "DescriptionStrKey": "ST:212013"
+  },
+  {
+    "ID": 50044027,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212003",
+    "DescriptionStrKey": "ST:212014"
+  },
+  {
+    "ID": 50044028,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_Mix",
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212003",
+    "DescriptionStrKey": "ST:212015"
+  },
+  {
+    "ID": 50044029,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212004",
+    "DescriptionStrKey": "ST:212016"
+  },
+  {
+    "ID": 50044030,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212004",
+    "DescriptionStrKey": "ST:212017"
+  },
+  {
+    "ID": 50044031,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212004",
+    "DescriptionStrKey": "ST:212018"
+  },
+  {
+    "ID": 50044032,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212004",
+    "DescriptionStrKey": "ST:212019"
+  },
+  {
+    "ID": 50044033,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212004",
+    "DescriptionStrKey": "ST:212020"
+  },
+  {
+    "ID": 50044034,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212004",
+    "DescriptionStrKey": "ST:212021"
+  },
+  {
+    "ID": 50044035,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212004",
+    "DescriptionStrKey": "ST:212022"
+  },
+  {
+    "ID": 50044036,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212005",
+    "DescriptionStrKey": "ST:212023"
+  },
+  {
+    "ID": 50044037,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212005",
+    "DescriptionStrKey": "ST:212024"
+  },
+  {
+    "ID": 50044038,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Tags": [
+      "SouShenTag_reishi"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1269.png@EXSkill_1269",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212005",
+    "DescriptionStrKey": "ST:212025"
+  },
+  {
+    "ID": 50044039,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Tags": [
+      "SouShenTag_Mix"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Light_1006.png@Skill_Light_1006",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:212006"
+  },
+  {
+    "ID": 50044040,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_Fes_1007.png@EXSkill_Fes_1007",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:211952"
+  },
+  {
+    "ID": 50044041,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 400,
+    "Tags": [
+      "SouShenTag_Weapon",
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1661.png@EXSkill_1661",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212249"
+  },
+  {
+    "ID": 50044042,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Tags": [
+      "SouShenTag_Weapon",
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1661.png@EXSkill_1661",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212249"
+  },
+  {
+    "ID": 50044043,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Weapon",
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1661.png@EXSkill_1661",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212250"
+  },
+  {
+    "ID": 50044044,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Tags": [
+      "SouShenTag_Weapon",
+      "SouShenTag_WuKong"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1661.png@EXSkill_1661",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212250"
+  },
+  {
+    "ID": 50044045,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1356.png@EXSkill_1356",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212115"
+  },
+  {
+    "ID": 50044046,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1356.png@EXSkill_1356",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212525"
+  },
+  {
+    "ID": 50044047,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1356.png@EXSkill_1356",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212526"
+  },
+  {
+    "ID": 50044048,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1383.png@EXSkill_1383",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212527"
+  },
+  {
+    "ID": 50044049,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1277.png@EXSkill_1277",
+    "IsNPCOnly": true,
+    "IsDisabled": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:103947"
+  },
+  {
+    "ID": 50044050,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1516.png@EXSkill_1516",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212103"
+  },
+  {
+    "ID": 50044051,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1426.png@EXSkill_1426",
+    "IsNPCOnly": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:212100"
+  },
+  {
+    "ID": 50045000,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1005.png@Skill_None_1005",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217859",
+    "DescriptionStrKey": "ST:216881"
+  },
+  {
+    "ID": 50045001,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 600,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1005.png@Skill_None_1005",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217860",
+    "DescriptionStrKey": "ST:216882"
+  },
+  {
+    "ID": 50045002,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 400,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1067.png@Skill_Boss_1067",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217861",
+    "DescriptionStrKey": "ST:217893"
+  },
+  {
+    "ID": 50045003,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1255.png@EXSkill_1255",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217862",
+    "DescriptionStrKey": "ST:133046"
+  },
+  {
+    "ID": 50045004,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1252.png@EXSkill_1252",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217863",
+    "DescriptionStrKey": "ST:216883"
+  },
+  {
+    "ID": 50045005,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1252.png@EXSkill_1252",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:132808",
+    "DescriptionStrKey": "ST:216884"
+  },
+  {
+    "ID": 50045006,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 800,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1252.png@EXSkill_1252",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217864",
+    "DescriptionStrKey": "ST:216885"
+  },
+  {
+    "ID": 50045007,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:114009",
+    "DescriptionStrKey": "ST:217894"
+  },
+  {
+    "ID": 50045008,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217865",
+    "DescriptionStrKey": "ST:217895"
+  },
+  {
+    "ID": 50045009,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217866",
+    "DescriptionStrKey": "ST:217896"
+  },
+  {
+    "ID": 50045010,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217867",
+    "DescriptionStrKey": "ST:217897"
+  },
+  {
+    "ID": 50045011,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217868",
+    "DescriptionStrKey": "ST:217898"
+  },
+  {
+    "ID": 50045012,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217869",
+    "DescriptionStrKey": "ST:217899"
+  },
+  {
+    "ID": 50045013,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:160775",
+    "DescriptionStrKey": "ST:217900"
+  },
+  {
+    "ID": 50045014,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1253.png@EXSkill_1253",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217870",
+    "DescriptionStrKey": "ST:217901"
+  },
+  {
+    "ID": 50045015,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow_1008.png@Skill_Shadow_1008",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "P1": 202445106,
+        "Name": 200294
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217871",
+    "DescriptionStrKey": "ST:217902"
+  },
+  {
+    "ID": 50045016,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1006.png@Skill_None_1006",
+    "IsNPCOnly": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217872",
+    "DescriptionStrKey": "ST:217903"
+  },
+  {
+    "ID": 50045017,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1021.png@Skill_None_1021",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217873",
+    "DescriptionStrKey": "ST:216866"
+  },
+  {
+    "ID": 50045018,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/EXSkill_1294.png@EXSkill_1294",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217874",
+    "DescriptionStrKey": "ST:216867"
+  },
+  {
+    "ID": 50045019,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1022.png@Skill_None_1022",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217875",
+    "DescriptionStrKey": "ST:216868"
+  },
+  {
+    "ID": 50045020,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 500,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1004.png@Skill_Guard_1004",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "P1": 202445202,
+        "Name": 200296
+      },
+      {
+        "PathType": "GetPathType_SouShenMission",
+        "P1": 202445203,
+        "Name": 200297
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217876",
+    "DescriptionStrKey": "ST:216869"
+  },
+  {
+    "ID": 50045021,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1020.png@Skill_None_1020",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:217877",
+    "DescriptionStrKey": "ST:216887"
+  },
+  {
+    "ID": 51044001,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1031.PNG@Skill_Guard_1031",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:211662",
+    "DescriptionStrKey": "ST:212529"
+  },
+  {
+    "ID": 51044002,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Tags": [
+      "SouShenTag_Weapon"
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Guard_1011.PNG@Skill_Guard_1011",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:4656",
+    "DescriptionStrKey": "ST:212530"
+  },
+  {
+    "ID": 51044003,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Light_1022.png@Skill_Light_1022",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:211663",
+    "DescriptionStrKey": "ST:211673"
+  },
+  {
+    "ID": 51044004,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Shadow _1001.png@Skill_Shadow _1001",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:211664",
+    "DescriptionStrKey": "ST:212531"
+  },
+  {
+    "ID": 51044005,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 200,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1022.png@Skill_None_1022",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:211665",
+    "DescriptionStrKey": "ST:211675"
+  },
+  {
+    "ID": 51044006,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 300,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Boss_1090.PNG@Skill_Boss_1090",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:211666",
+    "DescriptionStrKey": "ST:211676"
+  },
+  {
+    "ID": 51044007,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Light_1004.png@Skill_Light_1004",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:147905",
+    "DescriptionStrKey": "ST:213926"
+  },
+  {
+    "ID": 51044008,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1009.png@Skill_Swordsman_1009",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:80538",
+    "DescriptionStrKey": "ST:214371"
+  },
+  {
+    "ID": 51044009,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1008.png@GPassive_1008",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:93126",
+    "DescriptionStrKey": "ST:214372"
+  },
+  {
+    "ID": 51044010,
+    "CardType": "SouShenCardType_Spell",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1038.png@GPassive_1038",
+    "IsNPCOnly": true,
+    "NameStrKey": "ST:92944",
+    "DescriptionStrKey": "ST:214373"
+  },
+  {
+    "ID": 100100000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1000_MountainsAndRivers.png@Hero1000_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:14899",
+    "DescriptionStrKey": "ST:14899"
+  },
+  {
+    "ID": 100100100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1001_MountainsAndRivers.png@Hero1001_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:100506",
+    "DescriptionStrKey": "ST:100506"
+  },
+  {
+    "ID": 100100200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1002_MountainsAndRivers.png@Hero1002_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:17548",
+    "DescriptionStrKey": "ST:17548"
+  },
+  {
+    "ID": 100100700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1007_MountainsAndRivers.png@Hero1007_MountainsAndRivers",
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:16068",
+    "DescriptionStrKey": "ST:16068"
+  },
+  {
+    "ID": 100100900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1009_MountainsAndRivers.png@Hero1009_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3939",
+    "DescriptionStrKey": "ST:3939"
+  },
+  {
+    "ID": 100101400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1014_MountainsAndRivers.png@Hero1014_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:13514",
+    "DescriptionStrKey": "ST:13514"
+  },
+  {
+    "ID": 100101600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1016_MountainsAndRivers.png@Hero1016_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:33709",
+    "DescriptionStrKey": "ST:33709"
+  },
+  {
+    "ID": 100101900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1019_MountainsAndRivers.png@Hero1019_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:87839",
+    "DescriptionStrKey": "ST:87839"
+  },
+  {
+    "ID": 100102000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1020_MountainsAndRivers.png@Hero1020_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:47206",
+    "DescriptionStrKey": "ST:47206"
+  },
+  {
+    "ID": 100102200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1022_MountainsAndRivers.png@Hero1022_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:1248",
+    "DescriptionStrKey": "ST:1248"
+  },
+  {
+    "ID": 100102300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1023_MountainsAndRivers.png@Hero1023_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:100670",
+    "DescriptionStrKey": "ST:100670"
+  },
+  {
+    "ID": 100102400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1024_MountainsAndRivers.png@Hero1024_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:100707",
+    "DescriptionStrKey": "ST:100707"
+  },
+  {
+    "ID": 100102500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1025_MountainsAndRivers.png@Hero1025_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:91599",
+    "DescriptionStrKey": "ST:91599"
+  },
+  {
+    "ID": 100102600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1026_MountainsAndRivers.png@Hero1026_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:35434",
+    "DescriptionStrKey": "ST:35434"
+  },
+  {
+    "ID": 100102700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1027_MountainsAndRivers.png@Hero1027_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:54171",
+    "DescriptionStrKey": "ST:54171"
+  },
+  {
+    "ID": 100102800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1028_MountainsAndRivers.png@Hero1028_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:4603",
+    "DescriptionStrKey": "ST:4603"
+  },
+  {
+    "ID": 100103000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1030_MountainsAndRivers.png@Hero1030_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:132568",
+    "DescriptionStrKey": "ST:132568"
+  },
+  {
+    "ID": 100103100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1031_MountainsAndRivers.png@Hero1031_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:111023",
+    "DescriptionStrKey": "ST:111023"
+  },
+  {
+    "ID": 100103200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1032_MountainsAndRivers.png@Hero1032_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:119373",
+    "DescriptionStrKey": "ST:119373"
+  },
+  {
+    "ID": 100103300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1033_MountainsAndRivers.png@Hero1033_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:111022",
+    "DescriptionStrKey": "ST:111022"
+  },
+  {
+    "ID": 100103400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1034_MountainsAndRivers.png@Hero1034_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:136530",
+    "DescriptionStrKey": "ST:136530"
+  },
+  {
+    "ID": 100103600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1036_MountainsAndRivers.png@Hero1036_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:137019",
+    "DescriptionStrKey": "ST:137019"
+  },
+  {
+    "ID": 100103700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1037_MountainsAndRivers.png@Hero1037_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:140916",
+    "DescriptionStrKey": "ST:140916"
+  },
+  {
+    "ID": 100103800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1038_MountainsAndRivers.png@Hero1038_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:105078",
+    "DescriptionStrKey": "ST:105078"
+  },
+  {
+    "ID": 100103900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1039_MountainsAndRivers.png@Hero1039_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:103639",
+    "DescriptionStrKey": "ST:103639"
+  },
+  {
+    "ID": 100104000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1040_MountainsAndRivers.png@Hero1040_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:154177",
+    "DescriptionStrKey": "ST:154177"
+  },
+  {
+    "ID": 100104100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1041_MountainsAndRivers.png@Hero1041_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:149179",
+    "DescriptionStrKey": "ST:149179"
+  },
+  {
+    "ID": 100104200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1042_MountainsAndRivers.png@Hero1042_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:154002",
+    "DescriptionStrKey": "ST:154002"
+  },
+  {
+    "ID": 100104300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1043_MountainsAndRivers.png@Hero1043_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:37278",
+    "DescriptionStrKey": "ST:37278"
+  },
+  {
+    "ID": 100104400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1044_MountainsAndRivers.png@Hero1044_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:153566",
+    "DescriptionStrKey": "ST:153566"
+  },
+  {
+    "ID": 100104600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1046_MountainsAndRivers.png@Hero1046_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:157673",
+    "DescriptionStrKey": "ST:157673"
+  },
+  {
+    "ID": 100104700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1047_MountainsAndRivers.png@Hero1047_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:157769",
+    "DescriptionStrKey": "ST:157769"
+  },
+  {
+    "ID": 100104800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1048_MountainsAndRivers.png@Hero1048_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:157768",
+    "DescriptionStrKey": "ST:157768"
+  },
+  {
+    "ID": 100104900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1049_MountainsAndRivers.png@Hero1049_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:157763",
+    "DescriptionStrKey": "ST:157763"
+  },
+  {
+    "ID": 100105000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1050_MountainsAndRivers.png@Hero1050_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:157765",
+    "DescriptionStrKey": "ST:157765"
+  },
+  {
+    "ID": 100105100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1051_MountainsAndRivers.png@Hero1051_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:180805",
+    "DescriptionStrKey": "ST:180805"
+  },
+  {
+    "ID": 100105200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1052_MountainsAndRivers.png@Hero1052_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:117790",
+    "DescriptionStrKey": "ST:117790"
+  },
+  {
+    "ID": 100105400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1054_MountainsAndRivers.png@Hero1054_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:151284",
+    "DescriptionStrKey": "ST:151284"
+  },
+  {
+    "ID": 100105500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1055_MountainsAndRivers.png@Hero1055_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:168250",
+    "DescriptionStrKey": "ST:168250"
+  },
+  {
+    "ID": 100105600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1056_MountainsAndRivers.png@Hero1056_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:80564",
+    "DescriptionStrKey": "ST:80564"
+  },
+  {
+    "ID": 100105700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1057_MountainsAndRivers.png@Hero1057_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:113649",
+    "DescriptionStrKey": "ST:113649"
+  },
+  {
+    "ID": 100105900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1059_MountainsAndRivers.png@Hero1059_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:163241",
+    "DescriptionStrKey": "ST:163241"
+  },
+  {
+    "ID": 100106000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1060_MountainsAndRivers.png@Hero1060_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:163240",
+    "DescriptionStrKey": "ST:163240"
+  },
+  {
+    "ID": 100106100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1061_MountainsAndRivers.png@Hero1061_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:166607",
+    "DescriptionStrKey": "ST:166607"
+  },
+  {
+    "ID": 100106200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1015_MountainsAndRivers.png@Hero1015_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:47272",
+    "DescriptionStrKey": "ST:47272"
+  },
+  {
+    "ID": 100106300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1063_MountainsAndRivers.png@Hero1063_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:173163",
+    "DescriptionStrKey": "ST:173163"
+  },
+  {
+    "ID": 100106400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1064_MountainsAndRivers.png@Hero1064_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:170576",
+    "DescriptionStrKey": "ST:170576"
+  },
+  {
+    "ID": 100106600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1066_MountainsAndRivers.png@Hero1066_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:200984",
+    "DescriptionStrKey": "ST:200984"
+  },
+  {
+    "ID": 100106700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1067_MountainsAndRivers.png@Hero1067_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:178311",
+    "DescriptionStrKey": "ST:178311"
+  },
+  {
+    "ID": 100107000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1070_MountainsAndRivers.png@Hero1070_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:52062",
+    "DescriptionStrKey": "ST:52062"
+  },
+  {
+    "ID": 100107100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1071_MountainsAndRivers.png@Hero1071_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:180857",
+    "DescriptionStrKey": "ST:180857"
+  },
+  {
+    "ID": 100107200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1072_MountainsAndRivers.png@Hero1072_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:182406",
+    "DescriptionStrKey": "ST:182406"
+  },
+  {
+    "ID": 100107300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1073_MountainsAndRivers.png@Hero1073_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:195016",
+    "DescriptionStrKey": "ST:195016"
+  },
+  {
+    "ID": 100107500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1017_MountainsAndRivers.png@Hero1017_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:66664",
+    "DescriptionStrKey": "ST:66664"
+  },
+  {
+    "ID": 100107600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1018_MountainsAndRivers.png@Hero1018_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:32106",
+    "DescriptionStrKey": "ST:32106"
+  },
+  {
+    "ID": 100107700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1077_MountainsAndRivers.png@Hero1077_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:197320",
+    "DescriptionStrKey": "ST:197320"
+  },
+  {
+    "ID": 100107900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1079_MountainsAndRivers.png@Hero1079_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:170474",
+    "DescriptionStrKey": "ST:170474"
+  },
+  {
+    "ID": 100108000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1080_MountainsAndRivers.png@Hero1080_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203295",
+    "DescriptionStrKey": "ST:203295"
+  },
+  {
+    "ID": 100108100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1081_MountainsAndRivers.png@Hero1081_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:203338",
+    "DescriptionStrKey": "ST:203338"
+  },
+  {
+    "ID": 100108200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1082_MountainsAndRivers.png@Hero1082_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:222232",
+    "DescriptionStrKey": "ST:222232"
+  },
+  {
+    "ID": 100108300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1083_MountainsAndRivers.png@Hero1083_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:209540",
+    "DescriptionStrKey": "ST:209540"
+  },
+  {
+    "ID": 100108400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1084_MountainsAndRivers.png@Hero1084_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:215000",
+    "DescriptionStrKey": "ST:215000"
+  },
+  {
+    "ID": 100108500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1085_MountainsAndRivers.png@Hero1085_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:215089",
+    "DescriptionStrKey": "ST:215089"
+  },
+  {
+    "ID": 100108600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1086_MountainsAndRivers.png@Hero1086_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:218547",
+    "DescriptionStrKey": "ST:218547"
+  },
+  {
+    "ID": 100108700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1087_MountainsAndRivers.png@Hero1087_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:222050",
+    "DescriptionStrKey": "ST:222050"
+  },
+  {
+    "ID": 100108800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1088_MountainsAndRivers.png@Hero1088_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:221981",
+    "DescriptionStrKey": "ST:221981"
+  },
+  {
+    "ID": 100108900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1089_MountainsAndRivers.png@Hero1089_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:170795",
+    "DescriptionStrKey": "ST:170795"
+  },
+  {
+    "ID": 100109000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1090_MountainsAndRivers.png@Hero1090_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:170493",
+    "DescriptionStrKey": "ST:170493"
+  },
+  {
+    "ID": 100109100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1082_MountainsAndRivers.png@Hero1082_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:136531",
+    "DescriptionStrKey": "ST:222232"
+  },
+  {
+    "ID": 100109200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1092_MountainsAndRivers.png@Hero1092_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:237803",
+    "DescriptionStrKey": "ST:237803"
+  },
+  {
+    "ID": 100110000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1100_MountainsAndRivers.png@Hero1100_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:365",
+    "DescriptionStrKey": "ST:365"
+  },
+  {
+    "ID": 100110100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1101_MountainsAndRivers.png@Hero1101_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:393",
+    "DescriptionStrKey": "ST:393"
+  },
+  {
+    "ID": 100110200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1102_MountainsAndRivers.png@Hero1102_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:314",
+    "DescriptionStrKey": "ST:314"
+  },
+  {
+    "ID": 100110300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1103_MountainsAndRivers.png@Hero1103_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:835",
+    "DescriptionStrKey": "ST:835"
+  },
+  {
+    "ID": 100110400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1104_MountainsAndRivers.png@Hero1104_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:670",
+    "DescriptionStrKey": "ST:670"
+  },
+  {
+    "ID": 100110500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1105_MountainsAndRivers.png@Hero1105_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:30373",
+    "DescriptionStrKey": "ST:30373"
+  },
+  {
+    "ID": 100110600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1106_MountainsAndRivers.png@Hero1106_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:903",
+    "DescriptionStrKey": "ST:903"
+  },
+  {
+    "ID": 100110700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1107_MountainsAndRivers.png@Hero1107_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:629",
+    "DescriptionStrKey": "ST:629"
+  },
+  {
+    "ID": 100110800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1108_MountainsAndRivers.png@Hero1108_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:914",
+    "DescriptionStrKey": "ST:914"
+  },
+  {
+    "ID": 100110900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1109_MountainsAndRivers.png@Hero1109_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:907",
+    "DescriptionStrKey": "ST:907"
+  },
+  {
+    "ID": 100111000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1110_MountainsAndRivers.png@Hero1110_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:667",
+    "DescriptionStrKey": "ST:667"
+  },
+  {
+    "ID": 100111100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1111_MountainsAndRivers.png@Hero1111_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:908",
+    "DescriptionStrKey": "ST:908"
+  },
+  {
+    "ID": 100111200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1112_MountainsAndRivers.png@Hero1112_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:909",
+    "DescriptionStrKey": "ST:909"
+  },
+  {
+    "ID": 100111300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1113_MountainsAndRivers.png@Hero1113_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:904",
+    "DescriptionStrKey": "ST:904"
+  },
+  {
+    "ID": 100111400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1114_MountainsAndRivers.png@Hero1114_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:905",
+    "DescriptionStrKey": "ST:905"
+  },
+  {
+    "ID": 100111500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1115_MountainsAndRivers.png@Hero1115_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:910",
+    "DescriptionStrKey": "ST:910"
+  },
+  {
+    "ID": 100111600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1116_MountainsAndRivers.png@Hero1116_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:911",
+    "DescriptionStrKey": "ST:911"
+  },
+  {
+    "ID": 100111800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1118_MountainsAndRivers.png@Hero1118_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:913",
+    "DescriptionStrKey": "ST:913"
+  },
+  {
+    "ID": 100111900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1119_MountainsAndRivers.png@Hero1119_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3941",
+    "DescriptionStrKey": "ST:3941"
+  },
+  {
+    "ID": 100112500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1125_MountainsAndRivers.png@Hero1125_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3919",
+    "DescriptionStrKey": "ST:3919"
+  },
+  {
+    "ID": 100112700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1127_MountainsAndRivers.png@Hero1127_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:3920",
+    "DescriptionStrKey": "ST:3920"
+  },
+  {
+    "ID": 100112900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1129_MountainsAndRivers.png@Hero1129_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3922",
+    "DescriptionStrKey": "ST:3922"
+  },
+  {
+    "ID": 100113000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1130_MountainsAndRivers.png@Hero1130_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3923",
+    "DescriptionStrKey": "ST:3923"
+  },
+  {
+    "ID": 100113100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1131_MountainsAndRivers.png@Hero1131_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:22705",
+    "DescriptionStrKey": "ST:22705"
+  },
+  {
+    "ID": 100113200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1132_MountainsAndRivers.png@Hero1132_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3925",
+    "DescriptionStrKey": "ST:3925"
+  },
+  {
+    "ID": 100113300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1133_MountainsAndRivers.png@Hero1133_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:32733",
+    "DescriptionStrKey": "ST:32733"
+  },
+  {
+    "ID": 100113400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1134_MountainsAndRivers.png@Hero1134_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3927",
+    "DescriptionStrKey": "ST:3927"
+  },
+  {
+    "ID": 100113500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1135_MountainsAndRivers.png@Hero1135_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3928",
+    "DescriptionStrKey": "ST:3928"
+  },
+  {
+    "ID": 100113600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1136_MountainsAndRivers.png@Hero1136_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3929",
+    "DescriptionStrKey": "ST:3929"
+  },
+  {
+    "ID": 100113700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1137_MountainsAndRivers.png@Hero1137_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:54961",
+    "DescriptionStrKey": "ST:54961"
+  },
+  {
+    "ID": 100114200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1142_MountainsAndRivers.png@Hero1142_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3934",
+    "DescriptionStrKey": "ST:3934"
+  },
+  {
+    "ID": 100114300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1143_MountainsAndRivers.png@Hero1143_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3935",
+    "DescriptionStrKey": "ST:3935"
+  },
+  {
+    "ID": 100114400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1144_MountainsAndRivers.png@Hero1144_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:315",
+    "DescriptionStrKey": "ST:315"
+  },
+  {
+    "ID": 100114500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1145_MountainsAndRivers.png@Hero1145_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:5138",
+    "DescriptionStrKey": "ST:5138"
+  },
+  {
+    "ID": 100114600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1128_MountainsAndRivers.png@Hero1128_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:3921",
+    "DescriptionStrKey": "ST:3921"
+  },
+  {
+    "ID": 100114700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1147_MountainsAndRivers.png@Hero1147_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:135387",
+    "DescriptionStrKey": "ST:135387"
+  },
+  {
+    "ID": 100114800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1148_MountainsAndRivers.png@Hero1148_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:31121",
+    "DescriptionStrKey": "ST:31121"
+  },
+  {
+    "ID": 100114900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1149_MountainsAndRivers.png@Hero1149_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:81411",
+    "DescriptionStrKey": "ST:81411"
+  },
+  {
+    "ID": 100115000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1150_MountainsAndRivers.png@Hero1150_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:190430",
+    "DescriptionStrKey": "ST:190430"
+  },
+  {
+    "ID": 100115100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1120_MountainsAndRivers.png@Hero1120_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:915",
+    "DescriptionStrKey": "ST:915"
+  },
+  {
+    "ID": 100115200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1152_MountainsAndRivers.png@Hero1152_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:100566",
+    "DescriptionStrKey": "ST:100566"
+  },
+  {
+    "ID": 100115300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1153_MountainsAndRivers.png@Hero1153_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:209539",
+    "DescriptionStrKey": "ST:209539"
+  },
+  {
+    "ID": 100115400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1154_MountainsAndRivers.png@Hero1154_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:218546",
+    "DescriptionStrKey": "ST:218546"
+  },
+  {
+    "ID": 100115500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1155_MountainsAndRivers.png@Hero1155_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:151285",
+    "DescriptionStrKey": "ST:151285"
+  },
+  {
+    "ID": 100115600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1156_MountainsAndRivers.png@Hero1156_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:241143",
+    "DescriptionStrKey": "ST:241143"
+  },
+  {
+    "ID": 100115700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1157_MountainsAndRivers.png@Hero1157_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:103252",
+    "DescriptionStrKey": "ST:103252"
+  },
+  {
+    "ID": 100115800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1158_MountainsAndRivers.png@Hero1158_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:103251",
+    "DescriptionStrKey": "ST:103251"
+  },
+  {
+    "ID": 100115900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1159_MountainsAndRivers.png@Hero1159_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:105079",
+    "DescriptionStrKey": "ST:105079"
+  },
+  {
+    "ID": 100116000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1160_MountainsAndRivers.png@Hero1160_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:173160",
+    "DescriptionStrKey": "ST:173160"
+  },
+  {
+    "ID": 100120000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1200_MountainsAndRivers.png@Hero1200_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:31211",
+    "DescriptionStrKey": "ST:31211"
+  },
+  {
+    "ID": 100120100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1201_MountainsAndRivers.png@Hero1201_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:111554",
+    "DescriptionStrKey": "ST:111554"
+  },
+  {
+    "ID": 100120400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1204_MountainsAndRivers.png@Hero1204_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:36714",
+    "DescriptionStrKey": "ST:36714"
+  },
+  {
+    "ID": 100120600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1206_MountainsAndRivers.png@Hero1206_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:32107",
+    "DescriptionStrKey": "ST:32107"
+  },
+  {
+    "ID": 100121000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1210_MountainsAndRivers.png@Hero1210_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:85043",
+    "DescriptionStrKey": "ST:85043"
+  },
+  {
+    "ID": 100121200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1212_MountainsAndRivers.png@Hero1212_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:31287",
+    "DescriptionStrKey": "ST:31287"
+  },
+  {
+    "ID": 100121700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1217_MountainsAndRivers.png@Hero1217_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:63910",
+    "DescriptionStrKey": "ST:63910"
+  },
+  {
+    "ID": 100121800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1218_MountainsAndRivers.png@Hero1218_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:63901",
+    "DescriptionStrKey": "ST:63901"
+  },
+  {
+    "ID": 100122300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1223_MountainsAndRivers.png@Hero1223_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:111020",
+    "DescriptionStrKey": "ST:111020"
+  },
+  {
+    "ID": 100122400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1224_MountainsAndRivers.png@Hero1224_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:100575",
+    "DescriptionStrKey": "ST:100575"
+  },
+  {
+    "ID": 100122500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1208_MountainsAndRivers.png@Hero1208_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:32108",
+    "DescriptionStrKey": "ST:32108"
+  },
+  {
+    "ID": 100122600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1226_MountainsAndRivers.png@Hero1226_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:244186",
+    "DescriptionStrKey": "ST:244186"
+  },
+  {
+    "ID": 100130100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1301_MountainsAndRivers.png@Hero1301_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:80534",
+    "DescriptionStrKey": "ST:80534"
+  },
+  {
+    "ID": 100130200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1302_MountainsAndRivers.png@Hero1302_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:161483",
+    "DescriptionStrKey": "ST:161483"
+  },
+  {
+    "ID": 100130400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1304_MountainsAndRivers.png@Hero1304_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:63752",
+    "DescriptionStrKey": "ST:63752"
+  },
+  {
+    "ID": 100130600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1306_MountainsAndRivers.png@Hero1306_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:63748",
+    "DescriptionStrKey": "ST:63748"
+  },
+  {
+    "ID": 100131200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1312_MountainsAndRivers.png@Hero1312_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:63753",
+    "DescriptionStrKey": "ST:63753"
+  },
+  {
+    "ID": 100131400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1314_MountainsAndRivers.png@Hero1314_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:12756",
+    "DescriptionStrKey": "ST:12756"
+  },
+  {
+    "ID": 100131800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1318_MountainsAndRivers.png@Hero1318_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:63911",
+    "DescriptionStrKey": "ST:63911"
+  },
+  {
+    "ID": 100131900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1319_MountainsAndRivers.png@Hero1319_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:161645",
+    "DescriptionStrKey": "ST:161645"
+  },
+  {
+    "ID": 100132000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1320_MountainsAndRivers.png@Hero1320_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:175661",
+    "DescriptionStrKey": "ST:175661"
+  },
+  {
+    "ID": 100132100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1321_MountainsAndRivers.png@Hero1321_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:175550",
+    "DescriptionStrKey": "ST:175550"
+  },
+  {
+    "ID": 100133500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_R",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1335_MountainsAndRivers.png@Hero1335_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:63677",
+    "DescriptionStrKey": "ST:63677"
+  },
+  {
+    "ID": 100133600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1336_MountainsAndRivers.png@Hero1336_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:194665",
+    "DescriptionStrKey": "ST:194665"
+  },
+  {
+    "ID": 100140000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1400_MountainsAndRivers.png@Hero1400_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:232311",
+    "DescriptionStrKey": "ST:232311"
+  },
+  {
+    "ID": 100140100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1401_MountainsAndRivers.png@Hero1401_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:236258",
+    "DescriptionStrKey": "ST:236258"
+  },
+  {
+    "ID": 100140200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1402_MountainsAndRivers.png@Hero1402_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:231489",
+    "DescriptionStrKey": "ST:231489"
+  },
+  {
+    "ID": 100140300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1403_MountainsAndRivers.png@Hero1403_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:253992",
+    "DescriptionStrKey": "ST:253992"
+  },
+  {
+    "ID": 100150000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1500_MountainsAndRivers.png@Hero1500_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:232310",
+    "DescriptionStrKey": "ST:232310"
+  },
+  {
+    "ID": 100150100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1501_MountainsAndRivers.png@Hero1501_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:236011",
+    "DescriptionStrKey": "ST:236011"
+  },
+  {
+    "ID": 100150300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1503_MountainsAndRivers.png@Hero1503_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:239913",
+    "DescriptionStrKey": "ST:239913"
+  },
+  {
+    "ID": 100150400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero1504_MountainsAndRivers.png@Hero1504_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:254054",
+    "DescriptionStrKey": "ST:254054"
+  },
+  {
+    "ID": 100200000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2000_MountainsAndRivers.png@Hero2000_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:101447",
+    "DescriptionStrKey": "ST:101447"
+  },
+  {
+    "ID": 100200100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2001_MountainsAndRivers.png@Hero2001_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:101448",
+    "DescriptionStrKey": "ST:101448"
+  },
+  {
+    "ID": 100200200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2002_MountainsAndRivers.png@Hero2002_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:101900",
+    "DescriptionStrKey": "ST:101900"
+  },
+  {
+    "ID": 100200300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2003_MountainsAndRivers.png@Hero2003_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:106362",
+    "DescriptionStrKey": "ST:106362"
+  },
+  {
+    "ID": 100200400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2004_MountainsAndRivers.png@Hero2004_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:104044",
+    "DescriptionStrKey": "ST:104044"
+  },
+  {
+    "ID": 100200800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2008_MountainsAndRivers.png@Hero2008_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:123306",
+    "DescriptionStrKey": "ST:123306"
+  },
+  {
+    "ID": 100200900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2009_MountainsAndRivers.png@Hero2009_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:121508",
+    "DescriptionStrKey": "ST:121508"
+  },
+  {
+    "ID": 100201000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2010_MountainsAndRivers.png@Hero2010_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:123307",
+    "DescriptionStrKey": "ST:123307"
+  },
+  {
+    "ID": 100201200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2012_MountainsAndRivers.png@Hero2012_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:145099",
+    "DescriptionStrKey": "ST:145099"
+  },
+  {
+    "ID": 100201300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2013_MountainsAndRivers.png@Hero2013_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:145115",
+    "DescriptionStrKey": "ST:145115"
+  },
+  {
+    "ID": 100201400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2014_MountainsAndRivers.png@Hero2014_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:155283",
+    "DescriptionStrKey": "ST:155283"
+  },
+  {
+    "ID": 100201500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2015_MountainsAndRivers.png@Hero2015_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:92932",
+    "DescriptionStrKey": "ST:92932"
+  },
+  {
+    "ID": 100201600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero2016_MountainsAndRivers.png@Hero2016_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:155286",
+    "DescriptionStrKey": "ST:155286"
+  },
+  {
+    "ID": 100201700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2017_MountainsAndRivers.png@Hero2017_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:186451",
+    "DescriptionStrKey": "ST:186451"
+  },
+  {
+    "ID": 100201800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2018_MountainsAndRivers.png@Hero2018_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:186452",
+    "DescriptionStrKey": "ST:186452"
+  },
+  {
+    "ID": 100201900,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2019_MountainsAndRivers.png@Hero2019_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:186450",
+    "DescriptionStrKey": "ST:186450"
+  },
+  {
+    "ID": 100202100,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2021_MountainsAndRivers.png@Hero2021_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:186477",
+    "DescriptionStrKey": "ST:186477"
+  },
+  {
+    "ID": 100202200,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2022_MountainsAndRivers.png@Hero2022_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211216",
+    "DescriptionStrKey": "ST:211216"
+  },
+  {
+    "ID": 100202300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2023_MountainsAndRivers.png@Hero2023_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "IsSupportXiyou": true,
+    "NameStrKey": "ST:211128",
+    "DescriptionStrKey": "ST:211128"
+  },
+  {
+    "ID": 100202400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2024_MountainsAndRivers.png@Hero2024_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:224859",
+    "DescriptionStrKey": "ST:224859"
+  },
+  {
+    "ID": 100202500,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2025_MountainsAndRivers.png@Hero2025_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:224861",
+    "DescriptionStrKey": "ST:224861"
+  },
+  {
+    "ID": 100202600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2026_MountainsAndRivers.png@Hero2026_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:224857",
+    "DescriptionStrKey": "ST:224857"
+  },
+  {
+    "ID": 100202700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2027_MountainsAndRivers.png@Hero2027_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:186459",
+    "DescriptionStrKey": "ST:186459"
+  },
+  {
+    "ID": 100202800,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2028_MountainsAndRivers.png@Hero2028_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:186955",
+    "DescriptionStrKey": "ST:186955"
+  },
+  {
+    "ID": 100250000,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2500_MountainsAndRivers.png@Hero2500_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:219442",
+    "DescriptionStrKey": "ST:219442"
+  },
+  {
+    "ID": 100250300,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2503_MountainsAndRivers.png@Hero2503_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:229372",
+    "DescriptionStrKey": "ST:229372"
+  },
+  {
+    "ID": 100250400,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2504_MountainsAndRivers.png@Hero2504_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:100572",
+    "DescriptionStrKey": "ST:100572"
+  },
+  {
+    "ID": 100250600,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2506_MountainsAndRivers.png@Hero2506_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:242500",
+    "DescriptionStrKey": "ST:242500"
+  },
+  {
+    "ID": 100250700,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "InitCost": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Hero2507_MountainsAndRivers.png@Hero2507_MountainsAndRivers",
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200281
+      }
+    ],
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:249911",
+    "DescriptionStrKey": "ST:249911"
+  },
+  {
+    "ID": 199999999,
+    "CardType": "SouShenCardType_Character",
+    "Rarity": "Rarity_SSR",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Head_ABS/Hero1103_MountainsAndRivers.png@Hero1103_MountainsAndRivers",
+    "IsDisabled": true,
+    "IsSupportSouShen": true,
+    "NameStrKey": "ST:97799",
+    "DescriptionStrKey": "ST:97799"
+  }
+]

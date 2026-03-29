@@ -1,0 +1,25 @@
+[
+  {
+    "ID": 1,
+    "NextScheduleId": 2,
+    "IsLoopStart": true
+  },
+  {
+    "ID": 2,
+    "NextScheduleId": 3
+  },
+  {
+    "ID": 3,
+    "NextScheduleId": 4
+  },
+  {
+    "ID": 4,
+    "NextScheduleId": 5
+  },
+  {
+    "ID": 5,
+    "NextScheduleId": 1,
+    "IsLoopEnd": true,
+    "IsBattleSchedule": true
+  }
+]

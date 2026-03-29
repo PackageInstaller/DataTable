@@ -1,0 +1,134 @@
+[
+  {
+    "ID": 20250101,
+    "LevelSeconds": 60,
+    "WishSpawnSpeed": 4500,
+    "MaxWishesOnMap": 2,
+    "WishSpawnWeightList": [
+      {
+        "WishType": "HotSpringGameWishType_Towel",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_ZaoDou",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_Flower",
+        "Weight": 100
+      }
+    ],
+    "WishCompleteScore": 100,
+    "WishCountOnStart": 1,
+    "WishSpawnCDMillSeconds": 3000,
+    "EnableLikebilityGet": true,
+    "LikebilityGetValueOnWishComplete": 50,
+    "LikebilityBubbleDurationMillSeconds": 5000,
+    "EnableCombo": true
+  },
+  {
+    "ID": 20250102,
+    "LevelSeconds": 90,
+    "WishSpawnSpeed": 4500,
+    "MaxWishesOnMap": 3,
+    "WishSpawnWeightList": [
+      {
+        "WishType": "HotSpringGameWishType_Tea",
+        "Weight": 70
+      },
+      {
+        "WishType": "HotSpringGameWishType_Towel",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_ZaoDou",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_Flower",
+        "Weight": 100
+      }
+    ],
+    "WishCompleteScore": 100,
+    "WishCountOnStart": 2,
+    "WishSpawnCDMillSeconds": 3000,
+    "EnableLikebilityGet": true,
+    "LikebilityGetValueOnWishComplete": 50,
+    "LikebilityBubbleDurationMillSeconds": 5000,
+    "EnableCombo": true,
+    "EnableTeaWish": true,
+    "MaxTeaWishCountSameTime": 1
+  },
+  {
+    "ID": 20250103,
+    "LevelSeconds": 90,
+    "WishSpawnSpeed": 4500,
+    "MaxWishesOnMap": 4,
+    "WishSpawnWeightList": [
+      {
+        "WishType": "HotSpringGameWishType_Tea",
+        "Weight": 70
+      },
+      {
+        "WishType": "HotSpringGameWishType_Towel",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_ZaoDou",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_Flower",
+        "Weight": 100
+      }
+    ],
+    "WishCompleteScore": 100,
+    "WishCountOnStart": 3,
+    "WishSpawnCDMillSeconds": 3000,
+    "EnableLikebilityGet": true,
+    "LikebilityGetValueOnWishComplete": 50,
+    "LikebilityBubbleDurationMillSeconds": 5000,
+    "EnableCombo": true,
+    "EnableSpaTime": true,
+    "EnableTeaWish": true,
+    "LikeBubbleSpawnProbabilityPerSecondPerActor": 250,
+    "LikeBubbleGuaranteedDrawCount": 4,
+    "MaxTeaWishCountSameTime": 2
+  },
+  {
+    "ID": 20250104,
+    "LevelSeconds": 120,
+    "WishSpawnSpeed": 4500,
+    "MaxWishesOnMap": 4,
+    "WishSpawnWeightList": [
+      {
+        "WishType": "HotSpringGameWishType_Tea",
+        "Weight": 70
+      },
+      {
+        "WishType": "HotSpringGameWishType_Towel",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_ZaoDou",
+        "Weight": 100
+      },
+      {
+        "WishType": "HotSpringGameWishType_Flower",
+        "Weight": 100
+      }
+    ],
+    "WishCompleteScore": 100,
+    "WishCountOnStart": 4,
+    "WishSpawnCDMillSeconds": 3000,
+    "EnableLikebilityGet": true,
+    "LikebilityGetValueOnWishComplete": 50,
+    "LikebilityBubbleDurationMillSeconds": 5000,
+    "EnableCombo": true,
+    "EnableSpaTime": true,
+    "EnableTeaWish": true,
+    "LikeBubbleSpawnProbabilityPerSecondPerActor": 300,
+    "LikeBubbleGuaranteedDrawCount": 4,
+    "MaxTeaWishCountSameTime": 2
+  }
+]

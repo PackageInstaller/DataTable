@@ -1,0 +1,5602 @@
+[
+  {
+    "ID": 239340,
+    "Value": "触发再行动后，使<color=#F01212>2</color>格范围内敌方「有害状态」持续时间+<color=#F01212>1</color>，等级提升<color=#F01212>1</color>级。"
+  },
+  {
+    "ID": 239341,
+    "Value": "触发再行动后，使<color=#F01212>3</color>格范围内敌方「有害状态」持续时间+<color=#F01212>1</color>，等级提升<color=#F01212>1</color>级。"
+  },
+  {
+    "ID": 239342,
+    "Value": "行动结束时，获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239343,
+    "Value": "行动结束时，获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239344,
+    "Value": "行动结束时，获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239345,
+    "Value": "主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239346,
+    "Value": "主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239347,
+    "Value": "主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239348,
+    "Value": "自身携带大于等于<color=#F01212>4</color>个「有益状态」时，「先攻」「反击」伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239349,
+    "Value": "自身携带大于等于<color=#F01212>4</color>个「有益状态」时，「先攻」「反击」伤害提高<color=#F01212>20%</color>。"
+  },
+  {
+    "ID": 239350,
+    "Value": "免疫「无法反击」类状态。\n自身携带大于等于<color=#F01212>4</color>个「有益状态」时，「先攻」「反击」伤害提高<color=#F01212>30%</color>。"
+  },
+  {
+    "ID": 239351,
+    "Value": "目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>1</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态。"
+  },
+  {
+    "ID": 239352,
+    "Value": "目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>2</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态。"
+  },
+  {
+    "ID": 239353,
+    "Value": "目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>3</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态。"
+  },
+  {
+    "ID": 239354,
+    "Value": "「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层「远目」。"
+  },
+  {
+    "ID": 239355,
+    "Value": "「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层「远目」。"
+  },
+  {
+    "ID": 239356,
+    "Value": "「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层「远目」。"
+  },
+  {
+    "ID": 239357,
+    "Value": "行动结束前，自身每有<color=#F01212>3</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239358,
+    "Value": "行动结束前，自身每有<color=#F01212>2</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239359,
+    "Value": "行动结束前，自身每有<color=#F01212>1</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239360,
+    "Value": "若「对战中」本次攻击造成了「伤害溢出」，将溢出伤害量的<color=#F01212>200%</color>施加给其1圈内所有敌方（总伤害量不超过目标最大气血的<color=#F01212>100%</color>）。"
+  },
+  {
+    "ID": 239361,
+    "Value": "触发再行动时获得<color=#F01212>1</color>层<link type=buff value=763156876 bgcolor=#3a85ffff>「蓄力一击」</link>状态。"
+  },
+  {
+    "ID": 239362,
+    "Value": "使用绝学若命中<color=#F01212>3</color>个及以上角色重置自身所有绝学冷却时间，命中<color=#F01212>6</color>个及以上获得再行动（每回合最多触发<color=#F01212>1</color>次）。"
+  },
+  {
+    "ID": 239363,
+    "Value": "遭受攻击「对战后」对<color=#F01212>3</color>格内所有敌人造成<color=#F01212>1</color>次「固定伤害」（物防+法防）<color=#F01212>100%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239364,
+    "Value": "受到过量治疗后自身所有「有益状态」提升<color=#F01212>1</color>级。携带至少<color=#F01212>7</color>个「有益状态」时，自身除气血外全属性提升<color=#F01212>30%</color>。"
+  },
+  {
+    "ID": 239365,
+    "Value": "遭受攻击受到伤害后，自身所有「有害状态」持续时间-<color=#F01212>1</color>。「对战前」若敌方携带大于<color=#F01212>7</color>个「有害状态」，其除气血外全属性降低<color=#F01212>20%</color>。"
+  },
+  {
+    "ID": 239366,
+    "Value": "主动攻击「对战前」获得<color=#F01212>2</color>个随机「属性提升」类状态。 主动攻击「对战中」与目标距离每增加<color=#F01212>1</color>格伤害提高5%（最高<color=#F01212>50%</color>)。"
+  },
+  {
+    "ID": 239367,
+    "Value": "主动位移后对穿过的敌方施加<color=#F01212>2</color>个随机「属性降低」类状态，并对其<color=#F01212>2</color>格范围内的敌方造成自身（物攻+法攻）<color=#F01212>50%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239368,
+    "Value": "下个敌方回合开始时我方角色可以再次行动。"
+  },
+  {
+    "ID": 239369,
+    "Value": "全员立刻获得「失魂」状态，持续1回合，每击败一个敌方角色获得额外经验。"
+  },
+  {
+    "ID": 239370,
+    "Value": "钱袋"
+  },
+  {
+    "ID": 239371,
+    "Value": "火堆"
+  },
+  {
+    "ID": 239372,
+    "Value": "神秘魂火"
+  },
+  {
+    "ID": 239373,
+    "Value": "敌人进入相邻范围或在相邻区域行动结束时，立刻受到「固定伤害」（最大气血的20%）并获得「跛脚I」状态，持续2回合；若目标已携带了「跛脚I」，则升级为「跛脚II」，持续2回合。"
+  },
+  {
+    "ID": 239374,
+    "Value": "拾取后获得500经验。"
+  },
+  {
+    "ID": 239375,
+    "Value": "完全燃烧的火堆，无法通过。"
+  },
+  {
+    "ID": 239376,
+    "Value": "万事具备，只欠东风。合适的时机下，可引雷攻击场地中心的敌人。"
+  },
+  {
+    "ID": 239377,
+    "Value": "似被「蛊」借血锁之咒将其束缚，无法动弹"
+  },
+  {
+    "ID": 239378,
+    "Value": "似因强行驱动体内魔蛊而遭反噬，陷入昏迷"
+  },
+  {
+    "ID": 239379,
+    "Value": "无法真正触及，触之即散，放之即聚……"
+  },
+  {
+    "ID": 239380,
+    "Value": "获得一个特殊的秘宝"
+  },
+  {
+    "ID": 239381,
+    "Value": "秘宝匣"
+  },
+  {
+    "ID": 239382,
+    "Value": "队伍位阶到达「10级」且通过长枪映月关卡:「飘渺人影」后开启"
+  },
+  {
+    "ID": 239383,
+    "Value": "「往世兵戈」"
+  },
+  {
+    "ID": 239384,
+    "Value": "玩法内包含3个普通关卡及无尽模式\n1.　在往世兵戈关卡中，敌方目标分波次出现，少侠击杀目标可获取经验并提升探索等级，每次提升探索等级可获得从3件玄兵、遗藏中抽取1件提升战力\n2.　抽取相同的玄兵、遗藏可以提升位阶，当任意1件玄兵及1件遗藏达到三阶时，会在可抽取秘宝中解锁对应的高阶玄兵，少侠可以通过持有秘宝界面的秘宝一览查看解锁关系\n3.　普通关卡中少侠需要击杀全部波次的怪物，在无尽模式中少侠需要在回合耗尽或所有英灵倒下前击杀尽可能多的目标以获得高分\n4.　排行榜中会记录在无尽模式中获得高分的少侠，无额外奖励"
+  },
+  {
+    "ID": 239385,
+    "Value": "【幽篁残魂】"
+  },
+  {
+    "ID": 239386,
+    "Value": "【魔衍傀蛊】"
+  },
+  {
+    "ID": 239387,
+    "Value": "【魔之源】"
+  },
+  {
+    "ID": 239388,
+    "Value": "气血低于<b><color=#e4462c>50%</color></b>后转为「魔形态」。"
+  },
+  {
+    "ID": 239389,
+    "Value": "行动开始前召唤「魔之源」，护盾存在时减免大部分伤害，利用多段伤害可快速破盾。"
+  },
+  {
+    "ID": 239390,
+    "Value": "朝向「幽篁残魂」移动并寄生，为其提供特殊能力，尽量优先击杀。"
+  },
+  {
+    "ID": 239391,
+    "Value": "与「冰璃」共携羁绊"
+  },
+  {
+    "ID": 239392,
+    "Value": "「天赋」范围内敌方人数大于等于我方即可获得再行动"
+  },
+  {
+    "ID": 239393,
+    "Value": "利用「天赋」和「长坂冲阵」快速解救女娃"
+  },
+  {
+    "ID": 239394,
+    "Value": "与「殷无邪」共携羁绊"
+  },
+  {
+    "ID": 239395,
+    "Value": "与「剑魂·天尊」共携羁绊"
+  },
+  {
+    "ID": 239396,
+    "Value": "3格距离内存在「冰璃」则获得羁绊"
+  },
+  {
+    "ID": 239397,
+    "Value": "「单骑破军」战前移动可增加击退目标的距离"
+  },
+  {
+    "ID": 239398,
+    "Value": "利用「单骑破军」击退敌军"
+  },
+  {
+    "ID": 239399,
+    "Value": "3格距离内存在「殷无邪」则获得羁绊"
+  },
+  {
+    "ID": 239400,
+    "Value": "3格距离内存在「剑魂·天尊」则获得羁绊"
+  },
+  {
+    "ID": 239401,
+    "Value": "羁绊：主动攻击造成伤害后，在目标2格范围制造「真炎」。"
+  },
+  {
+    "ID": 239402,
+    "Value": "「虎威」使用绝学制造地形，在对应地形上移动不消耗移动力"
+  },
+  {
+    "ID": 239403,
+    "Value": "利用「神兵」提升射程，获得先攻"
+  },
+  {
+    "ID": 239404,
+    "Value": "羁绊：对全场敌方施加「压制」"
+  },
+  {
+    "ID": 239405,
+    "Value": "羁绊：在自身周围2格张开领域「剑绝霜狱」"
+  },
+  {
+    "ID": 239406,
+    "Value": "赛季排行"
+  },
+  {
+    "ID": 239407,
+    "Value": "此世彼世"
+  },
+  {
+    "ID": 239408,
+    "Value": "梦生异谈"
+  },
+  {
+    "ID": 239409,
+    "Value": "头像框·雷纹断羽"
+  },
+  {
+    "ID": 239410,
+    "Value": "头像框·五雷悬庭"
+  },
+  {
+    "ID": 239411,
+    "Value": "头像框·霆翅役风"
+  },
+  {
+    "ID": 239412,
+    "Value": "头像框·七进七出"
+  },
+  {
+    "ID": 239413,
+    "Value": "头像框·往世兵戈"
+  },
+  {
+    "ID": 239414,
+    "Value": "头像框·小荷尖尖"
+  },
+  {
+    "ID": 239415,
+    "Value": "名牌·龙胆神威"
+  },
+  {
+    "ID": 239416,
+    "Value": "飞景剑"
+  },
+  {
+    "ID": 239417,
+    "Value": "坠星杖"
+  },
+  {
+    "ID": 239418,
+    "Value": "琼蕊溯朝壶"
+  },
+  {
+    "ID": 239419,
+    "Value": "七戒鞭"
+  },
+  {
+    "ID": 239420,
+    "Value": "荆和璧"
+  },
+  {
+    "ID": 239421,
+    "Value": "翠卧龙"
+  },
+  {
+    "ID": 239422,
+    "Value": "猇亭镯"
+  },
+  {
+    "ID": 239423,
+    "Value": "银羁白马钏"
+  },
+  {
+    "ID": 239424,
+    "Value": "流彩剑"
+  },
+  {
+    "ID": 239425,
+    "Value": "九石弩"
+  },
+  {
+    "ID": 239426,
+    "Value": "鹤唳弓"
+  },
+  {
+    "ID": 239427,
+    "Value": "太初剑"
+  },
+  {
+    "ID": 239428,
+    "Value": "东风扇"
+  },
+  {
+    "ID": 239429,
+    "Value": "文和乱武杖"
+  },
+  {
+    "ID": 239430,
+    "Value": "三官祭酒杖"
+  },
+  {
+    "ID": 239431,
+    "Value": "游龙绫"
+  },
+  {
+    "ID": 239432,
+    "Value": "五谋杖"
+  },
+  {
+    "ID": 239433,
+    "Value": "天公符"
+  },
+  {
+    "ID": 239434,
+    "Value": "元龙弄潮竿"
+  },
+  {
+    "ID": 239435,
+    "Value": "诸葛氏集"
+  },
+  {
+    "ID": 239436,
+    "Value": "黄天泰平珠"
+  },
+  {
+    "ID": 239437,
+    "Value": "空城曲"
+  },
+  {
+    "ID": 239438,
+    "Value": "剑阁钩锁"
+  },
+  {
+    "ID": 239439,
+    "Value": "持麾爪"
+  },
+  {
+    "ID": 239440,
+    "Value": "龙城钩膺"
+  },
+  {
+    "ID": 239441,
+    "Value": "兰陵入阵"
+  },
+  {
+    "ID": 239442,
+    "Value": "连营照焰"
+  },
+  {
+    "ID": 239443,
+    "Value": "淮阴平楚"
+  },
+  {
+    "ID": 239444,
+    "Value": "舍利沐莲"
+  },
+  {
+    "ID": 239445,
+    "Value": "威震逍遥"
+  },
+  {
+    "ID": 239446,
+    "Value": "故蜀鱼水"
+  },
+  {
+    "ID": 239447,
+    "Value": "破阵单骑"
+  },
+  {
+    "ID": 239448,
+    "Value": "迅时齿轮"
+  },
+  {
+    "ID": 239449,
+    "Value": "经纬辕轴"
+  },
+  {
+    "ID": 239450,
+    "Value": "背水之谏"
+  },
+  {
+    "ID": 239451,
+    "Value": "引魂华酌"
+  },
+  {
+    "ID": 239452,
+    "Value": "雩祭令"
+  },
+  {
+    "ID": 239453,
+    "Value": "司南仪"
+  },
+  {
+    "ID": 239454,
+    "Value": "龙胆无双"
+  },
+  {
+    "ID": 239455,
+    "Value": "不负山河"
+  },
+  {
+    "ID": 239456,
+    "Value": "天玄正朔"
+  },
+  {
+    "ID": 239457,
+    "Value": "血染征袍"
+  },
+  {
+    "ID": 239458,
+    "Value": "两枚同魂：物攻+5%\n三枚同魂：伤害提升10%，主动攻击「对战中」免伤提升10%\n炼魂每阶增加气血和物攻\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239459,
+    "Value": "两枚同魂：物攻+5%\n三枚同魂：伤害提升10%，主动攻击「对战中」免伤提升10%\n炼魂每阶增加物防和法防\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239460,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提高8%，主动攻击「对战中」伤害提升10%。\n炼魂每阶增加气血和法攻\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239461,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提高8%，主动攻击「对战中」伤害提升10%。\n炼魂每阶增加物防和法防\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239462,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提升10%，使用范围绝学时伤害额外提高5%\n炼魂每阶增加气血和法攻\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239463,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提升10%，使用范围绝学时伤害额外提高5%\n炼魂每阶增加物防和法防\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239464,
+    "Value": "两枚同魂：物防，法防+5%\n三枚同魂：免伤提升10%\n炼魂每阶增加气血和物攻\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239465,
+    "Value": "两枚同魂：物防，法防+5%\n三枚同魂：免伤提升10%\n炼魂每阶增加物防和法防\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239466,
+    "Value": "两枚同魂：气血+10%\n三枚同魂：获得额外护卫范围时提高2格内友方物防、法防10%，直到额外护卫范围消失\n炼魂每阶增加气血和物攻\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239467,
+    "Value": "两枚同魂：气血+10%\n三枚同魂：获得额外护卫范围时提高2格内友方物防、法防10%，直到额外护卫范围消失\n炼魂每阶增加物防和法防\n每5阶可从固定属性中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 239468,
+    "Value": "打开后可以获得赵云系列物品，内含：\n时装·当阳争锋\n击杀特效·血染征袍\n名牌·龙胆神威\n幻月盈魂礼（可任选幻月散20个或浣魂露30个或焕新·类型自选魂匣40个）"
+  },
+  {
+    "ID": 239469,
+    "Value": "“雷纹断羽”，可在头像框界面中进行更换"
+  },
+  {
+    "ID": 239470,
+    "Value": "“五雷悬庭”，可在头像框界面中进行更换"
+  },
+  {
+    "ID": 239471,
+    "Value": "“霆翅役风”，可在头像框界面中进行更换"
+  },
+  {
+    "ID": 239472,
+    "Value": "“七进七出”，可在头像框界面中进行更换"
+  },
+  {
+    "ID": 239473,
+    "Value": "“往世兵戈”，可在头像框界面中进行更换"
+  },
+  {
+    "ID": 239474,
+    "Value": "“小荷尖尖”，可在头像框界面中进行更换"
+  },
+  {
+    "ID": 239475,
+    "Value": "物攻、法攻提升<color=#F01212>10%</color>。主动使用单体伤害绝学攻击后，立刻造成<color=#F01212>1</color>次自身（物攻+法攻）<color=#F01212>30%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239476,
+    "Value": "物攻、法攻提升<color=#F01212>20%</color>。主动使用单体伤害绝学攻击后，立刻造成<color=#F01212>1</color>次自身（物攻+法攻）<color=#F01212>40%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239477,
+    "Value": "物攻、法攻提升<color=#F01212>30%</color>。主动使用单体伤害绝学攻击后，立刻造成<color=#F01212>1</color>次自身（物攻+法攻）<color=#F01212>50%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239478,
+    "Value": "暴击率提升<color=#F01212>15%</color>。主动使用范围伤害绝学造成伤害后，立刻造成<color=#F01212>1</color>次「固定伤害」（目标已损失气血的30%）。"
+  },
+  {
+    "ID": 239479,
+    "Value": "暴击率提升<color=#F01212>35%</color>。主动使用范围伤害绝学造成伤害后，立刻造成<color=#F01212>1</color>次「固定伤害」（目标已损失气血的40%）。"
+  },
+  {
+    "ID": 239480,
+    "Value": "暴击率提升<color=#F01212>60%</color>。主动使用范围伤害绝学造成伤害后，立刻造成<color=#F01212>1</color>次「固定伤害」（目标已损失气血的50%）。"
+  },
+  {
+    "ID": 239481,
+    "Value": "物防、法防提升<color=#F01212>10%</color>。遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>40%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239482,
+    "Value": "物防、法防提升<color=#F01212>20%</color>。遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>60%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239483,
+    "Value": "物防、法防提升<color=#F01212>40%</color>。遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>80%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239484,
+    "Value": "法攻、法防提升<color=#F01212>10%</color>。行动结束后，自身获得<color=#F01212>2</color>个随机「有益状态」，若携带至少<color=#F01212>5</color>个「有益状态」，额外恢复自身<color=#F01212>30%</color>最大气血"
+  },
+  {
+    "ID": 239485,
+    "Value": "物理穿透、法术穿透提升<color=#F01212>10%</color>，射程+<color=#F01212>1</color>。\n自身周围2格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239486,
+    "Value": "物理穿透、法术穿透提升<color=#F01212>20%</color>，射程+<color=#F01212>2</color>。\n自身周围2格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239487,
+    "Value": "物理穿透、法术穿透提升<color=#F01212>40%</color>，射程+<color=#F01212>2</color>。\n自身周围1格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239488,
+    "Value": "暴击率提升<color=#F01212>15%</color>，移动力+<color=#F01212>1</color>。\n主动攻击前每移动1格，暴击伤害提升<color=#F01212>3%</color>（最高提升<color=#F01212>18%</color>）。"
+  },
+  {
+    "ID": 239489,
+    "Value": "暴击率提升<color=#F01212>35%</color>，移动力+<color=#F01212>2</color>。\n主动攻击前每移动1格，暴击伤害提升<color=#F01212>4%</color>（最高提升<color=#F01212>24%</color>）。"
+  },
+  {
+    "ID": 239490,
+    "Value": "暴击率提升<color=#F01212>60%</color>，移动力+<color=#F01212>2</color>。\n主动攻击前每移动1格，暴击伤害提升<color=#F01212>5%</color>（最高提升<color=#F01212>30%</color>）。"
+  },
+  {
+    "ID": 239491,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n主动攻击「对战中」，自身每携带<color=#F01212>1</color>个「有益状态」，单体绝学伤害提高<color=#F01212>3%</color>（最多提高<color=#F01212>18%</color>）。"
+  },
+  {
+    "ID": 239492,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n主动攻击「对战中」，自身每携带<color=#F01212>1</color>个「有益状态」，单体绝学伤害提高<color=#F01212>4%</color>（最多提高<color=#F01212>24%</color>）。"
+  },
+  {
+    "ID": 239493,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n主动攻击「对战中」，自身每携带<color=#F01212>1</color>个「有益状态」，单体绝学伤害提高<color=#F01212>5%</color>（最多提高<color=#F01212>30%</color>）。"
+  },
+  {
+    "ID": 239494,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n主动攻击「对战中」，目标每携带<color=#F01212>1</color>个「有害状态」，自身物攻、法攻提高<color=#F01212>3%</color>（最多提高<color=#F01212>18%</color>）。"
+  },
+  {
+    "ID": 239495,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n主动攻击「对战中」，目标每携带<color=#F01212>1</color>个「有害状态」，自身物攻、法攻提高<color=#F01212>4%</color>（最多提高<color=#F01212>24%</color>）。"
+  },
+  {
+    "ID": 239496,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n主动攻击「对战中」，目标每携带<color=#F01212>1</color>个「有害状态」，自身物攻、法攻提高<color=#F01212>5%</color>（最多提高<color=#F01212>30%</color>）。"
+  },
+  {
+    "ID": 239497,
+    "Value": "全属性提升<color=#F01212>10%</color>，单体绝学射程+<color=#F01212>1</color>。\n主动攻击「对战中」，与目标距离每增加<color=#F01212>1</color>格，物理、法术穿透提升<color=#F01212>3%</color>。"
+  },
+  {
+    "ID": 239498,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n累计主动移动<color=#F01212>10</color>格后，获得<color=#F01212>1</color>层<link type=buff value=763200090 bgcolor=#3a85ffff>「专注一击」</link>状态。"
+  },
+  {
+    "ID": 239499,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n累计主动移动<color=#F01212>10</color>格后，获得<color=#F01212>2</color>层<link type=buff value=763200090 bgcolor=#3a85ffff>「专注一击」</link>状态。"
+  },
+  {
+    "ID": 239500,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n累计主动移动10格后，获得<color=#F01212>3</color>层<link type=buff value=763200090 bgcolor=#3a85ffff>「专注一击」</link>状态。"
+  },
+  {
+    "ID": 239501,
+    "Value": "全属性提升<color=#F01212>10%</color>，范围伤害提高<color=#F01212>10%</color>。\n使用范围伤害绝学前，为目标施加<color=#F01212>1</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239502,
+    "Value": "全属性提升<color=#F01212>20%</color>，范围伤害提高<color=#F01212>15%</color>。\n使用范围伤害绝学前，为目标施加<color=#F01212>2</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239503,
+    "Value": "全属性提升<color=#F01212>30%</color>，范围伤害提高<color=#F01212>20%</color>。\n使用范围伤害绝学前，为目标施加<color=#F01212>3</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239504,
+    "Value": "全属性提升<color=#F01212>10%</color>，范围绝学范围提升<color=#F01212>1</color>。\n技能范围内每多<color=#F01212>1</color>个敌方，物理、法术穿透提高<color=#F01212>3%</color>（最多提高<color=#F01212>18%</color>）。"
+  },
+  {
+    "ID": 239505,
+    "Value": "全属性提升<color=#F01212>20%</color>，范围绝学范围提升<color=#F01212>1</color>。\n技能范围内每多<color=#F01212>1</color>个敌方，物理、法术穿透提高<color=#F01212>4%</color>（最多提高<color=#F01212>24%</color>）。"
+  },
+  {
+    "ID": 239506,
+    "Value": "全属性提升<color=#F01212>30%</color>，范围绝学范围提升<color=#F01212>1</color>。\n技能范围内每多<color=#F01212>1</color>个敌方，物理、法术穿透提高<color=#F01212>5%</color>（最多提高<color=#F01212>30%</color>）。"
+  },
+  {
+    "ID": 239507,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n使用范围绝学时暴击率提高<color=#F01212>30%</color>，若自身移动力大于<color=#F01212>3</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>6</color>）。"
+  },
+  {
+    "ID": 239508,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n使用范围绝学时暴击率提高<color=#F01212>50%</color>，若自身移动力大于<color=#F01212>2</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>6</color>）。"
+  },
+  {
+    "ID": 239509,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n使用范围绝学时暴击率提高<color=#F01212>80%</color>，若自身移动力大于<color=#F01212>1</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>6</color>）。"
+  },
+  {
+    "ID": 239510,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n触发再行动后，对<color=#F01212>2</color>格范围内其他友方施加<color=#F01212>1</color>个随机「有益状态」。"
+  },
+  {
+    "ID": 239511,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n触发再行动后，对<color=#F01212>2</color>格范围内其他友方施加<color=#F01212>1</color>个随机「有益状态」，本次行动「有益状态」持续时间不减少。"
+  },
+  {
+    "ID": 239512,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n触发再行动后，对<color=#F01212>3</color>格范围内其他友方施加<color=#F01212>1</color>个随机「有益状态」，本次行动「有益状态」持续时间不减少。"
+  },
+  {
+    "ID": 239513,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n触发再行动后，使<color=#F01212>2</color>格范围内敌方「有害状态」持续时间+<color=#F01212>1</color>。"
+  },
+  {
+    "ID": 239514,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n触发再行动后，使<color=#F01212>2</color>格范围内敌方「有害状态」持续时间+<color=#F01212>1</color>，等级提升<color=#F01212>1</color>级。"
+  },
+  {
+    "ID": 239515,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n触发再行动后，使<color=#F01212>3</color>格范围内敌方「有害状态」持续时间+<color=#F01212>1</color>，等级提升<color=#F01212>1</color>级。"
+  },
+  {
+    "ID": 239516,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n行动结束时，获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239517,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n行动结束时，获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239518,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n行动结束时，获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239519,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239520,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239521,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239522,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n自身携带大于等于<color=#F01212>4</color>个「有益状态」时，「先攻」「反击」伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239523,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n自身携带大于等于<color=#F01212>4</color>个「有益状态」时，「先攻」「反击」伤害提高<color=#F01212>20%</color>。"
+  },
+  {
+    "ID": 239524,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n免疫「无法反击」类状态。\n自身携带大于等于<color=#F01212>4</color>个「有益状态」时，「先攻」「反击」伤害提高<color=#F01212>30%</color>。"
+  },
+  {
+    "ID": 239525,
+    "Value": "全属性提升<color=#F01212>10%</color>。目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>1</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态。"
+  },
+  {
+    "ID": 239526,
+    "Value": "全属性提升<color=#F01212>20%</color>。目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>2</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态。"
+  },
+  {
+    "ID": 239527,
+    "Value": "全属性提升<color=#F01212>30%</color>。目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>3</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态。"
+  },
+  {
+    "ID": 239528,
+    "Value": "全属性提升<color=#F01212>10%</color>。「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层「远目」。"
+  },
+  {
+    "ID": 239529,
+    "Value": "全属性提升<color=#F01212>20%</color>。「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层「远目」。"
+  },
+  {
+    "ID": 239530,
+    "Value": "全属性提升<color=#F01212>30%</color>。「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层「远目」。"
+  },
+  {
+    "ID": 239531,
+    "Value": "全属性提升<color=#F01212>10%</color>。行动结束前，自身每有<color=#F01212>3</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239532,
+    "Value": "全属性提升<color=#F01212>20%</color>。行动结束前，自身每有<color=#F01212>2</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239533,
+    "Value": "全属性提升<color=#F01212>30%</color>。行动结束前，自身每有<color=#F01212>1</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239534,
+    "Value": "仅限『长枪映月』活动，用于在『梦境小铺』中兑换活动奖励。\n——旧尘不掩建安芒，曾斩千军如断云。昔照魏王盔上雪，今映常山甲外云。"
+  },
+  {
+    "ID": 239535,
+    "Value": "获得后，可解锁击杀特效「天玄正朔」"
+  },
+  {
+    "ID": 239536,
+    "Value": "获得后，可解锁赵云专属击杀特效「血染征袍」"
+  },
+  {
+    "ID": 239537,
+    "Value": "头像框·五雷悬庭-512强"
+  },
+  {
+    "ID": 239538,
+    "Value": "头像框·五雷悬庭-256强"
+  },
+  {
+    "ID": 239539,
+    "Value": "头像框·五雷悬庭-128强"
+  },
+  {
+    "ID": 239540,
+    "Value": "头像框·五雷悬庭-64强"
+  },
+  {
+    "ID": 239541,
+    "Value": "头像框·五雷悬庭-32强"
+  },
+  {
+    "ID": 239542,
+    "Value": "头像框·霆翅役风-16强"
+  },
+  {
+    "ID": 239543,
+    "Value": "头像框·霆翅役风-8强"
+  },
+  {
+    "ID": 239544,
+    "Value": "头像框·霆翅役风-季军"
+  },
+  {
+    "ID": 239545,
+    "Value": "头像框·霆翅役风-亚军"
+  },
+  {
+    "ID": 239546,
+    "Value": "头像框·霆翅役风-冠军"
+  },
+  {
+    "ID": 239547,
+    "Value": "“逐鹿争锋”赛季十六活动获得"
+  },
+  {
+    "ID": 239548,
+    "Value": "“往世兵戈”活动获得"
+  },
+  {
+    "ID": 239549,
+    "Value": "名牌·赵云（OB56）"
+  },
+  {
+    "ID": 239550,
+    "Value": "秘藏百鉴·壹"
+  },
+  {
+    "ID": 239551,
+    "Value": "秘藏百鉴·贰"
+  },
+  {
+    "ID": 239552,
+    "Value": "秘藏百鉴·叁"
+  },
+  {
+    "ID": 239553,
+    "Value": "秘藏百鉴·肆"
+  },
+  {
+    "ID": 239554,
+    "Value": "故土破枉·壹"
+  },
+  {
+    "ID": 239555,
+    "Value": "故土破枉·贰"
+  },
+  {
+    "ID": 239556,
+    "Value": "故土破枉·叁"
+  },
+  {
+    "ID": 239557,
+    "Value": "故土破枉·肆"
+  },
+  {
+    "ID": 239558,
+    "Value": "完成关卡 往世兵戈·壹"
+  },
+  {
+    "ID": 239559,
+    "Value": "完成关卡 往世兵戈·贰"
+  },
+  {
+    "ID": 239560,
+    "Value": "完成关卡 往世兵戈·叁"
+  },
+  {
+    "ID": 239561,
+    "Value": "累计获得10次秘藏"
+  },
+  {
+    "ID": 239562,
+    "Value": "累计获得20次秘藏"
+  },
+  {
+    "ID": 239563,
+    "Value": "累计获得30次秘藏"
+  },
+  {
+    "ID": 239564,
+    "Value": "累计获得40次秘藏"
+  },
+  {
+    "ID": 239565,
+    "Value": "累计提升5次探索等级"
+  },
+  {
+    "ID": 239566,
+    "Value": "累计提升15次探索等级"
+  },
+  {
+    "ID": 239567,
+    "Value": "累计提升25次探索等级"
+  },
+  {
+    "ID": 239568,
+    "Value": "累计提升35次探索等级"
+  },
+  {
+    "ID": 239569,
+    "Value": "使用绝学-银枪挑月9次"
+  },
+  {
+    "ID": 239570,
+    "Value": "使用绝学-潜雷掠影9次"
+  },
+  {
+    "ID": 239571,
+    "Value": "长枪映月banner"
+  },
+  {
+    "ID": 239572,
+    "Value": "自身<b><color=#e4462c>3</color></b>内存在其他雷属相单位时，伤害、物理免伤提高<b><color=#e4462c>5%</color></b>。获得「离魂」状态时，若自身已行动结束则额外获得再激活。"
+  },
+  {
+    "ID": 239573,
+    "Value": "自身<b><color=#e4462c>3</color></b>内存在其他雷属相单位时，伤害、物理免伤提高<b><color=#e4462c>6%</color></b>。获得「离魂」状态时，若自身已行动结束则额外获得再激活。"
+  },
+  {
+    "ID": 239574,
+    "Value": "自身<b><color=#e4462c>3</color></b>内存在其他雷属相单位时，伤害、物理免伤提高<b><color=#e4462c>7%</color></b>。获得「离魂」状态时，若自身已行动结束则额外获得再激活。"
+  },
+  {
+    "ID": 239575,
+    "Value": "自身<b><color=#e4462c>3</color></b>内存在其他雷属相单位时，伤害、物理免伤提高<b><color=#e4462c>8%</color></b>。获得「离魂」状态时，若自身已行动结束则额外获得再激活。"
+  },
+  {
+    "ID": 239576,
+    "Value": "自身<b><color=#e4462c>3</color></b>内存在其他雷属相单位时，伤害、物理免伤提高<b><color=#e4462c>10%</color></b>。获得「离魂」状态时，若自身已行动结束则额外获得再激活。"
+  },
+  {
+    "ID": 239577,
+    "Value": "#$神光剑"
+  },
+  {
+    "ID": 239578,
+    "Value": "#$钱袋"
+  },
+  {
+    "ID": 239579,
+    "Value": "#$地上火焰"
+  },
+  {
+    "ID": 239580,
+    "Value": "玄冥教祭使"
+  },
+  {
+    "ID": 239581,
+    "Value": "糜夫人·魂"
+  },
+  {
+    "ID": 239582,
+    "Value": "子龙/虎威/常山/龙胆"
+  },
+  {
+    "ID": 239583,
+    "Value": "龙胆涯角"
+  },
+  {
+    "ID": 239584,
+    "Value": "青云玉霄"
+  },
+  {
+    "ID": 239585,
+    "Value": "载：等待一朝头角就，摇撼霹雳震山河。\n传：禹王缚龙于渊，然锁其身易，锁其魂难，故铸长兵，囚龙魂于其中。银刃寒芒若现，如龙凝，持之入阵而敌马惊，海角天涯无对。此器非勇者不可驭，盖龙魂刚烈难驯。\n言：胆照千秋月，龙啸万古渊。"
+  },
+  {
+    "ID": 239586,
+    "Value": "载：命遭彗孛之临，身为魔魅之扰，皆雷霆之政实临之。\n传：昔暴君无道，天怒，降北斗破军星击而杀之，雷光赫赫，宫阙尽焚。少时火息，见一晶石没地，荧荧然，色如玉，后辗转为上官氏义人所藏，以锄奸伏魔。今有匠人嵌晶于剑，霍闪萦锋，似流萤舞空，神光所照，群秽尽溃。\n言：霆霓掠青云，丹心向玉霄。"
+  },
+  {
+    "ID": 239587,
+    "Value": "剑影削光"
+  },
+  {
+    "ID": 239588,
+    "Value": "影射剑光"
+  },
+  {
+    "ID": 239589,
+    "Value": "剑潮·上"
+  },
+  {
+    "ID": 239590,
+    "Value": "剑潮·左"
+  },
+  {
+    "ID": 239591,
+    "Value": "剑潮·下"
+  },
+  {
+    "ID": 239592,
+    "Value": "拾取后获得经验值"
+  },
+  {
+    "ID": 239593,
+    "Value": "主动使用，驱散范围内所有友方身上<b><color=#e4462c>2</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），自身获得<link type=buff value=741049110 bgcolor=#3a85ffff>「微澜·涌」</link><link type=buff value=700001331 bgcolor=#3a85ffff>「芬芳I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。"
+  },
+  {
+    "ID": 239594,
+    "Value": "主动使用，驱散范围内所有友方身上<b><color=#e4462c>2</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），自身获得<link type=buff value=741049110 bgcolor=#3a85ffff>「微澜·涌」</link><link type=buff value=700001331 bgcolor=#3a85ffff>「芬芳I」</link><link type=buff value=751345052 bgcolor=#3a85ffff>「辟护」</link>状态，持续<b><color=#e4462c>3</color></b>回合。"
+  },
+  {
+    "ID": 239595,
+    "Value": "主动使用，恢复单个角色气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），驱散<b><color=#e4462c>2</color></b>个「有害状态」，施加<link type=buff value=700001011 bgcolor=#3a85ffff>「神睿I」</link><link type=buff value=700000651 bgcolor=#3a85ffff>「冰清」</link><link type=buff value=751344143 bgcolor=#3a85ffff>「辟眩」</link>状态，持续<b><color=#e4462c>2</color></b>回合，若造成「过量治疗」该绝学冷却时间<b><color=#e4462c>-1</color></b>。"
+  },
+  {
+    "ID": 239596,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内友方遭受范围攻击后，为其驱散<b><color=#e4462c>1</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并施加<link type=buff value=741049003 bgcolor=#3a85ffff>「清流」</link>状态。（每回合触发<b><color=#e4462c>1</color></b>次）\n[主动]主动使用，选择<b><color=#e4462c>1</color></b>个其他友方与其交换气血百分比，交换前反转目标和自身<b><color=#e4462c>5</color></b>个有害状态，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍）"
+  },
+  {
+    "ID": 239597,
+    "Value": "攻击单个敌方，造成<b><color=#e4462c>2</color></b>倍伤害，「对战前」夺取目标最多<b><color=#e4462c>2</color></b>个「有益状态」，若夺取数量达到上限则额外获得<b><color=#e4462c>2</color></b>层<link type=buff value=763157011 bgcolor=#3a85ffff>「残魂之力」</link>状态。"
+  },
+  {
+    "ID": 239598,
+    "Value": "攻击单个敌方，造成<b><color=#e4462c>1.5</color></b>倍伤害，若自身携带<link type=buff value=763157011 bgcolor=#3a85ffff>「残魂之力」</link>状态，则每<b><color=#e4462c>1</color></b>层<link type=buff value=763157011 bgcolor=#3a85ffff>「残魂之力」</link>状态使本次攻击的法术穿透提高<b><color=#e4462c>10%</color></b>（上限<b><color=#e4462c>30%</color></b>），若自身携带<link type=buff value=763157012 bgcolor=#3a85ffff>「残魂超载」</link>状态，则本次攻击的伤害提高<b><color=#e4462c>20%</color></b>。"
+  },
+  {
+    "ID": 239599,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，施加<link type=buff value=700000906 bgcolor=#3a85ffff>「无摧·乱神」</link>和<link type=buff value=763157055 bgcolor=#3a85ffff>「无摧·灭击」</link>状态，持续<b><color=#e4462c>2</color></b>回合，若本次攻击命中的目标不低于<b><color=#e4462c>3</color></b>个，则冷却回合数<b><color=#e4462c>-2</color></b>。"
+  },
+  {
+    "ID": 239600,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，并牵引至身边，张开「凶魂」领域；若本次攻击命中的目标不低于<b><color=#e4462c>3</color></b>个，则自身获得<link type=buff value=700002701 bgcolor=#3a85ffff>「魔铠」</link>状态。\n「凶魂」：领域内的敌方无法触发再移动或再行动且无法主动移动至领域外并无法获得气力，行动结束时，被施加<b><color=#e4462c>1</color></b>个「魔疫状态」"
+  },
+  {
+    "ID": 239601,
+    "Value": "[被动]召唤「分身」后，若自身携带<link type=buff value=741092300 bgcolor=#3a85ffff>「巧径」</link>或<link type=buff value=741092305 bgcolor=#3a85ffff>「叠澜」</link>或<link type=buff value=741092308 bgcolor=#3a85ffff>「流萤」</link>，「分身」也将获得对应状态。\n[主动]选择1个绝学进行释放。使用后切换为<link type=skill value=61109221 bgcolor=#3a85ffff>「飞花势」</link>或<link type=skill value=61109222 bgcolor=#3a85ffff>「叠浪式」</link>或<link type=skill value=61109223 bgcolor=#3a85ffff>「游萤势」</link>。"
+  },
+  {
+    "ID": 239602,
+    "Value": "自身及「分身」获得「巧径」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。\n「巧径」:主动攻击「对战后」若<b><color=#e4462c>3</color></b>格内存在敌方，基于最近的敌方目标<b><color=#e4462c>2</color></b>格范围进行<link type=buff value=741092702 bgcolor=#3a85ffff>「弹射」</link>造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.2</color></b>倍物攻伤害（最多弹射<b><color=#e4462c>2</color></b>次，「离魂」状态下变为<b><color=#e4462c>4</color></b>次）。"
+  },
+  {
+    "ID": 239603,
+    "Value": "自身及「分身」获得「叠澜」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。\n「叠澜」:主动攻击「对战后」对目标造成<b><color=#e4462c>1</color></b>次「固定伤害」（已损失气血的<b><color=#e4462c>20%</color></b>，「离魂」状态下变为<b><color=#e4462c>25%</color></b>）。"
+  },
+  {
+    "ID": 239604,
+    "Value": "[被动]召唤「分身」后，将自身全部「有益状态」复制给「分身」，若自身携带<link type=buff value=741092300 bgcolor=#3a85ffff>「巧径」</link>或<link type=buff value=741092305 bgcolor=#3a85ffff>「叠澜」</link>或<link type=buff value=741092308 bgcolor=#3a85ffff>「流萤」</link>，「分身」也将获得对应状态。\n[主动]选择1个绝学进行释放。使用后切换为<link type=skill value=61109221 bgcolor=#3a85ffff>「飞花势」</link>或<link type=skill value=61109222 bgcolor=#3a85ffff>「叠浪式」</link>或<link type=skill value=61109223 bgcolor=#3a85ffff>「游萤势」</link>。"
+  },
+  {
+    "ID": 239605,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（<b><color=#e4462c>1</color></b>倍物攻），获得「巧径」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。\n「巧径」:主动攻击「对战后」若<b><color=#e4462c>3</color></b>格内存在敌方，基于最近的敌方目标<b><color=#e4462c>2</color></b>格范围进行<link type=buff value=741092702 bgcolor=#3a85ffff>「弹射」</link>造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.2</color></b>倍物攻伤害（最多弹射<b><color=#e4462c>2</color></b>次，「离魂」状态下变为<b><color=#e4462c>4</color></b>次）。"
+  },
+  {
+    "ID": 239606,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（<b><color=#e4462c>1</color></b>倍物攻），获得「叠澜」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。\n「叠澜」:主动攻击「对战后」对目标造成<b><color=#e4462c>1</color></b>次「固定伤害」（已损失气血的<b><color=#e4462c>20%</color></b>，「离魂」状态下变为<b><color=#e4462c>25%</color></b>）。"
+  },
+  {
+    "ID": 239607,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（<b><color=#e4462c>1</color></b>倍物攻），获得「巧径」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。并获得再行动（<b><color=#e4462c>2</color></b>格）。\n「巧径」:主动攻击「对战后」若<b><color=#e4462c>3</color></b>格内存在敌方，基于最近的敌方目标<b><color=#e4462c>2</color></b>格范围进行<link type=buff value=741092702 bgcolor=#3a85ffff>「弹射」</link>造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.2</color></b>倍物攻伤害（最多弹射<b><color=#e4462c>2</color></b>次，「离魂」状态下变为<b><color=#e4462c>4</color></b>次）。"
+  },
+  {
+    "ID": 239608,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（<b><color=#e4462c>1</color></b>倍物攻），获得「叠澜」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。并获得再行动（<b><color=#e4462c>2</color></b>格）。\n「叠澜」:主动攻击「对战后」对目标造成<b><color=#e4462c>1</color></b>次「固定伤害」（已损失气血的<b><color=#e4462c>20%</color></b>，「离魂」状态下变为<b><color=#e4462c>25%</color></b>）。"
+  },
+  {
+    "ID": 239609,
+    "Value": "[被动]伤害提升<b><color=#e4462c>15%</color></b>。造成伤害后，对自身施加<b><color=#e4462c>1</color></b>个随机的「有益状态」\n[主动]攻击单个敌人，造成<b><color=#e4462c>1.6</color></b>倍物攻伤害，若目标携带护盾「对战中」伤害额外提高<b><color=#e4462c>300%</color></b>。"
+  },
+  {
+    "ID": 239610,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.8</color></b>倍伤害，施加<link type=buff value=700001321 bgcolor=#3a85ffff>「定身」</link>状态，持续<b><color=#e4462c>2</color></b>回合；\n若目标已处于友方「霜冻」地形上或携带「迟缓」类状态，则法术穿透提高<b><color=#e4462c>50%</color></b>且「对战后」额外施加<link type=buff value=741071023 bgcolor=#3a85ffff>「冰劫」</link>状态，持续<b><color=#e4462c>1</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累计<b><color=#e4462c>1</color></b>点气力，使用非伤害绝学累积<b><color=#e4462c>1</color></b>点气力，开启结界后累积<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239611,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.8</color></b>倍伤害，施加<link type=buff value=700001321 bgcolor=#3a85ffff>「定身」</link>状态，持续<b><color=#e4462c>2</color></b>回合；\n若目标已处于友方「霜冻」地形上或携带「迟缓」类状态，则法术穿透提高<b><color=#e4462c>50%</color></b>且「对战后」额外施加<link type=buff value=741071023 bgcolor=#3a85ffff>「冰劫」</link>状态，持续<b><color=#e4462c>1</color></b>回合。若造成击杀，则「结界」持续合数<b><color=#e4462c>+1</color></b>回合，若本次攻击未造成击杀，则该绝学冷却时间<b><color=#e4462c>-3</color></b>。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累计<b><color=#e4462c>1</color></b>点气力，使用非伤害绝学累积<b><color=#e4462c>1</color></b>点气力，开启结界后累积<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239612,
+    "Value": "主动使用，对<b><color=#e4462c>2</color></b>个友方施加<link type=buff value=741336312 bgcolor=#3a85ffff>「无摧·天禄印」</link>状态，持续<b><color=#e4462c>3</color></b>回合，自身获得再行动（<b><color=#e4462c>2</color></b>格）。"
+  },
+  {
+    "ID": 239613,
+    "Value": "主动使用，对<b><color=#e4462c>2</color></b>个友方施加<link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link><link type=buff value=710010370 bgcolor=#3a85ffff>「霜铠」</link><link type=buff value=741336312 bgcolor=#3a85ffff>「无摧·天禄印」</link>状态，持续<b><color=#e4462c>3</color></b>回合，自身获得再行动（<b><color=#e4462c>2</color></b>格）。"
+  },
+  {
+    "ID": 239614,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.5</color></b>倍伤害，「对战前」每移动<b><color=#e4462c>2</color></b>格，「对战后」击退目标<b><color=#e4462c>1</color></b>格（最多<b><color=#e4462c>3</color></b>格）并施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>（最多<b><color=#e4462c>3</color></b>层），如果击退路线被阻挡，则施加<link type=buff value=741060103 bgcolor=#3a85ffff>「断骨」</link>状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 239615,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.6</color></b>倍伤害，「对战前」每移动<b><color=#e4462c>2</color></b>格，「对战后」击退目标<b><color=#e4462c>1</color></b>格（最多<b><color=#e4462c>3</color></b>格）并施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>（最多<b><color=#e4462c>3</color></b>层），如果击退路线被阻挡，则施加<link type=buff value=741060103 bgcolor=#3a85ffff>「断骨」</link>状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 239616,
+    "Value": "[被动]若自身处于「无双」状态，主动攻击，目标无法发动「抵挡致命伤害」效果。\n[主动]攻击单个敌人，造成<b><color=#e4462c>1.6</color></b>倍伤害，「对战前」每移动<b><color=#e4462c>2</color></b>格，「对战后」击退目标<b><color=#e4462c>1</color></b>格（最多<b><color=#e4462c>3</color></b>格）并施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>（最多<b><color=#e4462c>3</color></b>层），如果击退路线被阻挡，则施加<link type=buff value=741060103 bgcolor=#3a85ffff>「断骨」</link>状态，持续<b><color=#e4462c>1</color></b>回合。若目标未成功被击退，则施加<link type=buff value=741400268 bgcolor=#3a85ffff>「滞之劫」</link>状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 239617,
+    "Value": "选择<b><color=#e4462c>1</color></b>格空格进行跳跃，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，绝学后转化目标<b><color=#e4462c>1</color></b>个「有益状态」为<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>，若有剩余的移动力，可继续移动。"
+  },
+  {
+    "ID": 239618,
+    "Value": "选择<b><color=#e4462c>1</color></b>格空格进行跳跃，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，施加<link type=buff value=700001411 bgcolor=#3a85ffff>「锢步」</link>状态，持续<b><color=#e4462c>2</color></b>回合，绝学后转化目标<b><color=#e4462c>2</color></b>个「有益状态」为<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>，若有剩余的移动力，可继续移动。"
+  },
+  {
+    "ID": 239619,
+    "Value": "选择<b><color=#e4462c>1</color></b>格空格进行跳跃，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，施加<link type=buff value=700001411 bgcolor=#3a85ffff>「锢步」</link>状态，持续<b><color=#e4462c>2</color></b>回合，击退十字<b><color=#e4462c>3</color></b>格范围敌人<b><color=#e4462c>1</color></b>格，绝学后转化目标<b><color=#e4462c>2</color></b>个「有益状态」为<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>，若有剩余的移动力，可继续移动。"
+  },
+  {
+    "ID": 239620,
+    "Value": "对范围内敌人造成<b><color=#e4462c>0.8</color></b>倍伤害，并施加「污秽」「封咒」，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239621,
+    "Value": "[被动]主动攻击造成伤害后，对目标施加「恶念升腾」，持续<b><color=#e4462c>1</color></b>回合。\n[主动]对范围内敌人造成<b><color=#e4462c>0.8</color></b>倍伤害，并施加「污秽」「封咒」，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239622,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层「剑势」，最多叠加<b><color=#e4462c>6</color></b>层。 \n[主动]「剑势」达到<b><color=#e4462c>6</color></b>层时可释放，移除所有「剑势」层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向右击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。使用后切换为「剑潮·上」"
+  },
+  {
+    "ID": 239623,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层「剑势」，最多叠加<b><color=#e4462c>6</color></b>层。\n[主动]「剑势」达到<b><color=#e4462c>6</color></b>层时可释放，移除所有「剑势」层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向上击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。 使用后切换为「剑潮·左」"
+  },
+  {
+    "ID": 239624,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层「剑势」，最多叠加<b><color=#e4462c>6</color></b>层。\n[主动]「剑势」达到<b><color=#e4462c>6</color></b>层时可释放，移除所有「剑势」层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向左击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。 使用后切换为「剑潮·下」"
+  },
+  {
+    "ID": 239625,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层「剑势」，最多叠加<b><color=#e4462c>6</color></b>层。\n[主动]「剑势」达到<b><color=#e4462c>6</color></b>层时可释放，移除所有「剑势」层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向下击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。 使用后切换为「剑潮·右」"
+  },
+  {
+    "ID": 239626,
+    "Value": "一身是胆-关卡特作（无无双）"
+  },
+  {
+    "ID": 239627,
+    "Value": "逃亡盗匪"
+  },
+  {
+    "ID": 239628,
+    "Value": "老板"
+  },
+  {
+    "ID": 239629,
+    "Value": "时空异动"
+  },
+  {
+    "ID": 239630,
+    "Value": "行动时无视敌方角色阻挡，使用绝学后，自身获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157011 bgcolor=#3a85ffff>「残魂之力」</link>状态；行动开始前，若携带的<link type=buff value=763157011 bgcolor=#3a85ffff>「残魂之力」</link>状态达到<b><color=#e4462c>3</color></b>层时，立即转化为<link type=buff value=763157012 bgcolor=#3a85ffff>「残魂超载」</link>状态，持续<b><color=#e4462c>2</color></b>回合；<link type=buff value=763157012 bgcolor=#3a85ffff>「残魂超载」</link>状态消失时，自身获得<link type=buff value=763157016 bgcolor=#3a85ffff>「残魂负载」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239631,
+    "Value": "行动时无视敌方角色阻挡，受到伤害后，自身获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157081 bgcolor=#3a85ffff>「残魂之力」</link>状态；行动开始前，若携带的<link type=buff value=763157081 bgcolor=#3a85ffff>「残魂之力」</link>状态达到<b><color=#e4462c>5</color></b>层时，立即转化为<link type=buff value=763157082 bgcolor=#3a85ffff>「残魂超载」</link>状态，持续<b><color=#e4462c>2</color></b>回合；<link type=buff value=763157082 bgcolor=#3a85ffff>「残魂超载」</link>状态消失时，自身获得<link type=buff value=763157086 bgcolor=#3a85ffff>「残魂负载」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239632,
+    "Value": "携带<link type=buff value=763157081 bgcolor=#3a85ffff>「残魂之力」</link>状态时，主动造成伤害后，夺取目标<b><color=#e4462c>1</color></b>个「有益状态」；携带<link type=buff value=763157012 bgcolor=#3a85ffff>「残魂超载」</link>状态时，自身绝学射程，绝学范围<b><color=#e4462c>+1</color></b>"
+  },
+  {
+    "ID": 239633,
+    "Value": "携带<link type=buff value=763157081 bgcolor=#3a85ffff>「残魂之力」</link>状态时，主动造成伤害后，对目标施加<b><color=#e4462c>1</color></b>个「魔疫状态」；携带<link type=buff value=763157082 bgcolor=#3a85ffff>「残魂超载」</link>状态时，自身移动力<b><color=#e4462c>+1</color></b>，绝学射程，绝学范围<b><color=#e4462c>+2</color></b>"
+  },
+  {
+    "ID": 239634,
+    "Value": "主动攻击物攻提高<b><color=#e4462c>7%</color></b>。\n若气血大于等于<b><color=#e4462c>80%</color></b>，物理免伤提高<b><color=#e4462c>10%</color></b>且主动普攻触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击若造成暴击，则行动结束时为自身召唤物<b><color=#e4462c>/</color></b>召唤者施加<link type=buff value=700004490 bgcolor=#3a85ffff>「蓄电」</link>状态。若不携带<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态，受到致命伤害免除死亡，气血恢复<b><color=#e4462c>50%</color></b>，并永久进入<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态。场上不存在友方「雷晶分身」时，行动结束前可选择使用绝学<link type=skill value=61109201 bgcolor=#3a85ffff>「凝雷聚形」</link>（间隔<b><color=#e4462c>6</color></b>回合触发）"
+  },
+  {
+    "ID": 239635,
+    "Value": "主动攻击物攻提高<b><color=#e4462c>9%</color></b>。\n若气血大于等于<b><color=#e4462c>80%</color></b>，物理免伤提高<b><color=#e4462c>13%</color></b>且主动普攻触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击若造成暴击，则行动结束时为自身召唤物<b><color=#e4462c>/</color></b>召唤者施加<link type=buff value=700004490 bgcolor=#3a85ffff>「蓄电」</link>状态。若不携带<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态，受到致命伤害免除死亡，气血恢复<b><color=#e4462c>50%</color></b>，并永久进入<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态。场上不存在友方「雷晶分身」时，行动结束前可选择使用绝学<link type=skill value=61109201 bgcolor=#3a85ffff>「凝雷聚形」</link>（间隔<b><color=#e4462c>5</color></b>回合触发）"
+  },
+  {
+    "ID": 239636,
+    "Value": "主动攻击物攻提高<b><color=#e4462c>12%</color></b>。\n若气血大于等于<b><color=#e4462c>80%</color></b>，物理免伤提高<b><color=#e4462c>16%</color></b>且主动普攻触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击若造成暴击，则行动结束时为自身召唤物<b><color=#e4462c>/</color></b>召唤者施加<link type=buff value=700004490 bgcolor=#3a85ffff>「蓄电」</link>状态。若不携带<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态，受到致命伤害免除死亡，气血恢复<b><color=#e4462c>50%</color></b>，并永久进入<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态。场上不存在友方「雷晶分身」时，行动结束前可选择使用绝学<link type=skill value=61109201 bgcolor=#3a85ffff>「凝雷聚形」</link>（间隔<b><color=#e4462c>5</color></b>回合触发）"
+  },
+  {
+    "ID": 239637,
+    "Value": "主动攻击物攻提高<b><color=#e4462c>15%</color></b>。\n若气血大于等于<b><color=#e4462c>80%</color></b>，物理免伤提高<b><color=#e4462c>20%</color></b>且主动普攻触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击若造成暴击，则行动结束时为自身召唤物<b><color=#e4462c>/</color></b>召唤者施加<link type=buff value=700004490 bgcolor=#3a85ffff>「蓄电」</link>状态。若不携带<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态，受到致命伤害免除死亡，气血恢复<b><color=#e4462c>50%</color></b>，并永久进入<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态。场上不存在友方「雷晶分身」时，行动结束前可选择使用绝学<link type=skill value=61109201 bgcolor=#3a85ffff>「凝雷聚形」</link>（间隔<b><color=#e4462c>4</color></b>回合触发）"
+  },
+  {
+    "ID": 239638,
+    "Value": "追击伤害提升<b><color=#e4462c>30%</color></b>，主动攻击「对战后」恢复自身气血，恢复量为本次伤害的<b><color=#e4462c>30%</color></b>。若本回合发起过攻击，行动结束时使自身召唤物<b><color=#e4462c>/</color></b>召唤者移除「移动力限制」状态，并施加<link type=buff value=741101205 bgcolor=#3a85ffff>「奋起」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239639,
+    "Value": "主动攻击前每移动<b><color=#e4462c>1</color></b>格，伤害、物理穿透提高<b><color=#e4462c>2%</color></b>（最多提高<b><color=#e4462c>10%</color></b>）。\n行动时无视敌方角色阻挡，行动结束时，对主动位移穿过的敌方施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>。\n行动结束前，如果处于敌方危险范围内可选择使用绝学<link type=skill value=61140101 bgcolor=#3a85ffff>「无双战魂」</link>（每场战斗最多使用<b><color=#e4462c>1</color></b>次）。\n行动结束时，若<b><color=#e4462c>3</color></b>格范围内敌方人数大于等于我方人数，则获得再行动（<b><color=#e4462c>5</color></b>格）（间隔<b><color=#e4462c>4</color></b>回合触发）。"
+  },
+  {
+    "ID": 239640,
+    "Value": "主动攻击前每移动<b><color=#e4462c>1</color></b>格，伤害、物理穿透提高<b><color=#e4462c>2%</color></b>（最多提高<b><color=#e4462c>10%</color></b>）。\n行动时无视敌方角色阻挡，行动结束时，对主动位移穿过的敌方施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>。\n行动结束前，如果处于敌方危险范围内可选择使用绝学<link type=skill value=61140101 bgcolor=#3a85ffff>「无双战魂」</link>（每场战斗最多使用<b><color=#e4462c>1</color></b>次）\n行动结束时，若<b><color=#e4462c>3</color></b>格范围内敌方人数大于等于我方人数，则获得再行动（<b><color=#e4462c>5</color></b>格）（间隔<b><color=#e4462c>4</color></b>回合触发）。"
+  },
+  {
+    "ID": 239641,
+    "Value": "主动攻击前每移动<b><color=#e4462c>1</color></b>格，伤害、物理穿透提高<b><color=#e4462c>2%</color></b>（最多提高<b><color=#e4462c>10%</color></b>）。\n行动时无视敌方角色阻挡，行动结束时，对主动位移穿过的敌方施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>。\n行动结束前，如果处于敌方危险范围内可选择使用绝学<link type=skill value=61140101 bgcolor=#3a85ffff>「无双战魂」</link>（每场战斗最多使用<b><color=#e4462c>1</color></b>次）\n行动结束时，若<b><color=#e4462c>3</color></b>格范围内敌方人数大于等于我方人数，则获得再行动（<b><color=#e4462c>5</color></b>格）（间隔<b><color=#e4462c>3</color></b>回合触发）。"
+  },
+  {
+    "ID": 239642,
+    "Value": "主动攻击前每移动<b><color=#e4462c>1</color></b>格，伤害、物理穿透提高<b><color=#e4462c>3%</color></b>（最多提高<b><color=#e4462c>15%</color></b>）。\n行动时无视敌方角色阻挡，行动结束时，对主动位移穿过的敌方施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>。\n行动结束前，如果处于敌方危险范围内可选择使用绝学<link type=skill value=61140101 bgcolor=#3a85ffff>「无双战魂」</link>（每场战斗最多使用<b><color=#e4462c>1</color></b>次）\n行动结束时，若<b><color=#e4462c>3</color></b>格范围内敌方人数大于等于我方人数，则获得再行动（<b><color=#e4462c>5</color></b>格）（间隔<b><color=#e4462c>3</color></b>回合触发）。"
+  },
+  {
+    "ID": 239643,
+    "Value": "主动攻击前每移动<b><color=#e4462c>1</color></b>格，伤害、物理穿透提高<b><color=#e4462c>4%</color></b>（最多提高<b><color=#e4462c>20%</color></b>）。\n行动时无视敌方角色阻挡，行动结束时，对主动位移穿过的敌方施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>。\n行动结束前，如果处于敌方危险范围内可选择使用绝学<link type=skill value=61140101 bgcolor=#3a85ffff>「无双战魂」</link>（每场战斗最多使用<b><color=#e4462c>1</color></b>次）\n行动结束时，若<b><color=#e4462c>3</color></b>格范围内敌方人数大于等于我方人数，则获得再行动（<b><color=#e4462c>5</color></b>格）（间隔<b><color=#e4462c>2</color></b>回合触发）。"
+  },
+  {
+    "ID": 239644,
+    "Value": "自身携带<link type=buff value=700000213 bgcolor=#3a85ffff>「遮天蔽日」</link>状态且无法被护卫、无法移动。遭受方向性范围绝学攻击时，身后直线范围内的其他友方免伤和暴击抗性提高<b><color=#e4462c>20%</color></b>。"
+  },
+  {
+    "ID": 239645,
+    "Value": "无法普攻和反击。普通拒马，可作路障使用。"
+  },
+  {
+    "ID": 239646,
+    "Value": "死亡时掉落「钱袋」，<b><color=#e4462c>2</color></b>回合后逃离。\n「钱袋」：拾取后获得<b><color=#e4462c>500</color></b>经验。"
+  },
+  {
+    "ID": 239647,
+    "Value": "场上有角色死亡时，获得「契魂铃」。"
+  },
+  {
+    "ID": 239648,
+    "Value": "周围<b><color=#e4462c>2</color></b>格范围有队友阵亡会获得「暴怒」状态，持续<b><color=#e4462c>3</color></b>回合。\n「暴怒」：物攻提高<b><color=#e4462c>30%</color></b>，遭受伤害提高<b><color=#e4462c>15%</color></b>"
+  },
+  {
+    "ID": 239649,
+    "Value": "造成伤害后恢复自身气血，恢复量为本次伤害的<b><color=#e4462c>100%</color></b>。"
+  },
+  {
+    "ID": 239650,
+    "Value": "移动力<b><color=#e4462c>+2</color></b>，移动无视敌方角色阻挡。"
+  },
+  {
+    "ID": 239651,
+    "Value": "自身一圈范围内敌方物攻、法攻降低<b><color=#e4462c>30%</color></b>。"
+  },
+  {
+    "ID": 239652,
+    "Value": "行动结束时，从异时空召唤<b><color=#e4462c>2</color></b>个敌方，气血低于<b><color=#e4462c>10%</color></b>时，趋于平静<b><color=#e4462c>......</color></b>"
+  },
+  {
+    "ID": 239653,
+    "Value": "无法行动且对战中无法反击；护盾存在时，大幅减免受到的伤害并免疫「固定伤害」，行动开始前，召唤<b><color=#e4462c><b><color=#e4462c>1</color></b></color></b>个「魔之源」助战（间隔<b><color=#e4462c><b><color=#e4462c>2</color></b></color></b>回合触发），护盾消失时，进入<link type=buff value=759001103 bgcolor=#3a85ffff>「晕眩」</link>状态。（护盾在消失的<b><color=#e4462c><b><color=#e4462c>3</color></b></color></b>回合后刷新）"
+  },
+  {
+    "ID": 239654,
+    "Value": "击败「幽篁残魂」"
+  },
+  {
+    "ID": 239655,
+    "Value": "解除「鲜于超」的控制"
+  },
+  {
+    "ID": 239656,
+    "Value": "击败「蛊」及「幻海冥皇」"
+  },
+  {
+    "ID": 239657,
+    "Value": "击败2名玄冥教祭使"
+  },
+  {
+    "ID": 239658,
+    "Value": "关闭所有「时空裂隙」"
+  },
+  {
+    "ID": 239659,
+    "Value": "7回合胜利或我方全灭"
+  },
+  {
+    "ID": 239660,
+    "Value": "「赵云」阵亡"
+  },
+  {
+    "ID": 239661,
+    "Value": "「上官玥」阵亡"
+  },
+  {
+    "ID": 239662,
+    "Value": "上官玥遭受致命伤害"
+  },
+  {
+    "ID": 239663,
+    "Value": "趋于平静"
+  },
+  {
+    "ID": 239664,
+    "Value": "封印咒"
+  },
+  {
+    "ID": 239665,
+    "Value": "无辜之人"
+  },
+  {
+    "ID": 239666,
+    "Value": "血锁之咒"
+  },
+  {
+    "ID": 239667,
+    "Value": "自走棋"
+  },
+  {
+    "ID": 239668,
+    "Value": "剑势"
+  },
+  {
+    "ID": 239669,
+    "Value": "继承「上官玥」140%物攻属性，其他属性继承100%，无法使用「凝雷聚形」"
+  },
+  {
+    "ID": 239670,
+    "Value": "主动攻击「对战后」若3格内存在敌方，基于最近的敌方目标2格范围进行弹射造成1次0.2倍物攻伤害（最多弹射2次，「离魂」状态下变为4次）。"
+  },
+  {
+    "ID": 239671,
+    "Value": "主动攻击「对战后」对目标造成1次「固定伤害」（已损失气血的20%，「离魂」状态下变为25%）。"
+  },
+  {
+    "ID": 239672,
+    "Value": "受到施加者召唤物的伤害增加15%。施加者的召唤物普攻射程+1，且主动攻击时，只能选中携带「雷晶印记」的敌人。"
+  },
+  {
+    "ID": 239673,
+    "Value": "优先未被弹射过且在弹射范围内距离最近的目标，弹射目标无法重复，若没有弹射目标，则立刻中断"
+  },
+  {
+    "ID": 239674,
+    "Value": "无法再从异时空召唤敌方"
+  },
+  {
+    "ID": 239675,
+    "Value": "无法行动且对战中无法反击"
+  },
+  {
+    "ID": 239676,
+    "Value": "无法被敌方选中，无法受到伤害"
+  },
+  {
+    "ID": 239677,
+    "Value": "无法移动，且无法主动攻击。"
+  },
+  {
+    "ID": 239678,
+    "Value": "移动力+2，伤害+20%。"
+  },
+  {
+    "ID": 239679,
+    "Value": "状态消失时，「盗宝贼」撤退。"
+  },
+  {
+    "ID": 239680,
+    "Value": "法攻、法防提升10%。行动结束后，自身获得2个随机「有益状态」，若携带至少5个「有益状态」，额外恢复自身30%最大气血。"
+  },
+  {
+    "ID": 239681,
+    "Value": "法攻、法防提升20%。行动结束后，自身获得2个随机「有益状态」，若携带至少3个「有益状态」，额外恢复自身30%最大气血。"
+  },
+  {
+    "ID": 239682,
+    "Value": "法攻、法防提升30%。行动结束后，自身获得2个随机「有益状态」，若携带至少2个「有益状态」，额外恢复自身50%最大气血。"
+  },
+  {
+    "ID": 239683,
+    "Value": "物攻、物防提升10%。主动攻击对携带大于4个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的50%）。行动结束时，对自身3格范围内所有敌方施加1个随机「有害状态」。"
+  },
+  {
+    "ID": 239684,
+    "Value": "物攻、物防提升20%。主动攻击对携带大于3个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的50%）。行动结束时，对自身3格范围内所有敌方施加2个随机「有害状态」。"
+  },
+  {
+    "ID": 239685,
+    "Value": "物攻、物防提升30%。主动攻击对携带大于2个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的50%）。行动结束时，对自身3格范围内所有敌方施加2个随机「有害状态」。"
+  },
+  {
+    "ID": 239686,
+    "Value": "全属性提升20%。行动结束前，自身每有3点剩余移动力，获得1层「迅袭」状态。\n「迅袭」：物攻、法攻+10%，移动力+1（最多叠加5层）。"
+  },
+  {
+    "ID": 239687,
+    "Value": "全属性提升30%。行动结束前，自身每有3点剩余移动力，获得1层「迅袭」状态。\n「迅袭」：物攻、法攻+10%，移动力+1（最多叠加5层）。"
+  },
+  {
+    "ID": 239688,
+    "Value": "直到下一波次，全员保持「失魂」状态，每击败一个角色额外获得200经验。"
+  },
+  {
+    "ID": 239689,
+    "Value": "行动结束时若自身相邻1格存在友军，受到固定伤害（最大气血的30%）并使周围友军在周围一圈内发生扰动。"
+  },
+  {
+    "ID": 239690,
+    "Value": "上限6层，6层后可释放「剑潮」"
+  },
+  {
+    "ID": 239691,
+    "Value": "但他刚才说的「你身上」的东西，又是什么？\n啊！莫非是你刚才说的什么「魔蛊」、「母蛊」的？"
+  },
+  {
+    "ID": 239692,
+    "Value": "——栖神谷外——"
+  },
+  {
+    "ID": 239693,
+    "Value": "其实……玄冥教操控的那些尸魔鬼怪，就是那个叫作<color=#79cbff>冥皇</color>的以秘法植入魔蛊，将他们化作魔衍蛊傀供玄冥教驱使。"
+  },
+  {
+    "ID": 239694,
+    "Value": "<color=#FFE897FF>不论是何年月，天下兴衰，终究是苦了众生……\n不知到哪一日，才能得见太平长存……</color>"
+  },
+  {
+    "ID": 239695,
+    "Value": "——巫迴寨寨口——"
+  },
+  {
+    "ID": 239696,
+    "Value": "——化荒·幻海石桥——"
+  },
+  {
+    "ID": 239697,
+    "Value": "<color=#c78de0>汝不识吾，吾却识汝……</color>"
+  },
+  {
+    "ID": 239698,
+    "Value": "玥、玥儿……!"
+  },
+  {
+    "ID": 239699,
+    "Value": "<color=#c78de0>桀桀桀……冥皇果然名不虚传………</color>"
+  },
+  {
+    "ID": 239700,
+    "Value": "+45%"
+  },
+  {
+    "ID": 239701,
+    "Value": "使用范围绝学时暴击率提高<color=#F01212>30%</color>，若自身移动力大于<color=#F01212>4</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239702,
+    "Value": "使用范围绝学时暴击率提高<color=#F01212>50%</color>，若自身移动力大于<color=#F01212>3</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239703,
+    "Value": "使用范围绝学时暴击率提高<color=#F01212>80%</color>，若自身移动力大于<color=#F01212>2</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239704,
+    "Value": "触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239705,
+    "Value": "触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239706,
+    "Value": "触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态。"
+  },
+  {
+    "ID": 239707,
+    "Value": "行动结束前，自身每有<color=#F01212>3</color>点剩余移动力，获得<color=#F01212>4</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239708,
+    "Value": "行动结束前，自身每有<color=#F01212>2</color>点剩余移动力，获得<color=#F01212>3</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态。"
+  },
+  {
+    "ID": 239709,
+    "Value": "可于<link type=item value=431045007 bgcolor=#3a85ffff>「照夜玉狮」</link><link type=item value=431024015 bgcolor=#3a85ffff>「雷吼化玉」</link><link type=item value=431034013 bgcolor=#3a85ffff>「御刃金佩」</link><link type=item value=431055002 bgcolor=#3a85ffff>「霜纸戒」</link>中任选一枚饰品获得"
+  },
+  {
+    "ID": 239710,
+    "Value": "解锁『相胤·缀血鸣雷』赛季皮肤"
+  },
+  {
+    "ID": 239711,
+    "Value": "在『巅峰斗场·赛季十六』中达到『黄金·叁』段位后解锁"
+  },
+  {
+    "ID": 239712,
+    "Value": "完成关卡「往世兵戈·壹」"
+  },
+  {
+    "ID": 239713,
+    "Value": "完成关卡「往世兵戈·贰」"
+  },
+  {
+    "ID": 239714,
+    "Value": "完成关卡「往世兵戈·叁」"
+  },
+  {
+    "ID": 239715,
+    "Value": "累计获得10次秘宝"
+  },
+  {
+    "ID": 239716,
+    "Value": "累计获得20次秘宝"
+  },
+  {
+    "ID": 239717,
+    "Value": "累计获得30次秘宝"
+  },
+  {
+    "ID": 239718,
+    "Value": "累计获得40次秘宝"
+  },
+  {
+    "ID": 239719,
+    "Value": "长枪映月货币兑换"
+  },
+  {
+    "ID": 239720,
+    "Value": "尊敬的少侠：\n\n感谢您参加“长枪映月”活动，此次活动中，您还有部分“青釭剑”尚未使用。现已将其兑换为铜钱，敬请查收！"
+  },
+  {
+    "ID": 239721,
+    "Value": "往世兵戈"
+  },
+  {
+    "ID": 239722,
+    "Value": "出自《三国演义》。常山有虎将，青史百世芳。今世异象起，重披百战裳。"
+  },
+  {
+    "ID": 239723,
+    "Value": "受到敌方「雷晶分身」伤害增加15%。敌方「雷晶分身」普攻射程+1，且主动攻击时，只能选中携带「雷晶印记」的敌人。"
+  },
+  {
+    "ID": 239724,
+    "Value": "受到敌方「雷晶分身」伤害增加20%。敌方「雷晶分身」普攻射程+1，且主动攻击时，只能选中携带「雷晶印记」的敌人。"
+  },
+  {
+    "ID": 239725,
+    "Value": "免疫「固定伤害」，主动移动后在路径上制造「霜冻」地形，持续2回合。若自身为冰属相，主动攻击后自身和施加者累积1点气力且随机1个伤害绝学冷却时间-1。（有益状态，不可驱散，不可偷取，不可扩散）\n「霜冻」：霜冻内的敌方角色，移动力-1"
+  },
+  {
+    "ID": 239726,
+    "Value": "暴击率提升30%。主动使用范围伤害绝学造成伤害后，立刻造成1次「固定伤害」（目标已损失气血的40%）。"
+  },
+  {
+    "ID": 239727,
+    "Value": "暴击率提升45%。主动使用范围伤害绝学造成伤害后，立刻造成1次「固定伤害」（目标已损失气血的50%）。"
+  },
+  {
+    "ID": 239728,
+    "Value": "全属性提升10%。「先攻」「反击」伤害提高20%。遭受攻击「对战后」后获得1层「远目」。\n「远目」：射程+1，物理、法术穿透提高8%（最多叠加5层），持续1回合。"
+  },
+  {
+    "ID": 239729,
+    "Value": "物理、法术穿透提高8%（最多叠加5层）。"
+  },
+  {
+    "ID": 239730,
+    "Value": "全属性提升20%。「先攻」「反击」伤害提高20%。遭受攻击「对战后」后获得2层「远目」。\n「远目」：射程+1，物理、法术穿透提高8%（最多叠加5层），持续1回合。"
+  },
+  {
+    "ID": 239731,
+    "Value": "全属性提升30%。「先攻」「反击」伤害提高20%。遭受攻击「对战后」后获得3层「远目」。\n「远目」：射程+1，物理、法术穿透提高8%（最多叠加5层），持续1回合。"
+  },
+  {
+    "ID": 239732,
+    "Value": "物攻、法攻+10%（最多叠加5层）。"
+  },
+  {
+    "ID": 239733,
+    "Value": "触发再行动时获得1层「蓄力一击」状态。\n「蓄力一击」：射程-1，移动力-2，主动攻击「对战中」造成伤害提升30%（下回合开始时移除，上限3层）。"
+  },
+  {
+    "ID": 239734,
+    "Value": "射程-1，移动力-2，主动攻击「对战中」造成伤害提升30%（下回合开始时移除，上限3层）。"
+  },
+  {
+    "ID": 239735,
+    "Value": "无法获得「残魂之力」状态，受到的伤害提升20%，每遭受1次攻击，持续时间-1"
+  },
+  {
+    "ID": 239736,
+    "Value": "无法获得「魔魂之力」状态，受到的伤害提升20%，每遭受1次攻击，持续时间-1"
+  },
+  {
+    "ID": 239737,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>2</color></b>倍伤害，「对战后」立即触发其<link type=buff value=600000105 bgcolor=#3a85ffff>「魔疫状态」</link>叠层上限所触发的效果。"
+  },
+  {
+    "ID": 239738,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，施加<b><color=#e4462c>2</color></b>个<link type=buff value=600000105 bgcolor=#3a85ffff>「魔疫状态」</link>并制造「魔壤」地形，持续<b><color=#e4462c>2</color></b>回合。\n「魔壤」：无法获得「有益状态」"
+  },
+  {
+    "ID": 239739,
+    "Value": "召唤<b><color=#e4462c>1</color></b>个携带<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态的「分身」（「分身」继承自身<b><color=#e4462c>140%</color></b>物攻属性，其他属性继承<b><color=#e4462c>100%</color></b>，携带<link type=skill value=61109292 bgcolor=#3a85ffff>「雷晶护体」</link><link type=skill value=61109293 bgcolor=#3a85ffff>「轻身」</link><link type=skill value=61109294 bgcolor=#3a85ffff>「流霆」</link>）。"
+  },
+  {
+    "ID": 239740,
+    "Value": "[被动]召唤「分身」后，将自身全部「有益状态」复制给「分身」，若自身携带<link type=buff value=741092300 bgcolor=#3a85ffff>「巧径」</link>或<link type=buff value=741092305 bgcolor=#3a85ffff>「叠澜」</link>或<link type=buff value=741092308 bgcolor=#3a85ffff>「流萤」</link>，「分身」也将获得对应状态。\n[主动]选择1个绝学进行释放。使用后切换为<link type=skill value=61109251 bgcolor=#3a85ffff>「飞花势」</link>或<link type=skill value=61109252 bgcolor=#3a85ffff>「叠浪式」</link>或<link type=skill value=61109253 bgcolor=#3a85ffff>「游萤势」</link>。"
+  },
+  {
+    "ID": 239741,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（恢复量为自身物攻的<b><color=#e4462c>1</color></b>倍），获得「巧径」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。\n「巧径」:主动攻击「对战后」若<b><color=#e4462c>3</color></b>格内存在敌方，基于最近的敌方目标<b><color=#e4462c>2</color></b>格范围进行<link type=buff value=741092702 bgcolor=#3a85ffff>「弹射」</link>造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.2</color></b>倍物攻伤害（最多弹射<b><color=#e4462c>2</color></b>次，「离魂」状态下变为<b><color=#e4462c>4</color></b>次）。"
+  },
+  {
+    "ID": 239742,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（恢复量为自身物攻的<b><color=#e4462c>1</color></b>倍），获得「叠澜」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。\n「叠澜」:主动攻击「对战后」对目标造成<b><color=#e4462c>1</color></b>次「固定伤害」（已损失气血的<b><color=#e4462c>20%</color></b>，「离魂」状态下变为<b><color=#e4462c>25%</color></b>）。"
+  },
+  {
+    "ID": 239743,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（恢复量为自身物攻的<b><color=#e4462c>1</color></b>倍），获得「流萤」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合。\n「流萤」:主动攻击「对战后」使目标发生<b><color=#e4462c>2</color></b>格内「扰动」效果（「离魂」状态下若目标周身<b><color=#e4462c>2</color></b>格范围内没有友军则本次攻击无视护卫）。"
+  },
+  {
+    "ID": 239744,
+    "Value": "[被动]召唤「分身」后，将自身全部「有益状态」复制给「分身」，若自身携带<link type=buff value=741092300 bgcolor=#3a85ffff>「巧径」</link>或<link type=buff value=741092305 bgcolor=#3a85ffff>「叠澜」</link>或<link type=buff value=741092308 bgcolor=#3a85ffff>「流萤」</link>，「分身」也将获得对应状态。\n[主动]选择1个绝学进行释放。使用后切换为<link type=skill value=61109261 bgcolor=#3a85ffff>「飞花势」</link>或<link type=skill value=61109262 bgcolor=#3a85ffff>「叠浪式」</link>或<link type=skill value=61109263 bgcolor=#3a85ffff>「游萤势」</link>。"
+  },
+  {
+    "ID": 239745,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（恢复量为自身物攻的<b><color=#e4462c>1</color></b>倍），获得「巧径」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。并获得再行动（<b><color=#e4462c>2</color></b>格）。\n「巧径」:主动攻击「对战后」若<b><color=#e4462c>3</color></b>格内存在敌方，基于最近的敌方目标<b><color=#e4462c>2</color></b>格范围进行<link type=buff value=741092702 bgcolor=#3a85ffff>「弹射」</link>造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.2</color></b>倍物攻伤害（最多弹射<b><color=#e4462c>2</color></b>次，「离魂」状态下变为<b><color=#e4462c>4</color></b>次）。"
+  },
+  {
+    "ID": 239746,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（恢复量为自身物攻的<b><color=#e4462c>1</color></b>倍），获得「叠澜」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。并获得再行动（<b><color=#e4462c>2</color></b>格）。\n「叠澜」:主动攻击「对战后」对目标造成<b><color=#e4462c>1</color></b>次「固定伤害」（已损失气血的<b><color=#e4462c>20%</color></b>，「离魂」状态下变为<b><color=#e4462c>25%</color></b>）。"
+  },
+  {
+    "ID": 239747,
+    "Value": "反转自身及分身<b><color=#e4462c>2</color></b>个「有害状态」并恢复气血（恢复量为自身物攻的<b><color=#e4462c>1</color></b>倍），获得「流萤」<link type=buff value=700001000 bgcolor=#3a85ffff>「刺骨I」</link><link type=buff value=700001010 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。并获得再行动（<b><color=#e4462c>2</color></b>格）。\n「流萤」:主动攻击「对战后」使目标发生<b><color=#e4462c>2</color></b>格内「扰动」效果（「离魂」状态下若目标周身<b><color=#e4462c>2</color></b>格范围内没有友军则本次攻击无视护卫）。"
+  },
+  {
+    "ID": 239748,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.5</color></b>倍伤害，暴击伤害提高<b><color=#e4462c>20%</color></b>，「对战前」反转目标<b><color=#e4462c>3</color></b>个「有益状态」，每反转<b><color=#e4462c>1</color></b>个，暴击率提升<b><color=#e4462c>5%</color></b>（最高<b><color=#e4462c>15%</color></b>）。「对战后」施加<link type=buff value=741092414 bgcolor=#3a85ffff>「雷晶印记」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239749,
+    "Value": "[被动]自身及召唤物主动攻击，目标已损失气血每多<b><color=#e4462c>10%</color></b>，「对战中」物防降低<b><color=#e4462c>5%</color></b>（最多降低<b><color=#e4462c>25%</color></b>）。\n[主动]攻击单个敌人，造成<b><color=#e4462c>1.5</color></b>倍伤害，暴击伤害提高<b><color=#e4462c>20%</color></b>，「对战前」反转目标<b><color=#e4462c>3</color></b>个「有益状态」，每反转<b><color=#e4462c>1</color></b>个，暴击率提升<b><color=#e4462c>5%</color></b>（最高<b><color=#e4462c>15%</color></b>）。「对战后」施加<link type=buff value=700019020 bgcolor=#3a85ffff>「压制」</link><link type=buff value=741092414 bgcolor=#3a85ffff>「雷晶印记」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239750,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.8</color></b>倍伤害，并在目标菱形<b><color=#e4462c>2</color></b>格范围内生成「幻狱」地形，持续<b><color=#e4462c>4</color></b>回合，在自身<b><color=#e4462c>1</color></b>格召唤<b><color=#e4462c>2</color></b>个「神光剑」\n「幻狱」：行动结束时，获得<b><color=#e4462c>2</color></b>个随机<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>"
+  },
+  {
+    "ID": 239751,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>1</color></b>倍伤害，立即触发目标身上的<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>，并在自身<b><color=#e4462c>1</color></b>格召唤<b><color=#e4462c>2</color></b>个「神光剑」"
+  },
+  {
+    "ID": 239752,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.5</color></b>倍伤害，「对战后」立即触发目标身上的<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>"
+  },
+  {
+    "ID": 239753,
+    "Value": "铁骑"
+  },
+  {
+    "ID": 239754,
+    "Value": "场上有敌方死亡时，获得「契魂铃」。"
+  },
+  {
+    "ID": 239755,
+    "Value": "无法普攻和反击，无法被护卫；警戒自身<b><color=#e4462c>5</color></b>格范围,若敌方行动结束时在警戒范围内，则立刻对其造成<b><color=#e4462c>1</color></b>倍物攻的物理伤害。"
+  },
+  {
+    "ID": 239756,
+    "Value": "主动使用单体伤害绝学攻击后，立刻造成<color=#F01212>1</color>次自身（物攻+法攻）<color=#F01212>30%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239757,
+    "Value": "主动使用单体伤害绝学攻击后，立刻造成<color=#F01212>1</color>次自身（物攻+法攻）<color=#F01212>80%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239758,
+    "Value": "动使用范围伤害绝学造成伤害后，立刻造成<color=#F01212>1</color>次「固定伤害」（目标已损失气血的40%）。"
+  },
+  {
+    "ID": 239759,
+    "Value": "行动结束时20%概率获得再行动（每回合最多触发<color=#F01212>1</color>次）。"
+  },
+  {
+    "ID": 239760,
+    "Value": "行动结束时30%概率获得再行动（每回合最多触发<color=#F01212>1</color>次）。"
+  },
+  {
+    "ID": 239761,
+    "Value": "行动结束时50%概率获得再行动（每回合最多触发<color=#F01212>1</color>次）。"
+  },
+  {
+    "ID": 239762,
+    "Value": "遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>70%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239763,
+    "Value": "遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>100%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239764,
+    "Value": "遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>150%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239765,
+    "Value": "行动结束后，自身获得<color=#F01212>2</color>个随机「有益状态」，若携带至少<color=#F01212>3</color>个「有益状态」，额外恢复自身<color=#F01212>30%</color>最大气血"
+  },
+  {
+    "ID": 239766,
+    "Value": "行动结束后，自身获得<color=#F01212>2</color>个随机「有益状态」，若携带至少<color=#F01212>2</color>个「有益状态」，额外恢复自身<color=#F01212>50%</color>最大气血"
+  },
+  {
+    "ID": 239767,
+    "Value": "对携带大于<color=#F01212>4</color>个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的<color=#F01212>50%</color>）。行动结束时，对自身3格范围内所有敌方施加<color=#F01212>1</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239768,
+    "Value": "对携带大于<color=#F01212>3</color>个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的<color=#F01212>50%</color>）。行动结束时，对自身3格范围内所有敌方施加<color=#F01212>2</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239769,
+    "Value": "对携带大于<color=#F01212>2</color>个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的<color=#F01212>50%</color>）。行动结束时，对自身<color=#F01212>3</color>格范围内所有敌方施加<color=#F01212>2</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239770,
+    "Value": "射程+<color=#F01212>1</color>。\n自身周围<color=#F01212>2</color>格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239771,
+    "Value": "射程+<color=#F01212>2</color>。\n自身周围<color=#F01212>2</color>格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239772,
+    "Value": "射程+<color=#F01212>2</color>。\n自身周围<color=#F01212>1</color>格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239773,
+    "Value": "主动攻击「对战中」，目标每携带<color=#F01212>1</color>个「有害状态」，自身物攻、法攻提高<color=#F01212>5%</color>（最多提高<color=#F01212>30%</color>）。"
+  },
+  {
+    "ID": 239774,
+    "Value": "单体绝学射程+<color=#F01212>1</color>。\n主动攻击「对战中」，与目标距离每增加<color=#F01212>1</color>格，物理、法术穿透提升<color=#F01212>5%</color>。"
+  },
+  {
+    "ID": 239775,
+    "Value": "单体绝学射程+<color=#F01212>2</color>。\n主动攻击「对战中」，与目标距离每增加<color=#F01212>1</color>格，物理、法术穿透提升<color=#F01212>8%</color>。"
+  },
+  {
+    "ID": 239776,
+    "Value": "累计主动移动<color=#F01212>10</color>格后，获得<color=#F01212>3</color>层<link type=buff value=763200090 bgcolor=#3a85ffff>「专注一击」</link>状态。"
+  },
+  {
+    "ID": 239777,
+    "Value": "范围伤害提高<color=#F01212>10%</color>。\n使用范围绝学造成伤害时，每命中<color=#F01212>1</color>个敌方，获得<color=#F01212>1</color>个随机「有益状态」（最多<color=#F01212>3</color>个）。"
+  },
+  {
+    "ID": 239778,
+    "Value": "范围伤害提高<color=#F01212>15%</color>。\n使用范围绝学造成伤害时，每命中<color=#F01212>1</color>个敌方，获得<color=#F01212>1</color>个随机「有益状态」（最多<color=#F01212>4</color>个）。"
+  },
+  {
+    "ID": 239779,
+    "Value": "范围伤害提高<color=#F01212>20%</color>。\n使用范围绝学造成伤害时，每命中<color=#F01212>1</color>个敌方，获得<color=#F01212>1</color>个随机「有益状态」（最多5个）。"
+  },
+  {
+    "ID": 239780,
+    "Value": "使用范围绝学时暴击伤害提高<color=#F01212>15%</color>，若自身移动力大于<color=#F01212>4</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239781,
+    "Value": "使用范围绝学时暴击伤害提高<color=#F01212>15%</color>，若自身移动力大于<color=#F01212>3</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239782,
+    "Value": "使用范围绝学时暴击伤害提高<color=#F01212>15%</color>，若自身移动力大于<color=#F01212>2</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239783,
+    "Value": "射程+<color=#F01212>1</color>。\n行动结束时，获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239784,
+    "Value": "射程+<color=#F01212>1</color>。\n行动结束时，获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239785,
+    "Value": "射程+<color=#F01212>2</color>。\n行动结束时，获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239786,
+    "Value": "移动力+<color=#F01212>1</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239787,
+    "Value": "移动力+<color=#F01212>1</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239788,
+    "Value": "移动力+<color=#F01212>2</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239789,
+    "Value": "目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>1</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239790,
+    "Value": "目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>2</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239791,
+    "Value": "目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>3</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239792,
+    "Value": "「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239793,
+    "Value": "「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239794,
+    "Value": "「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239795,
+    "Value": "行动结束前，自身每有<color=#F01212>3</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239796,
+    "Value": "行动结束前，自身每有<color=#F01212>2</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239797,
+    "Value": "行动结束前，自身每有<color=#F01212>1</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239798,
+    "Value": "开启挑战，我方所有角色气血上限降低90%，2个波次后结束挑战并获得额外经验。"
+  },
+  {
+    "ID": 239799,
+    "Value": "开始招雨，熄灭场上的火堆，可使用旌旗引雷，对全场敌人造成大额伤害。"
+  },
+  {
+    "ID": 239800,
+    "Value": "司南背面好像刻着藏宝的信息……"
+  },
+  {
+    "ID": 239801,
+    "Value": "似乎传来了激昂的音乐，赵云获得无敌状态，物攻、法攻提升50%。"
+  },
+  {
+    "ID": 239802,
+    "Value": "上阵<color=#FF0000>2</color>名神属性角色激活"
+  },
+  {
+    "ID": 239803,
+    "Value": "上阵<color=#FF0000>4</color>名神属性角色激活"
+  },
+  {
+    "ID": 239804,
+    "Value": "上阵<color=#FF0000>6</color>名神属性角色激活"
+  },
+  {
+    "ID": 239805,
+    "Value": "【诛天剑域】"
+  },
+  {
+    "ID": 239806,
+    "Value": "【剑潮】"
+  },
+  {
+    "ID": 239807,
+    "Value": "【杀剑恶骸】"
+  },
+  {
+    "ID": 239808,
+    "Value": "每<b><color=#e4462c>3</color></b>回合都会发生移动（方震岳的心魔将其固定到场中央为止）"
+  },
+  {
+    "ID": 239809,
+    "Value": "将会使得我方单位向指定方向击退，需避免被击退进入「诛天剑域」中导致我方减员"
+  },
+  {
+    "ID": 239810,
+    "Value": "无法停留在其上方的障碍物，会对在周围行动结束的敌方施加「跛脚」状态，可利用这些特点来防止我方被击退进入「诛天剑域」中"
+  },
+  {
+    "ID": 239811,
+    "Value": "物攻、法攻提升<color=#F01212>20%</color>。主动使用单体伤害绝学攻击后，立刻造成<color=#F01212>1</color>次自身（物攻+法攻）<color=#F01212>50%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239812,
+    "Value": "物攻、法攻提升<color=#F01212>30%</color>。主动使用单体伤害绝学攻击后，立刻造成<color=#F01212>1</color>次自身（物攻+法攻）<color=#F01212>80%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239813,
+    "Value": "暴击率提升<color=#F01212>30%</color>。主动使用范围伤害绝学造成伤害后，立刻造成<color=#F01212>1</color>次「固定伤害」（目标已损失气血的40%）。"
+  },
+  {
+    "ID": 239814,
+    "Value": "暴击率提升<color=#F01212>45%</color>。主动使用范围伤害绝学造成伤害后，立刻造成<color=#F01212>1</color>次「固定伤害」（目标已损失气血的50%）。"
+  },
+  {
+    "ID": 239815,
+    "Value": "气血提升<color=#F01212>10%</color>。行动结束时20%概率获得再行动（每回合最多触发<color=#F01212>1</color>次）。"
+  },
+  {
+    "ID": 239816,
+    "Value": "气血提升<color=#F01212>20%</color>。行动结束时30%概率获得再行动（每回合最多触发<color=#F01212>1</color>次）。"
+  },
+  {
+    "ID": 239817,
+    "Value": "气血提升<color=#F01212>40%</color>。行动结束时50%概率获得再行动（每回合最多触发<color=#F01212>1</color>次）。"
+  },
+  {
+    "ID": 239818,
+    "Value": "物防、法防提升<color=#F01212>10%</color>。遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>70%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239819,
+    "Value": "物防、法防提升<color=#F01212>20%</color>。遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>100%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239820,
+    "Value": "物防、法防提升<color=#F01212>40%</color>。遭受攻击「对战后」，对攻击者造成<color=#F01212>1</color>次自身（物防+法防）<color=#F01212>150%</color>的伤害（无法被减免）。"
+  },
+  {
+    "ID": 239821,
+    "Value": "法攻、法防提升<color=#F01212>30%</color>。行动结束后，自身获得<color=#F01212>2</color>个随机「有益状态」，若携带至少<color=#F01212>2</color>个「有益状态」，额外恢复自身<color=#F01212>50%</color>最大气血"
+  },
+  {
+    "ID": 239822,
+    "Value": "物攻、物防提升<color=#F01212>20%</color>。对携带大于<color=#F01212>3</color>个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的<color=#F01212>50%</color>）。行动结束时，对自身3格范围内所有敌方施加<color=#F01212>2</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239823,
+    "Value": "物攻、物防提升<color=#F01212>30%</color>。对携带大于<color=#F01212>2</color>个「有害状态」的敌人造成伤害后，恢复自身气血（恢复量为本次伤害的<color=#F01212>50%</color>）。行动结束时，对自身<color=#F01212>3</color>格范围内所有敌方施加<color=#F01212>2</color>个随机「有害状态」。"
+  },
+  {
+    "ID": 239824,
+    "Value": "物理穿透、法术穿透提升<color=#F01212>10%</color>，射程+<color=#F01212>1</color>。\n自身周围<color=#F01212>2</color>格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239825,
+    "Value": "物理穿透、法术穿透提升<color=#F01212>20%</color>，射程+<color=#F01212>2</color>。\n自身周围<color=#F01212>2</color>格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239826,
+    "Value": "物理穿透、法术穿透提升<color=#F01212>40%</color>，射程+<color=#F01212>2</color>。\n自身周围<color=#F01212>1</color>格范围内没有敌人时，伤害提高<color=#F01212>15%</color>。"
+  },
+  {
+    "ID": 239827,
+    "Value": "暴击率提升<color=#F01212>30%</color>，移动力+<color=#F01212>2</color>。\n主动攻击前每移动1格，暴击伤害提升<color=#F01212>4%</color>（最高提升<color=#F01212>24%</color>）。"
+  },
+  {
+    "ID": 239828,
+    "Value": "暴击率提升<color=#F01212>45%</color>，移动力+<color=#F01212>2</color>。\n主动攻击前每移动1格，暴击伤害提升<color=#F01212>5%</color>（最高提升<color=#F01212>30%</color>）。"
+  },
+  {
+    "ID": 239829,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n累计主动移动<color=#F01212>10</color>格后，获得<color=#F01212>3</color>层<link type=buff value=763200090 bgcolor=#3a85ffff>「专注一击」</link>状态。"
+  },
+  {
+    "ID": 239830,
+    "Value": "全属性提升<color=#F01212>10%</color>。\n使用范围绝学时暴击伤害提高<color=#F01212>15%</color>，若自身移动力大于<color=#F01212>4</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239831,
+    "Value": "全属性提升<color=#F01212>20%</color>。\n使用范围绝学时暴击伤害提高<color=#F01212>15%</color>，若自身移动力大于<color=#F01212>3</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239832,
+    "Value": "全属性提升<color=#F01212>30%</color>。\n使用范围绝学时暴击伤害提高<color=#F01212>15%</color>，若自身移动力大于<color=#F01212>2</color>点，每多<color=#F01212>1</color>点范围绝学范围+<color=#F01212>1</color>（上限+<color=#F01212>5</color>）。"
+  },
+  {
+    "ID": 239833,
+    "Value": "全属性提升<color=#F01212>10%</color>，射程+<color=#F01212>1</color>。\n行动结束时，获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239834,
+    "Value": "全属性提升<color=#F01212>20%</color>，射程+<color=#F01212>1</color>。\n行动结束时，获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239835,
+    "Value": "全属性提升<color=#F01212>30%</color>，射程+<color=#F01212>2</color>。\n行动结束时，获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239836,
+    "Value": "全属性提升<color=#F01212>10%</color>，移动力+<color=#F01212>1</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239837,
+    "Value": "全属性提升<color=#F01212>20%</color>，移动力+<color=#F01212>1</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239838,
+    "Value": "全属性提升<color=#F01212>30%</color>，移动力+<color=#F01212>2</color>。\n主动攻击后有剩余的移动力，可继续移动。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239839,
+    "Value": "全属性提升<color=#F01212>10%</color>。目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>1</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239840,
+    "Value": "全属性提升<color=#F01212>20%</color>。目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>2</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239841,
+    "Value": "全属性提升<color=#F01212>30%</color>。目标携带至少<color=#F01212>3</color>个「有害状态」时，遭受攻击「对战后」获得<color=#F01212>3</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239842,
+    "Value": "全属性提升<color=#F01212>10%</color>。「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239843,
+    "Value": "全属性提升<color=#F01212>20%</color>。「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239844,
+    "Value": "全属性提升<color=#F01212>30%</color>。「先攻」「反击」伤害提高<color=#F01212>20%</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239845,
+    "Value": "全属性提升<color=#F01212>10%</color>。行动结束前，自身每有<color=#F01212>3</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239846,
+    "Value": "全属性提升<color=#F01212>20%</color>。行动结束前，自身每有<color=#F01212>2</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239847,
+    "Value": "全属性提升<color=#F01212>30%</color>。行动结束前，自身每有<color=#F01212>1</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 239848,
+    "Value": "司南背面刻着奇怪的诗句，“西瓜肚里甜，坛底酒香眠。麻袋阴中卧，塔影盖金元”。"
+  },
+  {
+    "ID": 239849,
+    "Value": "通关前置关卡解锁"
+  },
+  {
+    "ID": 239850,
+    "Value": "PVP组合\n可攻可守，可克制范围伤害为主的阵容"
+  },
+  {
+    "ID": 239851,
+    "Value": "活动藏品"
+  },
+  {
+    "ID": 239852,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，并牵引至身边，张开「凶魂」领域；若本次攻击命中的目标不低于<b><color=#e4462c>3</color></b>个，则自身获得<link type=buff value=700002701 bgcolor=#3a85ffff>「魔铠」</link>状态。\n「凶魂」：领域内的敌方无法触发再移动或再行动且无法主动移动至领域外并无法获得气力，行动结束时，被施加<b><color=#e4462c>1</color></b>个<link type=buff value=600000105 bgcolor=#3a85ffff>「魔疫状态」</link>"
+  },
+  {
+    "ID": 239853,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，将目标的<b><color=#e4462c>1</color></b>个「有益状态」反转为<link type=buff value=700004040 bgcolor=#3a85ffff>「电流」</link>状态，持续<b><color=#e4462c>2</color></b>回合。对被暴击目标额外施加<link type=buff value=743002212 bgcolor=#3a85ffff>「雷劫」</link>状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 239854,
+    "Value": "遭受范围伤害、固定伤害降低<b><color=#e4462c>20%</color></b>。若自身处于「离魂」状态，遭受「固定伤害」额外降低<b><color=#e4462c>30%</color></b>。"
+  },
+  {
+    "ID": 239855,
+    "Value": "追击伤害提升<b><color=#e4462c>30%</color></b>，主动攻击「对战后」恢复自身气血，恢复量为本次伤害的<b><color=#e4462c>30%</color></b>。若本回合发起过攻击，行动结束时使自身召唤物<b><color=#e4462c>/</color></b>召唤者移除「移动力限制」状态，并施加「奋起」状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239856,
+    "Value": "移动力<b><color=#e4462c>+2</color></b>，反击射程<b><color=#e4462c>+4</color></b>。气血低于<b><color=#e4462c>75%</color></b>，<b><color=#e4462c>50%</color></b>和<b><color=#e4462c>25%</color></b>时，自身获得护盾（最大气血的<b><color=#e4462c>100%</color></b>）。携带护盾时，无法使用主动绝学，射程<b><color=#e4462c>+5</color></b>，主动攻击造成伤害后，对目标菱形<b><color=#e4462c>2</color></b>格范围内的其他敌方造成<b><color=#e4462c>1</color></b>次物攻伤害（<b><color=#e4462c>0.7</color></b>倍的物攻），并对自身施加<b><color=#e4462c>1</color></b>层「神剑」。场上每存在<b><color=#e4462c>1</color></b>个「神光剑」，行动结束时，对菱形<b><color=#e4462c>3</color></b>格的随机<b><color=#e4462c>1</color></b>个敌人施加<b><color=#e4462c>1</color></b>个随机的<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>"
+  },
+  {
+    "ID": 239857,
+    "Value": "主动使用，恢复范围内所有友方气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），驱散<b><color=#e4462c>1</color></b>个「有害状态」施加<link type=buff value=700000542 bgcolor=#3a85ffff>「御魔I」</link><link type=buff value=700001261 bgcolor=#3a85ffff>「固元I」</link>状态，持续<b><color=#e4462c>3</color></b>回合，并附加<link type=buff value=710010370 bgcolor=#3a85ffff>「霜铠」</link>状态。"
+  },
+  {
+    "ID": 239858,
+    "Value": "[被动]主动使用绝学后，清除范围内敌方机关并对所有格子施加「霜冻」地形，持续2回合。\n[主动]主动使用，恢复范围内所有友方气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），驱散<b><color=#e4462c>2</color></b>个「有害状态」施加<link type=buff value=700000542 bgcolor=#3a85ffff>「御魔I」</link><link type=buff value=700001266 bgcolor=#3a85ffff>「固元II」</link>状态，持续<b><color=#e4462c>3</color></b>回合，并附加<link type=buff value=710010370 bgcolor=#3a85ffff>「霜铠」</link>状态。若自身其他绝学未进入冷却，则该绝学冷却-<b><color=#e4462c>2</color></b>。"
+  },
+  {
+    "ID": 239859,
+    "Value": "[被动]行动结束时，为<b><color=#e4462c>3</color></b>格范围内所有友方角色恢复气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并驱散<b><color=#e4462c>1</color></b>个「有害状态」。\n[主动]驱散范围内所有友方身上<b><color=#e4462c>4</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍）。"
+  },
+  {
+    "ID": 239860,
+    "Value": "[被动]行动结束时，为<b><color=#e4462c>3</color></b>格范围内所有友方角色恢复气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并驱散<b><color=#e4462c>1</color></b>个「有害状态」，对其中物攻/法攻属性最高的1个其他友方施加<link type=buff value=700000652 bgcolor=#3a85ffff>「冰清」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[主动]驱散范围内所有友方身上<b><color=#e4462c>4</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），施加<link type=buff value=700000652 bgcolor=#3a85ffff>「冰清」</link>状态，持续<b><color=#e4462c>2</color></b>回合，自身获得<link type=buff value=700001331 bgcolor=#3a85ffff>「芬芳I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。"
+  },
+  {
+    "ID": 239861,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内其他友方遭受攻击「对战后」，为其驱散<b><color=#e4462c>1</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），且自身损失<b><color=#e4462c>30%</color></b>当前气血。（每回合触发<b><color=#e4462c>1</color></b>次）\n[主动]主动使用，驱散单个友方<b><color=#e4462c>1</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），施加<link type=buff value=700000531 bgcolor=#3a85ffff>「披甲I」</link><link type=buff value=700000791 bgcolor=#3a85ffff>「神护I」</link>和<link type=buff value=700001121 bgcolor=#3a85ffff>「愈合」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239862,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内其他友方遭受攻击「对战后」，为其驱散<b><color=#e4462c>2</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍）。（每回合触发<b><color=#e4462c>1</color></b>次）\n[主动]主动使用，驱散单个友方<b><color=#e4462c>2</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），施加<link type=buff value=700000531 bgcolor=#3a85ffff>「披甲I」</link><link type=buff value=700000795 bgcolor=#3a85ffff>「神护II」</link>和<link type=buff value=700001121 bgcolor=#3a85ffff>「愈合」</link>状态，持续<b><color=#e4462c>2</color></b>回合。若自身携带「有害状态」小于<b><color=#e4462c>3</color></b>个则该绝学冷却-<b><color=#e4462c>1</color></b>。"
+  },
+  {
+    "ID": 239863,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，且为范围内所有友方施加<link type=buff value=743001541 bgcolor=#3a85ffff>「炎铠」</link><link type=buff value=700001011 bgcolor=#3a85ffff>「神睿I」</link>状态，持续2回合，自身周围<b><color=#e4462c>3</color></b>格张开领域<link type=buff value=743003247 bgcolor=#3a85ffff>「地火焚狱·壹」</link>，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239864,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，且为范围内所有友方施加<link type=buff value=743001541 bgcolor=#3a85ffff>「炎铠」</link><link type=buff value=700001011 bgcolor=#3a85ffff>「神睿I」</link>状态，持续3回合，自身周围<b><color=#e4462c>3</color></b>格张开领域<link type=buff value=743003254 bgcolor=#3a85ffff>「地火焚狱·贰」</link>，持续<b><color=#e4462c>3</color></b>回合。"
+  },
+  {
+    "ID": 239865,
+    "Value": "向前穿刺并到达作用范围（<b><color=#e4462c>5</color></b>格）最远可到达的格子上，对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，并施加<link type=buff value=700004090 bgcolor=#3a85ffff>「燃烧」</link>状态，持续<b><color=#e4462c>2</color></b>回合，自身获得<link type=buff value=743003250 bgcolor=#3a85ffff>「龙骧」</link>状态。"
+  },
+  {
+    "ID": 239866,
+    "Value": "[被动]若自身携带<link type=buff value=743003250 bgcolor=#3a85ffff>「龙骧」</link>或<link type=buff value=757200430 bgcolor=#3a85ffff>「咆振」</link>状态，主动普攻触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害），且「对战后」在自身<b><color=#e4462c>1</color></b>圈范围内制造「真炎」地形，持续<b><color=#e4462c>3</color></b>回合。\n[主动]主动使用，向前穿刺并到达作用范围（<b><color=#e4462c>5</color></b>格）最远可到达的格子上，对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，并施加<b><color=#e4462c>2</color></b>层<link type=buff value=700004090 bgcolor=#3a85ffff>「燃烧」</link>状态，持续<b><color=#e4462c>2</color></b>回合，自身获得<link type=buff value=743003250 bgcolor=#3a85ffff>「龙骧」</link>状态。若自身<b><color=#e4462c>2</color></b>格范围内少于<b><color=#e4462c>3</color></b>个敌人，则获得再行动（<b><color=#e4462c>3</color></b>格），并获得<link type=buff value=710100339 bgcolor=#3a85ffff>「调息」</link>状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 239867,
+    "Value": "从天而降，反转自身<b><color=#e4462c>3</color></b>个「有害状态」，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，使目标身上<b><color=#e4462c>3</color></b>个「有益状态」变为随机「有害状态」，并施加<b><color=#e4462c>2</color></b>层<link type=buff value=700004090 bgcolor=#3a85ffff>「燃烧」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239868,
+    "Value": "[被动]行动结束时，若处于友方「真炎」地形上，则当前冷却时间最短的绝学冷却<b><color=#e4462c>-1</color></b>。\n[主动]主动使用，从天而降，反转自身<b><color=#e4462c>3</color></b>个「有害状态」，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.8</color></b>倍伤害，使目标身上<b><color=#e4462c>3</color></b>个「有益状态」变为随机「有害状态」，并施加<b><color=#e4462c>2</color></b>层<link type=buff value=700004090 bgcolor=#3a85ffff>「燃烧」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239869,
+    "Value": "地火焚狱·壹"
+  },
+  {
+    "ID": 239870,
+    "Value": "地火焚狱·贰"
+  },
+  {
+    "ID": 239871,
+    "Value": "3格范围内敌方行动结束时，驱散其2个「有益状态」，并受到1次「固定伤害」（施术者物攻的30%）"
+  },
+  {
+    "ID": 239872,
+    "Value": "3格范围内敌方受治疗效果-30%，且行动结束时，转化2个「有益状态」为「燃烧」和「煞火」状态，持续2回合，并受到1次「固定伤害」（施术者物攻的30%）"
+  },
+  {
+    "ID": 239873,
+    "Value": "开阔战场无障碍，两侧小路可通向敌军后方"
+  },
+  {
+    "ID": 239874,
+    "Value": "每回合开始时场上的「杀剑恶骸」数量始终小于4"
+  },
+  {
+    "ID": 239875,
+    "Value": "【神将之影的护盾】"
+  },
+  {
+    "ID": 239876,
+    "Value": "【神光剑】"
+  },
+  {
+    "ID": 239877,
+    "Value": "【临时道具「神光剑」的使用】"
+  },
+  {
+    "ID": 239878,
+    "Value": "当「神将之影」的气血到达<b><color=#e4462c>75%</color></b>，<b><color=#e4462c>50%</color></b>和<b><color=#e4462c>25%</color></b>时，其会获得护盾。若不尽快击破其护盾，「神将之影」的伤害会越来高。"
+  },
+  {
+    "ID": 239879,
+    "Value": "「神将之影」的技能释放后，均会召唤「神光剑」。「神光剑」的绝学会立即触发目标身上的「神序状态」。"
+  },
+  {
+    "ID": 239880,
+    "Value": "「神光剑」阵亡后，会成为可被拾取的<color=#e4462c>临时道具</color>。灵活使用<color=#e4462c>临时道具</color>可以增加输出效率。"
+  },
+  {
+    "ID": 239881,
+    "Value": "累计获得5次秘宝"
+  },
+  {
+    "ID": 239882,
+    "Value": "累计获得15次秘宝"
+  },
+  {
+    "ID": 239883,
+    "Value": "获得1次高阶玄兵"
+  },
+  {
+    "ID": 239884,
+    "Value": "获得5次高阶玄兵"
+  },
+  {
+    "ID": 239885,
+    "Value": "提升1次探索等级"
+  },
+  {
+    "ID": 239886,
+    "Value": "累计提升10次探索等级"
+  },
+  {
+    "ID": 239887,
+    "Value": "累计提升20次探索等级"
+  },
+  {
+    "ID": 239888,
+    "Value": "累计提升30次探索等级"
+  },
+  {
+    "ID": 239889,
+    "Value": "冰阵组合\n适用各种PVP场景\nPVE环境适应性也很强"
+  },
+  {
+    "ID": 239890,
+    "Value": "免疫「固定伤害」，主动移动后在路径上制造「霜冻」地形，持续2回合。若自身为冰属相，主动攻击后自身和施加者累积1点气力且随机1个伤害绝学冷却时间-1。\n「霜冻」：霜冻内的敌方角色，移动力-1"
+  },
+  {
+    "ID": 239891,
+    "Value": "行动时无视敌方角色阻挡，使用绝学后，自身获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157011 bgcolor=#3a85ffff>「残魂之力」</link>状态；回合开始时，若携带的<link type=buff value=763157011 bgcolor=#3a85ffff>「残魂之力」</link>状态达到<b><color=#e4462c>3</color></b>层时，立即转化为<link type=buff value=763157012 bgcolor=#3a85ffff>「残魂超载」</link>状态，持续<b><color=#e4462c>2</color></b>回合；<link type=buff value=763157012 bgcolor=#3a85ffff>「残魂超载」</link>状态消失时，自身获得<link type=buff value=763157016 bgcolor=#3a85ffff>「残魂负载」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239892,
+    "Value": "行动时无视敌方角色阻挡，受到伤害后，自身获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157081 bgcolor=#3a85ffff>「残魂之力」</link>状态；回合开始时，若携带的<link type=buff value=763157081 bgcolor=#3a85ffff>「残魂之力」</link>状态达到<b><color=#e4462c>5</color></b>层时，立即转化为<link type=buff value=763157082 bgcolor=#3a85ffff>「残魂超载」</link>状态，持续<b><color=#e4462c>2</color></b>回合；<link type=buff value=763157082 bgcolor=#3a85ffff>「残魂超载」</link>状态消失时，自身获得<link type=buff value=763157086 bgcolor=#3a85ffff>「残魂负载」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239893,
+    "Value": "移动力<b><color=#e4462c>+2</color></b>，反击射程<b><color=#e4462c>+4</color></b>。气血低于<b><color=#e4462c>75%</color></b>，<b><color=#e4462c>50%</color></b>和<b><color=#e4462c>25%</color></b>时，自身获得护盾（最大气血的<b><color=#e4462c>30%</color></b>）。携带护盾时，无法使用主动绝学，射程<b><color=#e4462c>+5</color></b>，主动攻击造成伤害后，对目标菱形<b><color=#e4462c>2</color></b>格范围内的其他敌方造成<b><color=#e4462c>1</color></b>次物攻伤害（<b><color=#e4462c>0.7</color></b>倍的物攻），并对自身施加<b><color=#e4462c>1</color></b>层「神剑」。场上每存在<b><color=#e4462c>1</color></b>个「神光剑」，行动结束时，对菱形<b><color=#e4462c>3</color></b>格的随机<b><color=#e4462c>1</color></b>个敌人施加<b><color=#e4462c>1</color></b>个随机的<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>"
+  },
+  {
+    "ID": 239894,
+    "Value": "净土"
+  },
+  {
+    "ID": 239895,
+    "Value": "免疫「妖气」状态，行动结束后，获得1个随机「有益状态」"
+  },
+  {
+    "ID": 239896,
+    "Value": "散妖诀"
+  },
+  {
+    "ID": 239897,
+    "Value": "[被动]持有者展开「血魂壁障」，每回合消耗10点「血魂灵珠」能量。\n[主动]将「血魂灵珠」传递给目标友方，并使其获得5个随机「有益状态」（每次传递消耗10点能量）。"
+  },
+  {
+    "ID": 239898,
+    "Value": "血魂壁障"
+  },
+  {
+    "ID": 239899,
+    "Value": "伤害降低20%，行动结束时，获得3个随机「有害状态」。"
+  },
+  {
+    "ID": 239900,
+    "Value": "序章"
+  },
+  {
+    "ID": 239901,
+    "Value": "[被动]行动结束时，为<b><color=#e4462c>3</color></b>格范围内<b><color=#e4462c>3</color></b>个气血百分比最低的其他友方角色恢复气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并驱散<b><color=#e4462c>1</color></b>个「有害状态」。\n[主动]主动使用，驱散范围内所有友方身上<b><color=#e4462c>4</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍）。"
+  },
+  {
+    "ID": 239902,
+    "Value": "[被动]行动结束时，为<b><color=#e4462c>3</color></b>格范围内所有友方角色恢复气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并驱散<b><color=#e4462c>1</color></b>个「有害状态」。\n[主动]主动使用，驱散范围内所有友方身上<b><color=#e4462c>4</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍）。"
+  },
+  {
+    "ID": 239903,
+    "Value": "[被动]行动结束时，为<b><color=#e4462c>3</color></b>格范围内所有友方角色恢复气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并驱散<b><color=#e4462c>1</color></b>个「有害状态」，对其中物攻/法攻属性最高的1个其他友方施加<link type=buff value=700000652 bgcolor=#3a85ffff>「冰清」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[主动]主动使用，驱散范围内所有友方身上<b><color=#e4462c>4</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），施加<link type=buff value=700000652 bgcolor=#3a85ffff>「冰清」</link>状态，持续<b><color=#e4462c>2</color></b>回合，自身获得<link type=buff value=700001331 bgcolor=#3a85ffff>「芬芳I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。"
+  },
+  {
+    "ID": 239904,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内其他友方遭受攻击「对战后」为其恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），且自身损失<b><color=#e4462c>30%</color></b>当前气血。（每回合触发<b><color=#e4462c>1</color></b>次）\n[主动]主动使用，对单个友方施加<link type=buff value=700000531 bgcolor=#3a85ffff>「披甲I」</link>和<link type=buff value=700001121 bgcolor=#3a85ffff>「愈合」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239905,
+    "Value": "从天而降，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，反转<b><color=#e4462c>2</color></b>个「有益状态」，并施加<link type=buff value=700004090 bgcolor=#3a85ffff>「燃烧」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239906,
+    "Value": "从天而降，反转自身<b><color=#e4462c>3</color></b>个「有害状态」，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，反转<b><color=#e4462c>3</color></b>个「有益状态」，并施加<b><color=#e4462c>2</color></b>层<link type=buff value=700004090 bgcolor=#3a85ffff>「燃烧」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239907,
+    "Value": "[被动]行动结束时，若处于友方「真炎」地形上，则当前冷却时间最短的绝学冷却<b><color=#e4462c>-1</color></b>。\n[主动]主动使用，从天而降，反转自身<b><color=#e4462c>3</color></b>个「有害状态」，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.8</color></b>倍伤害，反转<b><color=#e4462c>3</color></b>个「有益状态」，并施加<b><color=#e4462c>2</color></b>层<link type=buff value=700004090 bgcolor=#3a85ffff>「燃烧」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239908,
+    "Value": "折刃贯空"
+  },
+  {
+    "ID": 239909,
+    "Value": "祀战之舞"
+  },
+  {
+    "ID": 239910,
+    "Value": "透骨同悲"
+  },
+  {
+    "ID": 239911,
+    "Value": "裂渊千碎"
+  },
+  {
+    "ID": 239912,
+    "Value": "裂空·流风"
+  },
+  {
+    "ID": 239913,
+    "Value": "流舞"
+  },
+  {
+    "ID": 239914,
+    "Value": "祈舞八荒"
+  },
+  {
+    "ID": 239915,
+    "Value": "元魄守身"
+  },
+  {
+    "ID": 239916,
+    "Value": "无畏凶"
+  },
+  {
+    "ID": 239917,
+    "Value": "魂域"
+  },
+  {
+    "ID": 239918,
+    "Value": "魂域内的敌方角色，行动结束后，获得2个随机「有害状态」。"
+  },
+  {
+    "ID": 239919,
+    "Value": "流舞-形外三魂"
+  },
+  {
+    "ID": 239920,
+    "Value": "采自天地间的一缕『三魂』，使用后可令『流舞』升星。\n\n『云笈七签』言：一常居本属宫宿，一居地府五岳中，一居水府。以本命之日，一魂归降，人身唯七魄常居不散。"
+  },
+  {
+    "ID": 239921,
+    "Value": "碎影凝穹"
+  },
+  {
+    "ID": 239922,
+    "Value": "载：剑分九野星芒坠，气贯重霄穹影凝。\n传：上古妖兽「九繇」，九首蛇身，吞噬日月精华。遭伏羲镇压，取其第三首骨铸剑。此剑可随心碎散如万片星辰，又能瞬息重聚。\n言：羲皇镇妖骨，碎辰聚魂锋。"
+  },
+  {
+    "ID": 239923,
+    "Value": "魂吸"
+  },
+  {
+    "ID": 239924,
+    "Value": "魂体状态"
+  },
+  {
+    "ID": 239925,
+    "Value": "血魂母体"
+  },
+  {
+    "ID": 239926,
+    "Value": "天赋1"
+  },
+  {
+    "ID": 239927,
+    "Value": "天赋2"
+  },
+  {
+    "ID": 239928,
+    "Value": "天赋3"
+  },
+  {
+    "ID": 239929,
+    "Value": "天赋4"
+  },
+  {
+    "ID": 239930,
+    "Value": "天赋5"
+  },
+  {
+    "ID": 239931,
+    "Value": "止戈御冲"
+  },
+  {
+    "ID": 239932,
+    "Value": "回马枪"
+  },
+  {
+    "ID": 239933,
+    "Value": "断马脚"
+  },
+  {
+    "ID": 239934,
+    "Value": "双防提升20%"
+  },
+  {
+    "ID": 239935,
+    "Value": "双防提升30%"
+  },
+  {
+    "ID": 239936,
+    "Value": "双防提升50%"
+  },
+  {
+    "ID": 239937,
+    "Value": "反击射程+1，反击伤害+30%。遭受攻击「对战中」若目标位于自身菱形3格范围内，则受到伤害+50%。"
+  },
+  {
+    "ID": 239938,
+    "Value": "物防，法防降低30%，无法行动且在对战中无法反击。"
+  },
+  {
+    "ID": 239939,
+    "Value": "幻狱内的敌方角色，行动结束时，获得2个随机「神序状态」"
+  },
+  {
+    "ID": 239940,
+    "Value": "卸下宝物，会导致「最终挑战」对应的通关记录被移除"
+  },
+  {
+    "ID": 239941,
+    "Value": "1、对阵双方中，任意一方段位达到「白金III」将开启「禁选模式」，根据指定轮次顺序禁用对方英灵或选择我方上阵英灵，直至确认5名上阵英灵。\n2、限时玩法「群雄并起」将在「淘汰赛」阶段同时开启，玩家段位达到「宗师III」后方可参加。该模式中对阵双方英灵将被合并放入同一禁选池中进行禁选。被一方选择或禁用的英灵，另一方将无法再次选择或禁用。\n3、参与限时玩法「群雄并起」需要提前在「队伍编成」中进行独立编队。\n4、参与限时玩法「群雄并起」同样可获得逐鹿争锋玩法的「星级积分」。\n\n当前赛季禁选轮次顺序如下：\n先手方禁用1名英灵-->后手方禁用2名英灵-->先手方选用1名英灵-->后手方选用1名英灵-->先手方禁用2名英灵-->后手方禁用1名英灵-->后手方选用1名英灵-->先手方禁用1名英灵-->先手方选用2名英灵-->后手方禁用1名英灵-->后手方选用2名英灵-->先手方选用1名英灵-->先手方禁用1名英灵-->后手方禁用2名英灵-->先手方禁用1名英灵-->先手方选用1名英灵-->后手方选用1名英灵"
+  },
+  {
+    "ID": 239942,
+    "Value": "免疫「移动力限制」状态，受到致命伤害时免除死亡，气血恢复30%，持续时间降低1回合。主动攻击后获得1层「龙胆」状态，若击杀目标或目标触发「抵挡致命伤害」的效果，额外获得1层「龙胆」状态，并使「无双」状态持续时间延长1回合。"
+  },
+  {
+    "ID": 239943,
+    "Value": "除气血外全属性提升5%（上限25%）"
+  },
+  {
+    "ID": 239944,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，施加<link type=buff value=700000906 bgcolor=#3a85ffff>「无摧·乱神II」</link>和<link type=buff value=763157055 bgcolor=#3a85ffff>「无摧·灭击」</link>状态，持续<b><color=#e4462c>2</color></b>回合，若本次攻击命中的目标不低于<b><color=#e4462c>3</color></b>个，则冷却回合数<b><color=#e4462c>-2</color></b>。"
+  },
+  {
+    "ID": 239945,
+    "Value": "[被动]自身及召唤物主动攻击，目标已损失气血每多<b><color=#e4462c>10%</color></b>，「对战中」物防降低<b><color=#e4462c>5%</color></b>（最多降低<b><color=#e4462c>25%</color></b>）。\n[主动]攻击单个敌人，造成<b><color=#e4462c>1.6</color></b>倍伤害，暴击伤害提高<b><color=#e4462c>20%</color></b>，「对战前」反转目标<b><color=#e4462c>3</color></b>个「有益状态」，每反转<b><color=#e4462c>1</color></b>个，暴击率提升<b><color=#e4462c>5%</color></b>（最高<b><color=#e4462c>15%</color></b>）。「对战后」施加<link type=buff value=700019020 bgcolor=#3a85ffff>「压制」</link><link type=buff value=741092414 bgcolor=#3a85ffff>「雷晶印记」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239946,
+    "Value": "主动使用，自身获得「无双」状态，持续<b><color=#e4462c>3</color></b>回合。\n「无双」：免疫「移动力限制」状态，受到致命伤害时免除死亡，气血恢复<b><color=#e4462c>30%</color></b>，持续时间降低<b><color=#e4462c>1</color></b>回合。主动攻击后获得<b><color=#e4462c>1</color></b>层「龙胆」状态，若击杀目标或目标触发「抵挡致命伤害」的效果，额外获得<b><color=#e4462c>1</color></b>层「龙胆」状态，并使「无双」状态持续时间延长<b><color=#e4462c>1</color></b>回合。\n「龙胆」：全属性提升<b><color=#e4462c>5%</color></b>，获得「龙胆」状态时所有伤害绝学冷却时间<b><color=#e4462c>-1</color></b>（上限<b><color=#e4462c>4</color></b>层）。"
+  },
+  {
+    "ID": 239947,
+    "Value": "[被动]若自身处于<link type=buff value=741140108 bgcolor=#3a85ffff>「无双」</link>状态，主动攻击，目标无法发动「抵挡致命伤害」效果。\n[主动]攻击单个敌人，造成<b><color=#e4462c>1.6</color></b>倍伤害，「对战前」每移动<b><color=#e4462c>2</color></b>格，「对战后」击退目标<b><color=#e4462c>1</color></b>格（最多<b><color=#e4462c>3</color></b>格）并施加<b><color=#e4462c>1</color></b>层<link type=buff value=600000104 bgcolor=#3a85ffff>「神序状态」</link>（最多<b><color=#e4462c>3</color></b>层），如果击退路线被阻挡，则施加<link type=buff value=741060103 bgcolor=#3a85ffff>「断骨」</link>状态，持续<b><color=#e4462c>1</color></b>回合。若目标未成功被击退，则施加<link type=buff value=741400268 bgcolor=#3a85ffff>「滞之劫」</link>状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 239948,
+    "Value": "灵阙明灭阵"
+  },
+  {
+    "ID": 239949,
+    "Value": "上阵流舞和至少2位「光」/「暗」/「幽」属相英灵时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%，「对战中」伤害提高10%，若为近战攻击「对战中」伤害额外提高5%"
+  },
+  {
+    "ID": 239950,
+    "Value": "荒刃"
+  },
+  {
+    "ID": 239951,
+    "Value": "敌方拾取后获得1个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关1圈范围敌人造成1次0.3倍物攻伤害。"
+  },
+  {
+    "ID": 239952,
+    "Value": "时装·如火烈烈"
+  },
+  {
+    "ID": 239953,
+    "Value": "率履不越，遂视既发。敷政优优，百禄是遒。"
+  },
+  {
+    "ID": 239954,
+    "Value": "如火烈烈"
+  },
+  {
+    "ID": 239955,
+    "Value": "率履不越|遂视既发|敷政优优|百禄是遒"
+  },
+  {
+    "ID": 239956,
+    "Value": "解锁『流舞·如火烈烈』周年皮肤"
+  },
+  {
+    "ID": 239957,
+    "Value": "同时拥有流舞「如火烈烈」皮肤"
+  },
+  {
+    "ID": 239958,
+    "Value": "蚀隙异动"
+  },
+  {
+    "ID": 239959,
+    "Value": "寰神结·六"
+  },
+  {
+    "ID": 239960,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.3</color></b>倍伤害，在绝学最远位置制造<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239961,
+    "Value": "主动使用，对单个友方和自身施加「魔铠」「神睿I」状态，持续<b><color=#e4462c>3</color></b>回合。在友方位置制造<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239962,
+    "Value": "[被动]主动普攻伤害提升<b><color=#e4462c>20%</color></b>。\n主动使用，对单个友方和自身施加「魔铠」「神睿I」状态，持续<b><color=#e4462c>3</color></b>回合。对友方额外施加「刃心」状态。"
+  },
+  {
+    "ID": 239963,
+    "Value": "[被动]主动普攻伤害提升<b><color=#e4462c>20%</color></b>。\n主动使用，为范围内所有友方施加「魔铠」「神睿I」「极意I」状态，持续<b><color=#e4462c>4</color></b>回合。对友方额外施加「刃心」状态。"
+  },
+  {
+    "ID": 239964,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.5</color></b>倍伤害，「对战前」施加「禁疗」状态，持续<b><color=#e4462c>2</color></b>回合。绝学后对「荒刃」机关<b><color=#e4462c>1</color></b>圈范围敌人施加「断筋」状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239965,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，施加「压制」状态，在绝学范围顶点格格制造<b><color=#e4462c>4</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239966,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，施加「压制」和<b><color=#e4462c>2</color></b>层「魔疫状态」，在绝学范围顶点格格制造<b><color=#e4462c>4</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239967,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.6</color></b>倍伤害，施加「压制」和<b><color=#e4462c>2</color></b>层「魔疫状态」，在绝学范围顶点格格制造<b><color=#e4462c>4</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239968,
+    "Value": "选择传送到「荒刃」机关周身<b><color=#e4462c>1</color></b>圈的空位，自身获得再行动（<b><color=#e4462c>3</color></b>格）。本次行动不降低「有益状态」的持续时间。绝学前在原地生成「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239969,
+    "Value": "主动使用，对范围内的所有友方施加「御魔I」状态，持续<b><color=#e4462c>3</color></b>回合，并附加「霜铠」状态。"
+  },
+  {
+    "ID": 239970,
+    "Value": "主动使用，恢复范围内所有友方气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），驱散<b><color=#e4462c>1</color></b>个「有害状态」施加「御魔I」「固元I」状态，持续<b><color=#e4462c>3</color></b>回合，并附加「霜铠」状态。"
+  },
+  {
+    "ID": 239971,
+    "Value": "[被动]主动使用绝学后，清除范围内敌方机关并对所有格子施加「霜冻」地形，持续<b><color=#e4462c>2</color></b>回合。\n主动使用，恢复范围内所有友方气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），驱散<b><color=#e4462c>2</color></b>个「有害状态」施加「御魔I」「固元II」状态，持续<b><color=#e4462c>3</color></b>回合，并附加「霜铠」状态。若自身其他绝学未进入冷却，则该绝学冷却<b><color=#e4462c>-2</color></b>。"
+  },
+  {
+    "ID": 239972,
+    "Value": "[被动]行动结束时，恢复<b><color=#e4462c>3</color></b>格范围内友方气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并驱散<b><color=#e4462c>1</color></b>个「有害状态」，对其中物攻<b><color=#e4462c>/</color></b>法攻属性最高的<b><color=#e4462c>1</color></b>个其他友方施加「冰清」状态，持续<b><color=#e4462c>2</color></b>回合。\n[主动]驱散范围内所有友方身上<b><color=#e4462c>4</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），施加「冰清」状态，持续<b><color=#e4462c>2</color></b>回合，自身获得「芬芳I」状态，持续<b><color=#e4462c>4</color></b>回合。"
+  },
+  {
+    "ID": 239973,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内其他友方遭受攻击「对战后」为其恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），且自身损失<b><color=#e4462c>30%</color></b>当前气血。（每回合触发<b><color=#e4462c>1</color></b>次）\n[主动]主动使用，对单个友方施加「披甲I」和「愈合」状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239974,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内其他友方遭受攻击「对战后」，为其驱散<b><color=#e4462c>1</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），且自身损失<b><color=#e4462c>30%</color></b>当前气血。（每回合触发<b><color=#e4462c>1</color></b>次）\n主动使用，驱散单个友方<b><color=#e4462c>1</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），施加「披甲I」「神护I」和「愈合」状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239975,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内其他友方遭受攻击「对战后」，为其驱散<b><color=#e4462c>2</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍）。（每回合触发<b><color=#e4462c>1</color></b>次）\n主动使用，驱散单个友方<b><color=#e4462c>2</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），施加「披甲I」「神护II」「愈合」状态，持续<b><color=#e4462c>2</color></b>回合。若自身携带「有害状态」小于<b><color=#e4462c>3</color></b>个则该绝学冷却<b><color=#e4462c>-1</color></b>。"
+  },
+  {
+    "ID": 239976,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，且为范围内所有友方施加「炎铠」「神睿I」状态，持续<b><color=#e4462c>2</color></b>回合，自身周围<b><color=#e4462c>3</color></b>格张开领域「地火焚狱·壹」，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239977,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.6</color></b>倍伤害，且为范围内所有友方施加「炎铠」「神睿I」状态，持续<b><color=#e4462c>3</color></b>回合，自身周围<b><color=#e4462c>3</color></b>格张开领域「地火焚狱·贰」，持续<b><color=#e4462c>3</color></b>回合。"
+  },
+  {
+    "ID": 239978,
+    "Value": "向前穿刺并到达作用范围（<b><color=#e4462c>5</color></b>格）最远可到达的格子上，对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，并施加「燃烧」状态，持续<b><color=#e4462c>2</color></b>回合，自身获得「龙骧」状态。"
+  },
+  {
+    "ID": 239979,
+    "Value": "[被动]若自身携带「龙骧」或「咆振」状态，主动普攻触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害），且「对战后」在自身<b><color=#e4462c>1</color></b>圈范围内制造「真炎」地形，持续<b><color=#e4462c>3</color></b>回合。\n[主动]主动使用，向前穿刺并到达作用范围（<b><color=#e4462c>5</color></b>格）最远可到达的格子上，对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，并施加<b><color=#e4462c>2</color></b>层「燃烧」状态，持续<b><color=#e4462c>2</color></b>回合，自身获得「龙骧」状态。若自身<b><color=#e4462c>2</color></b>格范围内少于<b><color=#e4462c>3</color></b>个敌人，则获得再行动（<b><color=#e4462c>3</color></b>格），并获得「调息」状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 239980,
+    "Value": "从天而降，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，使目标身上<b><color=#e4462c>2</color></b>个「有益状态」变为随机「有害状态」，并施加「燃烧」状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239981,
+    "Value": "从天而降，反转自身<b><color=#e4462c>3</color></b>个「有害状态」，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，使目标身上<b><color=#e4462c>3</color></b>个「有益状态」变为随机「有害状态」，并施加<b><color=#e4462c>2</color></b>层「燃烧」状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239982,
+    "Value": "[被动]行动结束时，若处于友方「真炎」地形上，则当前冷却时间最短的绝学冷却<b><color=#e4462c>-1</color></b>。\n[主动]主动使用，从天而降，反转自身<b><color=#e4462c>3</color></b>个「有害状态」，对<b><color=#e4462c>3</color></b>格范围内所有敌人造成<b><color=#e4462c>0.8</color></b>倍伤害，使目标身上<b><color=#e4462c>3</color></b>个「有益状态」变为随机「有害状态」，并施加<b><color=#e4462c>2</color></b>层「燃烧」状态，持续<b><color=#e4462c>2</color></b>回合。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力，行动结束时，若处于友方「真炎」地形上，则额外获得<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239983,
+    "Value": "选择<b><color=#e4462c>1</color></b>格空格，对范围内所有敌人造成<b><color=#e4462c>1</color></b>倍伤害，制造「净土」地形，持续<b><color=#e4462c>3</color></b>回合。\n「净土」：免疫「妖气」状态，行动结束后，获得<b><color=#e4462c>1</color></b>个随机「有益状态」。"
+  },
+  {
+    "ID": 239984,
+    "Value": "[被动]持有者展开「血魂壁障」，每回合消耗<b><color=#e4462c>10</color></b>点「血魂灵珠」能量。\n[主动]将「血魂灵珠」传递给目标友方，并使其获得<b><color=#e4462c>5</color></b>个随机「有益状态」（每次传递消耗<b><color=#e4462c>10</color></b>点能量）。"
+  },
+  {
+    "ID": 239985,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，并将全场敌方朝自己所在的方向击退<b><color=#e4462c>2</color></b>格。"
+  },
+  {
+    "ID": 239986,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>2</color></b>倍伤害。「对战前」对目标施加<b><color=#e4462c>2</color></b>个「可升级有害状态」。「对战后」若目标携带「有害状态」的数量大于等于<b><color=#e4462c>3</color></b>个，则对全场敌方施加<b><color=#e4462c>1</color></b>个「魔疫状态」。"
+  },
+  {
+    "ID": 239987,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，施加<b><color=#e4462c>1</color></b>个随机「可升级有害状态」。"
+  },
+  {
+    "ID": 239988,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1.2</color></b>倍伤害，并降低<b><color=#e4462c>30</color></b>点「血魂灵珠」能量。"
+  },
+  {
+    "ID": 239989,
+    "Value": "攻击单个敌方，造成<b><color=#e4462c>2</color></b>倍伤害，若造成击杀，则重置所有主动绝学的冷却时间。"
+  },
+  {
+    "ID": 239990,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，清除攻击范围内敌方的地形和机关。"
+  },
+  {
+    "ID": 239991,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>1.2</color></b>倍伤害，清除攻击范围内敌方的地形和机关，并在技能范围的边缘空格制造「地刺」机关，持续<b><color=#e4462c>2</color></b>回合。「地刺」无法再生成其他地形，不可停留，仅飞行和轻功单位可以跨越，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 239992,
+    "Value": "向前冲锋，对路径上的敌人造成<b><color=#e4462c>1.2</color></b>倍伤害，并落位于最远可到达的位置。\n[气力技]消耗<b><color=#e4462c>4</color></b>点气力，才能释放技能（角色每造成<b><color=#e4462c>1</color></b>次伤害累积<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 239993,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>8%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标相邻<b><color=#e4462c>1</color></b>格随机位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>4</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239994,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>10%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标相邻<b><color=#e4462c>1</color></b>格随机位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>3</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239995,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>12%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标相邻<b><color=#e4462c>1</color></b>格随机位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>3</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239996,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>15%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标相邻<b><color=#e4462c>1</color></b>格随机位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>2</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 239997,
+    "Value": "主动攻击，对战后恢复自身气血，恢复量为本次伤害的<b><color=#e4462c>30%</color></b>。\n若本次为近战攻击，「对战前」转化目标<b><color=#e4462c>2</color></b>个「有益状态」为「可升级有害状态」每转化<b><color=#e4462c>1</color></b>个「有益状态」伤害提高<b><color=#e4462c>10%</color></b>（最多提高<b><color=#e4462c>20%</color></b>）\n若本次为远程攻击，「对战前」转移自身<b><color=#e4462c>2</color></b>个「有害状态」给目标，每转移<b><color=#e4462c>1</color></b>个「有害状态」伤害提高<b><color=#e4462c>10%</color></b>（最多提高<b><color=#e4462c>20%</color></b>）"
+  },
+  {
+    "ID": 239998,
+    "Value": "若自身处于「荒刃」机关<b><color=#e4462c>1</color></b>圈范围内，获得「有害状态」时，使其持续时间<b><color=#e4462c>-1</color></b>"
+  },
+  {
+    "ID": 239999,
+    "Value": "若自身携带的「有害状态」小于等于<b><color=#e4462c>3</color></b>，主动攻击「对战中」伤害和免伤提高<b><color=#e4462c>15%</color></b>"
+  },
+  {
+    "ID": 240000,
+    "Value": "免疫所有伤害。"
+  },
+  {
+    "ID": 240001,
+    "Value": "战斗开始前，展开「血魂之系」。造成伤害后，在目标位置制造「魂域」地形，持续<b><color=#e4462c>3</color></b>回合。\n「魂域」：行动结束后，获得<b><color=#e4462c>2</color></b>个随机「有害状态」。\n「血魂之系」：敌方行动结束后，受到<b><color=#e4462c>1</color></b>次「固定伤害」（气血上限的<b><color=#e4462c>60%</color></b>）并获得<b><color=#e4462c>1</color></b>个「魔疫状态」。"
+  },
+  {
+    "ID": 240002,
+    "Value": "战斗开始前，展开「血魂之系」。造成伤害后，在目标位置制造「魂域」地形，持续<b><color=#e4462c>3</color></b>回合。回合开始时前，若菱形<b><color=#e4462c>5</color></b>格范围内不存在敌方，则清除所有「血魂灵珠」能量。\n「魂域」：行动结束后，获得<b><color=#e4462c>2</color></b>个随机「有害状态」。\n「血魂之系」：敌方行动结束后，受到<b><color=#e4462c>1</color></b>次「固定伤害」（气血上限的<b><color=#e4462c>60%</color></b>）并获得<b><color=#e4462c>1</color></b>个「魔疫状态」。"
+  },
+  {
+    "ID": 240003,
+    "Value": "伤害，免伤提升<b><color=#e4462c>25%</color></b>。行动结束时，若本次行动未发生位移，则双防提升<b><color=#e4462c>20%</color></b>，反之进入「回马枪」姿态，持续<b><color=#e4462c>1</color></b>回合。\n「回马枪」反击射程<b><color=#e4462c>+1</color></b>，反击伤害<b><color=#e4462c>+30%</color></b>。遭受攻击「对战中」若目标位于自身菱形<b><color=#e4462c>3</color></b>格范围内，则受到伤害<b><color=#e4462c>+50%</color></b>。"
+  },
+  {
+    "ID": 240004,
+    "Value": "伤害，免伤提升<b><color=#e4462c>25%</color></b>。行动结束时，若本次行动未发生位移，则双防提升<b><color=#e4462c>30%</color></b>，反之进入「回马枪」姿态，持续<b><color=#e4462c>1</color></b>回合。\n「回马枪」反击射程<b><color=#e4462c>+1</color></b>，反击伤害<b><color=#e4462c>+30%</color></b>。遭受攻击「对战中」若目标位于自身菱形<b><color=#e4462c>3</color></b>格范围内，则受到伤害<b><color=#e4462c>+50%</color></b>。"
+  },
+  {
+    "ID": 240005,
+    "Value": "伤害，免伤提升<b><color=#e4462c>25%</color></b>。行动结束时，若本次行动未发生位移，则双防提升<b><color=#e4462c>50%</color></b>，反之进入「回马枪」姿态，持续<b><color=#e4462c>1</color></b>回合。\n「回马枪」反击射程<b><color=#e4462c>+1</color></b>，反击伤害<b><color=#e4462c>+30%</color></b>。遭受攻击「对战中」若目标位于自身菱形<b><color=#e4462c>3</color></b>格范围内，则受到伤害<b><color=#e4462c>+50%</color></b>。"
+  },
+  {
+    "ID": 240006,
+    "Value": "无法行动且对战中无法反击，无法被护卫，免疫「固定伤害」。相邻单位免伤提升<b><color=#e4462c>20%</color></b>。当骑兵穿过时，获得「断马脚」状态，持续<b><color=#e4462c>1</color></b>回合。\n「断马脚」物防，法防降低<b><color=#e4462c>30%</color></b>，无法行动且在对战中无法反击。"
+  },
+  {
+    "ID": 240007,
+    "Value": "无法行动且对战中无法反击，无法被护卫，免疫「固定伤害」。相邻单位免伤提升<b><color=#e4462c>20%</color></b>。当铁浮屠穿过时，获得「断马脚」状态，持续<b><color=#e4462c>1</color></b>回合。\n「断马脚」物防，法防降低<b><color=#e4462c>30%</color></b>，无法行动且在对战中无法反击。"
+  },
+  {
+    "ID": 240008,
+    "Value": "血魂灵珠"
+  },
+  {
+    "ID": 240009,
+    "Value": "血魂残骸"
+  },
+  {
+    "ID": 240010,
+    "Value": "拾取后，获得「血灵神珠」"
+  },
+  {
+    "ID": 240011,
+    "Value": "拾取后，增加20点「血魂灵珠」能量"
+  },
+  {
+    "ID": 240012,
+    "Value": "碎影谒神"
+  },
+  {
+    "ID": 240013,
+    "Value": "祖灵"
+  },
+  {
+    "ID": 240014,
+    "Value": "守墓灵"
+  },
+  {
+    "ID": 240015,
+    "Value": "阴寒尸毒"
+  },
+  {
+    "ID": 240016,
+    "Value": "巨蛇毒牙"
+  },
+  {
+    "ID": 240017,
+    "Value": "蜕变"
+  },
+  {
+    "ID": 240018,
+    "Value": "怨极"
+  },
+  {
+    "ID": 240019,
+    "Value": "若自身「有害状态」小于等于3，则无法被敌方选中。（主动攻击遭受伤害或遭受攻击受到伤害后移除）"
+  },
+  {
+    "ID": 240020,
+    "Value": "气血上限下降5%；行动结束时，受到1次「固定伤害」（气血上限的5%），上限10层，每受到1次「过量治疗」移除1层"
+  },
+  {
+    "ID": 240021,
+    "Value": "伤害+50%，最多可叠加3层"
+  },
+  {
+    "ID": 240022,
+    "Value": "伤害提升10%，上限5层。"
+  },
+  {
+    "ID": 240023,
+    "Value": "墓穴巨石"
+  },
+  {
+    "ID": 240024,
+    "Value": "守墓俑"
+  },
+  {
+    "ID": 240025,
+    "Value": "毒液洪流"
+  },
+  {
+    "ID": 240026,
+    "Value": "无天极怨"
+  },
+  {
+    "ID": 240027,
+    "Value": "怨念横生"
+  },
+  {
+    "ID": 240028,
+    "Value": "谵妄噬心"
+  },
+  {
+    "ID": 240029,
+    "Value": "召唤<b><color=#e4462c>2</color></b>个「尸俑」助战。"
+  },
+  {
+    "ID": 240030,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>0.5</color></b>倍伤害，并立即触发目标的「蛇毒」「剧毒」状态。"
+  },
+  {
+    "ID": 240031,
+    "Value": "攻击单个敌方，造成<b><color=#e4462c>1.8</color></b>倍伤害，施加<b><color=#e4462c>3</color></b>个随机「可升级有害状态」，持续<b><color=#e4462c>2</color></b>回合；若造成击杀，则对场上所有敌人施加<b><color=#e4462c>2</color></b>个随机「可升级有害状态」。"
+  },
+  {
+    "ID": 240032,
+    "Value": "对范围内所有友方施加「神睿Ⅰ」「披甲Ⅰ」「御魔Ⅰ」状态，持续<b><color=#e4462c>2</color></b>回合；若目标为「化蛇」则额外施加<b><color=#e4462c>1</color></b>层「成长」状态。"
+  },
+  {
+    "ID": 240033,
+    "Value": "指定距离自身最近的敌方，次回合对其范围内敌方造成总计<b><color=#e4462c>4</color></b>倍伤害（由范围内所有敌方分摊）；若造成击杀，则自身获得<b><color=#e4462c>1</color></b>层「怨极」状态。\n [气力技]消耗<b><color=#e4462c>3</color></b>点气力，才能释放技能（每造成<b><color=#e4462c>1</color></b>次伤害，积累<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 240034,
+    "Value": "攻击单个敌方，造成<b><color=#e4462c>1.6</color></b>倍伤害，施加<b><color=#e4462c>5</color></b>个随机「可升级有害状态」，「对战后」使目标携带的随机<b><color=#e4462c>3</color></b>个「可升级有害状态」扩散至其周围<b><color=#e4462c>1</color></b>圈内所有敌方。"
+  },
+  {
+    "ID": 240035,
+    "Value": "对范围内所有敌方造成<b><color=#e4462c>0.5</color></b>倍伤害，施加<b><color=#e4462c>3</color></b>个随机「可升级有害状态」，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240036,
+    "Value": "蚩血身"
+  },
+  {
+    "ID": 240037,
+    "Value": "暗箭伤人"
+  },
+  {
+    "ID": 240038,
+    "Value": "尸毒入体"
+  },
+  {
+    "ID": 240039,
+    "Value": "阴煞狂蛇"
+  },
+  {
+    "ID": 240040,
+    "Value": "独我"
+  },
+  {
+    "ID": 240041,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>8%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>4</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 240042,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>10%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>3</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 240043,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>12%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>3</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 240044,
+    "Value": "物攻、物理免伤提高<b><color=#e4462c>15%</color></b>，射程<b><color=#e4462c>+1</color></b>。主动普攻若本次为近战攻击，触发「连击」（<b><color=#e4462c>0.6</color></b>倍伤害），若本次为远程攻击，触发「追击」（<b><color=#e4462c>0.5</color></b>倍伤害）。主动攻击「对战后」或遭受攻击受到伤害后在目标位置生成<b><color=#e4462c>1</color></b>个「荒刃」机关，持续<b><color=#e4462c>2</color></b>回合。若本次行动未发起攻击，则行动结束前可选择使用绝学「裂空·流风」（间隔<b><color=#e4462c>2</color></b>回合）\n「荒刃」：敌方拾取后获得<b><color=#e4462c>1</color></b>个「魔疫状态」。其他友方拾取后，使该「荒刃」机关的召唤者「流舞」传送到自身附近空格上。流舞主动攻击后，触发攻击范围内的「荒刃」机关，对机关<b><color=#e4462c>1</color></b>圈范围敌人造成<b><color=#e4462c>1</color></b>次<b><color=#e4462c>0.3</color></b>倍物攻伤害。"
+  },
+  {
+    "ID": 240045,
+    "Value": "无法普攻和反击，无法被护卫。警戒自身<b><color=#e4462c>3</color></b>格范围，若敌方行动结束时在警戒范围内，则立刻对其造成<b><color=#e4462c>1</color></b>倍物攻的物理伤害。并施加<link type=buff value=700001411 bgcolor=#3a85ffff>「锢步」</link>和<link type=buff value=700000870 bgcolor=#3a85ffff>「致残」</link>状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240046,
+    "Value": "阵亡后，原地生成<b><color=#e4462c>1</color></b>个「血魂残骸」。\n「血魂残骸」：拾取后，增加<b><color=#e4462c>20</color></b>点「血魂灵珠」能量"
+  },
+  {
+    "ID": 240047,
+    "Value": "阵亡后，对相邻敌方造成<b><color=#e4462c>1</color></b>次「固定伤害」（气血上限的<b><color=#e4462c>50%</color></b>）"
+  },
+  {
+    "ID": 240048,
+    "Value": "行动结束后，对菱形<b><color=#e4462c>2</color></b>格范围内的其他单位施加「封脉」状态，持续<b><color=#e4462c>1</color></b>回合。"
+  },
+  {
+    "ID": 240049,
+    "Value": "造成伤害后，对目标施加<b><color=#e4462c>1</color></b>层「阴寒尸毒」状态。"
+  },
+  {
+    "ID": 240050,
+    "Value": "法攻，法防提升<b><color=#e4462c>15%</color></b>。造成伤害后，对目标施加「蛇毒」状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240051,
+    "Value": "法攻，法防提升<b><color=#e4462c>25%</color></b>。造成伤害后，对目标施加「剧毒」状态，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240052,
+    "Value": "行动结束时，若自身携带「有害状态」，则触发「蜕皮」状态。\n当「成长」状态达到<b><color=#e4462c>3</color></b>层时，进化为「九环朱蝮」。"
+  },
+  {
+    "ID": 240053,
+    "Value": "主动攻击「对战前」，若目标携带「可升级有害状态」的数量大于等于<b><color=#e4462c>3</color></b>个，则恢复气血（气血上限的<b><color=#e4462c>10%</color></b>）。\n目标每携带有<b><color=#e4462c>1</color></b>个「有害状态」，对其造成的伤害提升<b><color=#e4462c>10%</color></b>（上限<b><color=#e4462c>30%</color></b>）。"
+  },
+  {
+    "ID": 240054,
+    "Value": "范围绝学范围提升<color=#F01212>1</color>。若自身移动力大于<color=#F01212>4</color>点，每多<color=#F01212>1</color>点范围绝学暴击伤害提高<color=#F01212>5%</color>（最多提高<color=#F01212>25%</color>）。"
+  },
+  {
+    "ID": 240055,
+    "Value": "范围绝学范围提升<color=#F01212>1</color>。若自身移动力大于<color=#F01212>3</color>点，每多<color=#F01212>1</color>点范围绝学暴击伤害提高<color=#F01212>5%</color>（最多提高<color=#F01212>25%</color>）。"
+  },
+  {
+    "ID": 240056,
+    "Value": "范围绝学范围提升<color=#F01212>1</color>。若自身移动力大于<color=#F01212>2</color>点，每多<color=#F01212>1</color>点范围绝学暴击伤害提高<color=#F01212>5%</color>（最多提高<color=#F01212>25%</color>）。"
+  },
+  {
+    "ID": 240057,
+    "Value": "射程+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240058,
+    "Value": "射程+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240059,
+    "Value": "射程+<color=#F01212>2</color>。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240060,
+    "Value": "移动力+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240061,
+    "Value": "移动力+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240062,
+    "Value": "移动力+<color=#F01212>2</color>。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240063,
+    "Value": "遭受携带大于等于<color=#F01212>3</color>个「有害状态」的目标攻击「对战后」获得<color=#F01212>1</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240064,
+    "Value": "遭受携带大于等于<color=#F01212>3</color>个「有害状态」的目标攻击「对战后」获得<color=#F01212>2</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240065,
+    "Value": "遭受携带大于等于<color=#F01212>3</color>个「有害状态」的目标攻击「对战后」获得<color=#F01212>3</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240066,
+    "Value": "射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240067,
+    "Value": "射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240068,
+    "Value": "射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240069,
+    "Value": "行动结束前，自身每有<color=#F01212>4</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240070,
+    "Value": "敌我双方只能沿直线行走，我方移动力+<color=#F01212>4</color>，射程+<color=#F01212>2</color>。"
+  },
+  {
+    "ID": 240071,
+    "Value": "开启挑战，我方所有角色气血上限降低<color=#F01212>90%</color>，击败下2个波次敌人后结束挑战并获得额外经验。"
+  },
+  {
+    "ID": 240072,
+    "Value": "直到击败下一波次敌人，全员保持「失魂」状态，每击败一个角色额外获得<color=#F01212>200</color>经验。"
+  },
+  {
+    "ID": 240073,
+    "Value": "似乎传来了激昂的音乐，赵云进入无敌状态，物攻、法攻提升<color=#F01212>50%</color>。（无论赵云在哪里！）"
+  },
+  {
+    "ID": 240074,
+    "Value": "前三关敌方属性战阵"
+  },
+  {
+    "ID": 240075,
+    "Value": "全属性提升10%。\n范围绝学范围提升1。若自身移动力大于4点，每多1点使用范围绝学时暴击伤害提高5%（最多提高25%）。"
+  },
+  {
+    "ID": 240076,
+    "Value": "全属性提升20%。\n范围绝学范围提升1。若自身移动力大于3点，每多1点使用范围绝学时暴击伤害提高5%（最多提高25%）。"
+  },
+  {
+    "ID": 240077,
+    "Value": "全属性提升30%。\n范围绝学范围提升1。若自身移动力大于2点，每多1点使用范围绝学时暴击伤害提高5%（最多提高25%）。"
+  },
+  {
+    "ID": 240078,
+    "Value": "每个大回合开始时场上的「杀剑恶骸」数量始终小于4"
+  },
+  {
+    "ID": 240079,
+    "Value": "敌人进入相邻范围或在相邻区域行动结束时，立刻受到「固定伤害」（最大气血的20%）并获得「跛脚I」状态，持续2回合；若目标已携带了「跛脚I」，则替换为「跛脚II」，持续2回合。"
+  },
+  {
+    "ID": 240080,
+    "Value": "万事具备，只欠东风。合适的时机下，可引雷攻击全场的敌人。"
+  },
+  {
+    "ID": 240081,
+    "Value": "魔壤内的敌方无法获得「有益状态」"
+  },
+  {
+    "ID": 240082,
+    "Value": "别打了！不如让小的加入各位大侠，小的这里有不少好宝贝为诸位助力。"
+  },
+  {
+    "ID": 240083,
+    "Value": "<color=#FFE897FF>司南仪背面好像刻着字……</color>"
+  },
+  {
+    "ID": 240084,
+    "Value": "司南仪有了反应！\\n西瓜里原来还藏了<color=#c78de0>财宝</color>！"
+  },
+  {
+    "ID": 240085,
+    "Value": "司南仪有了反应！\\n酒坛下原来还藏了<color=#c78de0>财宝</color>！"
+  },
+  {
+    "ID": 240086,
+    "Value": "司南仪有了反应！\\n麻袋中原来还藏了<color=#c78de0>秘宝</color>！"
+  },
+  {
+    "ID": 240087,
+    "Value": "司南仪有了反应！\\n塔影下面的地砖原来还藏了<color=#c78de0>秘宝</color>！"
+  },
+  {
+    "ID": 240088,
+    "Value": "银甲夜不脱，月下戈相拨……"
+  },
+  {
+    "ID": 240089,
+    "Value": "<color=#FFE897FF>这是……</color>"
+  },
+  {
+    "ID": 240090,
+    "Value": "孤骑压山河，授命长坂坡……\n烽火燃却长歌，志难落……"
+  },
+  {
+    "ID": 240091,
+    "Value": "志难落……哈哈哈！"
+  },
+  {
+    "ID": 240092,
+    "Value": "<color=#FFE897FF>纵马破，志难落，又何如！？不负——山河——！</color>"
+  },
+  {
+    "ID": 240093,
+    "Value": "<color=#FFE897FF>「西瓜肚里甜，坛底酒香眠。」\\n「麻袋阴中卧，塔影盖金元。」\\n这似乎是在暗示藏宝的地点……</color>"
+  },
+  {
+    "ID": 240094,
+    "Value": "队伍位阶到达「10级」且通过长枪映月关卡:「梦生异谈」后开启"
+  },
+  {
+    "ID": 240095,
+    "Value": "「禁选模式」与「群雄并起」"
+  },
+  {
+    "ID": 240096,
+    "Value": "1、对阵双方中，任意一方段位达到「白金III」将开启「禁选模式」，根据指定轮次顺序禁用对方英灵或选择我方上阵英灵，直至确认5名上阵英灵。\n2、在特定赛季期间，玩家段位达到「黄金III」后解锁「匹配模式」功能，可以自定义可匹配的玩法模式，玩法模式包含「禁选模式」和「群雄并起」\n3、「群雄并起」模式中对阵双方英灵将被合并放入同一禁选池中进行禁选。被一方选择或禁用的英灵，另一方将无法再次选择或禁用。\n4、参与「群雄并起」需要提前在「队伍编成」中进行独立编队。\n5、参与「群雄并起」同样可获得逐鹿争锋玩法的「星级积分」。\n\n当前赛季「禁选模式」禁选轮次顺序如下：\n先手方禁用1名英灵-->后手方禁用1名英灵-->后手方选用1名英灵-->先手方禁用1名英灵-->先手方选用1名英灵-->后手方禁用1名英灵-->后手方选用1名英灵-->先手方禁用2名英灵-->先手方选用1名英灵-->后手方禁用2名英灵-->后手方选用2名英灵-->先手方禁用2名英灵-->先手方选用2名英灵-->后手方禁用2名英灵-->后手方选用1名英灵-->先手方选用1名英灵\n\n当前赛季「群雄并起」禁选轮次顺序如下：\n先手方禁用1名英灵-->后手方禁用2名英灵-->先手方选用1名英灵-->后手方选用1名英灵-->先手方禁用2名英灵-->后手方禁用1名英灵-->后手方选用1名英灵-->先手方禁用1名英灵-->先手方选用2名英灵-->后手方禁用1名英灵-->后手方选用2名英灵-->先手方禁用1名英灵-->先手方选用1名英灵-->后手方禁用2名英灵-->先手方禁用1名英灵-->先手方选用1名英灵-->后手方选用1名英灵"
+  },
+  {
+    "ID": 240097,
+    "Value": "当前有正在进行的事件，无法退出"
+  },
+  {
+    "ID": 240098,
+    "Value": "两枚同魂：物攻+5%\n三枚同魂：伤害提升10%，主动攻击「对战中」免伤提升10%\n炼魂每阶增加气血和物攻\n每5阶可从<color=#F01212>固定属性类型</color>(物攻/物理伤害/物理穿透/气血)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240099,
+    "Value": "两枚同魂：物攻+5%\n三枚同魂：伤害提升10%，主动攻击「对战中」免伤提升10%\n炼魂每阶增加物防和法防\n每5阶可从<color=#F01212>固定属性类型</color>(物攻/物理伤害/气血/物理免伤)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240100,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提高8%，主动攻击「对战中」伤害提升10%。\n炼魂每阶增加气血和法攻\n每5阶可从<color=#F01212>固定属性类型</color>(法攻/法术伤害/法术穿透/气血)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240101,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提高8%，主动攻击「对战中」伤害提升10%。\n炼魂每阶增加物防和法防\n每5阶可从<color=#F01212>固定属性类型</color>(法攻/法术伤害/气血/法术免伤)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240102,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提升10%，使用范围绝学时伤害额外提高5%\n炼魂每阶增加气血和法攻\n每5阶可从<color=#F01212>固定属性类型</color>(法攻/法术伤害/法术穿透/气血)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240103,
+    "Value": "两枚同魂：法攻+5%\n三枚同魂：使用绝学时伤害提升10%，使用范围绝学时伤害额外提高5%\n炼魂每阶增加物防和法防\n每5阶可从<color=#F01212>固定属性类型</color>(法攻/法术伤害/气血/法术免伤)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240104,
+    "Value": "两枚同魂：物防，法防+5%\n三枚同魂：免伤提升10%\n炼魂每阶增加气血和物攻\n每5阶可从<color=#F01212>固定属性类型</color>(气血/物理免伤/法术免伤/物防)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240105,
+    "Value": "两枚同魂：物防，法防+5%\n三枚同魂：免伤提升10%\n炼魂每阶增加物防和法防\n每5阶可从<color=#F01212>固定属性类型</color>(气血/物理免伤/法术免伤/物防)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240106,
+    "Value": "两枚同魂：物防，法防+5%\n三枚同魂：免伤提升10%\n炼魂每阶增加气血和物攻\n每5阶可从<color=#F01212>固定属性类型</color>(气血/物理免伤/法术免伤/法防)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240107,
+    "Value": "两枚同魂：气血+10%\n三枚同魂：获得额外护卫范围时提高2格内友方物防、法防10%，直到额外护卫范围消失\n炼魂每阶增加气血和物攻\n每5阶可从<color=#F01212>固定属性类型</color>(气血/物理免伤/法术免伤/物防)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240108,
+    "Value": "两枚同魂：气血+10%\n三枚同魂：获得额外护卫范围时提高2格内友方物防、法防10%，直到额外护卫范围消失\n炼魂每阶增加物防和法防\n每5阶可从<color=#F01212>固定属性类型</color>(气血/物理免伤/法术免伤/物防)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240109,
+    "Value": "两枚同魂：气血+10%\n三枚同魂：获得额外护卫范围时提高2格内友方物防、法防10%，直到额外护卫范围消失\n炼魂每阶增加气血和物攻\n每5阶可从<color=#F01212>固定属性类型</color>(气血/物理免伤/法术免伤/法防)中获得1条属性，最多可于20阶获得4条属性，上限25阶"
+  },
+  {
+    "ID": 240110,
+    "Value": "全属性提升<color=#F01212>10%</color>，范围绝学范围提升<color=#F01212>1</color>。\n若自身移动力大于<color=#F01212>4</color>点，每多<color=#F01212>1</color>点范围绝学暴击伤害提高<color=#F01212>5%</color>（最多提高<color=#F01212>25%</color>）。"
+  },
+  {
+    "ID": 240111,
+    "Value": "全属性提升<color=#F01212>20%</color>，范围绝学范围提升<color=#F01212>1</color>。\n若自身移动力大于<color=#F01212>3</color>点，每多<color=#F01212>1</color>点范围绝学暴击伤害提高<color=#F01212>5%</color>（最多提高<color=#F01212>25%</color>）。"
+  },
+  {
+    "ID": 240112,
+    "Value": "全属性提升<color=#F01212>30%</color>，范围绝学范围提升<color=#F01212>1</color>。\n若自身移动力大于<color=#F01212>2</color>点，每多<color=#F01212>1</color>点范围绝学暴击伤害提高<color=#F01212>5%</color>（最多提高<color=#F01212>25%</color>）。"
+  },
+  {
+    "ID": 240113,
+    "Value": "全属性提升<color=#F01212>10%</color>，射程+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240114,
+    "Value": "全属性提升<color=#F01212>20%</color>，射程+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240115,
+    "Value": "全属性提升<color=#F01212>30%</color>，射程+<color=#F01212>2</color>。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240116,
+    "Value": "全属性提升<color=#F01212>10%</color>，移动力+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240117,
+    "Value": "全属性提升<color=#F01212>20%</color>，移动力+<color=#F01212>1</color>。\n触发再行动后，获得<color=#F01212>2</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240118,
+    "Value": "全属性提升<color=#F01212>30%</color>，移动力+<color=#F01212>2</color>。\n触发再行动后，获得<color=#F01212>3</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240119,
+    "Value": "全属性提升<color=#F01212>10%</color>。遭受携带大于等于<color=#F01212>3</color>个「有害状态」的目标攻击「对战后」获得<color=#F01212>1</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240120,
+    "Value": "全属性提升<color=#F01212>20%</color>。遭受携带大于等于<color=#F01212>3</color>个「有害状态」的目标攻击「对战后」获得<color=#F01212>2</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240121,
+    "Value": "全属性提升<color=#F01212>30%</color>。遭受携带大于等于<color=#F01212>3</color>个「有害状态」的目标攻击「对战后」获得<color=#F01212>3</color>层<link type=buff value=763156766 bgcolor=#3a85ffff>「回击」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240122,
+    "Value": "全属性提升<color=#F01212>10%</color>，射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240123,
+    "Value": "全属性提升<color=#F01212>20%</color>，射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240124,
+    "Value": "全属性提升<color=#F01212>30%</color>，射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层「远目」，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240125,
+    "Value": "全属性提升<color=#F01212>10%</color>。行动结束前，自身每有<color=#F01212>4</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240126,
+    "Value": "全属性提升<color=#F01212>20%</color>。行动结束前，自身每有<color=#F01212>3</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240127,
+    "Value": "全属性提升<color=#F01212>30%</color>。行动结束前，自身每有<color=#F01212>2</color>点剩余移动力，获得<color=#F01212>1</color>层<link type=buff value=763156805 bgcolor=#3a85ffff>「迅袭」</link>状态，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240128,
+    "Value": "妖力大增"
+  },
+  {
+    "ID": 240129,
+    "Value": "求不得"
+  },
+  {
+    "ID": 240130,
+    "Value": "爱别离"
+  },
+  {
+    "ID": 240131,
+    "Value": "苦"
+  },
+  {
+    "ID": 240132,
+    "Value": "受"
+  },
+  {
+    "ID": 240133,
+    "Value": "炼祭之路"
+  },
+  {
+    "ID": 240134,
+    "Value": "妖将之庇护"
+  },
+  {
+    "ID": 240135,
+    "Value": "赤魔之庇护"
+  },
+  {
+    "ID": 240136,
+    "Value": "妄幻之庇护"
+  },
+  {
+    "ID": 240137,
+    "Value": "触发再行动时获得1层「蓄力一击」状态。\n「蓄力一击」：射程-1，移动力-1，主动攻击「对战中」造成伤害提升20%。（下回合开始时移除，上限3层）"
+  },
+  {
+    "ID": 240138,
+    "Value": "触发再行动时获得1层「蓄力一击」状态。\n「蓄力一击」：射程-1，移动力-1，主动攻击「对战中」造成伤害提升20%（下回合开始时移除，上限3层）。"
+  },
+  {
+    "ID": 240139,
+    "Value": "射程-1，移动力-1，主动攻击「对战中」造成伤害提升20%（下回合开始时移除，上限3层）。"
+  },
+  {
+    "ID": 240140,
+    "Value": "无法获得「残魂之力」状态，攻防属性提升20%，主动攻击造成伤害后，50%概率对目标施加「禁闭」状态，持续1回合"
+  },
+  {
+    "ID": 240141,
+    "Value": "无法获得「残魂之力」状态，攻防属性提升20%，主动攻击造成伤害后，50%概率对目标施加「失魂」状态，持续1回合"
+  },
+  {
+    "ID": 240142,
+    "Value": "伤害提升10%，行动结束时，恢复气血（最大气血的30%）。"
+  },
+  {
+    "ID": 240143,
+    "Value": "「对战中」免伤提升50%"
+  },
+  {
+    "ID": 240144,
+    "Value": "「对战前」若目标周围1圈没有其他敌方则此次攻击伤害提升50%"
+  },
+  {
+    "ID": 240145,
+    "Value": "「对战后」在目标位置制造「真炎」地形，持续2回合"
+  },
+  {
+    "ID": 240146,
+    "Value": "「对战后」施加「迟缓II」状态，持续2回合"
+  },
+  {
+    "ID": 240147,
+    "Value": "回合开始时受到固定伤害（气血上限的20%）"
+  },
+  {
+    "ID": 240148,
+    "Value": "受到的固定伤害降低50%"
+  },
+  {
+    "ID": 240149,
+    "Value": "无法受到伤害，「妖将」死亡时移除"
+  },
+  {
+    "ID": 240150,
+    "Value": "无法受到伤害，「赤魔」死亡时移除"
+  },
+  {
+    "ID": 240151,
+    "Value": "无法受到伤害，「妄幻」死亡时移除"
+  },
+  {
+    "ID": 240152,
+    "Value": "主动攻击「对战中」暴击率、暴击伤害+10%（触发后移除，上限3层）。"
+  },
+  {
+    "ID": 240153,
+    "Value": "主动使用，驱散范围内所有友方身上<b><color=#e4462c>3</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），自身获得<link type=buff value=741049110 bgcolor=#3a85ffff>「微澜·涌」</link><link type=buff value=700001331 bgcolor=#3a85ffff>「芬芳I」</link><link type=buff value=751345052 bgcolor=#3a85ffff>「辟护」</link>状态，持续<b><color=#e4462c>3</color></b>回合。"
+  },
+  {
+    "ID": 240154,
+    "Value": "主动使用，恢复范围内所有友方气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），对中心点目标施加<link type=buff value=700001011 bgcolor=#3a85ffff>「神睿I」</link><link type=buff value=700000651 bgcolor=#3a85ffff>「冰清」</link>状态，持续<b><color=#e4462c>2</color></b>回合，若造成「过量治疗」该绝学冷却时间<b><color=#e4462c>-1</color></b>。"
+  },
+  {
+    "ID": 240155,
+    "Value": "主动使用，恢复范围内所有友方气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍），驱散<b><color=#e4462c>2</color></b>个「有害状态」，对中心点目标施加<link type=buff value=700001011 bgcolor=#3a85ffff>「神睿I」</link><link type=buff value=700000651 bgcolor=#3a85ffff>「冰清」</link>，持续<b><color=#e4462c>2</color></b>回合，若造成「过量治疗」该绝学冷却时间<b><color=#e4462c>-1</color></b>。"
+  },
+  {
+    "ID": 240156,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.8</color></b>倍伤害，施加<link type=buff value=700001321 bgcolor=#3a85ffff>「定身」</link>状态，持续<b><color=#e4462c>2</color></b>回合；\n若目标已处于友方「霜冻」地形上或携带「迟缓」类状态，则法术穿透提高<b><color=#e4462c>50%</color></b>且「对战后」额外施加<link type=buff value=741071023 bgcolor=#3a85ffff>「冰劫」</link>状态，持续<b><color=#e4462c>1</color></b>回合。若造成击杀，则「结界」持续合数<b><color=#e4462c>+1</color></b>回合，并将敌方和友方地形变为友方「霜冻」地形，持续<b><color=#e4462c>2</color></b>回合，若本次攻击未造成击杀，则该绝学冷却时间<b><color=#e4462c>-3</color></b>。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累计<b><color=#e4462c>1</color></b>点气力，使用非伤害绝学累积<b><color=#e4462c>1</color></b>点气力，开启结界后累积<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 240157,
+    "Value": "对范围内敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，并施加<link type=buff value=700000881 bgcolor=#3a85ffff>「污秽」</link><link type=buff value=700000841 bgcolor=#3a85ffff>「封咒」</link>，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240158,
+    "Value": "[被动]主动攻击造成伤害后，对目标施加「恶念升腾」，持续<b><color=#e4462c>1</color></b>回合。\n[主动]对范围内敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，并施加<link type=buff value=700000881 bgcolor=#3a85ffff>「污秽」</link><link type=buff value=700000841 bgcolor=#3a85ffff>「封咒」</link>，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240159,
+    "Value": "攻击单个敌方，造成<b><color=#e4462c>2</color></b>倍伤害并击退目标<b><color=#e4462c>1</color></b>格，如果击退路线被阻挡，则额外造成<b><color=#e4462c>1</color></b>次固定伤害（自身物攻的<b><color=#e4462c>30%</color></b>）。「对战前」每多移动<b><color=#e4462c>1</color></b>格，则击退距离多<b><color=#e4462c>1</color></b>格（最多提高<b><color=#e4462c>3</color></b>格）。若成功击杀目标，则重置该绝学冷却时间并使「诛天剑域」安全范围缩小一圈。\n「诛天剑域」：回合开始或行动结束时，处于「诛天剑域」范围内的敌方角色，会受到一次「固定伤害」（最大气血的<b><color=#e4462c>80%</color></b>，无法免疫），并且受到治疗量减少<b><color=#e4462c>80%</color></b>。"
+  },
+  {
+    "ID": 240160,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>，最多叠加<b><color=#e4462c>6</color></b>层。 \n[主动]<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>达到<b><color=#e4462c>6</color></b>层时可释放，移除所有<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向右击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。使用后切换为「剑潮·上」"
+  },
+  {
+    "ID": 240161,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>，最多叠加<b><color=#e4462c>6</color></b>层。\n[主动]<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>达到<b><color=#e4462c>6</color></b>层时可释放，移除所有<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向上击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。使用后切换为「剑潮·左」"
+  },
+  {
+    "ID": 240162,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>，最多叠加<b><color=#e4462c>6</color></b>层。\n[主动]<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>达到<b><color=#e4462c>6</color></b>层时可释放，移除所有<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向左击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。使用后切换为「剑潮·下」"
+  },
+  {
+    "ID": 240163,
+    "Value": "[被动]遭受攻击受到伤害后获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>，最多叠加<b><color=#e4462c>6</color></b>层。\n[主动]<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>达到<b><color=#e4462c>6</color></b>层时可释放，移除所有<link type=buff value=763157298 bgcolor=#3a85ffff>「剑势」</link>层数，对范围内所有敌方造成<b><color=#e4462c>1</color></b>倍伤害，向下击退目标<b><color=#e4462c>4</color></b>格；释放该绝学后清除所有机关、地形和天气。使用后切换为「剑潮·右」"
+  },
+  {
+    "ID": 240164,
+    "Value": "无法被护卫。"
+  },
+  {
+    "ID": 240165,
+    "Value": "伤害、免伤提升<b><color=#e4462c>25%</color></b>。战斗开始时制造「诛天剑域」地形。遭受攻击受到伤害后，在目标相邻的任意空地上制造「杀剑恶骸」并且自身获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157154 bgcolor=#3a85ffff>「癫狂」</link>状态，持续<b><color=#e4462c>1</color></b>回合。（每回合最多触发<b><color=#e4462c>2</color></b>次）\n「诛天剑域」：进入或是停留在「诛天剑域」范围内的敌方角色，会受到一次「固定伤害」（最大气血的<b><color=#e4462c>80%</color></b>，无法免疫），并且受到治疗量减少<b><color=#e4462c>80%</color></b>。"
+  },
+  {
+    "ID": 240166,
+    "Value": "伤害、免伤提升<b><color=#e4462c>25%</color></b>。战斗开始时制造「诛天剑域」地形。遭受攻击受到伤害后，在目标相邻的任意空地上制造「杀剑恶骸」并且自身获得<b><color=#e4462c>1</color></b>层<link type=buff value=763157154 bgcolor=#3a85ffff>「癫狂」</link>状态，持续<b><color=#e4462c>1</color></b>回合。（每回合最多触发<b><color=#e4462c>2</color></b>次）\n每间隔<b><color=#e4462c>2</color></b>回合，在自身相邻区域召唤<b><color=#e4462c>2</color></b>个「噬魂鬼」\n「诛天剑域」：进入或是停留在「诛天剑域」范围内的敌方角色，会受到一次「固定伤害」（最大气血的<b><color=#e4462c>80%</color></b>，无法免疫），并且受到治疗量减少<b><color=#e4462c>80%</color></b>。"
+  },
+  {
+    "ID": 240167,
+    "Value": "若自身携带的「有害状态」小于等于<b><color=#e4462c>3</color></b>，主动攻击「对战中」伤害和免伤提高<b><color=#e4462c>12%</color></b>"
+  },
+  {
+    "ID": 240168,
+    "Value": "守得云开见月明，是一个好念想。亘古亘今，黎庶皆仗此一念灵光，生生不息。"
+  },
+  {
+    "ID": 240169,
+    "Value": "所谓人间得意事，不过多年烟雨后，能践少年愿景，还苍生太平。"
+  },
+  {
+    "ID": 240170,
+    "Value": "当年的我，有许多细微、模糊的瞬间，希望变成如今的我。"
+  },
+  {
+    "ID": 240171,
+    "Value": "今日定有吉兆应验。"
+  },
+  {
+    "ID": 240172,
+    "Value": "若真想了解我，就别听那些传说故事。我就站在这，多相处便是。"
+  },
+  {
+    "ID": 240173,
+    "Value": "两千多年了，这片土地仍未学会安宁吗？"
+  },
+  {
+    "ID": 240174,
+    "Value": "此战已毕，然九黎之责未休。"
+  },
+  {
+    "ID": 240175,
+    "Value": "所谓灾厄，摧而毁之即是。"
+  },
+  {
+    "ID": 240176,
+    "Value": "尽兴，尽兴！"
+  },
+  {
+    "ID": 240177,
+    "Value": "我名流舞，你应该听说过我的故事。"
+  },
+  {
+    "ID": 240178,
+    "Value": "一如其时，涅槃为刃。"
+  },
+  {
+    "ID": 240179,
+    "Value": "灵阙潭的水，比两千年前更冷一些。"
+  },
+  {
+    "ID": 240180,
+    "Value": "火熄了……但灰烬会记得！"
+  },
+  {
+    "ID": 240181,
+    "Value": "撼天，若你在此，定会笑我剑法生疏了。"
+  },
+  {
+    "ID": 240182,
+    "Value": "世有沧海桑田，但人却会化作故事留下——你说，后人会传颂我的名字吗？"
+  },
+  {
+    "ID": 240183,
+    "Value": "撼天，你说得对——月亮真的很美，我很喜欢。"
+  },
+  {
+    "ID": 240184,
+    "Value": "冰封冻壁、玄海谷道、离魂幽原..……那三处地方，如今是什么模样？"
+  },
+  {
+    "ID": 240185,
+    "Value": "连定土的风，都如此温柔啊。"
+  },
+  {
+    "ID": 240186,
+    "Value": "唯有让我化骨成刃才能斩杀那三只邪龙，这非宿命，而是我自己的选择。撼天，去做你该做的！"
+  },
+  {
+    "ID": 240187,
+    "Value": "死亡？别说的那么悲伤。我不过是换种方式继续陪着你们……"
+  },
+  {
+    "ID": 240188,
+    "Value": "星辰轮转，四季更迭，九黎的血脉依旧生生不息。"
+  },
+  {
+    "ID": 240189,
+    "Value": "所谓劫难，不过天灾，谁敢指摘我们？记着，我九黎万万民，无人有罪！"
+  },
+  {
+    "ID": 240190,
+    "Value": "复生祖神，追寻重返故土的荣光？此皆虚妄，而非野心。此刻，你们心中所想应是如何在这化荒活下去！"
+  },
+  {
+    "ID": 240191,
+    "Value": "何必多想未来之事？待时机到了，该做什么，就做什么！"
+  },
+  {
+    "ID": 240192,
+    "Value": "长老们总说「九黎之血沸腾不息」，只因故土难归。可九黎一族代代相承的只是这点念头吗？"
+  },
+  {
+    "ID": 240193,
+    "Value": "责任与自由，往往难以兼得。作为幽姬，我选择了责任，却仍在心中保留一片自由之地。"
+  },
+  {
+    "ID": 240194,
+    "Value": "幽冥灼灼，自可安息。"
+  },
+  {
+    "ID": 240195,
+    "Value": "以火折子点燃三鼎"
+  },
+  {
+    "ID": 240196,
+    "Value": "蚀化增幅"
+  },
+  {
+    "ID": 240197,
+    "Value": "妖将之邪力"
+  },
+  {
+    "ID": 240198,
+    "Value": "赤魔之邪力"
+  },
+  {
+    "ID": 240199,
+    "Value": "妄幻之邪力"
+  },
+  {
+    "ID": 240200,
+    "Value": "墓灵咒法"
+  },
+  {
+    "ID": 240201,
+    "Value": "死亡时对周围1圈敌人造成固定伤害（自身物攻的20%）"
+  },
+  {
+    "ID": 240202,
+    "Value": "死亡时对周围1圈敌人造成固定伤害（自身物攻的40%），并且施加「禁疗」"
+  },
+  {
+    "ID": 240203,
+    "Value": "回合开始时获得1层「蚀化增幅」\n「蚀化增幅Ⅰ」：除气血外全属性提升2%，上限15层"
+  },
+  {
+    "ID": 240204,
+    "Value": "除气血外全属性提升2%，上限15层"
+  },
+  {
+    "ID": 240205,
+    "Value": "回合开始时获得1层「蚀化增幅Ⅱ」\n「蚀化增幅Ⅱ」：除气血外全属性提升4%，上限15层"
+  },
+  {
+    "ID": 240206,
+    "Value": "除气血外全属性提升4%，上限15层"
+  },
+  {
+    "ID": 240207,
+    "Value": "反击伤害+20%，反击射程+1；妖将死亡时将「妖将之邪力」扩散至场上所有其他友方"
+  },
+  {
+    "ID": 240208,
+    "Value": "「对战前」驱散目标2个「可升级有益状态」；赤魔死亡时将「赤魔之邪力」扩散至场上所有其他友方"
+  },
+  {
+    "ID": 240209,
+    "Value": "「对战后」对敌方造成1次固定伤害（物攻的30%）；妄幻死亡时将「妄幻之邪力」扩散至场上所有其他友方"
+  },
+  {
+    "ID": 240210,
+    "Value": "遭受伤害降低10%（上限60%）"
+  },
+  {
+    "ID": 240211,
+    "Value": "射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240212,
+    "Value": "射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240213,
+    "Value": "射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240214,
+    "Value": "全属性提升<color=#F01212>10%</color>，射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>1</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240215,
+    "Value": "全属性提升<color=#F01212>20%</color>，射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>2</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240216,
+    "Value": "全属性提升<color=#F01212>30%</color>，射程+<color=#F01212>1</color>。遭受攻击「对战后」后获得<color=#F01212>3</color>层<link type=buff value=763156787 bgcolor=#3a85ffff>「远目」</link>，持续<color=#F01212>1</color>回合。"
+  },
+  {
+    "ID": 240217,
+    "Value": "[被动]主动使用绝学后，清除范围内敌方机关并对所有格子施加「霜冻」地形，持续<b><color=#e4462c>2</color></b>回合。\n[主动]主动使用，恢复范围内所有友方气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），驱散<b><color=#e4462c>2</color></b>个「有害状态」施加<link type=buff value=700000542 bgcolor=#3a85ffff>「御魔I」</link><link type=buff value=700001266 bgcolor=#3a85ffff>「固元II」</link>状态，持续<b><color=#e4462c>3</color></b>回合，并附加<link type=buff value=710010370 bgcolor=#3a85ffff>「霜铠」</link>状态。若自身其他绝学未进入冷却，则该绝学冷却<b><color=#e4462c>-2</color></b>。"
+  },
+  {
+    "ID": 240218,
+    "Value": "[被动]行动结束时，为<b><color=#e4462c>3</color></b>格范围内所有友方角色恢复气血（恢复量为施术者法攻的<b><color=#e4462c>0.5</color></b>倍），并驱散<b><color=#e4462c>1</color></b>个「有害状态」，对其中物攻<b><color=#e4462c>/</color></b>法攻属性最高的<b><color=#e4462c>1</color></b>个其他友方施加<link type=buff value=700000652 bgcolor=#3a85ffff>「冰清」</link>状态，持续<b><color=#e4462c>2</color></b>回合。\n[主动]主动使用，驱散范围内所有友方身上<b><color=#e4462c>4</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），施加<link type=buff value=700000652 bgcolor=#3a85ffff>「冰清」</link>状态，持续<b><color=#e4462c>2</color></b>回合，自身获得<link type=buff value=700001331 bgcolor=#3a85ffff>「芬芳I」</link>状态，持续<b><color=#e4462c>4</color></b>回合。"
+  },
+  {
+    "ID": 240219,
+    "Value": "[被动]<b><color=#e4462c>3</color></b>格范围内其他友方遭受攻击「对战后」，为其驱散<b><color=#e4462c>2</color></b>个「有害状态」，并恢复气血（恢复量为施术者法攻的<b><color=#e4462c>1</color></b>倍）。（每回合触发<b><color=#e4462c>1</color></b>次）\n[主动]主动使用，驱散单个友方<b><color=#e4462c>2</color></b>个「有害状态」，并恢复其气血（恢复量为施术者法攻的<b><color=#e4462c>1.5</color></b>倍），施加<link type=buff value=700000531 bgcolor=#3a85ffff>「披甲I」</link><link type=buff value=700000795 bgcolor=#3a85ffff>「神护II」</link>和<link type=buff value=700001121 bgcolor=#3a85ffff>「愈合」</link>状态，持续<b><color=#e4462c>2</color></b>回合。若自身携带「有害状态」小于<b><color=#e4462c>3</color></b>个则该绝学冷却<b><color=#e4462c>-1</color></b>。"
+  },
+  {
+    "ID": 240220,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，且为范围内所有友方施加<link type=buff value=743001541 bgcolor=#3a85ffff>「炎铠」</link><link type=buff value=700001011 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>2</color></b>回合，自身周围<b><color=#e4462c>3</color></b>格张开领域<link type=buff value=743003247 bgcolor=#3a85ffff>「地火焚狱·壹」</link>，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240221,
+    "Value": "对范围内所有敌人造成<b><color=#e4462c>0.5</color></b>倍伤害，且为范围内所有友方施加<link type=buff value=743001541 bgcolor=#3a85ffff>「炎铠」</link><link type=buff value=700001011 bgcolor=#3a85ffff>「神睿I」</link>状态，持续<b><color=#e4462c>3</color></b>回合，自身周围<b><color=#e4462c>3</color></b>格张开领域<link type=buff value=743003254 bgcolor=#3a85ffff>「地火焚狱·贰」</link>，持续<b><color=#e4462c>3</color></b>回合。"
+  },
+  {
+    "ID": 240222,
+    "Value": "无法普攻和反击，无法被护卫。"
+  },
+  {
+    "ID": 240223,
+    "Value": "遭受攻击受到伤害后，自身所有「有害状态」持续时间-<color=#F01212>1</color>。「对战前」若敌方携带大于<color=#F01212>7</color>个「有害状态」，其除气血外全属性降低<color=#F01212>50%</color>。"
+  },
+  {
+    "ID": 240224,
+    "Value": "遭受攻击受到伤害后，自身所有「有害状态」持续时间-1。「对战前」若敌方携带大于7个「有害状态」，其除气血外全属性降低50%。"
+  },
+  {
+    "ID": 240225,
+    "Value": "妖怪"
+  },
+  {
+    "ID": 240226,
+    "Value": "土匪"
+  },
+  {
+    "ID": 240227,
+    "Value": "撼天·幻象"
+  },
+  {
+    "ID": 240228,
+    "Value": "流舞之女·幻象"
+  },
+  {
+    "ID": 240229,
+    "Value": "长老·幻象"
+  },
+  {
+    "ID": 240230,
+    "Value": "黄帝魂"
+  },
+  {
+    "ID": 240231,
+    "Value": "3格范围内敌人行动结束时，驱散2个「有益状态」，并受到1次「固定伤害」（施加者物攻的15%）"
+  },
+  {
+    "ID": 240232,
+    "Value": "3格范围内敌人行动结束时，驱散2个「有益状态」，并受到1次「固定伤害」（施加者物攻的30%）"
+  },
+  {
+    "ID": 240233,
+    "Value": "3格范围内敌人受治疗效果-30%，且行动结束时，转化2个「有益状态」为「燃烧」和「煞火」状态，持续2回合，并受到1次「固定伤害」（施加者物攻的30%）"
+  },
+  {
+    "ID": 240234,
+    "Value": "汾阳古墓入口"
+  },
+  {
+    "ID": 240235,
+    "Value": "古墓河畔"
+  },
+  {
+    "ID": 240236,
+    "Value": "汾阳古墓内"
+  },
+  {
+    "ID": 240237,
+    "Value": "汾阳古墓寝柩堂"
+  },
+  {
+    "ID": 240238,
+    "Value": "胧夜神魂"
+  },
+  {
+    "ID": 240239,
+    "Value": "天呐！壁画里的祖宗也算是让依依见到啦！"
+  },
+  {
+    "ID": 240240,
+    "Value": "我观诸位面色从容，便知天下已无三龙之祸——我也算是见到了好时候。"
+  },
+  {
+    "ID": 240241,
+    "Value": "唉，倒也没那么轻松啦，我们瞧着是不急不忙，实则不是在拯救天下，就是在拯救天下的路上！"
+  },
+  {
+    "ID": 240242,
+    "Value": "如此说来，我地界幽姬一脉，确确实实是后继有人，我心甚安。"
+  },
+  {
+    "ID": 240243,
+    "Value": "为取韩无砂的内丹「血灵神珠」救胧夜，众人一路颠簸，到了汾阳古墓。"
+  },
+  {
+    "ID": 240244,
+    "Value": "这就是韩无砂的老巢？看起来年代久远，气息阴森。"
+  },
+  {
+    "ID": 240245,
+    "Value": "这种荒郊野外的地方，确实是绝佳藏身之所。远离城镇村落，人迹罕至，再加上这古墓，寻常百姓避之不及。韩无砂选在此处潜藏修炼，确是用心良苦。"
+  },
+  {
+    "ID": 240246,
+    "Value": "据典籍记载，汾阳古墓至少有千年历史。太渊隐逸前辈也说过建造此墓的显贵家族早已没落。"
+  },
+  {
+    "ID": 240247,
+    "Value": "二师哥，韩无砂真藏在里面吗？我总感觉有些不安。如果她真在里面，我们能找到她吗？"
+  },
+  {
+    "ID": 240248,
+    "Value": "进去便知了！胧夜的性命耽搁不得，无论里面有什么危险，我们都必须一试。"
+  },
+  {
+    "ID": 240249,
+    "Value": "这水流交汇处有个漩涡，应该就是他们所说的漩涡入口了。唉～只可惜我们不谙水性……"
+  },
+  {
+    "ID": 240250,
+    "Value": "这下我们该怎么办，二师哥？"
+  },
+  {
+    "ID": 240251,
+    "Value": "不然让我游进去，再从里面开门给你们进入……"
+  },
+  {
+    "ID": 240252,
+    "Value": "这不成！里面凶险难测，萧兄孤身一人，必定危险万分，我不能让你去冒此险！"
+  },
+  {
+    "ID": 240253,
+    "Value": "一道人影御剑从天而降。"
+  },
+  {
+    "ID": 240254,
+    "Value": "哇～怎么有人打墓上跳下来～"
+  },
+  {
+    "ID": 240255,
+    "Value": "咦？是前辈？"
+  },
+  {
+    "ID": 240256,
+    "Value": "哦？是你们？我当这儿怎么有股妖怨冲天，不会是你们的杰作吧？……咦？那个地界的女娃儿呢？该不会……"
+  },
+  {
+    "ID": 240257,
+    "Value": "不，前辈，我们托您指点，已经找到太渊隐逸前辈，胧夜姑娘正在前辈的居处歇息。"
+  },
+  {
+    "ID": 240258,
+    "Value": "哦？那真是太好了，那么她对血魂之系有辙么？"
+  },
+  {
+    "ID": 240259,
+    "Value": "太渊隐逸前辈表示，可暂以「血灵神珠」阻挡血魂之系百日，而此墓中蟠踞一只千年蛇精，我们就是为了取得血灵神珠来此，但是……"
+  },
+  {
+    "ID": 240260,
+    "Value": "嗯？有困难吗？"
+  },
+  {
+    "ID": 240261,
+    "Value": "是的，事情是这样的……"
+  },
+  {
+    "ID": 240262,
+    "Value": "殷千炀一行将情况说明给剑圣武英仲听……"
+  },
+  {
+    "ID": 240263,
+    "Value": "嗯……一般人来想，或许只要破墓而入即可，但所谓打草惊蛇，若要活捉此举是不成，如此看来只有水遁方可奏效……"
+  },
+  {
+    "ID": 240264,
+    "Value": "我去借取一样珍宝，如此应可解决你们现下之困，你们回去太玄谷将带路的人带来此地，我与你们在此会合。"
+  },
+  {
+    "ID": 240265,
+    "Value": "多谢前辈。"
+  },
+  {
+    "ID": 240266,
+    "Value": "暂别武英仲，一行人即刻踏上返程，将此行经历说与燕明蓉听。"
+  },
+  {
+    "ID": 240267,
+    "Value": "哦？你们已经找到解决方法啦？那好，我这就去找草晶带路，咱们就在汾阳古墓涡流处会合吧！"
+  },
+  {
+    "ID": 240268,
+    "Value": "武英仲、燕明蓉与殷千炀一行人如约聚于涡流旁。"
+  },
+  {
+    "ID": 240269,
+    "Value": "哦？你就是那个剑圣啊～你要用什么方法让他们三个旱鸭子下水呢？"
+  },
+  {
+    "ID": 240270,
+    "Value": "嗯？她就是要施法将你们送下水的人？你们瞧她模样，可是只狐精所化。"
+  },
+  {
+    "ID": 240271,
+    "Value": "喂喂喂～什么狐不狐的，我叫燕明蓉，你是什么？人眼看狐低啊？狐都很邪恶吗？我想学做人不行吗？"
+  },
+  {
+    "ID": 240272,
+    "Value": "师父说只要我有情有义有礼有信，比一些禽兽不如的人要强多了，不是吗？"
+  },
+  {
+    "ID": 240273,
+    "Value": "小狐狸，你让我吃惊了……"
+  },
+  {
+    "ID": 240274,
+    "Value": "跟你说了我叫燕明蓉，我现在是人样，你叫我小狐狸，我可不高兴～"
+  },
+  {
+    "ID": 240275,
+    "Value": "嗯，燕明蓉，我见过不计其数的精怪，能让我武英仲吃惊的，你倒是头一个。"
+  },
+  {
+    "ID": 240276,
+    "Value": "哼～我能让你吃惊的事还多着呢！等以后师父要放我下山游历时，哼哼哼哼——就是我光大师门的时候～"
+  },
+  {
+    "ID": 240277,
+    "Value": "……又在夸大话了，还是闭嘴免得师父又知道。"
+  },
+  {
+    "ID": 240278,
+    "Value": "见状，武英仲笑而不语。片刻后，他自袖中取出一颗宝珠。"
+  },
+  {
+    "ID": 240279,
+    "Value": "我这儿借到一颗「珍珑净玉」，等会儿我交到燕明蓉手上，再诵缩形之咒，我们就会缩进这颗「珍珑净玉」之中。"
+  },
+  {
+    "ID": 240280,
+    "Value": "再交由要下水的人送进洞窟里，到了之后我会再逆诵咒文，如此我们身形即可复原。"
+  },
+  {
+    "ID": 240281,
+    "Value": "果真是个异宝！晚辈在此多谢前辈。不过前辈您刚才说「我们」，这是指……"
+  },
+  {
+    "ID": 240282,
+    "Value": "嗯，我听说了传言，看来这古墓内的蛇精十分厉害，所以我跟你们一起去会一会！"
+  },
+  {
+    "ID": 240283,
+    "Value": "原来如此，晚辈感谢前辈助拳之力。"
+  },
+  {
+    "ID": 240284,
+    "Value": "不须客套，那么诸位准备好了吧，我们这就开始。"
+  },
+  {
+    "ID": 240285,
+    "Value": "来，燕明蓉，这就是珍珑净玉，你可得拿妥。"
+  },
+  {
+    "ID": 240286,
+    "Value": "好～"
+  },
+  {
+    "ID": 240287,
+    "Value": "那么我这就持诵法咒……"
+  },
+  {
+    "ID": 240288,
+    "Value": "武英仲念咒语……"
+  },
+  {
+    "ID": 240289,
+    "Value": "嘿～真的缩进这个球里了，现在就换人登场了……虽然不是我。草晶~草晶~快点出来了~"
+  },
+  {
+    "ID": 240290,
+    "Value": "小小草晶应声自草丛中跃出，与燕明蓉以精怪之语交头接耳。"
+  },
+  {
+    "ID": 240291,
+    "Value": "嗯，交给你啦~没办妥我就把你掐成草汁~"
+  },
+  {
+    "ID": 240292,
+    "Value": "草晶「噗噗」应下，接过珍珑净玉，纵身跃进了涡流中心……"
+  },
+  {
+    "ID": 240293,
+    "Value": "妖怪怎还随身带着火折子？"
+  },
+  {
+    "ID": 240294,
+    "Value": "这火折子或许并非凡物，说不定另有用处。"
+  },
+  {
+    "ID": 240295,
+    "Value": "这是韩无砂处心积虑寻得的藏身之处，定然是没有那么容易寻到她。这火折子上附着她的妖气，兴许是开启什么机关的秘物。"
+  },
+  {
+    "ID": 240296,
+    "Value": "嗯，智勇双全，你这娃子，他日定有所作为。"
+  },
+  {
+    "ID": 240297,
+    "Value": "前辈谬赞了。"
+  },
+  {
+    "ID": 240298,
+    "Value": "此处应当是通往主殿的通道了。"
+  },
+  {
+    "ID": 240299,
+    "Value": "呼……这回再没有妖物作祟了吧？"
+  },
+  {
+    "ID": 240300,
+    "Value": "但看这周围景致，三面围墙，密不透风。除了来时路之外，便再无通路了。"
+  },
+  {
+    "ID": 240301,
+    "Value": "诶！二师哥，你快看——这里怎么有三个鼎啊？"
+  },
+  {
+    "ID": 240302,
+    "Value": "三鼎并立，看似凡物。但不知为何，鼎周围却有灵气氤氲不散。"
+  },
+  {
+    "ID": 240303,
+    "Value": "嘿嘿，你说的灵气，应该是从鼎的深处冒出来的吧——"
+  },
+  {
+    "ID": 240304,
+    "Value": "我闻到了一些……灰烬的气息？"
+  },
+  {
+    "ID": 240305,
+    "Value": "灰烬？……是了！灵气正是从鼎中残留的灰烬上逸散而出，说不定，这正是开启「通道」的关键呢！"
+  },
+  {
+    "ID": 240306,
+    "Value": "对了！之前找到的火折子呢？不如在这里试试看？"
+  },
+  {
+    "ID": 240307,
+    "Value": "「噌——」，三团火焰在鼎中窜动。"
+  },
+  {
+    "ID": 240308,
+    "Value": "……好像没有反应，难道是搞错了……"
+  },
+  {
+    "ID": 240309,
+    "Value": "师妹先噤声，周围有动静！"
+  },
+  {
+    "ID": 240310,
+    "Value": "咔哒。……咔哒。咔哒……"
+  },
+  {
+    "ID": 240311,
+    "Value": "墓穴开始震动。一侧黑石墙缓缓开裂……"
+  },
+  {
+    "ID": 240312,
+    "Value": "这……居然是扇门？"
+  },
+  {
+    "ID": 240313,
+    "Value": "妖气滔天……看来韩无砂就在里面，我们快进去吧！"
+  },
+  {
+    "ID": 240314,
+    "Value": "啊？是你们？你们是怎么进来的？我明明把所有入口都封死了。"
+  },
+  {
+    "ID": 240315,
+    "Value": "这叫百密必有一疏，韩无砂，你也辛苦修练千年，我们不想伤你性命，只想借你的内丹一用……"
+  },
+  {
+    "ID": 240316,
+    "Value": "借我的内丹？看在你们这几个英俊小哥的份上，我是可以考虑考虑，不过，你们会还给我吗？"
+  },
+  {
+    "ID": 240317,
+    "Value": "这个，可能就没办法了。"
+  },
+  {
+    "ID": 240318,
+    "Value": "什么？这哪叫商借？这根本就叫夺取嘛～万物生长本就各不相干，可是你们人类就喜欢仗着权势巧取横夺，拿我的内丹？这跟取我的命有何二致？"
+  },
+  {
+    "ID": 240319,
+    "Value": "孽畜！口中冠冕堂皇，但你拦路伤人，难道可以抵赖么？"
+  },
+  {
+    "ID": 240320,
+    "Value": "我伤人？这可真是天大的冤枉～我可从不勉强不受诱惑的人，像是上次有两个小和尚，一个是迫不及待，另一个可就是一心不动，下场可想而知不是？"
+  },
+  {
+    "ID": 240321,
+    "Value": "这些家伙接受了我的媚色引诱，而我也只不过是吸取他们的精气来采补，可从来也没要过他们的性命啊～"
+  },
+  {
+    "ID": 240322,
+    "Value": "哦～我明白了～这些家伙不敢承认是自己色欲熏心，横竖是死无对证，就赖我强迫伤人，早知如此，我就该一口吞吃了他们才对！"
+  },
+  {
+    "ID": 240323,
+    "Value": "……那你道行所修也非正道，交出来救人也不冤枉。"
+  },
+  {
+    "ID": 240324,
+    "Value": "好歹也是我辛苦所得，要我平白交出，休想！"
+  },
+  {
+    "ID": 240325,
+    "Value": "多年不见，再相逢却是这般光景。"
+  },
+  {
+    "ID": 240326,
+    "Value": "脉象紊乱，气息微弱。唉……"
+  },
+  {
+    "ID": 240327,
+    "Value": "常人梦魇，轻唤即醒。既然寻常之法无用，只能寄希望于殷千炀尽快带回「血灵神珠」了。"
+  },
+  {
+    "ID": 240328,
+    "Value": "暂时安全了。"
+  },
+  {
+    "ID": 240329,
+    "Value": "那是什么？为什么会追着我？"
+  },
+  {
+    "ID": 240330,
+    "Value": "那是想要吞噬你真魂元魄的蚩尤魂。"
+  },
+  {
+    "ID": 240331,
+    "Value": "你……你又是谁？为什么会出现在这里救我？"
+  },
+  {
+    "ID": 240332,
+    "Value": "我是流舞。"
+  },
+  {
+    "ID": 240333,
+    "Value": "流舞？两千多年前的幽姬？这怎么可能？"
+  },
+  {
+    "ID": 240334,
+    "Value": "血脉相连，命运交织。在这个梦境空间，时间与现实并不相同。"
+  },
+  {
+    "ID": 240335,
+    "Value": "我感觉到那些血色烟雾汇聚成的东西，好像与我有某种联系。它们是从我体内涌出来的吗？那种力量……那种血腥的力量，我能感觉到它在我体内流淌……"
+  },
+  {
+    "ID": 240336,
+    "Value": "力量本身无善恶，关键在于使用者。我们九黎一族世代传承蚩尤血脉，但我们并非被血脉所控。"
+  },
+  {
+    "ID": 240337,
+    "Value": "但我感觉到那股力量……那股嗜血的冲动……"
+  },
+  {
+    "ID": 240338,
+    "Value": "切记，你就是你，你不是蚩尤。我们体内流淌的血可能源自它，但我们的灵魂属于自己。"
+  },
+  {
+    "ID": 240339,
+    "Value": "流舞前辈是怎么抵抗这种诱惑的？"
+  },
+  {
+    "ID": 240340,
+    "Value": "接受它的存在，但不屈服于它。就像驯服野兽，认识它，尊重它，然后掌控它。"
+  },
+  {
+    "ID": 240341,
+    "Value": "那些血色烟雾追捕我的同时，又像是在呼唤我……"
+  },
+  {
+    "ID": 240342,
+    "Value": "蚩尤血脉会有这种感应，但不要被它迷惑。无论何时，你的选择都应该出自本心，而非受外力驱使。"
+  },
+  {
+    "ID": 240343,
+    "Value": "如果……如果我体内的力量失控怎么办？"
+  },
+  {
+    "ID": 240344,
+    "Value": "力量是双刃剑，它可以守护，也可以毁灭。但我相信你，正如我相信我自己。我们的血脉中不仅有力量，还有智慧与坚韧。"
+  },
+  {
+    "ID": 240345,
+    "Value": "谢谢你……流舞前辈。"
+  },
+  {
+    "ID": 240346,
+    "Value": "你的道路由你自己决定。"
+  },
+  {
+    "ID": 240347,
+    "Value": "我明白了。我不会让蚩尤的野心得逞。"
+  },
+  {
+    "ID": 240348,
+    "Value": "很好。现在，准备好面对你内心的恐惧了吗？"
+  },
+  {
+    "ID": 240349,
+    "Value": "当然。"
+  },
+  {
+    "ID": 240350,
+    "Value": "流舞前辈，我曾在族中的传说里听闻您的事迹。"
+  },
+  {
+    "ID": 240351,
+    "Value": "传说与现实常有差距。我可能并非你想象中的那个人。"
+  },
+  {
+    "ID": 240352,
+    "Value": "传说中的英雄总是完美无瑕，但真实的我们只是凡人，带着自己的恐惧与软弱做出选择而已。"
+  },
+  {
+    "ID": 240353,
+    "Value": "能告诉我真实的故事吗？关于您，还有撼天前辈……"
+  },
+  {
+    "ID": 240354,
+    "Value": "那是两千多年前的事了，当三条恶龙闯入九黎领地，肆意破坏，吞噬九黎子民时，大家陷入绝望。"
+  },
+  {
+    "ID": 240355,
+    "Value": "传说中，他用神秘的「绯魂铁」打造了一把神剑…"
+  },
+  {
+    "ID": 240356,
+    "Value": "绯魂铁，极为罕见。当时，我们已经尝试了所有可能的方法，却依然无法对抗那三条恶龙。九黎将亡，我们不得不做出最后的选择。"
+  },
+  {
+    "ID": 240357,
+    "Value": "最后的选择？"
+  },
+  {
+    "ID": 240358,
+    "Value": "那天，我们将女儿托付给了族中的长老们，告诉她我们很快会回来。那是一个谎言。撼天和我都知道，我们不会再相见了。"
+  },
+  {
+    "ID": 240359,
+    "Value": "所以你选择了…"
+  },
+  {
+    "ID": 240360,
+    "Value": "自我牺牲。我们来到灵阙潭。"
+  },
+  {
+    "ID": 240361,
+    "Value": "所以邪煌霸剑至今仍在离魂幽原……"
+  },
+  {
+    "ID": 240362,
+    "Value": "是的。撼天的灵魂仍在那里守护着它。他执念太深，不愿让任何人带走那把武器。那把剑承载了太多痛苦与力量。"
+  },
+  {
+    "ID": 240363,
+    "Value": "我好像明白了什么。"
+  },
+  {
+    "ID": 240364,
+    "Value": "你看到了吗？真正的勇气不是无所畏惧，而是即使恐惧也坚持前行。我和撼天的选择或许并非完美，我们也曾犹豫，也曾绝望，但最终我们选择了守护。"
+  },
+  {
+    "ID": 240365,
+    "Value": "我一直以为，成为幽姬是一种束缚，是不得不承担的责任。"
+  },
+  {
+    "ID": 240366,
+    "Value": "但现在我明白了，这不仅是责任，更是选择。我选择守护九黎族，不是因为我必须这样做，而是因为我愿意这样做。"
+  },
+  {
+    "ID": 240367,
+    "Value": "你比我想象中要坚强。蚩尤的血脉并非诅咒，而是力量的源泉。关键在于你如何使用它。"
+  },
+  {
+    "ID": 240368,
+    "Value": "我会活下去，为了守护九黎子民。不是作为蚩尤血脉的容器，而是作为自己的主人。我会找到九仪天尊剑，绝不让蚩尤的野心得逞。"
+  },
+  {
+    "ID": 240369,
+    "Value": "这就是我想看到的答案。记住，无论未来多么黑暗，你都不是孤身一人。我们的灵魂与你同在，九黎的力量与你同在。"
+  },
+  {
+    "ID": 240370,
+    "Value": "感觉到了吗？它就在附近。"
+  },
+  {
+    "ID": 240371,
+    "Value": "那股令人窒息的血腥气息……蚩尤魂。"
+  },
+  {
+    "ID": 240372,
+    "Value": "它会再次尝试吞噬你。做好准备。"
+  },
+  {
+    "ID": 240373,
+    "Value": "它来了！"
+  },
+  {
+    "ID": 240374,
+    "Value": "吾之血脉……吾之后裔……汝终将回归本源……"
+  },
+  {
+    "ID": 240375,
+    "Value": "她不属于你。"
+  },
+  {
+    "ID": 240376,
+    "Value": "弱小的女子……汝已逝去千年……何苦再来阻挠？"
+  },
+  {
+    "ID": 240377,
+    "Value": "即使只剩残魂，我也不会让你得逞。"
+  },
+  {
+    "ID": 240378,
+    "Value": "血脉的呼唤……吾之力量在汝体内流淌……汝生而为战……生而为王……生而为吾之延续…"
+  },
+  {
+    "ID": 240379,
+    "Value": "我……我感觉到了…"
+  },
+  {
+    "ID": 240380,
+    "Value": "胧夜！不要听它的！那只是幻觉！"
+  },
+  {
+    "ID": 240381,
+    "Value": "接纳吾之本源……汝将获得无上力量……\n征服一切……万物臣服……"
+  },
+  {
+    "ID": 240382,
+    "Value": "你不是它的容器。血脉只是起点，不是终点。你的道路由你自己决定，不是由它！"
+  },
+  {
+    "ID": 240383,
+    "Value": "血脉赋予我们力量，但如何使用这力量是我们自己的选择。它既可以用于毁灭，也可以用于创造。可以用于征服，也可以用于守护。"
+  },
+  {
+    "ID": 240384,
+    "Value": "前辈，我们终于取得血灵神珠！"
+  },
+  {
+    "ID": 240385,
+    "Value": "嗯，没错，这的确是血灵神珠，形色越是通透红润，就表示此蛇道行越高，但是要救胧夜姑娘，这要素还差了一半，没了这样东西，纵使有血灵神珠也是枉然。"
+  },
+  {
+    "ID": 240386,
+    "Value": "还有？那请前辈告知。"
+  },
+  {
+    "ID": 240387,
+    "Value": "我们马上去取！"
+  },
+  {
+    "ID": 240388,
+    "Value": "嗯……因为她遭受血魂之系，虽然拖至此时尚未殒命，但是元魂也已失去不少。"
+  },
+  {
+    "ID": 240389,
+    "Value": "如果就这样把血魂之系切开，她也会变成没有记忆，没有意识的人偶，这可比死了还痛苦。"
+  },
+  {
+    "ID": 240390,
+    "Value": "啊？那……那该怎么办？"
+  },
+  {
+    "ID": 240391,
+    "Value": "所以现在必须要「混元融魂」，也就是说，必须有人自愿让我取出一部分的真元意念来补给胧夜姑娘。"
+  },
+  {
+    "ID": 240392,
+    "Value": "被取出的人生命是不会有什么大碍，但是会丧失自己过去的某一部分记忆。"
+  },
+  {
+    "ID": 240393,
+    "Value": "这个部分非常难说，或许会忘了自己是谁，或许会忘了自己所学，或许……会忘了胧夜姑娘……"
+  },
+  {
+    "ID": 240394,
+    "Value": "啊？失忆？"
+  },
+  {
+    "ID": 240395,
+    "Value": "那这由我来吧，反正我想忘记的过去可多着呢，而且忘记胧夜姑娘的话，我想应该不会比……某些人还重要吧？"
+  },
+  {
+    "ID": 240396,
+    "Value": "这还是不成，这个人必须也是胧夜姑娘放在心上的人，如此方能以念相合，使她的元魂再度化生。"
+  },
+  {
+    "ID": 240397,
+    "Value": "胧夜姑娘也放在心上的人？这……怎么评断呢？"
+  },
+  {
+    "ID": 240398,
+    "Value": "嗯……其实这倒有个法子，你们曾说那位天人武神将，曾给她施了回返梦魂之术，会只记得对她来说印象深刻的人与事，那么有谁，是她立时就认出的人？"
+  },
+  {
+    "ID": 240399,
+    "Value": "我有，虽然在长平镇时，我与胧夜姑娘只有几面之缘，但是当她受伤失忆之后，她居然认得我，我想我可以。"
+  },
+  {
+    "ID": 240400,
+    "Value": "还有我……她被施术之后，第一眼认出的人，是我。"
+  },
+  {
+    "ID": 240401,
+    "Value": "哎？什么？原来殷兄你……难不成胧夜姑娘喜欢你？还是你喜欢胧夜姑娘？你不是……跟高姑娘？"
+  },
+  {
+    "ID": 240402,
+    "Value": "二师哥，求求你别这样……"
+  },
+  {
+    "ID": 240403,
+    "Value": "不，其实师妹，这对我来说，或许是个决定命运的方式。说不定我自此之后会忘了胧夜，那么就不会辜负你的心意。"
+  },
+  {
+    "ID": 240404,
+    "Value": "但是你也可能忘了我啊，那你叫我该怎么办呢？"
+  },
+  {
+    "ID": 240405,
+    "Value": "师妹，我心意已决，我很抱歉……"
+  },
+  {
+    "ID": 240406,
+    "Value": "高皇君离开"
+  },
+  {
+    "ID": 240407,
+    "Value": "高姑娘……"
+  },
+  {
+    "ID": 240408,
+    "Value": "萧熇离开"
+  },
+  {
+    "ID": 240409,
+    "Value": "好了，我知道你们都很想为她付出，这份心是没问题；而胧夜姑娘也都记得你们，这一点我想连她自己都是两难的。"
+  },
+  {
+    "ID": 240410,
+    "Value": "所以现在我有一个公平的法子：就是你们元魂的天命，是否与她相合。将你们的生辰八字给我，让我来为你们推算你们的所属天命……"
+  },
+  {
+    "ID": 240411,
+    "Value": "天命？"
+  },
+  {
+    "ID": 240412,
+    "Value": "天命吗……"
+  },
+  {
+    "ID": 240413,
+    "Value": "二人如实交代了生辰八字，随后，太渊隐逸一番推算……"
+  },
+  {
+    "ID": 240414,
+    "Value": "如何呢前辈？"
+  },
+  {
+    "ID": 240415,
+    "Value": "……殷少侠，我必须对你说声遗憾了，显然瞿公子比你适合胧夜姑娘……"
+  },
+  {
+    "ID": 240416,
+    "Value": "什么？这是为什么？"
+  },
+  {
+    "ID": 240417,
+    "Value": "因你是南斗「七杀星」转世，智勇双全，深谋远虑，是天生的将星。但命中带有刚刹，元魂刹性极炽，尤以今年杀劫刹气为最顶峰，恐怕会对胧夜姑娘的性格有不良影响……"
+  },
+  {
+    "ID": 240418,
+    "Value": "这……那他呢？他为什么比我适合？"
+  },
+  {
+    "ID": 240419,
+    "Value": "瞿公子则恰为「文昌星」转世，智慧过人，才华横溢，格位虽没有你高，但文昌是六吉星之一，能化忧解厄，对胧夜姑娘来说，无疑最为适合。"
+  },
+  {
+    "ID": 240420,
+    "Value": "殷千炀离开"
+  },
+  {
+    "ID": 240421,
+    "Value": "唉～世事皆难两全，这也是无可奈何之事……"
+  },
+  {
+    "ID": 240422,
+    "Value": "瞿公子，你做好准备了么？你很可能会忘去对你极重要的事。"
+  },
+  {
+    "ID": 240423,
+    "Value": "为了胧夜姑娘，我不在乎。"
+  },
+  {
+    "ID": 240424,
+    "Value": "新的一日到来。除了又被悬在树上的燕明蓉陆续传来的哀嚎声，各怀心事的四人，一夜无语。"
+  },
+  {
+    "ID": 240425,
+    "Value": "你觉得好多了么？还有何不适之处？"
+  },
+  {
+    "ID": 240426,
+    "Value": "没有，对于一切记得非常清楚，背上的伤似乎也不那么痛了，胧夜感谢前辈救命之恩。"
+  },
+  {
+    "ID": 240427,
+    "Value": "那就好，再来要跟你叮咛的是，你一定得在百日之内，将造成血魂之系的元凶消灭或镇封。"
+  },
+  {
+    "ID": 240428,
+    "Value": "否则你身上的血魂之系将会继续作用，到时你还有没有这么好的机运，就未可知了。"
+  },
+  {
+    "ID": 240429,
+    "Value": "是，我会记得的。"
+  },
+  {
+    "ID": 240430,
+    "Value": "嗯，那我最后要告诉你的是，为救回你性命，你的伙伴们都有为你犯险，但是其中有一人，却是为了你牺牲最大的，因为他对你的挚情，才能够有现在的你。"
+  },
+  {
+    "ID": 240431,
+    "Value": "如果有朝一日，那个人忘了你，或者忘了他自己是谁，记得他是为了你。"
+  },
+  {
+    "ID": 240432,
+    "Value": "这，是谁呢？他为我做了什么？"
+  },
+  {
+    "ID": 240433,
+    "Value": "那人是瞿牧之公子，因为你的元魂丧失过多，所以他分了他的元魂给你，你才能够清醒，但是他会逐渐的忘去一些记忆，他有可能会忘了他自己，或者你。"
+  },
+  {
+    "ID": 240434,
+    "Value": "什么？瞿公子他……我……我该怎么报答他？"
+  },
+  {
+    "ID": 240435,
+    "Value": "这就看命运的安排了，只是，如果他真的忘了自己是谁，记得善待他。"
+  },
+  {
+    "ID": 240436,
+    "Value": "我，我会的，我一定会的。"
+  },
+  {
+    "ID": 240437,
+    "Value": "那就行了，你……快走吧。"
+  },
+  {
+    "ID": 240438,
+    "Value": "前辈，我还有一事不明白。"
+  },
+  {
+    "ID": 240439,
+    "Value": "你说吧！"
+  },
+  {
+    "ID": 240440,
+    "Value": "为何前辈一直背对着我，不知胧夜是否可以斗胆见见前辈的样子？"
+  },
+  {
+    "ID": 240441,
+    "Value": "你为什么要见我的样子？"
+  },
+  {
+    "ID": 240442,
+    "Value": "因为我一直觉得，您的声音非常的熟悉，像是一个，我日思夜想的朋友。"
+  },
+  {
+    "ID": 240443,
+    "Value": "如果我真是你那位朋友，那又如何呢？与其追求过往的失去，不如把握现下所有，不再让未来成为憾恨，不是吗？"
+  },
+  {
+    "ID": 240444,
+    "Value": "我明白了，其实如果我再见到她，我只是想说声谢谢，谢谢她给我的一切，就这样子……"
+  },
+  {
+    "ID": 240445,
+    "Value": "我走了……双双姐……"
+  },
+  {
+    "ID": 240446,
+    "Value": "胧夜离开"
+  },
+  {
+    "ID": 240447,
+    "Value": "……希望你幸福，胧夜妹子……"
+  },
+  {
+    "ID": 240448,
+    "Value": "燕明蓉带领众人离开了遁世清居。将走出太玄沼泽时，燕明蓉停下了脚步。"
+  },
+  {
+    "ID": 240449,
+    "Value": "就到这儿，我就不送啦～真希望以后还能跟你们见面！"
+  },
+  {
+    "ID": 240450,
+    "Value": "为什么不能见面？我可以有机会再来这儿看你啊！"
+  },
+  {
+    "ID": 240451,
+    "Value": "怕是不行了，因为我跟师父要搬离太玄谷了……"
+  },
+  {
+    "ID": 240452,
+    "Value": "啊？为什么？"
+  },
+  {
+    "ID": 240453,
+    "Value": "我也不太懂，听师父说似乎是什么她因为要救你，已经为自己招来杀劫，所以必须尽速远离这里，或能逃过一劫。"
+  },
+  {
+    "ID": 240454,
+    "Value": "总之我是不大懂啦，反正我会保护师父，要是谁敢对师父怎么样，我就跟他拼命，一定会为师父报仇！"
+  },
+  {
+    "ID": 240455,
+    "Value": "燕明蓉，我相信你一定会成为一个出色的「人」的，只要你不要忘记你师父对你的教诲，你一定会的！"
+  },
+  {
+    "ID": 240456,
+    "Value": "蓉蓉不会忘的，也不会忘记你们的。"
+  },
+  {
+    "ID": 240457,
+    "Value": "世上无事值得恐惧，死亡也只是另一种存在。"
+  },
+  {
+    "ID": 240458,
+    "Value": "世间总有美好的光景不是吗？"
+  },
+  {
+    "ID": 240459,
+    "Value": "若是撼天还在，想必也会喜欢这里吧？"
+  },
+  {
+    "ID": 240460,
+    "Value": "千年荏苒变幻，总还有些新奇事物……"
+  },
+  {
+    "ID": 240461,
+    "Value": "这里的土壤似乎很适合种些灵药？"
+  },
+  {
+    "ID": 240462,
+    "Value": "虽只是片刻歇息，于我也足够温暖……"
+  },
+  {
+    "ID": 240463,
+    "Value": "初识流舞"
+  },
+  {
+    "ID": 240464,
+    "Value": "绰影"
+  },
+  {
+    "ID": 240465,
+    "Value": "两千多年前，有三条不知打哪儿来的恶龙，\n钻进地界大肆破坏、吞吃百姓，那时九黎将亡。\n\n当时幽姬名为流舞，其夫婿名为撼天。\n撼天以「绯魂铁」铸一柄利剑，\n夫妇二人将自己的女儿，也即下一任幽姬，\n交托给当时的辅使与长老们后，便前往灵阙潭。\n\n流舞进入灵阙潭，以鲜血元魄引来诸先民的血魂，\n撼天将其融魂化生到剑上，以这柄剑斩杀三条恶。\n在离魂幽原斩杀了最后一条龙后，\n撼天也伤重力竭而亡……"
+  },
+  {
+    "ID": 240466,
+    "Value": "据说在流舞出生那日，\n一阵不知来自何处的青雾弥漫汇聚在她身旁。\n那雾中有光影流转，如水般舞动，\n时而凝聚成剑形，时而化作流云。\n长老们见状称其为异兆，为婴孩取名「流舞」。\n\n自幼，流舞便展现出非凡天赋。\n八岁习剑，三日即可演练复杂剑式。\n成年后的流舞身姿轻盈如风，\n剑法更是如行云流水，\n一招一式宛如在跳一支无声的舞。\n\n她的剑不求锋芒毕露，\n却总能在最意想不到处制敌，\n如青雾般飘渺难测，似流水般柔韧不断。"
+  },
+  {
+    "ID": 240467,
+    "Value": "撼天第一次见流舞，是在族中的祀祖之礼。\n她挥剑，如掠过三荒冥原的疾风，又似灵阙潭的阵阵涟漪……自此，流舞去哪，撼天就跟去哪。\n直到那天流舞忽然停了脚步，等他跟上。\n\n「你名字里有个舞，那你会跳舞吗？」撼天这样问。\n「杀人的那种算吗？」\n「算。」\n一直到很久以后，世人都忘了流舞的名字，\n撼天仍记得那天流舞的影子横冲直撞，闯到他心里。\n\n「你跳得真好……」\n傻大个儿涨红了脸，掌中握着一枚精巧的藤编坠饰。\n「你编的？」\n「我爹说，再顶天立地的汉子，想讨到心爱的婆娘，也得有些巧心。」\n「哧……哈哈哈哈哈哈！」\n流舞大笑着从呆愣大个儿手中抽走藤结。\n「收、收了我的藤结，是答应做我的女人了？」\n看着男人不知往哪儿放的眼神，流舞笑得更大声了。\n\n笑罢，流舞抬起头，望向那厚重的崖壁，\n那后面有长老们时常念叨的「好看的月亮」。\n或许……就和这傻大个儿一起去瞧瞧吧。\n「嗯，我答应了。」"
+  },
+  {
+    "ID": 240468,
+    "Value": "流舞眺望着远方，手指不自觉地抚过碎影凝穹。\n「三荒有异，或为族灾——长老的占卜结果。」\n\n撼天锁眉，思索着应对办法。\n「暂时不必惊扰大家，」流舞笑笑，但目光却如深潭般不可窥探，「我会亲自前去查探。」\n\n撼天没同往常那样立即应声，而是匆匆跑了出去。\n流舞愣神，不久却听见屋外传来金属碰撞声。\n撼天背着一人高的行囊，手中攥着他不离手的家伙。\n「我和你一起去。」\n他的声音不再闷如远雷，只余下坚定。\n\n二人并肩行走向远方。\n走了几步，流舞忽然驻足，回望远处散落的居所。\n「他们会照顾好自己的。」撼天的声音低沉而温柔。\n流舞转身，眼中的迟疑若冰雪消融。\n「嗯，走吧，让我们去做该做的事。」\n\n撼天不再说话，只是默默随她走着——\n「生死与共，无关其他。」\n如今，是他践行誓言的时候了。\n两道身影渐行渐远，一同没入炽烈的焦原。"
+  },
+  {
+    "ID": 240469,
+    "Value": "出自新作。九黎族幽姬，为救族人，与丈夫撼天锻造邪煌霸剑，又献身以元魄引先民血魂入剑。"
+  },
+  {
+    "ID": 240470,
+    "Value": "潜渊入墓"
+  },
+  {
+    "ID": 240471,
+    "Value": "血雾迷魂"
+  },
+  {
+    "ID": 240472,
+    "Value": "百日之患"
+  },
+  {
+    "ID": 240473,
+    "Value": "坚守6回合或敌方全灭"
+  },
+  {
+    "ID": 240474,
+    "Value": "击败蚩尤魂"
+  },
+  {
+    "ID": 240475,
+    "Value": "攻击单个敌人，造成<b><color=#e4462c>1.8</color></b>倍伤害，施加<link type=buff value=700001321 bgcolor=#3a85ffff>「定身」</link>状态，持续<b><color=#e4462c>2</color></b>回合；\n若目标已处于友方「霜冻」地形上或携带「迟缓」类状态，则法术穿透提高<b><color=#e4462c>50%</color></b>且「对战后」额外施加<link type=buff value=741071023 bgcolor=#3a85ffff>「冰劫」</link>状态，持续<b><color=#e4462c>1</color></b>回合。若造成击杀，将敌方和友方地形变为友方「霜冻」地形，持续<b><color=#e4462c>2</color></b>回合，且自身当前「结界」和本次开启「结界」持续回合数<b><color=#e4462c>+1</color></b>，若本次攻击未造成击杀，则该绝学冷却时间<b><color=#e4462c>-3</color></b>。\n[气力技]消耗<b><color=#e4462c>3</color></b>点气力，才可释放绝学。（每造成<b><color=#e4462c>1</color></b>次伤害累计<b><color=#e4462c>1</color></b>点气力，使用非伤害绝学累积<b><color=#e4462c>1</color></b>点气力，开启结界后累积<b><color=#e4462c>1</color></b>点气力）"
+  },
+  {
+    "ID": 240476,
+    "Value": "LIUWU"
+  },
+  {
+    "ID": 240477,
+    "Value": "幽潭铸魄|剑承英魂"
+  },
+  {
+    "ID": 240478,
+    "Value": "嗯……看来此处便是那古墓内部了，之前感受到的那股冲天妖怨，原是从这儿散开的。怪不得……"
+  },
+  {
+    "ID": 240479,
+    "Value": "这儿有妖？我怎没看到！"
+  },
+  {
+    "ID": 240480,
+    "Value": "前辈，您这是什么术法？！"
+  },
+  {
+    "ID": 240481,
+    "Value": "闲暇时琢磨的一些微末之法罢了，你若有意，他日得空传之于你也是无妨的。"
+  },
+  {
+    "ID": 240482,
+    "Value": "诶！二师哥，你看，那边好像有东西——"
+  },
+  {
+    "ID": 240483,
+    "Value": "这像是某种移形换位的阵法，因年久而枯竭，若能以灵力灌注，想来应能重新启用。"
+  },
+  {
+    "ID": 240484,
+    "Value": "<color=#FFE897FF>移形换位的……阵法嘛？</color>"
+  },
+  {
+    "ID": 240485,
+    "Value": "这——又怎么了！？"
+  },
+  {
+    "ID": 240486,
+    "Value": "有东西在靠近。"
+  },
+  {
+    "ID": 240487,
+    "Value": "啊……好久没有闻到，这么鲜活的血肉之息了！哈哈哈！"
+  },
+  {
+    "ID": 240488,
+    "Value": "糟了！此地妖气弥漫，不止有多少妖物隐藏其中，得想办法离开才行！"
+  },
+  {
+    "ID": 240489,
+    "Value": "莫慌，我以灵力灌注阵法，你们只需守住阵眼！"
+  },
+  {
+    "ID": 240490,
+    "Value": "诸位，阵眼枯竭已久，以灵力驱动亦需候上一炷香功夫。在这期间，务必死守阵眼。待移形换位阵生效，我们立刻撤离。"
+  },
+  {
+    "ID": 240491,
+    "Value": "便交给我们吧。……糟了，我怎么使不上力来？！"
+  },
+  {
+    "ID": 240492,
+    "Value": "此乃妖怨侵入元身所致。站在我身边，可避妖怨侵蚀。"
+  },
+  {
+    "ID": 240493,
+    "Value": "彼处妖火，似是妖怨的元凶。击败它们，妖气当除。"
+  },
+  {
+    "ID": 240494,
+    "Value": "获得<color=#e4462c>火折子</color>"
+  },
+  {
+    "ID": 240495,
+    "Value": "二师哥，这是……"
+  },
+  {
+    "ID": 240496,
+    "Value": "此地凶险，且先离开再说。"
+  },
+  {
+    "ID": 240497,
+    "Value": "这是……哪里？为何这地方感觉如此熟悉却又陌生……"
+  },
+  {
+    "ID": 240498,
+    "Value": "那是什么？！"
+  },
+  {
+    "ID": 240499,
+    "Value": "血脉……相连……汝之神魂……归吾所有……"
+  },
+  {
+    "ID": 240500,
+    "Value": "这股气息……"
+  },
+  {
+    "ID": 240501,
+    "Value": "退下。"
+  },
+  {
+    "ID": 240502,
+    "Value": "血魂之系……"
+  },
+  {
+    "ID": 240503,
+    "Value": "跟我走。它想要用你的血魂助其复生，不想被吸干血魂就快点。"
+  },
+  {
+    "ID": 240504,
+    "Value": "当心！它想要用你的血魂助其复生，千万不要被它吸到它身边！"
+  },
+  {
+    "ID": 240505,
+    "Value": "「？？？」每回合会将所有敌方朝自身方向击退一格。"
+  },
+  {
+    "ID": 240506,
+    "Value": "若玩家被击退入「？？？」附近，会被立即杀死。"
+  },
+  {
+    "ID": 240507,
+    "Value": "「胧夜」抵达目标点时，即可胜利。"
+  },
+  {
+    "ID": 240508,
+    "Value": "顽抗无益……血脉相连……命运已定……"
+  },
+  {
+    "ID": 240509,
+    "Value": "不，我不是你，我不会成为你。"
+  },
+  {
+    "ID": 240510,
+    "Value": "胧夜！记住你为何而战！"
+  },
+  {
+    "ID": 240511,
+    "Value": "我是……"
+  },
+  {
+    "ID": 240512,
+    "Value": "吾之延续……吾之复生……"
+  },
+  {
+    "ID": 240513,
+    "Value": "我是九黎族的幽姬胧夜！我的灵魂属于我自己！"
+  },
+  {
+    "ID": 240514,
+    "Value": "这是……血灵神珠……"
+  },
+  {
+    "ID": 240515,
+    "Value": "你的伙伴仍在为了拯救你而努力。"
+  },
+  {
+    "ID": 240516,
+    "Value": "响应吾的力量！"
+  },
+  {
+    "ID": 240517,
+    "Value": "不可能……汝怎能抗拒吾之力量……"
+  },
+  {
+    "ID": 240518,
+    "Value": "因为她明白了真正的力量来源。不是来自血脉的狂暴，而是来自内心的坚定。"
+  },
+  {
+    "ID": 240519,
+    "Value": "我感谢你赐予我的血脉与力量，但我不会成为你的傀儡。我会走自己的路，做自己的主人。"
+  },
+  {
+    "ID": 240520,
+    "Value": "愚蠢……拒绝吾之恩赐……汝将失去一切……"
+  },
+  {
+    "ID": 240521,
+    "Value": "不，她会获得更多。她将拥有你从未拥有过的东西——自由选择的权利和真正的力量。"
+  },
+  {
+    "ID": 240522,
+    "Value": "吾不会……就此消逝……血脉……终将回归……"
+  },
+  {
+    "ID": 240523,
+    "Value": "胧夜，准备好。它会做最后的挣扎。"
+  },
+  {
+    "ID": 240524,
+    "Value": "我们一起面对。"
+  },
+  {
+    "ID": 240525,
+    "Value": "吾会归来……血脉……永不……消逝……"
+  },
+  {
+    "ID": 240526,
+    "Value": "它……真的被击退了吗？"
+  },
+  {
+    "ID": 240527,
+    "Value": "暂时是的。但蚩尤的意志太过强大，只要九黎血脉存在，它就会以某种形式存在。"
+  },
+  {
+    "ID": 240528,
+    "Value": "我们永远无法彻底消灭它？"
+  },
+  {
+    "ID": 240529,
+    "Value": "它是我们的一部分，就像光明中必有阴影。"
+  },
+  {
+    "ID": 240530,
+    "Value": "我感觉……不一样了。好像体内的力量更加……和谐。"
+  },
+  {
+    "ID": 240531,
+    "Value": "你开始理解了。真正的力量不是来自于征服和控制，而是来自于理解和接纳。"
+  },
+  {
+    "ID": 240532,
+    "Value": "流舞前辈，如果蚩尤魂会再次归来，我该如何准备？"
+  },
+  {
+    "ID": 240533,
+    "Value": "当你内心足够坚定，外来的诱惑就无法动摇你。"
+  },
+  {
+    "ID": 240534,
+    "Value": "我明白了。我会继续前行，寻找九仪天尊剑，阻止蚩尤。"
+  },
+  {
+    "ID": 240535,
+    "Value": "记住，你并非孤军奋战。即使看不见，我们的灵魂也与你同在。"
+  },
+  {
+    "ID": 240536,
+    "Value": "我不会辜负九黎的期望。"
+  },
+  {
+    "ID": 240537,
+    "Value": "我该离开了。你也该苏醒了。"
+  },
+  {
+    "ID": 240538,
+    "Value": "等等！我还有很多问题想问！"
+  },
+  {
+    "ID": 240539,
+    "Value": "答案都在你自己心中……相信自己……胧夜……"
+  },
+  {
+    "ID": 240540,
+    "Value": "造成伤害后恢复自身气血（恢复量为本次伤害的<b><color=#e4462c>30%</color></b>）。"
+  },
+  {
+    "ID": 240541,
+    "Value": "主动攻击「对战中」暴击率、暴击伤害+10%（主动攻击「对战中」暴击后移除，上限3层）。"
+  },
+  {
+    "ID": 240542,
+    "Value": "召唤<b><color=#e4462c>1</color></b>个携带<link type=buff value=741092033 bgcolor=#3a85ffff>「离魂」</link>状态的「雷晶分身」（「雷晶分身」继承自身<b><color=#e4462c>140%</color></b>物攻属性，其他属性继承<b><color=#e4462c>100%</color></b>，携带<link type=skill value=61109292 bgcolor=#3a85ffff>「雷晶护体」</link><link type=skill value=61109293 bgcolor=#3a85ffff>「轻身」</link><link type=skill value=61109294 bgcolor=#3a85ffff>「流霆」</link>）。"
+  },
+  {
+    "ID": 240543,
+    "Value": "[被动]主动攻击造成伤害后，对目标施加<link type=buff value=763157170 bgcolor=#3a85ffff>「恶念升腾」</link>，持续<b><color=#e4462c>1</color></b>回合。\n[主动]对范围内敌人造成<b><color=#e4462c>0.7</color></b>倍伤害，并施加<link type=buff value=700000881 bgcolor=#3a85ffff>「污秽」</link><link type=buff value=700000841 bgcolor=#3a85ffff>「封咒」</link>，持续<b><color=#e4462c>2</color></b>回合。"
+  },
+  {
+    "ID": 240544,
+    "Value": "我方回合开始时「杀剑恶骸」数量始终少于4"
+  },
+  {
+    "ID": 240545,
+    "Value": "无尽之力·壹"
+  },
+  {
+    "ID": 240546,
+    "Value": "无尽之力·贰"
+  },
+  {
+    "ID": 240547,
+    "Value": "无尽之力·叁"
+  },
+  {
+    "ID": 240548,
+    "Value": "无尽之力·肆"
+  },
+  {
+    "ID": 240549,
+    "Value": "无尽之力·伍"
+  },
+  {
+    "ID": 240550,
+    "Value": "无尽之力·陆"
+  },
+  {
+    "ID": 240551,
+    "Value": "无尽之力·柒"
+  },
+  {
+    "ID": 240552,
+    "Value": "无尽之力·捌"
+  },
+  {
+    "ID": 240553,
+    "Value": "气血降低30%。"
+  },
+  {
+    "ID": 240554,
+    "Value": "气血提升50%，其他全属性提升20%，减免5%百分比伤害。"
+  },
+  {
+    "ID": 240555,
+    "Value": "气血提升120%，其他全属性提升40%，减免10%百分比伤害。"
+  },
+  {
+    "ID": 240556,
+    "Value": "气血提升300%，其他全属性提升60%，减免30%百分比伤害。"
+  },
+  {
+    "ID": 240557,
+    "Value": "气血提升700%，其他全属性提升100%，减免50%百分比伤害。"
+  },
+  {
+    "ID": 240558,
+    "Value": "气血提升1200%，其他全属性提升150%，减免70%百分比伤害。"
+  },
+  {
+    "ID": 240559,
+    "Value": "气血提升1800%，其他全属性提升200%，减免90%百分比伤害。"
+  },
+  {
+    "ID": 240560,
+    "Value": "气血提升2500%，其他全属性提升250%，减免100%百分比伤害。"
+  },
+  {
+    "ID": 240561,
+    "Value": "场上存在友方「荒刃」机关时，伤害提高<b><color=#e4462c>5%</color></b>。触发天赋或友方「荒刃」机关传送后，自身获得「祖灵」状态。\n「祖灵」：若自身「有害状态」小于等于<b><color=#e4462c>3</color></b>，则无法被敌方选中。（主动攻击遭受伤害或遭受攻击受到伤害后移除）"
+  },
+  {
+    "ID": 240562,
+    "Value": "场上存在友方「荒刃」机关时，伤害提高<b><color=#e4462c>6%</color></b>。触发天赋或友方「荒刃」机关传送后，自身获得「祖灵」状态。\n「祖灵」：若自身「有害状态」小于等于<b><color=#e4462c>3</color></b>，则无法被敌方选中。（主动攻击遭受伤害或遭受攻击受到伤害后移除）"
+  },
+  {
+    "ID": 240563,
+    "Value": "场上存在友方「荒刃」机关时，伤害提高<b><color=#e4462c>7%</color></b>。触发天赋或友方「荒刃」机关传送后，自身获得「祖灵」状态。\n「祖灵」：若自身「有害状态」小于等于<b><color=#e4462c>3</color></b>，则无法被敌方选中。（主动攻击遭受伤害或遭受攻击受到伤害后移除）"
+  },
+  {
+    "ID": 240564,
+    "Value": "场上存在友方「荒刃」机关时，伤害提高<b><color=#e4462c>8%</color></b>。触发天赋或友方「荒刃」机关传送后，自身获得「祖灵」状态。\n「祖灵」：若自身「有害状态」小于等于<b><color=#e4462c>3</color></b>，则无法被敌方选中。（主动攻击遭受伤害或遭受攻击受到伤害后移除）"
+  },
+  {
+    "ID": 240565,
+    "Value": "场上存在友方「荒刃」机关时，伤害提高<b><color=#e4462c>10%</color></b>。触发天赋或友方「荒刃」机关传送后，自身获得「祖灵」状态。\n「祖灵」：若自身「有害状态」小于等于<b><color=#e4462c>3</color></b>，则无法被敌方选中。（主动攻击遭受伤害或遭受攻击受到伤害后移除）"
+  },
+  {
+    "ID": 240566,
+    "Value": "受到<link type=buff value=700000076 bgcolor=#3a85ffff>「过量治疗」</link>后自身所有「有益状态」提升<color=#F01212>1</color>级。携带大于等于<color=#F01212>7</color>个「有益状态」时，自身除气血外全属性提升<color=#F01212>30%</color>。"
+  },
+  {
+    "ID": 240567,
+    "Value": "刃心"
+  },
+  {
+    "ID": 240568,
+    "Value": "行动结束时，制造「荒刃」机关，持续2回合"
+  },
+  {
+    "ID": 240569,
+    "Value": "孽畜！口中冠冕堂皇，但你拦路伤人之事，难道可以抵赖么？"
+  },
+  {
+    "ID": 240570,
+    "Value": "力量是双刃剑，它能守护，也能毁灭。但我相信你，正如我相信我自己。我们的血脉中不仅有力量，还有智慧与坚韧。"
+  },
+  {
+    "ID": 240571,
+    "Value": "那这由我来吧，反正，我想忘记的过去可多着呢，而且忘记胧夜姑娘的话，我想应该不会比……某些人还重要吧？"
+  },
+  {
+    "ID": 240572,
+    "Value": "不……其实师妹，这对我来说，或许是个决定命运的方式。说不定我自此之后会忘了胧夜，那么就不会辜负你的心意。"
+  },
+  {
+    "ID": 240573,
+    "Value": "二人交代了生辰八字。随后，太渊隐逸一番推算……"
+  },
+  {
+    "ID": 240574,
+    "Value": "新的一日到来。除了又被悬在树上的燕明蓉陆续传来了哀嚎声，各怀心事的四人，一夜无语。"
+  },
+  {
+    "ID": 240575,
+    "Value": "这就要看命运的安排了，只是，如果他真的忘了自己是谁，记得善待他。"
+  },
+  {
+    "ID": 240576,
+    "Value": "蚩尤·魂"
+  },
+  {
+    "ID": 240577,
+    "Value": "鸣鞘天玄2"
+  },
+  {
+    "ID": 240578,
+    "Value": "法宝slot点"
+  },
+  {
+    "ID": 240579,
+    "Value": "可在「百川辑异」玩法中"
+  },
+  {
+    "ID": 240580,
+    "Value": "法宝强化点"
+  },
+  {
+    "ID": 240581,
+    "Value": "神魔劫起2"
+  },
+  {
+    "ID": 240582,
+    "Value": "神魔劫起挑战榜"
+  },
+  {
+    "ID": 240583,
+    "Value": "鸣鞘天玄2-挑战"
+  },
+  {
+    "ID": 240584,
+    "Value": "58测试"
+  },
+  {
+    "ID": 240585,
+    "Value": "OB58-100级升级"
+  },
+  {
+    "ID": 240586,
+    "Value": "xxxxxx·通关"
+  },
+  {
+    "ID": 240587,
+    "Value": "陨魂·破风"
+  },
+  {
+    "ID": 240588,
+    "Value": "陨魂·先锋"
+  },
+  {
+    "ID": 240589,
+    "Value": "陨魂·跃马"
+  },
+  {
+    "ID": 240590,
+    "Value": "上阵殷剑平和至少2位「炎」属相英灵时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%，主动攻击「对战中」伤害提高20%。"
+  },
+  {
+    "ID": 240591,
+    "Value": "上阵银玛和「侠客」，「祝由」英灵至少各一位时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%，主动攻击「对战中」，若目标携带「迟缓」类或「流血」类状态伤害提高16%，穿透提高16%。"
+  },
+  {
+    "ID": 240592,
+    "Value": "上阵桑然和「祝由」，「斗将」职业英灵至少各一位时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%，进行近战对战时，「对战中」伤害和免伤提高16%。"
+  },
+  {
+    "ID": 240593,
+    "Value": "上阵苍狼和「咒师」，「祝由」英灵至少各一位时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%。3格范围内其他友方大于等于2名时，伤害和免伤提高16%。"
+  },
+  {
+    "ID": 240594,
+    "Value": "上阵鲜于超和「羽士」，「咒师」英灵至少各一位时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%，气血大于等于70%时，伤害和免伤提高16%。"
+  },
+  {
+    "ID": 240595,
+    "Value": "上阵双曜冰璃和「侠客」，「祝由」英灵至少各一位时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%。与非飞行角色「对战中」伤害和暴击抗性提高16%。"
+  },
+  {
+    "ID": 240596,
+    "Value": "上阵流舞和至少2位「光」/「暗」/「幽」属相英灵时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%，「对战中」伤害提高20%，若为近战攻击「对战中」伤害额外提高10%"
+  },
+  {
+    "ID": 240597,
+    "Value": "上阵赤炼和「火」，「雷」属相英灵至少各一位时，激活战阵。所有我方上阵角色物攻，物防，法攻，法防提高15%，目标身周1圈没有其他队友时，「对战中」伤害提高30%。"
+  },
+  {
+    "ID": 240598,
+    "Value": "遭受方向性范围绝学攻击时，使身后相邻1格的友方受到伤害降低30%"
+  },
+  {
+    "ID": 240599,
+    "Value": "战斗开始时，物攻、法攻提高10%，持续3回合"
+  },
+  {
+    "ID": 240600,
+    "Value": "主动攻击或释放绝学后，若剩余移动力大于等于3，则获得再移动（直线4格），此次移动无视阻挡"
+  },
+  {
+    "ID": 240601,
+    "Value": "「赤蟒」气血压制至30%以下"
+  },
+  {
+    "ID": 240602,
+    "Value": "「流舞」阵亡或我方全灭"
+  },
+  {
+    "ID": 240603,
+    "Value": "旌国重骑"
+  },
+  {
+    "ID": 240604,
+    "Value": "大墓无光"
+  },
+  {
+    "ID": 240605,
+    "Value": "入土为安"
+  },
+  {
+    "ID": 240606,
+    "Value": "墓室清洁"
+  },
+  {
+    "ID": 240607,
+    "Value": "清理场地"
+  },
+  {
+    "ID": 240608,
+    "Value": "飞鸟惊蛇"
+  },
+  {
+    "ID": 240609,
+    "Value": "救赎之路"
+  },
+  {
+    "ID": 240610,
+    "Value": "扫清妖异"
+  },
+  {
+    "ID": 240611,
+    "Value": "血魂充沛"
+  },
+  {
+    "ID": 240612,
+    "Value": "关闭或摧毁所有古墓棺材"
+  },
+  {
+    "ID": 240613,
+    "Value": "2回合内将韩无砂的气血压低至30%以下"
+  },
+  {
+    "ID": 240614,
+    "Value": "流舞气血不曾低于50%"
+  },
+  {
+    "ID": 240615,
+    "Value": "通关前，武英仲不死"
+  },
+  {
+    "ID": 240616,
+    "Value": "通关前，击败两只「妖异魔火」"
+  },
+  {
+    "ID": 240617,
+    "Value": "不上阵御风角色"
+  },
+  {
+    "ID": 240618,
+    "Value": "上阵单位不超过2"
+  },
+  {
+    "ID": 240619,
+    "Value": "「血魂灵珠」能量一直保持在25以上"
+  },
+  {
+    "ID": 240620,
+    "Value": "通关前，击败的「血魂魔火」少于3只"
+  },
+  {
+    "ID": 240621,
+    "Value": "嗯……这门纹风不动，看来是土石风化而卡死门轴了……"
+  },
+  {
+    "ID": 240622,
+    "Value": "二师哥，小心！"
+  },
+  {
+    "ID": 240623,
+    "Value": "何人擅闯我魏氏祖墓？！"
+  },
+  {
+    "ID": 240624,
+    "Value": "嗯！这荒山野岭的，居然会有妖物！"
+  },
+  {
+    "ID": 240625,
+    "Value": "放肆！尔等擅闯我汾阳魏氏祖墓，还敢大放厥词！？吾镇守千年，无人敢擅闯。"
+  },
+  {
+    "ID": 240626,
+    "Value": "阁下息怒，在下天玄门殷千炀。此番叨扰是为寻一蛇妖，其名韩无砂——"
+  },
+  {
+    "ID": 240627,
+    "Value": "蛇妖！？此为我魏氏祖墓，何来蛇妖！懒得同尔等纠缠，尔等速速离去！"
+  },
+  {
+    "ID": 240628,
+    "Value": "你这家伙，好生无礼。我们若是执意要进，你又能如何！？"
+  },
+  {
+    "ID": 240629,
+    "Value": "吾守护此墓千年无恙，无论何人，无论何故，皆不得入。若要硬闯，唯有一死！"
+  },
+  {
+    "ID": 240630,
+    "Value": "……事从权急，既然阁下不肯通融，那便只能得罪了！"
+  },
+  {
+    "ID": 240631,
+    "Value": "咳咳……尔等，休想入我祖墓！"
+  },
+  {
+    "ID": 240632,
+    "Value": "坏了，这大门似是被他用法术封闭了，看来我们只能另寻他路。"
+  },
+  {
+    "ID": 240633,
+    "Value": "对了二师哥，小狐狸之前曾说过，河边有处水流漩涡另有玄机，不妨沿此路溯流而上。兴许能找到别的通路。"
+  },
+  {
+    "ID": 240634,
+    "Value": "嗯，看来只能如此了。"
+  },
+  {
+    "ID": 240635,
+    "Value": "古棺异变，每回合都会有尸鬼从部分棺材中爬起。"
+  },
+  {
+    "ID": 240636,
+    "Value": "我方单位到达指定位置可将其关闭，但关闭棺材的单位将会被尸毒所侵。"
+  },
+  {
+    "ID": 240637,
+    "Value": "不成！里面凶险难测，萧兄孤身一人，必定危险万分，我不能让你去冒此险！"
+  },
+  {
+    "ID": 240638,
+    "Value": "哟，瞧瞧这是谁？几位远道而来的客人啊！这山路是要收过路费的。"
+  },
+  {
+    "ID": 240639,
+    "Value": "头儿，这几个人衣着不凡，身上肯定带着不少银两！"
+  },
+  {
+    "ID": 240640,
+    "Value": "识相的，把值钱东西都交出来，爷爷我或许能让你们安全离开！"
+  },
+  {
+    "ID": 240641,
+    "Value": "让开，我们没空跟你们纠缠。"
+  },
+  {
+    "ID": 240642,
+    "Value": "好大的口气！兄弟们，给我上！"
+  },
+  {
+    "ID": 240643,
+    "Value": "此处有伏击！小心！"
+  },
+  {
+    "ID": 240644,
+    "Value": "哦？此物之上竟也有那蛇妖的妖气……"
+  },
+  {
+    "ID": 240645,
+    "Value": "果然，此处亦有妖物。我们速战速决！"
+  },
+  {
+    "ID": 240646,
+    "Value": "此物之上的妖气，似乎比之前两个更加浓郁。"
+  },
+  {
+    "ID": 240647,
+    "Value": "师妹，请你帮她医个伤。"
+  },
+  {
+    "ID": 240648,
+    "Value": "……好的。"
+  },
+  {
+    "ID": 240649,
+    "Value": "如果你一开始就把内丹交出，就可以不必受这些皮肉之苦了。很抱歉，我真的需要这个血灵神珠救人，我也不须害你性命。"
+  },
+  {
+    "ID": 240650,
+    "Value": "你……你不杀我？但是你们取走了我的内丹，我的修行，岂不功亏一篑？"
+  },
+  {
+    "ID": 240651,
+    "Value": "我真的很抱歉我这么做，但是我说了，为了救人，我别无他法。但我保有你的一点真元，你还是可以继续修炼，不致变回原形。"
+  },
+  {
+    "ID": 240652,
+    "Value": "算了，或许这也是我的命吧！"
+  },
+  {
+    "ID": 240653,
+    "Value": "只是千年来，我看遍了人类的凶残自私，每个人都是任意的依自己的私欲，伤害所有，予取予求，包括对自己的亲人，就更别提像我们这种你们眼中的低等禽兽。"
+  },
+  {
+    "ID": 240654,
+    "Value": "每个人都是自我、傲慢、高高在上，何曾见过有个人在伤害了我们之后，能够如你这般说句歉意之言？"
+  },
+  {
+    "ID": 240655,
+    "Value": "罢了，就当做这是我的报应吧！不过，我还是感谢你们的不杀之恩。"
+  },
+  {
+    "ID": 240656,
+    "Value": "哎呀糟了～咱们现下该怎么出去？"
+  },
+  {
+    "ID": 240657,
+    "Value": "嗯？我倒忘了你们是凡俗之身……这样吧，我这儿有一样法宝「天行仪」，不过这必需搭配有习咒资质者使用，以后由施术者使用便可带你们脱离迷障。"
+  },
+  {
+    "ID": 240658,
+    "Value": "习咒资质，嘿～有一个刚走马上任的咒术师哩～"
+  },
+  {
+    "ID": 240659,
+    "Value": "哎？又来又来了，你们又都一起看着我做什么？"
+  },
+  {
+    "ID": 240660,
+    "Value": "武英仲将天行仪交给瞿牧之。片刻后——"
+  },
+  {
+    "ID": 240661,
+    "Value": "……如此记住使用此物的方法了吗？"
+  },
+  {
+    "ID": 240662,
+    "Value": "是的，晚辈记住了。"
+  },
+  {
+    "ID": 240663,
+    "Value": "嗯，那我还得继续去追查神剑下落，一旦你们将地界女娃儿的伤治好了，切记回嵩山神武观找斋女司徒缨，请她指示你们接下来应做之事。"
+  },
+  {
+    "ID": 240664,
+    "Value": "是的，晚辈记住了，恭送前辈。"
+  },
+  {
+    "ID": 240665,
+    "Value": "果然顺利脱出古墓，现在还是赶紧将血灵神珠送至太玄谷吧！"
+  },
+  {
+    "ID": 240666,
+    "Value": "老大，这几个人看着像是从墓里出来。"
+  },
+  {
+    "ID": 240667,
+    "Value": "把你们从墓里拿到的金银财宝交出来！"
+  },
+  {
+    "ID": 240668,
+    "Value": "识相点，爷爷我或许能让你们安全离开！"
+  },
+  {
+    "ID": 240669,
+    "Value": "盗墓掘坟，好大的胆子！"
+  },
+  {
+    "ID": 240670,
+    "Value": "再往前走一段路就快到太玄谷了。"
+  },
+  {
+    "ID": 240671,
+    "Value": "站住！这里是我们黄风寨的地盘，要从此路过，先交买路钱！"
+  },
+  {
+    "ID": 240672,
+    "Value": "这里什么时候多了个黄风寨，简直闻所未闻。"
+  },
+  {
+    "ID": 240673,
+    "Value": "小子挺狂啊！兄弟们，教训他们！"
+  },
+  {
+    "ID": 240674,
+    "Value": "有些不太对劲，我们得赶紧回去。"
+  },
+  {
+    "ID": 240675,
+    "Value": "胧夜姑娘在太渊隐逸前辈那儿应该很安全啊。"
+  },
+  {
+    "ID": 240676,
+    "Value": "我知道太渊隐逸前辈那里是安全的，可我总有种不安的感觉。不是担心外敌，而是……我也说不清。就好像有什么事情正在发生，一种预感。"
+  },
+  {
+    "ID": 240677,
+    "Value": "别担心，我相信胧夜姑娘不会有事的。"
+  },
+  {
+    "ID": 240678,
+    "Value": "但愿如此。我们快走吧。"
+  },
+  {
+    "ID": 240679,
+    "Value": "可恶，还真有点本事。都别藏着了，快给我上！"
+  },
+  {
+    "ID": 240680,
+    "Value": "当心！血脉的召唤会将我们牵引到它身边，不要让它得逞！"
+  },
+  {
+    "ID": 240681,
+    "Value": "「？？？」会利用绝学「？？？」将所有敌方朝自身方向击退一格。"
+  },
+  {
+    "ID": 240682,
+    "Value": "接受它的存在，但绝不屈服于它。就像驯服野兽，认识它，尊重它，然后掌控它。"
+  },
+  {
+    "ID": 240683,
+    "Value": "面对内心深处的恐惧需要勇气，但更需要真实地面对自己。"
+  },
+  {
+    "ID": 240684,
+    "Value": "那怎么才能真实地面对自己呢？"
+  },
+  {
+    "ID": 240685,
+    "Value": "以战为问，以心为答。唯有真实的你，才能面对真实的答案。准备好了吗？"
+  },
+  {
+    "ID": 240686,
+    "Value": "我准备好了。"
+  },
+  {
+    "ID": 240687,
+    "Value": "你的回答很诚实。问心不是为了得到完美的答案，而是为了让你看清自己的内心。"
+  },
+  {
+    "ID": 240688,
+    "Value": "这些问题……它们似乎没有标准答案。"
+  },
+  {
+    "ID": 240689,
+    "Value": "正是如此。每个人的心路历程都不同，重要的是你能够诚实面对自己的选择和后果。"
+  },
+  {
+    "ID": 240690,
+    "Value": "流舞前辈，我仍有疑惑，关于蚩尤血脉的真相，以及血魂之系。"
+  },
+  {
+    "ID": 240691,
+    "Value": "那是源自我们血脉里蚩尤的残魂，它感受到了你体内的血脉，想要吞噬你，以逐渐复苏。"
+  },
+  {
+    "ID": 240692,
+    "Value": "那为什么蚩尤需要托梦让历代继任者去取九仪天尊剑破坏九鼎？又为什么要我的命？这不是自相矛盾吗？"
+  },
+  {
+    "ID": 240693,
+    "Value": "蚩尤想引诱其他追求力量之人持使九仪天尊剑，进而助它解开封印。一旦成功，它便不再需要持剑者，只需吸取更多血魂便可破剑而出。"
+  },
+  {
+    "ID": 240694,
+    "Value": "那是不是意味着...我注定会成为它的一部分？"
+  },
+  {
+    "ID": 240695,
+    "Value": "听着，血脉只是血脉，它不定义你是谁。蚩尤眼中只有自己，从未真正关心过九黎族人。我们只是它复生的工具。"
+  },
+  {
+    "ID": 240696,
+    "Value": "但我感觉到那股力量……"
+  },
+  {
+    "ID": 240697,
+    "Value": "九仪天尊剑之所以危险，就是因为它会被蚩尤的地魂操控，影响持剑者的心智。"
+  },
+  {
+    "ID": 240698,
+    "Value": "那九仪天尊剑现在已落入其他人手中……"
+  },
+  {
+    "ID": 240699,
+    "Value": "那正是我担忧的。如果被蚩尤的意志影响，持剑者会逐渐变得凶厉且失去理性。"
+  },
+  {
+    "ID": 240700,
+    "Value": "那么，第一个问题，你愿意放弃幽姬的身份和力量，成为普通人吗？"
+  },
+  {
+    "ID": 240701,
+    "Value": "这个问题……很难。我曾经渴望平凡，但现在我明白，我的身份和力量是我的一部分。放弃它们就像是否认自己的存在。"
+  },
+  {
+    "ID": 240702,
+    "Value": "我不会放弃，但我会学着与之共存，掌控它而非被它掌控。"
+  },
+  {
+    "ID": 240703,
+    "Value": "接受自己的身份是勇气的开始。九黎血脉是重担，也是责任。不逃避，这很好。但记住，接受力量的同时也要承担相应的责任。"
+  },
+  {
+    "ID": 240704,
+    "Value": "第二个问题，你认为强大的力量最终会控制使用者，还是使用者能永远保持对力量的控制？"
+  },
+  {
+    "ID": 240705,
+    "Value": "两者间需要平衡。力量与使用者如同河流与河床，互相塑造，互相制约。"
+  },
+  {
+    "ID": 240706,
+    "Value": "很好，真正的智慧在于寻找平衡点，既不压制，也不放纵。"
+  },
+  {
+    "ID": 240707,
+    "Value": "最后一个问题，你准备为守护你在意的人和事付出什么代价？"
+  },
+  {
+    "ID": 240708,
+    "Value": "我愿意付出一切，但不包括我的本心和原则。因为一旦失去了它们，我所守护的意义也就不存在了。"
+  },
+  {
+    "ID": 240709,
+    "Value": "这是我的使命，我的选择。作为九黎族幽姬，这是我的责任。"
+  },
+  {
+    "ID": 240710,
+    "Value": "为何要牺牲自己？我们可以一起逃离，带着女儿远走高飞。"
+  },
+  {
+    "ID": 240711,
+    "Value": "那不是我们的道路。九黎的责任不容推卸，即使代价是我们的生命。"
+  },
+  {
+    "ID": 240712,
+    "Value": "撼天理解我的选择，尽管那令他痛苦不堪。"
+  },
+  {
+    "ID": 240713,
+    "Value": "母亲，为什么要离开我？您答应过会回来的……"
+  },
+  {
+    "ID": 240714,
+    "Value": "有些牺牲是必要的，我的孩子。我的离去是为了让你有未来。"
+  },
+  {
+    "ID": 240715,
+    "Value": "撼天带着融入我灵魂的邪煌霸剑，独自踏上了战龙之路。他先在冰封冻壁与第一条冰龙激战三天三夜，终于将其斩杀。"
+  },
+  {
+    "ID": 240716,
+    "Value": "你的牺牲毫无意义！撼天也将死去，你们的孩子将成为孤儿，九黎依然会灭亡！"
+  },
+  {
+    "ID": 240717,
+    "Value": "没有人能预见未来。我们只能尽己所能，做我们认为正确的事。"
+  },
+  {
+    "ID": 240718,
+    "Value": "撼天虽然在冰封冻壁受了重伤，但他不曾停下脚步。"
+  },
+  {
+    "ID": 240719,
+    "Value": "他追踪第二条恶龙来到玄海谷道，那场战斗更为惨烈。撼天失去了左臂，却依然用邪煌霸剑将那条龙的头颅斩下。"
+  },
+  {
+    "ID": 240720,
+    "Value": "为什么要让我独自承受这痛苦？没有你，我活着还有什么意义？"
+  },
+  {
+    "ID": 240721,
+    "Value": "因为你是唯一能完成这使命的人。我的爱与力量一直与你同在。"
+  },
+  {
+    "ID": 240722,
+    "Value": "最后，奄奄一息的撼天来到了离魂幽原，与最强大的那条恶龙展开了最后的决战。"
+  },
+  {
+    "ID": 240723,
+    "Value": "他用尽最后一丝力量，将邪煌霸剑刺入恶龙的心脏。恶龙倒下的同时，撼天也倒在了剑旁。他用生命兑现了承诺。"
+  },
+  {
+    "ID": 240724,
+    "Value": "你已了解得差不多了，现在该我们去寻找它了。"
+  },
+  {
+    "ID": 240725,
+    "Value": "寻找蚩尤魂？"
+  },
+  {
+    "ID": 240726,
+    "Value": "要真正驾驭体内的力量，就必须面对它的源头。这不仅是责任，也是觉醒。"
+  },
+  {
+    "ID": 240727,
+    "Value": "我明白了。无论前方有什么，我都准备好了。"
+  },
+  {
+    "ID": 240728,
+    "Value": "<color=#c78de0>「血魂之迹」在意念之域撕开裂口，我方角色需收集「血魂之迹」以追踪蚩尤魂</color>"
+  },
+  {
+    "ID": 240729,
+    "Value": "<color=#c78de0>每间隔1回合，「血魂之迹」会招来「心魔」</color>"
+  },
+  {
+    "ID": 240730,
+    "Value": "敌方援军将在下回合抵达"
+  },
+  {
+    "ID": 240731,
+    "Value": "场上存在3个渊阵，每间隔1回合便会召唤1名敌人"
+  },
+  {
+    "ID": 240732,
+    "Value": "击败场上的妖将、赤魔、妄幻，可将其对应渊阵关闭"
+  },
+  {
+    "ID": 240733,
+    "Value": "临渊斗阵3"
+  },
+  {
+    "ID": 240734,
+    "Value": "拾取后，获得道具「神光剑」，可以再次行动。"
+  },
+  {
+    "ID": 240735,
+    "Value": "年代久远的古墓棺材，已经严重损坏"
+  },
+  {
+    "ID": 240736,
+    "Value": "阴煞法阵"
+  },
+  {
+    "ID": 240737,
+    "Value": "未启动的法阵"
+  },
+  {
+    "ID": 240738,
+    "Value": "妖将渊阵"
+  },
+  {
+    "ID": 240739,
+    "Value": "赤魔渊阵"
+  }
+]

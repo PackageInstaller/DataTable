@@ -1,0 +1,65 @@
+{
+  "ID": 1,
+  "StartTime": "2023-9-27  05:00:00",
+  "EndTime": "2999-12-21  05:00:00",
+  "HardClosed": true,
+  "RankLS": [
+    0,
+    1
+  ],
+  "NormalOpenInfo": [
+    {
+      "LevelId": 1001
+    },
+    {
+      "LevelId": 1002
+    },
+    {
+      "LevelId": 1003
+    },
+    {
+      "LevelId": 1004
+    },
+    {
+      "LevelId": 1005,
+      "StartTime": 604800
+    },
+    {
+      "LevelId": 1006,
+      "StartTime": 1209600
+    }
+  ],
+  "HardStartTime": "2023-1-11  05:00:00",
+  "HardOpenList": [
+    2001,
+    2004,
+    2002,
+    2005,
+    2003,
+    2006
+  ],
+  "HardOpenPeriond": 14,
+  "HardRandomAffixList1": [
+    104001,
+    104002,
+    104003,
+    104004,
+    104005,
+    104006,
+    104007,
+    104008
+  ],
+  "HardRandomAffixList2": [
+    102001,
+    102002,
+    102003,
+    102004,
+    102005,
+    102006,
+    102007,
+    102008
+  ],
+  "SweepLimitNum": 7,
+  "SweepInitialNum": 1,
+  "SweepAddNum": 1
+}

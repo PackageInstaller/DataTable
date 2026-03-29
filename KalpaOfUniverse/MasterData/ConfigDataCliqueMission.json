@@ -1,0 +1,3837 @@
+[
+  {
+    "ID": 10101,
+    "CliqueId": 1,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20301
+      }
+    ],
+    "Reward": 331010101,
+    "NameStrKey": "ST:50174",
+    "DesStrKey": "ST:55185",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55732"
+  },
+  {
+    "ID": 10102,
+    "CliqueId": 1,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 22
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20401
+      }
+    ],
+    "Reward": 331010102,
+    "NameStrKey": "ST:50175",
+    "DesStrKey": "ST:55186",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55733"
+  },
+  {
+    "ID": 10103,
+    "CliqueId": 2,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11301
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 102013
+      }
+    ],
+    "Reward": 331010103,
+    "NameStrKey": "ST:55184",
+    "DesStrKey": "ST:55187",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:154522"
+  },
+  {
+    "ID": 10104,
+    "CliqueId": 1,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12138
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20802
+      }
+    ],
+    "Reward": 331010104,
+    "NameStrKey": "ST:130878",
+    "DesStrKey": "ST:130888",
+    "ClueStrKey": "ST:130898",
+    "TipsStrKey": "ST:130908"
+  },
+  {
+    "ID": 10201,
+    "CliqueId": 2,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1207
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 21001
+      }
+    ],
+    "Reward": 331010201,
+    "NameStrKey": "ST:50176",
+    "DesStrKey": "ST:55188",
+    "ClueStrKey": "ST:76398",
+    "TipsStrKey": "ST:55734"
+  },
+  {
+    "ID": 10202,
+    "CliqueId": 2,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 18
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CampDialogue",
+        "P1": 1212
+      }
+    ],
+    "Reward": 331010202,
+    "NameStrKey": "ST:50177",
+    "DesStrKey": "ST:76391",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:76409"
+  },
+  {
+    "ID": 10203,
+    "CliqueId": 2,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 25
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 21001
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 21002
+      }
+    ],
+    "Reward": 331010203,
+    "NameStrKey": "ST:50178",
+    "DesStrKey": "ST:55190",
+    "ClueStrKey": "ST:54327",
+    "TipsStrKey": "ST:55734"
+  },
+  {
+    "ID": 10204,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      },
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1202
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1104,
+        "P2": 20360100
+      }
+    ],
+    "Reward": 331010204,
+    "MissionDlg": 30000010,
+    "NameStrKey": "ST:50179",
+    "DesStrKey": "ST:79676",
+    "ClueStrKey": "ST:70236",
+    "TipsStrKey": "ST:69243"
+  },
+  {
+    "ID": 10205,
+    "CliqueId": 2,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12901
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10205
+      }
+    ],
+    "Reward": 331010205,
+    "NameStrKey": "ST:50180",
+    "DesStrKey": "ST:55192",
+    "ClueStrKey": "ST:106530",
+    "TipsStrKey": "ST:55277"
+  },
+  {
+    "ID": 10206,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 502201
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006106
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2106,
+        "P2": 20360200
+      }
+    ],
+    "Reward": 331010206,
+    "MissionDlg": 30000020,
+    "NameStrKey": "ST:50181",
+    "DesStrKey": "ST:79677",
+    "ClueStrKey": "ST:69192",
+    "TipsStrKey": "ST:69244"
+  },
+  {
+    "ID": 10207,
+    "CliqueId": 2,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10908
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10207
+      }
+    ],
+    "Reward": 331010207,
+    "NameStrKey": "ST:50182",
+    "DesStrKey": "ST:55194",
+    "ClueStrKey": "ST:54330",
+    "TipsStrKey": "ST:55279"
+  },
+  {
+    "ID": 10208,
+    "CliqueId": 2,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13301
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10208
+      }
+    ],
+    "Reward": 331010208,
+    "NameStrKey": "ST:50183",
+    "DesStrKey": "ST:55195",
+    "ClueStrKey": "ST:54331",
+    "TipsStrKey": "ST:55280"
+  },
+  {
+    "ID": 10209,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006107
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2107,
+        "P2": 20360300
+      }
+    ],
+    "Reward": 331010209,
+    "MissionDlg": 30000040,
+    "NameStrKey": "ST:50185",
+    "DesStrKey": "ST:79679",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55736"
+  },
+  {
+    "ID": 10210,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10003104
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1107,
+        "P2": 20360400
+      }
+    ],
+    "Reward": 331010210,
+    "MissionDlg": 30000030,
+    "NameStrKey": "ST:50184",
+    "DesStrKey": "ST:79678",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55735"
+  },
+  {
+    "ID": 10211,
+    "CliqueId": 2,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 21002
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 21003
+      }
+    ],
+    "Reward": 331010211,
+    "NameStrKey": "ST:69154",
+    "DesStrKey": "ST:69172",
+    "ClueStrKey": "ST:54327",
+    "TipsStrKey": "ST:55734"
+  },
+  {
+    "ID": 10212,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10003106
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1109,
+        "P2": 20361800
+      }
+    ],
+    "Reward": 331010212,
+    "MissionDlg": 30000400,
+    "NameStrKey": "ST:69155",
+    "DesStrKey": "ST:69173",
+    "ClueStrKey": "ST:70237",
+    "TipsStrKey": "ST:55736"
+  },
+  {
+    "ID": 10213,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006108
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2111,
+        "P2": 20361900
+      }
+    ],
+    "Reward": 331010213,
+    "MissionDlg": 30000500,
+    "NameStrKey": "ST:69308",
+    "DesStrKey": "ST:79680",
+    "ClueStrKey": "ST:81029",
+    "TipsStrKey": "ST:55735"
+  },
+  {
+    "ID": 10214,
+    "CliqueId": 2,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 18
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CampDialogue",
+        "P1": 1207
+      }
+    ],
+    "Reward": 331010214,
+    "NameStrKey": "ST:76386",
+    "DesStrKey": "ST:76390",
+    "ClueStrKey": "ST:76397",
+    "TipsStrKey": "ST:76408"
+  },
+  {
+    "ID": 10215,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11301
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006102
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2102,
+        "P2": 20362000
+      }
+    ],
+    "Reward": 331010215,
+    "MissionDlg": 30000001,
+    "NameStrKey": "ST:79709",
+    "DesStrKey": "ST:79761",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:79762"
+  },
+  {
+    "ID": 10216,
+    "ActorId": 131052211,
+    "CliqueId": 2,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10003107
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1110,
+        "P2": 20362100
+      }
+    ],
+    "Reward": 331010216,
+    "MissionDlg": 30000400,
+    "NameStrKey": "ST:50176",
+    "DesStrKey": "ST:89777",
+    "ClueStrKey": "ST:89779",
+    "TipsStrKey": "ST:55736"
+  },
+  {
+    "ID": 10217,
+    "CliqueId": 2,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 21003
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 21004
+      }
+    ],
+    "Reward": 331010217,
+    "NameStrKey": "ST:98995",
+    "DesStrKey": "ST:99000",
+    "ClueStrKey": "ST:54327",
+    "TipsStrKey": "ST:55734"
+  },
+  {
+    "ID": 10218,
+    "CliqueId": 2,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 88112
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 88114
+      }
+    ],
+    "Reward": 331010218,
+    "NameStrKey": "ST:102133",
+    "DesStrKey": "ST:102136",
+    "ClueStrKey": "ST:102139",
+    "TipsStrKey": "ST:102140"
+  },
+  {
+    "ID": 10219,
+    "CliqueId": 2,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12132
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12126
+      }
+    ],
+    "Reward": 331010219,
+    "NameStrKey": "ST:130879",
+    "DesStrKey": "ST:130889",
+    "ClueStrKey": "ST:130899",
+    "TipsStrKey": "ST:130909"
+  },
+  {
+    "ID": 10220,
+    "CliqueId": 2,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12126
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12127
+      }
+    ],
+    "Reward": 331010220,
+    "NameStrKey": "ST:130880",
+    "DesStrKey": "ST:130890",
+    "ClueStrKey": "ST:130900",
+    "TipsStrKey": "ST:130910"
+  },
+  {
+    "ID": 10301,
+    "CliqueId": 3,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 26
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 502301
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20501
+      }
+    ],
+    "Reward": 331010301,
+    "NameStrKey": "ST:50186",
+    "DesStrKey": "ST:55198",
+    "ClueStrKey": "ST:69194",
+    "TipsStrKey": "ST:69245"
+  },
+  {
+    "ID": 10302,
+    "CliqueId": 3,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 11303
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10302
+      }
+    ],
+    "Reward": 331010302,
+    "NameStrKey": "ST:50187",
+    "DesStrKey": "ST:55199",
+    "ClueStrKey": "ST:69195",
+    "TipsStrKey": "ST:69246"
+  },
+  {
+    "ID": 10401,
+    "CliqueId": 4,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 502401
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20302
+      }
+    ],
+    "Reward": 331010401,
+    "NameStrKey": "ST:50188",
+    "DesStrKey": "ST:55200",
+    "ClueStrKey": "ST:55270",
+    "TipsStrKey": "ST:69247"
+  },
+  {
+    "ID": 10402,
+    "CliqueId": 4,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 33
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 20302
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20310
+      }
+    ],
+    "Reward": 331010402,
+    "NameStrKey": "ST:50189",
+    "DesStrKey": "ST:55201",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55283"
+  },
+  {
+    "ID": 10501,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1212
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10501
+      }
+    ],
+    "Reward": 331010501,
+    "NameStrKey": "ST:41465",
+    "DesStrKey": "ST:55202",
+    "ClueStrKey": "ST:54335",
+    "TipsStrKey": "ST:69248"
+  },
+  {
+    "ID": 10502,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10501
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10502
+      }
+    ],
+    "Reward": 331010502,
+    "NameStrKey": "ST:50190",
+    "DesStrKey": "ST:55203",
+    "ClueStrKey": "ST:69196",
+    "TipsStrKey": "ST:69249"
+  },
+  {
+    "ID": 10503,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10502
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10503
+      }
+    ],
+    "Reward": 331010503,
+    "NameStrKey": "ST:50191",
+    "DesStrKey": "ST:55204",
+    "ClueStrKey": "ST:69197",
+    "TipsStrKey": "ST:69250"
+  },
+  {
+    "ID": 10504,
+    "CliqueId": 5,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 24
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20702
+      }
+    ],
+    "Reward": 331010504,
+    "NameStrKey": "ST:50192",
+    "DesStrKey": "ST:55205",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:69251"
+  },
+  {
+    "ID": 10505,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10503
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10505
+      }
+    ],
+    "Reward": 331010505,
+    "NameStrKey": "ST:50193",
+    "DesStrKey": "ST:55206",
+    "ClueStrKey": "ST:54338",
+    "TipsStrKey": "ST:69252"
+  },
+  {
+    "ID": 10506,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1209
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10506
+      }
+    ],
+    "Reward": 331010506,
+    "NameStrKey": "ST:50194",
+    "DesStrKey": "ST:55207",
+    "ClueStrKey": "ST:76400",
+    "TipsStrKey": "ST:69253"
+  },
+  {
+    "ID": 10507,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10703
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10507
+      }
+    ],
+    "Reward": 331010507,
+    "NameStrKey": "ST:50195",
+    "DesStrKey": "ST:55208",
+    "ClueStrKey": "ST:69199",
+    "TipsStrKey": "ST:55289"
+  },
+  {
+    "ID": 10508,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10801
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10508
+      }
+    ],
+    "Reward": 331010508,
+    "NameStrKey": "ST:50196",
+    "DesStrKey": "ST:55209",
+    "ClueStrKey": "ST:69200",
+    "TipsStrKey": "ST:55290"
+  },
+  {
+    "ID": 10509,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12401
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10509
+      }
+    ],
+    "Reward": 331010509,
+    "NameStrKey": "ST:50197",
+    "DesStrKey": "ST:55210",
+    "ClueStrKey": "ST:69201",
+    "TipsStrKey": "ST:69254"
+  },
+  {
+    "ID": 10510,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10509
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10510
+      }
+    ],
+    "Reward": 331010510,
+    "NameStrKey": "ST:50198",
+    "DesStrKey": "ST:55211",
+    "ClueStrKey": "ST:69202",
+    "TipsStrKey": "ST:69255"
+  },
+  {
+    "ID": 10511,
+    "ActorId": 131053034,
+    "CliqueId": 5,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 502501
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1404,
+        "P2": 20360900
+      }
+    ],
+    "Reward": 331010511,
+    "MissionDlg": 30000090,
+    "NameStrKey": "ST:50204",
+    "DesStrKey": "ST:79682",
+    "ClueStrKey": "ST:69203",
+    "TipsStrKey": "ST:69256"
+  },
+  {
+    "ID": 10512,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12602
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10512
+      }
+    ],
+    "Reward": 331010512,
+    "NameStrKey": "ST:50200",
+    "DesStrKey": "ST:55213",
+    "ClueStrKey": "ST:69204",
+    "TipsStrKey": "ST:69257"
+  },
+  {
+    "ID": 10513,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10512
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10513
+      }
+    ],
+    "Reward": 331010513,
+    "NameStrKey": "ST:50201",
+    "DesStrKey": "ST:55214",
+    "ClueStrKey": "ST:69205",
+    "TipsStrKey": "ST:69258"
+  },
+  {
+    "ID": 10514,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10513
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10205
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10514
+      }
+    ],
+    "Reward": 331010514,
+    "NameStrKey": "ST:50202",
+    "DesStrKey": "ST:55215",
+    "ClueStrKey": "ST:69206",
+    "TipsStrKey": "ST:69259"
+  },
+  {
+    "ID": 10515,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13003
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10505
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10511
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10515
+      }
+    ],
+    "Reward": 331010515,
+    "NameStrKey": "ST:50203",
+    "DesStrKey": "ST:55216",
+    "ClueStrKey": "ST:69207",
+    "TipsStrKey": "ST:69260"
+  },
+  {
+    "ID": 10516,
+    "ActorId": 131053035,
+    "CliqueId": 5,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      },
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1210
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2506,
+        "P2": 20361000
+      }
+    ],
+    "Reward": 331010516,
+    "MissionDlg": 30000100,
+    "NameStrKey": "ST:50199",
+    "DesStrKey": "ST:79681",
+    "ClueStrKey": "ST:82017",
+    "TipsStrKey": "ST:69261"
+  },
+  {
+    "ID": 10518,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13503
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10518
+      }
+    ],
+    "Reward": 331010518,
+    "NameStrKey": "ST:50206",
+    "DesStrKey": "ST:55218",
+    "ClueStrKey": "ST:69209",
+    "TipsStrKey": "ST:69262"
+  },
+  {
+    "ID": 10519,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13601
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10519
+      }
+    ],
+    "Reward": 331010519,
+    "NameStrKey": "ST:50207",
+    "DesStrKey": "ST:56167",
+    "ClueStrKey": "ST:69210",
+    "TipsStrKey": "ST:69263"
+  },
+  {
+    "ID": 10520,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10519
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10520
+      }
+    ],
+    "Reward": 331010520,
+    "NameStrKey": "ST:50208",
+    "DesStrKey": "ST:55220",
+    "ClueStrKey": "ST:69211",
+    "TipsStrKey": "ST:69264"
+  },
+  {
+    "ID": 10521,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13701
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10521
+      }
+    ],
+    "Reward": 331010521,
+    "NameStrKey": "ST:50209",
+    "DesStrKey": "ST:55221",
+    "ClueStrKey": "ST:69212",
+    "TipsStrKey": "ST:69265"
+  },
+  {
+    "ID": 10522,
+    "ActorId": 131053034,
+    "CliqueId": 5,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006408
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2508,
+        "P2": 20361100
+      }
+    ],
+    "Reward": 331010522,
+    "MissionDlg": 30000110,
+    "NameStrKey": "ST:50210",
+    "DesStrKey": "ST:79683",
+    "ClueStrKey": "ST:69213",
+    "TipsStrKey": "ST:69266"
+  },
+  {
+    "ID": 10523,
+    "CliqueId": 5,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 42
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20708
+      }
+    ],
+    "Reward": 331010523,
+    "NameStrKey": "ST:69156",
+    "DesStrKey": "ST:69174",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:69251"
+  },
+  {
+    "ID": 10524,
+    "CliqueId": 5,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 52
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20715
+      }
+    ],
+    "Reward": 331010524,
+    "NameStrKey": "ST:69157",
+    "DesStrKey": "ST:69175",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:69251"
+  },
+  {
+    "ID": 10525,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10521
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 11903
+      }
+    ],
+    "Reward": 331010525,
+    "NameStrKey": "ST:69158",
+    "DesStrKey": "ST:69176",
+    "ClueStrKey": "ST:69214",
+    "TipsStrKey": "ST:69267"
+  },
+  {
+    "ID": 10526,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14203
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12001
+      }
+    ],
+    "Reward": 331010526,
+    "NameStrKey": "ST:69159",
+    "DesStrKey": "ST:69177",
+    "ClueStrKey": "ST:69215",
+    "TipsStrKey": "ST:69268"
+  },
+  {
+    "ID": 10527,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1206
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12101
+      }
+    ],
+    "Reward": 331010527,
+    "NameStrKey": "ST:69160",
+    "DesStrKey": "ST:69178",
+    "ClueStrKey": "ST:76402",
+    "TipsStrKey": "ST:76412"
+  },
+  {
+    "ID": 10528,
+    "ActorId": 131053035,
+    "CliqueId": 5,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10003407
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1410,
+        "P2": 20361400
+      }
+    ],
+    "Reward": 331010528,
+    "MissionDlg": 30000090,
+    "NameStrKey": "ST:69161",
+    "DesStrKey": "ST:79684",
+    "ClueStrKey": "ST:69217",
+    "TipsStrKey": "ST:69270"
+  },
+  {
+    "ID": 10529,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11301
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12107
+      }
+    ],
+    "Reward": 331010529,
+    "NameStrKey": "ST:72674",
+    "DesStrKey": "ST:72675",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:72676"
+  },
+  {
+    "ID": 10530,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10511,
+        "P2": 1
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CampDialogue",
+        "P1": 1209
+      }
+    ],
+    "Reward": 331010530,
+    "NameStrKey": "ST:76387",
+    "DesStrKey": "ST:76392",
+    "ClueStrKey": "ST:76399",
+    "TipsStrKey": "ST:76410"
+  },
+  {
+    "ID": 10531,
+    "CliqueId": 5,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12001
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CampDialogue",
+        "P1": 1206
+      }
+    ],
+    "Reward": 331010531,
+    "NameStrKey": "ST:42895",
+    "DesStrKey": "ST:76393",
+    "ClueStrKey": "ST:76401",
+    "TipsStrKey": "ST:76411"
+  },
+  {
+    "ID": 10532,
+    "CliqueId": 5,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 20000002
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 88083
+      }
+    ],
+    "Reward": 331010532,
+    "NameStrKey": "ST:89110",
+    "DesStrKey": "ST:94170",
+    "ClueStrKey": "ST:89117",
+    "TipsStrKey": "ST:89120"
+  },
+  {
+    "ID": 10533,
+    "CliqueId": 5,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 20208
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20209
+      }
+    ],
+    "Reward": 331010533,
+    "NameStrKey": "ST:98996",
+    "DesStrKey": "ST:99001",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:69251"
+  },
+  {
+    "ID": 10601,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10801
+      }
+    ],
+    "Reward": 331010601,
+    "NameStrKey": "ST:41461",
+    "DesStrKey": "ST:55223",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55304"
+  },
+  {
+    "ID": 10602,
+    "CliqueId": 6,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20701
+      }
+    ],
+    "Reward": 331010602,
+    "NameStrKey": "ST:50211",
+    "DesStrKey": "ST:55224",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:53453"
+  },
+  {
+    "ID": 10603,
+    "CliqueId": 6,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 42
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20304
+      }
+    ],
+    "Reward": 331010603,
+    "NameStrKey": "ST:50212",
+    "DesStrKey": "ST:55225",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55305"
+  },
+  {
+    "ID": 10604,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12704
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10604
+      }
+    ],
+    "Reward": 331010604,
+    "NameStrKey": "ST:50213",
+    "DesStrKey": "ST:55226",
+    "ClueStrKey": "ST:69218",
+    "TipsStrKey": "ST:55306"
+  },
+  {
+    "ID": 10605,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10604
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10605
+      }
+    ],
+    "Reward": 331010605,
+    "NameStrKey": "ST:50214",
+    "DesStrKey": "ST:55227",
+    "ClueStrKey": "ST:54355",
+    "TipsStrKey": "ST:55307"
+  },
+  {
+    "ID": 10606,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13302
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10606
+      }
+    ],
+    "Reward": 331010606,
+    "NameStrKey": "ST:50215",
+    "DesStrKey": "ST:55228",
+    "ClueStrKey": "ST:54356",
+    "TipsStrKey": "ST:55308"
+  },
+  {
+    "ID": 10607,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10610
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10607
+      }
+    ],
+    "Reward": 331010607,
+    "NameStrKey": "ST:50216",
+    "DesStrKey": "ST:55229",
+    "ClueStrKey": "ST:54357",
+    "TipsStrKey": "ST:69271"
+  },
+  {
+    "ID": 10608,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13404
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10608
+      }
+    ],
+    "Reward": 331010608,
+    "NameStrKey": "ST:50217",
+    "DesStrKey": "ST:55230",
+    "ClueStrKey": "ST:54358",
+    "TipsStrKey": "ST:55310"
+  },
+  {
+    "ID": 10609,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10608
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10609
+      }
+    ],
+    "Reward": 331010609,
+    "NameStrKey": "ST:50218",
+    "DesStrKey": "ST:55231",
+    "ClueStrKey": "ST:54359",
+    "TipsStrKey": "ST:55311"
+  },
+  {
+    "ID": 10610,
+    "CliqueId": 6,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 20701
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20710
+      }
+    ],
+    "Reward": 331010610,
+    "NameStrKey": "ST:69162",
+    "DesStrKey": "ST:69180",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:53453"
+  },
+  {
+    "ID": 10611,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12110
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12111
+      }
+    ],
+    "Reward": 331010611,
+    "NameStrKey": "ST:77161",
+    "DesStrKey": "ST:99002",
+    "ClueStrKey": "ST:99016",
+    "TipsStrKey": "ST:99026"
+  },
+  {
+    "ID": 10612,
+    "CliqueId": 6,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20311
+      }
+    ],
+    "Reward": 331010612,
+    "NameStrKey": "ST:50212",
+    "DesStrKey": "ST:99003",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55305"
+  },
+  {
+    "ID": 10613,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12111
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12112
+      }
+    ],
+    "Reward": 331010613,
+    "NameStrKey": "ST:78449",
+    "DesStrKey": "ST:99004",
+    "ClueStrKey": "ST:99017",
+    "TipsStrKey": "ST:99027"
+  },
+  {
+    "ID": 10614,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12112
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12113
+      }
+    ],
+    "Reward": 331010614,
+    "NameStrKey": "ST:79477",
+    "DesStrKey": "ST:99005",
+    "ClueStrKey": "ST:99018",
+    "TipsStrKey": "ST:99028"
+  },
+  {
+    "ID": 10615,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12113
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12114
+      }
+    ],
+    "Reward": 331010615,
+    "NameStrKey": "ST:79516",
+    "DesStrKey": "ST:99006",
+    "ClueStrKey": "ST:99019",
+    "TipsStrKey": "ST:99029"
+  },
+  {
+    "ID": 10616,
+    "CliqueId": 6,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20716
+      }
+    ],
+    "Reward": 331010616,
+    "NameStrKey": "ST:98997",
+    "DesStrKey": "ST:99007",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:53453"
+  },
+  {
+    "ID": 10617,
+    "CliqueId": 6,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12135
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20402
+      }
+    ],
+    "Reward": 331010617,
+    "NameStrKey": "ST:130881",
+    "DesStrKey": "ST:130891",
+    "ClueStrKey": "ST:130901",
+    "TipsStrKey": "ST:130911"
+  },
+  {
+    "ID": 10618,
+    "CliqueId": 6,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12149
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12145
+      }
+    ],
+    "Reward": 331010618,
+    "NameStrKey": "ST:100693",
+    "DesStrKey": "ST:155180",
+    "ClueStrKey": "ST:155184",
+    "TipsStrKey": "ST:155188"
+  },
+  {
+    "ID": 10701,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11702
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10701
+      }
+    ],
+    "Reward": 331010701,
+    "NameStrKey": "ST:50219",
+    "DesStrKey": "ST:55232",
+    "ClueStrKey": "ST:54360",
+    "TipsStrKey": "ST:69272"
+  },
+  {
+    "ID": 10702,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11802
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10702
+      }
+    ],
+    "Reward": 331010702,
+    "NameStrKey": "ST:50220",
+    "DesStrKey": "ST:55233",
+    "ClueStrKey": "ST:54361",
+    "TipsStrKey": "ST:69273"
+  },
+  {
+    "ID": 10703,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11904
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10703
+      }
+    ],
+    "Reward": 331010703,
+    "NameStrKey": "ST:50221",
+    "DesStrKey": "ST:55234",
+    "ClueStrKey": "ST:69219",
+    "TipsStrKey": "ST:69274"
+  },
+  {
+    "ID": 10704,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 502601
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10909
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10704
+      }
+    ],
+    "Reward": 331010704,
+    "NameStrKey": "ST:50222",
+    "DesStrKey": "ST:55235",
+    "ClueStrKey": "ST:69220",
+    "TipsStrKey": "ST:69275"
+  },
+  {
+    "ID": 10705,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10701
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12404
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10705
+      }
+    ],
+    "Reward": 331010705,
+    "NameStrKey": "ST:50223",
+    "DesStrKey": "ST:55236",
+    "ClueStrKey": "ST:69221",
+    "TipsStrKey": "ST:69276"
+  },
+  {
+    "ID": 10706,
+    "ActorId": 131053390,
+    "CliqueId": 7,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      },
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1203
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2305,
+        "P2": 20360500
+      }
+    ],
+    "Reward": 331010706,
+    "MissionDlg": 30000050,
+    "NameStrKey": "ST:50224",
+    "DesStrKey": "ST:79685",
+    "ClueStrKey": "ST:69222",
+    "TipsStrKey": "ST:69277"
+  },
+  {
+    "ID": 10707,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13102
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10707
+      }
+    ],
+    "Reward": 331010707,
+    "NameStrKey": "ST:50225",
+    "DesStrKey": "ST:55238",
+    "ClueStrKey": "ST:69223",
+    "TipsStrKey": "ST:69278"
+  },
+  {
+    "ID": 10708,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10707
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10708
+      }
+    ],
+    "Reward": 331010708,
+    "NameStrKey": "ST:50226",
+    "DesStrKey": "ST:55239",
+    "ClueStrKey": "ST:69224",
+    "TipsStrKey": "ST:55319"
+  },
+  {
+    "ID": 10709,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10708
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10709
+      }
+    ],
+    "Reward": 331010709,
+    "NameStrKey": "ST:50227",
+    "DesStrKey": "ST:55240",
+    "ClueStrKey": "ST:69225",
+    "TipsStrKey": "ST:69279"
+  },
+  {
+    "ID": 10710,
+    "ActorId": 131053329,
+    "CliqueId": 7,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      },
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1204
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1305,
+        "P2": 20360600
+      }
+    ],
+    "Reward": 331010710,
+    "MissionDlg": 30000060,
+    "NameStrKey": "ST:50228",
+    "DesStrKey": "ST:79686",
+    "ClueStrKey": "ST:54369",
+    "TipsStrKey": "ST:55321"
+  },
+  {
+    "ID": 10711,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1208
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10711
+      }
+    ],
+    "Reward": 331010711,
+    "NameStrKey": "ST:50229",
+    "DesStrKey": "ST:55242",
+    "ClueStrKey": "ST:76404",
+    "TipsStrKey": "ST:55322"
+  },
+  {
+    "ID": 10712,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10715
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10712
+      }
+    ],
+    "Reward": 331010712,
+    "NameStrKey": "ST:228",
+    "DesStrKey": "ST:55243",
+    "ClueStrKey": "ST:69226",
+    "TipsStrKey": "ST:55323"
+  },
+  {
+    "ID": 10713,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13602
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10713
+      }
+    ],
+    "Reward": 331010713,
+    "NameStrKey": "ST:50230",
+    "DesStrKey": "ST:55244",
+    "ClueStrKey": "ST:69227",
+    "TipsStrKey": "ST:69280"
+  },
+  {
+    "ID": 10714,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10713
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10708
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10714
+      }
+    ],
+    "Reward": 331010714,
+    "NameStrKey": "ST:50231",
+    "DesStrKey": "ST:55245",
+    "ClueStrKey": "ST:69228",
+    "TipsStrKey": "ST:55325"
+  },
+  {
+    "ID": 10715,
+    "ActorId": 131053329,
+    "CliqueId": 7,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10003303
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1306,
+        "P2": 20360700
+      }
+    ],
+    "Reward": 331010715,
+    "MissionDlg": 30000070,
+    "NameStrKey": "ST:50232",
+    "DesStrKey": "ST:79687",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55738"
+  },
+  {
+    "ID": 10716,
+    "ActorId": 131053390,
+    "CliqueId": 7,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006308
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2308,
+        "P2": 20360800
+      }
+    ],
+    "Reward": 331010716,
+    "MissionDlg": 30000080,
+    "NameStrKey": "ST:50233",
+    "DesStrKey": "ST:79688",
+    "ClueStrKey": "ST:69229",
+    "TipsStrKey": "ST:55739"
+  },
+  {
+    "ID": 10717,
+    "ActorId": 131053390,
+    "CliqueId": 7,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006310
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2310,
+        "P2": 20361500
+      }
+    ],
+    "Reward": 331010717,
+    "MissionDlg": 30000900,
+    "NameStrKey": "ST:29716",
+    "DesStrKey": "ST:69613",
+    "ClueStrKey": "ST:69230",
+    "TipsStrKey": "ST:69281"
+  },
+  {
+    "ID": 10718,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12102
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12103
+      }
+    ],
+    "Reward": 331010718,
+    "NameStrKey": "ST:69163",
+    "DesStrKey": "ST:69182",
+    "ClueStrKey": "ST:69231",
+    "TipsStrKey": "ST:69282"
+  },
+  {
+    "ID": 10719,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14304
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12104
+      }
+    ],
+    "Reward": 331010719,
+    "NameStrKey": "ST:69164",
+    "DesStrKey": "ST:69183",
+    "ClueStrKey": "ST:69232",
+    "TipsStrKey": "ST:69283"
+  },
+  {
+    "ID": 10720,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1201
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12105
+      }
+    ],
+    "Reward": 331010720,
+    "NameStrKey": "ST:69165",
+    "DesStrKey": "ST:69184",
+    "ClueStrKey": "ST:76406",
+    "TipsStrKey": "ST:69284"
+  },
+  {
+    "ID": 10721,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12105
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12106
+      }
+    ],
+    "Reward": 331010721,
+    "NameStrKey": "ST:69166",
+    "DesStrKey": "ST:69185",
+    "ClueStrKey": "ST:69224",
+    "TipsStrKey": "ST:69285"
+  },
+  {
+    "ID": 10722,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11301
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10709
+      }
+    ],
+    "Reward": 331010722,
+    "NameStrKey": "ST:70679",
+    "DesStrKey": "ST:55240",
+    "ClueStrKey": "ST:106531",
+    "TipsStrKey": "ST:70681"
+  },
+  {
+    "ID": 10723,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10208
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CampDialogue",
+        "P1": 1208
+      }
+    ],
+    "Reward": 331010723,
+    "NameStrKey": "ST:76388",
+    "DesStrKey": "ST:97494",
+    "ClueStrKey": "ST:76403",
+    "TipsStrKey": "ST:76413"
+  },
+  {
+    "ID": 10724,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12108
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CampDialogue",
+        "P1": 1201
+      }
+    ],
+    "Reward": 331010724,
+    "NameStrKey": "ST:76389",
+    "DesStrKey": "ST:76395",
+    "ClueStrKey": "ST:76405",
+    "TipsStrKey": "ST:76414"
+  },
+  {
+    "ID": 10725,
+    "CliqueId": 7,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 88084
+      }
+    ],
+    "Reward": 331010725,
+    "NameStrKey": "ST:89111",
+    "DesStrKey": "ST:89114",
+    "ClueStrKey": "ST:89118",
+    "TipsStrKey": "ST:89121"
+  },
+  {
+    "ID": 10726,
+    "ActorId": 131053390,
+    "CliqueId": 7,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10003306
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CreateLife",
+        "P1": 1310,
+        "P2": 20362200
+      }
+    ],
+    "Reward": 331010726,
+    "MissionDlg": 30000900,
+    "NameStrKey": "ST:89776",
+    "DesStrKey": "ST:89778",
+    "ClueStrKey": "ST:69230",
+    "TipsStrKey": "ST:69281"
+  },
+  {
+    "ID": 10727,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12129
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12123
+      }
+    ],
+    "Reward": 331010727,
+    "NameStrKey": "ST:130882",
+    "DesStrKey": "ST:130892",
+    "ClueStrKey": "ST:130902",
+    "TipsStrKey": "ST:130912"
+  },
+  {
+    "ID": 10728,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12130
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12124
+      }
+    ],
+    "Reward": 331010728,
+    "NameStrKey": "ST:130883",
+    "DesStrKey": "ST:130893",
+    "ClueStrKey": "ST:130903",
+    "TipsStrKey": "ST:130913"
+  },
+  {
+    "ID": 10729,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12124
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12125
+      }
+    ],
+    "Reward": 331010729,
+    "NameStrKey": "ST:112694",
+    "DesStrKey": "ST:130894",
+    "ClueStrKey": "ST:130904",
+    "TipsStrKey": "ST:130914"
+  },
+  {
+    "ID": 10730,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12154
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12151
+      }
+    ],
+    "Reward": 331010730,
+    "NameStrKey": "ST:181902",
+    "DesStrKey": "ST:181905",
+    "ClueStrKey": "ST:181908",
+    "TipsStrKey": "ST:141899"
+  },
+  {
+    "ID": 10731,
+    "CliqueId": 7,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12157
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12159
+      }
+    ],
+    "Reward": 331010731,
+    "NameStrKey": "ST:197623",
+    "DesStrKey": "ST:197625",
+    "ClueStrKey": "ST:197626",
+    "TipsStrKey": "ST:197628"
+  },
+  {
+    "ID": 10801,
+    "CliqueId": 8,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10508
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10401
+      }
+    ],
+    "Reward": 331010801,
+    "NameStrKey": "ST:50234",
+    "DesStrKey": "ST:55248",
+    "ClueStrKey": "ST:54374",
+    "TipsStrKey": "ST:55327"
+  },
+  {
+    "ID": 10802,
+    "CliqueId": 8,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12150
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12146
+      }
+    ],
+    "Reward": 331010803,
+    "NameStrKey": "ST:155177",
+    "DesStrKey": "ST:155181",
+    "ClueStrKey": "ST:155185",
+    "TipsStrKey": "ST:155189"
+  },
+  {
+    "ID": 10803,
+    "CliqueId": 8,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12147,
+        "P2": 1
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12148,
+        "P2": 1
+      }
+    ],
+    "Reward": 331010804,
+    "NameStrKey": "ST:155178",
+    "DesStrKey": "ST:155182",
+    "ClueStrKey": "ST:155186",
+    "TipsStrKey": "ST:155190"
+  },
+  {
+    "ID": 10902,
+    "CliqueId": 9,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 11001
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10902
+      }
+    ],
+    "Reward": 331010902,
+    "NameStrKey": "ST:50236",
+    "DesStrKey": "ST:55249",
+    "ClueStrKey": "ST:69234",
+    "TipsStrKey": "ST:154523"
+  },
+  {
+    "ID": 10903,
+    "CliqueId": 9,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12202
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10903
+      }
+    ],
+    "Reward": 331010903,
+    "NameStrKey": "ST:50237",
+    "DesStrKey": "ST:55250",
+    "ClueStrKey": "ST:54376",
+    "TipsStrKey": "ST:55329"
+  },
+  {
+    "ID": 10904,
+    "CliqueId": 9,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12203
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10904
+      }
+    ],
+    "Reward": 331010904,
+    "NameStrKey": "ST:50238",
+    "DesStrKey": "ST:55251",
+    "ClueStrKey": "ST:69235",
+    "TipsStrKey": "ST:69287"
+  },
+  {
+    "ID": 10905,
+    "CliqueId": 9,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10904
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10905
+      }
+    ],
+    "Reward": 331010905,
+    "NameStrKey": "ST:50239",
+    "DesStrKey": "ST:55252",
+    "ClueStrKey": "ST:54378",
+    "TipsStrKey": "ST:69288"
+  },
+  {
+    "ID": 10906,
+    "CliqueId": 9,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20704
+      }
+    ],
+    "Reward": 331010906,
+    "NameStrKey": "ST:50240",
+    "DesStrKey": "ST:55253",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55331"
+  },
+  {
+    "ID": 10907,
+    "CliqueId": 9,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20308
+      }
+    ],
+    "Reward": 331010907,
+    "NameStrKey": "ST:50241",
+    "DesStrKey": "ST:55254",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55740"
+  },
+  {
+    "ID": 10908,
+    "CliqueId": 9,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13206
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10908
+      }
+    ],
+    "Reward": 331010908,
+    "NameStrKey": "ST:50242",
+    "DesStrKey": "ST:55255",
+    "ClueStrKey": "ST:69237",
+    "TipsStrKey": "ST:69289"
+  },
+  {
+    "ID": 10909,
+    "CliqueId": 9,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 37
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20803
+      }
+    ],
+    "Reward": 331010909,
+    "NameStrKey": "ST:50243",
+    "DesStrKey": "ST:55256",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55333"
+  },
+  {
+    "ID": 10910,
+    "CliqueId": 9,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 20000001
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 88089
+      }
+    ],
+    "Reward": 331010910,
+    "NameStrKey": "ST:89112",
+    "DesStrKey": "ST:89115",
+    "ClueStrKey": "ST:106532",
+    "TipsStrKey": "ST:89122"
+  },
+  {
+    "ID": 10911,
+    "CliqueId": 9,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 20803
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20804
+      }
+    ],
+    "Reward": 331010911,
+    "NameStrKey": "ST:98998",
+    "DesStrKey": "ST:99008",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55333"
+  },
+  {
+    "ID": 10912,
+    "CliqueId": 9,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12155
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12152
+      }
+    ],
+    "Reward": 331010912,
+    "NameStrKey": "ST:181903",
+    "DesStrKey": "ST:181906",
+    "ClueStrKey": "ST:181908",
+    "TipsStrKey": "ST:141899"
+  },
+  {
+    "ID": 11001,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12104
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 11001
+      }
+    ],
+    "Reward": 331011001,
+    "NameStrKey": "ST:50244",
+    "DesStrKey": "ST:55257",
+    "ClueStrKey": "ST:54381",
+    "TipsStrKey": "ST:55334"
+  },
+  {
+    "ID": 11002,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1211
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 10903
+      }
+    ],
+    "Reward": 331011002,
+    "NameStrKey": "ST:50245",
+    "DesStrKey": "ST:55250",
+    "ClueStrKey": "ST:69238",
+    "TipsStrKey": "ST:69290"
+  },
+  {
+    "ID": 11003,
+    "CliqueId": 10,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20306
+      }
+    ],
+    "Reward": 331011003,
+    "NameStrKey": "ST:50246",
+    "DesStrKey": "ST:55259",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55335"
+  },
+  {
+    "ID": 11004,
+    "CliqueId": 10,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 48
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20602
+      }
+    ],
+    "Reward": 331011004,
+    "NameStrKey": "ST:50247",
+    "DesStrKey": "ST:55260",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:54412"
+  },
+  {
+    "ID": 11005,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13205
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 11005
+      }
+    ],
+    "Reward": 331011005,
+    "NameStrKey": "ST:50248",
+    "DesStrKey": "ST:154520",
+    "ClueStrKey": "ST:154521",
+    "TipsStrKey": "ST:154524"
+  },
+  {
+    "ID": 11006,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 14101
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12002
+      }
+    ],
+    "Reward": 331011006,
+    "NameStrKey": "ST:69167",
+    "DesStrKey": "ST:69186",
+    "ClueStrKey": "ST:69239",
+    "TipsStrKey": "ST:69291"
+  },
+  {
+    "ID": 11007,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12002
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12003
+      }
+    ],
+    "Reward": 331011007,
+    "NameStrKey": "ST:69168",
+    "DesStrKey": "ST:69187",
+    "ClueStrKey": "ST:69240",
+    "TipsStrKey": "ST:69292"
+  },
+  {
+    "ID": 11008,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1214
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12004
+      }
+    ],
+    "Reward": 331011008,
+    "NameStrKey": "ST:69169",
+    "DesStrKey": "ST:69188",
+    "ClueStrKey": "ST:69224",
+    "TipsStrKey": "ST:69293"
+  },
+  {
+    "ID": 11009,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12003
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_CampDialogue",
+        "P1": 1214
+      }
+    ],
+    "Reward": 331011009,
+    "NameStrKey": "ST:3105",
+    "DesStrKey": "ST:76396",
+    "ClueStrKey": "ST:76407",
+    "TipsStrKey": "ST:76415"
+  },
+  {
+    "ID": 11010,
+    "CliqueId": 10,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 20602
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20603
+      }
+    ],
+    "Reward": 331011010,
+    "NameStrKey": "ST:98999",
+    "DesStrKey": "ST:99009",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:99030"
+  },
+  {
+    "ID": 11011,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12119
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12118
+      }
+    ],
+    "Reward": 331011011,
+    "NameStrKey": "ST:77164",
+    "DesStrKey": "ST:99010",
+    "ClueStrKey": "ST:99020",
+    "TipsStrKey": "ST:99031"
+  },
+  {
+    "ID": 11012,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12118
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12120
+      }
+    ],
+    "Reward": 331011012,
+    "NameStrKey": "ST:82328",
+    "DesStrKey": "ST:99011",
+    "ClueStrKey": "ST:99021",
+    "TipsStrKey": "ST:99032"
+  },
+  {
+    "ID": 11013,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12120
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12121
+      }
+    ],
+    "Reward": 331011013,
+    "NameStrKey": "ST:94163",
+    "DesStrKey": "ST:99012",
+    "ClueStrKey": "ST:99022",
+    "TipsStrKey": "ST:99033"
+  },
+  {
+    "ID": 11014,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12121
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12122
+      }
+    ],
+    "Reward": 331011014,
+    "NameStrKey": "ST:82597",
+    "DesStrKey": "ST:99013",
+    "ClueStrKey": "ST:99023",
+    "TipsStrKey": "ST:99034"
+  },
+  {
+    "ID": 11015,
+    "CliqueId": 10,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12137
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20102
+      }
+    ],
+    "Reward": 331011015,
+    "NameStrKey": "ST:130884",
+    "DesStrKey": "ST:130895",
+    "ClueStrKey": "ST:130905",
+    "TipsStrKey": "ST:130915"
+  },
+  {
+    "ID": 11016,
+    "CliqueId": 10,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12156
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12153
+      }
+    ],
+    "Reward": 331011016,
+    "NameStrKey": "ST:181904",
+    "DesStrKey": "ST:181907",
+    "ClueStrKey": "ST:181908",
+    "TipsStrKey": "ST:141899"
+  },
+  {
+    "ID": 11101,
+    "CliqueId": 11,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 5018
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 102012
+      },
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 5018
+      }
+    ],
+    "Reward": 331011101,
+    "NameStrKey": "ST:45574",
+    "DesStrKey": "ST:56168",
+    "ClueStrKey": "ST:54707",
+    "TipsStrKey": "ST:55337"
+  },
+  {
+    "ID": 11102,
+    "CliqueId": 11,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 26
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20101
+      }
+    ],
+    "Reward": 331011102,
+    "NameStrKey": "ST:50249",
+    "DesStrKey": "ST:55578",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55741"
+  },
+  {
+    "ID": 11103,
+    "CliqueId": 11,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 26
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20208
+      }
+    ],
+    "Reward": 331011103,
+    "NameStrKey": "ST:50250",
+    "DesStrKey": "ST:55263",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55742"
+  },
+  {
+    "ID": 11104,
+    "CliqueId": 11,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12116
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12115
+      }
+    ],
+    "Reward": 331011104,
+    "NameStrKey": "ST:82331",
+    "DesStrKey": "ST:99014",
+    "ClueStrKey": "ST:99024",
+    "TipsStrKey": "ST:99035"
+  },
+  {
+    "ID": 11105,
+    "CliqueId": 11,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12146
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12147
+      }
+    ],
+    "Reward": 331011105,
+    "NameStrKey": "ST:155179",
+    "DesStrKey": "ST:155183",
+    "ClueStrKey": "ST:155187",
+    "TipsStrKey": "ST:155191"
+  },
+  {
+    "ID": 11201,
+    "CliqueId": 12,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 26
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20206
+      }
+    ],
+    "Reward": 331011201,
+    "NameStrKey": "ST:53253",
+    "DesStrKey": "ST:55264",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:55743"
+  },
+  {
+    "ID": 11202,
+    "CliqueId": 12,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12115
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12117
+      }
+    ],
+    "Reward": 331011202,
+    "NameStrKey": "ST:89188",
+    "DesStrKey": "ST:99015",
+    "ClueStrKey": "ST:99025",
+    "TipsStrKey": "ST:99036"
+  },
+  {
+    "ID": 11203,
+    "CliqueId": 12,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12158
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12160
+      }
+    ],
+    "Reward": 331011203,
+    "NameStrKey": "ST:197622",
+    "DesStrKey": "ST:197624",
+    "ClueStrKey": "ST:197627",
+    "TipsStrKey": "ST:197629"
+  },
+  {
+    "ID": 11301,
+    "CliqueId": 13,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10510
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 11301
+      }
+    ],
+    "Reward": 331011301,
+    "NameStrKey": "ST:50251",
+    "DesStrKey": "ST:55265",
+    "ClueStrKey": "ST:54383",
+    "TipsStrKey": "ST:55339"
+  },
+  {
+    "ID": 11303,
+    "CliqueId": 13,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 29
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12403
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 11303
+      }
+    ],
+    "Reward": 331011303,
+    "NameStrKey": "ST:50253",
+    "DesStrKey": "ST:55266",
+    "ClueStrKey": "ST:54416",
+    "TipsStrKey": "ST:69294"
+  },
+  {
+    "ID": 11304,
+    "ActorId": 131052440,
+    "CliqueId": 13,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      },
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 1205
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006505
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2405,
+        "P2": 20361200
+      }
+    ],
+    "Reward": 331011304,
+    "MissionDlg": 30000120,
+    "NameStrKey": "ST:50254",
+    "DesStrKey": "ST:79689",
+    "ClueStrKey": "ST:69241",
+    "TipsStrKey": "ST:55744"
+  },
+  {
+    "ID": 11305,
+    "ActorId": 131052440,
+    "CliqueId": 13,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006507
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2407,
+        "P2": 20361300
+      }
+    ],
+    "Reward": 331011305,
+    "MissionDlg": 30000130,
+    "NameStrKey": "ST:50255",
+    "DesStrKey": "ST:79651",
+    "ClueStrKey": "ST:69242",
+    "TipsStrKey": "ST:69295"
+  },
+  {
+    "ID": 11306,
+    "ActorId": 131052440,
+    "CliqueId": 13,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006509
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2409,
+        "P2": 20361600
+      }
+    ],
+    "Reward": 331011306,
+    "MissionDlg": 30000220,
+    "NameStrKey": "ST:69170",
+    "DesStrKey": "ST:69189",
+    "ClueStrKey": "ST:69242",
+    "TipsStrKey": "ST:69295"
+  },
+  {
+    "ID": 11307,
+    "ActorId": 131052440,
+    "CliqueId": 13,
+    "ShowType": 3,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 10006511
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_SpiritLight",
+        "P1": 2411,
+        "P2": 20361700
+      }
+    ],
+    "Reward": 331011307,
+    "MissionDlg": 30000330,
+    "NameStrKey": "ST:69171",
+    "DesStrKey": "ST:69190",
+    "ClueStrKey": "ST:69242",
+    "TipsStrKey": "ST:69295"
+  },
+  {
+    "ID": 11401,
+    "CliqueId": 18,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 88085
+      },
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 88086
+      },
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 88087
+      }
+    ],
+    "Reward": 331011401,
+    "NameStrKey": "ST:88881",
+    "DesStrKey": "ST:91063",
+    "ClueStrKey": "ST:89119",
+    "TipsStrKey": "ST:89123"
+  },
+  {
+    "ID": 11402,
+    "CliqueId": 18,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12134
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12128
+      }
+    ],
+    "Reward": 331011402,
+    "NameStrKey": "ST:130885",
+    "DesStrKey": "ST:130896",
+    "ClueStrKey": "ST:130906",
+    "TipsStrKey": "ST:130916"
+  },
+  {
+    "ID": 11403,
+    "CliqueId": 18,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12139
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20604
+      }
+    ],
+    "Reward": 331011403,
+    "NameStrKey": "ST:130886",
+    "DesStrKey": "ST:130897",
+    "ClueStrKey": "ST:130906",
+    "TipsStrKey": "ST:130917"
+  },
+  {
+    "ID": 11404,
+    "CliqueId": 18,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12140
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12143
+      }
+    ],
+    "Reward": 331011404,
+    "NameStrKey": "ST:141886",
+    "DesStrKey": "ST:141890",
+    "ClueStrKey": "ST:141894",
+    "TipsStrKey": "ST:141898"
+  },
+  {
+    "ID": 11501,
+    "CliqueId": 14,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20901
+      }
+    ],
+    "Reward": 331011501,
+    "NameStrKey": "ST:102134",
+    "DesStrKey": "ST:102137",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:102141"
+  },
+  {
+    "ID": 11502,
+    "CliqueId": 14,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 20901
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20902
+      }
+    ],
+    "Reward": 331011502,
+    "NameStrKey": "ST:102135",
+    "DesStrKey": "ST:102138",
+    "ClueStrKey": "ST:54326",
+    "TipsStrKey": "ST:102141"
+  },
+  {
+    "ID": 11601,
+    "CliqueId": 15,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12136
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 20209
+      }
+    ],
+    "Reward": 331011601,
+    "NameStrKey": "ST:130887",
+    "DesStrKey": "ST:99001",
+    "ClueStrKey": "ST:130907",
+    "TipsStrKey": "ST:130918"
+  },
+  {
+    "ID": 11701,
+    "CliqueId": 16,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12141
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12141
+      }
+    ],
+    "Reward": 331011701,
+    "NameStrKey": "ST:141887",
+    "DesStrKey": "ST:141891",
+    "ClueStrKey": "ST:141895",
+    "TipsStrKey": "ST:141899"
+  },
+  {
+    "ID": 11702,
+    "CliqueId": 16,
+    "ShowType": 1,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12142
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12144
+      }
+    ],
+    "Reward": 331011702,
+    "NameStrKey": "ST:141888",
+    "DesStrKey": "ST:141892",
+    "ClueStrKey": "ST:141896",
+    "TipsStrKey": "ST:141900"
+  },
+  {
+    "ID": 11703,
+    "CliqueId": 16,
+    "ShowType": 2,
+    "UnLockCondition": [
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 12141
+      }
+    ],
+    "MissionType": [
+      {
+        "CondType": "CliqueMissionType_Mission",
+        "P1": 12142
+      }
+    ],
+    "Reward": 331011703,
+    "NameStrKey": "ST:141889",
+    "DesStrKey": "ST:141893",
+    "ClueStrKey": "ST:141897",
+    "TipsStrKey": "ST:141901"
+  }
+]

@@ -1,0 +1,1906 @@
+[
+  {
+    "ID": 50042000,
+    "CardEffects": [
+      420002
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204900",
+    "EffectDescStrKey": "ST:208015"
+  },
+  {
+    "ID": 50042001,
+    "CardEffects": [
+      420004
+    ],
+    "InitTag": "SouShenTag_Mana",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204901",
+    "EffectDescStrKey": "ST:208016"
+  },
+  {
+    "ID": 50042002,
+    "CardEffects": [
+      420005
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208232"
+  },
+  {
+    "ID": 50042003,
+    "CardEffects": [
+      420006,
+      420007
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204903",
+    "EffectDescStrKey": "ST:208018"
+  },
+  {
+    "ID": 50042004,
+    "CardEffects": [
+      420009
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208019"
+  },
+  {
+    "ID": 50042005,
+    "CardEffects": [
+      420010
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208020"
+  },
+  {
+    "ID": 50042006,
+    "CardEffects": [
+      420011,
+      420012
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208175"
+  },
+  {
+    "ID": 50042007,
+    "CardEffects": [
+      420011,
+      420012
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208175"
+  },
+  {
+    "ID": 50042008,
+    "CardEffects": [
+      420014,
+      420015
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208651"
+  },
+  {
+    "ID": 50042009,
+    "CardEffects": [
+      420014,
+      420015
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208651"
+  },
+  {
+    "ID": 50042010,
+    "CardEffects": [
+      420017
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:204905",
+    "EffectDescStrKey": "ST:208023"
+  },
+  {
+    "ID": 50042011,
+    "CardEffects": [
+      420018
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204900",
+    "EffectDescStrKey": "ST:208024"
+  },
+  {
+    "ID": 50042012,
+    "CardEffects": [
+      420019
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:212532",
+    "EffectDescStrKey": "ST:208025"
+  },
+  {
+    "ID": 50042013,
+    "CardEffects": [
+      420020
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:212532",
+    "EffectDescStrKey": "ST:208168"
+  },
+  {
+    "ID": 50042014,
+    "CardEffects": [
+      420021
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:203598",
+    "EffectDescStrKey": "ST:208027"
+  },
+  {
+    "ID": 50042015,
+    "CardEffects": [
+      420022
+    ],
+    "SelectTargetConds": [
+      {
+        "CondType": "SouShenCardSelectTargetType_OnlyActorSummonedByMonsterCard"
+      }
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204907",
+    "EffectDescStrKey": "ST:211535",
+    "RangeDescStrKey": "ST:6250"
+  },
+  {
+    "ID": 50042016,
+    "CardEffects": [
+      420023
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204908",
+    "EffectDescStrKey": "ST:209026"
+  },
+  {
+    "ID": 50042017,
+    "CardEffects": [
+      420024,
+      420025
+    ],
+    "EffectTypeNameStrKey": "ST:3040",
+    "EffectNameStrKey": "ST:204909",
+    "EffectDescStrKey": "ST:209204"
+  },
+  {
+    "ID": 50042018,
+    "CardEffects": [
+      420026
+    ],
+    "EffectTypeNameStrKey": "ST:3040",
+    "EffectNameStrKey": "ST:204910",
+    "EffectDescStrKey": "ST:208030"
+  },
+  {
+    "ID": 50042019,
+    "CardEffects": [
+      420027
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204911",
+    "EffectDescStrKey": "ST:209158"
+  },
+  {
+    "ID": 50042020,
+    "CardEffects": [
+      420028
+    ],
+    "UseCardSelectCond": true,
+    "GridSelectConds": [
+      "SouShenCardSelectGridType_NotFriendly"
+    ],
+    "SelectTargetConds": [
+      {
+        "CondType": "SouShenCardSelectTargetType_OnlySouShenActor"
+      }
+    ],
+    "InitTag": "SouShenTag_Copy",
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204907",
+    "EffectDescStrKey": "ST:209027",
+    "RangeDescStrKey": "ST:6250"
+  },
+  {
+    "ID": 50042021,
+    "CardEffects": [
+      420029
+    ],
+    "InitTag": "SouShenTag_Copy",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:203604",
+    "EffectDescStrKey": "ST:208033"
+  },
+  {
+    "ID": 50042022,
+    "CardEffects": [
+      420030
+    ],
+    "InitTag": "SouShenTag_Copy",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204912",
+    "EffectDescStrKey": "ST:208034"
+  },
+  {
+    "ID": 50042023,
+    "CardEffects": [
+      420031
+    ],
+    "InitTag": "SouShenTag_Copy",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:203604",
+    "EffectDescStrKey": "ST:208035"
+  },
+  {
+    "ID": 50042024,
+    "CardEffects": [
+      420032
+    ],
+    "InitTag": "SouShenTag_Copy",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204912",
+    "EffectDescStrKey": "ST:208036"
+  },
+  {
+    "ID": 50042025,
+    "CardEffects": [
+      420033,
+      420034
+    ],
+    "InitTag": "SouShenTag_Draw",
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:204913",
+    "EffectDescStrKey": "ST:209205"
+  },
+  {
+    "ID": 50042026,
+    "CardEffects": [
+      420035
+    ],
+    "InitTag": "SouShenTag_Draw",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93457",
+    "EffectDescStrKey": "ST:208038"
+  },
+  {
+    "ID": 50042027,
+    "CardEffects": [
+      420036,
+      420037
+    ],
+    "InitTag": "SouShenTag_Draw",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:208701",
+    "EffectDescStrKey": "ST:208039"
+  },
+  {
+    "ID": 50042028,
+    "CardEffects": [
+      420038,
+      420039
+    ],
+    "InitTag": "SouShenTag_Mana",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204916",
+    "EffectDescStrKey": "ST:208040"
+  },
+  {
+    "ID": 50042029,
+    "CardEffects": [
+      420040,
+      420041
+    ],
+    "InitTag": "SouShenTag_Mana",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204917",
+    "EffectDescStrKey": "ST:208041"
+  },
+  {
+    "ID": 50042030,
+    "CardEffects": [
+      420042,
+      420043
+    ],
+    "InitTag": "SouShenTag_Mana",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204918",
+    "EffectDescStrKey": "ST:208042"
+  },
+  {
+    "ID": 50042031,
+    "CardEffects": [
+      420044
+    ],
+    "InitTag": "SouShenTag_Mana",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204919",
+    "EffectDescStrKey": "ST:208043"
+  },
+  {
+    "ID": 50042032,
+    "CardEffects": [
+      420045
+    ],
+    "InitTag": "SouShenTag_Mana",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204918",
+    "EffectDescStrKey": "ST:208044"
+  },
+  {
+    "ID": 50042033,
+    "CardEffects": [
+      420046
+    ],
+    "InitTag": "SouShenTag_Mana",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204918",
+    "EffectDescStrKey": "ST:208045"
+  },
+  {
+    "ID": 50042034,
+    "CardEffects": [
+      420047
+    ],
+    "UseCardSelectCond": true,
+    "GridSelectConds": [
+      "SouShenCardSelectGridType_NotFriendly"
+    ],
+    "SelectTargetConds": [
+      {
+        "CondType": "SouShenCardSelectTargetType_OnlySouShenActor"
+      }
+    ],
+    "InitTag": "SouShenTag_Remove",
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:204920",
+    "EffectDescStrKey": "ST:209028",
+    "RangeDescStrKey": "ST:6250"
+  },
+  {
+    "ID": 50042035,
+    "CardEffects": [
+      420048
+    ],
+    "InitTag": "SouShenTag_Draw",
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:208702",
+    "EffectDescStrKey": "ST:208047"
+  },
+  {
+    "ID": 50042036,
+    "CardEffects": [
+      420049
+    ],
+    "InitTag": "SouShenTag_Draw",
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:115015",
+    "EffectDescStrKey": "ST:208711"
+  },
+  {
+    "ID": 50042037,
+    "HandBufs": [
+      420003
+    ],
+    "InitTag": "SouShenTag_Draw",
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:115015",
+    "EffectDescStrKey": "ST:208049"
+  },
+  {
+    "ID": 50042038,
+    "CardEffects": [
+      420051
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:204924",
+    "EffectDescStrKey": "ST:208050"
+  },
+  {
+    "ID": 50042039,
+    "CardEffects": [
+      420052
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:204924",
+    "EffectDescStrKey": "ST:208781"
+  },
+  {
+    "ID": 50042040,
+    "CardEffects": [
+      420053
+    ],
+    "EffectTypeNameStrKey": "ST:204898",
+    "EffectNameStrKey": "ST:204925",
+    "EffectDescStrKey": "ST:208177"
+  },
+  {
+    "ID": 50042041,
+    "CardEffects": [
+      420054
+    ],
+    "EffectTypeNameStrKey": "ST:204898",
+    "EffectNameStrKey": "ST:204926",
+    "EffectDescStrKey": "ST:208178"
+  },
+  {
+    "ID": 50042042,
+    "CardEffects": [
+      420055
+    ],
+    "EffectTypeNameStrKey": "ST:204898",
+    "EffectNameStrKey": "ST:204927",
+    "EffectDescStrKey": "ST:208179"
+  },
+  {
+    "ID": 50042043,
+    "CardEffects": [
+      420056
+    ],
+    "EffectTypeNameStrKey": "ST:204898",
+    "EffectNameStrKey": "ST:204928",
+    "EffectDescStrKey": "ST:208180"
+  },
+  {
+    "ID": 50042044,
+    "CardEffects": [
+      420057
+    ],
+    "EffectTypeNameStrKey": "ST:204898",
+    "EffectNameStrKey": "ST:204929",
+    "EffectDescStrKey": "ST:208181"
+  },
+  {
+    "ID": 50042045,
+    "CardEffects": [
+      420058
+    ],
+    "EffectTypeNameStrKey": "ST:2620",
+    "EffectNameStrKey": "ST:48982",
+    "EffectDescStrKey": "ST:208182"
+  },
+  {
+    "ID": 50042046,
+    "CardEffects": [
+      420059
+    ],
+    "EffectTypeNameStrKey": "ST:2620",
+    "EffectNameStrKey": "ST:6709",
+    "EffectDescStrKey": "ST:208183"
+  },
+  {
+    "ID": 50042047,
+    "CardEffects": [
+      420060
+    ],
+    "EffectTypeNameStrKey": "ST:2620",
+    "EffectNameStrKey": "ST:48999",
+    "EffectDescStrKey": "ST:208184"
+  },
+  {
+    "ID": 50042048,
+    "CardEffects": [
+      420061
+    ],
+    "EffectTypeNameStrKey": "ST:2620",
+    "EffectNameStrKey": "ST:35272",
+    "EffectDescStrKey": "ST:208185"
+  },
+  {
+    "ID": 50042049,
+    "CardEffects": [
+      420062
+    ],
+    "EffectTypeNameStrKey": "ST:2620",
+    "EffectNameStrKey": "ST:55696",
+    "EffectDescStrKey": "ST:208186"
+  },
+  {
+    "ID": 50042050,
+    "CardEffects": [
+      420063
+    ],
+    "EffectTypeNameStrKey": "ST:2620",
+    "EffectNameStrKey": "ST:179950",
+    "EffectDescStrKey": "ST:208187"
+  },
+  {
+    "ID": 50042051,
+    "CardEffects": [
+      420064
+    ],
+    "EffectTypeNameStrKey": "ST:200762",
+    "EffectNameStrKey": "ST:204930",
+    "EffectDescStrKey": "ST:209206"
+  },
+  {
+    "ID": 50042052,
+    "CardEffects": [
+      420065
+    ],
+    "EffectTypeNameStrKey": "ST:200762",
+    "EffectNameStrKey": "ST:204931",
+    "EffectDescStrKey": "ST:209207"
+  },
+  {
+    "ID": 50042053,
+    "CardEffects": [
+      420066
+    ],
+    "EffectTypeNameStrKey": "ST:200762",
+    "EffectNameStrKey": "ST:204932",
+    "EffectDescStrKey": "ST:209208"
+  },
+  {
+    "ID": 50042054,
+    "CardEffects": [
+      420067
+    ],
+    "EffectTypeNameStrKey": "ST:200762",
+    "EffectNameStrKey": "ST:204933",
+    "EffectDescStrKey": "ST:209209"
+  },
+  {
+    "ID": 50042055,
+    "CardEffects": [
+      420068
+    ],
+    "EffectTypeNameStrKey": "ST:62466",
+    "EffectNameStrKey": "ST:204934",
+    "EffectDescStrKey": "ST:207791"
+  },
+  {
+    "ID": 50042056,
+    "CardEffects": [
+      420069
+    ],
+    "EffectTypeNameStrKey": "ST:62466",
+    "EffectNameStrKey": "ST:204935",
+    "EffectDescStrKey": "ST:207792"
+  },
+  {
+    "ID": 50042057,
+    "CardEffects": [
+      420070
+    ],
+    "EffectTypeNameStrKey": "ST:62466",
+    "EffectNameStrKey": "ST:208014",
+    "EffectDescStrKey": "ST:209396"
+  },
+  {
+    "ID": 50042058,
+    "CardEffects": [
+      420071
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204937",
+    "EffectDescStrKey": "ST:215255"
+  },
+  {
+    "ID": 50042059,
+    "CardEffects": [
+      420072
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204938",
+    "EffectDescStrKey": "ST:208067"
+  },
+  {
+    "ID": 50042060,
+    "CardEffects": [
+      420073
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:204939",
+    "EffectDescStrKey": "ST:208068"
+  },
+  {
+    "ID": 50042061,
+    "CardEffects": [
+      420074
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204940",
+    "EffectDescStrKey": "ST:208069"
+  },
+  {
+    "ID": 50042062,
+    "CardEffects": [
+      420075
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:122151",
+    "EffectDescStrKey": "ST:208070"
+  },
+  {
+    "ID": 50042063,
+    "CardEffects": [
+      420076
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204941",
+    "EffectDescStrKey": "ST:208071"
+  },
+  {
+    "ID": 50042064,
+    "CardEffects": [
+      420077
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204942",
+    "EffectDescStrKey": "ST:208753"
+  },
+  {
+    "ID": 50042065,
+    "CardEffects": [
+      420078
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204943",
+    "EffectDescStrKey": "ST:208073"
+  },
+  {
+    "ID": 50042066,
+    "CardEffects": [
+      420079
+    ],
+    "InitTag": "SouShenTag_Evloution",
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204944",
+    "EffectDescStrKey": "ST:208074"
+  },
+  {
+    "ID": 50042067,
+    "CardEffects": [
+      420080
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204945",
+    "EffectDescStrKey": "ST:208075"
+  },
+  {
+    "ID": 50042068,
+    "CardEffects": [
+      420081
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204946",
+    "EffectDescStrKey": "ST:208076"
+  },
+  {
+    "ID": 50042069,
+    "CardEffects": [
+      420082
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204947",
+    "EffectDescStrKey": "ST:208077"
+  },
+  {
+    "ID": 50042070,
+    "CardEffects": [
+      420083
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:204948",
+    "EffectDescStrKey": "ST:208078"
+  },
+  {
+    "ID": 50042071,
+    "CardEffects": [
+      420084
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:204949",
+    "EffectDescStrKey": "ST:207807"
+  },
+  {
+    "ID": 50042072,
+    "CardEffects": [
+      420085
+    ],
+    "EffectTypeNameStrKey": "ST:62466",
+    "EffectNameStrKey": "ST:204950",
+    "EffectDescStrKey": "ST:208079"
+  },
+  {
+    "ID": 50042073,
+    "CardEffects": [
+      420086
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:204951",
+    "EffectDescStrKey": "ST:209392"
+  },
+  {
+    "ID": 50042074,
+    "CardEffects": [
+      420089
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204365",
+    "EffectDescStrKey": "ST:208900"
+  },
+  {
+    "ID": 50042075,
+    "CardEffects": [
+      420090
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204365",
+    "EffectDescStrKey": "ST:208900"
+  },
+  {
+    "ID": 50042076,
+    "CardEffects": [
+      420091
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204365",
+    "EffectDescStrKey": "ST:208900"
+  },
+  {
+    "ID": 50042080,
+    "CardEffects": [
+      421100
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204900",
+    "EffectDescStrKey": "ST:207824"
+  },
+  {
+    "ID": 50042081,
+    "CardEffects": [
+      421101
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204900",
+    "EffectDescStrKey": "ST:207825"
+  },
+  {
+    "ID": 50042082,
+    "CardEffects": [
+      420004
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:115015",
+    "EffectDescStrKey": "ST:208712"
+  },
+  {
+    "ID": 50042083,
+    "CardEffects": [
+      421102
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:207817",
+    "EffectDescStrKey": "ST:208713"
+  },
+  {
+    "ID": 50042090,
+    "CardEffects": [
+      420100
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208703",
+    "EffectDescStrKey": "ST:208891"
+  },
+  {
+    "ID": 50042091,
+    "CardEffects": [
+      420101
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208704",
+    "EffectDescStrKey": "ST:208892"
+  },
+  {
+    "ID": 50042092,
+    "CardEffects": [
+      420102
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208705",
+    "EffectDescStrKey": "ST:208893"
+  },
+  {
+    "ID": 50042093,
+    "CardEffects": [
+      420103
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208706",
+    "EffectDescStrKey": "ST:208894"
+  },
+  {
+    "ID": 50042094,
+    "CardEffects": [
+      420104
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208707",
+    "EffectDescStrKey": "ST:208895"
+  },
+  {
+    "ID": 50042095,
+    "CardEffects": [
+      420105
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208708",
+    "EffectDescStrKey": "ST:208896"
+  },
+  {
+    "ID": 50042101,
+    "CardEffects": [
+      421031
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:207835"
+  },
+  {
+    "ID": 50042102,
+    "CardEffects": [
+      421103
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204901",
+    "EffectDescStrKey": "ST:208649"
+  },
+  {
+    "ID": 50042103,
+    "CardEffects": [
+      421104
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:91894",
+    "EffectDescStrKey": "ST:208646"
+  },
+  {
+    "ID": 50042104,
+    "CardEffects": [
+      421105
+    ],
+    "EffectTypeNameStrKey": "ST:204899",
+    "EffectNameStrKey": "ST:204946",
+    "EffectDescStrKey": "ST:209332"
+  },
+  {
+    "ID": 50042105,
+    "CardEffects": [
+      421106
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:208643",
+    "EffectDescStrKey": "ST:209397"
+  },
+  {
+    "ID": 50042106,
+    "CardEffects": [
+      420009
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:208019"
+  },
+  {
+    "ID": 50042107,
+    "CardEffects": [
+      421107
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:208654",
+    "EffectDescStrKey": "ST:209328"
+  },
+  {
+    "ID": 50042110,
+    "CardEffects": [
+      441014
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:215643",
+    "EffectDescStrKey": "ST:215644"
+  },
+  {
+    "ID": 50042111,
+    "CardEffects": [
+      421202
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:208668",
+    "EffectDescStrKey": "ST:208674"
+  },
+  {
+    "ID": 50042112,
+    "CardEffects": [
+      421203
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208823",
+    "EffectDescStrKey": "ST:208838"
+  },
+  {
+    "ID": 50042113,
+    "CardEffects": [
+      421204
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208824",
+    "EffectDescStrKey": "ST:208834"
+  },
+  {
+    "ID": 50042114,
+    "CardEffects": [
+      421205
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208825",
+    "EffectDescStrKey": "ST:209346"
+  },
+  {
+    "ID": 50042115,
+    "CardEffects": [
+      421206
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:208826",
+    "EffectDescStrKey": "ST:208840"
+  },
+  {
+    "ID": 50042116,
+    "CardEffects": [
+      421207
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208827",
+    "EffectDescStrKey": "ST:209984"
+  },
+  {
+    "ID": 50042117,
+    "CardEffects": [
+      420108
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:208708",
+    "EffectDescStrKey": "ST:211667"
+  },
+  {
+    "ID": 50042118,
+    "CardEffects": [
+      420109
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:210996",
+    "EffectDescStrKey": "ST:210997"
+  },
+  {
+    "ID": 50042119,
+    "CardEffects": [
+      420110
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:210002",
+    "EffectDescStrKey": "ST:211668"
+  },
+  {
+    "ID": 50042120,
+    "CardEffects": [
+      420111
+    ],
+    "EffectTypeNameStrKey": "ST:210000",
+    "EffectNameStrKey": "ST:210003",
+    "EffectDescStrKey": "ST:209988"
+  },
+  {
+    "ID": 50042121,
+    "CardEffects": [
+      420112
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:210004",
+    "EffectDescStrKey": "ST:211669"
+  },
+  {
+    "ID": 50042122,
+    "CardEffects": [
+      420113
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:210005",
+    "EffectDescStrKey": "ST:210887"
+  },
+  {
+    "ID": 50042123,
+    "CardEffects": [
+      420114
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:173433",
+    "EffectDescStrKey": "ST:211670"
+  },
+  {
+    "ID": 50042124,
+    "CardEffects": [
+      420115
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:210006",
+    "EffectDescStrKey": "ST:209992"
+  },
+  {
+    "ID": 50042125,
+    "CardEffects": [
+      420116,
+      420118
+    ],
+    "InitTag": "SouShenTag_Draw",
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:210007",
+    "EffectDescStrKey": "ST:209993"
+  },
+  {
+    "ID": 50043000,
+    "CardEffects": [
+      430000
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:211231",
+    "EffectDescStrKey": "ST:211229"
+  },
+  {
+    "ID": 50043001,
+    "CardEffects": [
+      429999
+    ],
+    "EffectTypeNameStrKey": "ST:203597",
+    "EffectNameStrKey": "ST:211232",
+    "EffectDescStrKey": "ST:211230"
+  },
+  {
+    "ID": 50043002,
+    "CardEffects": [
+      439999
+    ],
+    "EffectTypeNameStrKey": "ST:211760",
+    "EffectNameStrKey": "ST:211761",
+    "EffectDescStrKey": "ST:215188"
+  },
+  {
+    "ID": 50044000,
+    "CardEffects": [
+      440000,
+      440011
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213985",
+    "EffectDescStrKey": "ST:211762"
+  },
+  {
+    "ID": 50044001,
+    "CardEffects": [
+      440002
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:213986",
+    "EffectDescStrKey": "ST:214781"
+  },
+  {
+    "ID": 50044002,
+    "CardEffects": [
+      440004,
+      440005
+    ],
+    "EffectTypeNameStrKey": "ST:62466",
+    "EffectNameStrKey": "ST:213987",
+    "EffectDescStrKey": "ST:211764"
+  },
+  {
+    "ID": 50044003,
+    "CardEffects": [
+      440006
+    ],
+    "HandBufs": [
+      440036
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:213988",
+    "EffectDescStrKey": "ST:214782"
+  },
+  {
+    "ID": 50044004,
+    "CardEffects": [
+      440007
+    ],
+    "HandBufs": [
+      440019
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:213989",
+    "EffectDescStrKey": "ST:213996"
+  },
+  {
+    "ID": 50044005,
+    "CardEffects": [
+      440008
+    ],
+    "HandBufs": [
+      440020
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:213989",
+    "EffectDescStrKey": "ST:213997"
+  },
+  {
+    "ID": 50044006,
+    "CardEffects": [
+      440009
+    ],
+    "HandBufs": [
+      440021
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:213989",
+    "EffectDescStrKey": "ST:213998"
+  },
+  {
+    "ID": 50044007,
+    "CardEffects": [
+      440010
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:213989",
+    "EffectDescStrKey": "ST:213999"
+  },
+  {
+    "ID": 50044008,
+    "CardEffects": [
+      440000,
+      440012
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213985",
+    "EffectDescStrKey": "ST:211762"
+  },
+  {
+    "ID": 50044009,
+    "CardEffects": [
+      440000
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213985",
+    "EffectDescStrKey": "ST:211770"
+  },
+  {
+    "ID": 50044010,
+    "CardEffects": [
+      440013
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:213990",
+    "EffectDescStrKey": "ST:211868"
+  },
+  {
+    "ID": 50044011,
+    "CardEffects": [
+      440014
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:213991",
+    "EffectDescStrKey": "ST:211869"
+  },
+  {
+    "ID": 50044012,
+    "CardEffects": [
+      440016
+    ],
+    "EffectTypeNameStrKey": "ST:3040",
+    "EffectNameStrKey": "ST:204909",
+    "EffectDescStrKey": "ST:211870"
+  },
+  {
+    "ID": 50044013,
+    "HandBufs": [
+      440002
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204919",
+    "EffectDescStrKey": "ST:215056"
+  },
+  {
+    "ID": 50044014,
+    "CardEffects": [
+      440030
+    ],
+    "HandBufs": [
+      440003,
+      440000,
+      440005
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204918",
+    "EffectDescStrKey": "ST:215197"
+  },
+  {
+    "ID": 50044015,
+    "CardEffects": [
+      440021
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:204908",
+    "EffectDescStrKey": "ST:211944"
+  },
+  {
+    "ID": 50044016,
+    "CardEffects": [
+      440022
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:213992",
+    "EffectDescStrKey": "ST:214375"
+  },
+  {
+    "ID": 50044017,
+    "CardEffects": [
+      440023
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204902",
+    "EffectDescStrKey": "ST:214376"
+  },
+  {
+    "ID": 50044018,
+    "CardEffects": [
+      440024
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:212532",
+    "EffectDescStrKey": "ST:214377"
+  },
+  {
+    "ID": 50044019,
+    "CardEffects": [
+      440025
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:212026"
+  },
+  {
+    "ID": 50044020,
+    "CardEffects": [
+      440026
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214784"
+  },
+  {
+    "ID": 50044021,
+    "CardEffects": [
+      440028
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214379"
+  },
+  {
+    "ID": 50044022,
+    "CardEffects": [
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214380"
+  },
+  {
+    "ID": 50044023,
+    "CardEffects": [
+      440026,
+      440026
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214785"
+  },
+  {
+    "ID": 50044024,
+    "CardEffects": [
+      440026,
+      440028
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214786"
+  },
+  {
+    "ID": 50044025,
+    "CardEffects": [
+      440026,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214787"
+  },
+  {
+    "ID": 50044026,
+    "CardEffects": [
+      440028,
+      440028
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214384"
+  },
+  {
+    "ID": 50044027,
+    "CardEffects": [
+      440028,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214385"
+  },
+  {
+    "ID": 50044028,
+    "CardEffects": [
+      440029,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214386"
+  },
+  {
+    "ID": 50044029,
+    "CardEffects": [
+      440026,
+      440026,
+      440028
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214788"
+  },
+  {
+    "ID": 50044030,
+    "CardEffects": [
+      440026,
+      440026,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214789"
+  },
+  {
+    "ID": 50044031,
+    "CardEffects": [
+      440026,
+      440028,
+      440028
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214790"
+  },
+  {
+    "ID": 50044032,
+    "CardEffects": [
+      440026,
+      440028,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214791"
+  },
+  {
+    "ID": 50044033,
+    "CardEffects": [
+      440026,
+      440029,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214792"
+  },
+  {
+    "ID": 50044034,
+    "CardEffects": [
+      440028,
+      440028,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214390"
+  },
+  {
+    "ID": 50044035,
+    "CardEffects": [
+      440028,
+      440029,
+      440029
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214391"
+  },
+  {
+    "ID": 50044036,
+    "CardEffects": [
+      440032
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214793"
+  },
+  {
+    "ID": 50044037,
+    "CardEffects": [
+      440034,
+      440033
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:214794"
+  },
+  {
+    "ID": 50044038,
+    "CardEffects": [
+      440035,
+      440036
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:93094",
+    "EffectDescStrKey": "ST:212251"
+  },
+  {
+    "ID": 50044039,
+    "CardEffects": [
+      440030
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204901",
+    "EffectDescStrKey": "ST:212046"
+  },
+  {
+    "ID": 50044040,
+    "CardEffects": [
+      440031
+    ],
+    "EffectTypeNameStrKey": "ST:2620",
+    "EffectNameStrKey": "ST:111567",
+    "EffectDescStrKey": "ST:211961"
+  },
+  {
+    "ID": 50044041,
+    "CardEffects": [
+      440042,
+      440043
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213985",
+    "EffectDescStrKey": "ST:212252"
+  },
+  {
+    "ID": 50044042,
+    "CardEffects": [
+      440042,
+      440043
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213985",
+    "EffectDescStrKey": "ST:212252"
+  },
+  {
+    "ID": 50044043,
+    "CardEffects": [
+      440044,
+      440045
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213985",
+    "EffectDescStrKey": "ST:214795"
+  },
+  {
+    "ID": 50044044,
+    "CardEffects": [
+      440044,
+      440045
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213985",
+    "EffectDescStrKey": "ST:214795"
+  },
+  {
+    "ID": 50044045,
+    "CardEffects": [
+      440062
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:213993",
+    "EffectDescStrKey": "ST:215198"
+  },
+  {
+    "ID": 50044046,
+    "CardEffects": [
+      440063
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:213993",
+    "EffectDescStrKey": "ST:215199"
+  },
+  {
+    "ID": 50044047,
+    "CardEffects": [
+      440064
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:213993",
+    "EffectDescStrKey": "ST:215200"
+  },
+  {
+    "ID": 50044048,
+    "CardEffects": [
+      440061,
+      440064
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:213994",
+    "EffectDescStrKey": "ST:215201"
+  },
+  {
+    "ID": 50044049,
+    "HandBufs": [
+      440035
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204919",
+    "EffectDescStrKey": "ST:212541"
+  },
+  {
+    "ID": 50044050,
+    "CardEffects": [
+      440066
+    ],
+    "EffectTypeNameStrKey": "ST:211760",
+    "EffectNameStrKey": "ST:211761",
+    "EffectDescStrKey": "ST:214000"
+  },
+  {
+    "ID": 50044051,
+    "CardEffects": [
+      440053
+    ],
+    "EffectTypeNameStrKey": "ST:211760",
+    "EffectNameStrKey": "ST:211761",
+    "EffectDescStrKey": "ST:214796"
+  },
+  {
+    "ID": 50045000,
+    "CardEffects": [
+      450002,
+      450033
+    ],
+    "GridSelectConds": [
+      "SouShenCardSelectGridType_Friendly"
+    ],
+    "SelectTargetConds": [
+      {
+        "CondType": "SouShenCardSelectTargetType_OnlySouShenActor"
+      }
+    ],
+    "EffectTypeNameStrKey": "ST:3040",
+    "EffectNameStrKey": "ST:204909",
+    "EffectDescStrKey": "ST:217922"
+  },
+  {
+    "ID": 50045001,
+    "CardEffects": [
+      450003,
+      450001
+    ],
+    "EffectTypeNameStrKey": "ST:3040",
+    "EffectNameStrKey": "ST:204909",
+    "EffectDescStrKey": "ST:217923"
+  },
+  {
+    "ID": 50045002,
+    "CardEffects": [
+      450004
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:215743",
+    "EffectDescStrKey": "ST:218409"
+  },
+  {
+    "ID": 50045003,
+    "CardEffects": [
+      450010,
+      450036
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204904",
+    "EffectDescStrKey": "ST:217924"
+  },
+  {
+    "ID": 50045004,
+    "CardEffects": [
+      450011
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:217919",
+    "EffectDescStrKey": "ST:217925"
+  },
+  {
+    "ID": 50045005,
+    "CardEffects": [
+      450012
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:217919",
+    "EffectDescStrKey": "ST:217926"
+  },
+  {
+    "ID": 50045006,
+    "CardEffects": [
+      450013
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:217919",
+    "EffectDescStrKey": "ST:217927"
+  },
+  {
+    "ID": 50045007,
+    "CardEffects": [
+      450014
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:218901"
+  },
+  {
+    "ID": 50045008,
+    "CardEffects": [
+      450015
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:218902"
+  },
+  {
+    "ID": 50045009,
+    "CardEffects": [
+      450016
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:218466"
+  },
+  {
+    "ID": 50045010,
+    "CardEffects": [
+      450017
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:218467"
+  },
+  {
+    "ID": 50045011,
+    "CardEffects": [
+      450018
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:218468"
+  },
+  {
+    "ID": 50045012,
+    "CardEffects": [
+      450019
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:218903"
+  },
+  {
+    "ID": 50045013,
+    "CardEffects": [
+      450020
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:218904"
+  },
+  {
+    "ID": 50045014,
+    "CardEffects": [
+      450021
+    ],
+    "EffectTypeNameStrKey": "ST:30231",
+    "EffectNameStrKey": "ST:217920",
+    "EffectDescStrKey": "ST:217935"
+  },
+  {
+    "ID": 50045015,
+    "CardEffects": [
+      450022,
+      450034
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204904",
+    "EffectDescStrKey": "ST:218469"
+  },
+  {
+    "ID": 50045016,
+    "CardEffects": [
+      450023,
+      450035
+    ],
+    "EffectTypeNameStrKey": "ST:3040",
+    "EffectNameStrKey": "ST:204910",
+    "EffectDescStrKey": "ST:218470"
+  },
+  {
+    "ID": 50045017,
+    "CardEffects": [
+      450025
+    ],
+    "EffectTypeNameStrKey": "ST:211760",
+    "EffectNameStrKey": "ST:211761",
+    "EffectDescStrKey": "ST:217938"
+  },
+  {
+    "ID": 50045018,
+    "CardEffects": [
+      450026
+    ],
+    "EffectTypeNameStrKey": "ST:211760",
+    "EffectNameStrKey": "ST:211761",
+    "EffectDescStrKey": "ST:217939"
+  },
+  {
+    "ID": 50045019,
+    "CardEffects": [
+      450027
+    ],
+    "EffectTypeNameStrKey": "ST:211760",
+    "EffectNameStrKey": "ST:211761",
+    "EffectDescStrKey": "ST:217940"
+  },
+  {
+    "ID": 50045020,
+    "CardEffects": [
+      450028
+    ],
+    "EffectTypeNameStrKey": "ST:211760",
+    "EffectNameStrKey": "ST:211761",
+    "EffectDescStrKey": "ST:217941"
+  },
+  {
+    "ID": 50045021,
+    "CardEffects": [
+      450024
+    ],
+    "EffectTypeNameStrKey": "ST:62466",
+    "EffectNameStrKey": "ST:217921",
+    "EffectDescStrKey": "ST:217942"
+  },
+  {
+    "ID": 51044001,
+    "CardEffects": [
+      441001,
+      441013
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:173433",
+    "EffectDescStrKey": "ST:212529"
+  },
+  {
+    "ID": 51044002,
+    "CardEffects": [
+      441002
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:211677",
+    "EffectDescStrKey": "ST:212530"
+  },
+  {
+    "ID": 51044003,
+    "CardEffects": [
+      441003,
+      441004
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:211678",
+    "EffectDescStrKey": "ST:211673"
+  },
+  {
+    "ID": 51044004,
+    "CardEffects": [
+      441005
+    ],
+    "EffectTypeNameStrKey": "ST:127173",
+    "EffectNameStrKey": "ST:211679",
+    "EffectDescStrKey": "ST:212533"
+  },
+  {
+    "ID": 51044005,
+    "CardEffects": [
+      441006
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:211680",
+    "EffectDescStrKey": "ST:211675"
+  },
+  {
+    "ID": 51044006,
+    "CardEffects": [
+      441007
+    ],
+    "EffectTypeNameStrKey": "ST:228",
+    "EffectNameStrKey": "ST:211681",
+    "EffectDescStrKey": "ST:211676"
+  },
+  {
+    "ID": 51044007,
+    "CardEffects": [
+      441009,
+      441008
+    ],
+    "EffectTypeNameStrKey": "ST:76899",
+    "EffectNameStrKey": "ST:204900",
+    "EffectDescStrKey": "ST:213927"
+  },
+  {
+    "ID": 51044008,
+    "CardEffects": [
+      441010
+    ],
+    "HandBufs": [
+      404411
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204919",
+    "EffectDescStrKey": "ST:214371"
+  },
+  {
+    "ID": 51044009,
+    "CardEffects": [
+      441011
+    ],
+    "HandBufs": [
+      404412
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204919",
+    "EffectDescStrKey": "ST:214372"
+  },
+  {
+    "ID": 51044010,
+    "CardEffects": [
+      441012
+    ],
+    "HandBufs": [
+      404413
+    ],
+    "EffectTypeNameStrKey": "ST:204897",
+    "EffectNameStrKey": "ST:204919",
+    "EffectDescStrKey": "ST:214373"
+  }
+]

@@ -1,0 +1,472 @@
+[
+  {
+    "ID": 101,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 50,
+    "StageThreeTotalHP": 60,
+    "Level": 5,
+    "Group": 1
+  },
+  {
+    "ID": 102,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 50,
+    "StageThreeTotalHP": 80,
+    "Level": 10,
+    "Group": 1
+  },
+  {
+    "ID": 103,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 80,
+    "StageThreeTotalHP": 120,
+    "Level": 15,
+    "Group": 1
+  },
+  {
+    "ID": 104,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 90,
+    "StageThreeTotalHP": 130,
+    "Level": 20,
+    "Group": 1
+  },
+  {
+    "ID": 105,
+    "StageOneTotalHP": 50,
+    "StageTwoTotalHP": 100,
+    "StageThreeTotalHP": 140,
+    "Level": 25,
+    "Group": 1
+  },
+  {
+    "ID": 106,
+    "StageOneTotalHP": 50,
+    "StageTwoTotalHP": 120,
+    "StageThreeTotalHP": 140,
+    "Level": 30,
+    "Group": 1
+  },
+  {
+    "ID": 107,
+    "StageOneTotalHP": 50,
+    "StageTwoTotalHP": 130,
+    "StageThreeTotalHP": 150,
+    "Level": 35,
+    "Group": 1
+  },
+  {
+    "ID": 108,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 140,
+    "StageThreeTotalHP": 170,
+    "Level": 40,
+    "Group": 1
+  },
+  {
+    "ID": 109,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 150,
+    "StageThreeTotalHP": 170,
+    "Level": 45,
+    "Group": 1
+  },
+  {
+    "ID": 110,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 170,
+    "StageThreeTotalHP": 180,
+    "Level": 50,
+    "Group": 1
+  },
+  {
+    "ID": 111,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 180,
+    "StageThreeTotalHP": 230,
+    "Level": 55,
+    "Group": 1
+  },
+  {
+    "ID": 112,
+    "StageOneTotalHP": 80,
+    "StageTwoTotalHP": 180,
+    "StageThreeTotalHP": 230,
+    "Level": 60,
+    "Group": 1
+  },
+  {
+    "ID": 113,
+    "StageOneTotalHP": 90,
+    "StageTwoTotalHP": 180,
+    "StageThreeTotalHP": 400,
+    "Level": 65,
+    "Group": 1
+  },
+  {
+    "ID": 114,
+    "StageOneTotalHP": 100,
+    "StageTwoTotalHP": 230,
+    "StageThreeTotalHP": 400,
+    "Level": 70,
+    "Group": 1
+  },
+  {
+    "ID": 115,
+    "StageOneTotalHP": 400,
+    "StageTwoTotalHP": 600,
+    "StageThreeTotalHP": 600,
+    "Level": 100,
+    "Group": 1
+  },
+  {
+    "ID": 201,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 50,
+    "StageThreeTotalHP": 60,
+    "Level": 5,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1003
+      },
+      {
+        "EnemyID": 1001,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1004,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1002,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 202,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 50,
+    "StageThreeTotalHP": 80,
+    "Level": 10,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1003
+      },
+      {
+        "EnemyID": 1001,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1004,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1002,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 203,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 80,
+    "StageThreeTotalHP": 120,
+    "Level": 15,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1003
+      },
+      {
+        "EnemyID": 1001,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1004,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1002,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 204,
+    "StageOneTotalHP": 40,
+    "StageTwoTotalHP": 90,
+    "StageThreeTotalHP": 130,
+    "Level": 20,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1003
+      },
+      {
+        "EnemyID": 1001,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1004,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1002,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 205,
+    "StageOneTotalHP": 50,
+    "StageTwoTotalHP": 120,
+    "StageThreeTotalHP": 140,
+    "Level": 30,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1003
+      },
+      {
+        "EnemyID": 1001,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1004,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1002,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 206,
+    "StageOneTotalHP": 50,
+    "StageTwoTotalHP": 130,
+    "StageThreeTotalHP": 150,
+    "Level": 35,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1013
+      },
+      {
+        "EnemyID": 1011,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1014,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1012,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 207,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 140,
+    "StageThreeTotalHP": 170,
+    "Level": 40,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1013
+      },
+      {
+        "EnemyID": 1011,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1014,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1012,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 208,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 150,
+    "StageThreeTotalHP": 170,
+    "Level": 45,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1013
+      },
+      {
+        "EnemyID": 1011,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1014,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1012,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 209,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 150,
+    "StageThreeTotalHP": 170,
+    "Level": 50,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1013
+      },
+      {
+        "EnemyID": 1011,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1014,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1012,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 210,
+    "StageOneTotalHP": 60,
+    "StageTwoTotalHP": 180,
+    "StageThreeTotalHP": 230,
+    "Level": 55,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1023
+      },
+      {
+        "EnemyID": 1021,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1024,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1022,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 211,
+    "StageOneTotalHP": 80,
+    "StageTwoTotalHP": 180,
+    "StageThreeTotalHP": 230,
+    "Level": 60,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1023
+      },
+      {
+        "EnemyID": 1021,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1024,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1022,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 212,
+    "StageOneTotalHP": 90,
+    "StageTwoTotalHP": 180,
+    "StageThreeTotalHP": 400,
+    "Level": 65,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1023
+      },
+      {
+        "EnemyID": 1021,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1024,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1022,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 213,
+    "StageOneTotalHP": 100,
+    "StageTwoTotalHP": 230,
+    "StageThreeTotalHP": 400,
+    "Level": 70,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1023
+      },
+      {
+        "EnemyID": 1021,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1024,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1022,
+        "Second": 14
+      }
+    ]
+  },
+  {
+    "ID": 214,
+    "StageOneTotalHP": 400,
+    "StageTwoTotalHP": 600,
+    "StageThreeTotalHP": 600,
+    "Level": 100,
+    "Group": 2,
+    "SpawnRule": [
+      {
+        "EnemyID": 1023
+      },
+      {
+        "EnemyID": 1021,
+        "Second": 4
+      },
+      {
+        "EnemyID": 1024,
+        "Second": 8
+      },
+      {
+        "EnemyID": 1022,
+        "Second": 14
+      }
+    ]
+  }
+]

@@ -1,0 +1,4571 @@
+[
+  {
+    "ID": 1,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleBoss",
+    "Param1": 9524,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 107480001,
+    "DialogAfterId": 107490001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:202651"
+  },
+  {
+    "ID": 2,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 20203800,
+    "Param2": 20203900,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 107480001,
+    "DialogAfterId": 107490001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:202652"
+  },
+  {
+    "ID": 3,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 2
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 8
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      4
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 9522,
+    "Param2": 9522,
+    "Param3": 161000056,
+    "Param4": 161000055,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 107480001,
+    "DialogAfterId": 107490001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:202653"
+  },
+  {
+    "ID": 4,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 3
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 3
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 9522,
+    "Param2": 9522,
+    "Param3": 161000056,
+    "Param4": 161000055,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 107480001,
+    "DialogAfterId": 107490001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:202653"
+  },
+  {
+    "ID": 1000101,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530100,
+    "Param2": 24530100,
+    "IsMaster": true,
+    "DialogBeforeId": 550001001,
+    "DialogAfterId": 550001101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 1,
+    "NameStrKey": "ST:204222"
+  },
+  {
+    "ID": 1000102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10001011
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530200,
+    "Param2": 24530200,
+    "IsMaster": true,
+    "Reward": 351420102,
+    "CostDayPeriods": 1,
+    "DialogAfterId": 550001301,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 2,
+    "NameStrKey": "ST:204223"
+  },
+  {
+    "ID": 1000103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530609,
+    "Param2": 24530609,
+    "Param3": 161000056,
+    "Param4": 161000055,
+    "IsMaster": true,
+    "Reward": 351420004,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550001401,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 3,
+    "NameStrKey": "ST:209447"
+  },
+  {
+    "ID": 1000104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10001032
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530608,
+    "Param2": 24530608,
+    "Param3": 161000050,
+    "IsMaster": true,
+    "Reward": 351420401,
+    "CostDayPeriods": 1,
+    "DialogAfterId": 550001701,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 4,
+    "NameStrKey": "ST:204225"
+  },
+  {
+    "ID": 1000105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10001031
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_EnterHall",
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_luankongge.prefab"
+  },
+  {
+    "ID": 1000211,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550001801,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203935"
+  },
+  {
+    "ID": 1000212,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000211
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550001901,
+    "Reward": 351420001,
+    "CostDayPeriods": 2,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203936"
+  },
+  {
+    "ID": 1000213,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000212
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550002001,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203937"
+  },
+  {
+    "ID": 1000221,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550002101,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203938"
+  },
+  {
+    "ID": 1000222,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000221
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550002201,
+    "Param2": 42012241,
+    "Reward": 351420001,
+    "CostDayPeriods": 2,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_migong.prefab",
+    "NameStrKey": "ST:203939"
+  },
+  {
+    "ID": 1000223,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000222
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550002301,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203940"
+  },
+  {
+    "ID": 1000231,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 8
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550002401,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:206942"
+  },
+  {
+    "ID": 1000232,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000231
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550002501,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:206943"
+  },
+  {
+    "ID": 1000233,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000232
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550002601,
+    "Reward": 351420003,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:206944"
+  },
+  {
+    "ID": 1000241,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 100,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:206945"
+  },
+  {
+    "ID": 1000251,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 110,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:206946"
+  },
+  {
+    "ID": 1000261,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 9999999
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010921,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000262,
+    "DisapperEventIds": [
+      1000104
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010931,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000263,
+    "DisapperEventIds": [
+      1000104
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010931,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000264,
+    "DisapperEventIds": [
+      1000104
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010931,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000271,
+    "DisapperEventIds": [
+      1100101
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010901,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000272,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010901,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000273,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010901,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000274,
+    "DisapperEventIds": [
+      1100101
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010901,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000275,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010901,
+    "NameStrKey": "ST:206947"
+  },
+  {
+    "ID": 1000401,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 12
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530601,
+    "Param2": 24530602,
+    "Param3": 161000035,
+    "Reward": 351420201,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550002701,
+    "DialogAfterId": 550002751,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:203941"
+  },
+  {
+    "ID": 1000402,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000233
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530601,
+    "Param2": 24530602,
+    "Param3": 161000036,
+    "Reward": 351420202,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550002801,
+    "DialogAfterId": 550002851,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:203942"
+  },
+  {
+    "ID": 1000403,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000223
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 12
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000037,
+    "Reward": 351420203,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550002901,
+    "DialogAfterId": 550002951,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:203943"
+  },
+  {
+    "ID": 1001101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003201,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 5,
+    "NameStrKey": "ST:204226"
+  },
+  {
+    "ID": 1001102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003301,
+    "Param2": 42050241,
+    "IsMaster": true,
+    "Reward": 351420003,
+    "CostDayPeriods": 2,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_migong.prefab",
+    "SortId": 6,
+    "NameStrKey": "ST:204227"
+  },
+  {
+    "ID": 1001103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003401,
+    "IsMaster": true,
+    "Reward": 351420001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 7,
+    "NameStrKey": "ST:204228"
+  },
+  {
+    "ID": 1001104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003501,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 8,
+    "NameStrKey": "ST:204229"
+  },
+  {
+    "ID": 1001105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003601,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 9,
+    "NameStrKey": "ST:209221"
+  },
+  {
+    "ID": 1001106,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10011051
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003701,
+    "IsMaster": true,
+    "CostDayPeriods": 2,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 11,
+    "NameStrKey": "ST:204231"
+  },
+  {
+    "ID": 1001107,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001106
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530400,
+    "Param2": 24530400,
+    "IsMaster": true,
+    "Reward": 351420103,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 550003801,
+    "DialogAfterId": 550003851,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 12,
+    "NameStrKey": "ST:204232"
+  },
+  {
+    "ID": 1001108,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001107
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003901,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 13,
+    "NameStrKey": "ST:204233"
+  },
+  {
+    "ID": 1001109,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001108
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000051,
+    "IsMaster": true,
+    "Reward": 351420402,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 550004001,
+    "DialogAfterId": 550004051,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_jingyingyulingshi.prefab",
+    "SortId": 14,
+    "NameStrKey": "ST:204234"
+  },
+  {
+    "ID": 1001211,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001106
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550004101,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203953"
+  },
+  {
+    "ID": 1001212,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001211
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550004201,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:203954"
+  },
+  {
+    "ID": 1001213,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001212
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 8
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550004301,
+    "CostDayPeriods": 2,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203955"
+  },
+  {
+    "ID": 1001214,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10012121
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001109
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 7
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550004401,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203956"
+  },
+  {
+    "ID": 1001232,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 130,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:203957"
+  },
+  {
+    "ID": 1001233,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 140,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:203958"
+  },
+  {
+    "ID": 1001234,
+    "DisapperEventIds": [
+      1001102
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010941,
+    "NameStrKey": "ST:206948"
+  },
+  {
+    "ID": 1001235,
+    "DisapperEventIds": [
+      1001109
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010941,
+    "NameStrKey": "ST:206949"
+  },
+  {
+    "ID": 1001236,
+    "DisapperEventIds": [
+      1001109
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010941,
+    "NameStrKey": "ST:207045"
+  },
+  {
+    "ID": 1001237,
+    "DisapperEventIds": [
+      1001109
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010941,
+    "NameStrKey": "ST:207046"
+  },
+  {
+    "ID": 1001401,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001109
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 7
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530603,
+    "Param2": 24530604,
+    "Param3": 161000038,
+    "Reward": 351420204,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550005001,
+    "DialogAfterId": 550005051,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208878"
+  },
+  {
+    "ID": 1001402,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001109
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000039,
+    "Reward": 351420205,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550005101,
+    "DialogAfterId": 550005151,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208879"
+  },
+  {
+    "ID": 1001403,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001213
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 8
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000040,
+    "Reward": 351420206,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550005201,
+    "DialogAfterId": 550005251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208880"
+  },
+  {
+    "ID": 1002101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530601,
+    "Param2": 24530602,
+    "Param3": 161000041,
+    "IsMaster": true,
+    "Reward": 351420207,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550005301,
+    "DialogAfterId": 550005351,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "SortId": 15,
+    "NameStrKey": "ST:204235"
+  },
+  {
+    "ID": 1002102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550005401,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 16,
+    "NameStrKey": "ST:204236"
+  },
+  {
+    "ID": 1002103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550005501,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 17,
+    "NameStrKey": "ST:204237"
+  },
+  {
+    "ID": 1002104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550005601,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 18,
+    "NameStrKey": "ST:204238"
+  },
+  {
+    "ID": 1002105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530603,
+    "Param2": 24530604,
+    "Param3": 161000052,
+    "IsMaster": true,
+    "Reward": 351420403,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 550005701,
+    "DialogAfterId": 550005901,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_jingyingyulingshi.prefab",
+    "SortId": 19,
+    "NameStrKey": "ST:204239"
+  },
+  {
+    "ID": 1002106,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002105
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530500,
+    "Param2": 24530500,
+    "IsMaster": true,
+    "Reward": 351420104,
+    "CostDayPeriods": 2,
+    "DialogAfterId": 550006001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 20,
+    "NameStrKey": "ST:204240"
+  },
+  {
+    "ID": 1002201,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550006301,
+    "Reward": 351420001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:203991"
+  },
+  {
+    "ID": 1002202,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550006401,
+    "Reward": 351420001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:203992"
+  },
+  {
+    "ID": 1002203,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002205
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550006501,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:203993"
+  },
+  {
+    "ID": 1002204,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550006601,
+    "Param2": 42030207,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_migong.prefab",
+    "NameStrKey": "ST:203994"
+  },
+  {
+    "ID": 1002205,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002201
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550006701,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203995"
+  },
+  {
+    "ID": 1002206,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550006801,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203996"
+  },
+  {
+    "ID": 1002207,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 150,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:203997"
+  },
+  {
+    "ID": 1002208,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 160,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:203998"
+  },
+  {
+    "ID": 1002209,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 170,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:203999"
+  },
+  {
+    "ID": 1002402,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530601,
+    "Param2": 24530602,
+    "Param3": 161000042,
+    "Reward": 351420208,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550006101,
+    "DialogAfterId": 550006151,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208881"
+  },
+  {
+    "ID": 1002403,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002106
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 8
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530601,
+    "Param2": 24530602,
+    "Param3": 161000043,
+    "Reward": 351420209,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550006201,
+    "DialogAfterId": 550006251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208882"
+  },
+  {
+    "ID": 1002404,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010601,
+    "Param2": 42050405,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550010601,
+    "DialogAfterId": 550010651,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204473"
+  },
+  {
+    "ID": 1002405,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002404
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleBoss",
+    "Param1": 24534003,
+    "Param2": 24534003,
+    "Reward": 351420601,
+    "CostDayPeriods": 1,
+    "DialogAfterId": 550010651,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster.prefab",
+    "NameStrKey": "ST:204473"
+  },
+  {
+    "ID": 1002406,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204473"
+  },
+  {
+    "ID": 1003101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550007201,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 21,
+    "NameStrKey": "ST:204241"
+  },
+  {
+    "ID": 1003102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550007301,
+    "IsMaster": true,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 22,
+    "NameStrKey": "ST:204242"
+  },
+  {
+    "ID": 1003103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 120,
+    "IsMaster": true,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "SortId": 23,
+    "NameStrKey": "ST:204243"
+  },
+  {
+    "ID": 1003104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530300,
+    "Param2": 24530300,
+    "IsMaster": true,
+    "Reward": 351420105,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 550007501,
+    "DialogAfterId": 550007601,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 24,
+    "NameStrKey": "ST:204244"
+  },
+  {
+    "ID": 1003105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530608,
+    "Param2": 24530608,
+    "Param3": 161000053,
+    "IsMaster": true,
+    "Reward": 351420404,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 550007701,
+    "DialogAfterId": 550007801,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_jingyingyulingshi.prefab",
+    "SortId": 25,
+    "NameStrKey": "ST:204245"
+  },
+  {
+    "ID": 1003211,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550007901,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204005"
+  },
+  {
+    "ID": 1003212,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003211
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204006"
+  },
+  {
+    "ID": 1003213,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003211
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204006"
+  },
+  {
+    "ID": 1003214,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003211
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008003,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204006"
+  },
+  {
+    "ID": 1003215,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003212
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003213
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003214
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008101,
+    "Reward": 351420003,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204007"
+  },
+  {
+    "ID": 1003221,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008201,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204008"
+  },
+  {
+    "ID": 1003222,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      10032221
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008301,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204009"
+  },
+  {
+    "ID": 1003223,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008401,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_migong.prefab",
+    "NameStrKey": "ST:204010"
+  },
+  {
+    "ID": 1003224,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008501,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204011"
+  },
+  {
+    "ID": 1003225,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008601,
+    "Reward": 351420001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:204012"
+  },
+  {
+    "ID": 1003401,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 7
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530601,
+    "Param2": 24530602,
+    "Param3": 161000044,
+    "Reward": 351420210,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550008701,
+    "DialogAfterId": 550008751,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208883"
+  },
+  {
+    "ID": 1003402,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003221
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530601,
+    "Param2": 24530602,
+    "Param3": 161000045,
+    "Reward": 351420211,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550008801,
+    "DialogAfterId": 550008851,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208884"
+  },
+  {
+    "ID": 1003403,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10032224
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 8
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000046,
+    "Reward": 351420212,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550008901,
+    "DialogAfterId": 550008951,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208885"
+  },
+  {
+    "ID": 1004101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009001,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 26,
+    "NameStrKey": "ST:204246"
+  },
+  {
+    "ID": 1004102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009101,
+    "IsMaster": true,
+    "Reward": 351420003,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 27,
+    "NameStrKey": "ST:204247"
+  },
+  {
+    "ID": 1004103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009201,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 28,
+    "NameStrKey": "ST:204248"
+  },
+  {
+    "ID": 1004104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009301,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 1004115,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10041048
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000054,
+    "IsMaster": true,
+    "Reward": 351420405,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 550009401,
+    "DialogAfterId": 550009501,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_jingyingyulingshi.prefab",
+    "SortId": 29,
+    "NameStrKey": "ST:204250"
+  },
+  {
+    "ID": 1004211,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009601,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204018"
+  },
+  {
+    "ID": 1004212,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004211
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009701,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204019"
+  },
+  {
+    "ID": 1004213,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004212
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009801,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204020"
+  },
+  {
+    "ID": 1004221,
+    "ActiveFixedTimeEvents": [
+      10042211
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009901,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 1004222,
+    "ActiveFixedTimeEvents": [
+      10042221
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009901,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 1004223,
+    "ActiveFixedTimeEvents": [
+      10042231
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009901,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 1004224,
+    "ActiveFixedTimeEvents": [
+      10042241
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009901,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 1004225,
+    "ActiveFixedTimeEvents": [
+      10042251
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009901,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 1004226,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042214
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042224
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042234
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042244
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042254
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010001,
+    "Reward": 351420003,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:204022"
+  },
+  {
+    "ID": 1004231,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010101,
+    "Reward": 351420001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:204023"
+  },
+  {
+    "ID": 1004232,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 180,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:204024"
+  },
+  {
+    "ID": 1004233,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 190,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:204025"
+  },
+  {
+    "ID": 1004401,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004213
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000047,
+    "Reward": 351420213,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550001201,
+    "DialogAfterId": 550001251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208886"
+  },
+  {
+    "ID": 1004402,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004115
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 7
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000048,
+    "Reward": 351420214,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550004701,
+    "DialogAfterId": 550004751,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208887"
+  },
+  {
+    "ID": 1004403,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004226
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 8
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530603,
+    "Param2": 24530604,
+    "Param3": 161000049,
+    "Reward": 351420215,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550004801,
+    "DialogAfterId": 550004851,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208888"
+  },
+  {
+    "ID": 1004404,
+    "DisapperEventIds": [
+      1001109,
+      1002105,
+      1003105,
+      1004115
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010701,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 1004405,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001109
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002105
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003105
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004115
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleBoss",
+    "Param1": 24534001,
+    "Param2": 24534001,
+    "Reward": 351420602,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 550010801,
+    "DialogAfterId": 550010851,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster.prefab",
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 1004406,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 1005401,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002106
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000058,
+    "Reward": 351432201,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 430020101,
+    "DialogAfterId": 430020151,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208887"
+  },
+  {
+    "ID": 1005402,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000059,
+    "Reward": 351432202,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 430020201,
+    "DialogAfterId": 430020251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:208888"
+  },
+  {
+    "ID": 1005404,
+    "DisapperEventIds": [
+      1003105
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 430020321,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:210879"
+  },
+  {
+    "ID": 1005405,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003105
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleBoss",
+    "Param1": 24534005,
+    "Param2": 24534005,
+    "Reward": 351432401,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 430020301,
+    "DialogAfterId": 430020351,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster.prefab",
+    "NameStrKey": "ST:210879"
+  },
+  {
+    "ID": 1005406,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:210879"
+  },
+  {
+    "ID": 1100100,
+    "DisapperEventIds": [
+      1100109
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 1100101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001109
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560000001,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 31,
+    "NameStrKey": "ST:216788"
+  },
+  {
+    "ID": 1100102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530600,
+    "Param2": 24530600,
+    "IsMaster": true,
+    "Reward": 351452612,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 560000101,
+    "DialogAfterId": 560000151,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 32,
+    "NameStrKey": "ST:215879"
+  },
+  {
+    "ID": 1100103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001021
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530700,
+    "Param2": 24530700,
+    "IsMaster": true,
+    "Reward": 351452613,
+    "CostDayPeriods": 1,
+    "DialogAfterId": 560000251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 34,
+    "NameStrKey": "ST:215880"
+  },
+  {
+    "ID": 1100104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560000301,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 35,
+    "NameStrKey": "ST:216789"
+  },
+  {
+    "ID": 1100105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101105
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102106
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103109
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560004001,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 71,
+    "NameStrKey": "ST:216792"
+  },
+  {
+    "ID": 1100106,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001051
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000209,
+    "IsMaster": true,
+    "Reward": 351458304,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560004201,
+    "DialogAfterId": 560004251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 73,
+    "NameStrKey": "ST:216794"
+  },
+  {
+    "ID": 1100107,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100106
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001071
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001072
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001073
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001074
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001075
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001076
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101102
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001109
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002105
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003105
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004115
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560004301,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 74,
+    "NameStrKey": "ST:216795"
+  },
+  {
+    "ID": 1100108,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100107
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleNormal",
+    "Param1": 24530800,
+    "Param2": 24530800,
+    "IsMaster": true,
+    "Reward": 351452614,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 560004401,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 75,
+    "NameStrKey": "ST:215881"
+  },
+  {
+    "ID": 1100109,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100108
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560004501,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 76,
+    "NameStrKey": "ST:216802"
+  },
+  {
+    "ID": 1100180,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Tranfer",
+    "Param1": 11,
+    "Param3": 10073
+  },
+  {
+    "ID": 1100190,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Tranfer",
+    "Param1": 10,
+    "Param3": 10073
+  },
+  {
+    "ID": 1100201,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008401,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216818"
+  },
+  {
+    "ID": 1100202,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100109
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560009001,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 77,
+    "NameStrKey": "ST:218181"
+  },
+  {
+    "ID": 1100401,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleBoss",
+    "Param1": 24530901,
+    "Param2": 24530901,
+    "Reward": 351458501,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 560012001,
+    "DialogAfterId": 560012051,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster.prefab",
+    "NameStrKey": "ST:204473"
+  },
+  {
+    "ID": 1100402,
+    "Area": 10,
+    "NameStrKey": "ST:204473"
+  },
+  {
+    "ID": 1100403,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204473"
+  },
+  {
+    "ID": 1100405,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560012101,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 1100406,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100405
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleBoss",
+    "Param1": 24530903,
+    "Param2": 24530903,
+    "Reward": 351458502,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 560012201,
+    "DialogAfterId": 560012251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/YunShanSeries/Common_ABS/Prefabs/Bubbles_Monster.prefab",
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 1100407,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100405
+      }
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 1100408,
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 1101101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560001001,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 41,
+    "NameStrKey": "ST:216803"
+  },
+  {
+    "ID": 1101102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101101
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000201,
+    "IsMaster": true,
+    "Reward": 351458102,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560001101,
+    "DialogAfterId": 560001151,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 42,
+    "NameStrKey": "ST:17737"
+  },
+  {
+    "ID": 1101103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101102
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560001201,
+    "Param2": 45020141,
+    "IsMaster": true,
+    "Reward": 351420001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 43,
+    "NameStrKey": "ST:216804"
+  },
+  {
+    "ID": 1101104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101103
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560001301,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 44,
+    "NameStrKey": "ST:216805"
+  },
+  {
+    "ID": 1101105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000210,
+    "IsMaster": true,
+    "Reward": 351458301,
+    "CostDayPeriods": 2,
+    "DialogBeforeId": 560001401,
+    "DialogAfterId": 560001451,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 45,
+    "NameStrKey": "ST:216806"
+  },
+  {
+    "ID": 1101201,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560007001,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216807"
+  },
+  {
+    "ID": 1101202,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101201
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560007101,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216808"
+  },
+  {
+    "ID": 1101203,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101202
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560007201,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216809"
+  },
+  {
+    "ID": 1101204,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101203
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560007301,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216810"
+  },
+  {
+    "ID": 1101205,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101204
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021022
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000203,
+    "IsMaster": true,
+    "Reward": 351458101,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560007401,
+    "DialogAfterId": 560007451,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:216811"
+  },
+  {
+    "ID": 1101211,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:216812"
+  },
+  {
+    "ID": 1101301,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101105
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560009501,
+    "Param2": 45090141,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216819"
+  },
+  {
+    "ID": 1101302,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 220,
+    "Param2": 10,
+    "Param3": 560009603,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:216820"
+  },
+  {
+    "ID": 1102101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002001,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 51,
+    "NameStrKey": "ST:216821"
+  },
+  {
+    "ID": 1102102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102101
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002101,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 52,
+    "NameStrKey": "ST:216822"
+  },
+  {
+    "ID": 1102103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002401,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 53,
+    "NameStrKey": "ST:216825"
+  },
+  {
+    "ID": 1102104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021042
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000207,
+    "IsMaster": true,
+    "Reward": 351458302,
+    "DialogBeforeId": 560002509,
+    "DialogAfterId": 560002551,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 56,
+    "NameStrKey": "ST:217858"
+  },
+  {
+    "ID": 1102105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002601,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 57,
+    "NameStrKey": "ST:216827"
+  },
+  {
+    "ID": 1102106,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102105
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002701,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 58,
+    "NameStrKey": "ST:216828"
+  },
+  {
+    "ID": 1102301,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_DayPeriod",
+        "P1": 12
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560010201,
+    "Param2": 45090241,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216829"
+  },
+  {
+    "ID": 1102302,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 250,
+    "Param2": 10,
+    "Param3": 560010303,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:216830"
+  },
+  {
+    "ID": 1102303,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102106
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 260,
+    "Param2": 10,
+    "Param3": 560010403,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216831"
+  },
+  {
+    "ID": 1102401,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000206,
+    "Reward": 351458103,
+    "DialogBeforeId": 560010001,
+    "DialogAfterId": 560010051,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:216832"
+  },
+  {
+    "ID": 1102402,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102401
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000202,
+    "Reward": 351458104,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560010101,
+    "DialogAfterId": 560010151,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:216833"
+  },
+  {
+    "ID": 1103101,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560003001,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 61,
+    "NameStrKey": "ST:216834"
+  },
+  {
+    "ID": 1103102,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103101
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560003101,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 62,
+    "NameStrKey": "ST:216835"
+  },
+  {
+    "ID": 1103103,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103102
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560003201,
+    "Param2": 45040142,
+    "IsMaster": true,
+    "Reward": 351420001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 63,
+    "NameStrKey": "ST:216836"
+  },
+  {
+    "ID": 1103104,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103103
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560003301,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 64,
+    "NameStrKey": "ST:216837"
+  },
+  {
+    "ID": 1103105,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560003401,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 65,
+    "NameStrKey": "ST:216838"
+  },
+  {
+    "ID": 1103106,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11031051
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000204,
+    "Reward": 351458105,
+    "DialogBeforeId": 560011101,
+    "DialogAfterId": 560011151,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:216840"
+  },
+  {
+    "ID": 1103107,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103106
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530605,
+    "Param2": 24530606,
+    "Param3": 161000205,
+    "Reward": 351458106,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560011201,
+    "DialogAfterId": 560011251,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_yulingshi.prefab",
+    "NameStrKey": "ST:216842"
+  },
+  {
+    "ID": 1103108,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103105
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560003601,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 68,
+    "NameStrKey": "ST:216843"
+  },
+  {
+    "ID": 1103109,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103108
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_BattleMonsterRefiner",
+    "Param1": 24530607,
+    "Param2": 24530607,
+    "Param3": 161000208,
+    "IsMaster": true,
+    "Reward": 351458303,
+    "DialogBeforeId": 560003701,
+    "DialogAfterId": 560003751,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 69,
+    "NameStrKey": "ST:216844"
+  },
+  {
+    "ID": 1103201,
+    "DisapperEventIds": [
+      11032011,
+      11032012,
+      11032013,
+      11032014
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008251,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216845"
+  },
+  {
+    "ID": 1103202,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 200,
+    "Param2": 10,
+    "Param3": 560008303,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:216846"
+  },
+  {
+    "ID": 1103203,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 230,
+    "Param2": 10,
+    "Param3": 560011303,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:216847"
+  },
+  {
+    "ID": 1103204,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560011401,
+    "Param2": 45090342,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216848"
+  },
+  {
+    "ID": 1103205,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008191,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216817"
+  },
+  {
+    "ID": 9999999,
+    "Area": 10
+  },
+  {
+    "ID": 10001011,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000101
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550001126,
+    "Reward": 351420101
+  },
+  {
+    "ID": 10001031,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_EnterHall",
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab"
+  },
+  {
+    "ID": 10001032,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10001031
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550001601
+  },
+  {
+    "ID": 10011051,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001105
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550003651,
+    "IsMaster": true,
+    "Reward": 351420001,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 10,
+    "NameStrKey": "ST:209222"
+  },
+  {
+    "ID": 10012121,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001212
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550004251,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:203954"
+  },
+  {
+    "ID": 10024051,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002404
+      }
+    ],
+    "DisapperEventIds": [
+      1002405
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204473"
+  },
+  {
+    "ID": 10031031,
+    "DisapperEventIds": [
+      1003103
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010941,
+    "NameStrKey": "ST:204243"
+  },
+  {
+    "ID": 10032111,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003211
+      }
+    ],
+    "DisapperEventIds": [
+      1003212,
+      1003213,
+      1003214
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010913,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 10032221,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003222
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 5
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008311,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204009"
+  },
+  {
+    "ID": 10032222,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10032221
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      10032223
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008304,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204009"
+  },
+  {
+    "ID": 10032223,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10032222
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 10
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008311,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204009"
+  },
+  {
+    "ID": 10032224,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10032223
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008321,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204009"
+  },
+  {
+    "ID": 10041011,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "DisapperEventIds": [
+      1004102
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010911
+  },
+  {
+    "ID": 10041012,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "DisapperEventIds": [
+      1004102
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 10041013,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1000104
+      }
+    ],
+    "DisapperEventIds": [
+      1004102
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 10041041,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004104
+      }
+    ],
+    "DisapperEventIds": [
+      10041048
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10041042,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004104
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009311,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10041043,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10041042
+      }
+    ],
+    "DisapperEventIds": [
+      10041048
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10041044,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10041042
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009321,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10041045,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10041044
+      }
+    ],
+    "DisapperEventIds": [
+      10041048
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10041046,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10041044
+      }
+    ],
+    "DisapperEventIds": [
+      10041048
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009321,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10041047,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10041046
+      }
+    ],
+    "DisapperEventIds": [
+      10041048
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009321,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10041048,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10041044
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009331,
+    "Reward": 351420003,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204249"
+  },
+  {
+    "ID": 10042211,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004221
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 5
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042212,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042211
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      10042213
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009911,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042213,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042212
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 10
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042214,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042213
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009921,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042215,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042214
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009923,
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042221,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004222
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 5
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042222,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042221
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      10042223
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009911,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042223,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042222
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 10
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042224,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042223
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009921,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042225,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042224
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009923,
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042231,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004223
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 5
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042232,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042231
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      10042233
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009911,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042233,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042232
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 10
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042234,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042233
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009921,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042235,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042234
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009923,
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042241,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004224
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 5
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042242,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042241
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      10042243
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009911,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042243,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042242
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 10
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042244,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042243
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009921,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042245,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042244
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009923,
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042251,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004225
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 5
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042252,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042251
+      }
+    ],
+    "ActiveFixedTimeEvents": [
+      10042253
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009911,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042253,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042252
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_FixedTime",
+        "P1": 10
+      }
+    ],
+    "IsFinishAfterFixedTime": true,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550008312,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042254,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042253
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009921,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042255,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 10042254
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550009923,
+    "NameStrKey": "ST:204021"
+  },
+  {
+    "ID": 10042261,
+    "DisapperEventIds": [
+      10042214,
+      10042224,
+      10042234,
+      10042244,
+      10042254
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 550010912,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 10044051,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004404
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1001109
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1002105
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003105
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1004115
+      }
+    ],
+    "DisapperEventIds": [
+      1004405
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:204474"
+  },
+  {
+    "ID": 10054051,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1003105
+      }
+    ],
+    "DisapperEventIds": [
+      1005405
+    ],
+    "Area": 10,
+    "NameStrKey": "ST:210879"
+  },
+  {
+    "ID": 11001021,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100102
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560000201,
+    "IsMaster": true,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 33,
+    "NameStrKey": "ST:217042"
+  },
+  {
+    "ID": 11001041,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "DisapperEventIds": [
+      11001042
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560000401,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:216790"
+  },
+  {
+    "ID": 11001042,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100104
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560000501,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 36,
+    "NameStrKey": "ST:216791"
+  },
+  {
+    "ID": 11001051,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100105
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560004101,
+    "IsMaster": true,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 72,
+    "NameStrKey": "ST:216793"
+  },
+  {
+    "ID": 11001071,
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560006001,
+    "NameStrKey": "ST:216796"
+  },
+  {
+    "ID": 11001072,
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560006101,
+    "NameStrKey": "ST:216797"
+  },
+  {
+    "ID": 11001073,
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560006201,
+    "NameStrKey": "ST:216798"
+  },
+  {
+    "ID": 11001074,
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560006301,
+    "NameStrKey": "ST:216799"
+  },
+  {
+    "ID": 11001075,
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560006401,
+    "NameStrKey": "ST:216800"
+  },
+  {
+    "ID": 11001076,
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560006501,
+    "NameStrKey": "ST:216801"
+  },
+  {
+    "ID": 11001079,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100106
+      }
+    ],
+    "DisapperEventIds": [
+      11001071,
+      11001072,
+      11001073,
+      11001074,
+      11001075,
+      11001076,
+      1101102,
+      1001109,
+      1002105,
+      1003105,
+      1004115
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560004351,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 11001081,
+    "DisapperEventIds": [
+      1100107
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11002011,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100201
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008421,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 11002012,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100201
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008441,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 11002013,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1100201
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008461,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab"
+  },
+  {
+    "ID": 11002014,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11002011
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11002012
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11002013
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 210,
+    "Param2": 10,
+    "Param3": 560008483,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:216818"
+  },
+  {
+    "ID": 11011021,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101102
+      }
+    ],
+    "DisapperEventIds": [
+      1101103
+    ],
+    "Area": 11,
+    "NameStrKey": "ST:217725"
+  },
+  {
+    "ID": 11012111,
+    "DisapperEventIds": [
+      11012115
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Tranfer",
+    "Param1": 10,
+    "Param2": 1,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560008021,
+    "NameStrKey": "ST:216813"
+  },
+  {
+    "ID": 11012112,
+    "DisapperEventIds": [
+      11012115
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Tranfer",
+    "Param1": 10,
+    "Param2": 1,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560008021,
+    "NameStrKey": "ST:216814"
+  },
+  {
+    "ID": 11012113,
+    "DisapperEventIds": [
+      11012115
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Tranfer",
+    "Param1": 10,
+    "Param2": 1,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560008021,
+    "NameStrKey": "ST:216815"
+  },
+  {
+    "ID": 11012114,
+    "DisapperEventIds": [
+      11012115
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Tranfer",
+    "Param1": 10,
+    "Param2": 1,
+    "CostDayPeriods": 1,
+    "DialogBeforeId": 560008021,
+    "NameStrKey": "ST:216816"
+  },
+  {
+    "ID": 11012115,
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008041,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab",
+    "NameStrKey": "ST:22048"
+  },
+  {
+    "ID": 11021021,
+    "DisapperEventIds": [
+      1101205
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021022,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102102
+      }
+    ],
+    "DisapperEventIds": [
+      1101205
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002201,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:216823"
+  },
+  {
+    "ID": 11021023,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101205
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021024,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1101205
+      }
+    ],
+    "DisapperEventIds": [
+      1102103
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002301,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:216824"
+  },
+  {
+    "ID": 11021031,
+    "DisapperEventIds": [
+      11021037
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021032,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021037
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021033,
+    "DisapperEventIds": [
+      11021038
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021034,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021038
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021035,
+    "DisapperEventIds": [
+      11021039
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021036,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021039
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11021037,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002421,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab"
+  },
+  {
+    "ID": 11021038,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002421,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab"
+  },
+  {
+    "ID": 11021039,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1102103
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002421,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab"
+  },
+  {
+    "ID": 11021041,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021037
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021038
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021039
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002481,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab"
+  },
+  {
+    "ID": 11021042,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11021041
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560002501,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_MainMission.prefab",
+    "SortId": 54,
+    "NameStrKey": "ST:216826"
+  },
+  {
+    "ID": 11031051,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11001042
+      }
+    ],
+    "DisapperEventIds": [
+      1103106
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560003501,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:216839"
+  },
+  {
+    "ID": 11031052,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103106
+      }
+    ],
+    "DisapperEventIds": [
+      9999999
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11031053,
+    "DisapperEventIds": [
+      1103106
+    ],
+    "Area": 10
+  },
+  {
+    "ID": 11031061,
+    "DisapperEventIds": [
+      11031051
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560011001,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab",
+    "NameStrKey": "ST:216841"
+  },
+  {
+    "ID": 11032011,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103201
+      }
+    ],
+    "DisapperEventIds": [
+      11032015
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008201,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216845"
+  },
+  {
+    "ID": 11032012,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103201
+      }
+    ],
+    "DisapperEventIds": [
+      11032015
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008202,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216845"
+  },
+  {
+    "ID": 11032013,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103201
+      }
+    ],
+    "DisapperEventIds": [
+      11032015
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008203,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216845"
+  },
+  {
+    "ID": 11032014,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103201
+      }
+    ],
+    "DisapperEventIds": [
+      11032015
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008204,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_SubMission.prefab",
+    "NameStrKey": "ST:216845"
+  },
+  {
+    "ID": 11032015,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032011
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032012
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032013
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032014
+      }
+    ],
+    "Area": 10,
+    "TriggerType": "SouShenExploreEventTriggerType_Puzzle",
+    "Param1": 240,
+    "Param2": 10,
+    "Param3": 560008253,
+    "Reward": 351420002,
+    "CostDayPeriods": 1,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_shibei.prefab",
+    "NameStrKey": "ST:216845"
+  },
+  {
+    "ID": 11032051,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103205
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008121,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 11032052,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103205
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008121,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 11032053,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103205
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008141,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 11032054,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103205
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008161,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 11032055,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 1103205
+      }
+    ],
+    "DisapperEventIds": [
+      11032051,
+      11032052,
+      11032053,
+      11032054
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008191,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_Talk.prefab"
+  },
+  {
+    "ID": 11032056,
+    "UnlockConditions": [
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032051
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032052
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032053
+      },
+      {
+        "Type": "SouShenExploreEventUnlockType_PreEvent",
+        "P1": 11032054
+      }
+    ],
+    "Area": 11,
+    "TriggerType": "SouShenExploreEventTriggerType_Dialogue",
+    "Param1": 560008181,
+    "Reward": 351420002,
+    "BubbleResPath": "Assets/GameProject/RuntimeAssets/Scenes/SouShenSeries/Common_ABS/Prefabs/Bubbles_baoxiang.prefab"
+  }
+]

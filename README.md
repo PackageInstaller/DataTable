@@ -34,3 +34,4 @@
 |   TaimaninSquad   |  对魔忍特遣队  |           国际服 Json           |
 |    SakunaHinuka    |    天穗手游    |            日服 Json            |
 |  RlyehShoujotaiX  |      邪神      |            Dmm Json            |
+|  KalpaOfUniverse  |     天地劫     |            国服 Json            |

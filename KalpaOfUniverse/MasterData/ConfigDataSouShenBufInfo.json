@@ -1,0 +1,890 @@
+[
+  {
+    "ID": 1,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 2,
+    "P3": 5000,
+    "TriggerCount": 1,
+    "NameStrKey": "ST:202280"
+  },
+  {
+    "ID": 2,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 1,
+    "P6": 1,
+    "ActiveConds": [
+      1
+    ],
+    "NameStrKey": "ST:202281"
+  },
+  {
+    "ID": 3,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1000
+    ],
+    "TriggerConds": [
+      3
+    ],
+    "NameStrKey": "ST:202700"
+  },
+  {
+    "ID": 4,
+    "BufType": "SouShenBufType_AttachCardBufToSelf",
+    "P1": 9,
+    "TriggerConds": [
+      2
+    ],
+    "NameStrKey": "ST:203907"
+  },
+  {
+    "ID": 5,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -1,
+    "ActiveConds": [
+      2
+    ],
+    "NameStrKey": "ST:202702"
+  },
+  {
+    "ID": 6,
+    "BufType": "SouShenBufType_CopyOpponentPlayedCardIntoHand",
+    "P1": 3,
+    "TriggerConds": [
+      6
+    ],
+    "NameStrKey": "ST:202704"
+  },
+  {
+    "ID": 7,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1
+    ],
+    "TriggerConds": [
+      4
+    ],
+    "NameStrKey": "ST:202705"
+  },
+  {
+    "ID": 8,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 3,
+    "P3": 2,
+    "TriggerCount": 1,
+    "NameStrKey": "ST:202706"
+  },
+  {
+    "ID": 9,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -1,
+    "P5": [
+      1
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:203908"
+  },
+  {
+    "ID": 21,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      21
+    ],
+    "TriggerConds": [
+      4
+    ],
+    "NameStrKey": "ST:203285"
+  },
+  {
+    "ID": 22,
+    "BufType": "SouShenBufType_GetEmptyManaCrystal",
+    "P1": 1,
+    "TriggerConds": [
+      5
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:203470"
+  },
+  {
+    "ID": 404409,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1
+    ],
+    "TriggerConds": [
+      7
+    ],
+    "NameStrKey": "ST:213252"
+  },
+  {
+    "ID": 404410,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1
+    ],
+    "TriggerConds": [
+      7
+    ],
+    "NameStrKey": "ST:213252"
+  },
+  {
+    "ID": 404411,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 1,
+    "NameStrKey": "ST:214335"
+  },
+  {
+    "ID": 404412,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 2,
+    "NameStrKey": "ST:214336"
+  },
+  {
+    "ID": 404413,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 3,
+    "NameStrKey": "ST:214337"
+  },
+  {
+    "ID": 404490,
+    "BufType": "SouShenBufType_AttachBufToCardOrTrigger",
+    "P1": 404491,
+    "TriggerConds": [
+      21
+    ],
+    "NameStrKey": "ST:214702"
+  },
+  {
+    "ID": 404491,
+    "BufType": "SouShenBufType_AccumCardCostFix",
+    "P1": -1,
+    "DetachConds": [
+      4,
+      22
+    ],
+    "NameStrKey": "ST:214703"
+  },
+  {
+    "ID": 404509,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1
+    ],
+    "TriggerConds": [
+      7
+    ],
+    "NameStrKey": "ST:215642"
+  },
+  {
+    "ID": 420000,
+    "BufType": "SouShenBufType_GetEmptyManaCrystal",
+    "P1": 1,
+    "TriggerConds": [
+      5
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:203825"
+  },
+  {
+    "ID": 420001,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 1,
+    "P5": [
+      3
+    ],
+    "DetachConds": [
+      4
+    ],
+    "NameStrKey": "ST:207509"
+  },
+  {
+    "ID": 420002,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 3,
+    "P3": 2,
+    "P5": [
+      1,
+      2
+    ],
+    "DetachConds": [
+      1,
+      2
+    ],
+    "NameStrKey": "ST:203827"
+  },
+  {
+    "ID": 420003,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420050
+    ],
+    "TriggerConds": [
+      4
+    ],
+    "NameStrKey": "ST:203828"
+  },
+  {
+    "ID": 420004,
+    "BufType": "SouShenBufType_CopyOpponentPlayedCardIntoHand",
+    "P1": 3,
+    "TriggerConds": [
+      6
+    ],
+    "NameStrKey": "ST:203899"
+  },
+  {
+    "ID": 420005,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420003
+    ],
+    "TriggerConds": [
+      3
+    ],
+    "NameStrKey": "ST:203898"
+  },
+  {
+    "ID": 420006,
+    "BufType": "SouShenBufType_AttachCardBufToSelf",
+    "P1": 420007,
+    "TriggerConds": [
+      2
+    ],
+    "NameStrKey": "ST:203900"
+  },
+  {
+    "ID": 420007,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -1,
+    "P5": [
+      1
+    ],
+    "DetachConds": [
+      1
+    ],
+    "NameStrKey": "ST:203901"
+  },
+  {
+    "ID": 420008,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -1,
+    "ActiveConds": [
+      2
+    ],
+    "NameStrKey": "ST:202702"
+  },
+  {
+    "ID": 420009,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 1,
+    "P6": 1,
+    "ActiveConds": [
+      1
+    ],
+    "NameStrKey": "ST:202281"
+  },
+  {
+    "ID": 420010,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1
+    ],
+    "TriggerConds": [
+      4
+    ],
+    "NameStrKey": "ST:203902"
+  },
+  {
+    "ID": 420011,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420092
+    ],
+    "TriggerConds": [
+      5
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:204372"
+  },
+  {
+    "ID": 420012,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420093
+    ],
+    "NameStrKey": "ST:204373"
+  },
+  {
+    "ID": 420013,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420094
+    ],
+    "NameStrKey": "ST:204374"
+  },
+  {
+    "ID": 421014,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -1,
+    "P5": [
+      3
+    ],
+    "NameStrKey": "ST:207342"
+  },
+  {
+    "ID": 421019,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1
+    ],
+    "TriggerConds": [
+      7
+    ],
+    "NameStrKey": "ST:207343"
+  },
+  {
+    "ID": 421020,
+    "BufType": "SouShenBufType_DrawCardWhenFriendlyActorDoubleOrChaseAttack",
+    "P1": 1,
+    "TriggerConds": [
+      10
+    ],
+    "NameStrKey": "ST:210880"
+  },
+  {
+    "ID": 421201,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      421201
+    ],
+    "TriggerConds": [
+      7
+    ],
+    "NameStrKey": "ST:208662"
+  },
+  {
+    "ID": 422007,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      1
+    ],
+    "TriggerConds": [
+      7
+    ],
+    "NameStrKey": "ST:211658"
+  },
+  {
+    "ID": 440000,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440001
+    ],
+    "TriggerConds": [
+      11
+    ],
+    "TriggerCount": 1,
+    "ActiveConds": [
+      3
+    ],
+    "IsUnique": 1,
+    "NameStrKey": "ST:211935"
+  },
+  {
+    "ID": 440001,
+    "BufType": "SouShenBufType_Deathrattle",
+    "P1": 440017,
+    "NameStrKey": "ST:211862"
+  },
+  {
+    "ID": 440002,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 1,
+    "NameStrKey": "ST:211863"
+  },
+  {
+    "ID": 440003,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -1,
+    "P4": 1,
+    "P5": [
+      50043002,
+      50044000,
+      50044008,
+      50044009,
+      50044001,
+      50044002,
+      50044013,
+      50044014,
+      50044041,
+      50044042,
+      50044043,
+      50044044
+    ],
+    "NameStrKey": "ST:214777"
+  },
+  {
+    "ID": 440004,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -2,
+    "P4": 1,
+    "P5": [
+      50043002,
+      50044000,
+      50044008,
+      50044009,
+      50044001,
+      50044002,
+      50044013,
+      50044014,
+      50044041,
+      50044042,
+      50044043,
+      50044044
+    ],
+    "IsUnique": 1,
+    "NameStrKey": "ST:214778"
+  },
+  {
+    "ID": 440005,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440020,
+      440078
+    ],
+    "TriggerConds": [
+      11
+    ],
+    "TriggerCount": 1,
+    "ActiveConds": [
+      3
+    ],
+    "IsUnique": 1,
+    "NameStrKey": "ST:211938"
+  },
+  {
+    "ID": 440006,
+    "BufType": "SouShenBufType_GetEmptyManaCrystal",
+    "P1": 1,
+    "TriggerConds": [
+      4
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:212238"
+  },
+  {
+    "ID": 440007,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440038
+    ],
+    "TriggerConds": [
+      12
+    ],
+    "NameStrKey": "ST:212178"
+  },
+  {
+    "ID": 440008,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440039
+    ],
+    "TriggerConds": [
+      4
+    ],
+    "ActiveConds": [
+      4,
+      6
+    ],
+    "NameStrKey": "ST:212239"
+  },
+  {
+    "ID": 440009,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440040
+    ],
+    "TriggerConds": [
+      14
+    ],
+    "NameStrKey": "ST:212240"
+  },
+  {
+    "ID": 440010,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420003
+    ],
+    "TriggerConds": [
+      14
+    ],
+    "NameStrKey": "ST:212241"
+  },
+  {
+    "ID": 440011,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420004
+    ],
+    "TriggerConds": [
+      15
+    ],
+    "NameStrKey": "ST:212242"
+  },
+  {
+    "ID": 440012,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440041
+    ],
+    "TriggerConds": [
+      15
+    ],
+    "NameStrKey": "ST:212243"
+  },
+  {
+    "ID": 440013,
+    "BufType": "SouShenBufType_GetEmptyManaCrystal",
+    "P1": 1,
+    "TriggerConds": [
+      5
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:212244"
+  },
+  {
+    "ID": 440014,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      420003
+    ],
+    "TriggerConds": [
+      12
+    ],
+    "ActiveConds": [
+      5
+    ],
+    "NameStrKey": "ST:214334"
+  },
+  {
+    "ID": 440015,
+    "BufType": "SouShenBufType_AttachCardBufToSelf",
+    "P1": 440016,
+    "TriggerConds": [
+      16
+    ],
+    "NameStrKey": "ST:212245"
+  },
+  {
+    "ID": 440016,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 3,
+    "P5": [
+      3
+    ],
+    "DetachConds": [
+      12
+    ],
+    "NameStrKey": "ST:212246"
+  },
+  {
+    "ID": 440017,
+    "BufType": "SouShenBufType_GetEmptyManaCrystal",
+    "P1": 2,
+    "TriggerConds": [
+      5
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:212247"
+  },
+  {
+    "ID": 440018,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": -1,
+    "P5": [
+      3
+    ],
+    "NameStrKey": "ST:212248"
+  },
+  {
+    "ID": 440019,
+    "BufType": "SouShenBufType_FixSelfCardCost",
+    "P1": -1,
+    "TriggerConds": [
+      17
+    ],
+    "NameStrKey": "ST:212494"
+  },
+  {
+    "ID": 440020,
+    "BufType": "SouShenBufType_FixSelfCardCost",
+    "P1": -1,
+    "TriggerConds": [
+      17
+    ],
+    "NameStrKey": "ST:212495"
+  },
+  {
+    "ID": 440021,
+    "BufType": "SouShenBufType_FixSelfCardCost",
+    "P1": -1,
+    "TriggerConds": [
+      17
+    ],
+    "NameStrKey": "ST:212496"
+  },
+  {
+    "ID": 440022,
+    "BufType": "SouShenBufType_GetEmptyManaCrystal",
+    "P1": 1,
+    "TriggerConds": [
+      5
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:212497"
+  },
+  {
+    "ID": 440023,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440075
+    ],
+    "TriggerConds": [
+      5
+    ],
+    "NameStrKey": "ST:212498"
+  },
+  {
+    "ID": 440024,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440054
+    ],
+    "TriggerConds": [
+      18
+    ],
+    "NameStrKey": "ST:212499"
+  },
+  {
+    "ID": 440025,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440054,
+      440055
+    ],
+    "TriggerConds": [
+      18
+    ],
+    "NameStrKey": "ST:212500"
+  },
+  {
+    "ID": 440026,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440056
+    ],
+    "TriggerConds": [
+      12
+    ],
+    "NameStrKey": "ST:212501"
+  },
+  {
+    "ID": 440027,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440057
+    ],
+    "TriggerConds": [
+      5
+    ],
+    "NameStrKey": "ST:212502"
+  },
+  {
+    "ID": 440028,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440058
+    ],
+    "TriggerConds": [
+      5
+    ],
+    "TriggerCount": 1,
+    "NameStrKey": "ST:212503"
+  },
+  {
+    "ID": 440029,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440059
+    ],
+    "TriggerConds": [
+      15
+    ],
+    "NameStrKey": "ST:212504"
+  },
+  {
+    "ID": 440030,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440060
+    ],
+    "TriggerConds": [
+      19
+    ],
+    "NameStrKey": "ST:212505"
+  },
+  {
+    "ID": 440031,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440050
+    ],
+    "TriggerConds": [
+      5
+    ],
+    "NameStrKey": "ST:212479"
+  },
+  {
+    "ID": 440032,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440067
+    ],
+    "TriggerConds": [
+      13
+    ],
+    "NameStrKey": "ST:213982"
+  },
+  {
+    "ID": 440033,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440074
+    ],
+    "TriggerConds": [
+      5
+    ],
+    "NameStrKey": "ST:213983"
+  },
+  {
+    "ID": 440034,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440068
+    ],
+    "TriggerConds": [
+      20
+    ],
+    "NameStrKey": "ST:213984"
+  },
+  {
+    "ID": 440035,
+    "BufType": "SouShenBufType_NumericalFix",
+    "P1": 1,
+    "P2": 1,
+    "P3": 1,
+    "P5": [
+      1
+    ],
+    "NameStrKey": "ST:212506"
+  },
+  {
+    "ID": 440036,
+    "BufType": "SouShenBufType_FixSelfCardCost",
+    "P1": -1,
+    "TriggerConds": [
+      16
+    ],
+    "NameStrKey": "ST:212496"
+  },
+  {
+    "ID": 440037,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      440077
+    ],
+    "TriggerConds": [
+      7
+    ],
+    "IsUnique": 1,
+    "NameStrKey": "ST:215196"
+  },
+  {
+    "ID": 450000,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      450001
+    ],
+    "TriggerConds": [
+      24
+    ],
+    "NameStrKey": "ST:216849"
+  },
+  {
+    "ID": 450001,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      450006
+    ],
+    "TriggerConds": [
+      14
+    ],
+    "NameStrKey": "ST:216850"
+  },
+  {
+    "ID": 450002,
+    "BufType": "SouShenBufType_TriggerEffect",
+    "P5": [
+      450008,
+      450009
+    ],
+    "TriggerConds": [
+      23
+    ],
+    "NameStrKey": "ST:216851"
+  },
+  {
+    "ID": 500001,
+    "BufType": "SouShenBufType_PutRandomCardToHandBySamePlayCardCostAndSetCost",
+    "P1": 1,
+    "P2": 3,
+    "TriggerConds": [
+      1,
+      2
+    ],
+    "NameStrKey": "ST:209961"
+  }
+]

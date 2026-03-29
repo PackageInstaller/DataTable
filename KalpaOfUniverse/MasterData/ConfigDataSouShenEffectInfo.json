@@ -1,0 +1,1852 @@
+[
+  {
+    "ID": 1,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 2,
+    "EffectType": "SouShenEffectType_AttachActorBuf",
+    "P1": 9999
+  },
+  {
+    "ID": 3,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 999999100
+  },
+  {
+    "ID": 4,
+    "EffectType": "SouShenEffectType_Discover",
+    "P2": 420004,
+    "P3": 3
+  },
+  {
+    "ID": 20,
+    "EffectType": "SouShenEffectType_TakeOpponentHandCardByMaxCostAndPutIntoLib"
+  },
+  {
+    "ID": 21,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 21,
+    "P2": 1
+  },
+  {
+    "ID": 22,
+    "EffectType": "SouShenEffectType_PutCardIntoLib",
+    "P1": 21,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 23,
+    "EffectType": "SouShenEffectType_MonsterPouch"
+  },
+  {
+    "ID": 24,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -3,
+    "P3": 2,
+    "P4": 3,
+    "P6": 2
+  },
+  {
+    "ID": 25,
+    "EffectType": "SouShenEffectType_MinionDissuade"
+  },
+  {
+    "ID": 26,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 8
+  },
+  {
+    "ID": 221,
+    "EffectType": "SouShenEffectType_RandomCopyCardFromDeck",
+    "P1": 1,
+    "P2": 1,
+    "P3": 3
+  },
+  {
+    "ID": 222,
+    "EffectType": "SouShenEffectType_RandomCopyCardFromDeck",
+    "P1": 1,
+    "P2": 1,
+    "P3": 2
+  },
+  {
+    "ID": 223,
+    "EffectType": "SouShenEffectType_RandomCopyCardFromAll",
+    "P1": 1,
+    "P2": 2
+  },
+  {
+    "ID": 224,
+    "EffectType": "SouShenEffectType_RedrawAllHandCard"
+  },
+  {
+    "ID": 225,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 999999100
+  },
+  {
+    "ID": 226,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 999999100,
+    "P2": 4,
+    "P4": 2226,
+    "P5": 1,
+    "P6": 1
+  },
+  {
+    "ID": 227,
+    "EffectType": "SouShenEffectType_CopyActorWithCost",
+    "P1": 2
+  },
+  {
+    "ID": 1000,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 2233,
+    "P2": 1
+  },
+  {
+    "ID": 1001,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 2,
+    "P2": 1
+  },
+  {
+    "ID": 404401,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004401
+  },
+  {
+    "ID": 404402,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004402
+  },
+  {
+    "ID": 404403,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 51044001,
+    "P2": 1
+  },
+  {
+    "ID": 404404,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 51044001,
+    "P2": 1
+  },
+  {
+    "ID": 404405,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004405
+  },
+  {
+    "ID": 404406,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004406
+  },
+  {
+    "ID": 404407,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004407
+  },
+  {
+    "ID": 404408,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004408
+  },
+  {
+    "ID": 404409,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004409
+  },
+  {
+    "ID": 404410,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004410
+  },
+  {
+    "ID": 404411,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004411
+  },
+  {
+    "ID": 404412,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004412
+  },
+  {
+    "ID": 404501,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004501
+  },
+  {
+    "ID": 404502,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004502
+  },
+  {
+    "ID": 404503,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004503
+  },
+  {
+    "ID": 404504,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004504
+  },
+  {
+    "ID": 404505,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004505
+  },
+  {
+    "ID": 404506,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004506
+  },
+  {
+    "ID": 404507,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004507
+  },
+  {
+    "ID": 404508,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004508
+  },
+  {
+    "ID": 404509,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004509
+  },
+  {
+    "ID": 404510,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800004510
+  },
+  {
+    "ID": 420000,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420000
+  },
+  {
+    "ID": 420001,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420001
+  },
+  {
+    "ID": 420002,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420002
+  },
+  {
+    "ID": 420003,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042000,
+    "P2": 1
+  },
+  {
+    "ID": 420004,
+    "EffectType": "SouShenEffectType_AddManaPoint",
+    "P1": 1
+  },
+  {
+    "ID": 420005,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420006
+  },
+  {
+    "ID": 420006,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420007
+  },
+  {
+    "ID": 420007,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800420007,
+    "P2": 4,
+    "P4": 50042003,
+    "P5": 1
+  },
+  {
+    "ID": 420008,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042003,
+    "P2": 1
+  },
+  {
+    "ID": 420009,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420008
+  },
+  {
+    "ID": 420010,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420009
+  },
+  {
+    "ID": 420011,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420010
+  },
+  {
+    "ID": 420012,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800420010,
+    "P2": 4,
+    "P4": 50042007,
+    "P5": 1
+  },
+  {
+    "ID": 420013,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042007,
+    "P2": 1
+  },
+  {
+    "ID": 420014,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420011
+  },
+  {
+    "ID": 420015,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800420011,
+    "P2": 1,
+    "P4": 50042009,
+    "P5": 1
+  },
+  {
+    "ID": 420016,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042009,
+    "P2": 1
+  },
+  {
+    "ID": 420017,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420012
+  },
+  {
+    "ID": 420018,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420013
+  },
+  {
+    "ID": 420019,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420014
+  },
+  {
+    "ID": 420020,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420015
+  },
+  {
+    "ID": 420021,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420016
+  },
+  {
+    "ID": 420022,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420017
+  },
+  {
+    "ID": 420023,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 40042026,
+    "P2": 2
+  },
+  {
+    "ID": 420024,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420019
+  },
+  {
+    "ID": 420025,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 420026,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420020
+  },
+  {
+    "ID": 420027,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420021
+  },
+  {
+    "ID": 420028,
+    "EffectType": "SouShenEffectType_CopyActorWithCost",
+    "P1": 2
+  },
+  {
+    "ID": 420029,
+    "EffectType": "SouShenEffectType_RandomCopyCardFromDeck",
+    "P1": 1,
+    "P2": 1,
+    "P3": 3
+  },
+  {
+    "ID": 420030,
+    "EffectType": "SouShenEffectType_RandomCopyCardFromDeck",
+    "P1": 1,
+    "P2": 1,
+    "P3": 2
+  },
+  {
+    "ID": 420031,
+    "EffectType": "SouShenEffectType_RandomCopyCardFromAll",
+    "P1": 1,
+    "P2": 3
+  },
+  {
+    "ID": 420032,
+    "EffectType": "SouShenEffectType_RandomCopyCardFromAll",
+    "P1": 1,
+    "P2": 2
+  },
+  {
+    "ID": 420033,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420022
+  },
+  {
+    "ID": 420034,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 420035,
+    "EffectType": "SouShenEffectType_RedrawAllHandCard"
+  },
+  {
+    "ID": 420036,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 420037,
+    "EffectType": "SouShenEffectType_PutCardIntoLib",
+    "P1": 50042027,
+    "P2": 1
+  },
+  {
+    "ID": 420038,
+    "EffectType": "SouShenEffectType_SpecifyDrawCard",
+    "P1": 1,
+    "P2": 2,
+    "P4": 2
+  },
+  {
+    "ID": 420039,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P3": 1,
+    "P4": 2,
+    "P6": 1
+  },
+  {
+    "ID": 420040,
+    "EffectType": "SouShenEffectType_SpecifyDrawCard",
+    "P1": 1,
+    "P2": 3,
+    "P4": 2
+  },
+  {
+    "ID": 420041,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P3": 1,
+    "P4": 3,
+    "P6": 1
+  },
+  {
+    "ID": 420042,
+    "EffectType": "SouShenEffectType_AddManaPoint",
+    "P1": 2
+  },
+  {
+    "ID": 420043,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 420000,
+    "P2": 1
+  },
+  {
+    "ID": 420044,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 420001,
+    "P2": 1
+  },
+  {
+    "ID": 420045,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 420002
+  },
+  {
+    "ID": 420046,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -3,
+    "P3": 2,
+    "P4": 1,
+    "P6": 2
+  },
+  {
+    "ID": 420047,
+    "EffectType": "SouShenEffectType_MinionDissuade"
+  },
+  {
+    "ID": 420048,
+    "EffectType": "SouShenEffectType_TakeOpponentHandCardByMaxCostAndPutIntoLib"
+  },
+  {
+    "ID": 420049,
+    "EffectType": "SouShenEffectType_PutCardIntoLib",
+    "P1": 50042037,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 420050,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042037,
+    "P2": 1
+  },
+  {
+    "ID": 420051,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420023
+  },
+  {
+    "ID": 420052,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420024
+  },
+  {
+    "ID": 420053,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420025
+  },
+  {
+    "ID": 420054,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420026
+  },
+  {
+    "ID": 420055,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420027
+  },
+  {
+    "ID": 420056,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420028
+  },
+  {
+    "ID": 420057,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420029
+  },
+  {
+    "ID": 420058,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420030
+  },
+  {
+    "ID": 420059,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420031
+  },
+  {
+    "ID": 420060,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420003
+  },
+  {
+    "ID": 420061,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420032
+  },
+  {
+    "ID": 420062,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420033
+  },
+  {
+    "ID": 420063,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420034
+  },
+  {
+    "ID": 420064,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420035
+  },
+  {
+    "ID": 420065,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420036
+  },
+  {
+    "ID": 420066,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420037
+  },
+  {
+    "ID": 420067,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420038
+  },
+  {
+    "ID": 420068,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420039
+  },
+  {
+    "ID": 420069,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420040
+  },
+  {
+    "ID": 420070,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420041
+  },
+  {
+    "ID": 420071,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420004
+  },
+  {
+    "ID": 420072,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420042
+  },
+  {
+    "ID": 420073,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420043
+  },
+  {
+    "ID": 420074,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420044
+  },
+  {
+    "ID": 420075,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420045
+  },
+  {
+    "ID": 420076,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420046
+  },
+  {
+    "ID": 420077,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420047
+  },
+  {
+    "ID": 420078,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420048
+  },
+  {
+    "ID": 420079,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 420000,
+    "P2": 4,
+    "P3": 1
+  },
+  {
+    "ID": 420080,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420049
+  },
+  {
+    "ID": 420081,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420050
+  },
+  {
+    "ID": 420082,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420051
+  },
+  {
+    "ID": 420083,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420052
+  },
+  {
+    "ID": 420084,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420053
+  },
+  {
+    "ID": 420085,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420054
+  },
+  {
+    "ID": 420086,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420055
+  },
+  {
+    "ID": 420087,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420061
+  },
+  {
+    "ID": 420088,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420062
+  },
+  {
+    "ID": 420089,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 60135131
+  },
+  {
+    "ID": 420090,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 60135132
+  },
+  {
+    "ID": 420091,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 60135133
+  },
+  {
+    "ID": 420092,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 420001,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 420093,
+    "EffectType": "SouShenEffectType_AddManaPoint",
+    "P1": 2
+  },
+  {
+    "ID": 420094,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 420095,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 420009,
+    "P2": 1
+  },
+  {
+    "ID": 420100,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420066
+  },
+  {
+    "ID": 420101,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420067
+  },
+  {
+    "ID": 420102,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420068
+  },
+  {
+    "ID": 420103,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420069
+  },
+  {
+    "ID": 420104,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420070
+  },
+  {
+    "ID": 420105,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420071
+  },
+  {
+    "ID": 420106,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420072
+  },
+  {
+    "ID": 420107,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420073
+  },
+  {
+    "ID": 420108,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420074
+  },
+  {
+    "ID": 420109,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420075
+  },
+  {
+    "ID": 420110,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420076
+  },
+  {
+    "ID": 420111,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420077
+  },
+  {
+    "ID": 420112,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420078
+  },
+  {
+    "ID": 420113,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420079
+  },
+  {
+    "ID": 420114,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420080
+  },
+  {
+    "ID": 420115,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420081
+  },
+  {
+    "ID": 420116,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 2
+  },
+  {
+    "ID": 420117,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420082
+  },
+  {
+    "ID": 420118,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 2,
+    "P2": 1
+  },
+  {
+    "ID": 420119,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800420083
+  },
+  {
+    "ID": 421001,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430001
+  },
+  {
+    "ID": 421002,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430002
+  },
+  {
+    "ID": 421003,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430003
+  },
+  {
+    "ID": 421004,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430004
+  },
+  {
+    "ID": 421005,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430005
+  },
+  {
+    "ID": 421006,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430006
+  },
+  {
+    "ID": 421007,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430007
+  },
+  {
+    "ID": 421008,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430008
+  },
+  {
+    "ID": 421009,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430009
+  },
+  {
+    "ID": 421010,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042080,
+    "P2": 1
+  },
+  {
+    "ID": 421011,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430011
+  },
+  {
+    "ID": 421012,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430012
+  },
+  {
+    "ID": 421013,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430013
+  },
+  {
+    "ID": 421014,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042000,
+    "P2": 1
+  },
+  {
+    "ID": 421015,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430015
+  },
+  {
+    "ID": 421016,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430016
+  },
+  {
+    "ID": 421017,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430017
+  },
+  {
+    "ID": 421018,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430018
+  },
+  {
+    "ID": 421019,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P6": 1
+  },
+  {
+    "ID": 421020,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430020
+  },
+  {
+    "ID": 421021,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430021
+  },
+  {
+    "ID": 421022,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430022
+  },
+  {
+    "ID": 421031,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430031
+  },
+  {
+    "ID": 421100,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430032
+  },
+  {
+    "ID": 421101,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430033
+  },
+  {
+    "ID": 421102,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 420002,
+    "P2": 3,
+    "P3": 1
+  },
+  {
+    "ID": 421103,
+    "EffectType": "SouShenEffectType_AddManaPoint",
+    "P1": 2
+  },
+  {
+    "ID": 421104,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P6": 1
+  },
+  {
+    "ID": 421105,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430034
+  },
+  {
+    "ID": 421106,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 420003,
+    "P2": 3,
+    "P3": 1
+  },
+  {
+    "ID": 421107,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430035
+  },
+  {
+    "ID": 421201,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 420004,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 421202,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430101
+  },
+  {
+    "ID": 421203,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430102
+  },
+  {
+    "ID": 421204,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430103
+  },
+  {
+    "ID": 421205,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430104
+  },
+  {
+    "ID": 421206,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430105
+  },
+  {
+    "ID": 421207,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430106
+  },
+  {
+    "ID": 422001,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440001
+  },
+  {
+    "ID": 422002,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440002
+  },
+  {
+    "ID": 422003,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440003
+  },
+  {
+    "ID": 422004,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440004
+  },
+  {
+    "ID": 422005,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440005
+  },
+  {
+    "ID": 422006,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440006
+  },
+  {
+    "ID": 422007,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P6": 1
+  },
+  {
+    "ID": 422008,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440008
+  },
+  {
+    "ID": 429999,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800429999
+  },
+  {
+    "ID": 430000,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800430000
+  },
+  {
+    "ID": 439999,
+    "EffectType": "SouShenEffectType_Discover",
+    "P2": 440000,
+    "P3": 3
+  },
+  {
+    "ID": 440000,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440000
+  },
+  {
+    "ID": 440001,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440015
+  },
+  {
+    "ID": 440002,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440011
+  },
+  {
+    "ID": 440003,
+    "EffectType": "SouShenEffectType_AttachCardBufToCharacter",
+    "P1": 440001
+  },
+  {
+    "ID": 440004,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440012
+  },
+  {
+    "ID": 440005,
+    "EffectType": "SouShenEffectType_DisperseMonsterTalentBuf"
+  },
+  {
+    "ID": 440006,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440016
+  },
+  {
+    "ID": 440007,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440017
+  },
+  {
+    "ID": 440008,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440018
+  },
+  {
+    "ID": 440009,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440019
+  },
+  {
+    "ID": 440010,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440020
+  },
+  {
+    "ID": 440011,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044008,
+    "P2": 1
+  },
+  {
+    "ID": 440012,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044009,
+    "P2": 1
+  },
+  {
+    "ID": 440013,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440024
+  },
+  {
+    "ID": 440014,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440021
+  },
+  {
+    "ID": 440015,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440022
+  },
+  {
+    "ID": 440016,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440023
+  },
+  {
+    "ID": 440017,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044001,
+    "P2": 1
+  },
+  {
+    "ID": 440018,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440025
+  },
+  {
+    "ID": 440019,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044013,
+    "P2": 1
+  },
+  {
+    "ID": 440020,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 440004
+  },
+  {
+    "ID": 440021,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440026
+  },
+  {
+    "ID": 440022,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440027
+  },
+  {
+    "ID": 440023,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440028
+  },
+  {
+    "ID": 440024,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440029
+  },
+  {
+    "ID": 440025,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 440001,
+    "P2": 2,
+    "P3": 1
+  },
+  {
+    "ID": 440026,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -2,
+    "P3": 1,
+    "P6": 1
+  },
+  {
+    "ID": 440027,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 440001,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 440028,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440030
+  },
+  {
+    "ID": 440029,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044039,
+    "P2": 1
+  },
+  {
+    "ID": 440030,
+    "EffectType": "SouShenEffectType_AddManaPoint",
+    "P1": 1
+  },
+  {
+    "ID": 440031,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440031
+  },
+  {
+    "ID": 440032,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -6,
+    "P3": 1,
+    "P6": 1
+  },
+  {
+    "ID": 440033,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 440002,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 440034,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440032
+  },
+  {
+    "ID": 440035,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 440006
+  },
+  {
+    "ID": 440036,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044040,
+    "P2": 1
+  },
+  {
+    "ID": 440037,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044011,
+    "P2": 2
+  },
+  {
+    "ID": 440038,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440033
+  },
+  {
+    "ID": 440039,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 40042003,
+    "P2": 1
+  },
+  {
+    "ID": 440040,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044012,
+    "P2": 1
+  },
+  {
+    "ID": 440041,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440034
+  },
+  {
+    "ID": 440042,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440035
+  },
+  {
+    "ID": 440043,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800440035,
+    "P2": 1,
+    "P4": 50044042,
+    "P5": 1
+  },
+  {
+    "ID": 440044,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440036
+  },
+  {
+    "ID": 440045,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800440036,
+    "P2": 1,
+    "P4": 50044044,
+    "P5": 1
+  },
+  {
+    "ID": 440046,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044010,
+    "P2": 1
+  },
+  {
+    "ID": 440047,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50043002,
+    "P2": 2
+  },
+  {
+    "ID": 440048,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044014,
+    "P2": 1
+  },
+  {
+    "ID": 440049,
+    "EffectType": "SouShenEffectType_SetHandCardMax",
+    "P1": 10
+  },
+  {
+    "ID": 440050,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 440001,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 440051,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044039,
+    "P2": 1
+  },
+  {
+    "ID": 440052,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440037
+  },
+  {
+    "ID": 440053,
+    "EffectType": "SouShenEffectType_Discover",
+    "P1": 1,
+    "P3": 3,
+    "P4": 3
+  },
+  {
+    "ID": 440054,
+    "EffectType": "SouShenEffectType_AddManaPoint",
+    "P1": 1
+  },
+  {
+    "ID": 440055,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 440056,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 440057,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 1
+  },
+  {
+    "ID": 440058,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50042001,
+    "P2": 1
+  },
+  {
+    "ID": 440059,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440038
+  },
+  {
+    "ID": 440060,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440039
+  },
+  {
+    "ID": 440061,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800440040
+  },
+  {
+    "ID": 440062,
+    "EffectType": "SouShenEffectType_PutCardIntoLib",
+    "P1": 50044046,
+    "P2": 1
+  },
+  {
+    "ID": 440063,
+    "EffectType": "SouShenEffectType_PutCardIntoLib",
+    "P1": 50044047,
+    "P2": 1
+  },
+  {
+    "ID": 440064,
+    "EffectType": "SouShenEffectType_PutCardIntoLib",
+    "P1": 50044048,
+    "P2": 1
+  },
+  {
+    "ID": 440065,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044045,
+    "P2": 1
+  },
+  {
+    "ID": 440066,
+    "EffectType": "SouShenEffectType_Discover",
+    "P1": 3,
+    "P3": 3,
+    "P4": 3
+  },
+  {
+    "ID": 440067,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 40044000,
+    "P2": 1
+  },
+  {
+    "ID": 440068,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 2
+  },
+  {
+    "ID": 440069,
+    "EffectType": "SouShenEffectType_SetHandCardMax",
+    "P1": 10
+  },
+  {
+    "ID": 440070,
+    "EffectType": "SouShenEffectType_SetManaPointMax",
+    "P1": 3,
+    "P3": 1
+  },
+  {
+    "ID": 440071,
+    "EffectType": "SouShenEffectType_SetManaPointMax",
+    "P1": 2,
+    "P3": 1
+  },
+  {
+    "ID": 440072,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 40044000,
+    "P2": 1
+  },
+  {
+    "ID": 440073,
+    "EffectType": "SouShenEffectType_Discover",
+    "P2": 440006,
+    "P3": 3
+  },
+  {
+    "ID": 440074,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044050,
+    "P2": 1
+  },
+  {
+    "ID": 440075,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044051,
+    "P2": 1
+  },
+  {
+    "ID": 440076,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50044015,
+    "P2": 1
+  },
+  {
+    "ID": 440077,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50043002,
+    "P2": 1
+  },
+  {
+    "ID": 440078,
+    "EffectType": "SouShenEffectType_AttachCardBuf",
+    "P1": 440037
+  },
+  {
+    "ID": 441001,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441036
+  },
+  {
+    "ID": 441002,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441037
+  },
+  {
+    "ID": 441003,
+    "EffectType": "SouShenEffectType_AddManaPoint",
+    "P1": 2
+  },
+  {
+    "ID": 441004,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 2
+  },
+  {
+    "ID": 441005,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441038
+  },
+  {
+    "ID": 441006,
+    "EffectType": "SouShenEffectType_DrawCard",
+    "P1": 4
+  },
+  {
+    "ID": 441007,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441039
+  },
+  {
+    "ID": 441008,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800441040,
+    "P2": 4,
+    "P3": 1,
+    "P4": 51044007,
+    "P5": 1
+  },
+  {
+    "ID": 441009,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441040
+  },
+  {
+    "ID": 441010,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441042
+  },
+  {
+    "ID": 441011,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441041
+  },
+  {
+    "ID": 441012,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P6": 1
+  },
+  {
+    "ID": 441013,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 51044002,
+    "P2": 1
+  },
+  {
+    "ID": 441014,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800441043
+  },
+  {
+    "ID": 450000,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450000
+  },
+  {
+    "ID": 450001,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50045000,
+    "P2": 2
+  },
+  {
+    "ID": 450002,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450002
+  },
+  {
+    "ID": 450003,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450003
+  },
+  {
+    "ID": 450004,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450004
+  },
+  {
+    "ID": 450005,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450001
+  },
+  {
+    "ID": 450006,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50045000,
+    "P2": 1
+  },
+  {
+    "ID": 450007,
+    "EffectType": "SouShenEffectType_GetCardFromPool",
+    "P1": 450000,
+    "P2": 1,
+    "P3": 1
+  },
+  {
+    "ID": 450008,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P3": 1,
+    "P5": 19,
+    "P6": 1
+  },
+  {
+    "ID": 450009,
+    "EffectType": "SouShenEffectType_RandomCardCostFix",
+    "P1": 1,
+    "P2": -1,
+    "P3": 1,
+    "P4": 1,
+    "P6": 1
+  },
+  {
+    "ID": 450010,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450005
+  },
+  {
+    "ID": 450011,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450006
+  },
+  {
+    "ID": 450012,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450007
+  },
+  {
+    "ID": 450013,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450008
+  },
+  {
+    "ID": 450014,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450009
+  },
+  {
+    "ID": 450015,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450010
+  },
+  {
+    "ID": 450016,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450011
+  },
+  {
+    "ID": 450017,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450012
+  },
+  {
+    "ID": 450018,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450013
+  },
+  {
+    "ID": 450019,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450014
+  },
+  {
+    "ID": 450020,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450015
+  },
+  {
+    "ID": 450021,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450016
+  },
+  {
+    "ID": 450022,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450017
+  },
+  {
+    "ID": 450023,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450018
+  },
+  {
+    "ID": 450024,
+    "EffectType": "SouShenEffectType_CastSkill",
+    "P1": 800450019
+  },
+  {
+    "ID": 450025,
+    "EffectType": "SouShenEffectType_Discover",
+    "P1": 2,
+    "P3": 3,
+    "P4": 3
+  },
+  {
+    "ID": 450026,
+    "EffectType": "SouShenEffectType_Discover",
+    "P1": 2,
+    "P3": 3,
+    "P4": 2
+  },
+  {
+    "ID": 450027,
+    "EffectType": "SouShenEffectType_Discover",
+    "P1": 1,
+    "P3": 3,
+    "P4": 3
+  },
+  {
+    "ID": 450028,
+    "EffectType": "SouShenEffectType_Discover",
+    "P1": 1,
+    "P3": 3,
+    "P4": 2
+  },
+  {
+    "ID": 450029,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50045017,
+    "P2": 1
+  },
+  {
+    "ID": 450030,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50045018,
+    "P2": 1
+  },
+  {
+    "ID": 450031,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50045019,
+    "P2": 1
+  },
+  {
+    "ID": 450032,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50045020,
+    "P2": 1
+  },
+  {
+    "ID": 450033,
+    "EffectType": "SouShenEffectType_AttachCardBufToCharacter",
+    "P1": 450000
+  },
+  {
+    "ID": 450034,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800450017,
+    "P2": 4,
+    "P4": 50045016,
+    "P5": 1
+  },
+  {
+    "ID": 450035,
+    "EffectType": "SouShenEffectType_PutCardIntoHand",
+    "P1": 50045015,
+    "P2": 1
+  },
+  {
+    "ID": 450036,
+    "EffectType": "SouShenEffectType_GainCardBySkillKillNum",
+    "P1": 800450005,
+    "P2": 4,
+    "P4": 50045003,
+    "P5": 1
+  }
+]

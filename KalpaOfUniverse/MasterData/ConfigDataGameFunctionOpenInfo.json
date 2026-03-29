@@ -1,0 +1,2902 @@
+[
+  {
+    "ID": 1,
+    "GameFunctionType": "GameFunctionType_Sign",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 8
+      }
+    ],
+    "NameStrKey": "ST:93290",
+    "MessageStrKey": "ST:99971"
+  },
+  {
+    "ID": 2,
+    "GameFunctionType": "GameFunctionType_CharacterSelect",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:228",
+    "MessageStrKey": "ST:99972"
+  },
+  {
+    "ID": 3,
+    "GameFunctionType": "GameFunctionType_CharacterLevelUp",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10102
+      }
+    ],
+    "NameStrKey": "ST:100390",
+    "MessageStrKey": "ST:99973"
+  },
+  {
+    "ID": 4,
+    "GameFunctionType": "GameFunctionType_CharacterStarUp",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:100391",
+    "MessageStrKey": "ST:99972"
+  },
+  {
+    "ID": 5,
+    "GameFunctionType": "GameFunctionType_Rift",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10301
+      }
+    ],
+    "NameStrKey": "ST:1718",
+    "MessageStrKey": "ST:99974"
+  },
+  {
+    "ID": 6,
+    "GameFunctionType": "GameFunctionType_Arena",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10602
+      }
+    ],
+    "NameStrKey": "ST:48985",
+    "MessageStrKey": "ST:99975"
+  },
+  {
+    "ID": 7,
+    "GameFunctionType": "GameFunctionType_WorldMapFortuitous",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11202
+      }
+    ],
+    "NameStrKey": "ST:93825",
+    "MessageStrKey": "ST:99976"
+  },
+  {
+    "ID": 8,
+    "GameFunctionType": "GameFunctionType_SpiritLight",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10501
+      }
+    ],
+    "NameStrKey": "ST:5418",
+    "MessageStrKey": "ST:99977"
+  },
+  {
+    "ID": 9,
+    "GameFunctionType": "GameFunctionType_ArrestWarrant",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12704
+      }
+    ],
+    "NameStrKey": "ST:5421",
+    "MessageStrKey": "ST:99978"
+  },
+  {
+    "ID": 10,
+    "GameFunctionType": "GameFunctionType_CreateLife",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11001
+      }
+    ],
+    "NameStrKey": "ST:5423",
+    "MessageStrKey": "ST:99979"
+  },
+  {
+    "ID": 11,
+    "GameFunctionType": "GameFunctionType_InnerPower",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10204
+      }
+    ],
+    "NameStrKey": "ST:93035",
+    "MessageStrKey": "ST:99980"
+  },
+  {
+    "ID": 12,
+    "GameFunctionType": "GameFunctionType_WeaponEnhance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10103
+      }
+    ],
+    "NameStrKey": "ST:100392",
+    "MessageStrKey": "ST:99981"
+  },
+  {
+    "ID": 13,
+    "GameFunctionType": "GameFunctionType_WeaponOpenSlot",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10103
+      }
+    ],
+    "NameStrKey": "ST:100393",
+    "MessageStrKey": "ST:99981"
+  },
+  {
+    "ID": 14,
+    "GameFunctionType": "GameFunctionType_WeaponInlaySoul",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10103
+      }
+    ],
+    "NameStrKey": "ST:513",
+    "MessageStrKey": "ST:99981"
+  },
+  {
+    "ID": 15,
+    "GameFunctionType": "GameFunctionType_EquipEnhance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10401
+      }
+    ],
+    "NameStrKey": "ST:93706",
+    "MessageStrKey": "ST:99982"
+  },
+  {
+    "ID": 16,
+    "GameFunctionType": "GameFunctionType_EquipEnhantment",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12101
+      }
+    ],
+    "NameStrKey": "ST:72784",
+    "MessageStrKey": "ST:99983"
+  },
+  {
+    "ID": 17,
+    "GameFunctionType": "GameFunctionType_CharacterStargazingUI",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 38
+      }
+    ],
+    "NameStrKey": "ST:100394",
+    "MessageStrKey": "ST:99984"
+  },
+  {
+    "ID": 18,
+    "GameFunctionType": "GameFunctionType_DelegateMission",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10701
+      }
+    ],
+    "NameStrKey": "ST:18106",
+    "MessageStrKey": "ST:99985"
+  },
+  {
+    "ID": 19,
+    "GameFunctionType": "GameFunctionType_ItemDecompose",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10901
+      }
+    ],
+    "NameStrKey": "ST:18107",
+    "MessageStrKey": "ST:99986"
+  },
+  {
+    "ID": 20,
+    "GameFunctionType": "GameFunctionType_ItemCompose",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11801
+      }
+    ],
+    "NameStrKey": "ST:18107",
+    "MessageStrKey": "ST:99987"
+  },
+  {
+    "ID": 21,
+    "GameFunctionType": "GameFunctionType_SoulStoneSelect",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10901
+      }
+    ],
+    "NameStrKey": "ST:100395",
+    "MessageStrKey": "ST:99988"
+  },
+  {
+    "ID": 22,
+    "GameFunctionType": "GameFunctionType_Achievement",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10502
+      }
+    ],
+    "NameStrKey": "ST:92563",
+    "MessageStrKey": "ST:99989"
+  },
+  {
+    "ID": 23,
+    "GameFunctionType": "GameFunctionType_SnowPrestigeShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10701
+      }
+    ],
+    "NameStrKey": "ST:100396",
+    "MessageStrKey": "ST:99985"
+  },
+  {
+    "ID": 24,
+    "GameFunctionType": "GameFunctionType_PlainPrestigeShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11101
+      }
+    ],
+    "NameStrKey": "ST:100397",
+    "MessageStrKey": "ST:99990"
+  },
+  {
+    "ID": 25,
+    "GameFunctionType": "GameFunctionType_BorderPrestigeShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11801
+      }
+    ],
+    "NameStrKey": "ST:100398",
+    "MessageStrKey": "ST:99987"
+  },
+  {
+    "ID": 28,
+    "GameFunctionType": "GameFunctionType_Raffle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:100399",
+    "MessageStrKey": "ST:99991"
+  },
+  {
+    "ID": 29,
+    "GameFunctionType": "GameFunctionType_CampToWorldMap",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10102
+      }
+    ],
+    "NameStrKey": "ST:99263",
+    "MessageStrKey": "ST:99992"
+  },
+  {
+    "ID": 30,
+    "GameFunctionType": "GameFunctionType_Diary",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_CampDialog",
+        "P1": 915
+      },
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10501
+      },
+      {
+        "CondType": "ConditionType_CondOrCombine",
+        "P1": 1
+      }
+    ],
+    "NameStrKey": "ST:24747",
+    "MessageStrKey": "ST:99993"
+  },
+  {
+    "ID": 31,
+    "GameFunctionType": "GameFunctionType_Memory",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10501
+      }
+    ],
+    "NameStrKey": "ST:100400",
+    "MessageStrKey": "ST:99994"
+  },
+  {
+    "ID": 32,
+    "GameFunctionType": "GameFunctionType_DailyMission",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 8
+      }
+    ],
+    "NameStrKey": "ST:24327",
+    "MessageStrKey": "ST:99971"
+  },
+  {
+    "ID": 33,
+    "GameFunctionType": "GameFunctionType_SubTask",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:100401",
+    "MessageStrKey": "ST:99995"
+  },
+  {
+    "ID": 34,
+    "GameFunctionType": "GameFunctionType_TwoTimesSpeed",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:100402",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 35,
+    "GameFunctionType": "GameFunctionType_SkipAnimation",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 9
+      }
+    ],
+    "NameStrKey": "ST:93325",
+    "MessageStrKey": "ST:99997"
+  },
+  {
+    "ID": 36,
+    "GameFunctionType": "GameFunctionType_FightAuto",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 7
+      }
+    ],
+    "NameStrKey": "ST:92421",
+    "MessageStrKey": "ST:99998"
+  },
+  {
+    "ID": 38,
+    "GameFunctionType": "GameFunctionType_ChangeSkillInUI",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10202
+      }
+    ],
+    "NameStrKey": "ST:100403",
+    "MessageStrKey": "ST:99999"
+  },
+  {
+    "ID": 39,
+    "GameFunctionType": "GameFunctionType_FixedStore",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:94056",
+    "MessageStrKey": "ST:99991"
+  },
+  {
+    "ID": 40,
+    "GameFunctionType": "GameFunctionType_Friend",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 8
+      }
+    ],
+    "NameStrKey": "ST:57834",
+    "MessageStrKey": "ST:99971"
+  },
+  {
+    "ID": 41,
+    "GameFunctionType": "GameFunctionType_SevenActivity",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:94048",
+    "MessageStrKey": "ST:99972"
+  },
+  {
+    "ID": 42,
+    "GameFunctionType": "GameFunctionType_BattleButtonHide",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10102
+      }
+    ],
+    "NameStrKey": "ST:100404",
+    "MessageStrKey": "ST:100000"
+  },
+  {
+    "ID": 43,
+    "GameFunctionType": "GameFunctionType_WorldMapChange",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13501
+      }
+    ],
+    "NameStrKey": "ST:100405",
+    "MessageStrKey": "ST:100001"
+  },
+  {
+    "ID": 44,
+    "GameFunctionType": "GameFunctionType_RankList",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:92353",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 45,
+    "GameFunctionType": "GameFunctionType_Story",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10503
+      }
+    ],
+    "NameStrKey": "ST:100406",
+    "MessageStrKey": "ST:100003"
+  },
+  {
+    "ID": 46,
+    "GameFunctionType": "GameFunctionType_BambooRoom",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11301
+      }
+    ],
+    "NameStrKey": "ST:92549",
+    "MessageStrKey": "ST:100004"
+  },
+  {
+    "ID": 47,
+    "GameFunctionType": "GameFunctionType_ShareBook",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10403
+      }
+    ],
+    "NameStrKey": "ST:92555",
+    "MessageStrKey": "ST:100005"
+  },
+  {
+    "ID": 49,
+    "GameFunctionType": "GameFunctionType_Shrine",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10401
+      }
+    ],
+    "NameStrKey": "ST:35948",
+    "MessageStrKey": "ST:99982"
+  },
+  {
+    "ID": 50,
+    "GameFunctionType": "GameFunctionType_WeaponAtlas",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11801
+      }
+    ],
+    "NameStrKey": "ST:55715",
+    "MessageStrKey": "ST:99987"
+  },
+  {
+    "ID": 51,
+    "GameFunctionType": "GameFunctionType_SoulStarUp",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10601
+      }
+    ],
+    "NameStrKey": "ST:100407",
+    "MessageStrKey": "ST:100006"
+  },
+  {
+    "ID": 52,
+    "GameFunctionType": "GameFunctionType_Guild",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10801
+      }
+    ],
+    "NameStrKey": "ST:92608",
+    "MessageStrKey": "ST:100007"
+  },
+  {
+    "ID": 53,
+    "GameFunctionType": "GameFunctionType_GuildExpedition",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10801
+      }
+    ],
+    "NameStrKey": "ST:100408",
+    "MessageStrKey": "ST:100007"
+  },
+  {
+    "ID": 54,
+    "GameFunctionType": "GameFunctionType_Mountain",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12102
+      }
+    ],
+    "NameStrKey": "ST:41024",
+    "MessageStrKey": "ST:100008"
+  },
+  {
+    "ID": 55,
+    "GameFunctionType": "GameFunctionType_CharacterStarGroup",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:100409",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 56,
+    "GameFunctionType": "GameFunctionType_SoulFilter",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10601
+      }
+    ],
+    "NameStrKey": "ST:100410",
+    "MessageStrKey": "ST:100006"
+  },
+  {
+    "ID": 57,
+    "GameFunctionType": "GameFunctionType_QuitBattle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10103
+      }
+    ],
+    "NameStrKey": "ST:100411",
+    "MessageStrKey": "ST:100010"
+  },
+  {
+    "ID": 58,
+    "GameFunctionType": "GameFunctionType_Halloween",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10402
+      }
+    ],
+    "NameStrKey": "ST:14987",
+    "MessageStrKey": "ST:100011"
+  },
+  {
+    "ID": 59,
+    "GameFunctionType": "GameFunctionType_ItemComposeSoul",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12102
+      }
+    ],
+    "NameStrKey": "ST:100412",
+    "MessageStrKey": "ST:100008"
+  },
+  {
+    "ID": 60,
+    "GameFunctionType": "GameFunctionType_ItemComposeEnchantment",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12701
+      }
+    ],
+    "NameStrKey": "ST:100413",
+    "MessageStrKey": "ST:100012"
+  },
+  {
+    "ID": 61,
+    "GameFunctionType": "GameFunctionType_ItemComposeWeaponAtlas",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 11801
+      }
+    ],
+    "NameStrKey": "ST:100414",
+    "MessageStrKey": "ST:99987"
+  },
+  {
+    "ID": 62,
+    "GameFunctionType": "GameFunctionType_ItemComposeSpecial",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Rift",
+        "P1": 2010210
+      }
+    ],
+    "NameStrKey": "ST:100415",
+    "MessageStrKey": "ST:100013"
+  },
+  {
+    "ID": 63,
+    "GameFunctionType": "GameFunctionType_PrestigeShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10701
+      }
+    ],
+    "NameStrKey": "ST:100416",
+    "MessageStrKey": "ST:99985"
+  },
+  {
+    "ID": 64,
+    "GameFunctionType": "GameFunctionType_FriendshipShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10801
+      }
+    ],
+    "NameStrKey": "ST:100417",
+    "MessageStrKey": "ST:100007"
+  },
+  {
+    "ID": 65,
+    "GameFunctionType": "GameFunctionType_HonorShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10602
+      }
+    ],
+    "NameStrKey": "ST:100418",
+    "MessageStrKey": "ST:100014"
+  },
+  {
+    "ID": 66,
+    "GameFunctionType": "GameFunctionType_Pet",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10402
+      }
+    ],
+    "NameStrKey": "ST:93270",
+    "MessageStrKey": "ST:100011"
+  },
+  {
+    "ID": 67,
+    "GameFunctionType": "GameFunctionType_ReportPlayerButton",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:100419",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 68,
+    "GameFunctionType": "GameFunctionType_ExpInstance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12502
+      }
+    ],
+    "NameStrKey": "ST:60924",
+    "MessageStrKey": "ST:100016"
+  },
+  {
+    "ID": 69,
+    "GameFunctionType": "GameFunctionType_Regret",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:100420",
+    "MessageStrKey": "ST:99991"
+  },
+  {
+    "ID": 70,
+    "GameFunctionType": "GameFunctionType_NewYear",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      }
+    ],
+    "NameStrKey": "ST:100421",
+    "MessageStrKey": "ST:100017"
+  },
+  {
+    "ID": 71,
+    "GameFunctionType": "GameFunctionType_GuildShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10801
+      }
+    ],
+    "NameStrKey": "ST:100422",
+    "MessageStrKey": "ST:100007"
+  },
+  {
+    "ID": 72,
+    "GameFunctionType": "GameFunctionType_DewShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:100423",
+    "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 73,
+    "GameFunctionType": "GameFunctionType_UnrealSea",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:63134",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 74,
+    "GameFunctionType": "GameFunctionType_ItemDecomposeEnchantment",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12101
+      }
+    ],
+    "NameStrKey": "ST:100424",
+    "MessageStrKey": "ST:99983"
+  },
+  {
+    "ID": 75,
+    "GameFunctionType": "GameFunctionType_OperationalActivity",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:94041",
+    "MessageStrKey": "ST:99991"
+  },
+  {
+    "ID": 76,
+    "GameFunctionType": "GameFunctionType_FightView",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 8
+      }
+    ],
+    "NameStrKey": "ST:100425",
+    "MessageStrKey": "ST:99971"
+  },
+  {
+    "ID": 77,
+    "GameFunctionType": "GameFunctionType_Mozi",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      }
+    ],
+    "NameStrKey": "ST:83580",
+    "MessageStrKey": "ST:100017"
+  },
+  {
+    "ID": 78,
+    "GameFunctionType": "GameFunctionType_BackFlowActivity",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:100426",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 79,
+    "GameFunctionType": "GameFunctionType_Chasm",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 20000001
+      }
+    ],
+    "NameStrKey": "ST:100427",
+    "MessageStrKey": "ST:100020"
+  },
+  {
+    "ID": 80,
+    "GameFunctionType": "GameFunctionType_OldRegionBattle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:100428",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 81,
+    "GameFunctionType": "GameFunctionType_CharacterAddExpLevelUP",
+    "NameStrKey": "ST:100429"
+  },
+  {
+    "ID": 82,
+    "GameFunctionType": "GameFunctionType_CharacterAddExpLevelUPMax",
+    "NameStrKey": "ST:100430"
+  },
+  {
+    "ID": 83,
+    "GameFunctionType": "GameFunctionType_CharacterEvaluate",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 25
+      }
+    ],
+    "NameStrKey": "ST:100431",
+    "MessageStrKey": "ST:100021"
+  },
+  {
+    "ID": 84,
+    "GameFunctionType": "GameFunctionType_OldRegionTeamBattle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:100432",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 85,
+    "GameFunctionType": "GameFunctionType_Buddha",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 25
+      }
+    ],
+    "NameStrKey": "ST:92101",
+    "MessageStrKey": "ST:100021"
+  },
+  {
+    "ID": 86,
+    "GameFunctionType": "GameFunctionType_SoulSetChange",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 28
+      }
+    ],
+    "NameStrKey": "ST:102454",
+    "MessageStrKey": "ST:168245"
+  },
+  {
+    "ID": 87,
+    "GameFunctionType": "GameFunctionType_PeakArena",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10602
+      },
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "NameStrKey": "ST:125665",
+    "MessageStrKey": "ST:102638"
+  },
+  {
+    "ID": 88,
+    "GameFunctionType": "GameFunctionType_CatDiceTable",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:103359",
+    "MessageStrKey": "ST:99991"
+  },
+  {
+    "ID": 89,
+    "GameFunctionType": "GameFunctionType_BossChallengeBattle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:104087",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 90,
+    "GameFunctionType": "GameFunctionType_ActivityCampCollectionReward",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616100020
+      }
+    ],
+    "NameStrKey": "ST:104088",
+    "MessageStrKey": "ST:105729"
+  },
+  {
+    "ID": 91,
+    "GameFunctionType": "GameFunctionType_BattlePass",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:103358",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 92,
+    "GameFunctionType": "GameFunctionType_XianJian",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:103180",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 93,
+    "GameFunctionType": "GameFunctionType_ShilipoMiniGame",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:102988",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 94,
+    "GameFunctionType": "GameFunctionType_ClimbTower",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:105863",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 95,
+    "GameFunctionType": "GameFunctionType_NoviceSpeed",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 8
+      }
+    ],
+    "NameStrKey": "ST:109428",
+    "MessageStrKey": "ST:99971"
+  },
+  {
+    "ID": 96,
+    "GameFunctionType": "GameFunctionType_JiuruTower",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "NameStrKey": "ST:96809",
+    "MessageStrKey": "ST:114040"
+  },
+  {
+    "ID": 97,
+    "GameFunctionType": "GameFunctionType_DivineWeapon",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "NameStrKey": "ST:114038",
+    "MessageStrKey": "ST:114040"
+  },
+  {
+    "ID": 98,
+    "GameFunctionType": "GameFunctionType_StarCrystal",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "NameStrKey": "ST:114039",
+    "MessageStrKey": "ST:114040"
+  },
+  {
+    "ID": 99,
+    "GameFunctionType": "GameFunctionType_FriendshipGiving",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel"
+      }
+    ],
+    "NameStrKey": "ST:119553",
+    "MessageStrKey": "ST:119554"
+  },
+  {
+    "ID": 100,
+    "GameFunctionType": "GameFunctionType_SoulRemake",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 52
+      }
+    ],
+    "NameStrKey": "ST:122614",
+    "MessageStrKey": "ST:122616"
+  },
+  {
+    "ID": 101,
+    "GameFunctionType": "GameFunctionType_SoulPropRefine",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 48
+      }
+    ],
+    "NameStrKey": "ST:122615",
+    "MessageStrKey": "ST:122617"
+  },
+  {
+    "ID": 102,
+    "GameFunctionType": "GameFunctionType_SpringFestival",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:123058",
+    "MessageStrKey": "ST:119554"
+  },
+  {
+    "ID": 103,
+    "GameFunctionType": "GameFunctionType_SpringFestivalMission",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:230577",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 104,
+    "GameFunctionType": "GameFunctionType_SpringFestivalLionDance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:123060",
+    "MessageStrKey": "ST:119554"
+  },
+  {
+    "ID": 105,
+    "GameFunctionType": "GameFunctionType_WordsAuspicious",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:122951",
+    "MessageStrKey": "ST:119554"
+  },
+  {
+    "ID": 106,
+    "GameFunctionType": "GameFunctionType_SpringFestivallMakeMoney",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:123059",
+    "MessageStrKey": "ST:119554"
+  },
+  {
+    "ID": 107,
+    "GameFunctionType": "GameFunctionType_QianNv",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:121508",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 108,
+    "GameFunctionType": "GameFunctionType_BattleReportWall",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:124004",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 109,
+    "GameFunctionType": "GameFunctionType_SoulRemakeFunc",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 52
+      }
+    ],
+    "NameStrKey": "ST:122614",
+    "MessageStrKey": "ST:122616"
+  },
+  {
+    "ID": 110,
+    "GameFunctionType": "GameFunctionType_WorldMapFold",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:125260",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 111,
+    "GameFunctionType": "GameFunctionType_GuildBattle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      }
+    ],
+    "NameStrKey": "ST:129072",
+    "MessageStrKey": "ST:132284"
+  },
+  {
+    "ID": 112,
+    "GameFunctionType": "GameFunctionType_GuildAssistOneClick",
+    "NameStrKey": "ST:132691"
+  },
+  {
+    "ID": 113,
+    "GameFunctionType": "GameFunctionType_HomeTravel",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:144575",
+    "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 114,
+    "GameFunctionType": "GameFunctionType_HomeBuildingUpgrade",
+    "NameStrKey": "ST:144576"
+  },
+  {
+    "ID": 115,
+    "GameFunctionType": "GameFunctionType_HomeFlowerPool",
+    "NameStrKey": "ST:144577"
+  },
+  {
+    "ID": 116,
+    "GameFunctionType": "GameFunctionType_HomeCooking",
+    "NameStrKey": "ST:144578"
+  },
+  {
+    "ID": 117,
+    "GameFunctionType": "GameFunctionType_HomePlant",
+    "NameStrKey": "ST:144579"
+  },
+  {
+    "ID": 118,
+    "GameFunctionType": "GameFunctionType_HomeSceneCustomizeObject",
+    "NameStrKey": "ST:144580"
+  },
+  {
+    "ID": 119,
+    "GameFunctionType": "GameFunctionType_HomeMusicGame",
+    "NameStrKey": "ST:144581"
+  },
+  {
+    "ID": 120,
+    "GameFunctionType": "GameFunctionType_Home",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:136125",
+    "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 121,
+    "GameFunctionType": "GameFunctionType_OmnipotentExchangeStore",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "NameStrKey": "ST:136356",
+    "MessageStrKey": "ST:153669"
+  },
+  {
+    "ID": 122,
+    "GameFunctionType": "GameFunctionType_ClimbTowerTalent",
+    "NameStrKey": "ST:141674"
+  },
+  {
+    "ID": 123,
+    "GameFunctionType": "GameFunctionType_WorldmapTime",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 17001
+      }
+    ],
+    "NameStrKey": "ST:142388",
+    "MessageStrKey": "ST:142130"
+  },
+  {
+    "ID": 124,
+    "GameFunctionType": "GameFunctionType_HomeReputation",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:144582",
+    "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 125,
+    "GameFunctionType": "GameFunctionType_HomeGift",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 40
+      }
+    ],
+    "NameStrKey": "ST:144583",
+    "MessageStrKey": "ST:100018"
+  },
+  {
+    "ID": 126,
+    "GameFunctionType": "GameFunctionType_FetterBigStar",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "NameStrKey": "ST:144389",
+    "MessageStrKey": "ST:144877"
+  },
+  {
+    "ID": 127,
+    "GameFunctionType": "GameFunctionType_BaoQingTian",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:145631",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 128,
+    "GameFunctionType": "GameFunctionType_MidAutumn",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:147934",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 129,
+    "GameFunctionType": "GameFunctionType_TopArenaCard",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "NameStrKey": "ST:148059",
+    "MessageStrKey": "ST:121843"
+  },
+  {
+    "ID": 130,
+    "GameFunctionType": "GameFunctionType_BossChallengeExBattle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:148748",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 131,
+    "GameFunctionType": "GameFunctionType_BossChallengeExScoreReward",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:148748",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 132,
+    "GameFunctionType": "GameFunctionType_WebActivityJump",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:149317",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 133,
+    "GameFunctionType": "GameFunctionType_PreviousActivity",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 17
+      }
+    ],
+    "NameStrKey": "ST:150658",
+    "MessageStrKey": "ST:150659"
+  },
+  {
+    "ID": 134,
+    "GameFunctionType": "GameFunctionType_CharacterInnerPowerOneClickUpgrade",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:150673",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 135,
+    "GameFunctionType": "GameFunctionType_CharacterEquipEnhanceOneClick",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:150674",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 136,
+    "GameFunctionType": "GameFunctionType_CliqueChallenge",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      }
+    ],
+    "NameStrKey": "ST:201165",
+    "MessageStrKey": "ST:132284"
+  },
+  {
+    "ID": 137,
+    "GameFunctionType": "GameFunctionType_InnerForce",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "NameStrKey": "ST:153394",
+    "MessageStrKey": "ST:144877"
+  },
+  {
+    "ID": 138,
+    "GameFunctionType": "GameFunctionType_CliqueChallengeHard",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "NameStrKey": "ST:153425",
+    "MessageStrKey": "ST:144877"
+  },
+  {
+    "ID": 139,
+    "GameFunctionType": "GameFunctionType_GreenSnake",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:155290",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 140,
+    "GameFunctionType": "GameFunctionType_OneClickEnhance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:155947",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 141,
+    "GameFunctionType": "GameFunctionType_AbysslChallenge",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 67
+      }
+    ],
+    "NameStrKey": "ST:157270",
+    "MessageStrKey": "ST:158268"
+  },
+  {
+    "ID": 142,
+    "GameFunctionType": "GameFunctionType_YiJianLu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "NameStrKey": "ST:160227",
+    "MessageStrKey": "ST:102455"
+  },
+  {
+    "ID": 143,
+    "GameFunctionType": "GameFunctionType_SpringFestivallevel",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:230578",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 144,
+    "GameFunctionType": "GameFunctionType_DiyMap",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 13702
+      }
+    ],
+    "NameStrKey": "ST:161659",
+    "MessageStrKey": "ST:161660"
+  },
+  {
+    "ID": 145,
+    "GameFunctionType": "GameFunctionType_TianDiZhanJi",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      }
+    ],
+    "NameStrKey": "ST:161694",
+    "MessageStrKey": "ST:100017"
+  },
+  {
+    "ID": 146,
+    "GameFunctionType": "GameFunctionType_ArenaSweep",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "NameStrKey": "ST:162664",
+    "MessageStrKey": "ST:114040"
+  },
+  {
+    "ID": 147,
+    "GameFunctionType": "GameFunctionType_JewelryPlanSet",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12101
+      }
+    ],
+    "NameStrKey": "ST:162807",
+    "MessageStrKey": "ST:99983"
+  },
+  {
+    "ID": 148,
+    "GameFunctionType": "GameFunctionType_LevelGift",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 25
+      }
+    ],
+    "NameStrKey": "ST:164944",
+    "MessageStrKey": "ST:164945"
+  },
+  {
+    "ID": 149,
+    "GameFunctionType": "GameFunctionType_FriendAssistance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 11
+      }
+    ],
+    "NameStrKey": "ST:164997",
+    "MessageStrKey": "ST:164998"
+  },
+  {
+    "ID": 306,
+    "GameFunctionType": "GameFunctionType_SweepFortuitousWayPoint",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 63
+      }
+    ],
+    "NameStrKey": "ST:166600",
+    "MessageStrKey": "ST:166601"
+  },
+  {
+    "ID": 307,
+    "GameFunctionType": "GameFunctionType_TiandiJourneyMilestone",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:169624",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 308,
+    "GameFunctionType": "GameFunctionType_TiandiJourneyTitle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:169624",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 309,
+    "GameFunctionType": "GameFunctionType_BussinessCardSecondPage",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:168878",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 310,
+    "GameFunctionType": "GameFunctionType_OldRegionSweep",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:168879",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 311,
+    "GameFunctionType": "GameFunctionType_BuddhaQuickChallenge",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "NameStrKey": "ST:168880",
+    "MessageStrKey": "ST:121843"
+  },
+  {
+    "ID": 312,
+    "GameFunctionType": "GameFunctionType_QuShuiLiuShang",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 20
+      }
+    ],
+    "NameStrKey": "ST:169748",
+    "MessageStrKey": "ST:100017"
+  },
+  {
+    "ID": 313,
+    "GameFunctionType": "GameFunctionType_GrazingLevelUpOneClick",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:173389",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 314,
+    "GameFunctionType": "GameFunctionType_TearlessGate",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "NameStrKey": "ST:170820",
+    "MessageStrKey": "ST:144877"
+  },
+  {
+    "ID": 315,
+    "GameFunctionType": "GameFunctionType_GateShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "NameStrKey": "ST:172877",
+    "MessageStrKey": "ST:121843"
+  },
+  {
+    "ID": 316,
+    "GameFunctionType": "GameFunctionType_Atlas",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 25
+      }
+    ],
+    "NameStrKey": "ST:173814",
+    "MessageStrKey": "ST:100021"
+  },
+  {
+    "ID": 317,
+    "GameFunctionType": "GameFunctionType_AtlasEquip",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 12101
+      }
+    ],
+    "NameStrKey": "ST:173814",
+    "MessageStrKey": "ST:99983"
+  },
+  {
+    "ID": 318,
+    "GameFunctionType": "GameFunctionType_DunHuang",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:172607",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 319,
+    "GameFunctionType": "GameFunctionType_SoulArrage",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10103
+      }
+    ],
+    "NameStrKey": "ST:177970",
+    "MessageStrKey": "ST:99981"
+  },
+  {
+    "ID": 320,
+    "GameFunctionType": "GameFunctionType_FaBao",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      }
+    ],
+    "NameStrKey": "ST:187975",
+    "MessageStrKey": "ST:132284"
+  },
+  {
+    "ID": 321,
+    "GameFunctionType": "GameFunctionType_FaBaoEquipPanel",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      }
+    ],
+    "NameStrKey": "ST:182302",
+    "MessageStrKey": "ST:132284"
+  },
+  {
+    "ID": 322,
+    "GameFunctionType": "GameFunctionType_YunShan",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:186505",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 332,
+    "GameFunctionType": "GameFunctionType_FuSangShu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:187921",
+    "MessageStrKey": "ST:198361"
+  },
+  {
+    "ID": 337,
+    "GameFunctionType": "GameFunctionType_SpringFestivallMakeMoney",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:189686",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 338,
+    "GameFunctionType": "GameFunctionType_TearlessGateTalent2",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 66
+      }
+    ],
+    "NameStrKey": "ST:192795",
+    "MessageStrKey": "ST:187922"
+  },
+  {
+    "ID": 340,
+    "GameFunctionType": "GameFunctionType_CustomizedCharacter",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:193658",
+    "MessageStrKey": "ST:121843"
+  },
+  {
+    "ID": 341,
+    "GameFunctionType": "GameFunctionType_TearlessGateContent2",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 66
+      }
+    ],
+    "NameStrKey": "ST:192796",
+    "MessageStrKey": "ST:187922"
+  },
+  {
+    "ID": 342,
+    "GameFunctionType": "GameFunctionType_TearlessGate2",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 66
+      }
+    ],
+    "NameStrKey": "ST:170820",
+    "MessageStrKey": "ST:187922"
+  },
+  {
+    "ID": 343,
+    "GameFunctionType": "GameFunctionType_SelfBuildSect",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 58
+      }
+    ],
+    "NameStrKey": "ST:200839",
+    "MessageStrKey": "ST:201327"
+  },
+  {
+    "ID": 344,
+    "GameFunctionType": "GameFunctionType_OperationalActivitySmallBanner",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:194933",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 345,
+    "GameFunctionType": "GameFunctionType_FuYunZhaoLu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:194934",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 346,
+    "GameFunctionType": "GameFunctionType_CliqueChallengeJiangHu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "NameStrKey": "ST:198358",
+    "MessageStrKey": "ST:144877"
+  },
+  {
+    "ID": 351,
+    "GameFunctionType": "GameFunctionType_FaBaoLinBao",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:198359",
+    "MessageStrKey": "ST:198361"
+  },
+  {
+    "ID": 352,
+    "GameFunctionType": "GameFunctionType_FaBaoEnchant",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:198360",
+    "MessageStrKey": "ST:198361"
+  },
+  {
+    "ID": 353,
+    "GameFunctionType": "GameFunctionType_SelfBuildSectHuanShouSave",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "NameStrKey": "ST:197395",
+    "MessageStrKey": "ST:194935"
+  },
+  {
+    "ID": 354,
+    "GameFunctionType": "GameFunctionType_SelfBuildSectHuanShouHangUp",
+    "NameStrKey": "ST:197396"
+  },
+  {
+    "ID": 355,
+    "GameFunctionType": "GameFunctionType_SelfBuildSectHuanShouPrefab",
+    "NameStrKey": "ST:197397"
+  },
+  {
+    "ID": 356,
+    "GameFunctionType": "GameFunctionType_SelfBuildSectHuanShouLevelUp",
+    "NameStrKey": "ST:197398"
+  },
+  {
+    "ID": 362,
+    "GameFunctionType": "GameFunctionType_FuSangShuChu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 45
+      }
+    ],
+    "NameStrKey": "ST:199778",
+    "MessageStrKey": "ST:132284"
+  },
+  {
+    "ID": 364,
+    "GameFunctionType": "GameFunctionType_SouShen",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:200752",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 365,
+    "GameFunctionType": "GameFunctionType_SouShenRest",
+    "NameStrKey": "ST:200753"
+  },
+  {
+    "ID": 366,
+    "GameFunctionType": "GameFunctionType_SouShenRoll",
+    "NameStrKey": "ST:200754"
+  },
+  {
+    "ID": 367,
+    "GameFunctionType": "GameFunctionType_SouShenCardGroup",
+    "NameStrKey": "ST:200755"
+  },
+  {
+    "ID": 368,
+    "GameFunctionType": "GameFunctionType_SouShenGuildHall",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_SouShenExploreEventCompleted",
+        "P1": 10001031
+      }
+    ],
+    "NameStrKey": "ST:200756"
+  },
+  {
+    "ID": 369,
+    "GameFunctionType": "GameFunctionType_SelfBuildShiTu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_SBSectReputationLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:201326",
+    "MessageStrKey": "ST:201634"
+  },
+  {
+    "ID": 370,
+    "GameFunctionType": "GameFunctionType_TimeLimitItem",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:201633"
+  },
+  {
+    "ID": 371,
+    "GameFunctionType": "GameFunctionType_FaBaoEnchant2",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:198360",
+    "MessageStrKey": "ST:198361"
+  },
+  {
+    "ID": 372,
+    "GameFunctionType": "GameFunctionType_FaBaoLinBao2",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:198359",
+    "MessageStrKey": "ST:198361"
+  },
+  {
+    "ID": 373,
+    "GameFunctionType": "GameFunctionType_CliqueChallengeJiangHuNew",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "NameStrKey": "ST:198358",
+    "MessageStrKey": "ST:144877"
+  },
+  {
+    "ID": 374,
+    "GameFunctionType": "GameFunctionType_SelfBuildSectInstructions",
+    "NameStrKey": "ST:202039"
+  },
+  {
+    "ID": 375,
+    "GameFunctionType": "GameFunctionType_SouShenMentorVolume",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_SouShenExploreEventCompleted",
+        "P1": 1000103
+      }
+    ],
+    "NameStrKey": "ST:203832",
+    "MessageStrKey": "ST:204716"
+  },
+  {
+    "ID": 376,
+    "GameFunctionType": "GameFunctionType_SouShenAchievement",
+    "NameStrKey": "ST:205691"
+  },
+  {
+    "ID": 377,
+    "GameFunctionType": "GameFunctionType_SouShenGuildHallBoss",
+    "NameStrKey": "ST:203833",
+    "MessageStrKey": "ST:215646"
+  },
+  {
+    "ID": 378,
+    "GameFunctionType": "GameFunctionType_SouShenPVPFast",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_SouShenExploreEventCompleted",
+        "P1": 10001031
+      }
+    ],
+    "NameStrKey": "ST:211484",
+    "MessageStrKey": "ST:211485"
+  },
+  {
+    "ID": 379,
+    "GameFunctionType": "GameFunctionType_SouShenReveiw",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_SouShenExploreEventCompleted",
+        "P1": 1000104
+      }
+    ],
+    "NameStrKey": "ST:204715"
+  },
+  {
+    "ID": 380,
+    "GameFunctionType": "GameFunctionType_Appoint",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 30
+      }
+    ],
+    "NameStrKey": "ST:209607",
+    "MessageStrKey": "ST:135872"
+  },
+  {
+    "ID": 384,
+    "GameFunctionType": "GameFunctionType_Xiyou",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:209903",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 386,
+    "GameFunctionType": "GameFunctionType_XiYouBossChallenge",
+    "NameStrKey": "ST:211127",
+    "MessageStrKey": "ST:214477"
+  },
+  {
+    "ID": 392,
+    "GameFunctionType": "GameFunctionType_SouShenActiveTask",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:212362"
+  },
+  {
+    "ID": 393,
+    "GameFunctionType": "GameFunctionType_SouShenSelectCard",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:212363"
+  },
+  {
+    "ID": 394,
+    "GameFunctionType": "GameFunctionType_XiYouRogue",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:213067",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 395,
+    "GameFunctionType": "GameFunctionType_HomeAuto",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 44
+      },
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 3,
+        "P2": 1
+      },
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 2,
+        "P2": 1
+      }
+    ],
+    "NameStrKey": "ST:215134",
+    "MessageStrKey": "ST:218215"
+  },
+  {
+    "ID": 396,
+    "GameFunctionType": "GameFunctionType_SouShenEntry",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:213950",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 397,
+    "GameFunctionType": "GameFunctionType_SouShenTravelMission",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:215446"
+  },
+  {
+    "ID": 398,
+    "GameFunctionType": "GameFunctionType_SouShenComposeCard",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:214704"
+  },
+  {
+    "ID": 399,
+    "GameFunctionType": "GameFunctionType_RecycleReconanceMaterial",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:215447"
+  },
+  {
+    "ID": 400,
+    "GameFunctionType": "GameFunctionType_StarShift",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 999
+      }
+    ],
+    "NameStrKey": "ST:215406"
+  },
+  {
+    "ID": 401,
+    "GameFunctionType": "GameFunctionType_EquipSeparator",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "NameStrKey": "ST:215409",
+    "MessageStrKey": "ST:217789"
+  },
+  {
+    "ID": 402,
+    "GameFunctionType": "GameFunctionType_SpecificMaterial",
+    "NameStrKey": "ST:215411"
+  },
+  {
+    "ID": 403,
+    "GameFunctionType": "GameFunctionType_RegretSelect",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 43
+      }
+    ],
+    "NameStrKey": "ST:215555",
+    "MessageStrKey": "ST:215556"
+  },
+  {
+    "ID": 404,
+    "GameFunctionType": "GameFunctionType_RiftReview",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 60
+      }
+    ],
+    "NameStrKey": "ST:215778",
+    "MessageStrKey": "ST:114040"
+  },
+  {
+    "ID": 405,
+    "GameFunctionType": "GameFunctionType_CharacterExclusiveMaterialExchange",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "NameStrKey": "ST:215826"
+  },
+  {
+    "ID": 406,
+    "GameFunctionType": "GameFunctionType_JiuruCompanion",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:218139",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 407,
+    "GameFunctionType": "GameFunctionType_ULRBox",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 12
+      }
+    ],
+    "NameStrKey": "ST:219455",
+    "MessageStrKey": "ST:221577"
+  },
+  {
+    "ID": 408,
+    "GameFunctionType": "GameFunctionType_EquipSeparatorShiTu",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 1
+      }
+    ],
+    "NameStrKey": "ST:219210",
+    "MessageStrKey": "ST:217789"
+  },
+  {
+    "ID": 409,
+    "GameFunctionType": "GameFunctionType_KillEffectSkin",
+    "NameStrKey": "ST:218806"
+  },
+  {
+    "ID": 410,
+    "GameFunctionType": "GameFunctionType_FaBaoChallenge",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:220153",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 411,
+    "GameFunctionType": "GameFunctionType_ULRCollectCharacter",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:220490",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 413,
+    "GameFunctionType": "GameFunctionType_EightDiagram",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:220473",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 414,
+    "GameFunctionType": "GameFunctionType_TianDiCollect",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "NameStrKey": "ST:220407",
+    "MessageStrKey": "ST:102455"
+  },
+  {
+    "ID": 415,
+    "GameFunctionType": "GameFunctionType_CCBeiShanLvZou",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalLevelFinish",
+        "P1": 4,
+        "P2": 4
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalLevelFinish",
+        "P1": 5,
+        "P2": 4
+      },
+      {
+        "CondType": "ConditionType_CliqueChallengeNormalLevelFinish",
+        "P1": 6,
+        "P2": 4
+      }
+    ],
+    "NameStrKey": "ST:5329",
+    "MessageStrKey": "ST:222389"
+  },
+  {
+    "ID": 416,
+    "GameFunctionType": "GameFunctionType_DoubleRechargeEntry",
+    "NameStrKey": "ST:220838"
+  },
+  {
+    "ID": 417,
+    "GameFunctionType": "GameFunctionType_AbyssReappear",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:220893",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 418,
+    "GameFunctionType": "GameFunctionType_TreasureBoxAutoDecompose",
+    "NameStrKey": "ST:222643"
+  },
+  {
+    "ID": 419,
+    "GameFunctionType": "GameFunctionType_FaBaoLinbaoFragmentExchange",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      },
+      {
+        "CondType": "ConditionType_FaBaoReachLevel",
+        "P1": 9,
+        "P2": 20
+      }
+    ],
+    "NameStrKey": "ST:222719"
+  },
+  {
+    "ID": 420,
+    "GameFunctionType": "GameFunctionType_FengShen",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:223692"
+  },
+  {
+    "ID": 421,
+    "GameFunctionType": "GameFunctionType_CloudGallery",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:223868",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 423,
+    "GameFunctionType": "GameFunctionType_PeakArenaPlus",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10602
+      },
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "NameStrKey": "ST:225250"
+  },
+  {
+    "ID": 426,
+    "GameFunctionType": "GameFunctionType_Crossword",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:230579",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 427,
+    "GameFunctionType": "GameFunctionType_HotSpring",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 5
+      }
+    ],
+    "NameStrKey": "ST:230580",
+    "MessageStrKey": "ST:99996"
+  },
+  {
+    "ID": 428,
+    "GameFunctionType": "GameFunctionType_AccumulateSelectCard",
+    "NameStrKey": "ST:228196"
+  },
+  {
+    "ID": 429,
+    "GameFunctionType": "GameFunctionType_AbysslChallengeNewHard",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 68
+      }
+    ],
+    "NameStrKey": "ST:230581",
+    "MessageStrKey": "ST:157390"
+  },
+  {
+    "ID": 430,
+    "GameFunctionType": "GameFunctionType_Suhun",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 68
+      }
+    ],
+    "NameStrKey": "ST:230582",
+    "MessageStrKey": "ST:157390"
+  },
+  {
+    "ID": 431,
+    "GameFunctionType": "GameFunctionType_StrangeMaze2",
+    "NameStrKey": "ST:111577"
+  },
+  {
+    "ID": 432,
+    "GameFunctionType": "GameFunctionType_DivineWeaponRefine",
+    "NameStrKey": "ST:234035"
+  },
+  {
+    "ID": 433,
+    "GameFunctionType": "GameFunctionType_AbysslChallengeNewHardFormationDesc",
+    "NameStrKey": "ST:234036"
+  },
+  {
+    "ID": 434,
+    "GameFunctionType": "GameFunctionType_SelectWishJewelry",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:234037",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 436,
+    "GameFunctionType": "GameFunctionType_GDTribulation",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 35
+      }
+    ],
+    "NameStrKey": "ST:233726",
+    "MessageStrKey": "ST:102455"
+  },
+  {
+    "ID": 440,
+    "GameFunctionType": "GameFunctionType_RelicBattle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:237519",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 441,
+    "GameFunctionType": "GameFunctionType_OneClickWin",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10201
+      }
+    ],
+    "NameStrKey": "ST:234038",
+    "MessageStrKey": "ST:99991"
+  },
+  {
+    "ID": 442,
+    "GameFunctionType": "GameFunctionType_ClientTriggerGift",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:235547"
+  },
+  {
+    "ID": 444,
+    "GameFunctionType": "GameFunctionType_CTriditionalStyle",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:236536",
+    "MessageStrKey": "ST:240094"
+  },
+  {
+    "ID": 448,
+    "GameFunctionType": "GameFunctionType_BotGame",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:241784",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 450,
+    "GameFunctionType": "GameFunctionType_GDTribulationChallenge",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 15
+      }
+    ],
+    "NameStrKey": "ST:242961",
+    "MessageStrKey": "ST:100002"
+  },
+  {
+    "ID": 455,
+    "GameFunctionType": "GameFunctionType_Vote",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:243645",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 458,
+    "GameFunctionType": "GameFunctionType_DustOfTimeShop",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_AddNewItem",
+        "P1": 30
+      },
+      {
+        "CondType": "ConditionType_AddNewItem",
+        "P1": 400000010
+      },
+      {
+        "CondType": "ConditionType_MonthCardValid",
+        "P1": 4
+      },
+      {
+        "CondType": "ConditionType_CondOrCombine",
+        "P1": 1
+      }
+    ],
+    "NameStrKey": "ST:242235"
+  },
+  {
+    "ID": 464,
+    "GameFunctionType": "GameFunctionType_PeakArenaDataShow",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 10602
+      },
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:245028",
+    "MessageStrKey": "ST:102638"
+  },
+  {
+    "ID": 466,
+    "GameFunctionType": "GameFunctionType_JiuRuPro",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 50
+      }
+    ],
+    "NameStrKey": "ST:245352",
+    "MessageStrKey": "ST:100009"
+  },
+  {
+    "ID": 467,
+    "GameFunctionType": "GameFunctionType_CelebrityStory",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      },
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 5001
+      }
+    ],
+    "NameStrKey": "ST:246844",
+    "MessageStrKey": "ST:250711"
+  },
+  {
+    "ID": 468,
+    "GameFunctionType": "GameFunctionType_PVPLobby",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 70
+      }
+    ],
+    "NameStrKey": "ST:247576",
+    "MessageStrKey": "ST:142296"
+  },
+  {
+    "ID": 469,
+    "GameFunctionType": "GameFunctionType_LibaiStory",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 10
+      }
+    ],
+    "NameStrKey": "ST:246857",
+    "MessageStrKey": "ST:100015"
+  },
+  {
+    "ID": 470,
+    "GameFunctionType": "GameFunctionType_BotGameAssistance",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 11
+      }
+    ],
+    "NameStrKey": "ST:250824",
+    "MessageStrKey": "ST:164998"
+  },
+  {
+    "ID": 471,
+    "GameFunctionType": "GameFunctionType_ReInforceSystem",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 65
+      }
+    ],
+    "NameStrKey": "ST:253988",
+    "MessageStrKey": "ST:144877"
+  },
+  {
+    "ID": 475,
+    "GameFunctionType": "GameFunctionType_CharacterFastUpgrage",
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 99
+      }
+    ],
+    "NameStrKey": "ST:256432",
+    "MessageStrKey": "ST:100015"
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "ID": 1,
+    "NodeIds": [
+      1101,
+      1102,
+      1103,
+      1104,
+      1105,
+      1106,
+      1107,
+      1108
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 1
+      }
+    ],
+    "NodeGroupName": "FowerDummyGroup1",
+    "LineGroupName": "LineGroup1",
+    "GroupNameStrKey": "ST:5113"
+  },
+  {
+    "ID": 2,
+    "NodeIds": [
+      1201,
+      1202,
+      1203,
+      1204,
+      1205,
+      1206,
+      1207,
+      1208,
+      1209
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 2
+      }
+    ],
+    "NodeGroupName": "FowerDummyGroup2",
+    "LineGroupName": "LineGroup2",
+    "GroupNameStrKey": "ST:5465",
+    "UnlockCondTipStrKey": "ST:133901"
+  },
+  {
+    "ID": 3,
+    "NodeIds": [
+      1301,
+      1302,
+      1303,
+      1304,
+      1305,
+      1306,
+      1307,
+      1308,
+      1309,
+      1310,
+      1311
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 3
+      }
+    ],
+    "NodeGroupName": "FowerDummyGroup3",
+    "LineGroupName": "LineGroup3",
+    "GroupNameStrKey": "ST:5466",
+    "UnlockCondTipStrKey": "ST:133902"
+  },
+  {
+    "ID": 4,
+    "NodeIds": [
+      1401,
+      1402,
+      1403,
+      1404,
+      1405,
+      1406,
+      1407,
+      1408,
+      1409,
+      1410,
+      1411
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 4
+      }
+    ],
+    "NodeGroupName": "FowerDummyGroup4",
+    "LineGroupName": "LineGroup4",
+    "GroupNameStrKey": "ST:5467",
+    "UnlockCondTipStrKey": "ST:133903"
+  },
+  {
+    "ID": 5,
+    "NodeIds": [
+      1501,
+      1502,
+      1503,
+      1504,
+      1505,
+      1506,
+      1507,
+      1508,
+      1509,
+      1510,
+      1511
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 5
+      }
+    ],
+    "NodeGroupName": "FowerDummyGroup5",
+    "LineGroupName": "LineGroup5",
+    "GroupNameStrKey": "ST:5570",
+    "UnlockCondTipStrKey": "ST:133904"
+  },
+  {
+    "ID": 6,
+    "NodeIds": [
+      1601,
+      1602,
+      1603,
+      1604,
+      1605,
+      1606,
+      1607,
+      1609
+    ],
+    "UnlockCond": [
+      {
+        "CondType": "ConditionType_BuildingLevel",
+        "P1": 1,
+        "P2": 6
+      }
+    ],
+    "NodeGroupName": "FowerDummyGroup6",
+    "LineGroupName": "LineGroup6",
+    "GroupNameStrKey": "ST:5571",
+    "UnlockCondTipStrKey": "ST:133905"
+  }
+]

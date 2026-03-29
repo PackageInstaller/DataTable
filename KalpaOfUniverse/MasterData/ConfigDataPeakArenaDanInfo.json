@@ -1,0 +1,3363 @@
+[
+  {
+    "ID": 1,
+    "DisplayDan": 1,
+    "DanGroup": 1,
+    "IsDanProtected": true,
+    "BaselineScore": 700,
+    "BaselineStar": 2,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 1,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 5000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 6000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 1,
+        "Max": 3,
+        "Range": 15
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 1,
+        "Max": 3
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 1,
+        "Max": 4
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 1,
+        "Max": 5
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 50,
+    "HotScoreAdjustment": 10,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_01.png@duanwei_01",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_01.prefab",
+    "DanRewardMailTemplateId": 15001,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119817",
+    "MinorLvStrKey": "ST:5466"
+  },
+  {
+    "ID": 2,
+    "DisplayDan": 2,
+    "DanGroup": 1,
+    "IsDanProtected": true,
+    "BaselineScore": 800,
+    "BaselineStar": 2,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 1,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 5000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 6000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 1,
+        "Max": 3,
+        "Range": 15
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 1,
+        "Max": 3
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 1,
+        "Max": 5
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 1,
+        "Max": 6
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 50,
+    "HotScoreAdjustment": 10,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_02.png@duanwei_02",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_02.prefab",
+    "DanRewardMailTemplateId": 15002,
+    "FirstDanRewardDropId": 140306502,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119818",
+    "MinorLvStrKey": "ST:5465"
+  },
+  {
+    "ID": 3,
+    "DisplayDan": 3,
+    "DanGroup": 1,
+    "IsDanProtected": true,
+    "BaselineScore": 900,
+    "BaselineStar": 2,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 2,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 5000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 6000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 2,
+        "Max": 4,
+        "Range": 15
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 2,
+        "Max": 5
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 2,
+        "Max": 6
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 1,
+        "Max": 6
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 50,
+    "HotScoreAdjustment": 10,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_03.png@duanwei_03",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_03.prefab",
+    "DanRewardMailTemplateId": 15003,
+    "FirstDanRewardDropId": 140306503,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119819",
+    "MinorLvStrKey": "ST:5113"
+  },
+  {
+    "ID": 4,
+    "DisplayDan": 4,
+    "DanGroup": 2,
+    "IsDanProtected": true,
+    "BaselineScore": 1000,
+    "BaselineStar": 2,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 2,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1500
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 3,
+        "Max": 5,
+        "Range": 20
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 3,
+        "Max": 6
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 3,
+        "Max": 7
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 3,
+        "Max": 8
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 45,
+    "HotScoreAdjustment": 8,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_04.png@duanwei_04",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_04.prefab",
+    "DanRewardMailTemplateId": 15004,
+    "FirstDanRewardDropId": 140306504,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119820",
+    "MinorLvStrKey": "ST:5466"
+  },
+  {
+    "ID": 5,
+    "DisplayDan": 5,
+    "DanGroup": 2,
+    "IsDanProtected": true,
+    "BaselineScore": 1100,
+    "BaselineStar": 2,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 3,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1500
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 4,
+        "Max": 6,
+        "Range": 20
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 4,
+        "Max": 7
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 4,
+        "Max": 8
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 4,
+        "Max": 9
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 45,
+    "HotScoreAdjustment": 8,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_05.png@duanwei_05",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_05.prefab",
+    "DanRewardMailTemplateId": 15005,
+    "FirstDanRewardDropId": 140306505,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119821",
+    "MinorLvStrKey": "ST:5465"
+  },
+  {
+    "ID": 6,
+    "DisplayDan": 6,
+    "DanGroup": 2,
+    "IsDanProtected": true,
+    "BaselineScore": 1200,
+    "BaselineStar": 2,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 3,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1500
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 5,
+        "Max": 7,
+        "Range": 20
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 5,
+        "Max": 8
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 5,
+        "Max": 9
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 4,
+        "Max": 9
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 45,
+    "HotScoreAdjustment": 8,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_06.png@duanwei_06",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_06.prefab",
+    "DanRewardMailTemplateId": 15006,
+    "FirstDanRewardDropId": 140306506,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119822",
+    "MinorLvStrKey": "ST:5113"
+  },
+  {
+    "ID": 7,
+    "DisplayDan": 7,
+    "DanGroup": 3,
+    "IsDanProtected": true,
+    "BaselineScore": 1300,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 4,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1500
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 6,
+        "Max": 8
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 6,
+        "Max": 9
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 6,
+        "Max": 10
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 6,
+        "Max": 11
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 40,
+    "HotScoreAdjustment": 6,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_07.png@duanwei_07",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_07.prefab",
+    "DanRewardMailTemplateId": 15007,
+    "FirstDanRewardDropId": 140306507,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119823",
+    "MinorLvStrKey": "ST:5466"
+  },
+  {
+    "ID": 8,
+    "DisplayDan": 8,
+    "DanGroup": 3,
+    "IsDanProtected": true,
+    "BaselineScore": 1400,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 5,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1500
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 7,
+        "Max": 9
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 7,
+        "Max": 10
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 7,
+        "Max": 11
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 7,
+        "Max": 12
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 40,
+    "HotScoreAdjustment": 6,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_08.png@duanwei_08",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_08.prefab",
+    "DanRewardMailTemplateId": 15008,
+    "FirstDanRewardDropId": 140306508,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119824",
+    "MinorLvStrKey": "ST:5465"
+  },
+  {
+    "ID": 9,
+    "DisplayDan": 9,
+    "DanGroup": 3,
+    "IsDanProtected": true,
+    "BaselineScore": 1500,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 6,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1500
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 35,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 8,
+        "Max": 10
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 8,
+        "Max": 11
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 8,
+        "Max": 12
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 7,
+        "Max": 12
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 40,
+    "HotScoreAdjustment": 6,
+    "HotScoreRange": 100,
+    "ActivityHotScore": 20,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_09.png@duanwei_09",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_09.prefab",
+    "DanRewardMailTemplateId": 15009,
+    "FirstDanRewardDropId": 140306509,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "UsePublicBoxPlayerCount": 5,
+    "NameStrKey": "ST:119825",
+    "MinorLvStrKey": "ST:5113"
+  },
+  {
+    "ID": 10,
+    "DisplayDan": 10,
+    "DanGroup": 4,
+    "IsDanProtected": true,
+    "BaselineScore": 1600,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 7,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4500
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 25,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 9,
+        "Max": 11
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 9,
+        "Max": 12
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 9,
+        "Max": 13
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 9,
+        "Max": 14
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 35,
+    "HotScoreAdjustment": 4,
+    "HotScoreRange": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_10.png@duanwei_10",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_10.prefab",
+    "DanRewardMailTemplateId": 15010,
+    "FirstDanRewardDropId": 140306510,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "NameStrKey": "ST:119826",
+    "MinorLvStrKey": "ST:5466"
+  },
+  {
+    "ID": 11,
+    "DisplayDan": 11,
+    "DanGroup": 4,
+    "BaselineScore": 1700,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 7,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4500
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 25,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 10,
+        "Max": 12
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 10,
+        "Max": 13
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 10,
+        "Max": 14
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 10,
+        "Max": 15
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 35,
+    "HotScoreAdjustment": 4,
+    "HotScoreRange": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_11.png@duanwei_11",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_11.prefab",
+    "DanRewardMailTemplateId": 15011,
+    "FirstDanRewardDropId": 140306511,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "NameStrKey": "ST:119827",
+    "MinorLvStrKey": "ST:5465"
+  },
+  {
+    "ID": 12,
+    "DisplayDan": 12,
+    "DanGroup": 4,
+    "BaselineScore": 1800,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 8,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -4000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4500
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 25,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 11,
+        "Max": 13
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 11,
+        "Max": 14
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 11,
+        "Max": 15
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 10,
+        "Max": 15
+      }
+    ],
+    "ContinueMatchProtection": 1,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 35,
+    "HotScoreAdjustment": 4,
+    "HotScoreRange": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_12.png@duanwei_12",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_12.prefab",
+    "DanRewardMailTemplateId": 15012,
+    "FirstDanRewardDropId": 140306512,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "NameStrKey": "ST:119828",
+    "MinorLvStrKey": "ST:5113"
+  },
+  {
+    "ID": 13,
+    "DisplayDan": 13,
+    "DanGroup": 5,
+    "IsDanProtected": true,
+    "BaselineScore": 1900,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 8,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 25,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 12,
+        "Max": 14
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 12,
+        "Max": 15
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 12,
+        "Max": 16
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 12,
+        "Max": 17
+      }
+    ],
+    "ContinueMatchProtection": 2,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 30,
+    "HotScoreAdjustment": 4,
+    "HotScoreRange": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_14.png@duanwei_14",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_13.prefab",
+    "DanRewardMailTemplateId": 15013,
+    "FirstDanRewardDropId": 140306513,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "NameStrKey": "ST:123596",
+    "MinorLvStrKey": "ST:5466"
+  },
+  {
+    "ID": 14,
+    "DisplayDan": 14,
+    "DanGroup": 5,
+    "BaselineScore": 2000,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 9,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 25,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 13,
+        "Max": 15
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 13,
+        "Max": 16
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 13,
+        "Max": 17
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 13,
+        "Max": 18
+      }
+    ],
+    "ContinueMatchProtection": 2,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 30,
+    "HotScoreAdjustment": 4,
+    "HotScoreRange": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_15.png@duanwei_15",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_14.prefab",
+    "DanRewardMailTemplateId": 15014,
+    "FirstDanRewardDropId": 140306514,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "NameStrKey": "ST:123597",
+    "MinorLvStrKey": "ST:5465"
+  },
+  {
+    "ID": 15,
+    "DisplayDan": 15,
+    "DanGroup": 5,
+    "BaselineScore": 2100,
+    "BaselineStar": 3,
+    "WinBasicStar": 1,
+    "LossBasicStar": 1,
+    "NextSeasonDan": 9,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 5000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 7500
+      }
+    ],
+    "WinBasicScore": 25,
+    "LossBasicScore": 15,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 14,
+        "Max": 16
+      },
+      {
+        "WaitingTime": 20000,
+        "Min": 14,
+        "Max": 17
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 14,
+        "Max": 18
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 13,
+        "Max": 18
+      }
+    ],
+    "ContinueMatchProtection": 2,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "HotBasicScore": 30,
+    "HotScoreAdjustment": 4,
+    "HotScoreRange": 100,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_16.png@duanwei_16",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_15.prefab",
+    "DanRewardMailTemplateId": 15015,
+    "FirstDanRewardDropId": 140306515,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "CanUseProtectItem": true,
+    "NameStrKey": "ST:123598",
+    "MinorLvStrKey": "ST:5113"
+  },
+  {
+    "ID": 16,
+    "DisplayDan": 16,
+    "DanGroup": 6,
+    "IsDanProtected": true,
+    "BaselineScore": 2200,
+    "NextSeasonDan": 10,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 500
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 1500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 2500
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 1000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 3000
+      },
+      {
+        "ConsecutiveWins": 5,
+        "ScoreBonus": 3500
+      }
+    ],
+    "WinBasicScore": 15,
+    "LossBasicScore": 11,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 15,
+        "Max": 17
+      },
+      {
+        "WaitingTime": 10000,
+        "Min": 15,
+        "Max": 18
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 15,
+        "Max": 19
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 14,
+        "Max": 19
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 14,
+        "Max": 20
+      },
+      {
+        "WaitingTime": 200000,
+        "Min": 14,
+        "Max": 21
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 14,
+        "Max": 22
+      }
+    ],
+    "ContinueMatchProtection": 3,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_13.png@duanwei_13",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_16.prefab",
+    "DanRewardMailTemplateId": 15016,
+    "FirstDanRewardDropId": 140306516,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "NameStrKey": "ST:93480"
+  },
+  {
+    "ID": 17,
+    "DisplayDan": 16,
+    "DanGroup": 6,
+    "BaselineScore": 2300,
+    "NextSeasonDan": 10,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 1000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 3000
+      }
+    ],
+    "WinBasicScore": 15,
+    "LossBasicScore": 14,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 16,
+        "Max": 18
+      },
+      {
+        "WaitingTime": 10000,
+        "Min": 16,
+        "Max": 19
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 16,
+        "Max": 20
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 16,
+        "Max": 21
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 200000,
+        "Min": 15,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 15,
+        "Max": 22
+      }
+    ],
+    "ContinueMatchProtection": 3,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_13.png@duanwei_13",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_16.prefab",
+    "DanRewardMailTemplateId": 15016,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "NameStrKey": "ST:93480"
+  },
+  {
+    "ID": 18,
+    "DisplayDan": 16,
+    "DanGroup": 6,
+    "BaselineScore": 2400,
+    "NextSeasonDan": 10,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 1000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 2000
+      },
+      {
+        "ConsecutiveWins": 4,
+        "ScoreBonus": 2500
+      }
+    ],
+    "WinBasicScore": 15,
+    "LossBasicScore": 17,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 17,
+        "Max": 19
+      },
+      {
+        "WaitingTime": 10000,
+        "Min": 17,
+        "Max": 20
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 17,
+        "Max": 21
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 17,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 200000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 16,
+        "Max": 22
+      }
+    ],
+    "ContinueMatchProtection": 3,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_13.png@duanwei_13",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_16.prefab",
+    "DanRewardMailTemplateId": 15016,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "NameStrKey": "ST:93480"
+  },
+  {
+    "ID": 19,
+    "DisplayDan": 16,
+    "DanGroup": 6,
+    "BaselineScore": 2500,
+    "NextSeasonDan": 10,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 1000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 2000
+      }
+    ],
+    "WinBasicScore": 15,
+    "LossBasicScore": 19,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 18,
+        "Max": 20
+      },
+      {
+        "WaitingTime": 10000,
+        "Min": 18,
+        "Max": 21
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 18,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 17,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 200000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 16,
+        "Max": 22
+      }
+    ],
+    "ContinueMatchProtection": 3,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_13.png@duanwei_13",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_16.prefab",
+    "DanRewardMailTemplateId": 15016,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "NameStrKey": "ST:93480"
+  },
+  {
+    "ID": 20,
+    "DisplayDan": 16,
+    "DanGroup": 6,
+    "BaselineScore": 2600,
+    "NextSeasonDan": 10,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2500
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 5000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 1000
+      },
+      {
+        "ConsecutiveWins": 3,
+        "ScoreBonus": 1500
+      }
+    ],
+    "WinBasicScore": 15,
+    "LossBasicScore": 21,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 19,
+        "Max": 21
+      },
+      {
+        "WaitingTime": 10000,
+        "Min": 19,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 18,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 17,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 200000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 16,
+        "Max": 22
+      }
+    ],
+    "ContinueMatchProtection": 3,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_13.png@duanwei_13",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_16.prefab",
+    "DanRewardMailTemplateId": 15016,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "NameStrKey": "ST:93480"
+  },
+  {
+    "ID": 21,
+    "DisplayDan": 16,
+    "DanGroup": 6,
+    "BaselineScore": 2700,
+    "NextSeasonDan": 10,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 4500
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 6000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 1000
+      }
+    ],
+    "WinBasicScore": 15,
+    "LossBasicScore": 23,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 21,
+        "Max": 21
+      },
+      {
+        "WaitingTime": 10000,
+        "Min": 20,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 19,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 18,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 17,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 200000,
+        "Min": 16,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 16,
+        "Max": 22
+      }
+    ],
+    "ContinueMatchProtection": 3,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_13.png@duanwei_13",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_16.prefab",
+    "DanRewardMailTemplateId": 15016,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "NameStrKey": "ST:93480"
+  },
+  {
+    "ID": 22,
+    "DisplayDan": 16,
+    "DanGroup": 6,
+    "BaselineScore": 2800,
+    "NextSeasonDan": 10,
+    "WinScoreDiffBonus": [
+      {
+        "ScoreDiff": -400,
+        "ScoreBonus": -5000
+      },
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -3000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 2000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 4000
+      }
+    ],
+    "LossScoreDiffBonus": [
+      {
+        "ScoreDiff": -300,
+        "ScoreBonus": -2000
+      },
+      {
+        "ScoreDiff": -200,
+        "ScoreBonus": -1000
+      },
+      {
+        "ScoreDiff": -100
+      },
+      {
+        "ScoreDiff": 100,
+        "ScoreBonus": 1000
+      },
+      {
+        "ScoreDiff": 200,
+        "ScoreBonus": 3000
+      },
+      {
+        "ScoreDiff": 300,
+        "ScoreBonus": 5000
+      },
+      {
+        "ScoreDiff": 400,
+        "ScoreBonus": 6000
+      }
+    ],
+    "ConsecutiveWinScoreBonus": [
+      {
+        "ConsecutiveWins": 2,
+        "ScoreBonus": 1000
+      }
+    ],
+    "WinBasicScore": 15,
+    "LossBasicScore": 25,
+    "WaitingTimeAdjustment": [
+      {
+        "WaitingTime": 5000,
+        "Min": 22,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 10000,
+        "Min": 21,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 15000,
+        "Min": 20,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 19,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 60000,
+        "Min": 18,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 200000,
+        "Min": 17,
+        "Max": 22
+      },
+      {
+        "WaitingTime": 300000,
+        "Min": 16,
+        "Max": 22
+      }
+    ],
+    "ContinueMatchProtection": 3,
+    "ConsecutiveWinsMatchmakingScoreAdjustment": [
+      {
+        "Count": 6,
+        "ScoreAdjust": 50
+      },
+      {
+        "Count": 7,
+        "ScoreAdjust": 150
+      },
+      {
+        "Count": 8,
+        "ScoreAdjust": 250
+      },
+      {
+        "Count": 9,
+        "ScoreAdjust": 350
+      },
+      {
+        "Count": 10,
+        "ScoreAdjust": 500
+      }
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/TopArenaImage_ABS/NoTag/RankIcon/duanwei_13.png@duanwei_13",
+    "IconPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/TopArenaPrefab_ABS/Grade/GradeIcon_16.prefab",
+    "DanRewardMailTemplateId": 15016,
+    "IsBanPickMod": true,
+    "IsTeamCheck": true,
+    "NameStrKey": "ST:93480"
+  }
+]

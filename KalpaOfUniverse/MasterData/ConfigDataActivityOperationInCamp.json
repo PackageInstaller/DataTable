@@ -1,0 +1,1392 @@
+[
+  {
+    "ID": 1,
+    "DialogueID": 1000861101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616100010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616100020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104283",
+    "Title2StrKey": "ST:104294"
+  },
+  {
+    "ID": 2,
+    "DialogueID": 2000002101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616100020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104284",
+    "Title2StrKey": "ST:104295"
+  },
+  {
+    "ID": 3,
+    "DialogueID": 2000005101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200030
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104285",
+    "Title2StrKey": "ST:104296"
+  },
+  {
+    "ID": 4,
+    "DialogueID": 2000015101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666700010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666700020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104216",
+    "Title2StrKey": "ST:104297"
+  },
+  {
+    "ID": 5,
+    "DialogueID": 2002003101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104286",
+    "Title2StrKey": "ST:104298"
+  },
+  {
+    "ID": 6,
+    "DialogueID": 2002010101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616400010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500010
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104287",
+    "Title2StrKey": "ST:104299"
+  },
+  {
+    "ID": 7,
+    "DialogueID": 2002013101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666600010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666600020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104288",
+    "Title2StrKey": "ST:104300"
+  },
+  {
+    "ID": 8,
+    "DialogueID": 2002018101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 696900010
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Think",
+    "IsHiddenEvent": true,
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104289",
+    "Title2StrKey": "ST:104301"
+  },
+  {
+    "ID": 9,
+    "DialogueID": 2001006101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616300010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616300020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104290",
+    "Title2StrKey": "ST:104302"
+  },
+  {
+    "ID": 10,
+    "DialogueID": 1943014101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200040
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616300010
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104291",
+    "Title2StrKey": "ST:104303"
+  },
+  {
+    "ID": 11,
+    "DialogueID": 1943018101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616400010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666600010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104292",
+    "Title2StrKey": "ST:104304"
+  },
+  {
+    "ID": 12,
+    "DialogueID": 1943019101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104293",
+    "Title2StrKey": "ST:80532"
+  },
+  {
+    "ID": 13,
+    "DialogueID": 2000002201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616100020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200030
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105765",
+    "Title2StrKey": "ST:105773"
+  },
+  {
+    "ID": 14,
+    "DialogueID": 1310951101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616300020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616300030
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105766",
+    "Title2StrKey": "ST:105774"
+  },
+  {
+    "ID": 19,
+    "DialogueID": 1216007101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105767",
+    "Title2StrKey": "ST:105775"
+  },
+  {
+    "ID": 20,
+    "DialogueID": 1216009101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666600010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105768",
+    "Title2StrKey": "ST:105776"
+  },
+  {
+    "ID": 21,
+    "DialogueID": 1216011101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666600020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666700010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105769",
+    "Title2StrKey": "ST:105777"
+  },
+  {
+    "ID": 22,
+    "DialogueID": 1216012101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666700010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666700020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105770",
+    "Title2StrKey": "ST:105778"
+  },
+  {
+    "ID": 23,
+    "DialogueID": 1216013101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666700020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666800010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105771",
+    "Title2StrKey": "ST:105779"
+  },
+  {
+    "ID": 24,
+    "DialogueID": 1109781101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666600010
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 5075
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666600020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105772",
+    "Title2StrKey": "ST:105780"
+  },
+  {
+    "ID": 25,
+    "DialogueID": 1310951201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500010
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 5074
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 666500020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:106332",
+    "Title2StrKey": "ST:106334"
+  },
+  {
+    "ID": 26,
+    "DialogueID": 1109781201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616200040
+      },
+      {
+        "CondType": "ConditionType_Mession",
+        "P1": 5073
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 616300010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:106333",
+    "Title2StrKey": "ST:106335"
+  },
+  {
+    "ID": 27,
+    "DialogueID": 2008000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 501
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 502
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105667",
+    "Title2StrKey": "ST:105667"
+  },
+  {
+    "ID": 28,
+    "DialogueID": 2008000301,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 502
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 503
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123094",
+    "Title2StrKey": "ST:123094"
+  },
+  {
+    "ID": 29,
+    "DialogueID": 2008000401,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 503
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 511
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123095",
+    "Title2StrKey": "ST:123095"
+  },
+  {
+    "ID": 30,
+    "DialogueID": 2008000501,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 512
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 522
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123097",
+    "Title2StrKey": "ST:123097"
+  },
+  {
+    "ID": 31,
+    "DialogueID": 2009000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 522
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 531
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123099",
+    "Title2StrKey": "ST:123099"
+  },
+  {
+    "ID": 32,
+    "DialogueID": 2010000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 532
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 541
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123101",
+    "Title2StrKey": "ST:123101"
+  },
+  {
+    "ID": 33,
+    "DialogueID": 2008000601,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 551
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 552
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123104",
+    "Title2StrKey": "ST:123104"
+  },
+  {
+    "ID": 34,
+    "DialogueID": 2008000701,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 553
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 561
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123106",
+    "Title2StrKey": "ST:123106"
+  },
+  {
+    "ID": 35,
+    "DialogueID": 1145000801,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 562
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Think",
+    "IsHiddenEvent": true,
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123108",
+    "Title2StrKey": "ST:123108"
+  },
+  {
+    "ID": 36,
+    "DialogueID": 1000861101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616100010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616100020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104283",
+    "Title2StrKey": "ST:104294"
+  },
+  {
+    "ID": 37,
+    "DialogueID": 2000002101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616100020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104284",
+    "Title2StrKey": "ST:104295"
+  },
+  {
+    "ID": 38,
+    "DialogueID": 2000005101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200030
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104285",
+    "Title2StrKey": "ST:104296"
+  },
+  {
+    "ID": 39,
+    "DialogueID": 2000015101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666700010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666700020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104216",
+    "Title2StrKey": "ST:104297"
+  },
+  {
+    "ID": 40,
+    "DialogueID": 2002003101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104286",
+    "Title2StrKey": "ST:104298"
+  },
+  {
+    "ID": 41,
+    "DialogueID": 2002010101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616400010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666500010
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104287",
+    "Title2StrKey": "ST:104299"
+  },
+  {
+    "ID": 42,
+    "DialogueID": 2002013101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666600010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666600020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104288",
+    "Title2StrKey": "ST:104300"
+  },
+  {
+    "ID": 43,
+    "DialogueID": 2002018101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1696900010
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Think",
+    "IsHiddenEvent": true,
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104289",
+    "Title2StrKey": "ST:104301"
+  },
+  {
+    "ID": 44,
+    "DialogueID": 2001006101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616300010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616300020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104290",
+    "Title2StrKey": "ST:104302"
+  },
+  {
+    "ID": 45,
+    "DialogueID": 1943014101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200040
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616300010
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104291",
+    "Title2StrKey": "ST:104303"
+  },
+  {
+    "ID": 46,
+    "DialogueID": 1943018101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616400010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666600010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104292",
+    "Title2StrKey": "ST:104304"
+  },
+  {
+    "ID": 47,
+    "DialogueID": 1943019101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666500010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666500020
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:104293",
+    "Title2StrKey": "ST:80532"
+  },
+  {
+    "ID": 48,
+    "DialogueID": 2000002201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616100020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616200030
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105765",
+    "Title2StrKey": "ST:105773"
+  },
+  {
+    "ID": 49,
+    "DialogueID": 1310951101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616300020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1616300030
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105766",
+    "Title2StrKey": "ST:105774"
+  },
+  {
+    "ID": 50,
+    "DialogueID": 1216007101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666500010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666500020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105767",
+    "Title2StrKey": "ST:105775"
+  },
+  {
+    "ID": 51,
+    "DialogueID": 1216009101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666500020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666600010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105768",
+    "Title2StrKey": "ST:105776"
+  },
+  {
+    "ID": 52,
+    "DialogueID": 1216011101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666600020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666700010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105769",
+    "Title2StrKey": "ST:105777"
+  },
+  {
+    "ID": 53,
+    "DialogueID": 1216012101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666700010
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666700020
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105770",
+    "Title2StrKey": "ST:105778"
+  },
+  {
+    "ID": 54,
+    "DialogueID": 1216013101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666700020
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_Scenario",
+        "P1": 1666800010
+      }
+    ],
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105771",
+    "Title2StrKey": "ST:105779"
+  },
+  {
+    "ID": 55,
+    "DialogueID": 2008000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1601
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1602
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105667",
+    "Title2StrKey": "ST:105667"
+  },
+  {
+    "ID": 56,
+    "DialogueID": 2008000301,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1602
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1603
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123094",
+    "Title2StrKey": "ST:123094"
+  },
+  {
+    "ID": 57,
+    "DialogueID": 2008000401,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1603
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1611
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123095",
+    "Title2StrKey": "ST:123095"
+  },
+  {
+    "ID": 58,
+    "DialogueID": 2008000501,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1612
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1622
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123097",
+    "Title2StrKey": "ST:123097"
+  },
+  {
+    "ID": 59,
+    "DialogueID": 2009000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1622
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1631
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123099",
+    "Title2StrKey": "ST:123099"
+  },
+  {
+    "ID": 60,
+    "DialogueID": 2010000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1632
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1641
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123101",
+    "Title2StrKey": "ST:123101"
+  },
+  {
+    "ID": 61,
+    "DialogueID": 2008000601,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1651
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1652
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123104",
+    "Title2StrKey": "ST:123104"
+  },
+  {
+    "ID": 62,
+    "DialogueID": 2008000701,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1653
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1661
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123106",
+    "Title2StrKey": "ST:123106"
+  },
+  {
+    "ID": 63,
+    "DialogueID": 1145000801,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 1662
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Think",
+    "IsHiddenEvent": true,
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123108",
+    "Title2StrKey": "ST:123108"
+  },
+  {
+    "ID": 64,
+    "DialogueID": 2008000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2701
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2702
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:105667",
+    "Title2StrKey": "ST:105667"
+  },
+  {
+    "ID": 65,
+    "DialogueID": 2008000301,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2702
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2703
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123094",
+    "Title2StrKey": "ST:123094"
+  },
+  {
+    "ID": 66,
+    "DialogueID": 2008000401,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2703
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2711
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123095",
+    "Title2StrKey": "ST:123095"
+  },
+  {
+    "ID": 67,
+    "DialogueID": 2008000501,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2712
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2722
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123097",
+    "Title2StrKey": "ST:123097"
+  },
+  {
+    "ID": 68,
+    "DialogueID": 2009000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2722
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2731
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123099",
+    "Title2StrKey": "ST:123099"
+  },
+  {
+    "ID": 69,
+    "DialogueID": 2010000201,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2732
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2741
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123101",
+    "Title2StrKey": "ST:123101"
+  },
+  {
+    "ID": 70,
+    "DialogueID": 2008000601,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2751
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2752
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123104",
+    "Title2StrKey": "ST:123104"
+  },
+  {
+    "ID": 71,
+    "DialogueID": 2008000701,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2753
+      }
+    ],
+    "DisappearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2761
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Master",
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123106",
+    "Title2StrKey": "ST:123106"
+  },
+  {
+    "ID": 72,
+    "DialogueID": 1145000801,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 2762
+      }
+    ],
+    "ShowType": "ActivityDialogueShowTypeEnum_Think",
+    "IsHiddenEvent": true,
+    "NotRequiredRefresh": true,
+    "ReCallCurrencyType": "CurrencyType_Gold",
+    "WordsStrKey": "ST:123108",
+    "Title2StrKey": "ST:123108"
+  }
+]

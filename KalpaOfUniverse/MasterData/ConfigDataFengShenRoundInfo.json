@@ -1,0 +1,82 @@
+[
+  {
+    "ID": 1,
+    "NextRoundId": 2,
+    "InitTeamLevel": 30,
+    "InitStar": 6,
+    "InitTrainingInstructions": [
+      101,
+      201,
+      301,
+      401,
+      501
+    ],
+    "LoopInitMorale": 120,
+    "DailyAddGold": 100,
+    "MaxLoopCount": 1,
+    "TrainingEventPoolId": 1,
+    "PropertyGrade": [
+      200,
+      150,
+      100
+    ],
+    "DescStrKey": "ST:229262",
+    "TitleStrKey": "ST:227145"
+  },
+  {
+    "ID": 2,
+    "NextRoundId": 3,
+    "InitTeamLevel": 32,
+    "InitStar": 6,
+    "IsSixSkillPoint": true,
+    "InitTrainingInstructions": [
+      104,
+      204,
+      304,
+      404,
+      501
+    ],
+    "LoopInitMorale": 120,
+    "DailyAddGold": 400,
+    "MaxLoopCount": 3,
+    "TrainingEventPoolId": 2,
+    "PropertyGrade": [
+      2125,
+      1450,
+      900
+    ],
+    "DescStrKey": "ST:229263",
+    "TitleStrKey": "ST:227146"
+  },
+  {
+    "ID": 3,
+    "UnlockConditions": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 4604
+      }
+    ],
+    "InitTeamLevel": 36,
+    "InitStar": 6,
+    "IsSixSkillPoint": true,
+    "InitTrainingInstructions": [
+      107,
+      207,
+      307,
+      407,
+      501
+    ],
+    "LoopInitMorale": 120,
+    "DailyAddGold": 800,
+    "MaxLoopCount": 3,
+    "TrainingEventPoolId": 3,
+    "PropertyGrade": [
+      4500,
+      4000,
+      1875
+    ],
+    "UnlockDescStrKey": "ST:228279",
+    "DescStrKey": "ST:229264",
+    "TitleStrKey": "ST:227147"
+  }
+]

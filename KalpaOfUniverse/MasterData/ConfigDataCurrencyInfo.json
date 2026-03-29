@@ -1,0 +1,368 @@
+[
+  {
+    "ID": 1,
+    "CurrencyType": "CurrencyType_Gold",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200110
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200108
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200109
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "CurrencyType": "CurrencyType_Crystal",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200111
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200112
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200113
+      }
+    ]
+  },
+  {
+    "ID": 3,
+    "CurrencyType": "CurrencyType_Lottery",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200101
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200100
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200111
+      }
+    ]
+  },
+  {
+    "ID": 4,
+    "CurrencyType": "CurrencyType_Honor",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200118
+      }
+    ]
+  },
+  {
+    "ID": 5,
+    "CurrencyType": "CurrencyType_GuildCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 6,
+    "CurrencyType": "CurrencyType_Reputation",
+    "GotMaxDaily": 2000,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200120
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200114
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200115
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200116
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200117
+      }
+    ]
+  },
+  {
+    "ID": 7,
+    "CurrencyType": "CurrencyType_HeavenDust",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200119
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200107
+      }
+    ]
+  },
+  {
+    "ID": 8,
+    "CurrencyType": "CurrencyType_StarColor",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 9,
+    "CurrencyType": "CurrencyType_Essence",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 10,
+    "CurrencyType": "CurrencyType_SkinTicket",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1,
+    "SellInGiftInfos": [
+      {
+        "GiftStoreId": "StoreId_SpGift",
+        "GiftItemId": 33
+      },
+      {
+        "GiftStoreId": "StoreId_BackGift",
+        "GiftItemId": 86
+      },
+      {
+        "GiftStoreId": "StoreId_Gift",
+        "GiftItemId": 34
+      }
+    ]
+  },
+  {
+    "ID": 11,
+    "CurrencyType": "CurrencyType_StrangeMazeCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 12,
+    "CurrencyType": "CurrencyType_BuddhaCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200171
+      },
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200172
+      }
+    ]
+  },
+  {
+    "ID": 13,
+    "CurrencyType": "CurrencyType_OldRegionCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200173
+      }
+    ]
+  },
+  {
+    "ID": 14,
+    "CurrencyType": "CurrencyType_ClimbTowerCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 15,
+    "CurrencyType": "CurrencyType_ClimbTowerCoin2",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 16,
+    "CurrencyType": "CurrencyType_SoulCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 17,
+    "CurrencyType": "CurrencyType_GuildBattleCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1,
+    "GetPathList": [
+      {
+        "PathType": "GetPathType_TextOnly",
+        "Name": 200205
+      }
+    ]
+  },
+  {
+    "ID": 18,
+    "CurrencyType": "CurrencyType_HomeCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 19,
+    "CurrencyType": "CurrencyType_JourneyCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 20,
+    "CurrencyType": "CurrencyType_TearlessGateCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 21,
+    "CurrencyType": "CurrencyType_GateAdvancedCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 22,
+    "CurrencyType": "CurrencyType_SoulCoin2",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 23,
+    "CurrencyType": "CurrencyType_BackFlow",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": 8000
+  },
+  {
+    "ID": 24,
+    "CurrencyType": "CurrencyType_TearlessGateCoin2",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 25,
+    "CurrencyType": "CurrencyType_SBSectReputation",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": 1000,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 26,
+    "CurrencyType": "CurrencyType_XiyouFacultyPoint",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": 37
+  },
+  {
+    "ID": 27,
+    "CurrencyType": "CurrencyType_PVPSkinTicket",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1,
+    "SellInGiftInfos": [
+      {
+        "GiftStoreId": "StoreId_SpGift",
+        "GiftItemId": 584
+      }
+    ]
+  },
+  {
+    "ID": 28,
+    "CurrencyType": "CurrencyType_QiNianSkinTicket",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1,
+    "SellInGiftInfos": [
+      {
+        "GiftStoreId": "StoreId_SpGift",
+        "GiftItemId": 606
+      },
+      {
+        "GiftStoreId": "StoreId_Gift",
+        "GiftItemId": 535
+      }
+    ]
+  },
+  {
+    "ID": 29,
+    "CurrencyType": "CurrencyType_StarShiftCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 30,
+    "CurrencyType": "CurrencyType_DustOfTime",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": -1
+  },
+  {
+    "ID": 400020703,
+    "CurrencyType": "CurrencyType_GateTalentCoin",
+    "GotMaxDaily": -1,
+    "GotMaxWeekly": -1,
+    "CanGmtModifyToMinus": true,
+    "AccumulateGotMax": 2080
+  }
+]

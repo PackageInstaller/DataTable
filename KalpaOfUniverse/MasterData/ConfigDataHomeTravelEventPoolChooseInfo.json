@@ -1,0 +1,487 @@
+[
+  {
+    "ID": 1,
+    "MaxTime": 10800,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "MinTime": 10800,
+    "MaxTime": 18000,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 50
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 3,
+    "MinTime": 18000,
+    "MaxTime": 21600,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 80
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 4,
+    "MinTime": 21600,
+    "MaxTime": 25200,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 40
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 5,
+    "MinTime": 25200,
+    "MaxTime": 28800,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 80
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 6,
+    "MinTime": 28800,
+    "MaxTime": 32400,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 25
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 7,
+    "MinTime": 32400,
+    "MaxTime": 36000,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 75
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 8,
+    "MinTime": 36000,
+    "MaxTime": 39600,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 25
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 9,
+    "MinTime": 39600,
+    "MaxTime": 43200,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 75
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 10,
+    "MinTime": 43200,
+    "MaxTime": 50400,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 25
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 11,
+    "MinTime": 50400,
+    "MaxTime": 72000,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 75
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 12,
+    "MinTime": 72000,
+    "MaxTime": 79200,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 25
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 13,
+    "MinTime": 79200,
+    "MaxTime": 86400,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  },
+  {
+    "ID": 14,
+    "MinTime": 86400,
+    "MaxTime": 99999,
+    "EventPoolProbability": [
+      {
+        "PoolType": "HomeTravelEventPoolType_Start",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 100
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_Play",
+        "Probability": 75
+      },
+      {
+        "PoolType": "HomeTravelEventPoolType_End",
+        "Probability": 100
+      }
+    ]
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "ID": 1,
+    "FastMatchingStartTime": "0:00:00",
+    "FastMatchingFinishTime": "2:00:00",
+    "FastMatchingWaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 5,
+        "Max": 5,
+        "Range": 25
+      },
+      {
+        "WaitingTime": 30000,
+        "Range": 50
+      },
+      {
+        "WaitingTime": 300000
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "FastMatchingStartTime": "2:00:00",
+    "FastMatchingFinishTime": "8:00:00",
+    "FastMatchingWaitingTimeAdjustment": [
+      {
+        "WaitingTime": 20000,
+        "Range": 35
+      },
+      {
+        "WaitingTime": 300000
+      }
+    ]
+  },
+  {
+    "ID": 3,
+    "FastMatchingStartTime": "8:00:00",
+    "FastMatchingFinishTime": "11:30:00",
+    "FastMatchingWaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 3,
+        "Max": 3,
+        "Range": 25
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 5,
+        "Max": 5,
+        "Range": 50
+      },
+      {
+        "WaitingTime": 300000
+      }
+    ]
+  },
+  {
+    "ID": 4,
+    "FastMatchingStartTime": "11:30:00",
+    "FastMatchingFinishTime": "14:30:00",
+    "FastMatchingWaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 3,
+        "Max": 3,
+        "Range": 15
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 5,
+        "Max": 5,
+        "Range": 30
+      },
+      {
+        "WaitingTime": 60000,
+        "Range": 30
+      },
+      {
+        "WaitingTime": 300000
+      }
+    ]
+  },
+  {
+    "ID": 5,
+    "FastMatchingStartTime": "14:30:00",
+    "FastMatchingFinishTime": "18:00:00",
+    "FastMatchingWaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 3,
+        "Max": 3,
+        "Range": 25
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 5,
+        "Max": 5,
+        "Range": 50
+      },
+      {
+        "WaitingTime": 300000
+      }
+    ]
+  },
+  {
+    "ID": 6,
+    "FastMatchingStartTime": "18:00:00",
+    "FastMatchingFinishTime": "22:00:00",
+    "FastMatchingWaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 3,
+        "Max": 3,
+        "Range": 15
+      },
+      {
+        "WaitingTime": 30000,
+        "Min": 5,
+        "Max": 5,
+        "Range": 30
+      },
+      {
+        "WaitingTime": 60000,
+        "Range": 30
+      },
+      {
+        "WaitingTime": 300000
+      }
+    ]
+  },
+  {
+    "ID": 7,
+    "FastMatchingStartTime": "22:00:00",
+    "FastMatchingFinishTime": "23:59:59",
+    "FastMatchingWaitingTimeAdjustment": [
+      {
+        "WaitingTime": 10000,
+        "Min": 5,
+        "Max": 5,
+        "Range": 25
+      },
+      {
+        "WaitingTime": 30000,
+        "Range": 50
+      },
+      {
+        "WaitingTime": 300000
+      }
+    ]
+  }
+]

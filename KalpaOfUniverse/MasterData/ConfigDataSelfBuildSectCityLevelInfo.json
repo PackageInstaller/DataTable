@@ -1,0 +1,367 @@
+[
+  {
+    "ID": 101,
+    "CityId": 1,
+    "Level": 1,
+    "MaxActor": 5,
+    "MaxOrganCost": 20,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46001
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46002
+      }
+    ],
+    "UnlockStrategyList": [
+      46001,
+      46002
+    ],
+    "MainHallPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SBVBeastPrefab_ABS/SBVBeastBuildingPrefab/MainHallUIPrefab.prefab"
+  },
+  {
+    "ID": 102,
+    "CityId": 1,
+    "Level": 2,
+    "MaxActor": 6,
+    "MaxOrganCost": 24,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46001
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46002
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46003
+      }
+    ],
+    "UnlockStrategyList": [
+      46003
+    ],
+    "MainHallPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SBVBeastPrefab_ABS/SBVBeastBuildingPrefab/MainHallUIPrefab_01.prefab"
+  },
+  {
+    "ID": 103,
+    "CityId": 1,
+    "Level": 3,
+    "MaxActor": 7,
+    "MaxOrganCost": 28,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46001
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46002
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46003
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46004
+      }
+    ],
+    "UnlockStrategyList": [
+      46004
+    ],
+    "MainHallPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SBVBeastPrefab_ABS/SBVBeastBuildingPrefab/MainHallUIPrefab_02.prefab"
+  },
+  {
+    "ID": 104,
+    "CityId": 1,
+    "Level": 4,
+    "MaxActor": 8,
+    "MaxOrganCost": 32,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46001
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46002
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46003
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46004
+      },
+      {
+        "Target": "AssistEffectTarget_Enemy",
+        "AssistId": 46005
+      }
+    ],
+    "UnlockStrategyList": [
+      46005
+    ],
+    "MainHallPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SBVBeastPrefab_ABS/SBVBeastBuildingPrefab/MainHallUIPrefab_03.prefab"
+  },
+  {
+    "ID": 105,
+    "CityId": 1,
+    "Level": 5,
+    "MaxActor": 9,
+    "MaxOrganCost": 36,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46001
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46002
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46003
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46004
+      },
+      {
+        "Target": "AssistEffectTarget_Enemy",
+        "AssistId": 46005
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46006
+      }
+    ],
+    "UnlockStrategyList": [
+      46006
+    ],
+    "MainHallPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SBVBeastPrefab_ABS/SBVBeastBuildingPrefab/MainHallUIPrefab_04.prefab"
+  },
+  {
+    "ID": 201,
+    "CityId": 2,
+    "Level": 1,
+    "MaxActor": 4,
+    "MaxOrganCost": 16,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46101
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46102
+      }
+    ],
+    "UnlockStrategyList": [
+      46101,
+      46102
+    ]
+  },
+  {
+    "ID": 202,
+    "CityId": 2,
+    "Level": 2,
+    "MaxActor": 5,
+    "MaxOrganCost": 20,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46101
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46102
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46103
+      }
+    ],
+    "UnlockStrategyList": [
+      46103
+    ]
+  },
+  {
+    "ID": 203,
+    "CityId": 2,
+    "Level": 3,
+    "MaxActor": 5,
+    "MaxOrganCost": 24,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46101
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46102
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46103
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46104
+      }
+    ],
+    "UnlockStrategyList": [
+      46104
+    ]
+  },
+  {
+    "ID": 301,
+    "CityId": 3,
+    "Level": 1,
+    "MaxActor": 4,
+    "MaxOrganCost": 16,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46201
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46202
+      }
+    ],
+    "UnlockStrategyList": [
+      46201,
+      46202
+    ]
+  },
+  {
+    "ID": 302,
+    "CityId": 3,
+    "Level": 2,
+    "MaxActor": 5,
+    "MaxOrganCost": 20,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46201
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46202
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46203
+      }
+    ],
+    "UnlockStrategyList": [
+      46203
+    ]
+  },
+  {
+    "ID": 303,
+    "CityId": 3,
+    "Level": 3,
+    "MaxActor": 5,
+    "MaxOrganCost": 24,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46201
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46202
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46203
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46204
+      }
+    ],
+    "UnlockStrategyList": [
+      46204
+    ]
+  },
+  {
+    "ID": 401,
+    "CityId": 4,
+    "Level": 1,
+    "MaxActor": 4,
+    "MaxOrganCost": 16,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46301
+      },
+      {
+        "Target": "AssistEffectTarget_Enemy",
+        "AssistId": 46302
+      }
+    ],
+    "UnlockStrategyList": [
+      46301,
+      46302
+    ]
+  },
+  {
+    "ID": 402,
+    "CityId": 4,
+    "Level": 2,
+    "MaxActor": 5,
+    "MaxOrganCost": 20,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46301
+      },
+      {
+        "Target": "AssistEffectTarget_Enemy",
+        "AssistId": 46302
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46303
+      }
+    ],
+    "UnlockStrategyList": [
+      46303
+    ]
+  },
+  {
+    "ID": 403,
+    "CityId": 4,
+    "Level": 3,
+    "MaxActor": 5,
+    "MaxOrganCost": 24,
+    "Strategy": [
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46301
+      },
+      {
+        "Target": "AssistEffectTarget_Enemy",
+        "AssistId": 46302
+      },
+      {
+        "Target": "AssistEffectTarget_Self",
+        "AssistId": 46303
+      },
+      {
+        "Target": "AssistEffectTarget_Enemy",
+        "AssistId": 46304
+      }
+    ],
+    "UnlockStrategyList": [
+      46304
+    ]
+  }
+]

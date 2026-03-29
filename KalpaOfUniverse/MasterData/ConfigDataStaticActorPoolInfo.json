@@ -1,0 +1,853 @@
+[
+  {
+    "ID": 1,
+    "PoolType": "StaticActorPoolType_PresetLevel",
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100110000,
+      100110100,
+      100110200,
+      100110300,
+      100110400
+    ]
+  },
+  {
+    "ID": 2,
+    "PoolType": "StaticActorPoolType_Maxed",
+    "FilterParams": [
+      100110000,
+      100110100,
+      100110200,
+      100110300,
+      100110400
+    ]
+  },
+  {
+    "ID": 3,
+    "FilterType": "StaticActorPoolFilterType_ExcludeCharIds",
+    "FilterParams": [
+      100100200
+    ]
+  },
+  {
+    "ID": 4,
+    "PoolType": "StaticActorPoolType_PresetLevel",
+    "Param1": 30,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100100000,
+      100111000
+    ]
+  },
+  {
+    "ID": 5,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100100000,
+      100111000
+    ]
+  },
+  {
+    "ID": 6,
+    "FilterType": "StaticActorPoolFilterType_ExcludeCharIds",
+    "FilterParams": [
+      100100000
+    ]
+  },
+  {
+    "ID": 7,
+    "PoolType": "StaticActorPoolType_ClimbTower",
+    "Param1": 10,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      810000001,
+      810000101,
+      810000201,
+      810000301,
+      810000401,
+      810000501,
+      810000601,
+      810000701,
+      810000801
+    ]
+  },
+  {
+    "ID": 8,
+    "PoolType": "StaticActorPoolType_ClimbTower",
+    "Param1": 10,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      810000001,
+      810000101,
+      810000201,
+      810000301,
+      810000401,
+      810000501,
+      810000601,
+      810000701,
+      810000801,
+      810000901,
+      810001001,
+      810001101,
+      810001201,
+      810001401,
+      810001501,
+      810001601,
+      810001701,
+      810001801
+    ]
+  },
+  {
+    "ID": 9,
+    "PoolType": "StaticActorPoolType_YunShan",
+    "Param1": 1,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100201910,
+      100201710,
+      100113110,
+      100113710,
+      100114810,
+      100201810
+    ]
+  },
+  {
+    "ID": 10,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 1
+  },
+  {
+    "ID": 11,
+    "PoolType": "StaticActorPoolType_SelfBuildSect"
+  },
+  {
+    "ID": 12,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 2
+  },
+  {
+    "ID": 13,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 3
+  },
+  {
+    "ID": 14,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 4
+  },
+  {
+    "ID": 15,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 5
+  },
+  {
+    "ID": 16,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 6
+  },
+  {
+    "ID": 17,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 7
+  },
+  {
+    "ID": 18,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 8
+  },
+  {
+    "ID": 19,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 9
+  },
+  {
+    "ID": 20,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 10,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100115400,
+      100108600,
+      100110200,
+      100110300,
+      100110400,
+      100110500,
+      100111300,
+      100111600,
+      100111800,
+      100112500,
+      100113200,
+      100113400,
+      100114600,
+      100114700,
+      100114900,
+      100115100,
+      100131400,
+      100110700,
+      100110800,
+      100110900,
+      100111100,
+      100111200,
+      100111400,
+      100111900,
+      100112700,
+      100112900,
+      100113000,
+      100113300,
+      100113500,
+      100110600,
+      100111000,
+      100111500,
+      100113100,
+      100113600,
+      100113700,
+      100114200
+    ]
+  },
+  {
+    "ID": 21,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 11
+  },
+  {
+    "ID": 22,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100001,
+      824100002,
+      824100003,
+      824100004,
+      824100005,
+      824100006,
+      824100007,
+      824100008,
+      824100009,
+      824100010,
+      824100011,
+      824100012
+    ]
+  },
+  {
+    "ID": 24,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      20,
+      22
+    ]
+  },
+  {
+    "ID": 25,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 12
+  },
+  {
+    "ID": 26,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 13,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100100000,
+      100100100,
+      100100200,
+      100100700,
+      100100900,
+      100101400,
+      100101600,
+      100101900,
+      100102000,
+      100102200,
+      100102300,
+      100102400,
+      100102500,
+      100102600,
+      100102700,
+      100102800,
+      100103000,
+      100103100,
+      100250000
+    ]
+  },
+  {
+    "ID": 27,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100101,
+      824100102,
+      824100103,
+      824100104,
+      824100105,
+      824100106,
+      824100107,
+      824100108,
+      824100109,
+      824100110,
+      824100111,
+      824100112,
+      824100113,
+      824100114,
+      824100115,
+      824100116,
+      824100117,
+      824100118
+    ]
+  },
+  {
+    "ID": 28,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      26,
+      27
+    ]
+  },
+  {
+    "ID": 29,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 14
+  },
+  {
+    "ID": 30,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 15
+  },
+  {
+    "ID": 31,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 16
+  },
+  {
+    "ID": 51,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 17
+  },
+  {
+    "ID": 52,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 18
+  },
+  {
+    "ID": 53,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 19
+  },
+  {
+    "ID": 54,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 20
+  },
+  {
+    "ID": 55,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 21
+  },
+  {
+    "ID": 56,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 22
+  },
+  {
+    "ID": 57,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 23
+  },
+  {
+    "ID": 58,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 24
+  },
+  {
+    "ID": 59,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 25
+  },
+  {
+    "ID": 60,
+    "PoolType": "StaticActorPoolType_FengShen"
+  },
+  {
+    "ID": 61,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 27
+  },
+  {
+    "ID": 62,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 26
+  },
+  {
+    "ID": 63,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 28
+  },
+  {
+    "ID": 64,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 29
+  },
+  {
+    "ID": 65,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 30
+  },
+  {
+    "ID": 66,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 31,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100250300,
+      100110200,
+      100110300,
+      100110400,
+      100110500,
+      100111300,
+      100111600,
+      100111800,
+      100112500,
+      100113200,
+      100113400,
+      100114600,
+      100114700,
+      100114900,
+      100115100,
+      100131400,
+      100110700,
+      100110800,
+      100110900,
+      100111100,
+      100111200,
+      100111400,
+      100111900,
+      100112700,
+      100112900,
+      100113000,
+      100113300,
+      100113500,
+      100110600,
+      100111000,
+      100111500,
+      100113100,
+      100113600,
+      100113700,
+      100114200
+    ]
+  },
+  {
+    "ID": 67,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100001,
+      824100002,
+      824100003,
+      824100004,
+      824100005,
+      824100006,
+      824100007,
+      824100008,
+      824100009,
+      824100010,
+      824100011,
+      824100012
+    ]
+  },
+  {
+    "ID": 68,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      66,
+      67
+    ]
+  },
+  {
+    "ID": 69,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 32
+  },
+  {
+    "ID": 70,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 33
+  },
+  {
+    "ID": 71,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 34
+  },
+  {
+    "ID": 72,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 35
+  },
+  {
+    "ID": 73,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 36
+  },
+  {
+    "ID": 74,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 37
+  },
+  {
+    "ID": 75,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 38,
+    "FilterType": "StaticActorPoolFilterType_IncludeCharIds",
+    "FilterParams": [
+      100250400,
+      100110200,
+      100110300,
+      100110400,
+      100110500,
+      100111300,
+      100111600,
+      100111800,
+      100112500,
+      100113200,
+      100113400,
+      100114600,
+      100114700,
+      100114900,
+      100115100,
+      100131400,
+      100110700,
+      100110800,
+      100110900,
+      100111100,
+      100111200,
+      100111400,
+      100111900,
+      100112700,
+      100112900,
+      100113000,
+      100113300,
+      100113500,
+      100110600,
+      100111000,
+      100111500,
+      100113100,
+      100113600,
+      100113700,
+      100114200
+    ]
+  },
+  {
+    "ID": 76,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100001,
+      824100002,
+      824100003,
+      824100004,
+      824100005,
+      824100006,
+      824100007,
+      824100008,
+      824100009,
+      824100010,
+      824100011,
+      824100012
+    ]
+  },
+  {
+    "ID": 77,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      75,
+      76
+    ]
+  },
+  {
+    "ID": 78,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 60
+  },
+  {
+    "ID": 79,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 46
+  },
+  {
+    "ID": 80,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 41
+  },
+  {
+    "ID": 81,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 42
+  },
+  {
+    "ID": 82,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100200,
+      824100201,
+      824100202,
+      824100203,
+      824100204,
+      824100205,
+      824100206,
+      824100207,
+      824100208,
+      824100209,
+      824100210,
+      824100211,
+      824100212,
+      824100213
+    ]
+  },
+  {
+    "ID": 83,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      81,
+      82
+    ]
+  },
+  {
+    "ID": 84,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 43
+  },
+  {
+    "ID": 85,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 44
+  },
+  {
+    "ID": 86,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 45
+  },
+  {
+    "ID": 87,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100300,
+      824100301,
+      824100302,
+      824100303,
+      824100304,
+      824100305,
+      824100306,
+      824100307,
+      824100308,
+      824100309,
+      824100310,
+      824100311,
+      824100312,
+      824100313
+    ]
+  },
+  {
+    "ID": 88,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      86,
+      87
+    ]
+  },
+  {
+    "ID": 89,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 63
+  },
+  {
+    "ID": 90,
+    "PoolType": "StaticActorPoolType_RiftLevelMercenary"
+  },
+  {
+    "ID": 91,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      0
+    ]
+  },
+  {
+    "ID": 93,
+    "PoolType": "StaticActorPoolType_RiftLevelMercenary"
+  },
+  {
+    "ID": 94,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      0
+    ]
+  },
+  {
+    "ID": 95,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 48
+  },
+  {
+    "ID": 96,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 49
+  },
+  {
+    "ID": 97,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 52
+  },
+  {
+    "ID": 98,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 51
+  },
+  {
+    "ID": 99,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 1
+  },
+  {
+    "ID": 100,
+    "PoolType": "StaticActorPoolType_SwordCompetitionMercenary"
+  },
+  {
+    "ID": 101,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      0
+    ]
+  },
+  {
+    "ID": 102,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 53
+  },
+  {
+    "ID": 103,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 55
+  },
+  {
+    "ID": 104,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100601,
+      824100602,
+      824100603,
+      824100604,
+      824100605,
+      824100606,
+      824100607,
+      824100608,
+      824100609,
+      824100610
+    ]
+  },
+  {
+    "ID": 105,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      103,
+      104
+    ]
+  },
+  {
+    "ID": 106,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 54
+  },
+  {
+    "ID": 107,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 2
+  },
+  {
+    "ID": 108,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      152071160,
+      152071161,
+      152071162,
+      152071163,
+      152071164,
+      152071165,
+      152071166,
+      152071167,
+      152071168,
+      152071169,
+      152071170,
+      152071171
+    ]
+  },
+  {
+    "ID": 109,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      106,
+      108
+    ]
+  },
+  {
+    "ID": 110,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 57
+  },
+  {
+    "ID": 111,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 59
+  },
+  {
+    "ID": 112,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 58
+  },
+  {
+    "ID": 113,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 3
+  },
+  {
+    "ID": 114,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 62
+  },
+  {
+    "ID": 115,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 64
+  },
+  {
+    "ID": 116,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 65
+  },
+  {
+    "ID": 117,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      824100300,
+      824100301,
+      824100302,
+      824100303,
+      824100304,
+      824100305,
+      824100306,
+      824100307,
+      824100308,
+      824100309,
+      824100310,
+      824100311,
+      824100312,
+      824100313,
+      824100321,
+      824100322
+    ]
+  },
+  {
+    "ID": 118,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      116,
+      117
+    ]
+  },
+  {
+    "ID": 119,
+    "PoolType": "StaticActorPoolType_BotGame",
+    "Param1": 4
+  }
+]

@@ -1,0 +1,314 @@
+[
+  {
+    "ID": 1,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab2.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Panshabao_ABS/Scene_Panshabao_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Panshabao_ABS/Scene_Panshabao_02_Graphic_Prefab.prefab",
+    "UIIndex": 1,
+    "ChallengeModeUnlockLevelId": 320,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_14.png@Licheng_14",
+    "SweepType": 1,
+    "RankType": "RankingListType_PanShaChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_CliqueChallengeJiangHuNew",
+    "EquipSeparatorType": "EquipSeparatorType_PanSha",
+    "NameStrKey": "ST:106244"
+  },
+  {
+    "ID": 2,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab1.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Xuanmingjiao_ABS/Scene_Xuanmingjiao_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Xuanmingjiao_ABS/Scene_Xuanmingjiao_02_Graphic_Prefab.prefab",
+    "UIIndex": 2,
+    "ChallengeModeUnlockLevelId": 220,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_15.png@Licheng_15",
+    "SweepType": 1,
+    "RankType": "RankingListType_XuanMingChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_CliqueChallengeJiangHuNew",
+    "EquipSeparatorType": "EquipSeparatorType_XuanMing",
+    "NameStrKey": "ST:33760"
+  },
+  {
+    "ID": 3,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab3.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Tianxuanmeng_ABS/Scene_Tianxuanmeng_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Tianxuanmeng_ABS/Scene_Tianxuanmeng_02_Graphic_Prefab.prefab",
+    "UIIndex": 3,
+    "ChallengeModeUnlockLevelId": 120,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_13.png@Licheng_13",
+    "SweepType": 1,
+    "RankType": "RankingListType_TianXuanChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_CliqueChallengeJiangHuNew",
+    "EquipSeparatorType": "EquipSeparatorType_TianXuan",
+    "NameStrKey": "ST:19372"
+  },
+  {
+    "ID": 4,
+    "CanPassFirstLevel": true,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab4.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sanghunye_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sanghunye_Graphic_Prefab.prefab",
+    "UIIndex": 4,
+    "DefaultEnter": 1,
+    "SortWeight": 3,
+    "ChallengeModeUnlockLevelId": 420,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_SHY.png@Licheng_SHY",
+    "SweepType": 2,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000201,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000301,
+        "Count": 1
+      }
+    ],
+    "RankType": "RankingListType_DiJieChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_FuSangShu",
+    "EquipSeparatorType": "EquipSeparatorType_DiJie",
+    "NameStrKey": "ST:95843"
+  },
+  {
+    "ID": 5,
+    "CanPassFirstLevel": true,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab5.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sixiangmen_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sixiangmen_Graphic_Prefab.prefab",
+    "UIIndex": 4,
+    "SortWeight": 2,
+    "ChallengeModeUnlockLevelId": 520,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_SXM.png@Licheng_SXM",
+    "SweepType": 2,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000401,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000501,
+        "Count": 1
+      }
+    ],
+    "RankType": "RankingListType_SiXiangMenChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_FuSangShu",
+    "EquipSeparatorType": "EquipSeparatorType_SiXiangMen",
+    "NameStrKey": "ST:33704"
+  },
+  {
+    "ID": 6,
+    "CanPassFirstLevel": true,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab6.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_tiangong_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_tiangong_Graphic_Prefab.prefab",
+    "UIIndex": 4,
+    "SortWeight": 1,
+    "ChallengeModeUnlockLevelId": 620,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_TG.png@Licheng_TG",
+    "SweepType": 2,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 1
+      }
+    ],
+    "RankType": "RankingListType_ShenShuChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_FuSangShu",
+    "EquipSeparatorType": "EquipSeparatorType_ShenShu",
+    "NameStrKey": "ST:182459"
+  },
+  {
+    "ID": 7,
+    "NeedSendNormalFirstRewards": true,
+    "SendFirstRewardsLevel": 62,
+    "MailId": 50001,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab9.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sanghunye_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sanghunye_Graphic_Prefab.prefab",
+    "UIIndex": 5,
+    "DefaultEnter": 1,
+    "SortWeight": 3,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_SHY.png@Licheng_SHY",
+    "SweepType": 3,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000201,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000301,
+        "Count": 1
+      }
+    ],
+    "UnlockFuncType": "GameFunctionType_FuSangShuChu",
+    "HideCond": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:198667",
+    "DescStrKey": "ST:198667"
+  },
+  {
+    "ID": 8,
+    "NeedSendNormalFirstRewards": true,
+    "SendFirstRewardsLevel": 62,
+    "MailId": 50002,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab8.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sixiangmen_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_sixiangmen_Graphic_Prefab.prefab",
+    "UIIndex": 5,
+    "SortWeight": 2,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_SXM.png@Licheng_SXM",
+    "SweepType": 3,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000401,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000501,
+        "Count": 1
+      }
+    ],
+    "UnlockFuncType": "GameFunctionType_FuSangShuChu",
+    "HideCond": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:198668",
+    "DescStrKey": "ST:198668"
+  },
+  {
+    "ID": 9,
+    "NeedSendNormalFirstRewards": true,
+    "SendFirstRewardsLevel": 62,
+    "MailId": 50003,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab7.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_tiangong_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Menpai2_ABS/Scene_tiangong_Graphic_Prefab.prefab",
+    "UIIndex": 5,
+    "SortWeight": 1,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_TG.png@Licheng_TG",
+    "SweepType": 3,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 1
+      }
+    ],
+    "UnlockFuncType": "GameFunctionType_FuSangShuChu",
+    "HideCond": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 62
+      }
+    ],
+    "NameStrKey": "ST:198669",
+    "DescStrKey": "ST:198669"
+  },
+  {
+    "ID": 10,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab10.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_mojujiguan_ABS/Scene_mojujiguan_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_mojujiguan_ABS/Scene_mojujiguan_Graphic_Prefab.prefab",
+    "UIPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/BeiShanLvZhouCompetitionUIPrefab.prefab",
+    "UIIndex": 6,
+    "DefaultEnter": 1,
+    "SortWeight": 1,
+    "ChallengeModeUnlockLevelId": 1020,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_MJ.png@Licheng_MJ",
+    "SweepType": 2,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000101,
+        "Count": 1
+      }
+    ],
+    "RankType": "RankingListType_MoJuChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_CCBeiShanLvZou",
+    "EquipSeparatorType": "EquipSeparatorType_MoJu",
+    "NameStrKey": "ST:36103",
+    "DescStrKey": "ST:36103"
+  },
+  {
+    "ID": 11,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab11.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Diting_ABS/Scene_Diting_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Diting_ABS/Scene_Diting_Graphic_Prefab.prefab",
+    "UIPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/BeiShanLvZhouCompetitionUIPrefab.prefab",
+    "UIIndex": 6,
+    "SortWeight": 2,
+    "ChallengeModeUnlockLevelId": 1120,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_DT.png@Licheng_DT",
+    "SweepType": 2,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000401,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000501,
+        "Count": 1
+      }
+    ],
+    "RankType": "RankingListType_DiTingChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_CCBeiShanLvZou",
+    "EquipSeparatorType": "EquipSeparatorType_DiTing",
+    "NameStrKey": "ST:89104",
+    "DescStrKey": "ST:89104"
+  },
+  {
+    "ID": 12,
+    "IsAccumulateTimes": true,
+    "MapPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/MapGroupPrefab12.prefab",
+    "BgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Jing_ABS/Scene_Jing_Graphic_Prefab.prefab",
+    "ChallengeBgResPath": "Assets/GameProject/RuntimeAssets/Spine/LittleGameSpine/Scene_Jing_ABS/Scene_Jing_Graphic_Prefab.prefab",
+    "UIPrefabPath": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/JiangHu_ABS/BeiShanLvZhouCompetitionUIPrefab.prefab",
+    "UIIndex": 6,
+    "SortWeight": 3,
+    "ChallengeModeUnlockLevelId": 1220,
+    "JourneyIconPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/BadgeImage_ABS/Licheng_J.png@Licheng_J",
+    "SweepType": 2,
+    "ShowItems": [
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000201,
+        "Count": 1
+      },
+      {
+        "ItemType": "ItemType_Material",
+        "ItemId": 500000301,
+        "Count": 1
+      }
+    ],
+    "RankType": "RankingListType_JinGuoChallengeTotalScore",
+    "UnlockFuncType": "GameFunctionType_CCBeiShanLvZou",
+    "EquipSeparatorType": "EquipSeparatorType_JinGuo",
+    "NameStrKey": "ST:154508",
+    "DescStrKey": "ST:154508"
+  }
+]

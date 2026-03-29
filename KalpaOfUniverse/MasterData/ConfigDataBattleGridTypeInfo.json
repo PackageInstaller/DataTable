@@ -1,0 +1,267 @@
+[
+  {
+    "Name": "不可用(给美术放置资源类)",
+    "FlyCost": 2147483647,
+    "WalkCost": 2147483647,
+    "QingKungCost": 2147483647,
+    "JumpCost": 2147483647,
+    "FlyJumpCost": 2147483647
+  },
+  {
+    "ID": 1,
+    "GridType": "GridType_Road",
+    "Name": "石头道路",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 2,
+    "GridType": "GridType_Grass",
+    "Name": "草地",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 3,
+    "GridType": "GridType_Ice",
+    "Name": "冰面",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 4,
+    "GridType": "GridType_Sand",
+    "Name": "沙地",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 5,
+    "GridType": "GridType_Lava",
+    "Name": "火焰",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991
+  },
+  {
+    "ID": 6,
+    "GridType": "GridType_River",
+    "Name": "河流",
+    "FlyCost": 990,
+    "WalkCost": 1990,
+    "QingKungCost": 1990,
+    "JumpCost": 1990,
+    "FlyJumpCost": 1990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 7,
+    "GridType": "GridType_Swamp",
+    "Name": "沼泽",
+    "FlyCost": 990,
+    "WalkCost": 2990,
+    "QingKungCost": 2990,
+    "JumpCost": 2990,
+    "FlyJumpCost": 2990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 8,
+    "GridType": "GridType_Steps_Stone",
+    "Name": "石头阶梯",
+    "FlyCost": 990,
+    "WalkCost": 2990,
+    "QingKungCost": 2990,
+    "JumpCost": 2990,
+    "FlyJumpCost": 2990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 9,
+    "GridType": "GridType_GroundCantStand_Transition",
+    "Name": "阶层过渡障碍(轻功)",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991,
+    "GridStayFlags": 2
+  },
+  {
+    "ID": 10,
+    "GridType": "GridType_GroundCantStand_Sky",
+    "Name": "天空",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991,
+    "GridStayFlags": 2
+  },
+  {
+    "ID": 11,
+    "GridType": "GridType_Road_Loess",
+    "Name": "黄土道路",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 12,
+    "GridType": "GridType_River_Pond",
+    "Name": "池塘",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991,
+    "GridStayFlags": 2
+  },
+  {
+    "ID": 13,
+    "GridType": "GridType_Snow",
+    "Name": "雪地",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 14,
+    "GridType": "GridType_Bridge_Wooden",
+    "Name": "木桥",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 15,
+    "GridType": "GridType_Bridge_Stone",
+    "Name": "石桥",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 16,
+    "GridType": "GridType_Transition_Stone",
+    "Name": "巨石（障碍）",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991
+  },
+  {
+    "ID": 17,
+    "GridType": "GridType_Crevice",
+    "Name": "裂缝",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991,
+    "GridStayFlags": 2
+  },
+  {
+    "ID": 18,
+    "GridType": "GridType_Facilitie1",
+    "Name": "机关1（完全禁止）",
+    "FlyCost": 2147483647,
+    "WalkCost": 2147483647,
+    "QingKungCost": 2147483647,
+    "JumpCost": 2147483647,
+    "FlyJumpCost": 2147483647
+  },
+  {
+    "ID": 19,
+    "GridType": "GridType_Facilitie2",
+    "Name": "机关2（飞行轻功可行走，不可停留）",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991
+  },
+  {
+    "ID": 20,
+    "GridType": "GridType_Facilitie3",
+    "Name": "陷阱专用（可行走，可停留）",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991,
+    "GridStayFlags": 3
+  },
+  {
+    "ID": 21,
+    "GridType": "GridType_Facilitie4",
+    "Name": "机关3（飞行轻功可行走，不可停留，地形不可生成）",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991
+  },
+  {
+    "ID": 22,
+    "GridType": "GridType_Facilitie5",
+    "Name": "机关4-朱槿专用（可行走，不可停留，地形不可生成）",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990
+  },
+  {
+    "ID": 23,
+    "GridType": "GridType_Facilitie6",
+    "Name": "机关5（可行走，不可停留，地形不可生成）",
+    "FlyCost": 990,
+    "WalkCost": 990,
+    "QingKungCost": 990,
+    "JumpCost": 990,
+    "FlyJumpCost": 990
+  },
+  {
+    "ID": 24,
+    "GridType": "GridType_YouYin",
+    "Name": "幽垠（不可停留，飞行轻功可行走，无法穿刺）",
+    "FlyCost": 990,
+    "WalkCost": 2147483647,
+    "QingKungCost": 991,
+    "JumpCost": 991,
+    "FlyJumpCost": 991,
+    "GridStayFlags": 4
+  }
+]

@@ -1,0 +1,1953 @@
+[
+  {
+    "ID": 1001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 4000,
+    "P5": [
+      1
+    ],
+    "EffectDescStrKey": "ST:227528"
+  },
+  {
+    "ID": 1002,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 4000,
+    "P5": [
+      2
+    ],
+    "EffectDescStrKey": "ST:227529"
+  },
+  {
+    "ID": 1003,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 4000,
+    "P5": [
+      3
+    ],
+    "EffectDescStrKey": "ST:227530"
+  },
+  {
+    "ID": 1004,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 4000,
+    "P5": [
+      4
+    ],
+    "EffectDescStrKey": "ST:227531"
+  },
+  {
+    "ID": 1005,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFix",
+    "P5": [
+      1
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 20
+      }
+    ],
+    "EffectDescStrKey": "ST:228285"
+  },
+  {
+    "ID": 1006,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFix",
+    "P5": [
+      2
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 20
+      }
+    ],
+    "EffectDescStrKey": "ST:228286"
+  },
+  {
+    "ID": 1007,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFix",
+    "P5": [
+      3
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 20
+      }
+    ],
+    "EffectDescStrKey": "ST:228287"
+  },
+  {
+    "ID": 1008,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFix",
+    "P5": [
+      4
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 20
+      }
+    ],
+    "EffectDescStrKey": "ST:228288"
+  },
+  {
+    "ID": 1009,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFix",
+    "P5": [
+      5
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 15
+      }
+    ],
+    "EffectDescStrKey": "ST:228338"
+  },
+  {
+    "ID": 1010,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixAfterMorale",
+    "P2": 12000,
+    "P5": [
+      1
+    ],
+    "EffectDescStrKey": "ST:228339"
+  },
+  {
+    "ID": 1011,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixAfterMorale",
+    "P2": 12000,
+    "P5": [
+      2
+    ],
+    "EffectDescStrKey": "ST:228340"
+  },
+  {
+    "ID": 1012,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixAfterMorale",
+    "P2": 12000,
+    "P5": [
+      3
+    ],
+    "EffectDescStrKey": "ST:228341"
+  },
+  {
+    "ID": 1013,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixAfterMorale",
+    "P2": 12000,
+    "P5": [
+      4
+    ],
+    "EffectDescStrKey": "ST:228342"
+  },
+  {
+    "ID": 1014,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 1,
+    "P2": 5000,
+    "P4": [
+      5
+    ],
+    "P5": [
+      1
+    ],
+    "EffectDescStrKey": "ST:228962"
+  },
+  {
+    "ID": 1015,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 1,
+    "P2": 5000,
+    "P4": [
+      5
+    ],
+    "P5": [
+      2
+    ],
+    "EffectDescStrKey": "ST:228963"
+  },
+  {
+    "ID": 1016,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 1,
+    "P2": 5000,
+    "P4": [
+      5
+    ],
+    "P5": [
+      3
+    ],
+    "EffectDescStrKey": "ST:228964"
+  },
+  {
+    "ID": 1017,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 1,
+    "P2": 5000,
+    "P4": [
+      5
+    ],
+    "P5": [
+      4
+    ],
+    "EffectDescStrKey": "ST:228965"
+  },
+  {
+    "ID": 1018,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 2,
+    "P4": [
+      1
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 60
+      }
+    ],
+    "EffectDescStrKey": "ST:228966"
+  },
+  {
+    "ID": 1019,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 2,
+    "P4": [
+      2
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 60
+      }
+    ],
+    "EffectDescStrKey": "ST:228967"
+  },
+  {
+    "ID": 1020,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 2,
+    "P4": [
+      3
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 60
+      }
+    ],
+    "EffectDescStrKey": "ST:228968"
+  },
+  {
+    "ID": 1021,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 2,
+    "P4": [
+      4
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 60
+      }
+    ],
+    "EffectDescStrKey": "ST:228969"
+  },
+  {
+    "ID": 1022,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 1,
+    "P4": [
+      5
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 30
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 30
+      }
+    ],
+    "EffectDescStrKey": "ST:228970"
+  },
+  {
+    "ID": 1023,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 1,
+    "P4": [
+      5
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 30
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 30
+      }
+    ],
+    "EffectDescStrKey": "ST:228971"
+  },
+  {
+    "ID": 1024,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixAfterMorale",
+    "P2": 10000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228353"
+  },
+  {
+    "ID": 1025,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P3": -4000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228512"
+  },
+  {
+    "ID": 1026,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 2000,
+    "P3": -2000,
+    "P5": [
+      1
+    ],
+    "EffectDescStrKey": "ST:228513"
+  },
+  {
+    "ID": 1027,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 2000,
+    "P3": -2000,
+    "P5": [
+      2
+    ],
+    "EffectDescStrKey": "ST:228514"
+  },
+  {
+    "ID": 1028,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 2000,
+    "P3": -2000,
+    "P5": [
+      3
+    ],
+    "EffectDescStrKey": "ST:228515"
+  },
+  {
+    "ID": 1029,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 2000,
+    "P3": -2000,
+    "P5": [
+      4
+    ],
+    "EffectDescStrKey": "ST:228516"
+  },
+  {
+    "ID": 1030,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixAfterMorale",
+    "P2": 18000,
+    "P3": 6000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228517"
+  },
+  {
+    "ID": 1031,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 8000,
+    "P3": -4000,
+    "P4": [
+      1
+    ],
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228518"
+  },
+  {
+    "ID": 1032,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P3": -10000,
+    "P4": [
+      1
+    ],
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228519"
+  },
+  {
+    "ID": 2001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 5000,
+    "P3": -4000,
+    "P5": [
+      1
+    ],
+    "EffectDescStrKey": "ST:228354"
+  },
+  {
+    "ID": 2002,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 5000,
+    "P3": -4000,
+    "P5": [
+      2
+    ],
+    "EffectDescStrKey": "ST:228355"
+  },
+  {
+    "ID": 2003,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 5000,
+    "P3": -4000,
+    "P5": [
+      3
+    ],
+    "EffectDescStrKey": "ST:228356"
+  },
+  {
+    "ID": 2004,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 5000,
+    "P3": -4000,
+    "P5": [
+      4
+    ],
+    "EffectDescStrKey": "ST:228357"
+  },
+  {
+    "ID": 2005,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixAfterMorale",
+    "P2": 30000,
+    "P3": 6000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228358"
+  },
+  {
+    "ID": 2006,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 20000,
+    "P3": -4000,
+    "P4": [
+      1
+    ],
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228359"
+  },
+  {
+    "ID": 2007,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 30000,
+    "P4": [
+      4
+    ],
+    "P5": [
+      5
+    ],
+    "EffectDescStrKey": "ST:228707"
+  },
+  {
+    "ID": 2008,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 2,
+    "P2": 24000,
+    "P4": [
+      1
+    ],
+    "P5": [
+      2
+    ],
+    "EffectDescStrKey": "ST:228361"
+  },
+  {
+    "ID": 2009,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 2,
+    "P2": 24000,
+    "P4": [
+      2
+    ],
+    "P5": [
+      1
+    ],
+    "EffectDescStrKey": "ST:228362"
+  },
+  {
+    "ID": 2010,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 2,
+    "P2": 24000,
+    "P4": [
+      3
+    ],
+    "P5": [
+      4
+    ],
+    "EffectDescStrKey": "ST:228363"
+  },
+  {
+    "ID": 2011,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 2,
+    "P2": 24000,
+    "P4": [
+      4
+    ],
+    "P5": [
+      3
+    ],
+    "EffectDescStrKey": "ST:228364"
+  },
+  {
+    "ID": 2012,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 2,
+    "P4": [
+      1,
+      2
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 50
+      }
+    ],
+    "EffectDescStrKey": "ST:228365"
+  },
+  {
+    "ID": 2013,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 2,
+    "P4": [
+      3,
+      4
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 50
+      }
+    ],
+    "EffectDescStrKey": "ST:228366"
+  },
+  {
+    "ID": 2014,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyValueFixByCountOnEnd",
+    "P1": 1,
+    "P4": [
+      5
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 50
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 50
+      }
+    ],
+    "EffectDescStrKey": "ST:228367"
+  },
+  {
+    "ID": 2015,
+    "FuncType": "FengShenEffectType_TrainingInstructionMoraleToPropertyOnScheduleEnd",
+    "P1": 5,
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 6
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 6
+      }
+    ],
+    "EffectDescStrKey": "ST:228972"
+  },
+  {
+    "ID": 2016,
+    "FuncType": "FengShenEffectType_TrainingInstructionMoraleToPropertyOnScheduleEnd",
+    "P1": 5,
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 6
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 6
+      }
+    ],
+    "EffectDescStrKey": "ST:228973"
+  },
+  {
+    "ID": 2017,
+    "FuncType": "FengShenEffectType_TrainingInstructionCostMoraleToPropertyOnScheduleEnd",
+    "P1": 5,
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 15
+      }
+    ],
+    "EffectDescStrKey": "ST:228974"
+  },
+  {
+    "ID": 2018,
+    "FuncType": "FengShenEffectType_TrainingInstructionCostMoraleToPropertyOnScheduleEnd",
+    "P1": 5,
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 15
+      }
+    ],
+    "EffectDescStrKey": "ST:228975"
+  },
+  {
+    "ID": 2019,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByMorale",
+    "P1": 50,
+    "P2": 9000,
+    "P5": [
+      1,
+      2
+    ],
+    "EffectDescStrKey": "ST:228976"
+  },
+  {
+    "ID": 2020,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByMorale",
+    "P1": 50,
+    "P2": 9000,
+    "P5": [
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228977"
+  },
+  {
+    "ID": 3001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixOnIdentical",
+    "P2": 12000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228372"
+  },
+  {
+    "ID": 3002,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixOnDifferent",
+    "P2": 13500,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228978"
+  },
+  {
+    "ID": 3003,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 30000,
+    "P3": 10000,
+    "P4": [
+      1,
+      2
+    ],
+    "P5": [
+      1,
+      3
+    ],
+    "EffectDescStrKey": "ST:228374"
+  },
+  {
+    "ID": 3004,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 30000,
+    "P3": 10000,
+    "P4": [
+      1,
+      2
+    ],
+    "P5": [
+      2,
+      4
+    ],
+    "EffectDescStrKey": "ST:228375"
+  },
+  {
+    "ID": 3005,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 30000,
+    "P3": 10000,
+    "P4": [
+      3,
+      4
+    ],
+    "P5": [
+      1,
+      3
+    ],
+    "EffectDescStrKey": "ST:228376"
+  },
+  {
+    "ID": 3006,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 30000,
+    "P3": 10000,
+    "P4": [
+      3,
+      4
+    ],
+    "P5": [
+      2,
+      4
+    ],
+    "EffectDescStrKey": "ST:228377"
+  },
+  {
+    "ID": 3007,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 10000,
+    "P3": -10000,
+    "P4": [
+      1,
+      2
+    ],
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:229258"
+  },
+  {
+    "ID": 3008,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 10000,
+    "P3": -10000,
+    "P4": [
+      3,
+      4
+    ],
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:229259"
+  },
+  {
+    "ID": 3009,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 3,
+    "P2": 12000,
+    "P4": [
+      1,
+      2
+    ],
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228380"
+  },
+  {
+    "ID": 3010,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByCount",
+    "P1": 3,
+    "P2": 12000,
+    "P4": [
+      3,
+      4
+    ],
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228381"
+  },
+  {
+    "ID": 3011,
+    "FuncType": "FengShenEffectType_TrainingInstructionMoraleToPropertyOnScheduleEnd",
+    "P1": 5,
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 8
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 8
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 8
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 8
+      }
+    ],
+    "EffectDescStrKey": "ST:228979"
+  },
+  {
+    "ID": 3012,
+    "FuncType": "FengShenEffectType_TrainingInstructionCostMoraleToPropertyOnScheduleEnd",
+    "P1": 5,
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 15
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 15
+      }
+    ],
+    "EffectDescStrKey": "ST:228980"
+  },
+  {
+    "ID": 3013,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByMorale",
+    "P1": 50,
+    "P2": 12000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:228981"
+  },
+  {
+    "ID": 3014,
+    "FuncType": "FengShenEffectType_TrainingInstructionMoraleFixAndConvertToPropertyWhenFull",
+    "P1": 50,
+    "P2": 5,
+    "P4": [
+      4
+    ],
+    "P5": [
+      5
+    ],
+    "PropertyValueList": [
+      {
+        "Key": "FengShenTrainingPropertyType_Command",
+        "Value": 10
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Intellect",
+        "Value": 10
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Force",
+        "Value": 10
+      },
+      {
+        "Key": "FengShenTrainingPropertyType_Charm",
+        "Value": 10
+      }
+    ],
+    "EffectDescStrKey": "ST:228733"
+  },
+  {
+    "ID": 3015,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFixByIndex",
+    "P2": 50000,
+    "P4": [
+      4
+    ],
+    "P5": [
+      5
+    ],
+    "EffectDescStrKey": "ST:228360"
+  },
+  {
+    "ID": 11001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P3": -2000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227583"
+  },
+  {
+    "ID": 12001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P3": -4000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227584"
+  },
+  {
+    "ID": 13001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P3": -6000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227585"
+  },
+  {
+    "ID": 21001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 2000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:226863"
+  },
+  {
+    "ID": 22001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 4000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227586"
+  },
+  {
+    "ID": 23001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 6000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227587"
+  },
+  {
+    "ID": 31001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 1000,
+    "P3": -2000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227588"
+  },
+  {
+    "ID": 32001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 2000,
+    "P3": -4000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227589"
+  },
+  {
+    "ID": 33001,
+    "FuncType": "FengShenEffectType_TrainingInstructionPropertyPercentFix",
+    "P2": 3000,
+    "P3": -6000,
+    "P5": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "EffectDescStrKey": "ST:227590"
+  },
+  {
+    "ID": 41001,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 502,
+    "P2": 3,
+    "EffectDescStrKey": "ST:228386"
+  },
+  {
+    "ID": 41101,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 505,
+    "P2": 3,
+    "EffectDescStrKey": "ST:229121"
+  },
+  {
+    "ID": 41201,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 508,
+    "P2": 3,
+    "EffectDescStrKey": "ST:229122"
+  },
+  {
+    "ID": 42001,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 503,
+    "P2": 3,
+    "EffectDescStrKey": "ST:228386"
+  },
+  {
+    "ID": 42101,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 506,
+    "P2": 3,
+    "EffectDescStrKey": "ST:229121"
+  },
+  {
+    "ID": 42201,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 509,
+    "P2": 3,
+    "EffectDescStrKey": "ST:229122"
+  },
+  {
+    "ID": 43001,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 504,
+    "P2": 3,
+    "EffectDescStrKey": "ST:228386"
+  },
+  {
+    "ID": 43101,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 507,
+    "P2": 3,
+    "EffectDescStrKey": "ST:229121"
+  },
+  {
+    "ID": 43201,
+    "FuncType": "FengShenEffectType_AddTrainingInstruction",
+    "P1": 510,
+    "P2": 3,
+    "EffectDescStrKey": "ST:229122"
+  },
+  {
+    "ID": 50000,
+    "FuncType": "FengShenEffectType_AddTrainingSkillCount",
+    "P1": 1,
+    "EffectDescStrKey": "ST:228387"
+  },
+  {
+    "ID": 61001,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 100,
+    "EffectDescStrKey": "ST:228388"
+  },
+  {
+    "ID": 61002,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 100,
+    "EffectDescStrKey": "ST:228388"
+  },
+  {
+    "ID": 61003,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 200,
+    "EffectDescStrKey": "ST:228389"
+  },
+  {
+    "ID": 61004,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 400,
+    "EffectDescStrKey": "ST:228390"
+  },
+  {
+    "ID": 62001,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 400,
+    "EffectDescStrKey": "ST:228390"
+  },
+  {
+    "ID": 62002,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 800,
+    "EffectDescStrKey": "ST:228391"
+  },
+  {
+    "ID": 62003,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 1200,
+    "EffectDescStrKey": "ST:228392"
+  },
+  {
+    "ID": 63001,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 1000,
+    "EffectDescStrKey": "ST:228393"
+  },
+  {
+    "ID": 63002,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 1200,
+    "EffectDescStrKey": "ST:228392"
+  },
+  {
+    "ID": 63003,
+    "FuncType": "FengShenEffectType_AddGoldImmediately",
+    "P1": 1400,
+    "EffectDescStrKey": "ST:228394"
+  },
+  {
+    "ID": 70001,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004931,
+    "P2": 161004932,
+    "EffectDescStrKey": "ST:227988"
+  },
+  {
+    "ID": 70002,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004945,
+    "P2": 161004946,
+    "EffectDescStrKey": "ST:227995"
+  },
+  {
+    "ID": 70011,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004933,
+    "P2": 161004934,
+    "EffectDescStrKey": "ST:227989"
+  },
+  {
+    "ID": 70012,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004947,
+    "P2": 161004948,
+    "EffectDescStrKey": "ST:227996"
+  },
+  {
+    "ID": 70021,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004935,
+    "P2": 161004936,
+    "EffectDescStrKey": "ST:227990"
+  },
+  {
+    "ID": 70031,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004937,
+    "P2": 161004938,
+    "EffectDescStrKey": "ST:227991"
+  },
+  {
+    "ID": 70041,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004939,
+    "P2": 161004940,
+    "EffectDescStrKey": "ST:227992"
+  },
+  {
+    "ID": 70051,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004941,
+    "P2": 161004942,
+    "EffectDescStrKey": "ST:227993"
+  },
+  {
+    "ID": 70061,
+    "FuncType": "FengShenEffectType_ReplaceSoldier",
+    "P1": 161004943,
+    "P2": 161004944,
+    "EffectDescStrKey": "ST:227994"
+  },
+  {
+    "ID": 80001,
+    "FuncType": "FengShenEffectType_BattleScheduleEffect",
+    "P1": 52028,
+    "P2": 1,
+    "EffectDescStrKey": "ST:228395"
+  },
+  {
+    "ID": 90001,
+    "FuncType": "FengShenEffectType_BattleScheduleEffect",
+    "P1": 52029,
+    "P2": 1,
+    "EffectDescStrKey": "ST:228396"
+  },
+  {
+    "ID": 100001,
+    "FuncType": "FengShenEffectType_BattleScheduleEffect",
+    "P1": 52030,
+    "P2": 1,
+    "EffectDescStrKey": "ST:228397"
+  },
+  {
+    "ID": 111001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 80,
+    "EffectDescStrKey": "ST:226907"
+  },
+  {
+    "ID": 111002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 80,
+    "EffectDescStrKey": "ST:226919"
+  },
+  {
+    "ID": 111003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 15,
+    "EffectDescStrKey": "ST:227997"
+  },
+  {
+    "ID": 112001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228144"
+  },
+  {
+    "ID": 112002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228145"
+  },
+  {
+    "ID": 112003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 30,
+    "EffectDescStrKey": "ST:228146"
+  },
+  {
+    "ID": 113001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228012"
+  },
+  {
+    "ID": 113002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228007"
+  },
+  {
+    "ID": 113003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 45,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 121001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228006"
+  },
+  {
+    "ID": 121002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228007"
+  },
+  {
+    "ID": 121003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 15,
+    "EffectDescStrKey": "ST:226878"
+  },
+  {
+    "ID": 122001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228147"
+  },
+  {
+    "ID": 122002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228148"
+  },
+  {
+    "ID": 122003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 30,
+    "EffectDescStrKey": "ST:228149"
+  },
+  {
+    "ID": 123001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228025"
+  },
+  {
+    "ID": 123002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228015"
+  },
+  {
+    "ID": 123003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 45,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 131001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228014"
+  },
+  {
+    "ID": 131002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228015"
+  },
+  {
+    "ID": 131003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 15,
+    "EffectDescStrKey": "ST:228016"
+  },
+  {
+    "ID": 132001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228150"
+  },
+  {
+    "ID": 132002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228151"
+  },
+  {
+    "ID": 132003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 30,
+    "EffectDescStrKey": "ST:228152"
+  },
+  {
+    "ID": 133001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228005"
+  },
+  {
+    "ID": 133002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 720,
+    "EffectDescStrKey": "ST:226925"
+  },
+  {
+    "ID": 133003,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 5,
+    "P2": 45,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 141001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 40,
+    "EffectDescStrKey": "ST:226913"
+  },
+  {
+    "ID": 141002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 40,
+    "EffectDescStrKey": "ST:227997"
+  },
+  {
+    "ID": 141011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 40,
+    "EffectDescStrKey": "ST:226925"
+  },
+  {
+    "ID": 141012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 40,
+    "EffectDescStrKey": "ST:228008"
+  },
+  {
+    "ID": 142001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228153"
+  },
+  {
+    "ID": 142002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228155"
+  },
+  {
+    "ID": 142011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228154"
+  },
+  {
+    "ID": 142012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228002"
+  },
+  {
+    "ID": 143001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228013"
+  },
+  {
+    "ID": 143002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 360,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 143011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228009"
+  },
+  {
+    "ID": 143012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228026"
+  },
+  {
+    "ID": 151001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 40,
+    "EffectDescStrKey": "ST:228009"
+  },
+  {
+    "ID": 151002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 40,
+    "EffectDescStrKey": "ST:228017"
+  },
+  {
+    "ID": 151011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 40,
+    "EffectDescStrKey": "ST:226878"
+  },
+  {
+    "ID": 151012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 40,
+    "EffectDescStrKey": "ST:228018"
+  },
+  {
+    "ID": 152001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 160,
+    "EffectDescStrKey": "ST:226907"
+  },
+  {
+    "ID": 152002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228010"
+  },
+  {
+    "ID": 152011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 160,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 152012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228006"
+  },
+  {
+    "ID": 153001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228018"
+  },
+  {
+    "ID": 153002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228020"
+  },
+  {
+    "ID": 153011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 360,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 153012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228022"
+  },
+  {
+    "ID": 161001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 40,
+    "EffectDescStrKey": "ST:228016"
+  },
+  {
+    "ID": 161002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 40,
+    "EffectDescStrKey": "ST:226925"
+  },
+  {
+    "ID": 161011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 40,
+    "EffectDescStrKey": "ST:226919"
+  },
+  {
+    "ID": 161012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 40,
+    "EffectDescStrKey": "ST:227997"
+  },
+  {
+    "ID": 162001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 160,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 162002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228014"
+  },
+  {
+    "ID": 162011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 160,
+    "EffectDescStrKey": "ST:228023"
+  },
+  {
+    "ID": 162012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 160,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 163001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228019"
+  },
+  {
+    "ID": 163002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228020"
+  },
+  {
+    "ID": 163011,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228022"
+  },
+  {
+    "ID": 163012,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 360,
+    "EffectDescStrKey": "ST:228021"
+  },
+  {
+    "ID": 171001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 120,
+    "EffectDescStrKey": "ST:228007"
+  },
+  {
+    "ID": 171002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228009"
+  },
+  {
+    "ID": 171003,
+    "EffectDescStrKey": "ST:226878"
+  },
+  {
+    "ID": 172001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 480,
+    "EffectDescStrKey": "ST:228003"
+  },
+  {
+    "ID": 172002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 320,
+    "EffectDescStrKey": "ST:226913"
+  },
+  {
+    "ID": 172003,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 173001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 1080,
+    "EffectDescStrKey": "ST:228023"
+  },
+  {
+    "ID": 173002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 1,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228014"
+  },
+  {
+    "ID": 173003,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 181001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 120,
+    "EffectDescStrKey": "ST:228015"
+  },
+  {
+    "ID": 181002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228018"
+  },
+  {
+    "ID": 181003,
+    "EffectDescStrKey": "ST:228016"
+  },
+  {
+    "ID": 182001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 480,
+    "EffectDescStrKey": "ST:228011"
+  },
+  {
+    "ID": 182002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228008"
+  },
+  {
+    "ID": 182003,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 183001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 1080,
+    "EffectDescStrKey": "ST:228024"
+  },
+  {
+    "ID": 183002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 2,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228017"
+  },
+  {
+    "ID": 183003,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 191001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 120,
+    "EffectDescStrKey": "ST:228138"
+  },
+  {
+    "ID": 191002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228139"
+  },
+  {
+    "ID": 191003,
+    "EffectDescStrKey": "ST:228140"
+  },
+  {
+    "ID": 192001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 480,
+    "EffectDescStrKey": "ST:228024"
+  },
+  {
+    "ID": 192002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 320,
+    "EffectDescStrKey": "ST:228017"
+  },
+  {
+    "ID": 192003,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 193001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 1080,
+    "EffectDescStrKey": "ST:228025"
+  },
+  {
+    "ID": 193002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 3,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228015"
+  },
+  {
+    "ID": 193003,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 201001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 120,
+    "EffectDescStrKey": "ST:228141"
+  },
+  {
+    "ID": 201002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 80,
+    "EffectDescStrKey": "ST:228142"
+  },
+  {
+    "ID": 201003,
+    "EffectDescStrKey": "ST:228143"
+  },
+  {
+    "ID": 202001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 480,
+    "EffectDescStrKey": "ST:228004"
+  },
+  {
+    "ID": 202002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 320,
+    "EffectDescStrKey": "ST:226919"
+  },
+  {
+    "ID": 202003,
+    "EffectDescStrKey": "ST:189268"
+  },
+  {
+    "ID": 203001,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 1080,
+    "EffectDescStrKey": "ST:228026"
+  },
+  {
+    "ID": 203002,
+    "FuncType": "FengShenEffectType_AddTrainingProperty",
+    "P1": 4,
+    "P2": 720,
+    "EffectDescStrKey": "ST:228018"
+  },
+  {
+    "ID": 203003,
+    "EffectDescStrKey": "ST:189268"
+  }
+]

@@ -1,0 +1,512 @@
+[
+  {
+    "ID": 1,
+    "ForceRange": [
+      0,
+      1000
+    ],
+    "TargetNum": 10,
+    "MatchForceRange": [
+      -30,
+      30
+    ],
+    "MatchLevelRange": [
+      -1,
+      0
+    ],
+    "MatchExtends": [
+      {
+        "Type": 1,
+        "Lower": -15,
+        "Upper": 15,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -15,
+        "Upper": 15,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -15,
+        "Upper": 15,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -25,
+        "Upper": 25,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 2
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 3
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "Upper": 1,
+        "LoopNum": 3
+      }
+    ],
+    "BattleFailTimes": 1,
+    "UseRobotFill": 1,
+    "DescStrKey": "ST:196405"
+  },
+  {
+    "ID": 2,
+    "ForceRange": [
+      1001,
+      1200
+    ],
+    "TargetNum": 10,
+    "MatchForceRange": [
+      -30,
+      30
+    ],
+    "MatchLevelRange": [
+      -1,
+      0
+    ],
+    "MatchExtends": [
+      {
+        "Type": 1,
+        "Lower": -25,
+        "Upper": 25,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -15,
+        "Upper": 15,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 2
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 3
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "Upper": 1,
+        "LoopNum": 3
+      }
+    ],
+    "BattleFailTimes": 2,
+    "UseRobotFill": 1,
+    "DescStrKey": "ST:198004"
+  },
+  {
+    "ID": 3,
+    "ForceRange": [
+      1201,
+      1400
+    ],
+    "TargetNum": 10,
+    "MatchForceRange": [
+      -30,
+      30
+    ],
+    "MatchLevelRange": [
+      -1,
+      0
+    ],
+    "MatchExtends": [
+      {
+        "Type": 1,
+        "Lower": -25,
+        "Upper": 25,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -15,
+        "Upper": 15,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -35,
+        "Upper": 35,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -25,
+        "Upper": 25,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -8,
+        "Upper": 12,
+        "LoopNum": 2
+      },
+      {
+        "Type": 1,
+        "Lower": -8,
+        "Upper": 12,
+        "LoopNum": 3
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "Upper": 1,
+        "LoopNum": 3
+      }
+    ],
+    "FirstMatchRobotTimes": 1,
+    "BattleFailTimes": 2,
+    "UseRobotFill": 1,
+    "DescStrKey": "ST:198005"
+  },
+  {
+    "ID": 4,
+    "ForceRange": [
+      1401,
+      1600
+    ],
+    "TargetNum": 10,
+    "MatchForceRange": [
+      -30,
+      30
+    ],
+    "MatchLevelRange": [
+      -1,
+      0
+    ],
+    "MatchExtends": [
+      {
+        "Type": 1,
+        "Lower": -25,
+        "Upper": 25,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -45,
+        "Upper": 45,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -30,
+        "Upper": 30,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -2,
+        "Upper": 10,
+        "LoopNum": 2
+      },
+      {
+        "Type": 1,
+        "Lower": -2,
+        "Upper": 10,
+        "LoopNum": 3
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "LoopNum": 3
+      }
+    ],
+    "BattleFailTimes": 4,
+    "UseRobotFill": 1,
+    "DescStrKey": "ST:198006"
+  },
+  {
+    "ID": 5,
+    "ForceRange": [
+      1601,
+      1800
+    ],
+    "TargetNum": 10,
+    "MatchForceRange": [
+      -30,
+      30
+    ],
+    "MatchLevelRange": [
+      0,
+      0
+    ],
+    "MatchExtends": [
+      {
+        "Type": 1,
+        "Lower": -25,
+        "Upper": 25,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -30,
+        "Upper": 30,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -50,
+        "Upper": 50,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -15,
+        "Upper": 15,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Upper": 10,
+        "LoopNum": 5
+      }
+    ],
+    "BattleFailTimes": 5,
+    "UseRobotFill": 1,
+    "DescStrKey": "ST:198007"
+  },
+  {
+    "ID": 6,
+    "ForceRange": [
+      1801,
+      2000
+    ],
+    "TargetNum": 10,
+    "MatchForceRange": [
+      -40,
+      40
+    ],
+    "MatchLevelRange": [
+      0,
+      0
+    ],
+    "MatchExtends": [
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -40,
+        "Upper": 40,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -20,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -3,
+        "Upper": 20,
+        "LoopNum": 4
+      }
+    ],
+    "BattleFailTimes": 5,
+    "DescStrKey": "ST:198008"
+  },
+  {
+    "ID": 7,
+    "ForceRange": [
+      2001,
+      99999
+    ],
+    "TargetNum": 10,
+    "MatchForceRange": [
+      -45,
+      45
+    ],
+    "MatchLevelRange": [
+      0,
+      0
+    ],
+    "MatchExtends": [
+      {
+        "Type": 1,
+        "Lower": -15,
+        "Upper": 15,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -10,
+        "Upper": 40,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -10,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -5,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -5,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Upper": 1,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -5,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 1,
+        "Lower": -5,
+        "Upper": 20,
+        "LoopNum": 1
+      },
+      {
+        "Type": 2,
+        "Lower": -1,
+        "LoopNum": 1
+      }
+    ],
+    "BattleFailTimes": 5,
+    "DescStrKey": "ST:198009"
+  }
+]
