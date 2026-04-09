@@ -1402,7 +1402,7 @@
     ],
     "ShowCharacter": true,
     "SceneNameStrKey": "ST:254072",
-    "AssistDescStrKey": "ST:256235"
+    "AssistDescStrKey": "ST:256068"
   },
   {
     "ID": 93,
@@ -1419,7 +1419,24 @@
     ],
     "ShowCharacter": true,
     "SceneNameStrKey": "ST:254073",
-    "AssistDescStrKey": "ST:256483"
+    "AssistDescStrKey": "ST:256290"
+  },
+  {
+    "ID": 94,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BattleAsssit_090.png@BattleAsssit_090",
+    "AssistType": "BattleAssistType_PlayerAssist",
+    "EyeCharacter": 100250900,
+    "AssistActiveCondGroup": 6,
+    "AssistEffect": [
+      {
+        "BuffId": 745000890,
+        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
+      }
+    ],
+    "ShowCharacter": true,
+    "SceneNameStrKey": "ST:256046",
+    "AssistDescStrKey": "ST:256047"
   },
   {
     "ID": 109,
@@ -1450,19 +1467,5 @@
     "ShowCharacter": true,
     "SceneNameStrKey": "ST:39635",
     "AssistDescStrKey": "ST:128276"
-  },
-  {
-    "ID": 116,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/BattleAsssit_010.png@BattleAsssit_010",
-    "AssistType": "BattleAssistType_PlayerAssist",
-    "AssistEffect": [
-      {
-        "BuffId": 745000110,
-        "BuffTarget": "BattleAssistBufTargetType_OnlyPlayer"
-      }
-    ],
-    "ShowCharacter": true,
-    "SceneNameStrKey": "ST:39637",
-    "AssistDescStrKey": "ST:128278"
   }
 ]

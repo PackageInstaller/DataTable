@@ -4221,7 +4221,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Buf01_ABS/Buff_1120.png@Buff_1120",
     "NameDescStrKey": "ST:253556",
-    "BuffDescStrKey": "ST:256256"
+    "BuffDescStrKey": "ST:256101"
   },
   {
     "ID": 700001911,
@@ -4251,7 +4251,8 @@
     "LifeTime": -1,
     "FuncType": "BufFuncType_DodgeAOE",
     "ActiveCondIds": [
-      1100
+      1100,
+      5540
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

@@ -143,5 +143,23 @@
     "NormalUnlockStrKey": "ST:250880",
     "NameStrKey": "ST:249911",
     "DescStrKey": "ST:219876"
+  },
+  {
+    "ID": 11,
+    "UnlockConds": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 5707
+      }
+    ],
+    "CardAsset": "Assets/GameProject/RuntimeAssets/Characters/DianCang/DianCang_Zitingsiming_ABS/Prefabs/DianCang_Zitingsiming_KaPai.prefab",
+    "CharId": 100250900,
+    "SlotDummyName": "3",
+    "MinRaotate": 15,
+    "MaxScale": 200,
+    "MInScale": 50,
+    "NormalUnlockStrKey": "ST:256390",
+    "NameStrKey": "ST:256049",
+    "DescStrKey": "ST:219876"
   }
 ]

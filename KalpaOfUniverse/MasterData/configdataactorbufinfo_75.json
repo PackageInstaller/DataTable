@@ -1,5 +1,21 @@
 [
   {
+    "ID": 742412914,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_BanSpecificActiveSkill",
+    "FuncParams": [
+      61202150
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 742412915,
     "LifeTime": -1,
     "FuncType": "BufFuncType_BanSpecificActiveSkill",
@@ -4644,23 +4660,6 @@
     ],
     "ActiveCondIds": [
       250003
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 742500117,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Batch",
-    "FuncParams": [
-      742500118,
-      742500119
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

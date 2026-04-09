@@ -907,6 +907,22 @@
     "SkillSound": 611160090
   },
   {
+    "ID": 611160091,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "CastEffect": [
+      116000005
+    ],
+    "OnHitEffect": [
+      10000002
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611063030
+  },
+  {
     "ID": 611200001,
     "ReturnToIdle": true,
     "Animation": "Combat_AttackRootMotion",
@@ -2752,34 +2768,6 @@
       "AttackStrengthType_Hvy",
       "AttackStrengthType_Med",
       "AttackStrengthType_Lit"
-    ]
-  },
-  {
-    "ID": 611211111,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      121100100
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 611211111,
-    "AttackWeapon": [
-      "WeaponType_Arrow",
-      "WeaponType_Arrow"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
     ]
   }
 ]

@@ -1,5 +1,29 @@
 [
   {
+    "ID": 741403919,
+    "FuncType": "BufFuncType_AttachBufImm",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      741403500,
+      1
+    ],
+    "ActiveCondIds": [
+      140324
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerTimes": 1,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 741403920,
     "LifeTime": -1,
     "ReplaceRule": "ReplaceRule_Refresh",
@@ -14,7 +38,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256237"
+    "BuffDescStrKey": "ST:256102"
   },
   {
     "ID": 741403921,
@@ -30,8 +54,8 @@
     "Visible": "BuffShowType_Normal",
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
-    "NameDescStrKey": "ST:256335",
-    "BuffDescStrKey": "ST:256336"
+    "NameDescStrKey": "ST:256249",
+    "BuffDescStrKey": "ST:256251"
   },
   {
     "ID": 741500000,
@@ -4320,35 +4344,6 @@
     "ActiveCondIds": [
       1101,
       1501010
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
-    "TriggerBehaviorId": 600000011,
-    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1793.png@EXSkill_1793",
-    "NameDescStrKey": "ST:236005"
-  },
-  {
-    "ID": 741501216,
-    "LifeTime": 1,
-    "FuncType": "BufFuncType_AttachBufBySelfAfterCastSkill",
-    "FuncParams": [
-      0,
-      1,
-      1,
-      741501037,
-      1,
-      0
-    ],
-    "ActiveCondIds": [
-      1101,
-      1501011
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

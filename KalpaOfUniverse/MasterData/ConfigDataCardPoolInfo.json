@@ -13917,6 +13917,7 @@
       10109,
       10110,
       10111,
+      10112,
       10113,
       10114,
       10108,
@@ -13944,7 +13945,7 @@
     "TenSelectTimesMax": -1,
     "GuaranteeGroupID": 1478,
     "CardGuaranteeTimesId": 1,
-    "AdsVideo": "回归心愿（-3）截止ob62\n神魔可选（-6）截止ob59",
+    "AdsVideo": "回归心愿（-3）截止ob63\n神魔可选（-6）截止ob60",
     "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImage_ABS/SelectCardIcon/Pattern_Wish.png@Pattern_Wish",
     "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImage_ABS/SelectCardIcon/Pattern_Wish.png@Pattern_Wish",
     "StateDesc": "Wish_BackFlow",
@@ -16447,6 +16448,368 @@
     "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB13_ABS/NoTag/Bg_02_01.png@Bg_02_01",
     "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB13_ABS/NoTag/Bg_02_02.png@Bg_02_02",
     "NameStrKey": "ST:219877"
+  },
+  {
+    "ID": 371,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_Single",
+    "SpecialTagState": "ULP",
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1539
+      },
+      {
+        "Key": 5,
+        "Value": 1
+      },
+      {
+        "Key": 6
+      }
+    ],
+    "SortId": 100,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1539,
+    "CardGuaranteeTimesId": 1,
+    "AdsVideo": "紫霆司命",
+    "HeroPreview": [
+      100250900
+    ],
+    "AdsPreview": [
+      148
+    ],
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine309.png@Pattern_Spine309",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine309.png@Pattern_Spine309",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab01_ABS/BannerPrefab/BannerPrefab309.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB24_ABS/NoTag/BG_111_a.png@BG_111_a",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB24_ABS/NoTag/BG_111_b.png@BG_111_b",
+    "Collection": 8,
+    "NameStrKey": "ST:256325"
+  },
+  {
+    "ID": 372,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_GuaranteeSP",
+    "SpecialTagState": "SpecialCollection",
+    "GuaranteeRateGroupId": 1,
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1540
+      },
+      {
+        "Key": 7,
+        "Value": 1
+      },
+      {
+        "Key": 8
+      }
+    ],
+    "SortId": 99,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1541,
+    "CardGuaranteeTimesId": 9999,
+    "AdsVideo": "紫霆司命（特选）",
+    "HeroPreview": [
+      100250900
+    ],
+    "AdsPreview": [
+      148
+    ],
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine309.png@Pattern_Spine309",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine309.png@Pattern_Spine309",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab01_ABS/BannerPrefab/BannerPrefab310.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB29_ABS/NoTag/BG_132_01.png@BG_132_01",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB29_ABS/NoTag/BG_132_02.png@BG_132_02",
+    "TeXuanFengLiGroupId": 1,
+    "TeXuanFengLiTriggerTimes": 85,
+    "TeXuanFengLiId": 351470000,
+    "NameStrKey": "ST:256326"
+  },
+  {
+    "ID": 373,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_Choiceness",
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1542
+      },
+      {
+        "Key": 5,
+        "Value": 1
+      },
+      {
+        "Key": 6
+      }
+    ],
+    "SortId": 96,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1542,
+    "CardGuaranteeTimesId": 1,
+    "AdsVideo": "郸阴/韩千秀/太玄灵狐",
+    "HeroPreview": [
+      100114300,
+      100121200,
+      100132100
+    ],
+    "AdsPreview": [
+      10,
+      12,
+      82
+    ],
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine311.png@Pattern_Spine311",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine311.png@Pattern_Spine311",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab01_ABS/BannerPrefab/BannerPrefab311.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB17_ABS/NoTag/BG_84a.png@BG_84a",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB17_ABS/NoTag/BG_84b.png@BG_84b",
+    "SelectMaxStarUpCharacterExtraDropId": 401055000,
+    "NameStrKey": "ST:258573"
+  },
+  {
+    "ID": 374,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_Double",
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1543
+      },
+      {
+        "Key": 5,
+        "Value": 1
+      },
+      {
+        "Key": 6
+      }
+    ],
+    "SortId": 95,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1543,
+    "CardGuaranteeTimesId": 1,
+    "AdsVideo": "赵瑚儿/耶律纱",
+    "HeroPreview": [
+      100115600,
+      100109100
+    ],
+    "AdsPreview": [
+      128,
+      134
+    ],
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine312.png@Pattern_Spine312",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine312.png@Pattern_Spine312",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab01_ABS/BannerPrefab/BannerPrefab312.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB24_ABS/NoTag/BG_111_a.png@BG_111_a",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB24_ABS/NoTag/BG_111_b.png@BG_111_b",
+    "SelectMaxStarUpCharacterExtraDropId": 401055000,
+    "NameStrKey": "ST:256328"
+  },
+  {
+    "ID": 375,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_Double",
+    "IsCustom": true,
+    "CustomCount": 2,
+    "CustomCandidateCardIds": [
+      10100,
+      10097,
+      10094,
+      10090,
+      10082,
+      10074,
+      10066,
+      10060,
+      10059,
+      10051,
+      10047,
+      10043,
+      10038,
+      10039,
+      10034,
+      10030,
+      10032,
+      10026,
+      10024,
+      10020,
+      10017,
+      10009,
+      10010
+    ],
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1544
+      },
+      {
+        "Key": 5,
+        "Value": 1
+      },
+      {
+        "Key": 6
+      }
+    ],
+    "SortId": 94,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1544,
+    "CardGuaranteeTimesId": 1,
+    "AdsVideo": "暗心愿（-13）截止ob53",
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImage_ABS/SelectCardIcon/Pattern_Wish.png@Pattern_Wish",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImage_ABS/SelectCardIcon/Pattern_Wish.png@Pattern_Wish",
+    "StateDesc": "Wish_Dark",
+    "WishPoolTitle": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB38_ABS/NoTag/Biaoti_09.png@Biaoti_09",
+    "WishPoolBGImg": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImage_ABS/NoTag/Hero_02.png@Hero_02",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/WishHeroBannerPrefab.prefab",
+    "WishSelectPanelPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/Wish_BannerPrefab.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB38_ABS/NoTag/Bg_08_01.png@Bg_08_01",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB38_ABS/NoTag/Bg_08_02.png@Bg_08_02",
+    "NameStrKey": "ST:194340"
+  },
+  {
+    "ID": 376,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_Double",
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1545
+      },
+      {
+        "Key": 5,
+        "Value": 1
+      },
+      {
+        "Key": 6
+      }
+    ],
+    "SortId": 93,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1545,
+    "CardGuaranteeTimesId": 1,
+    "AdsVideo": "天玄义剑/第二瑛",
+    "HeroPreview": [
+      100115300,
+      100108200
+    ],
+    "AdsPreview": [
+      108,
+      127
+    ],
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine313.png@Pattern_Spine313",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB66_ABS/SelectCardIcon/Pattern_Spine313.png@Pattern_Spine313",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab01_ABS/BannerPrefab/BannerPrefab313.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB4_ABS/NoTag/BG_25_a.png@BG_25_a",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB4_ABS/NoTag/BG_25_b.png@BG_25_b",
+    "SelectMaxStarUpCharacterExtraDropId": 401055000,
+    "NameStrKey": "ST:256329"
+  },
+  {
+    "ID": 377,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_Single",
+    "SpecialTagState": "ULP",
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1546
+      },
+      {
+        "Key": 5,
+        "Value": 1
+      },
+      {
+        "Key": 6
+      }
+    ],
+    "SortId": 98,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1546,
+    "CardGuaranteeTimesId": 1,
+    "AdsVideo": "剑心无邪",
+    "HeroPreview": [
+      100250600
+    ],
+    "AdsPreview": [
+      135
+    ],
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB59_ABS/SelectCardIcon/Pattern_Spine269.png@Pattern_Spine269",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB59_ABS/SelectCardIcon/Pattern_Spine269.png@Pattern_Spine269",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab01_ABS/BannerPrefab/BannerPrefab269.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB39_ABS/NoTag/bg_174_01.png@bg_174_01",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB39_ABS/NoTag/bg_174_02.png@bg_174_02",
+    "Collection": 6,
+    "NameStrKey": "ST:242502"
+  },
+  {
+    "ID": 378,
+    "PoolType": "CardPoolType_Activity",
+    "PoolUpType": "CardPoolUpType_GuaranteeSP",
+    "SpecialTagState": "SpecialCollection",
+    "GuaranteeRateGroupId": 1,
+    "IsGuarantee": true,
+    "Ticket": 400000001,
+    "TicketPrice": 88,
+    "Groups": [
+      {
+        "Key": 1547
+      },
+      {
+        "Key": 7,
+        "Value": 1
+      },
+      {
+        "Key": 8
+      }
+    ],
+    "SortId": 97,
+    "SingleSelectTimesMax": -1,
+    "TenSelectTimesMax": -1,
+    "GuaranteeGroupID": 1548,
+    "CardGuaranteeTimesId": 9999,
+    "AdsVideo": "剑心无邪（特选）",
+    "HeroPreview": [
+      100250600
+    ],
+    "AdsPreview": [
+      135
+    ],
+    "ToggleClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB59_ABS/SelectCardIcon/Pattern_Spine269.png@Pattern_Spine269",
+    "ToggleUnClickImage": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB59_ABS/SelectCardIcon/Pattern_Spine269.png@Pattern_Spine269",
+    "BannerPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab01_ABS/BannerPrefab/BannerPrefab270.prefab",
+    "BannerVideoPrefab": "Assets/GameProject/RuntimeAssets/UI/UIPrefab/SelectCardPrefab_ABS/BannerPrefab/BannerPrefab01_1.prefab",
+    "BannerImageLeft": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB29_ABS/NoTag/BG_132_01.png@BG_132_01",
+    "BannerImageRight": "Assets/GameProject/RuntimeAssets/UI/UIImage/SelectCardImageOB29_ABS/NoTag/BG_132_02.png@BG_132_02",
+    "TeXuanFengLiGroupId": 1,
+    "TeXuanFengLiTriggerTimes": 85,
+    "TeXuanFengLiId": 351470000,
+    "NameStrKey": "ST:242503"
   },
   {
     "ID": 1001,

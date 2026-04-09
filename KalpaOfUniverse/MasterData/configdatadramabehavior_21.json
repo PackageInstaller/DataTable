@@ -1,5 +1,558 @@
 [
   {
+    "ID": 631080407,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310105070,
+      310105071,
+      310105072
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080407,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080408,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      310105080,
+      310105081
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080408,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080411,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      310105101
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631080411,
+    "AttackWeapon": [
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 631080412,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      310105102
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631080412,
+    "AttackWeapon": [
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080413,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      310105103
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631080413,
+    "AttackWeapon": [
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080415,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      310105105
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631080415,
+    "AttackWeapon": [
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080491,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310105910,
+      310105911,
+      310105912
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080491,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Stab",
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080492,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      310105920,
+      310105921
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080492,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080501,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310105910,
+      310105911,
+      310105912
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080501,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Stab",
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080502,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      310105920,
+      310105921
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080502,
+    "AttackWeapon": [
+      "WeaponType_Dagger",
+      "WeaponType_Dagger"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash",
+      "AttackAngleType_Stab"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080510,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      310105105
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631080510,
+    "AttackWeapon": [
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631080601,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      310806010,
+      310806011
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "FlyObjetId": [
+      3108060,
+      3108060
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080601,
+    "AttackWeapon": [
+      "WeaponType_Arrow",
+      "WeaponType_Arrow"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Lit",
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 631080602,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      310806020,
+      310806021
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004
+    ],
+    "FlyObjetId": [
+      3108060,
+      3108060
+    ],
+    "BloodDamageShow": [
+      40,
+      60
+    ],
+    "SkillSound": 631080602,
+    "AttackWeapon": [
+      "WeaponType_Arrow",
+      "WeaponType_Arrow"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Lit",
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 631080610,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "CastEffect": [
+      310806100,
+      310806101
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "FlyObjetId": [
+      3108061
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631080610,
+    "AttackWeapon": [
+      "WeaponType_Arrow"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
+    "ID": 631090201,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631090201,
+    "AttackWeapon": [
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 631090202,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631090202,
+    "AttackWeapon": [
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 631090203,
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "AttackWeapon": [
+      "WeaponType_Spear"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_Slash"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med"
+    ]
+  },
+  {
+    "ID": 631090301,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631090301,
+    "AttackWeapon": [
+      "WeaponType_Punch"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Lit"
+    ]
+  },
+  {
+    "ID": 631090302,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 631090302,
+    "AttackWeapon": [
+      "WeaponType_Punch"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Lit"
+    ]
+  },
+  {
+    "ID": 631090601,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "CastEffect": [
+      100100030,
+      100100031,
+      100100032,
+      100100033
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      30,
+      30,
+      40
+    ],
+    "SkillSound": 611001001
+  },
+  {
+    "ID": 631090602,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "CastEffect": [
+      100100040,
+      100100041
+    ],
+    "OnHitEffect": [
+      26800004,
+      26800004,
+      26800004,
+      26800004
+    ],
+    "BloodDamageShow": [
+      25,
+      25,
+      25,
+      25
+    ],
+    "SkillSound": 611001002
+  },
+  {
     "ID": 631090610,
     "ShowFlash": true,
     "ReturnToIdle": true,
@@ -4301,481 +4854,5 @@
       35
     ],
     "SkillSound": 631098702
-  },
-  {
-    "ID": 631098710,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01",
-    "CastEffect": [
-      310987020,
-      310987021,
-      310987022
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631098710
-  },
-  {
-    "ID": 631098720,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      310987030,
-      310987031
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631098720
-  },
-  {
-    "ID": 631098730,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "CastEffect": [
-      310987040
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631098730
-  },
-  {
-    "ID": 631099001,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 631099001,
-    "AttackWeapon": [
-      "WeaponType_Mag",
-      "WeaponType_Mag",
-      "WeaponType_Mag"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Med"
-    ]
-  },
-  {
-    "ID": 631099002,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 631099002,
-    "AttackWeapon": [
-      "WeaponType_Mag",
-      "WeaponType_Mag"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med"
-    ]
-  },
-  {
-    "ID": 631099003,
-    "ReturnToIdle": true,
-    "Animation": "Combat_DoubleHitRootMotion",
-    "CastEffect": [
-      310915030
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 631099003
-  },
-  {
-    "ID": 631099010,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01",
-    "CastEffect": [
-      310915100,
-      310915101
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 631099010
-  },
-  {
-    "ID": 631099020,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631032020,
-    "AttackWeapon": [
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 631099030,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631032020,
-    "AttackWeapon": [
-      "WeaponType_BroadSword",
-      "WeaponType_BroadSword"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_Slash",
-      "AttackAngleType_Slash"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 631099101,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      310308910
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "FlyObjetId": [
-      3103085,
-      3103085,
-      3103085
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 631099101,
-    "AttackWeapon": [
-      "WeaponType_Mag",
-      "WeaponType_Mag",
-      "WeaponType_Mag"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Med"
-    ]
-  },
-  {
-    "ID": 631099102,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      310308920
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "FlyObjetId": [
-      3103085,
-      3103085
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 631099102,
-    "AttackWeapon": [
-      "WeaponType_Mag",
-      "WeaponType_Mag"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med"
-    ]
-  },
-  {
-    "ID": 631099110,
-    "ReturnToIdle": true,
-    "Animation": "SkillAnnounce",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631099110,
-    "StartEffect": 200300150
-  },
-  {
-    "ID": 631099120,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "SkillAnnounce",
-    "CastEffect": [
-      810600700
-    ],
-    "OnHitEffect": [
-      810600790
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631099120,
-    "AttackWeapon": [
-      "WeaponType_None"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_None"
-    ]
-  },
-  {
-    "ID": 631099201,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      310312010,
-      310312011,
-      310312012,
-      310312013
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      30,
-      30
-    ],
-    "SkillSound": 631099201,
-    "AttackWeapon": [
-      "WeaponType_Mag",
-      "WeaponType_Mag",
-      "WeaponType_Mag",
-      "WeaponType_Mag"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 631099202,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      310312020,
-      310312021,
-      310312022,
-      310312023
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 631099202,
-    "AttackWeapon": [
-      "WeaponType_Mag",
-      "WeaponType_Mag"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med"
-    ]
-  },
-  {
-    "ID": 631099210,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "SkillAnnounce",
-    "CastEffect": [
-      810600700
-    ],
-    "OnHitEffect": [
-      810600790
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631099120,
-    "AttackWeapon": [
-      "WeaponType_None"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_None"
-    ]
-  },
-  {
-    "ID": 631099301,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631099301
-  },
-  {
-    "ID": 631099302,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631099302
-  },
-  {
-    "ID": 631099601,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      310996000,
-      310996001,
-      310996002
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 631099601
-  },
-  {
-    "ID": 631099602,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      310996003,
-      310996004,
-      310996005
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 631099602
-  },
-  {
-    "ID": 631099603,
-    "ReturnToIdle": true,
-    "Animation": "Combat_ChaseHitRootMotion",
-    "CastEffect": [
-      310996006,
-      310996007,
-      310996008
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 631099603
   }
 ]

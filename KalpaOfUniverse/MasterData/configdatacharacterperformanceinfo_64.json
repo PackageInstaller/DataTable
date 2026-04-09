@@ -1,5 +1,61 @@
 [
   {
+    "ID": 1503020,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150300,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_1503_Voice_Line_Break",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:240178"
+  },
+  {
+    "ID": 1503021,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150300,
+        "P2": 10
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_1503_Voice_Line_Speech",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:240182"
+  },
+  {
+    "ID": 1503022,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150300,
+        "P2": 15
+      }
+    ],
+    "Animation": "idle_Smile",
+    "Voice": "HO_1503_Voice_Line_Speech_2",
+    "NameStrKey": "ST:52091",
+    "WordStrKey": "ST:240183"
+  },
+  {
+    "ID": 1503023,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100150300,
+        "P2": 20
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_1503_Voice_Line_Speech_3",
+    "NameStrKey": "ST:52094",
+    "WordStrKey": "ST:241060"
+  },
+  {
     "ID": 1503024,
     "UnlockValue": [
       {
@@ -146,7 +202,7 @@
     ],
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Interaction",
-    "WordStrKey": "ST:254669"
+    "WordStrKey": "ST:254615"
   },
   {
     "ID": 1504002,
@@ -159,7 +215,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Interaction_2",
-    "WordStrKey": "ST:254670"
+    "WordStrKey": "ST:254616"
   },
   {
     "ID": 1504003,
@@ -172,7 +228,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Victory",
-    "WordStrKey": "ST:254671"
+    "WordStrKey": "ST:254617"
   },
   {
     "ID": 1504004,
@@ -185,7 +241,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Victory_2",
-    "WordStrKey": "ST:254672"
+    "WordStrKey": "ST:254618"
   },
   {
     "ID": 1504005,
@@ -198,7 +254,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Victory_3",
-    "WordStrKey": "ST:254673"
+    "WordStrKey": "ST:254619"
   },
   {
     "ID": 1504006,
@@ -211,7 +267,7 @@
     ],
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Call",
-    "WordStrKey": "ST:254674"
+    "WordStrKey": "ST:254620"
   },
   {
     "ID": 1504007,
@@ -224,7 +280,7 @@
     ],
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Break",
-    "WordStrKey": "ST:254675"
+    "WordStrKey": "ST:254621"
   },
   {
     "ID": 1504008,
@@ -237,7 +293,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Failure",
-    "WordStrKey": "ST:254676"
+    "WordStrKey": "ST:254622"
   },
   {
     "ID": 1504009,
@@ -250,7 +306,7 @@
     ],
     "Animation": "idle_Sad",
     "Voice": "HO_1504_Voice_Line_Failure_2",
-    "WordStrKey": "ST:254677"
+    "WordStrKey": "ST:254623"
   },
   {
     "ID": 1504010,
@@ -263,7 +319,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Failure_3",
-    "WordStrKey": "ST:254678"
+    "WordStrKey": "ST:254624"
   },
   {
     "ID": 1504011,
@@ -277,7 +333,7 @@
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Interaction",
     "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:254669"
+    "WordStrKey": "ST:254615"
   },
   {
     "ID": 1504012,
@@ -291,7 +347,7 @@
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Interaction_2",
     "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:254670"
+    "WordStrKey": "ST:254616"
   },
   {
     "ID": 1504013,
@@ -305,7 +361,7 @@
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Victory",
     "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:254671"
+    "WordStrKey": "ST:254617"
   },
   {
     "ID": 1504014,
@@ -319,7 +375,7 @@
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Victory_2",
     "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:254672"
+    "WordStrKey": "ST:254618"
   },
   {
     "ID": 1504015,
@@ -333,7 +389,7 @@
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Victory_3",
     "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:254673"
+    "WordStrKey": "ST:254619"
   },
   {
     "ID": 1504016,
@@ -347,7 +403,7 @@
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Failure",
     "NameStrKey": "ST:52090",
-    "WordStrKey": "ST:254676"
+    "WordStrKey": "ST:254622"
   },
   {
     "ID": 1504017,
@@ -361,7 +417,7 @@
     "Animation": "idle_Sad",
     "Voice": "HO_1504_Voice_Line_Failure_2",
     "NameStrKey": "ST:52090",
-    "WordStrKey": "ST:254677"
+    "WordStrKey": "ST:254623"
   },
   {
     "ID": 1504018,
@@ -375,7 +431,7 @@
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Failure_3",
     "NameStrKey": "ST:52090",
-    "WordStrKey": "ST:254678"
+    "WordStrKey": "ST:254624"
   },
   {
     "ID": 1504019,
@@ -389,7 +445,7 @@
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Call",
     "NameStrKey": "ST:52086",
-    "WordStrKey": "ST:254674"
+    "WordStrKey": "ST:254620"
   },
   {
     "ID": 1504020,
@@ -403,7 +459,7 @@
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Break",
     "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:254675"
+    "WordStrKey": "ST:254621"
   },
   {
     "ID": 1504021,
@@ -417,7 +473,7 @@
     "Animation": "idle_Smile",
     "Voice": "HO_1504_Voice_Line_Speech",
     "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:254679"
+    "WordStrKey": "ST:254625"
   },
   {
     "ID": 1504022,
@@ -431,7 +487,7 @@
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Speech_2",
     "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:254680"
+    "WordStrKey": "ST:254626"
   },
   {
     "ID": 1504023,
@@ -445,7 +501,7 @@
     "Animation": "idle_Sad",
     "Voice": "HO_1504_Voice_Line_Speech_3",
     "NameStrKey": "ST:52094",
-    "WordStrKey": "ST:254681"
+    "WordStrKey": "ST:254627"
   },
   {
     "ID": 1504024,
@@ -459,7 +515,7 @@
     "Animation": "idle_Sad",
     "Voice": "HO_1504_Voice_Line_Speech_4",
     "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:254682"
+    "WordStrKey": "ST:254628"
   },
   {
     "ID": 1504025,
@@ -473,7 +529,7 @@
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Speech_5",
     "NameStrKey": "ST:52092",
-    "WordStrKey": "ST:254683"
+    "WordStrKey": "ST:254629"
   },
   {
     "ID": 1504026,
@@ -487,7 +543,7 @@
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Speech_6",
     "NameStrKey": "ST:52093",
-    "WordStrKey": "ST:254684"
+    "WordStrKey": "ST:254630"
   },
   {
     "ID": 1504027,
@@ -501,7 +557,7 @@
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Speech_7",
     "NameStrKey": "ST:52092",
-    "WordStrKey": "ST:254685"
+    "WordStrKey": "ST:254631"
   },
   {
     "ID": 1504028,
@@ -515,7 +571,7 @@
     "Animation": "idle_Smile",
     "Voice": "HO_1504_Voice_Line_Speech_8",
     "NameStrKey": "ST:52092",
-    "WordStrKey": "ST:254686"
+    "WordStrKey": "ST:254632"
   },
   {
     "ID": 1504029,
@@ -529,7 +585,7 @@
     "Animation": "idle_Normal",
     "Voice": "HO_1504_Voice_Line_Speech_9",
     "NameStrKey": "ST:52094",
-    "WordStrKey": "ST:254687"
+    "WordStrKey": "ST:254633"
   },
   {
     "ID": 1504030,
@@ -542,7 +598,7 @@
     ],
     "Animation": "idle_Sad",
     "Voice": "HO_1504_Voice_Line_Interaction_3",
-    "WordStrKey": "ST:254688"
+    "WordStrKey": "ST:254634"
   },
   {
     "ID": 1504031,
@@ -555,7 +611,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Interaction_4",
-    "WordStrKey": "ST:254689"
+    "WordStrKey": "ST:254635"
   },
   {
     "ID": 1504032,
@@ -568,7 +624,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Interaction_5",
-    "WordStrKey": "ST:254690"
+    "WordStrKey": "ST:254636"
   },
   {
     "ID": 1504033,
@@ -581,7 +637,7 @@
     ],
     "Animation": "idle_Angry",
     "Voice": "HO_1504_Voice_Line_Victory_4",
-    "WordStrKey": "ST:254691"
+    "WordStrKey": "ST:254637"
   },
   {
     "ID": 2000001,
@@ -1033,57 +1089,5 @@
     "Voice": "HO_2000_Voice_Line_Speech_11",
     "NameStrKey": "ST:52091",
     "WordStrKey": "ST:104821"
-  },
-  {
-    "ID": 2001001,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200100,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Shy",
-    "Voice": "HO_2002_Voice_Line_Interaction_1",
-    "WordStrKey": "ST:104822"
-  },
-  {
-    "ID": 2001002,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200100,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_surprise",
-    "Voice": "HO_2002_Voice_Line_Interaction_2",
-    "WordStrKey": "ST:104823"
-  },
-  {
-    "ID": 2001003,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200100,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2002_Voice_Line_Interaction_3",
-    "WordStrKey": "ST:104824"
-  },
-  {
-    "ID": 2001004,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200100,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Normal",
-    "Voice": "HO_2002_Voice_Line_Victory_1",
-    "WordStrKey": "ST:104825"
   }
 ]

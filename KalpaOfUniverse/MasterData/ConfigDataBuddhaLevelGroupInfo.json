@@ -2134,6 +2134,42 @@
     "StrategyStrKey": "ST:96535"
   },
   {
+    "ID": 938,
+    "BuddhaId": 43,
+    "Type": "BuddhaLevelType_Challenge",
+    "CharActorList": [
+      {
+        "SignId": "ActorSign_Shadow",
+        "CareerId": "CareerType_Guard",
+        "ActorType": 1
+      },
+      {
+        "SignId": "ActorSign_Fire"
+      },
+      {
+        "SignId": "ActorSign_Ice"
+      },
+      {
+        "SignId": "ActorSign_Ice"
+      },
+      {
+        "SignId": "ActorSign_Fire",
+        "CareerId": "CareerType_Guard"
+      },
+      {
+        "SignId": "ActorSign_Electricity",
+        "CareerId": "CareerType_Rogue"
+      },
+      {
+        "SignId": "ActorSign_Electricity",
+        "CareerId": "CareerType_Guard"
+      }
+    ],
+    "MiniMap": "Assets/GameProject/RuntimeAssets/UI/UIImage/UnchartedImage01/FuTuTaChapterBanner_ABS/BuddhaBattleMap_10.png@BuddhaBattleMap_10",
+    "NameStrKey": "ST:54604",
+    "StrategyStrKey": "ST:110771"
+  },
+  {
     "ID": 1001,
     "BuddhaId": 17,
     "Type": "BuddhaLevelType_Daily",

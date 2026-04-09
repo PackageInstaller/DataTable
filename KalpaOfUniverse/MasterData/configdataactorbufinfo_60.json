@@ -1,5 +1,30 @@
 [
   {
+    "ID": 741503275,
+    "LifeTime": 1,
+    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      741503539,
+      1
+    ],
+    "ActiveCondIds": [
+      1101,
+      1503012
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 741503280,
     "LifeTime": 1,
     "FuncType": "BufFuncType_Damage4SelfImm",
@@ -958,7 +983,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1930.png@EXSkill_1930",
     "NameDescStrKey": "ST:254200",
-    "BuffDescStrKey": "ST:255440"
+    "BuffDescStrKey": "ST:255905"
   },
   {
     "ID": 741504023,
@@ -1369,6 +1394,7 @@
     "FuncParams": [
       0,
       1,
+      1,
       1
     ],
     "ActiveCondIds": [
@@ -1543,6 +1569,7 @@
       "BufCategory_None"
     ],
     "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
     "TriggerTimes": 1,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
   },
@@ -1824,7 +1851,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1925.png@EXSkill_1925",
     "NameDescStrKey": "ST:254203",
-    "BuffDescStrKey": "ST:255060"
+    "BuffDescStrKey": "ST:255906"
   },
   {
     "ID": 741504074,
@@ -1849,7 +1876,7 @@
     "IconBackgroundType": "IconBackgroundType_Bad",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_150402.png@EXSkill_3c_150402",
     "NameDescStrKey": "ST:254204",
-    "BuffDescStrKey": "ST:255061"
+    "BuffDescStrKey": "ST:255907"
   },
   {
     "ID": 741504075,
@@ -2006,7 +2033,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1926.png@EXSkill_1926",
     "NameDescStrKey": "ST:254205",
-    "BuffDescStrKey": "ST:256250"
+    "BuffDescStrKey": "ST:256103"
   },
   {
     "ID": 741504081,
@@ -4449,25 +4476,6 @@
     "FuncType": "BufFuncType_DisperseBufImm",
     "FuncParams": [
       3,
-      1,
-      -1,
-      2,
-      3
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 742003054,
-    "FuncType": "BufFuncType_DisperseBufImm",
-    "FuncParams": [
-      4,
       1,
       -1,
       2,

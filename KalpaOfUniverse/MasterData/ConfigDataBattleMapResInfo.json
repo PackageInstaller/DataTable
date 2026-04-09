@@ -1573,6 +1573,267 @@
     ]
   },
   {
+    "ID": 26600200,
+    "BattleMapId": 1220,
+    "Res": "LandScape01Series/Maps/1220_ABS/",
+    "AttackTeamFormationGrids": [
+      {
+        "ActorId": 101,
+        "X": 12,
+        "Y": 17,
+        "DirX": 12
+      },
+      {
+        "ActorId": 102,
+        "X": 12,
+        "Y": 12,
+        "DirX": 12,
+        "DirY": 20
+      }
+    ],
+    "CameraDefaultPosition": [
+      12,
+      8
+    ]
+  },
+  {
+    "ID": 26600203,
+    "BattleMapId": 1918,
+    "Res": "SandCastle01Series/Maps/1918_ABS/",
+    "AttackTeamFormationGrids": [
+      {
+        "ActorId": 101,
+        "X": 12,
+        "DirX": 12,
+        "DirY": 20
+      },
+      {
+        "ActorId": 102,
+        "X": 10,
+        "DirX": 10,
+        "DirY": 20
+      }
+    ],
+    "CameraDefaultPosition": [
+      10,
+      18
+    ]
+  },
+  {
+    "ID": 26601600,
+    "BattleMapId": 1709,
+    "Res": "World01Series/Maps/1709_ABS/",
+    "AttackTeamFormationGrids": [
+      {
+        "X": 7,
+        "Y": 2,
+        "DirX": 7,
+        "DirY": 10
+      },
+      {
+        "X": 8,
+        "Y": 2,
+        "DirX": 8,
+        "DirY": 10
+      },
+      {
+        "X": 9,
+        "Y": 2,
+        "DirX": 9,
+        "DirY": 10
+      },
+      {
+        "X": 7,
+        "Y": 3,
+        "DirX": 7,
+        "DirY": 10
+      },
+      {
+        "X": 8,
+        "Y": 3,
+        "DirX": 8,
+        "DirY": 10
+      },
+      {
+        "X": 9,
+        "Y": 3,
+        "DirX": 9,
+        "DirY": 10
+      }
+    ],
+    "DefendTeamFormationGrids": [
+      {
+        "ActorId": 401,
+        "X": 8,
+        "Y": 7,
+        "DirX": 8,
+        "DirY": 1
+      },
+      {
+        "ActorId": 441,
+        "X": 7,
+        "Y": 7,
+        "DirX": 7,
+        "DirY": 1
+      },
+      {
+        "ActorId": 442,
+        "X": 8,
+        "Y": 6,
+        "DirX": 8,
+        "DirY": 1
+      },
+      {
+        "ActorId": 443,
+        "X": 9,
+        "Y": 7,
+        "DirX": 9,
+        "DirY": 1
+      }
+    ],
+    "SceneObjectList": [
+      {
+        "ID": 801,
+        "SceneObjectID": 120649,
+        "PosX": 8.0,
+        "PosZ": 12.0,
+        "Scale": 1.0
+      },
+      {
+        "ID": 802,
+        "SceneObjectID": 120650,
+        "PosX": 8.0,
+        "PosZ": 11.5,
+        "Scale": 1.0
+      },
+      {
+        "ID": 803,
+        "SceneObjectID": 120650,
+        "PosX": 9.4,
+        "PosZ": 11.0,
+        "DirY": 90.0,
+        "Scale": 1.0
+      },
+      {
+        "ID": 804,
+        "SceneObjectID": 120650,
+        "PosX": 7.6,
+        "PosZ": 13.0,
+        "Scale": 1.0
+      },
+      {
+        "ID": 805,
+        "SceneObjectID": 120650,
+        "PosX": 8.0,
+        "PosZ": 12.0,
+        "DirY": 180.0,
+        "Scale": 1.0
+      }
+    ],
+    "FaciliteActorSetups": [
+      {
+        "ActorId": 901,
+        "X": 7,
+        "Y": 5,
+        "DirX": 7,
+        "DirY": 4,
+        "TeamId": 40,
+        "FaciliteId": 1698,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      },
+      {
+        "ActorId": 902,
+        "X": 9,
+        "Y": 5,
+        "DirX": 9,
+        "DirY": 4,
+        "TeamId": 40,
+        "FaciliteId": 1698,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      },
+      {
+        "ActorId": 903,
+        "X": 8,
+        "Y": 8,
+        "DirX": 8,
+        "DirY": 7,
+        "TeamId": 40,
+        "FaciliteId": 1698,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      },
+      {
+        "ActorId": 911,
+        "X": 6,
+        "Y": 6,
+        "DirX": 6,
+        "DirY": 5,
+        "TeamId": 40,
+        "FaciliteId": 1700,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      },
+      {
+        "ActorId": 912,
+        "X": 10,
+        "Y": 6,
+        "DirX": 10,
+        "DirY": 5,
+        "TeamId": 40,
+        "FaciliteId": 1700,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      },
+      {
+        "ActorId": 913,
+        "X": 7,
+        "Y": 8,
+        "DirX": 7,
+        "DirY": 7,
+        "TeamId": 40,
+        "FaciliteId": 1700,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      },
+      {
+        "ActorId": 914,
+        "X": 9,
+        "Y": 8,
+        "DirX": 9,
+        "DirY": 7,
+        "TeamId": 40,
+        "FaciliteId": 1700,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      },
+      {
+        "ActorId": 921,
+        "X": 7,
+        "Y": 11,
+        "DirX": 7,
+        "DirY": 1,
+        "TeamId": 91,
+        "FaciliteId": 1703,
+        "Level": -1,
+        "HpPercent": 10000,
+        "CanChangePose": 7
+      }
+    ],
+    "CameraDefaultPosition": [
+      8,
+      7
+    ]
+  },
+  {
     "ID": 28010800,
     "BattleMapId": 1704,
     "Res": "World01Series/Maps/1704_ABS/",

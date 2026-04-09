@@ -18268,7 +18268,7 @@
     "SizeX": 3,
     "SizeY": 4,
     "CharacterID": 111471,
-    "NameDescStrKey": "ST:254926"
+    "NameDescStrKey": "ST:254638"
   },
   {
     "ID": 1682,
@@ -18281,7 +18281,7 @@
     "SizeY": 1,
     "CharacterID": 111472,
     "NameDescStrKey": "ST:218372",
-    "BuffDescStrKey": "ST:254932"
+    "BuffDescStrKey": "ST:254645"
   },
   {
     "ID": 1683,
@@ -18294,7 +18294,7 @@
     "SizeX": 1,
     "SizeY": 1,
     "CharacterID": 111153,
-    "NameDescStrKey": "ST:254949"
+    "NameDescStrKey": "ST:254639"
   },
   {
     "ID": 1684,
@@ -18335,7 +18335,7 @@
     "SizeY": 1,
     "CharacterID": 111474,
     "NameDescStrKey": "ST:218372",
-    "BuffDescStrKey": "ST:254932"
+    "BuffDescStrKey": "ST:254645"
   },
   {
     "ID": 1687,
@@ -18347,7 +18347,7 @@
     "SizeX": 1,
     "SizeY": 1,
     "CharacterID": 111475,
-    "NameDescStrKey": "ST:255996"
+    "NameDescStrKey": "ST:254640"
   },
   {
     "ID": 1688,
@@ -18360,7 +18360,7 @@
     "SizeX": 1,
     "SizeY": 1,
     "CharacterID": 100293,
-    "NameDescStrKey": "ST:255997"
+    "NameDescStrKey": "ST:254641"
   },
   {
     "ID": 1689,
@@ -18372,7 +18372,7 @@
     "SizeX": 1,
     "SizeY": 1,
     "CharacterID": 111476,
-    "NameDescStrKey": "ST:256038"
+    "NameDescStrKey": "ST:254642"
   },
   {
     "ID": 1690,
@@ -18384,7 +18384,7 @@
     "SizeX": 1,
     "SizeY": 1,
     "CharacterID": 111477,
-    "NameDescStrKey": "ST:256203"
+    "NameDescStrKey": "ST:256027"
   },
   {
     "ID": 1691,
@@ -18397,7 +18397,344 @@
     "SizeY": 1,
     "CharacterID": 999999,
     "NameDescStrKey": "ST:254239",
-    "BuffDescStrKey": "ST:256517"
+    "BuffDescStrKey": "ST:256459"
+  },
+  {
+    "ID": 1692,
+    "States": [
+      169201
+    ],
+    "Priority": 2,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111500,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      13,
+      14,
+      15
+    ],
+    "NameDescStrKey": "ST:256793"
+  },
+  {
+    "ID": 1693,
+    "States": [
+      169301
+    ],
+    "Priority": 2,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111501,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      13,
+      14,
+      15
+    ],
+    "NameDescStrKey": "ST:256794"
+  },
+  {
+    "ID": 1694,
+    "States": [
+      169401
+    ],
+    "Priority": 2,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111502,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      13,
+      14,
+      15
+    ],
+    "NameDescStrKey": "ST:256793"
+  },
+  {
+    "ID": 1695,
+    "States": [
+      169501
+    ],
+    "Priority": 2,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111503,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      13,
+      14,
+      15
+    ],
+    "NameDescStrKey": "ST:256794"
+  },
+  {
+    "ID": 1696,
+    "States": [
+      169601
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111221
+  },
+  {
+    "ID": 1697,
+    "States": [
+      169701
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111480,
+    "CanNotGrowAtTheFootOfChar": 1,
+    "NameDescStrKey": "ST:257218",
+    "BuffDescStrKey": "ST:258760"
+  },
+  {
+    "ID": 1698,
+    "States": [
+      169801
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111480,
+    "CanNotGrowAtTheFootOfChar": 1,
+    "NameDescStrKey": "ST:257218",
+    "BuffDescStrKey": "ST:258761"
+  },
+  {
+    "ID": 1699,
+    "States": [
+      169901
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111481,
+    "CanNotGrowAtTheFootOfChar": 1,
+    "NameDescStrKey": "ST:257219",
+    "BuffDescStrKey": "ST:258762"
+  },
+  {
+    "ID": 1700,
+    "States": [
+      170001
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111481,
+    "CanNotGrowAtTheFootOfChar": 1,
+    "NameDescStrKey": "ST:257219",
+    "BuffDescStrKey": "ST:258763"
+  },
+  {
+    "ID": 1701,
+    "States": [
+      170101
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111481,
+    "CanNotGrowAtTheFootOfChar": 1,
+    "NameDescStrKey": "ST:257219",
+    "BuffDescStrKey": "ST:258764"
+  },
+  {
+    "ID": 1702,
+    "States": [
+      170201
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111481,
+    "CanNotGrowAtTheFootOfChar": 1,
+    "NameDescStrKey": "ST:257219",
+    "BuffDescStrKey": "ST:258765"
+  },
+  {
+    "ID": 1703,
+    "States": [
+      170301
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 3,
+    "SizeY": 3,
+    "CharacterID": 999999,
+    "CanNotGrowAtTheFootOfChar": 1,
+    "NameDescStrKey": "ST:257220",
+    "BuffDescStrKey": "ST:258650"
+  },
+  {
+    "ID": 1704,
+    "States": [
+      170401
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111482
+  },
+  {
+    "ID": 1705,
+    "States": [
+      170501,
+      170502
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 2,
+    "SizeY": 2,
+    "CharacterID": 111488
+  },
+  {
+    "ID": 1706,
+    "States": [
+      170601,
+      170602,
+      170603
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111484
+  },
+  {
+    "ID": 1707,
+    "States": [
+      170701,
+      170702,
+      170703
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111485
+  },
+  {
+    "ID": 1708,
+    "States": [
+      170801
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111504,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      13,
+      14,
+      15
+    ],
+    "NameDescStrKey": "ST:258508",
+    "BuffDescStrKey": "ST:258588"
+  },
+  {
+    "ID": 1709,
+    "States": [
+      170901
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 999999,
+    "NameDescStrKey": "ST:256486",
+    "BuffDescStrKey": "ST:258651"
+  },
+  {
+    "ID": 1710,
+    "States": [
+      171001
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 3,
+    "SizeY": 3,
+    "CharacterID": 111486,
+    "NameDescStrKey": "ST:258505"
+  },
+  {
+    "ID": 1711,
+    "States": [
+      171101
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 3,
+    "SizeY": 3,
+    "CharacterID": 111487,
+    "NameDescStrKey": "ST:258505"
+  },
+  {
+    "ID": 1712,
+    "States": [
+      171201,
+      171202,
+      171203,
+      171204
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 999999,
+    "NameDescStrKey": "ST:258561"
+  },
+  {
+    "ID": 1713,
+    "States": [
+      171301
+    ],
+    "Priority": 4,
+    "ElapseTurn": -1,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 100309
   },
   {
     "ID": 115701,
@@ -18566,7 +18903,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256006"
+    "BuffDescStrKey": "ST:254643"
   },
   {
     "ID": 140302,
@@ -18590,7 +18927,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256006"
+    "BuffDescStrKey": "ST:254643"
   },
   {
     "ID": 140303,
@@ -18614,7 +18951,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256006"
+    "BuffDescStrKey": "ST:254643"
   },
   {
     "ID": 140304,
@@ -18638,7 +18975,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256006"
+    "BuffDescStrKey": "ST:254643"
   },
   {
     "ID": 140305,
@@ -18662,7 +18999,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256007"
+    "BuffDescStrKey": "ST:254644"
   },
   {
     "ID": 140306,
@@ -18686,7 +19023,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256007"
+    "BuffDescStrKey": "ST:254644"
   },
   {
     "ID": 140307,
@@ -18710,7 +19047,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256007"
+    "BuffDescStrKey": "ST:254644"
   },
   {
     "ID": 140308,
@@ -18734,7 +19071,7 @@
       15
     ],
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256007"
+    "BuffDescStrKey": "ST:254644"
   },
   {
     "ID": 150101,
@@ -18906,5 +19243,53 @@
     ],
     "NameDescStrKey": "ST:233864",
     "BuffDescStrKey": "ST:233871"
+  },
+  {
+    "ID": 250901,
+    "States": [
+      2509011,
+      2509012
+    ],
+    "Priority": 1,
+    "ElapseTurn": 3,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111478,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      13,
+      14,
+      15
+    ],
+    "NameDescStrKey": "ST:256129"
+  },
+  {
+    "ID": 250902,
+    "States": [
+      2509021,
+      2509022
+    ],
+    "Priority": 1,
+    "ElapseTurn": 3,
+    "SizeX": 1,
+    "SizeY": 1,
+    "CharacterID": 111479,
+    "ValidGridTypes": [
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      13,
+      14,
+      15
+    ],
+    "NameDescStrKey": "ST:256130"
   }
 ]

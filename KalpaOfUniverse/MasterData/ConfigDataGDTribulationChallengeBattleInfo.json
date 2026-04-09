@@ -98,23 +98,21 @@
       {
         "TId": 58101,
         "PassRecordNum": 1,
-        "DropID": 351581001
+        "DropID": 351668010
       },
       {
         "TId": 58102,
-        "EndWeeks": 2,
         "PassRecordNum": 2,
-        "DropID": 351581002
+        "DropID": 351668011
       },
       {
         "TId": 58103,
-        "EndWeeks": 2,
         "PassRecordNum": 3,
-        "DropID": 351581003
+        "DropID": 351668012
       }
     ],
     "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_5810.png@Shenmojieqi_5810",
-    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_5810.png@Shenmojieqi_5810",
+    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss241204_MountainsAndRivers.png@Boss241204_MountainsAndRivers",
     "BattleRecordNum": 3,
     "SceneDescStrKey": "ST:242487"
   },
@@ -138,25 +136,21 @@
       {
         "TId": 59101,
         "PassRecordNum": 1,
-        "DropID": 351591001
+        "DropID": 351669010
       },
       {
         "TId": 59102,
-        "StartWeeks": 4,
-        "EndWeeks": 6,
         "PassRecordNum": 2,
-        "DropID": 351591002
+        "DropID": 351669011
       },
       {
         "TId": 59103,
-        "StartWeeks": 4,
-        "EndWeeks": 6,
         "PassRecordNum": 3,
-        "DropID": 351591003
+        "DropID": 351669012
       }
     ],
     "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_5910.png@Shenmojieqi_5910",
-    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_5910.png@Shenmojieqi_5910",
+    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Head01_ABS/Boss216000_HeadIcon_Basic.png@Boss216000_HeadIcon_Basic",
     "BattleRecordNum": 3,
     "SceneDescStrKey": "ST:242487"
   },
@@ -196,7 +190,6 @@
       }
     ],
     "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6210.png@Shenmojieqi_6210",
-    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6210.png@Shenmojieqi_6210",
     "BattleRecordNum": 3,
     "DeforeDialogueId": 803101701,
     "SceneDescStrKey": "ST:242487"
@@ -239,7 +232,88 @@
       }
     ],
     "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6310.png@Shenmojieqi_6310",
-    "CricleResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6310.png@Shenmojieqi_6310",
+    "BattleRecordNum": 3,
+    "SceneDescStrKey": "ST:242487"
+  },
+  {
+    "ID": 6610,
+    "BattleSceneIDS": [
+      {
+        "Diff": 1,
+        "BattleSceneId": 26601700
+      },
+      {
+        "Diff": 2,
+        "BattleSceneId": 26601800
+      },
+      {
+        "Diff": 3,
+        "BattleSceneId": 26601900
+      }
+    ],
+    "LimitTreasureInfo": [
+      {
+        "TId": 66101,
+        "PassRecordNum": 1,
+        "DropID": 351664001
+      },
+      {
+        "TId": 66102,
+        "EndWeeks": 2,
+        "PassRecordNum": 2,
+        "DropID": 351664002
+      },
+      {
+        "TId": 66103,
+        "EndWeeks": 2,
+        "PassRecordNum": 3,
+        "DropID": 351664003
+      }
+    ],
+    "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6610.png@Shenmojieqi_6610",
+    "BattleRecordNum": 3,
+    "DeforeDialogueId": 660171701,
+    "AfterDialogueId": 660171901,
+    "SceneDescStrKey": "ST:242487"
+  },
+  {
+    "ID": 6710,
+    "BattleSceneIDS": [
+      {
+        "Diff": 1,
+        "BattleSceneId": 22211100
+      },
+      {
+        "Diff": 2,
+        "BattleSceneId": 22211100
+      },
+      {
+        "Diff": 3,
+        "BattleSceneId": 22211100
+      }
+    ],
+    "LimitTreasureInfo": [
+      {
+        "TId": 67101,
+        "PassRecordNum": 1,
+        "DropID": 351634001
+      },
+      {
+        "TId": 67102,
+        "StartWeeks": 4,
+        "EndWeeks": 6,
+        "PassRecordNum": 2,
+        "DropID": 351634002
+      },
+      {
+        "TId": 67103,
+        "StartWeeks": 4,
+        "EndWeeks": 6,
+        "PassRecordNum": 3,
+        "DropID": 351634003
+      }
+    ],
+    "MapDescResPath": "Assets/GameProject/RuntimeAssets/UI/UIImage/ShenMoJieQiImage_ABS/Shenmojieqi_6710.png@Shenmojieqi_6710",
     "BattleRecordNum": 3,
     "SceneDescStrKey": "ST:242487"
   }

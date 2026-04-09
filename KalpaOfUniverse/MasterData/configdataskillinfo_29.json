@@ -1,5 +1,62 @@
 [
   {
+    "ID": 61150021,
+    "VersionTag": 52,
+    "CanBeATrigerSrc": true,
+    "SkillDamageType": "SkillDamageType_Physic",
+    "BloodCost": 2000,
+    "DefendSubSrc": 1,
+    "DefendSubConvertRatio": 10000,
+    "ActorSign": "ActorSign_Demon",
+    "PropertiesList": [
+      {
+        "Id": "PropertiesId_SkillDamagePropAddParam1",
+        "Value": 16000
+      }
+    ],
+    "TriggerBuf4SelfBeforeCastSkill": 741500220,
+    "BufIds4SelfBeforeCastSkillAndBuffTrigger": [
+      741500271
+    ],
+    "BufIds4TargetBeforeCastSkillAndBuffTrigger": [
+      741500270
+    ],
+    "BufIds4SelfBeforeCastSkill": [
+      741500221
+    ],
+    "GridSelectFormType": "SkillFormType_Rhombus1",
+    "GridSelectCond": [
+      "SkillTargetGridSelectCondType_NotFriendly"
+    ],
+    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
+    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
+    "SkillTargetMax": -1,
+    "DisperseTargetMax": -1,
+    "CastWeight": 75,
+    "AISkillCastType": "AISkillCastType_Normal",
+    "AnnounceFlag": 2,
+    "IsFadeCamera": 2,
+    "CameraFocusType": "CameraFocusType_Target",
+    "NormalAttackBehaviorIds": [
+      611500021
+    ],
+    "FightBackBehaviorIds": [
+      611500021
+    ],
+    "OnHitRestrainEffect": 800001018,
+    "OnHitDefenseEffect": 800001001,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_150002.png@EXSkill_3c_150002",
+    "SkillCD": 3,
+    "SkillPointsCost": 3,
+    "SkillFlag": 2055,
+    "SkillGroupSet": 211,
+    "BattlePower": 601,
+    "SkillTypeDescStrKey": "ST:99932",
+    "NameStrKey": "ST:234687",
+    "SkillDescStrKey": "ST:234833"
+  },
+  {
     "ID": 61150022,
     "VersionTag": 52,
     "CanBeATrigerSrc": true,
@@ -2922,7 +2979,7 @@
     "BattlePower": 401,
     "SkillTypeDescStrKey": "ST:99931",
     "NameStrKey": "ST:254069",
-    "SkillDescStrKey": "ST:255289"
+    "SkillDescStrKey": "ST:255951"
   },
   {
     "ID": 61150411,
@@ -2979,7 +3036,7 @@
     "BattlePower": 601,
     "SkillTypeDescStrKey": "ST:99931",
     "NameStrKey": "ST:254069",
-    "SkillDescStrKey": "ST:256502"
+    "SkillDescStrKey": "ST:256339"
   },
   {
     "ID": 61150412,
@@ -3037,7 +3094,7 @@
     "BattlePower": 601,
     "SkillTypeDescStrKey": "ST:99931",
     "NameStrKey": "ST:254069",
-    "SkillDescStrKey": "ST:256503"
+    "SkillDescStrKey": "ST:256340"
   },
   {
     "ID": 61150420,
@@ -3286,7 +3343,7 @@
     "BattlePower": 401,
     "SkillTypeDescStrKey": "ST:99931",
     "NameStrKey": "ST:254100",
-    "SkillDescStrKey": "ST:256291"
+    "SkillDescStrKey": "ST:256266"
   },
   {
     "ID": 61150450,
@@ -3336,7 +3393,7 @@
     "BattlePower": 201,
     "SkillTypeDescStrKey": "ST:99933",
     "NameStrKey": "ST:254101",
-    "SkillDescStrKey": "ST:255748"
+    "SkillDescStrKey": "ST:255953"
   },
   {
     "ID": 61150460,
@@ -3503,7 +3560,7 @@
     "BattlePower": 1,
     "SkillTypeDescStrKey": "ST:99934",
     "NameStrKey": "ST:254342",
-    "SkillDescStrKey": "ST:256525"
+    "SkillDescStrKey": "ST:256442"
   },
   {
     "ID": 61150471,
@@ -3543,7 +3600,7 @@
     "BattlePower": 1,
     "SkillTypeDescStrKey": "ST:99934",
     "NameStrKey": "ST:254342",
-    "SkillDescStrKey": "ST:256293"
+    "SkillDescStrKey": "ST:256268"
   },
   {
     "ID": 61150472,
@@ -3579,8 +3636,8 @@
     "SkillGroupSet": 510,
     "BattlePower": 201,
     "SkillTypeDescStrKey": "ST:99933",
-    "NameStrKey": "ST:256262",
-    "SkillDescStrKey": "ST:256294"
+    "NameStrKey": "ST:256114",
+    "SkillDescStrKey": "ST:256269"
   },
   {
     "ID": 61200000,
@@ -4931,62 +4988,5 @@
     "SkillTypeDescStrKey": "ST:99931",
     "NameStrKey": "ST:103144",
     "SkillDescStrKey": "ST:234843"
-  },
-  {
-    "ID": 61200112,
-    "VersionTag": 53,
-    "CanBeATrigerSrc": true,
-    "SkillDamageType": "SkillDamageType_Magic",
-    "DefendSubSrc": 2,
-    "DefendSubConvertRatio": 10000,
-    "ActorSign": "ActorSign_Ice",
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_SkillDamagePropAddParam2",
-        "Value": 15000
-      },
-      {
-        "Id": "PropertiesId_SkillMagicDefendBreakThrough",
-        "Value": 3000
-      }
-    ],
-    "TriggerBuf4SelfBeforeCastSkill": 710100381,
-    "GridSelectFormType": "SkillFormType_Rhombus2",
-    "GridSelectCond": [
-      "SkillTargetGridSelectCondType_NotFriendly"
-    ],
-    "CastAreaFormType": "SkillFormType_SingleGridOrSelf",
-    "CastTargetFilterType": "SkillCastTargetFilterType_NotFriendly",
-    "SkillTargetMax": -1,
-    "DisperseTargetMax": -1,
-    "CastWeight": 10,
-    "AISkillCastType": "AISkillCastType_Normal",
-    "AnnounceFlag": 2,
-    "IsFadeCamera": 1,
-    "CameraFocusType": "CameraFocusType_Target",
-    "NormalAttackBehaviorIds": [
-      612001212,
-      612001222
-    ],
-    "FightBackBehaviorIds": [
-      612001212,
-      612001222
-    ],
-    "OnHitRestrainEffect": 800001012,
-    "OnHitDefenseEffect": 800001001,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_200101.png@EXSkill_3c_200101",
-    "DimIcon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_200101.png@EXSkill_3c_200101",
-    "BufIds": [
-      710100383
-    ],
-    "SkillCD": 2,
-    "SkillPointsCost": 3,
-    "SkillFlag": 2055,
-    "SkillGroupSet": 212,
-    "BattlePower": 601,
-    "SkillTypeDescStrKey": "ST:99931",
-    "NameStrKey": "ST:103144",
-    "SkillDescStrKey": "ST:234844"
   }
 ]

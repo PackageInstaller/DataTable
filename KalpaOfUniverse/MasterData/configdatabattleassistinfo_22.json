@@ -1,5 +1,18 @@
 [
   {
+    "ID": 61015,
+    "VersionTag": 61,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 763200941
+      }
+    ],
+    "SceneNameStrKey": "ST:247112",
+    "AssistDescStrKey": "ST:247133"
+  },
+  {
     "ID": 61016,
     "VersionTag": 61,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
@@ -85,8 +98,8 @@
         "BuffId": 763201959
       }
     ],
-    "SceneNameStrKey": "ST:254922",
-    "AssistDescStrKey": "ST:254924"
+    "SceneNameStrKey": "ST:254535",
+    "AssistDescStrKey": "ST:254537"
   },
   {
     "ID": 65001,
@@ -98,8 +111,34 @@
         "BuffId": 763201960
       }
     ],
-    "SceneNameStrKey": "ST:254923",
-    "AssistDescStrKey": "ST:254925"
+    "SceneNameStrKey": "ST:254536",
+    "AssistDescStrKey": "ST:254538"
+  },
+  {
+    "ID": 66001,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 763202125
+      }
+    ],
+    "SceneNameStrKey": "ST:256786",
+    "AssistDescStrKey": "ST:256787"
+  },
+  {
+    "ID": 66002,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_None_1001.png@Skill_None_1001",
+    "AssistType": "BattleAssistType_MountainAssist",
+    "AssistEffect": [
+      {
+        "BuffId": 763202125
+      }
+    ],
+    "SceneNameStrKey": "ST:256786",
+    "AssistDescStrKey": "ST:256787"
   },
   {
     "ID": 90001,
@@ -199,5 +238,83 @@
     ],
     "SceneNameStrKey": "ST:254016",
     "AssistDescStrKey": "ST:254356"
+  },
+  {
+    "ID": 810114301,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1143@BackupSkill_1143",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880114301
+      }
+    ],
+    "SceneNameStrKey": "ST:256394",
+    "AssistDescStrKey": "ST:256446"
+  },
+  {
+    "ID": 810114302,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1143@BackupSkill_1143",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880114302
+      }
+    ],
+    "SceneNameStrKey": "ST:256394",
+    "AssistDescStrKey": "ST:256447"
+  },
+  {
+    "ID": 810121201,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1212@BackupSkill_1212",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880121201
+      }
+    ],
+    "SceneNameStrKey": "ST:256393",
+    "AssistDescStrKey": "ST:256450"
+  },
+  {
+    "ID": 810121202,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1212@BackupSkill_1212",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880121202
+      }
+    ],
+    "SceneNameStrKey": "ST:256393",
+    "AssistDescStrKey": "ST:256451"
+  },
+  {
+    "ID": 810132101,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1321@BackupSkill_1321",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880132101
+      }
+    ],
+    "SceneNameStrKey": "ST:258827",
+    "AssistDescStrKey": "ST:256448"
+  },
+  {
+    "ID": 810132102,
+    "VersionTag": 66,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/BackupSkill_1321@BackupSkill_1321",
+    "AssistType": "BattleAssistType_ReinforceSkill",
+    "AssistEffect": [
+      {
+        "BuffId": 880132102
+      }
+    ],
+    "SceneNameStrKey": "ST:258827",
+    "AssistDescStrKey": "ST:256449"
   }
 ]

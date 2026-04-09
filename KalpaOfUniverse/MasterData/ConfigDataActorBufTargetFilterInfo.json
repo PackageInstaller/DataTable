@@ -2183,6 +2183,16 @@
     "SignRestraint": -2
   },
   {
+    "ID": 329,
+    "IsIncludeSelf": true,
+    "ActorSign": [
+      "ActorSign_Electricity",
+      "ActorSign_Fire",
+      "ActorSign_Ice"
+    ],
+    "SignRestraint": -2
+  },
+  {
     "ID": 340,
     "CastTargetFilterType": 1,
     "GroundBuf": [
@@ -3316,6 +3326,16 @@
     "ActorSign": [
       "ActorSign_Demon"
     ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 597,
+    "CastTargetFilterType": 1,
+    "ContainsBufCategory": [
+      62,
+      1
+    ],
+    "IgnoreDead": true,
     "SignRestraint": -2
   },
   {
@@ -7588,6 +7608,77 @@
     "SignRestraint": -2
   },
   {
+    "ID": 742509001,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_MyMaster"
+    ],
+    "IsIncludeSelf": true,
+    "SetBufSrcAsFilterSrc": 1,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 742509002,
+    "CastTargetFilterType": 1,
+    "ActorSign": [
+      "ActorSign_Ice",
+      "ActorSign_Demon"
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 742509003,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_Friendly",
+      "BufTargetFilterTargetType_Facilitie"
+    ],
+    "CastTargetFilterTypeParamList": [
+      250901,
+      250902
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 742509004,
+    "CastTargetFilterType": 3,
+    "IsIncludeSelf": true,
+    "ContainBufID": 742509018,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 742509005,
+    "CastTargetFilterType": 1,
+    "ContainBufID": 742509267,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 742509006,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_MyMaster"
+    ],
+    "IsIncludeSelf": true,
+    "ContainBufID": 742509510,
+    "SetBufSrcAsFilterSrc": 1,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 742509007,
+    "IsIncludeSelf": true,
+    "ContainBufID": 742509266,
+    "SignRestraint": -2
+  },
+  {
+    "ID": 742509008,
+    "CastTargetFilterType": 3,
+    "IsIncludeSelf": true,
+    "ContainsBufCategory": [
+      250912,
+      1,
+      0
+    ],
+    "ContainBufID": 742509018,
+    "SignRestraint": -2
+  },
+  {
     "ID": 743000640,
     "ContainBufID": 743000640,
     "SignRestraint": -2
@@ -10213,6 +10304,14 @@
     "SignRestraint": -2
   },
   {
+    "ID": 763162606,
+    "CastTargetFilterTypeList": [
+      "BufTargetFilterTargetType_Friendly",
+      "BufTargetFilterTargetType_Facilitie"
+    ],
+    "SignRestraint": -2
+  },
+  {
     "ID": 763201223,
     "CastTargetFilterType": 2,
     "ContainBufID": 763201222,
@@ -10285,6 +10384,25 @@
     "SignRestraint": -2
   },
   {
+    "ID": 763202100,
+    "IsIncludeSelf": true,
+    "ActorSign": [
+      "ActorSign_Light",
+      "ActorSign_God"
+    ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 763202110,
+    "IsIncludeSelf": true,
+    "ActorSign": [
+      "ActorSign_Shadow",
+      "ActorSign_Dusk",
+      "ActorSign_Demon"
+    ],
+    "SignRestraint": -2
+  },
+  {
     "ID": 800430013,
     "Career": [
       "CareerType_Swordsman",
@@ -10292,6 +10410,15 @@
       "CareerType_Assassin",
       "CareerType_Melee"
     ],
+    "SignRestraint": -2
+  },
+  {
+    "ID": 880121222,
+    "CastTargetFilterType": 1,
+    "Career": [
+      "CareerType_Rogue"
+    ],
+    "IsActionInitiator": 1,
     "SignRestraint": -2
   }
 ]

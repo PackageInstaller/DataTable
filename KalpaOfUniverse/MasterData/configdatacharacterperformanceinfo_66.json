@@ -1,5 +1,57 @@
 [
   {
+    "ID": 2003007,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200300,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Surprise",
+    "Voice": "HO_2003_Voice_Line_Summon",
+    "WordStrKey": "ST:106412"
+  },
+  {
+    "ID": 2003008,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200300,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Shy",
+    "Voice": "HO_2003_Voice_Line_Break",
+    "WordStrKey": "ST:106413"
+  },
+  {
+    "ID": 2003009,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200300,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2003_Voice_Line_Failure_1",
+    "WordStrKey": "ST:106414"
+  },
+  {
+    "ID": 2003010,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100200300,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2003_Voice_Line_Failure_2",
+    "WordStrKey": "ST:77304"
+  },
+  {
     "ID": 2003011,
     "UnlockValue": [
       {
@@ -1032,61 +1084,5 @@
     "Voice": "HO_2008_Voice_Line_Interaction_2",
     "NameStrKey": "ST:52091",
     "WordStrKey": "ST:124017"
-  },
-  {
-    "ID": 2008013,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200800,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2008_Voice_Line_Victory_1",
-    "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:124018"
-  },
-  {
-    "ID": 2008014,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200800,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Smile",
-    "Voice": "HO_2008_Voice_Line_Victory_2",
-    "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:124019"
-  },
-  {
-    "ID": 2008015,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200800,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Surprise",
-    "Voice": "HO_2008_Voice_Line_Victory_3",
-    "NameStrKey": "ST:52088",
-    "WordStrKey": "ST:124020"
-  },
-  {
-    "ID": 2008016,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100200800,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Normal",
-    "Voice": "HO_2008_Voice_Line_Failure_1",
-    "NameStrKey": "ST:52090",
-    "WordStrKey": "ST:124023"
   }
 ]

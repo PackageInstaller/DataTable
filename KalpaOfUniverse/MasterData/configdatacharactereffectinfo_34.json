@@ -1,5 +1,18 @@
 [
   {
+    "ID": 202700015,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero2027/Prefab/PlayEfx_2_Hero2027_CastSkill01.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot"
+  },
+  {
+    "ID": 202700016,
+    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero2027/Prefab/PlayEfx_3_Hero2027_CastSkill03_buff_loop.prefab",
+    "CharacterSocketType": "CharacterSocketType_Foot",
+    "IsFollow": true,
+    "IsLoop": true,
+    "IsLockRotation": true
+  },
+  {
     "ID": 202700017,
     "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Hero2027/Prefab/PlayEfx_2_Hero2027_CastSkill06_loop.prefab",
     "CharacterSocketType": "CharacterSocketType_Foot",
@@ -491,16 +504,6 @@
   {
     "ID": 212003020,
     "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Monster212003/Prefab/PlayEFx_0_Monster212003_Combat_FightBackRootMotion.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot"
-  },
-  {
-    "ID": 212003200,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Monster212003/Prefab/PlayEFx_0_Monster212003_CastSkill01.prefab",
-    "CharacterSocketType": "CharacterSocketType_Foot"
-  },
-  {
-    "ID": 212003210,
-    "ResPath": "Assets/GameProject/RuntimeAssets/FX/SkillFX_ABS/Monster212003/Prefab/PlayEFx_0_Monster212003_CastSkill02.prefab",
     "CharacterSocketType": "CharacterSocketType_Foot"
   }
 ]

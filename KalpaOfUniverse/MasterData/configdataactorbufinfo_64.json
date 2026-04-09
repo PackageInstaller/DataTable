@@ -1,5 +1,25 @@
 [
   {
+    "ID": 742016026,
+    "FuncType": "BufFuncType_DisperseBufImm",
+    "FuncParams": [
+      2,
+      1,
+      -1,
+      2,
+      1
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerTimes": 1,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 742016027,
     "LifeTime": -1,
     "FuncType": "BufFuncType_DisperseBuf4SelfOnStage",
@@ -4484,33 +4504,6 @@
     "ActiveCondIds": [
       1101,
       500,
-      7500
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorId": 600000011,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/Gift_143.png@Gift_143",
-    "NameDescStrKey": "ST:188708"
-  },
-  {
-    "ID": 742018012,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBufBeforeCastSkill",
-    "FuncParams": [
-      0,
-      1,
-      -1,
-      742018010,
-      1
-    ],
-    "ActiveCondIds": [
-      1102,
-      200,
       7500
     ],
     "ReplaceRule": "ReplaceRule_Refresh",

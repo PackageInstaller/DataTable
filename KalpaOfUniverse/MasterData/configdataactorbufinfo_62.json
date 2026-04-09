@@ -1,5 +1,36 @@
 [
   {
+    "ID": 742010062,
+    "LifeTime": 2,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      742010063,
+      742010064,
+      742010066
+    ],
+    "ReplaceRule": "ReplaceRule_Accumulate",
+    "LevelMax": 3,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_StormEye"
+    ],
+    "OtherBuffFlag": true,
+    "CanBeDispersed": true,
+    "CanBePreventDisperse": true,
+    "AddEffect": 201000000,
+    "LevelLoopEffectList": [
+      201000003,
+      201000004,
+      201000005
+    ],
+    "TriggerBehaviorType": "TriggerBehaviorType_None",
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_079.png@Gift_079",
+    "NameDescStrKey": "ST:122362",
+    "BuffDescStrKey": "ST:136481"
+  },
+  {
     "ID": 742010063,
     "LifeTime": -1,
     "PropertiesList": [
@@ -4491,29 +4522,5 @@
     "CanBePreventDisperse": true,
     "TriggerTimesMaxEachAction": 1,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 742013136,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_ExtraMove",
-    "FuncParams": [
-      2000
-    ],
-    "ActiveBattleStageType": "BattleStageType_ActionExec",
-    "ActiveCondIds": [
-      20134
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerTimesMaxEachAction": 1,
-    "TriggerBehaviorId": 600000011,
-    "IconBackgroundType": "IconBackgroundType_Other",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_094.png@Gift_094",
-    "NameDescStrKey": "ST:145771"
   }
 ]

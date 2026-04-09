@@ -1,5 +1,31 @@
 [
   {
+    "ID": 742027068,
+    "LifeTime": 1,
+    "FuncType": "BufFuncType_StoreValueForShow",
+    "FuncParams": [
+      742027067
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_NonBoss",
+      "BufCategory_NonBoss2"
+    ],
+    "OtherBuffFlag": true,
+    "CanBeDispersed": true,
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorId": 600000011,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "SkillPipeline": true,
+    "Visible": "BuffShowType_Normal",
+    "IconBackgroundType": "IconBackgroundType_Other",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_202701.png@EXSkill_3c_202701",
+    "NameDescStrKey": "ST:252026",
+    "BuffDynamicDescStrKey": "ST:250393"
+  },
+  {
     "ID": 742027069,
     "LifeTime": 1,
     "FuncType": "BufFuncType_AttachBuf4SelfOnStage",
@@ -4529,24 +4555,5 @@
     "TriggerBehaviorId": 600000010,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_106.png@Gift_106",
     "NameDescStrKey": "ST:4895"
-  },
-  {
-    "ID": 742112010,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_Aura",
-    "FuncParams": [
-      2,
-      1,
-      -1,
-      742112011
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

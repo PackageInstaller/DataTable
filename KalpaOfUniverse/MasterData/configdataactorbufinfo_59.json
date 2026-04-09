@@ -1,5 +1,34 @@
 [
   {
+    "ID": 741501216,
+    "LifeTime": 1,
+    "FuncType": "BufFuncType_AttachBufBySelfAfterCastSkill",
+    "FuncParams": [
+      0,
+      1,
+      1,
+      741501037,
+      1,
+      0
+    ],
+    "ActiveCondIds": [
+      1101,
+      1501011
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
+    "TriggerBehaviorId": 600000011,
+    "TriggerBehaviorType": "TriggerBehaviorType_Skill",
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_1793.png@EXSkill_1793",
+    "NameDescStrKey": "ST:236005"
+  },
+  {
     "ID": 741501221,
     "LifeTime": 1,
     "FuncType": "BufFuncType_ReplaceBufBeforeCastSkill",
@@ -4479,31 +4508,6 @@
     "ActiveCondIds": [
       1101,
       1503005
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741503275,
-    "LifeTime": 1,
-    "FuncType": "BufFuncType_AttachBufAfterCastSkill",
-    "FuncParams": [
-      0,
-      1,
-      1,
-      741503539,
-      1
-    ],
-    "ActiveCondIds": [
-      1101,
-      1503012
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

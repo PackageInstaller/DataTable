@@ -1550,7 +1550,7 @@
     "StoreItemUnlockParam1": 5,
     "StoreItemUnlockParam2": 6,
     "SoldOutShow": true,
-    "NameStrKey": "ST:255058"
+    "NameStrKey": "ST:254657"
   },
   {
     "ID": 601,
@@ -11460,6 +11460,66 @@
     "NameStrKey": "ST:230215"
   },
   {
+    "ID": 3207,
+    "StoreID": "StoreId_Crystal",
+    "ItemType": "ItemType_Material",
+    "ItemId": 402022001,
+    "Count": 1,
+    "ShowStartTimeStr": "2026/4/8 1:00:00",
+    "ShowEndTimeStr": "2026/5/5 23:59:59",
+    "StoreItemRefreshType": "StoreItemRefreshType_Forever",
+    "SellNumMax": 9,
+    "BatchSellMax": 9,
+    "CurrencyType": "CurrencyType_Crystal",
+    "NormalPrice": 150,
+    "UISort": 70,
+    "PlayerBuyMinLevel": 60,
+    "StoreItemShowType": "StoreItemShowType_PlayerLevel",
+    "StoreItemShowParam1": 60,
+    "SoldOutShow": true,
+    "NameStrKey": "ST:115683"
+  },
+  {
+    "ID": 3208,
+    "StoreID": "StoreId_Crystal",
+    "ItemType": "ItemType_Material",
+    "ItemId": 402024901,
+    "Count": 1,
+    "ShowStartTimeStr": "2026/4/8 1:00:00",
+    "ShowEndTimeStr": "2026/5/5 23:59:59",
+    "StoreItemRefreshType": "StoreItemRefreshType_Forever",
+    "SellNumMax": 20,
+    "BatchSellMax": 20,
+    "CurrencyType": "CurrencyType_Crystal",
+    "NormalPrice": 135,
+    "UISort": 80,
+    "PlayerBuyMinLevel": 60,
+    "StoreItemShowType": "StoreItemShowType_PlayerLevel",
+    "StoreItemShowParam1": 60,
+    "SoldOutShow": true,
+    "NameStrKey": "ST:150820"
+  },
+  {
+    "ID": 3209,
+    "StoreID": "StoreId_Crystal",
+    "ItemType": "ItemType_Item",
+    "ItemId": 5559168,
+    "Count": 1,
+    "ShowStartTimeStr": "2026/4/8 1:00:00",
+    "ShowEndTimeStr": "2026/5/5 23:59:59",
+    "StoreItemRefreshType": "StoreItemRefreshType_Forever",
+    "SellNumMax": 10,
+    "BatchSellMax": 10,
+    "CurrencyType": "CurrencyType_Crystal",
+    "NormalPrice": 30,
+    "UISort": 90,
+    "PlayerBuyMinLevel": 67,
+    "StoreItemShowType": "StoreItemShowType_PlayerLevel",
+    "StoreItemShowParam1": 67,
+    "SoldOutShow": true,
+    "NameStrKey": "ST:230215"
+  },
+  {
     "ID": 3519,
     "StoreID": "StoreId_Crystal",
     "ItemType": "ItemType_Item",
@@ -14355,7 +14415,7 @@
         "Count": 60
       }
     ],
-    "NameStrKey": "ST:254543"
+    "NameStrKey": "ST:254658"
   },
   {
     "ID": 10911,

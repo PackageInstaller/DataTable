@@ -1,5 +1,11 @@
 [
   {
+    "ID": 611323002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "SkillSound": 611323002
+  },
+  {
     "ID": 611323003,
     "ReturnToIdle": true,
     "Animation": "Combat_ChaseHitRootMotion",
@@ -2589,21 +2595,5 @@
       25
     ],
     "SkillSound": 612002121
-  },
-  {
-    "ID": 612002211,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      400200020
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 612002211
   }
 ]

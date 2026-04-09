@@ -1,5 +1,23 @@
 [
   {
+    "ID": 742503126,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Pack",
+    "FuncParams": [
+      742503127,
+      742503128
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_THLM"
+    ],
+    "CanBeDispersed": true,
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 742503127,
     "LifeTime": -1,
     "ReplaceRule": "ReplaceRule_Refresh",
@@ -3975,7 +3993,7 @@
     "ID": 742504022,
     "LifeTime": -1,
     "_FightLogicFlags": [
-      "FightLogicFlag_BanSkillWithParam"
+      108
     ],
     "FightLogicFlagParams": [
       8
@@ -4443,7 +4461,6 @@
       1
     ],
     "ActiveCondIds": [
-      200,
       7000
     ],
     "ReplaceRule": "ReplaceRule_OverlapBySrc",
@@ -4454,25 +4471,6 @@
       "BufCategory_None"
     ],
     "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 742504044,
-    "LifeTime": 1,
-    "PropertiesList": [
-      {
-        "Id": "PropertiesId_DodgeRateAdditional_D",
-        "Value": -50000
-      }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
     "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

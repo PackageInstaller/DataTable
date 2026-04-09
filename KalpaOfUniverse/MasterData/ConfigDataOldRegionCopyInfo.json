@@ -2582,5 +2582,45 @@
     "NameDescStrKey": "ST:90125",
     "DescDescStrKey": "ST:102126",
     "OpenTimeDescStrKey": "ST:254460"
+  },
+  {
+    "ID": 303001,
+    "CopyType": "OldRegionCopyType_Buddha",
+    "TypeParam": 43,
+    "IsOpen": true,
+    "OpenTime": [
+      "2026-04-22 10:00:00",
+      "2026-05-19 23:59:59"
+    ],
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_PlayerLevel",
+        "P1": 55
+      }
+    ],
+    "Level": 68,
+    "PreviewDropId": 351030100,
+    "NameDescStrKey": "ST:92101",
+    "DescDescStrKey": "ST:101509",
+    "LockDesStrKey": "ST:121843",
+    "OpenTimeDescStrKey": "ST:258541"
+  },
+  {
+    "ID": 304001,
+    "CopyType": "OldRegionCopyType_Team",
+    "OpenedBgPath": "Assets/GameProject/RuntimeAssets/Scenes/ShenyuanWarScene/Maps/QiyuanTianQian_ABS/QiyuanTianQian.unity",
+    "IsOpen": true,
+    "OpenTime": [
+      "2026-04-22 10:00:00",
+      "2026-05-19 23:59:59"
+    ],
+    "LevelList": [
+      304001
+    ],
+    "Level": 68,
+    "PreviewDropId": 351020030,
+    "NameDescStrKey": "ST:90125",
+    "DescDescStrKey": "ST:101507",
+    "OpenTimeDescStrKey": "ST:258541"
   }
 ]

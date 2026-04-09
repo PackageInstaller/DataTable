@@ -17697,6 +17697,62 @@
     ]
   },
   {
+    "ID": 26600100,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 99
+  },
+  {
+    "ID": 26600101,
+    "WinConditionType": "BattleWinConditionType_CampActorDeadCountGreaterEqual",
+    "Param2": 1,
+    "Param4": [
+      0
+    ]
+  },
+  {
+    "ID": 26600201,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 101
+  },
+  {
+    "ID": 26600202,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 102
+  },
+  {
+    "ID": 26600300,
+    "WinConditionType": "BattleWinConditionType_CampActorDeadCountGreaterEqual",
+    "Param2": 1,
+    "Param4": [
+      0
+    ]
+  },
+  {
+    "ID": 26600301,
+    "WinConditionType": "BattleWinConditionType_Turn",
+    "Param1": 99
+  },
+  {
+    "ID": 26601500,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 101
+  },
+  {
+    "ID": 26601501,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 102
+  },
+  {
+    "ID": 26601800,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 491
+  },
+  {
+    "ID": 26601900,
+    "WinConditionType": "BattleWinConditionType_ActorDead",
+    "Param1": 401
+  },
+  {
     "ID": 27010310,
     "WinConditionType": "BattleWinConditionType_TeamIDActorCountLessEqual",
     "Param1": 21

@@ -198,5 +198,45 @@
       }
     ],
     "NameStrKey": "ST:234005"
+  },
+  {
+    "ID": 6601,
+    "FillGroups": [
+      66002
+    ],
+    "CoreGroupID": 66001,
+    "GuaranteeTimes": 25,
+    "TrackUpTimes": 3,
+    "SingleConsumeItems": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020460,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:234004"
+  },
+  {
+    "ID": 6602,
+    "UnlockConditions": [
+      {
+        "PoolId": 6601,
+        "TrackNum": 1
+      }
+    ],
+    "FillGroups": [
+      66002
+    ],
+    "CoreGroupID": 66001,
+    "GuaranteeTimes": 25,
+    "TrackUpTimes": 3,
+    "SingleConsumeItems": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020460,
+        "Count": 1
+      }
+    ],
+    "NameStrKey": "ST:234005"
   }
 ]

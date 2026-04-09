@@ -1,5 +1,21 @@
 [
   {
+    "ID": 612002211,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      400200020
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612002211
+  },
+  {
     "ID": 612002212,
     "ShowFlash": true,
     "ReturnToIdle": true,
@@ -3780,18 +3796,5 @@
     "Animation": "CastSkill01_3C",
     "SkillSound": 612022031,
     "SkillAnnounce3CTimelineId": 20220030
-  },
-  {
-    "ID": 612022040,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "OnHitEffect": [
-      202200041
-    ],
-    "FlyObjetId": [
-      2022010
-    ],
-    "SkillSound": 612022040
   }
 ]

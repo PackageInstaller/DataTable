@@ -1,5 +1,60 @@
 [
   {
+    "ID": 2010027,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100201000,
+        "P2": 40
+      }
+    ],
+    "Animation": "idle_Surprise",
+    "Voice": "HO_2010_Voice_Line_Speech_9",
+    "NameStrKey": "ST:52092",
+    "WordStrKey": "ST:124078"
+  },
+  {
+    "ID": 2010028,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100201000,
+        "P2": 45
+      }
+    ],
+    "Animation": "idle_Angry",
+    "Voice": "HO_2010_Voice_Line_Speech_8",
+    "NameStrKey": "ST:52092",
+    "WordStrKey": "ST:124231"
+  },
+  {
+    "ID": 2010029,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100201000,
+        "P2": 50
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2010_Voice_Line_Speech_7",
+    "NameStrKey": "ST:52094",
+    "WordStrKey": "ST:124232"
+  },
+  {
+    "ID": 2010030,
+    "UnlockValue": [
+      {
+        "CondType": "ConditionType_CharacterLevel",
+        "P1": 100201000,
+        "P2": 1
+      }
+    ],
+    "Animation": "idle_Sad",
+    "Voice": "HO_2010_Voice_Line_Interaction_3",
+    "WordStrKey": "ST:124081"
+  },
+  {
     "ID": 2010031,
     "UnlockValue": [
       {
@@ -1024,58 +1079,5 @@
     "Animation": "idle_Angry",
     "Voice": "HO_2014_Voice_Line_Break",
     "WordStrKey": "ST:155318"
-  },
-  {
-    "ID": 2014008,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100201400,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2014_Voice_Line_Failure",
-    "WordStrKey": "ST:155319"
-  },
-  {
-    "ID": 2014009,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100201400,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2014_Voice_Line_Failure_2",
-    "WordStrKey": "ST:155320"
-  },
-  {
-    "ID": 2014010,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100201400,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Sad",
-    "Voice": "HO_2014_Voice_Line_Failure_3",
-    "WordStrKey": "ST:155321"
-  },
-  {
-    "ID": 2014011,
-    "UnlockValue": [
-      {
-        "CondType": "ConditionType_CharacterLevel",
-        "P1": 100201400,
-        "P2": 1
-      }
-    ],
-    "Animation": "idle_Angry",
-    "Voice": "HO_2014_Voice_Line_Interaction",
-    "NameStrKey": "ST:52091",
-    "WordStrKey": "ST:155312"
   }
 ]

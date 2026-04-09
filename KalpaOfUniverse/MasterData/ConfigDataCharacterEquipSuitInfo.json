@@ -7632,5 +7632,45 @@
   {
     "ID": 30250704,
     "Section": 12
+  },
+  {
+    "ID": 30250901,
+    "Section": 4,
+    "Properties": [
+      {
+        "Id": "PropertiesId_HpBaseMaxMult_S",
+        "Value": 1000
+      }
+    ],
+    "NameStrKey": "ST:75049",
+    "DescStrKey": "ST:75052"
+  },
+  {
+    "ID": 30250902,
+    "Section": 7,
+    "Properties": [
+      {
+        "Id": "PropertiesId_PhysicDefendBaseMult_S",
+        "Value": 1000
+      },
+      {
+        "Id": "PropertiesId_MagicDefendBaseMult_S",
+        "Value": 1000
+      }
+    ],
+    "NameStrKey": "ST:75050",
+    "DescStrKey": "ST:75053"
+  },
+  {
+    "ID": 30250903,
+    "Section": 10,
+    "ActorBuffId": 751200090,
+    "BattlePower": 300,
+    "NameStrKey": "ST:75051",
+    "DescStrKey": "ST:75055"
+  },
+  {
+    "ID": 30250904,
+    "Section": 12
   }
 ]

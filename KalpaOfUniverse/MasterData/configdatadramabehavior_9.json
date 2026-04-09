@@ -1,5 +1,33 @@
 [
   {
+    "ID": 611211111,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "CastEffect": [
+      121100100
+    ],
+    "OnHitEffect": [
+      26800004
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 611211111,
+    "AttackWeapon": [
+      "WeaponType_Arrow",
+      "WeaponType_Arrow"
+    ],
+    "AttackAngle": [
+      "AttackAngleType_None",
+      "AttackAngleType_None"
+    ],
+    "AttackStrength": [
+      "AttackStrengthType_Med",
+      "AttackStrengthType_Hvy"
+    ]
+  },
+  {
     "ID": 611212001,
     "ReturnToIdle": true,
     "Animation": "Combat_AttackRootMotion",
@@ -3825,11 +3853,5 @@
     "ReturnToIdle": true,
     "Animation": "Combat_AttackRootMotion",
     "SkillSound": 611323001
-  },
-  {
-    "ID": 611323002,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "SkillSound": 611323002
   }
 ]

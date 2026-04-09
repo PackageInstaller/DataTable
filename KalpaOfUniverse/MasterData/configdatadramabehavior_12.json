@@ -1,5 +1,18 @@
 [
   {
+    "ID": 612022040,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "OnHitEffect": [
+      202200041
+    ],
+    "FlyObjetId": [
+      2022010
+    ],
+    "SkillSound": 612022040
+  },
+  {
     "ID": 612022050,
     "ShowFlash": true,
     "ReturnToIdle": true,
@@ -1609,13 +1622,5 @@
     "ReturnToIdle": true,
     "Animation": "CastSkill01",
     "SkillSound": 612507030
-  },
-  {
-    "ID": 612507031,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01_3C",
-    "SkillSound": 612507030,
-    "SkillAnnounce3CTimelineId": 25070020
   }
 ]

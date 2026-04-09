@@ -1,5 +1,24 @@
 [
   {
+    "ID": 742003054,
+    "FuncType": "BufFuncType_DisperseBufImm",
+    "FuncParams": [
+      4,
+      1,
+      -1,
+      2,
+      3
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 742003055,
     "FuncType": "BufFuncType_DisperseBufImm",
     "FuncParams": [
@@ -4614,36 +4633,5 @@
     ],
     "CanBePreventDisperse": true,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 742010062,
-    "LifeTime": 2,
-    "FuncType": "BufFuncType_Pack",
-    "FuncParams": [
-      742010063,
-      742010064,
-      742010066
-    ],
-    "ReplaceRule": "ReplaceRule_Accumulate",
-    "LevelMax": 3,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_StormEye"
-    ],
-    "OtherBuffFlag": true,
-    "CanBeDispersed": true,
-    "CanBePreventDisperse": true,
-    "AddEffect": 201000000,
-    "LevelLoopEffectList": [
-      201000003,
-      201000004,
-      201000005
-    ],
-    "TriggerBehaviorType": "TriggerBehaviorType_None",
-    "Visible": "BuffShowType_Normal",
-    "IconBackgroundType": "IconBackgroundType_Other",
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Gift_079.png@Gift_079",
-    "NameDescStrKey": "ST:122362",
-    "BuffDescStrKey": "ST:136481"
   }
 ]

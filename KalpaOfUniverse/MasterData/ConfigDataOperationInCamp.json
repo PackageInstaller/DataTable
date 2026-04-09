@@ -31382,8 +31382,8 @@
     "ChapterId": 1,
     "ReCallCurrencyType": "CurrencyType_Reputation",
     "ReCallCost": 99,
-    "WordsStrKey": "ST:255248",
-    "Title2StrKey": "ST:255250"
+    "WordsStrKey": "ST:255814",
+    "Title2StrKey": "ST:255816"
   },
   {
     "ID": 1955,
@@ -31401,8 +31401,27 @@
     "ChapterId": 1,
     "ReCallCurrencyType": "CurrencyType_Reputation",
     "ReCallCost": 99,
-    "WordsStrKey": "ST:255249",
-    "Title2StrKey": "ST:255251"
+    "WordsStrKey": "ST:255815",
+    "Title2StrKey": "ST:257212"
+  },
+  {
+    "ID": 1956,
+    "VersionTag": 66,
+    "IsInDiary": true,
+    "DialogueID": 250900101,
+    "AppearCondition": [
+      {
+        "CondType": "ConditionType_OwnCharacter",
+        "P1": 100250900
+      }
+    ],
+    "Reward": 103000010,
+    "NotRequiredRefresh": true,
+    "ChapterId": 1,
+    "ReCallCurrencyType": "CurrencyType_Reputation",
+    "ReCallCost": 99,
+    "WordsStrKey": "ST:257211",
+    "Title2StrKey": "ST:258249"
   },
   {
     "ID": 2000,

@@ -677,7 +677,7 @@
   {
     "ID": 95,
     "PoolType": "StaticActorPoolType_EquipSeparator",
-    "Param1": 48
+    "Param1": 67
   },
   {
     "ID": 96,
@@ -849,5 +849,41 @@
     "ID": 119,
     "PoolType": "StaticActorPoolType_BotGame",
     "Param1": 4
+  },
+  {
+    "ID": 120,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 68
+  },
+  {
+    "ID": 121,
+    "PoolType": "StaticActorPoolType_EquipSeparator",
+    "Param1": 69
+  },
+  {
+    "ID": 122,
+    "PoolType": "StaticActorPoolType_Mercenary",
+    "FilterParams": [
+      152072460,
+      152072461,
+      152072462,
+      152072463,
+      152072464,
+      152072465,
+      152072466,
+      152072467,
+      152072468,
+      152072469,
+      152072470,
+      152072471
+    ]
+  },
+  {
+    "ID": 123,
+    "PoolType": "StaticActorPoolType_Union",
+    "FilterParams": [
+      121,
+      122
+    ]
   }
 ]

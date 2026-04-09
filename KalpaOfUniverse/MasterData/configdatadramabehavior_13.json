@@ -1,5 +1,13 @@
 [
   {
+    "ID": 612507031,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01_3C",
+    "SkillSound": 612507030,
+    "SkillAnnounce3CTimelineId": 25070020
+  },
+  {
     "ID": 612507040,
     "ShowFlash": true,
     "ReturnToIdle": true,
@@ -71,6 +79,138 @@
     "ReturnToIdle": true,
     "Animation": "CastSkill06",
     "SkillSound": 612508030
+  },
+  {
+    "ID": 612509001,
+    "ReturnToIdle": true,
+    "Animation": "Combat_AttackRootMotion",
+    "SkillSound": 612509001
+  },
+  {
+    "ID": 612509002,
+    "ReturnToIdle": true,
+    "Animation": "Combat_FightBackRootMotion",
+    "SkillSound": 612509002
+  },
+  {
+    "ID": 612509010,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill01",
+    "SkillSound": 612509010
+  },
+  {
+    "ID": 612509020,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill02",
+    "SkillSound": 612509020
+  },
+  {
+    "ID": 612509021,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "Combat_CastSkill02_3C",
+    "SkillAnnounce3CTimelineId": 25090030
+  },
+  {
+    "ID": 612509030,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01",
+    "SkillSound": 612509030
+  },
+  {
+    "ID": 612509031,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill01_3C",
+    "SkillAnnounce3CTimelineId": 25090010
+  },
+  {
+    "ID": 612509040,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill02",
+    "SkillSound": 612509040
+  },
+  {
+    "ID": 612509050,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03",
+    "SkillSound": 612509050
+  },
+  {
+    "ID": 612509051,
+    "ShowFlash": true,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill03_3C",
+    "SkillAnnounce3CTimelineId": 25090020
+  },
+  {
+    "ID": 612509060,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill04",
+    "SkillSound": 612509060
+  },
+  {
+    "ID": 612509090,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill06",
+    "CastEffect": [
+      250900005
+    ],
+    "SkillSound": 612509090
+  },
+  {
+    "ID": 612509091,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill05",
+    "SkillSound": 612509091
+  },
+  {
+    "ID": 612509092,
+    "ReturnToIdle": true,
+    "Animation": "CastSkill07",
+    "SkillSound": 612509092
+  },
+  {
+    "ID": 612509098,
+    "ExtraDramaBehaviorIds": [
+      612509099
+    ],
+    "ReturnToIdle": true,
+    "Animation": "SkillAnnounce",
+    "OnHitEffect": [
+      250900004
+    ],
+    "FlyObjetId": [
+      2509001
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612509098,
+    "MultiPerformDramaBehaviorList": [
+      612509098,
+      612509099
+    ]
+  },
+  {
+    "ID": 612509099,
+    "ReturnToIdle": true,
+    "Path": "Assets/GameProject/RuntimeAssets/Characters/Common_ABS/SkillBounceDrama_02.prefab",
+    "OnHitEffect": [
+      250900004
+    ],
+    "FlyObjetId": [
+      2509001
+    ],
+    "BloodDamageShow": [
+      100
+    ],
+    "SkillSound": 612509099
   },
   {
     "ID": 620000001,
@@ -4499,364 +4639,5 @@
       "AttackStrengthType_Med",
       "AttackStrengthType_Hvy"
     ]
-  },
-  {
-    "ID": 621600604,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      216006040,
-      216006041
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      20,
-      20,
-      20,
-      20,
-      20
-    ],
-    "SkillSound": 621600604,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600610,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill04",
-    "CastEffect": [
-      216006050,
-      216006051
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600610
-  },
-  {
-    "ID": 621600620,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "CastEffect": [
-      216006200,
-      216006201
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600320
-  },
-  {
-    "ID": 621600630,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill06",
-    "CastEffect": [
-      216006070
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600630
-  },
-  {
-    "ID": 621600640,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill05",
-    "CastEffect": [
-      216006060
-    ],
-    "OnHitEffect": [
-      26800004
-    ],
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600640
-  },
-  {
-    "ID": 621600650,
-    "ShowFlash": true,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600650
-  },
-  {
-    "ID": 621600701,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      216007010,
-      216007011,
-      216007012
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 621600701
-  },
-  {
-    "ID": 621600702,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      216007020,
-      216007021
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "FlyObjetId": [
-      2160071,
-      2160071
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 621600702
-  },
-  {
-    "ID": 621600703,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 621600703,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600704,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 621600704,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600710,
-    "ReturnToIdle": true,
-    "Animation": "Combat_CastSkill01",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600703,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600720,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill01",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600740,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600730,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill02",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600740,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600740,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill03",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600740,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600750,
-    "ReturnToIdle": true,
-    "Animation": "CastSkill04",
-    "BloodDamageShow": [
-      100
-    ],
-    "SkillSound": 621600750,
-    "AttackWeapon": [
-      "WeaponType_Claw",
-      "WeaponType_Claw",
-      "WeaponType_Claw"
-    ],
-    "AttackAngle": [
-      "AttackAngleType_None",
-      "AttackAngleType_None",
-      "AttackAngleType_None"
-    ],
-    "AttackStrength": [
-      "AttackStrengthType_Lit",
-      "AttackStrengthType_Med",
-      "AttackStrengthType_Hvy"
-    ]
-  },
-  {
-    "ID": 621600801,
-    "ReturnToIdle": true,
-    "Animation": "Combat_AttackRootMotion",
-    "CastEffect": [
-      216008010,
-      216008011,
-      216008012
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      30,
-      30,
-      40
-    ],
-    "SkillSound": 621600401
-  },
-  {
-    "ID": 621600802,
-    "ReturnToIdle": true,
-    "Animation": "Combat_FightBackRootMotion",
-    "CastEffect": [
-      216008020,
-      216008021
-    ],
-    "OnHitEffect": [
-      26800004,
-      26800004
-    ],
-    "BloodDamageShow": [
-      40,
-      60
-    ],
-    "SkillSound": 621600402
   }
 ]

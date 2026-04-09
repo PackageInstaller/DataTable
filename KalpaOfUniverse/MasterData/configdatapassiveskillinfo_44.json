@@ -1,5 +1,82 @@
 [
   {
+    "ID": 64301031,
+    "AngerSlot": 6430103,
+    "SkillPointsCost": 1,
+    "BattlePower": 201,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1012.png@Skill_Swordsman_1012",
+    "NameStrKey": "ST:65044",
+    "DescStrKey": "ST:135931",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 64301032,
+    "AngerSlot": 6430103,
+    "BufIds": [
+      743010300
+    ],
+    "SkillPointsCost": 1,
+    "BattlePower": 201,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1012.png@Skill_Swordsman_1012",
+    "NameStrKey": "ST:65044",
+    "DescStrKey": "ST:135931",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 64309000,
+    "BufIds": [
+      700040060
+    ],
+    "SkillPointsCost": 2,
+    "BattlePower": 401,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1022.png@GPassive_1022",
+    "NameStrKey": "ST:62755",
+    "DescStrKey": "ST:164601",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 64309001,
+    "BufIds": [
+      700040070
+    ],
+    "SkillPointsCost": 2,
+    "BattlePower": 401,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1023.png@GPassive_1023",
+    "NameStrKey": "ST:62756",
+    "DescStrKey": "ST:164602",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 64309002,
+    "BufIds": [
+      700040080
+    ],
+    "SkillPointsCost": 2,
+    "BattlePower": 401,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1011.png@Skill_Swordsman_1011",
+    "NameStrKey": "ST:62757",
+    "DescStrKey": "ST:62767",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
+    "ID": 64309003,
+    "BufIds": [
+      700040090
+    ],
+    "SkillPointsCost": 2,
+    "BattlePower": 401,
+    "IsDisplayOnUI": true,
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/Skill_Swordsman_1011.png@Skill_Swordsman_1011",
+    "NameStrKey": "ST:62758",
+    "DescStrKey": "ST:62768",
+    "SkillTypeDescStrKey": "ST:101060"
+  },
+  {
     "ID": 64309004,
     "BufIds": [
       700040100
@@ -583,78 +660,6 @@
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
     "NameStrKey": "ST:102822",
     "DescStrKey": "ST:115751",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 64310547,
-    "BufIds": [
-      0
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
-    "NameStrKey": "ST:102823",
-    "DescStrKey": "ST:130619",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 64310548,
-    "BufIds": [
-      0
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
-    "NameStrKey": "ST:164550",
-    "DescStrKey": "ST:164607",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 64310549,
-    "BufIds": [
-      0
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
-    "NameStrKey": "ST:102825",
-    "DescStrKey": "ST:130621",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 64310550,
-    "BufIds": [
-      0
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
-    "NameStrKey": "ST:102826",
-    "DescStrKey": "ST:130622",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 64310551,
-    "BufIds": [
-      0
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
-    "NameStrKey": "ST:102827",
-    "DescStrKey": "ST:115756",
-    "SkillTypeDescStrKey": "ST:101060"
-  },
-  {
-    "ID": 64310552,
-    "BufIds": [
-      0
-    ],
-    "BattlePower": 1,
-    "IsDisplayOnUI": true,
-    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon/Skill_ABS/GPassive_1005.png@GPassive_1005",
-    "NameStrKey": "ST:102828",
-    "DescStrKey": "ST:242485",
     "SkillTypeDescStrKey": "ST:101060"
   }
 ]

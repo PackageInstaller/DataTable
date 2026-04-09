@@ -1,5 +1,24 @@
 [
   {
+    "ID": 742412203,
+    "LifeTime": -1,
+    "FuncType": "BufFuncType_Aura",
+    "FuncParams": [
+      1,
+      2,
+      -1,
+      742412204
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
+  },
+  {
     "ID": 742412204,
     "LifeTime": -1,
     "FuncType": "BufFuncType_DisperseBufBySelfOnStage",
@@ -4538,27 +4557,6 @@
         "Id": "PropertiesId_TotalDamageAddLevel2_NC",
         "Value": 1500
       }
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 742412511,
-    "LifeTime": -1,
-    "FuncType": "BufFuncType_AttachBuf4SelfOnStage",
-    "FuncParams": [
-      742412525,
-      1
-    ],
-    "ActiveBattleStageType": "BattleStageType_BattleTurnStart",
-    "ActiveCondIds": [
-      350103
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
     "LevelMax": 1,

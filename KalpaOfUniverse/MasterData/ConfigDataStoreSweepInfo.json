@@ -358,6 +358,22 @@
     "PlayerExp": 20,
     "CharExp": 120,
     "NameStrKey": "ST:253650",
-    "UnlockTipStrKey": "ST:255024"
+    "UnlockTipStrKey": "ST:254656"
+  },
+  {
+    "ID": 146,
+    "OpenCondition": [
+      {
+        "CondType": "ConditionType_UnrealSeaLevelComplete",
+        "P1": 5701
+      }
+    ],
+    "GameFunType": "GameFunctionType_UnrealSea",
+    "UseEnergy": 20,
+    "DropId": 351661100,
+    "PlayerExp": 20,
+    "CharExp": 120,
+    "NameStrKey": "ST:256391",
+    "UnlockTipStrKey": "ST:256392"
   }
 ]

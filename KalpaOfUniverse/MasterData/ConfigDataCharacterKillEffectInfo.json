@@ -165,7 +165,7 @@
     "KillEffectDurationTime": 2500,
     "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common17_TL.prefab",
     "IsChampion": 1,
-    "VerticalLabelStrKey": "ST:255264"
+    "VerticalLabelStrKey": "ST:254539"
   },
   {
     "ID": 10,
@@ -198,7 +198,8 @@
     "WaitTimeBeforeSceneDeadActorRemove": 700,
     "KillEffectDurationTime": 2500,
     "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common19_TL.prefab",
-    "VerticalLabelStrKey": "ST:255252"
+    "IsChampion": 1,
+    "VerticalLabelStrKey": "ST:258826"
   },
   {
     "ID": 1001,
@@ -351,5 +352,24 @@
     "WaitTimeBeforeSceneDeadActorRemove": 700,
     "KillEffectDurationTime": 2500,
     "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common16_TL.prefab"
+  },
+  {
+    "ID": 1009,
+    "Name": "琳琅惊魄",
+    "KillEffectType": "KillEffectType_Privilege",
+    "UnlockItemId": 504011015,
+    "MaxSlotCount": 1,
+    "DecomposeDropId": 351508889,
+    "DecomposeMailId": 40400,
+    "UnLockDesText": "参与 光风霁月 活动获得",
+    "OwnerCharIdList": [
+      100250900
+    ],
+    "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/HeroKillEffect01_ABS/Death_Effects_LLQS_01.png@Death_Effects_LLQS_01",
+    "EfxConfigId": 1009,
+    "WaitTimeBeforeSceneDeadEffect": 500,
+    "WaitTimeBeforeSceneDeadActorRemove": 700,
+    "KillEffectDurationTime": 2500,
+    "ShowTimeinePath": "Assets/GameProject/RuntimeAssets/Timeline/Dead_Common/Prefab/Dead_Common20_TL.prefab"
   }
 ]

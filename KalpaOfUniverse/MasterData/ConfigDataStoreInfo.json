@@ -2867,6 +2867,30 @@
     "SweepId": 145
   },
   {
+    "ID": 157,
+    "StoreID": 157,
+    "Type": "StoreType_Exchange",
+    "StoreName": "OB66 典藏紫枫",
+    "ActivityID": 266611,
+    "ItemRecycleRule": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020219,
+        "GoldRate": 100
+      }
+    ],
+    "ItemRecycleMail": 297,
+    "NpcPath": "Assets/GameProject/RuntimeAssets/Spine/Hero/Hero2509_ABS/Hero2509_Graphic_Prefab.prefab",
+    "NpcCharId": 250900,
+    "ItemCurrencyShow": [
+      {
+        "ItemType": "ItemType_Item",
+        "ItemId": 400020219
+      }
+    ],
+    "SweepId": 146
+  },
+  {
     "ID": 9901,
     "StoreID": "StoreId_UniversalMaterialStore",
     "Type": "StoreType_Exchange",

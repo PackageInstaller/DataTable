@@ -7965,7 +7965,8 @@
     "FirstCharExp": 10,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651101,
-    "DescStrKey": "ST:254620"
+    "CommonFirstRewardDropId": 351651201,
+    "DescStrKey": "ST:255712"
   },
   {
     "ID": 5602,
@@ -7976,7 +7977,8 @@
     "FirstCharExp": 10,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651102,
-    "DescStrKey": "ST:254621"
+    "CommonFirstRewardDropId": 351651202,
+    "DescStrKey": "ST:255713"
   },
   {
     "ID": 5603,
@@ -7986,7 +7988,8 @@
     "FirstCharExp": 10,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651103,
-    "DescStrKey": "ST:254622"
+    "CommonFirstRewardDropId": 351651203,
+    "DescStrKey": "ST:255714"
   },
   {
     "ID": 5604,
@@ -7996,7 +7999,8 @@
     "FirstCharExp": 18,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651104,
-    "DescStrKey": "ST:254623"
+    "CommonFirstRewardDropId": 351651204,
+    "DescStrKey": "ST:255715"
   },
   {
     "ID": 5605,
@@ -8006,7 +8010,8 @@
     "FirstCharExp": 24,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651105,
-    "DescStrKey": "ST:254624"
+    "CommonFirstRewardDropId": 351651205,
+    "DescStrKey": "ST:255716"
   },
   {
     "ID": 5606,
@@ -8017,7 +8022,8 @@
     "FirstCharExp": 32,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651106,
-    "DescStrKey": "ST:254625"
+    "CommonFirstRewardDropId": 351651206,
+    "DescStrKey": "ST:255717"
   },
   {
     "ID": 5607,
@@ -8027,7 +8033,8 @@
     "FirstCharExp": 35,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651107,
-    "DescStrKey": "ST:254602"
+    "CommonFirstRewardDropId": 351651207,
+    "DescStrKey": "ST:255718"
   },
   {
     "ID": 5608,
@@ -8038,7 +8045,8 @@
     "FirstCharExp": 60,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651108,
-    "DescStrKey": "ST:254603"
+    "CommonFirstRewardDropId": 351651208,
+    "DescStrKey": "ST:255719"
   },
   {
     "ID": 5609,
@@ -8048,7 +8056,8 @@
     "FirstCharExp": 60,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651109,
-    "DescStrKey": "ST:254604"
+    "CommonFirstRewardDropId": 351651209,
+    "DescStrKey": "ST:255720"
   },
   {
     "ID": 5610,
@@ -8059,7 +8068,175 @@
     "FirstCharExp": 60,
     "FirstPlayerExp": 10,
     "FirstRewardDropId": 351651110,
-    "DescStrKey": "ST:254626"
+    "CommonFirstRewardDropId": 351651210,
+    "DescStrKey": "ST:255721"
+  },
+  {
+    "ID": 5701,
+    "DialogBeforeId": 660011701,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26600100,
+    "FirstCharExp": 60,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351661101,
+    "CommonFirstRewardDropId": 351661111,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:256379"
+  },
+  {
+    "ID": 5702,
+    "Next": 5703,
+    "DialogBeforeId": 660021701,
+    "DialogAfterId": 660021901,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26600200,
+    "FirstCharExp": 60,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351661102,
+    "CommonFirstRewardDropId": 351661112,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:256380"
+  },
+  {
+    "ID": 5703,
+    "DialogBeforeId": 660031701,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26600300,
+    "FirstCharExp": 60,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351661103,
+    "CommonFirstRewardDropId": 351661113,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:256381"
+  },
+  {
+    "ID": 5704,
+    "Next": 5705,
+    "DialogBeforeId": 660041701,
+    "DialogAfterId": 660041901,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26600400,
+    "FirstCharExp": 60,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351661104,
+    "CommonFirstRewardDropId": 351661114,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:256382"
+  },
+  {
+    "ID": 5705,
+    "DialogAfterId": 660051901,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26600500,
+    "FirstCharExp": 60,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351661105,
+    "CommonFirstRewardDropId": 351661115,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:256383"
+  },
+  {
+    "ID": 5706,
+    "Next": 5707,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26600600,
+    "FirstCharExp": 60,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351661106,
+    "CommonFirstRewardDropId": 351661116,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:256384"
+  },
+  {
+    "ID": 5707,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26600700,
+    "FirstCharExp": 60,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351661107,
+    "CommonFirstRewardDropId": 351661117,
+    "ShowType": "UnrealSeaLevelInfotShowType_ULRBox",
+    "DescStrKey": "ST:256385"
+  },
+  {
+    "ID": 5801,
+    "DialogBeforeId": 340230101,
+    "DialogAfterId": 340230201,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26610100,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351665101,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:119387"
+  },
+  {
+    "ID": 5811,
+    "DialogBeforeId": 340230301,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26610200,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351665102,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:119388"
+  },
+  {
+    "ID": 5821,
+    "DialogBeforeId": 340240901,
+    "DialogAfterId": 340230401,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26610300,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351665103,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:119389"
+  },
+  {
+    "ID": 5831,
+    "DialogAfterId": 340230501,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26610400,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351665104,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:119390"
+  },
+  {
+    "ID": 5841,
+    "DialogBeforeId": 340230601,
+    "DialogAfterId": 340230701,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26610500,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351665105,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:119391"
+  },
+  {
+    "ID": 5851,
+    "DialogBeforeId": 340230801,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26610600,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351665106,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:119392"
+  },
+  {
+    "ID": 5861,
+    "DialogAfterId": 340230901,
+    "FirstEnergySuccess": 10,
+    "BattleSceneId": 26610700,
+    "FirstCharExp": 10,
+    "FirstPlayerExp": 10,
+    "FirstRewardDropId": 351665107,
+    "ShowType": "UnrealSeaLevelInfotShowType_Scenario",
+    "DescStrKey": "ST:119393"
   },
   {
     "ID": 38011,

@@ -1843,7 +1843,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/Gift_208.png@Gift_208",
     "NameDescStrKey": "ST:254010",
-    "BuffDescStrKey": "ST:256005"
+    "BuffDescStrKey": "ST:255897"
   },
   {
     "ID": 741403028,
@@ -2047,7 +2047,7 @@
     "LifeTime": -1,
     "FuncType": "BufFuncType_AttachBuf4SelfOnExtraAction",
     "FuncParams": [
-      700001420,
+      741403045,
       1
     ],
     "ReplaceRule": "ReplaceRule_Refresh",
@@ -2137,6 +2137,27 @@
     "TriggerBehaviorId": 600000011,
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/Gift_208.png@Gift_208",
     "NameDescStrKey": "ST:253995"
+  },
+  {
+    "ID": 741403045,
+    "FuncType": "BufFuncType_ChangeBufLifetimeImm",
+    "FuncParams": [
+      1,
+      -1,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "ReplaceRule": "ReplaceRule_Refresh",
+    "LevelMax": 1,
+    "LevelPropertiesMulti": 10000,
+    "Categories": [
+      "BufCategory_None"
+    ],
+    "CanBePreventDisperse": true,
+    "TriggerBehaviorType": "TriggerBehaviorType_None"
   },
   {
     "ID": 741403200,
@@ -2508,6 +2529,7 @@
       "BufCategory_None"
     ],
     "CanBePreventDisperse": true,
+    "DetachPeriod": "BufDetachPeriod_AfterActionExec",
     "TriggerTimes": 1,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
   },
@@ -2968,7 +2990,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
     "NameDescStrKey": "ST:254198",
-    "BuffDescStrKey": "ST:256033"
+    "BuffDescStrKey": "ST:255898"
   },
   {
     "ID": 741403607,
@@ -2991,7 +3013,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
     "NameDescStrKey": "ST:254199",
-    "BuffDescStrKey": "ST:256034"
+    "BuffDescStrKey": "ST:255899"
   },
   {
     "ID": 741403608,
@@ -3229,7 +3251,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
     "NameDescStrKey": "ST:254216",
-    "BuffDescStrKey": "ST:256536"
+    "BuffDescStrKey": "ST:256501"
   },
   {
     "ID": 741403655,
@@ -4398,7 +4420,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
     "NameDescStrKey": "ST:254190",
-    "BuffDescStrKey": "ST:256013"
+    "BuffDescStrKey": "ST:255901"
   },
   {
     "ID": 741403912,
@@ -4415,7 +4437,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
     "NameDescStrKey": "ST:254198",
-    "BuffDescStrKey": "ST:255311"
+    "BuffDescStrKey": "ST:255902"
   },
   {
     "ID": 741403913,
@@ -4432,7 +4454,7 @@
     "IconBackgroundType": "IconBackgroundType_Other",
     "Icon": "Assets/GameProject/RuntimeAssets/UI/UIImage/Icon01/Skill01_ABS/EXSkill_3c_140303.png@EXSkill_3c_140303",
     "NameDescStrKey": "ST:254199",
-    "BuffDescStrKey": "ST:255312"
+    "BuffDescStrKey": "ST:255903"
   },
   {
     "ID": 741403914,
@@ -4500,30 +4522,6 @@
     "OtherBuffFlag": true,
     "CanBeDispersed": true,
     "CanBePreventDisperse": true,
-    "TriggerBehaviorType": "TriggerBehaviorType_None"
-  },
-  {
-    "ID": 741403919,
-    "FuncType": "BufFuncType_AttachBufImm",
-    "FuncParams": [
-      0,
-      1,
-      1,
-      741403500,
-      1
-    ],
-    "ActiveCondIds": [
-      140324
-    ],
-    "ReplaceRule": "ReplaceRule_Refresh",
-    "LevelMax": 1,
-    "LevelPropertiesMulti": 10000,
-    "Categories": [
-      "BufCategory_None"
-    ],
-    "CanBePreventDisperse": true,
-    "DetachPeriod": "BufDetachPeriod_AfterCastSkill",
-    "TriggerTimes": 1,
     "TriggerBehaviorType": "TriggerBehaviorType_None"
   }
 ]

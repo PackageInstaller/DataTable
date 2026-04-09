@@ -1,120 +1,242 @@
-{
-  "ID": 1,
-  "LimitedSigns": [
-    "ActorSign_Fire"
-  ],
-  "GlobalRuleId": 100201,
-  "NormalGroupId": 101,
-  "InfinityGroupId": 102,
-  "BattleSceneGroupId": 1000,
-  "AffixGroupId": 101991,
-  "JumpRoundInfos": [
-    {
-      "Round": 1,
-      "LevelInc": 10
-    },
-    {
-      "Round": 2,
-      "LevelInc": 8
-    },
-    {
-      "Round": 3,
-      "LevelInc": 7
-    },
-    {
-      "Round": 4,
-      "LevelInc": 6
-    },
-    {
-      "Round": 5,
-      "LevelInc": 5
-    },
-    {
-      "Round": 6,
-      "LevelInc": 4
-    },
-    {
-      "Round": 7,
-      "LevelInc": 3
-    },
-    {
-      "Round": 8,
-      "LevelInc": 2
-    },
-    {
-      "Round": 9,
-      "LevelInc": 1
-    },
-    {
-      "Round": 10,
-      "LevelInc": 1
-    }
-  ],
-  "JumpRoundHardInfos": [
-    {
-      "Round": 1,
-      "LevelInc": 10
-    },
-    {
-      "Round": 2,
-      "LevelInc": 8
-    },
-    {
-      "Round": 3,
-      "LevelInc": 7
-    },
-    {
-      "Round": 4,
-      "LevelInc": 6
-    },
-    {
-      "Round": 5,
-      "LevelInc": 5
-    },
-    {
-      "Round": 6,
-      "LevelInc": 4
-    },
-    {
-      "Round": 7,
-      "LevelInc": 3
-    },
-    {
-      "Round": 8,
-      "LevelInc": 2
-    },
-    {
-      "Round": 9,
-      "LevelInc": 1
-    },
-    {
-      "Round": 10,
-      "LevelInc": 1
-    }
-  ],
-  "JumpDiedHardInfos": [
-    {
-      "DiedNum": 1,
-      "LevelIncMax": 5
-    },
-    {
-      "DiedNum": 2,
-      "LevelIncMax": 3
-    },
-    {
-      "DiedNum": 3,
-      "LevelIncMax": 2
-    },
-    {
-      "DiedNum": 4,
-      "LevelIncMax": 1
-    }
-  ],
-  "RankRewardGroupId": 101,
-  "ESType": "EquipSeparatorType_JiuRuPro1",
-  "BgMaxLevelCount": 1000,
-  "LevelDifficultyDescParam": 2,
-  "NameStrKey": "ST:247139",
-  "ChallengeDescStrKey": "ST:249997",
-  "LevelDifficultyDescStrKey": "ST:247141"
-}
+[
+  {
+    "ID": 1,
+    "LimitedSigns": [
+      "ActorSign_Fire"
+    ],
+    "GlobalRuleId": 100201,
+    "NormalGroupId": 101,
+    "InfinityGroupId": 102,
+    "BattleSceneGroupId": 1000,
+    "AffixGroupId": 101991,
+    "JumpRoundInfos": [
+      {
+        "Round": 1,
+        "LevelInc": 10
+      },
+      {
+        "Round": 2,
+        "LevelInc": 8
+      },
+      {
+        "Round": 3,
+        "LevelInc": 7
+      },
+      {
+        "Round": 4,
+        "LevelInc": 6
+      },
+      {
+        "Round": 5,
+        "LevelInc": 5
+      },
+      {
+        "Round": 6,
+        "LevelInc": 4
+      },
+      {
+        "Round": 7,
+        "LevelInc": 3
+      },
+      {
+        "Round": 8,
+        "LevelInc": 2
+      },
+      {
+        "Round": 9,
+        "LevelInc": 1
+      },
+      {
+        "Round": 10,
+        "LevelInc": 1
+      }
+    ],
+    "JumpRoundHardInfos": [
+      {
+        "Round": 1,
+        "LevelInc": 10
+      },
+      {
+        "Round": 2,
+        "LevelInc": 8
+      },
+      {
+        "Round": 3,
+        "LevelInc": 7
+      },
+      {
+        "Round": 4,
+        "LevelInc": 6
+      },
+      {
+        "Round": 5,
+        "LevelInc": 5
+      },
+      {
+        "Round": 6,
+        "LevelInc": 4
+      },
+      {
+        "Round": 7,
+        "LevelInc": 3
+      },
+      {
+        "Round": 8,
+        "LevelInc": 2
+      },
+      {
+        "Round": 9,
+        "LevelInc": 1
+      },
+      {
+        "Round": 10,
+        "LevelInc": 1
+      }
+    ],
+    "JumpDiedHardInfos": [
+      {
+        "DiedNum": 1,
+        "LevelIncMax": 5
+      },
+      {
+        "DiedNum": 2,
+        "LevelIncMax": 3
+      },
+      {
+        "DiedNum": 3,
+        "LevelIncMax": 2
+      },
+      {
+        "DiedNum": 4,
+        "LevelIncMax": 1
+      }
+    ],
+    "RankRewardGroupId": 101,
+    "ESType": "EquipSeparatorType_JiuRuPro1",
+    "BgMaxLevelCount": 1000,
+    "LevelDifficultyDescParam": 2,
+    "NameStrKey": "ST:247139",
+    "ChallengeDescStrKey": "ST:249997",
+    "LevelDifficultyDescStrKey": "ST:247141"
+  },
+  {
+    "ID": 2,
+    "LimitedSigns": [
+      "ActorSign_Ice"
+    ],
+    "GlobalRuleId": 100201,
+    "NormalGroupId": 201,
+    "InfinityGroupId": 202,
+    "BattleSceneGroupId": 1000,
+    "AffixGroupId": 101991,
+    "JumpRoundInfos": [
+      {
+        "Round": 1,
+        "LevelInc": 10
+      },
+      {
+        "Round": 2,
+        "LevelInc": 8
+      },
+      {
+        "Round": 3,
+        "LevelInc": 7
+      },
+      {
+        "Round": 4,
+        "LevelInc": 6
+      },
+      {
+        "Round": 5,
+        "LevelInc": 5
+      },
+      {
+        "Round": 6,
+        "LevelInc": 4
+      },
+      {
+        "Round": 7,
+        "LevelInc": 3
+      },
+      {
+        "Round": 8,
+        "LevelInc": 2
+      },
+      {
+        "Round": 9,
+        "LevelInc": 1
+      },
+      {
+        "Round": 10,
+        "LevelInc": 1
+      }
+    ],
+    "JumpRoundHardInfos": [
+      {
+        "Round": 1,
+        "LevelInc": 10
+      },
+      {
+        "Round": 2,
+        "LevelInc": 8
+      },
+      {
+        "Round": 3,
+        "LevelInc": 7
+      },
+      {
+        "Round": 4,
+        "LevelInc": 6
+      },
+      {
+        "Round": 5,
+        "LevelInc": 5
+      },
+      {
+        "Round": 6,
+        "LevelInc": 4
+      },
+      {
+        "Round": 7,
+        "LevelInc": 3
+      },
+      {
+        "Round": 8,
+        "LevelInc": 2
+      },
+      {
+        "Round": 9,
+        "LevelInc": 1
+      },
+      {
+        "Round": 10,
+        "LevelInc": 1
+      }
+    ],
+    "JumpDiedHardInfos": [
+      {
+        "DiedNum": 1,
+        "LevelIncMax": 5
+      },
+      {
+        "DiedNum": 2,
+        "LevelIncMax": 3
+      },
+      {
+        "DiedNum": 3,
+        "LevelIncMax": 2
+      },
+      {
+        "DiedNum": 4,
+        "LevelIncMax": 1
+      }
+    ],
+    "RankRewardGroupId": 201,
+    "ESType": 69,
+    "BgMaxLevelCount": 1000,
+    "LevelDifficultyDescParam": 2,
+    "NameStrKey": "ST:247139",
+    "ChallengeDescStrKey": "ST:152548",
+    "LevelDifficultyDescStrKey": "ST:247141"
+  }
+]
