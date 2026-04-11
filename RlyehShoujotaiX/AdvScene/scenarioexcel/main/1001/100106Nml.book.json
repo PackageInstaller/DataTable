@@ -3378,10 +3378,10 @@
                     "rowIndex": 203,
                     "strings": [
                         "",
-                        "Tween",
+                        "Set",
                         "丸_01",
-                        "ColorTo",
-                        "time=0 color=blue",
+                        "Color",
+                        "#003F8E",
                         "",
                         "",
                         "",
@@ -3410,6 +3410,86 @@
                     "rowIndex": 205,
                     "strings": [
                         "",
+                        "Sprite",
+                        "グラデ_01",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 206,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "RotateTo",
+                        "time=0 z=90",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 207,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 208,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "MoveTo",
+                        "time=0 y=1030",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 209,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "ScaleTo",
+                        "time=0 y=10 x=20",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 210,
+                    "strings": [
+                        "",
                         "Tween",
                         "BG",
                         "ScaleTo",
@@ -3423,7 +3503,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 206,
+                    "rowIndex": 211,
                     "strings": [
                         "",
                         "Tween",
@@ -3439,7 +3519,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 207,
+                    "rowIndex": 212,
                     "strings": [
                         "",
                         "Tween",
@@ -3451,7 +3531,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 208,
+                    "rowIndex": 213,
                     "strings": [
                         "",
                         "Wait",
@@ -3466,7 +3546,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 209,
+                    "rowIndex": 214,
                     "strings": [
                         "",
                         "",
@@ -3483,7 +3563,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 210,
+                    "rowIndex": 215,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3493,7 +3573,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 211,
+                    "rowIndex": 216,
                     "strings": [
                         "",
                         "",
@@ -3510,7 +3590,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 212,
+                    "rowIndex": 217,
                     "strings": [
                         "",
                         "",
@@ -3527,7 +3607,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 213,
+                    "rowIndex": 218,
                     "strings": [
                         "",
                         "Wait",
@@ -3542,7 +3622,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 214,
+                    "rowIndex": 219,
                     "strings": [
                         "",
                         "",
@@ -3559,7 +3639,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 215,
+                    "rowIndex": 220,
                     "strings": [
                         "",
                         "",
@@ -3576,7 +3656,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 216,
+                    "rowIndex": 221,
                     "strings": [
                         "",
                         "FadeOut",
@@ -3590,7 +3670,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 217,
+                    "rowIndex": 222,
                     "strings": [
                         "",
                         "Bg",
@@ -3605,7 +3685,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 218,
+                    "rowIndex": 223,
                     "strings": [
                         "",
                         "Tween",
@@ -3617,7 +3697,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 219,
+                    "rowIndex": 224,
                     "strings": [
                         "",
                         "",
@@ -3638,7 +3718,17 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 220,
+                    "rowIndex": 225,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "グラデ_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 226,
                     "strings": [
                         "",
                         "Wait",
@@ -3653,7 +3743,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 221,
+                    "rowIndex": 227,
                     "strings": [
                         "",
                         "FadeIn",
@@ -3667,7 +3757,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 222,
+                    "rowIndex": 228,
                     "strings": [
                         "",
                         "Wait",
@@ -3682,7 +3772,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 223,
+                    "rowIndex": 229,
                     "strings": [
                         "",
                         "",
@@ -3701,7 +3791,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 224,
+                    "rowIndex": 230,
                     "strings": [
                         "",
                         "",
@@ -3720,7 +3810,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 225,
+                    "rowIndex": 231,
                     "strings": [
                         "",
                         "",
@@ -3739,7 +3829,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 226,
+                    "rowIndex": 232,
                     "strings": [
                         "",
                         "",
@@ -3758,7 +3848,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 227,
+                    "rowIndex": 233,
                     "strings": [
                         "",
                         "",
@@ -3775,7 +3865,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 228,
+                    "rowIndex": 234,
                     "strings": [
                         "",
                         "FadeOut",
@@ -3789,7 +3879,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 229,
+                    "rowIndex": 235,
                     "strings": [
                         "",
                         "Bg",
@@ -3804,7 +3894,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 230,
+                    "rowIndex": 236,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3825,7 +3915,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 231,
+                    "rowIndex": 237,
                     "strings": [
                         "",
                         "",
@@ -3846,7 +3936,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 232,
+                    "rowIndex": 238,
                     "strings": [
                         "",
                         "Wait",
@@ -3861,7 +3951,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 233,
+                    "rowIndex": 239,
                     "strings": [
                         "",
                         "FadeIn",
@@ -3875,7 +3965,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 234,
+                    "rowIndex": 240,
                     "strings": [
                         "",
                         "Wait",
@@ -3890,7 +3980,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 235,
+                    "rowIndex": 241,
                     "strings": [
                         "",
                         "",
@@ -3912,7 +4002,18 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 236,
+                    "rowIndex": 242,
+                    "strings": [
+                        "",
+                        "",
+                        "アスタリーゼ",
+                        "Emt1_Nor"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 243,
                     "strings": [
                         "",
                         "",
@@ -3931,7 +4032,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 237,
+                    "rowIndex": 244,
                     "strings": [
                         "",
                         "",
@@ -3950,12 +4051,23 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 238,
+                    "rowIndex": 245,
+                    "strings": [
+                        "",
+                        "",
+                        "アスタリーゼ",
+                        "Emt3_Gla"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 246,
                     "strings": [
                         "",
                         "",
                         "？？？",
-                        "Emt3_Gla",
+                        "",
                         "",
                         "",
                         "",
@@ -3969,7 +4081,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 239,
+                    "rowIndex": 247,
                     "strings": [
                         "",
                         "StopSound",
@@ -3990,7 +4102,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 240,
+                    "rowIndex": 248,
                     "strings": [
                         "",
                         "FadeOut",
@@ -4011,7 +4123,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 241,
+                    "rowIndex": 249,
                     "strings": [
                         "",
                         "Wait",
@@ -4032,7 +4144,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 242,
+                    "rowIndex": 250,
                     "strings": [
                         "",
                         "LayerReset",
@@ -4055,7 +4167,7 @@
             ],
             "name": "Assets/AdvScene/ScenarioExcel/main/1001/100106Nml.xlsx:100106Nml",
             "type": 1,
-            "textLength": 8281,
+            "textLength": 8459,
             "headerRow": 0,
             "entityIndexTbl": [],
             "entityDataList": []

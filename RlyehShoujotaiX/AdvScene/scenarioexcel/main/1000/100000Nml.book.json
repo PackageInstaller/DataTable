@@ -5595,7 +5595,7 @@
                         "",
                         "レイヤー2_スプライト上10",
                         "",
-                        "",
+                        "2000",
                         "",
                         "Add"
                     ],
@@ -5606,12 +5606,12 @@
                     "rowIndex": 352,
                     "strings": [
                         "",
-                        "Tween",
-                        "丸_01",
-                        "ColorTo",
-                        "time=0 color=red",
+                        "Sprite",
+                        "丸2_01",
                         "",
+                        "レイヤー2_スプライト上11",
                         "",
+                        "2000",
                         "",
                         "Add"
                     ],
@@ -5622,10 +5622,10 @@
                     "rowIndex": 353,
                     "strings": [
                         "",
-                        "Tween",
-                        "丸_01",
-                        "ScaleTo",
-                        "time=0 x=200 y=200",
+                        "Set",
+                        "丸2_01",
+                        "Color",
+                        "#FF000080",
                         "",
                         "",
                         "",
@@ -5638,11 +5638,11 @@
                     "rowIndex": 354,
                     "strings": [
                         "",
-                        "Tween",
-                        "丸_01",
-                        "MoveTo",
-                        "time=0 x=0 y=0",
-                        "",
+                        "Set",
+                        "丸2_01",
+                        "Scale",
+                        "210",
+                        "210",
                         "",
                         "",
                         "Add"
@@ -5652,6 +5652,38 @@
                 },
                 {
                     "rowIndex": 355,
+                    "strings": [
+                        "",
+                        "Set",
+                        "丸_01",
+                        "Color",
+                        "#FF000080",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 356,
+                    "strings": [
+                        "",
+                        "Set",
+                        "丸_01",
+                        "Scale",
+                        "200",
+                        "200",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 357,
                     "strings": [
                         "",
                         "Tween",
@@ -5667,7 +5699,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 356,
+                    "rowIndex": 358,
                     "strings": [
                         "",
                         "Tween",
@@ -5683,7 +5715,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 357,
+                    "rowIndex": 359,
                     "strings": [
                         "",
                         "Wait",
@@ -5698,19 +5730,35 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 358,
+                    "rowIndex": 360,
                     "strings": [
                         "",
                         "Tween",
                         "丸_01",
                         "ScaleTo",
-                        "time=1 x=0.1 y=0.1"
+                        "time=1 x=0.1 y=0.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 359,
+                    "rowIndex": 361,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "丸2_01",
+                        "ScaleTo",
+                        "time=1 x=0.12 y=0.12"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 362,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -5720,7 +5768,17 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 360,
+                    "rowIndex": 363,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "丸2_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 364,
                     "strings": [
                         "",
                         "",
@@ -5737,7 +5795,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 361,
+                    "rowIndex": 365,
                     "strings": [
                         "",
                         "BgEventOff",
@@ -5747,7 +5805,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 362,
+                    "rowIndex": 366,
                     "strings": [
                         "",
                         "Bg",
@@ -5762,7 +5820,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 363,
+                    "rowIndex": 367,
                     "strings": [
                         "",
                         "Tween",
@@ -5774,7 +5832,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 364,
+                    "rowIndex": 368,
                     "strings": [
                         "",
                         "Wait",
@@ -5789,7 +5847,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 365,
+                    "rowIndex": 369,
                     "strings": [
                         "",
                         "",
@@ -5806,7 +5864,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 366,
+                    "rowIndex": 370,
                     "strings": [
                         "",
                         "Tween",
@@ -5818,7 +5876,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 367,
+                    "rowIndex": 371,
                     "strings": [
                         "",
                         "Tween",
@@ -5830,7 +5888,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 368,
+                    "rowIndex": 372,
                     "strings": [
                         "",
                         "",
@@ -5851,7 +5909,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 369,
+                    "rowIndex": 373,
                     "strings": [
                         "",
                         "",
@@ -5872,7 +5930,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 370,
+                    "rowIndex": 374,
                     "strings": [
                         "",
                         "",
@@ -5893,7 +5951,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 371,
+                    "rowIndex": 375,
                     "strings": [
                         "",
                         "Se",
@@ -5903,7 +5961,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 372,
+                    "rowIndex": 376,
                     "strings": [
                         "",
                         "",
@@ -5920,7 +5978,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 373,
+                    "rowIndex": 377,
                     "strings": [
                         "",
                         "Tween",
@@ -5932,7 +5990,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 374,
+                    "rowIndex": 378,
                     "strings": [
                         "",
                         "Tween",
@@ -5944,7 +6002,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 375,
+                    "rowIndex": 379,
                     "strings": [
                         "",
                         "Tween",
@@ -5956,7 +6014,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 376,
+                    "rowIndex": 380,
                     "strings": [
                         "",
                         "Shake",
@@ -5972,7 +6030,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 377,
+                    "rowIndex": 381,
                     "strings": [
                         "",
                         "Shake",
@@ -5988,7 +6046,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 378,
+                    "rowIndex": 382,
                     "strings": [
                         "",
                         "Shake",
@@ -6004,7 +6062,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 379,
+                    "rowIndex": 383,
                     "strings": [
                         "",
                         "Shake",
@@ -6020,7 +6078,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 380,
+                    "rowIndex": 384,
                     "strings": [
                         "",
                         "StopSound",
@@ -6030,7 +6088,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 381,
+                    "rowIndex": 385,
                     "strings": [
                         "",
                         "",
@@ -6047,7 +6105,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 382,
+                    "rowIndex": 386,
                     "strings": [
                         "",
                         "Sprite",
@@ -6063,7 +6121,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 383,
+                    "rowIndex": 387,
                     "strings": [
                         "",
                         "Tween",
@@ -6079,7 +6137,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 384,
+                    "rowIndex": 388,
                     "strings": [
                         "",
                         "Wait",
@@ -6094,7 +6152,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 385,
+                    "rowIndex": 389,
                     "strings": [
                         "",
                         "Tween",
@@ -6110,7 +6168,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 386,
+                    "rowIndex": 390,
                     "strings": [
                         "",
                         "Tween",
@@ -6126,7 +6184,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 387,
+                    "rowIndex": 391,
                     "strings": [
                         "",
                         "Tween",
@@ -6142,7 +6200,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 388,
+                    "rowIndex": 392,
                     "strings": [
                         "",
                         "Tween",
@@ -6158,7 +6216,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 389,
+                    "rowIndex": 393,
                     "strings": [
                         "",
                         "Tween",
@@ -6174,7 +6232,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 390,
+                    "rowIndex": 394,
                     "strings": [
                         "",
                         "FadeOut",
@@ -6189,7 +6247,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 391,
+                    "rowIndex": 395,
                     "strings": [
                         "",
                         "Wait",
@@ -6204,7 +6262,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 392,
+                    "rowIndex": 396,
                     "strings": [
                         "",
                         "Bg",
@@ -6219,7 +6277,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 393,
+                    "rowIndex": 397,
                     "strings": [
                         "",
                         "Tween",
@@ -6231,7 +6289,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 394,
+                    "rowIndex": 398,
                     "strings": [
                         "",
                         "Sprite",
@@ -6243,7 +6301,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 395,
+                    "rowIndex": 399,
                     "strings": [
                         "",
                         "Tween",
@@ -6259,7 +6317,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 396,
+                    "rowIndex": 400,
                     "strings": [
                         "",
                         "Tween",
@@ -6275,7 +6333,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 397,
+                    "rowIndex": 401,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -6296,7 +6354,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 398,
+                    "rowIndex": 402,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -6317,7 +6375,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 399,
+                    "rowIndex": 403,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -6338,7 +6396,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 400,
+                    "rowIndex": 404,
                     "strings": [
                         "",
                         "ImageEffectOff",
@@ -6353,7 +6411,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 401,
+                    "rowIndex": 405,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6363,7 +6421,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 402,
+                    "rowIndex": 406,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6373,7 +6431,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 403,
+                    "rowIndex": 407,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6383,7 +6441,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 404,
+                    "rowIndex": 408,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6393,7 +6451,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 405,
+                    "rowIndex": 409,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6403,7 +6461,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 406,
+                    "rowIndex": 410,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6413,7 +6471,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 407,
+                    "rowIndex": 411,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6423,7 +6481,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 408,
+                    "rowIndex": 412,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6433,7 +6491,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 409,
+                    "rowIndex": 413,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6443,7 +6501,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 410,
+                    "rowIndex": 414,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6453,7 +6511,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 411,
+                    "rowIndex": 415,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6463,7 +6521,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 412,
+                    "rowIndex": 416,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6473,7 +6531,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 413,
+                    "rowIndex": 417,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6483,7 +6541,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 414,
+                    "rowIndex": 418,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6493,7 +6551,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 415,
+                    "rowIndex": 419,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6503,7 +6561,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 416,
+                    "rowIndex": 420,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6513,7 +6571,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 417,
+                    "rowIndex": 421,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6523,7 +6581,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 418,
+                    "rowIndex": 422,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6533,7 +6591,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 419,
+                    "rowIndex": 423,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6543,7 +6601,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 420,
+                    "rowIndex": 424,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6553,7 +6611,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 421,
+                    "rowIndex": 425,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6563,7 +6621,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 422,
+                    "rowIndex": 426,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6573,7 +6631,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 423,
+                    "rowIndex": 427,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6583,7 +6641,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 424,
+                    "rowIndex": 428,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6593,7 +6651,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 425,
+                    "rowIndex": 429,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6603,7 +6661,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 426,
+                    "rowIndex": 430,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6613,7 +6671,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 427,
+                    "rowIndex": 431,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6623,7 +6681,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 428,
+                    "rowIndex": 432,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6633,7 +6691,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 429,
+                    "rowIndex": 433,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6643,7 +6701,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 430,
+                    "rowIndex": 434,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6653,7 +6711,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 431,
+                    "rowIndex": 435,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6663,7 +6721,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 432,
+                    "rowIndex": 436,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6673,7 +6731,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 433,
+                    "rowIndex": 437,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6683,7 +6741,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 434,
+                    "rowIndex": 438,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6693,7 +6751,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 435,
+                    "rowIndex": 439,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6703,7 +6761,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 436,
+                    "rowIndex": 440,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6713,7 +6771,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 437,
+                    "rowIndex": 441,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6723,7 +6781,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 438,
+                    "rowIndex": 442,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6733,7 +6791,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 439,
+                    "rowIndex": 443,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6743,7 +6801,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 440,
+                    "rowIndex": 444,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6753,7 +6811,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 441,
+                    "rowIndex": 445,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6763,7 +6821,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 442,
+                    "rowIndex": 446,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6773,7 +6831,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 443,
+                    "rowIndex": 447,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6783,7 +6841,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 444,
+                    "rowIndex": 448,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6793,7 +6851,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 445,
+                    "rowIndex": 449,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6803,7 +6861,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 446,
+                    "rowIndex": 450,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6813,7 +6871,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 447,
+                    "rowIndex": 451,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6823,7 +6881,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 448,
+                    "rowIndex": 452,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6833,7 +6891,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 449,
+                    "rowIndex": 453,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6843,7 +6901,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 450,
+                    "rowIndex": 454,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6853,7 +6911,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 451,
+                    "rowIndex": 455,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6863,7 +6921,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 452,
+                    "rowIndex": 456,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6873,7 +6931,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 453,
+                    "rowIndex": 457,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6883,7 +6941,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 454,
+                    "rowIndex": 458,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6893,7 +6951,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 455,
+                    "rowIndex": 459,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6903,7 +6961,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 456,
+                    "rowIndex": 460,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6913,7 +6971,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 457,
+                    "rowIndex": 461,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6923,7 +6981,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 458,
+                    "rowIndex": 462,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6933,7 +6991,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 459,
+                    "rowIndex": 463,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6943,7 +7001,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 460,
+                    "rowIndex": 464,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6953,7 +7011,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 461,
+                    "rowIndex": 465,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6963,7 +7021,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 462,
+                    "rowIndex": 466,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6973,7 +7031,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 463,
+                    "rowIndex": 467,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6983,7 +7041,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 464,
+                    "rowIndex": 468,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6993,7 +7051,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 465,
+                    "rowIndex": 469,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7003,7 +7061,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 466,
+                    "rowIndex": 470,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7013,7 +7071,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 467,
+                    "rowIndex": 471,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7023,7 +7081,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 468,
+                    "rowIndex": 472,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7033,7 +7091,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 469,
+                    "rowIndex": 473,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7043,7 +7101,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 470,
+                    "rowIndex": 474,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7053,7 +7111,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 471,
+                    "rowIndex": 475,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7063,7 +7121,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 472,
+                    "rowIndex": 476,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7073,7 +7131,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 473,
+                    "rowIndex": 477,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7083,7 +7141,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 474,
+                    "rowIndex": 478,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7093,7 +7151,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 475,
+                    "rowIndex": 479,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7103,7 +7161,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 476,
+                    "rowIndex": 480,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7113,7 +7171,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 477,
+                    "rowIndex": 481,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7123,7 +7181,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 478,
+                    "rowIndex": 482,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7133,7 +7191,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 479,
+                    "rowIndex": 483,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7143,7 +7201,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 480,
+                    "rowIndex": 484,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7153,7 +7211,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 481,
+                    "rowIndex": 485,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7163,7 +7221,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 482,
+                    "rowIndex": 486,
                     "strings": [
                         "",
                         "Wait",
@@ -7178,7 +7236,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 483,
+                    "rowIndex": 487,
                     "strings": [
                         "",
                         "FadeIn",
@@ -7194,7 +7252,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 484,
+                    "rowIndex": 488,
                     "strings": [
                         "",
                         "",
@@ -7217,7 +7275,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 485,
+                    "rowIndex": 489,
                     "strings": [
                         "",
                         "",
@@ -7234,7 +7292,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 486,
+                    "rowIndex": 490,
                     "strings": [
                         "",
                         "",
@@ -7253,7 +7311,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 487,
+                    "rowIndex": 491,
                     "strings": [
                         "",
                         "",
@@ -7270,7 +7328,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 488,
+                    "rowIndex": 492,
                     "strings": [
                         "",
                         "Se",
@@ -7280,7 +7338,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 489,
+                    "rowIndex": 493,
                     "strings": [
                         "",
                         "Wait",
@@ -7295,7 +7353,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 490,
+                    "rowIndex": 494,
                     "strings": [
                         "",
                         "StopSound",
@@ -7305,7 +7363,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 491,
+                    "rowIndex": 495,
                     "strings": [
                         "",
                         "",
@@ -7322,7 +7380,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 492,
+                    "rowIndex": 496,
                     "strings": [
                         "",
                         "",
@@ -7339,7 +7397,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 493,
+                    "rowIndex": 497,
                     "strings": [
                         "",
                         "",
@@ -7360,7 +7418,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 494,
+                    "rowIndex": 498,
                     "strings": [
                         "",
                         "Set",
@@ -7372,7 +7430,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 495,
+                    "rowIndex": 499,
                     "strings": [
                         "",
                         "",
@@ -7395,7 +7453,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 496,
+                    "rowIndex": 500,
                     "strings": [
                         "",
                         "Bgm",
@@ -7405,7 +7463,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 497,
+                    "rowIndex": 501,
                     "strings": [
                         "",
                         "Tween",
@@ -7417,7 +7475,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 498,
+                    "rowIndex": 502,
                     "strings": [
                         "",
                         "",
@@ -7434,7 +7492,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 499,
+                    "rowIndex": 503,
                     "strings": [
                         "",
                         "Tween",
@@ -7446,7 +7504,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 500,
+                    "rowIndex": 504,
                     "strings": [
                         "",
                         "",
@@ -7465,7 +7523,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 501,
+                    "rowIndex": 505,
                     "strings": [
                         "",
                         "Tween",
@@ -7477,7 +7535,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 502,
+                    "rowIndex": 506,
                     "strings": [
                         "",
                         "",
@@ -7494,7 +7552,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 503,
+                    "rowIndex": 507,
                     "strings": [
                         "",
                         "Tween",
@@ -7506,7 +7564,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 504,
+                    "rowIndex": 508,
                     "strings": [
                         "",
                         "",
@@ -7525,7 +7583,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 505,
+                    "rowIndex": 509,
                     "strings": [
                         "",
                         "",
@@ -7544,7 +7602,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 506,
+                    "rowIndex": 510,
                     "strings": [
                         "",
                         "",
@@ -7561,7 +7619,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 507,
+                    "rowIndex": 511,
                     "strings": [
                         "",
                         "",
@@ -7578,7 +7636,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 508,
+                    "rowIndex": 512,
                     "strings": [
                         "",
                         "Tween",
@@ -7590,7 +7648,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 509,
+                    "rowIndex": 513,
                     "strings": [
                         "",
                         "",
@@ -7609,7 +7667,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 510,
+                    "rowIndex": 514,
                     "strings": [
                         "",
                         "",
@@ -7626,7 +7684,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 511,
+                    "rowIndex": 515,
                     "strings": [
                         "",
                         "Tween",
@@ -7638,7 +7696,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 512,
+                    "rowIndex": 516,
                     "strings": [
                         "",
                         "",
@@ -7657,7 +7715,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 513,
+                    "rowIndex": 517,
                     "strings": [
                         "",
                         "",
@@ -7676,7 +7734,23 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 514,
+                    "rowIndex": 518,
+                    "strings": [
+                        "",
+                        "ImageEffect",
+                        "SpriteCamera",
+                        "Blur",
+                        "",
+                        "",
+                        "",
+                        "1",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 519,
                     "strings": [
                         "",
                         "Se",
@@ -7692,7 +7766,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 515,
+                    "rowIndex": 520,
                     "strings": [
                         "",
                         "Tween",
@@ -7708,7 +7782,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 516,
+                    "rowIndex": 521,
                     "strings": [
                         "",
                         "Sprite",
@@ -7724,7 +7798,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 517,
+                    "rowIndex": 522,
                     "strings": [
                         "",
                         "Sprite",
@@ -7734,7 +7808,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 518,
+                    "rowIndex": 523,
                     "strings": [
                         "",
                         "Set",
@@ -7746,7 +7820,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 519,
+                    "rowIndex": 524,
                     "strings": [
                         "",
                         "Set",
@@ -7759,7 +7833,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 520,
+                    "rowIndex": 525,
                     "strings": [
                         "",
                         "",
@@ -7776,7 +7850,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 521,
+                    "rowIndex": 526,
                     "strings": [
                         "",
                         "ImageEffect",
@@ -7792,7 +7866,18 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 522,
+                    "rowIndex": 527,
+                    "strings": [
+                        "",
+                        "ImageEffectOff",
+                        "SpriteCamera",
+                        "Blur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 528,
                     "strings": [
                         "",
                         "",
@@ -7809,7 +7894,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 523,
+                    "rowIndex": 529,
                     "strings": [
                         "",
                         "",
@@ -7828,7 +7913,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 524,
+                    "rowIndex": 530,
                     "strings": [
                         "",
                         "",
@@ -7845,7 +7930,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 525,
+                    "rowIndex": 531,
                     "strings": [
                         "",
                         "",
@@ -7864,7 +7949,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 526,
+                    "rowIndex": 532,
                     "strings": [
                         "",
                         "",
@@ -7883,7 +7968,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 527,
+                    "rowIndex": 533,
                     "strings": [
                         "",
                         "",
@@ -7902,7 +7987,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 528,
+                    "rowIndex": 534,
                     "strings": [
                         "",
                         "StopSound",
@@ -7912,7 +7997,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 529,
+                    "rowIndex": 535,
                     "strings": [
                         "",
                         "",
@@ -7931,7 +8016,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 530,
+                    "rowIndex": 536,
                     "strings": [
                         "",
                         "",
@@ -7954,7 +8039,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 531,
+                    "rowIndex": 537,
                     "strings": [
                         "",
                         "FadeOut",
@@ -7969,7 +8054,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 532,
+                    "rowIndex": 538,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7985,7 +8070,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 533,
+                    "rowIndex": 539,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -7995,7 +8080,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 534,
+                    "rowIndex": 540,
                     "strings": [
                         "",
                         "ImageEffectOff",
@@ -8011,7 +8096,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 535,
+                    "rowIndex": 541,
                     "strings": [
                         "",
                         "Bg",
@@ -8026,7 +8111,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 536,
+                    "rowIndex": 542,
                     "strings": [
                         "",
                         "Tween",
@@ -8038,7 +8123,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 537,
+                    "rowIndex": 543,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -8059,7 +8144,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 538,
+                    "rowIndex": 544,
                     "strings": [
                         "",
                         "Sprite",
@@ -8069,7 +8154,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 539,
+                    "rowIndex": 545,
                     "strings": [
                         "",
                         "Sprite",
@@ -8079,7 +8164,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 540,
+                    "rowIndex": 546,
                     "strings": [
                         "",
                         "Tween",
@@ -8091,7 +8176,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 541,
+                    "rowIndex": 547,
                     "strings": [
                         "",
                         "Tween",
@@ -8103,7 +8188,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 542,
+                    "rowIndex": 548,
                     "strings": [
                         "",
                         "Tween",
@@ -8115,7 +8200,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 543,
+                    "rowIndex": 549,
                     "strings": [
                         "",
                         "Tween",
@@ -8127,7 +8212,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 544,
+                    "rowIndex": 550,
                     "strings": [
                         "",
                         "Tween",
@@ -8139,7 +8224,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 545,
+                    "rowIndex": 551,
                     "strings": [
                         "",
                         "Tween",
@@ -8151,7 +8236,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 546,
+                    "rowIndex": 552,
                     "strings": [
                         "",
                         "Tween",
@@ -8163,7 +8248,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 547,
+                    "rowIndex": 553,
                     "strings": [
                         "",
                         "ImageEffect",
@@ -8179,7 +8264,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 548,
+                    "rowIndex": 554,
                     "strings": [
                         "",
                         "Sprite",
@@ -8195,7 +8280,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 549,
+                    "rowIndex": 555,
                     "strings": [
                         "",
                         "Sprite",
@@ -8211,7 +8296,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 550,
+                    "rowIndex": 556,
                     "strings": [
                         "",
                         "Sprite",
@@ -8227,7 +8312,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 551,
+                    "rowIndex": 557,
                     "strings": [
                         "",
                         "Sprite",
@@ -8243,7 +8328,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 552,
+                    "rowIndex": 558,
                     "strings": [
                         "",
                         "Sprite",
@@ -8259,7 +8344,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 553,
+                    "rowIndex": 559,
                     "strings": [
                         "",
                         "Tween",
@@ -8275,7 +8360,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 554,
+                    "rowIndex": 560,
                     "strings": [
                         "",
                         "Tween",
@@ -8291,7 +8376,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 555,
+                    "rowIndex": 561,
                     "strings": [
                         "",
                         "Tween",
@@ -8307,7 +8392,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 556,
+                    "rowIndex": 562,
                     "strings": [
                         "",
                         "Tween",
@@ -8323,7 +8408,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 557,
+                    "rowIndex": 563,
                     "strings": [
                         "",
                         "Tween",
@@ -8339,7 +8424,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 558,
+                    "rowIndex": 564,
                     "strings": [
                         "",
                         "Tween",
@@ -8355,7 +8440,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 559,
+                    "rowIndex": 565,
                     "strings": [
                         "",
                         "Tween",
@@ -8371,7 +8456,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 560,
+                    "rowIndex": 566,
                     "strings": [
                         "",
                         "Tween",
@@ -8387,7 +8472,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 561,
+                    "rowIndex": 567,
                     "strings": [
                         "",
                         "Tween",
@@ -8403,7 +8488,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 562,
+                    "rowIndex": 568,
                     "strings": [
                         "",
                         "Tween",
@@ -8419,7 +8504,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 563,
+                    "rowIndex": 569,
                     "strings": [
                         "",
                         "Tween",
@@ -8435,7 +8520,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 564,
+                    "rowIndex": 570,
                     "strings": [
                         "",
                         "Tween",
@@ -8451,7 +8536,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 565,
+                    "rowIndex": 571,
                     "strings": [
                         "",
                         "Tween",
@@ -8467,7 +8552,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 566,
+                    "rowIndex": 572,
                     "strings": [
                         "",
                         "Tween",
@@ -8483,7 +8568,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 567,
+                    "rowIndex": 573,
                     "strings": [
                         "",
                         "Tween",
@@ -8499,7 +8584,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 568,
+                    "rowIndex": 574,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8509,7 +8594,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 569,
+                    "rowIndex": 575,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8519,7 +8604,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 570,
+                    "rowIndex": 576,
                     "strings": [
                         "",
                         "FadeIn",
@@ -8535,7 +8620,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 571,
+                    "rowIndex": 577,
                     "strings": [
                         "",
                         "",
@@ -8552,7 +8637,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 572,
+                    "rowIndex": 578,
                     "strings": [
                         "",
                         "Tween",
@@ -8564,7 +8649,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 573,
+                    "rowIndex": 579,
                     "strings": [
                         "",
                         "Tween",
@@ -8576,7 +8661,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 574,
+                    "rowIndex": 580,
                     "strings": [
                         "",
                         "Wait",
@@ -8591,7 +8676,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 575,
+                    "rowIndex": 581,
                     "strings": [
                         "",
                         "ImageEffectOff",
@@ -8606,7 +8691,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 576,
+                    "rowIndex": 582,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8622,7 +8707,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 577,
+                    "rowIndex": 583,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8638,7 +8723,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 578,
+                    "rowIndex": 584,
                     "strings": [
                         "",
                         "Set",
@@ -8650,7 +8735,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 579,
+                    "rowIndex": 585,
                     "strings": [
                         "",
                         "Bgm",
@@ -8666,7 +8751,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 580,
+                    "rowIndex": 586,
                     "strings": [
                         "",
                         "",
@@ -8683,7 +8768,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 581,
+                    "rowIndex": 587,
                     "strings": [
                         "",
                         "",
@@ -8700,7 +8785,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 582,
+                    "rowIndex": 588,
                     "strings": [
                         "",
                         "",
@@ -8717,7 +8802,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 583,
+                    "rowIndex": 589,
                     "strings": [
                         "",
                         "",
@@ -8734,7 +8819,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 584,
+                    "rowIndex": 590,
                     "strings": [
                         "",
                         "Sprite",
@@ -8746,7 +8831,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 585,
+                    "rowIndex": 591,
                     "strings": [
                         "",
                         "Set",
@@ -8758,7 +8843,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 586,
+                    "rowIndex": 592,
                     "strings": [
                         "",
                         "Set",
@@ -8770,7 +8855,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 587,
+                    "rowIndex": 593,
                     "strings": [
                         "",
                         "Set",
@@ -8783,7 +8868,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 588,
+                    "rowIndex": 594,
                     "strings": [
                         "",
                         "Tween",
@@ -8795,7 +8880,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 589,
+                    "rowIndex": 595,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8811,7 +8896,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 590,
+                    "rowIndex": 596,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8827,7 +8912,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 591,
+                    "rowIndex": 597,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8843,7 +8928,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 592,
+                    "rowIndex": 598,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8859,7 +8944,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 593,
+                    "rowIndex": 599,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8875,7 +8960,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 594,
+                    "rowIndex": 600,
                     "strings": [
                         "",
                         "",
@@ -8892,7 +8977,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 595,
+                    "rowIndex": 601,
                     "strings": [
                         "",
                         "Bg",
@@ -8904,7 +8989,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 596,
+                    "rowIndex": 602,
                     "strings": [
                         "",
                         "Tween",
@@ -8916,7 +9001,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 597,
+                    "rowIndex": 603,
                     "strings": [
                         "",
                         "Tween",
@@ -8928,7 +9013,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 598,
+                    "rowIndex": 604,
                     "strings": [
                         "",
                         "",
@@ -8945,7 +9030,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 599,
+                    "rowIndex": 605,
                     "strings": [
                         "",
                         "",
@@ -8962,7 +9047,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 600,
+                    "rowIndex": 606,
                     "strings": [
                         "",
                         "StopSound",
@@ -8972,7 +9057,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 601,
+                    "rowIndex": 607,
                     "strings": [
                         "",
                         "",
@@ -8989,7 +9074,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 602,
+                    "rowIndex": 608,
                     "strings": [
                         "",
                         "Se",
@@ -8999,7 +9084,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 603,
+                    "rowIndex": 609,
                     "strings": [
                         "",
                         "",
@@ -9020,7 +9105,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 604,
+                    "rowIndex": 610,
                     "strings": [
                         "",
                         "",
@@ -9043,7 +9128,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 605,
+                    "rowIndex": 611,
                     "strings": [
                         "",
                         "Se",
@@ -9053,7 +9138,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 606,
+                    "rowIndex": 612,
                     "strings": [
                         "",
                         "Tween",
@@ -9065,7 +9150,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 607,
+                    "rowIndex": 613,
                     "strings": [
                         "",
                         "Sprite",
@@ -9075,7 +9160,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 608,
+                    "rowIndex": 614,
                     "strings": [
                         "",
                         "Set",
@@ -9087,7 +9172,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 609,
+                    "rowIndex": 615,
                     "strings": [
                         "",
                         "Set",
@@ -9101,7 +9186,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 610,
+                    "rowIndex": 616,
                     "strings": [
                         "",
                         "Set",
@@ -9114,7 +9199,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 611,
+                    "rowIndex": 617,
                     "strings": [
                         "",
                         "Set",
@@ -9126,7 +9211,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 612,
+                    "rowIndex": 618,
                     "strings": [
                         "",
                         "Sprite",
@@ -9136,7 +9221,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 613,
+                    "rowIndex": 619,
                     "strings": [
                         "",
                         "Set",
@@ -9148,7 +9233,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 614,
+                    "rowIndex": 620,
                     "strings": [
                         "",
                         "Set",
@@ -9162,7 +9247,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 615,
+                    "rowIndex": 621,
                     "strings": [
                         "",
                         "Set",
@@ -9175,7 +9260,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 616,
+                    "rowIndex": 622,
                     "strings": [
                         "",
                         "Set",
@@ -9187,7 +9272,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 617,
+                    "rowIndex": 623,
                     "strings": [
                         "",
                         "",
@@ -9204,7 +9289,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 618,
+                    "rowIndex": 624,
                     "strings": [
                         "",
                         "Tween",
@@ -9220,7 +9305,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 619,
+                    "rowIndex": 625,
                     "strings": [
                         "",
                         "Tween",
@@ -9236,7 +9321,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 620,
+                    "rowIndex": 626,
                     "strings": [
                         "",
                         "Tween",
@@ -9252,7 +9337,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 621,
+                    "rowIndex": 627,
                     "strings": [
                         "",
                         "Tween",
@@ -9268,7 +9353,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 622,
+                    "rowIndex": 628,
                     "strings": [
                         "",
                         "",
@@ -9291,7 +9376,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 623,
+                    "rowIndex": 629,
                     "strings": [
                         "",
                         "Se",
@@ -9301,7 +9386,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 624,
+                    "rowIndex": 630,
                     "strings": [
                         "",
                         "Tween",
@@ -9317,7 +9402,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 625,
+                    "rowIndex": 631,
                     "strings": [
                         "",
                         "Tween",
@@ -9333,7 +9418,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 626,
+                    "rowIndex": 632,
                     "strings": [
                         "",
                         "Tween",
@@ -9349,7 +9434,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 627,
+                    "rowIndex": 633,
                     "strings": [
                         "",
                         "Tween",
@@ -9365,7 +9450,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 628,
+                    "rowIndex": 634,
                     "strings": [
                         "",
                         "Tween",
@@ -9381,7 +9466,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 629,
+                    "rowIndex": 635,
                     "strings": [
                         "",
                         "Tween",
@@ -9397,7 +9482,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 630,
+                    "rowIndex": 636,
                     "strings": [
                         "",
                         "Tween",
@@ -9413,7 +9498,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 631,
+                    "rowIndex": 637,
                     "strings": [
                         "",
                         "Tween",
@@ -9429,7 +9514,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 632,
+                    "rowIndex": 638,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -9439,7 +9524,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 633,
+                    "rowIndex": 639,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -9449,7 +9534,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 634,
+                    "rowIndex": 640,
                     "strings": [
                         "",
                         "Wait",
@@ -9464,7 +9549,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 635,
+                    "rowIndex": 641,
                     "strings": [
                         "",
                         "Tween",
@@ -9480,7 +9565,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 636,
+                    "rowIndex": 642,
                     "strings": [
                         "",
                         "",
@@ -9497,7 +9582,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 637,
+                    "rowIndex": 643,
                     "strings": [
                         "",
                         "Tween",
@@ -9513,7 +9598,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 638,
+                    "rowIndex": 644,
                     "strings": [
                         "",
                         "Tween",
@@ -9529,7 +9614,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 639,
+                    "rowIndex": 645,
                     "strings": [
                         "",
                         "Tween",
@@ -9545,7 +9630,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 640,
+                    "rowIndex": 646,
                     "strings": [
                         "",
                         "",
@@ -9562,7 +9647,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 641,
+                    "rowIndex": 647,
                     "strings": [
                         "",
                         "Sprite",
@@ -9574,7 +9659,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 642,
+                    "rowIndex": 648,
                     "strings": [
                         "",
                         "Tween",
@@ -9586,7 +9671,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 643,
+                    "rowIndex": 649,
                     "strings": [
                         "",
                         "Tween",
@@ -9598,7 +9683,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 644,
+                    "rowIndex": 650,
                     "strings": [
                         "",
                         "Tween",
@@ -9610,7 +9695,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 645,
+                    "rowIndex": 651,
                     "strings": [
                         "",
                         "Tween",
@@ -9622,7 +9707,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 646,
+                    "rowIndex": 652,
                     "strings": [
                         "",
                         "Wait",
@@ -9637,7 +9722,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 647,
+                    "rowIndex": 653,
                     "strings": [
                         "",
                         "Bg",
@@ -9649,7 +9734,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 648,
+                    "rowIndex": 654,
                     "strings": [
                         "",
                         "Tween",
@@ -9661,7 +9746,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 649,
+                    "rowIndex": 655,
                     "strings": [
                         "",
                         "Tween",
@@ -9673,7 +9758,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 650,
+                    "rowIndex": 656,
                     "strings": [
                         "",
                         "Wait",
@@ -9688,7 +9773,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 651,
+                    "rowIndex": 657,
                     "strings": [
                         "",
                         "Tween",
@@ -9704,7 +9789,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 652,
+                    "rowIndex": 658,
                     "strings": [
                         "",
                         "Tween",
@@ -9720,7 +9805,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 653,
+                    "rowIndex": 659,
                     "strings": [
                         "",
                         "",
@@ -9737,7 +9822,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 654,
+                    "rowIndex": 660,
                     "strings": [
                         "",
                         "Bgm",
@@ -9747,7 +9832,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 655,
+                    "rowIndex": 661,
                     "strings": [
                         "",
                         "Sprite",
@@ -9757,7 +9842,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 656,
+                    "rowIndex": 662,
                     "strings": [
                         "",
                         "Sprite",
@@ -9767,7 +9852,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 657,
+                    "rowIndex": 663,
                     "strings": [
                         "",
                         "Set",
@@ -9779,7 +9864,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 658,
+                    "rowIndex": 664,
                     "strings": [
                         "",
                         "Set",
@@ -9792,7 +9877,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 659,
+                    "rowIndex": 665,
                     "strings": [
                         "",
                         "Set",
@@ -9805,7 +9890,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 660,
+                    "rowIndex": 666,
                     "strings": [
                         "",
                         "Set",
@@ -9817,7 +9902,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 661,
+                    "rowIndex": 667,
                     "strings": [
                         "",
                         "Set",
@@ -9830,7 +9915,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 662,
+                    "rowIndex": 668,
                     "strings": [
                         "",
                         "Set",
@@ -9843,7 +9928,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 663,
+                    "rowIndex": 669,
                     "strings": [
                         "",
                         "Tween",
@@ -9859,7 +9944,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 664,
+                    "rowIndex": 670,
                     "strings": [
                         "",
                         "Tween",
@@ -9875,7 +9960,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 665,
+                    "rowIndex": 671,
                     "strings": [
                         "",
                         "",
@@ -9896,7 +9981,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 666,
+                    "rowIndex": 672,
                     "strings": [
                         "",
                         "Tween",
@@ -9908,7 +9993,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 667,
+                    "rowIndex": 673,
                     "strings": [
                         "",
                         "Tween",
@@ -9920,7 +10005,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 668,
+                    "rowIndex": 674,
                     "strings": [
                         "",
                         "",
@@ -9937,7 +10022,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 669,
+                    "rowIndex": 675,
                     "strings": [
                         "",
                         "",
@@ -9948,7 +10033,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 670,
+                    "rowIndex": 676,
                     "strings": [
                         "",
                         "",
@@ -9959,7 +10044,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 671,
+                    "rowIndex": 677,
                     "strings": [
                         "",
                         "",
@@ -9976,7 +10061,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 672,
+                    "rowIndex": 678,
                     "strings": [
                         "",
                         "",
@@ -9988,7 +10073,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 673,
+                    "rowIndex": 679,
                     "strings": [
                         "",
                         "Se",
@@ -9998,7 +10083,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 674,
+                    "rowIndex": 680,
                     "strings": [
                         "",
                         "Sprite",
@@ -10014,13 +10099,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 675,
+                    "rowIndex": 681,
                     "strings": [
                         "",
-                        "Tween",
+                        "Set",
                         "四角_レーザー01",
-                        "ColorTo",
-                        "time=0 color=red alpha=0.8",
+                        "Color",
+                        "#FF000090",
                         "",
                         "",
                         "",
@@ -10030,14 +10115,30 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 676,
+                    "rowIndex": 682,
                     "strings": [
                         "",
-                        "Tween",
+                        "Set",
                         "四角_レーザー01",
-                        "RotateTo",
-                        "time=0 z=30",
+                        "Rotate",
                         "",
+                        "",
+                        "30",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 683,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_レーザー01",
+                        "Scale",
+                        "0.1",
+                        "20",
                         "",
                         "",
                         "Add"
@@ -10046,14 +10147,14 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 677,
+                    "rowIndex": 684,
                     "strings": [
                         "",
-                        "Tween",
+                        "Set",
                         "四角_レーザー01",
-                        "ScaleTo",
-                        "time=0 x=0.1 y=20",
-                        "",
+                        "Move",
+                        "300",
+                        "-200",
                         "",
                         "",
                         "Add"
@@ -10062,23 +10163,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 678,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "四角_レーザー01",
-                        "MoveTo",
-                        "time=0 x=300 y=-200",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 679,
+                    "rowIndex": 685,
                     "strings": [
                         "",
                         "Tween",
@@ -10090,7 +10175,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 680,
+                    "rowIndex": 686,
                     "strings": [
                         "",
                         "Tween",
@@ -10102,7 +10187,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 681,
+                    "rowIndex": 687,
                     "strings": [
                         "",
                         "Se",
@@ -10112,7 +10197,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 682,
+                    "rowIndex": 688,
                     "strings": [
                         "",
                         "",
@@ -10129,7 +10214,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 683,
+                    "rowIndex": 689,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -10139,7 +10224,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 684,
+                    "rowIndex": 690,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -10149,7 +10234,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 685,
+                    "rowIndex": 691,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -10170,7 +10255,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 686,
+                    "rowIndex": 692,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -10191,7 +10276,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 687,
+                    "rowIndex": 693,
                     "strings": [
                         "",
                         "Tween",
@@ -10203,7 +10288,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 688,
+                    "rowIndex": 694,
                     "strings": [
                         "",
                         "Tween",
@@ -10215,7 +10300,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 689,
+                    "rowIndex": 695,
                     "strings": [
                         "",
                         "Tween",
@@ -10227,7 +10312,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 690,
+                    "rowIndex": 696,
                     "strings": [
                         "",
                         "Shake",
@@ -10239,7 +10324,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 691,
+                    "rowIndex": 697,
                     "strings": [
                         "",
                         "",
@@ -10256,7 +10341,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 692,
+                    "rowIndex": 698,
                     "strings": [
                         "",
                         "",
@@ -10277,7 +10362,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 693,
+                    "rowIndex": 699,
                     "strings": [
                         "",
                         "Set",
@@ -10290,7 +10375,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 694,
+                    "rowIndex": 700,
                     "strings": [
                         "",
                         "Set",
@@ -10303,7 +10388,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 695,
+                    "rowIndex": 701,
                     "strings": [
                         "",
                         "Tween",
@@ -10319,7 +10404,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 696,
+                    "rowIndex": 702,
                     "strings": [
                         "",
                         "Tween",
@@ -10335,7 +10420,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 697,
+                    "rowIndex": 703,
                     "strings": [
                         "",
                         "",
@@ -10354,7 +10439,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 698,
+                    "rowIndex": 704,
                     "strings": [
                         "",
                         "",
@@ -10371,7 +10456,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 699,
+                    "rowIndex": 705,
                     "strings": [
                         "",
                         "",
@@ -10390,7 +10475,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 700,
+                    "rowIndex": 706,
                     "strings": [
                         "",
                         "Tween",
@@ -10406,7 +10491,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 701,
+                    "rowIndex": 707,
                     "strings": [
                         "",
                         "Tween",
@@ -10422,7 +10507,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 702,
+                    "rowIndex": 708,
                     "strings": [
                         "",
                         "Sprite",
@@ -10438,7 +10523,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 703,
+                    "rowIndex": 709,
                     "strings": [
                         "",
                         "Sprite",
@@ -10454,7 +10539,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 704,
+                    "rowIndex": 710,
                     "strings": [
                         "",
                         "Tween",
@@ -10470,7 +10555,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 705,
+                    "rowIndex": 711,
                     "strings": [
                         "",
                         "Tween",
@@ -10486,7 +10571,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 706,
+                    "rowIndex": 712,
                     "strings": [
                         "",
                         "Tween",
@@ -10502,7 +10587,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 707,
+                    "rowIndex": 713,
                     "strings": [
                         "",
                         "Tween",
@@ -10518,7 +10603,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 708,
+                    "rowIndex": 714,
                     "strings": [
                         "",
                         "Tween",
@@ -10534,7 +10619,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 709,
+                    "rowIndex": 715,
                     "strings": [
                         "",
                         "Tween",
@@ -10550,7 +10635,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 710,
+                    "rowIndex": 716,
                     "strings": [
                         "",
                         "Tween",
@@ -10566,7 +10651,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 711,
+                    "rowIndex": 717,
                     "strings": [
                         "",
                         "Tween",
@@ -10582,7 +10667,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 712,
+                    "rowIndex": 718,
                     "strings": [
                         "",
                         "Wait",
@@ -10597,7 +10682,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 713,
+                    "rowIndex": 719,
                     "strings": [
                         "",
                         "",
@@ -10618,7 +10703,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 714,
+                    "rowIndex": 720,
                     "strings": [
                         "",
                         "Tween",
@@ -10630,7 +10715,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 715,
+                    "rowIndex": 721,
                     "strings": [
                         "",
                         "",
@@ -10653,7 +10738,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 716,
+                    "rowIndex": 722,
                     "strings": [
                         "",
                         "Se",
@@ -10663,7 +10748,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 717,
+                    "rowIndex": 723,
                     "strings": [
                         "",
                         "Sprite",
@@ -10679,7 +10764,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 718,
+                    "rowIndex": 724,
                     "strings": [
                         "",
                         "Tween",
@@ -10695,7 +10780,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 719,
+                    "rowIndex": 725,
                     "strings": [
                         "",
                         "Tween",
@@ -10711,7 +10796,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 720,
+                    "rowIndex": 726,
                     "strings": [
                         "",
                         "Tween",
@@ -10727,7 +10812,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 721,
+                    "rowIndex": 727,
                     "strings": [
                         "",
                         "Tween",
@@ -10743,7 +10828,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 722,
+                    "rowIndex": 728,
                     "strings": [
                         "",
                         "Tween",
@@ -10755,7 +10840,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 723,
+                    "rowIndex": 729,
                     "strings": [
                         "",
                         "Tween",
@@ -10767,7 +10852,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 724,
+                    "rowIndex": 730,
                     "strings": [
                         "",
                         "",
@@ -10784,7 +10869,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 725,
+                    "rowIndex": 731,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -10805,7 +10890,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 726,
+                    "rowIndex": 732,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -10826,7 +10911,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 727,
+                    "rowIndex": 733,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -10836,7 +10921,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 728,
+                    "rowIndex": 734,
                     "strings": [
                         "",
                         "Tween",
@@ -10848,7 +10933,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 729,
+                    "rowIndex": 735,
                     "strings": [
                         "",
                         "Tween",
@@ -10860,7 +10945,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 730,
+                    "rowIndex": 736,
                     "strings": [
                         "",
                         "",
@@ -10877,7 +10962,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 731,
+                    "rowIndex": 737,
                     "strings": [
                         "",
                         "",
@@ -10894,7 +10979,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 732,
+                    "rowIndex": 738,
                     "strings": [
                         "",
                         "Tween",
@@ -10910,7 +10995,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 733,
+                    "rowIndex": 739,
                     "strings": [
                         "",
                         "Tween",
@@ -10926,7 +11011,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 734,
+                    "rowIndex": 740,
                     "strings": [
                         "",
                         "Tween",
@@ -10942,7 +11027,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 735,
+                    "rowIndex": 741,
                     "strings": [
                         "",
                         "Tween",
@@ -10958,7 +11043,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 736,
+                    "rowIndex": 742,
                     "strings": [
                         "",
                         "Wait",
@@ -10973,7 +11058,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 737,
+                    "rowIndex": 743,
                     "strings": [
                         "",
                         "",
@@ -10994,7 +11079,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 738,
+                    "rowIndex": 744,
                     "strings": [
                         "",
                         "",
@@ -11015,7 +11100,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 739,
+                    "rowIndex": 745,
                     "strings": [
                         "",
                         "Tween",
@@ -11031,7 +11116,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 740,
+                    "rowIndex": 746,
                     "strings": [
                         "",
                         "Tween",
@@ -11047,7 +11132,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 741,
+                    "rowIndex": 747,
                     "strings": [
                         "",
                         "",
@@ -11066,7 +11151,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 742,
+                    "rowIndex": 748,
                     "strings": [
                         "",
                         "Tween",
@@ -11082,7 +11167,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 743,
+                    "rowIndex": 749,
                     "strings": [
                         "",
                         "Tween",
@@ -11098,7 +11183,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 744,
+                    "rowIndex": 750,
                     "strings": [
                         "",
                         "Tween",
@@ -11114,7 +11199,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 745,
+                    "rowIndex": 751,
                     "strings": [
                         "",
                         "Tween",
@@ -11130,7 +11215,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 746,
+                    "rowIndex": 752,
                     "strings": [
                         "",
                         "Tween",
@@ -11146,7 +11231,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 747,
+                    "rowIndex": 753,
                     "strings": [
                         "",
                         "Tween",
@@ -11162,7 +11247,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 748,
+                    "rowIndex": 754,
                     "strings": [
                         "",
                         "Se",
@@ -11178,7 +11263,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 749,
+                    "rowIndex": 755,
                     "strings": [
                         "",
                         "",
@@ -11195,7 +11280,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 750,
+                    "rowIndex": 756,
                     "strings": [
                         "",
                         "",
@@ -11214,7 +11299,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 751,
+                    "rowIndex": 757,
                     "strings": [
                         "",
                         "",
@@ -11231,7 +11316,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 752,
+                    "rowIndex": 758,
                     "strings": [
                         "",
                         "Sprite",
@@ -11247,7 +11332,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 753,
+                    "rowIndex": 759,
                     "strings": [
                         "",
                         "Tween",
@@ -11263,7 +11348,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 754,
+                    "rowIndex": 760,
                     "strings": [
                         "",
                         "Tween",
@@ -11279,7 +11364,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 755,
+                    "rowIndex": 761,
                     "strings": [
                         "",
                         "Tween",
@@ -11295,7 +11380,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 756,
+                    "rowIndex": 762,
                     "strings": [
                         "",
                         "Se",
@@ -11305,7 +11390,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 757,
+                    "rowIndex": 763,
                     "strings": [
                         "",
                         "",
@@ -11322,7 +11407,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 758,
+                    "rowIndex": 764,
                     "strings": [
                         "",
                         "StopSound",
@@ -11332,7 +11417,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 759,
+                    "rowIndex": 765,
                     "strings": [
                         "",
                         "Tween",
@@ -11348,7 +11433,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 760,
+                    "rowIndex": 766,
                     "strings": [
                         "",
                         "Tween",
@@ -11364,7 +11449,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 761,
+                    "rowIndex": 767,
                     "strings": [
                         "",
                         "",
@@ -11381,7 +11466,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 762,
+                    "rowIndex": 768,
                     "strings": [
                         "",
                         "Se",
@@ -11391,7 +11476,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 763,
+                    "rowIndex": 769,
                     "strings": [
                         "",
                         "",
@@ -11412,7 +11497,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 764,
+                    "rowIndex": 770,
                     "strings": [
                         "",
                         "Tween",
@@ -11428,7 +11513,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 765,
+                    "rowIndex": 771,
                     "strings": [
                         "",
                         "Tween",
@@ -11444,7 +11529,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 766,
+                    "rowIndex": 772,
                     "strings": [
                         "",
                         "Tween",
@@ -11460,7 +11545,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 767,
+                    "rowIndex": 773,
                     "strings": [
                         "",
                         "Wait",
@@ -11475,7 +11560,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 768,
+                    "rowIndex": 774,
                     "strings": [
                         "",
                         "Tween",
@@ -11491,7 +11576,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 769,
+                    "rowIndex": 775,
                     "strings": [
                         "",
                         "Tween",
@@ -11503,7 +11588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 770,
+                    "rowIndex": 776,
                     "strings": [
                         "",
                         "",
@@ -11520,7 +11605,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 771,
+                    "rowIndex": 777,
                     "strings": [
                         "",
                         "",
@@ -11541,7 +11626,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 772,
+                    "rowIndex": 778,
                     "strings": [
                         "",
                         "Tween",
@@ -11553,7 +11638,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 773,
+                    "rowIndex": 779,
                     "strings": [
                         "",
                         "Tween",
@@ -11565,7 +11650,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 774,
+                    "rowIndex": 780,
                     "strings": [
                         "",
                         "",
@@ -11582,7 +11667,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 775,
+                    "rowIndex": 781,
                     "strings": [
                         "",
                         "",
@@ -11593,7 +11678,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 776,
+                    "rowIndex": 782,
                     "strings": [
                         "",
                         "Se",
@@ -11603,7 +11688,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 777,
+                    "rowIndex": 783,
                     "strings": [
                         "",
                         "",
@@ -11626,7 +11711,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 778,
+                    "rowIndex": 784,
                     "strings": [
                         "",
                         "Bgm",
@@ -11636,7 +11721,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 779,
+                    "rowIndex": 785,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -11657,7 +11742,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 780,
+                    "rowIndex": 786,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -11678,7 +11763,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 781,
+                    "rowIndex": 787,
                     "strings": [
                         "",
                         "Sprite",
@@ -11694,7 +11779,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 782,
+                    "rowIndex": 788,
                     "strings": [
                         "",
                         "Sprite",
@@ -11710,7 +11795,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 783,
+                    "rowIndex": 789,
                     "strings": [
                         "",
                         "Tween",
@@ -11726,7 +11811,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 784,
+                    "rowIndex": 790,
                     "strings": [
                         "",
                         "Tween",
@@ -11742,7 +11827,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 785,
+                    "rowIndex": 791,
                     "strings": [
                         "",
                         "Tween",
@@ -11758,7 +11843,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 786,
+                    "rowIndex": 792,
                     "strings": [
                         "",
                         "Tween",
@@ -11774,7 +11859,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 787,
+                    "rowIndex": 793,
                     "strings": [
                         "",
                         "Tween",
@@ -11790,7 +11875,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 788,
+                    "rowIndex": 794,
                     "strings": [
                         "",
                         "Tween",
@@ -11806,7 +11891,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 789,
+                    "rowIndex": 795,
                     "strings": [
                         "",
                         "Tween",
@@ -11822,7 +11907,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 790,
+                    "rowIndex": 796,
                     "strings": [
                         "",
                         "Tween",
@@ -11838,7 +11923,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 791,
+                    "rowIndex": 797,
                     "strings": [
                         "",
                         "Tween",
@@ -11854,7 +11939,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 792,
+                    "rowIndex": 798,
                     "strings": [
                         "",
                         "Wait",
@@ -11869,7 +11954,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 793,
+                    "rowIndex": 799,
                     "strings": [
                         "",
                         "Se",
@@ -11879,7 +11964,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 794,
+                    "rowIndex": 800,
                     "strings": [
                         "",
                         "",
@@ -11900,7 +11985,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 795,
+                    "rowIndex": 801,
                     "strings": [
                         "",
                         "",
@@ -11921,7 +12006,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 796,
+                    "rowIndex": 802,
                     "strings": [
                         "",
                         "",
@@ -11942,7 +12027,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 797,
+                    "rowIndex": 803,
                     "strings": [
                         "",
                         "",
@@ -11963,103 +12048,103 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 798,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "ColorTo",
-                        "time=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 799,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "ScaleTo",
-                        "time=0 y=0.1 x=0.1",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 800,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン2",
-                        "ColorTo",
-                        "time=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 801,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン2",
-                        "ScaleTo",
-                        "time=0 y=0.1 x=0.1",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 802,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン3",
-                        "ColorTo",
-                        "time=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 803,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン3",
-                        "ScaleTo",
-                        "time=0 y=0.1 x=0.1",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 804,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 805,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "ScaleTo",
+                        "time=0 y=0.1 x=0.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 806,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン2",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 807,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン2",
+                        "ScaleTo",
+                        "time=0 y=0.1 x=0.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 808,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン3",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 809,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン3",
+                        "ScaleTo",
+                        "time=0 y=0.1 x=0.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 810,
                     "strings": [
                         "",
                         "Wait",
@@ -12074,7 +12159,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 805,
+                    "rowIndex": 811,
                     "strings": [
                         "",
                         "Tween",
@@ -12090,7 +12175,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 806,
+                    "rowIndex": 812,
                     "strings": [
                         "",
                         "Tween",
@@ -12106,7 +12191,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 807,
+                    "rowIndex": 813,
                     "strings": [
                         "",
                         "Tween",
@@ -12122,7 +12207,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 808,
+                    "rowIndex": 814,
                     "strings": [
                         "",
                         "Tween",
@@ -12138,7 +12223,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 809,
+                    "rowIndex": 815,
                     "strings": [
                         "",
                         "Tween",
@@ -12154,7 +12239,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 810,
+                    "rowIndex": 816,
                     "strings": [
                         "",
                         "Tween",
@@ -12170,7 +12255,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 811,
+                    "rowIndex": 817,
                     "strings": [
                         "",
                         "",
@@ -12187,7 +12272,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 812,
+                    "rowIndex": 818,
                     "strings": [
                         "",
                         "Tween",
@@ -12203,7 +12288,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 813,
+                    "rowIndex": 819,
                     "strings": [
                         "",
                         "Tween",
@@ -12219,7 +12304,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 814,
+                    "rowIndex": 820,
                     "strings": [
                         "",
                         "Tween",
@@ -12235,7 +12320,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 815,
+                    "rowIndex": 821,
                     "strings": [
                         "",
                         "Tween",
@@ -12251,7 +12336,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 816,
+                    "rowIndex": 822,
                     "strings": [
                         "",
                         "Tween",
@@ -12267,7 +12352,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 817,
+                    "rowIndex": 823,
                     "strings": [
                         "",
                         "Tween",
@@ -12283,7 +12368,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 818,
+                    "rowIndex": 824,
                     "strings": [
                         "",
                         "Tween",
@@ -12299,7 +12384,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 819,
+                    "rowIndex": 825,
                     "strings": [
                         "",
                         "Tween",
@@ -12315,7 +12400,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 820,
+                    "rowIndex": 826,
                     "strings": [
                         "",
                         "Wait",
@@ -12330,7 +12415,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 821,
+                    "rowIndex": 827,
                     "strings": [
                         "",
                         "Tween",
@@ -12346,7 +12431,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 822,
+                    "rowIndex": 828,
                     "strings": [
                         "",
                         "Tween",
@@ -12362,7 +12447,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 823,
+                    "rowIndex": 829,
                     "strings": [
                         "",
                         "Wait",
@@ -12377,103 +12462,103 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 824,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "MoveBy",
-                        "time=0.4 x=100 y=150",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 825,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン(触手無し)",
-                        "MoveBy",
-                        "time=0.4 x=100 y=150",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 826,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "ColorTo",
-                        "time=0.4 alpha=0",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 827,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン(触手無し)",
-                        "ColorTo",
-                        "time=0.4 alpha=0",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 828,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "ScaleTo",
-                        "time=0.4 x=1.2 y=1.2",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 829,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン(触手無し)",
-                        "ScaleTo",
-                        "time=0.4 x=1.2 y=1.2",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 830,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "MoveBy",
+                        "time=0.4 x=100 y=150",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 831,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン(触手無し)",
+                        "MoveBy",
+                        "time=0.4 x=100 y=150",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 832,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "ColorTo",
+                        "time=0.4 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 833,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン(触手無し)",
+                        "ColorTo",
+                        "time=0.4 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 834,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "ScaleTo",
+                        "time=0.4 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 835,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン(触手無し)",
+                        "ScaleTo",
+                        "time=0.4 x=1.2 y=1.2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 836,
                     "strings": [
                         "",
                         "Tween",
@@ -12489,7 +12574,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 831,
+                    "rowIndex": 837,
                     "strings": [
                         "",
                         "Tween",
@@ -12505,7 +12590,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 832,
+                    "rowIndex": 838,
                     "strings": [
                         "",
                         "Wait",
@@ -12520,7 +12605,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 833,
+                    "rowIndex": 839,
                     "strings": [
                         "",
                         "Tween",
@@ -12536,7 +12621,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 834,
+                    "rowIndex": 840,
                     "strings": [
                         "",
                         "Wait",
@@ -12551,7 +12636,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 835,
+                    "rowIndex": 841,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12572,7 +12657,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 836,
+                    "rowIndex": 842,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12593,7 +12678,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 837,
+                    "rowIndex": 843,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12614,7 +12699,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 838,
+                    "rowIndex": 844,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12635,7 +12720,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 839,
+                    "rowIndex": 845,
                     "strings": [
                         "",
                         "Tween",
@@ -12651,7 +12736,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 840,
+                    "rowIndex": 846,
                     "strings": [
                         "",
                         "Tween",
@@ -12667,7 +12752,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 841,
+                    "rowIndex": 847,
                     "strings": [
                         "",
                         "Tween",
@@ -12683,7 +12768,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 842,
+                    "rowIndex": 848,
                     "strings": [
                         "",
                         "Tween",
@@ -12699,7 +12784,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 843,
+                    "rowIndex": 849,
                     "strings": [
                         "",
                         "Tween",
@@ -12715,7 +12800,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 844,
+                    "rowIndex": 850,
                     "strings": [
                         "",
                         "",
@@ -12736,7 +12821,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 845,
+                    "rowIndex": 851,
                     "strings": [
                         "",
                         "",
@@ -12757,7 +12842,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 846,
+                    "rowIndex": 852,
                     "strings": [
                         "",
                         "",
@@ -12778,7 +12863,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 847,
+                    "rowIndex": 853,
                     "strings": [
                         "",
                         "",
@@ -12799,7 +12884,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 848,
+                    "rowIndex": 854,
                     "strings": [
                         "",
                         "Tween",
@@ -12815,103 +12900,103 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 849,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "ColorTo",
-                        "time=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 850,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "ScaleTo",
-                        "time=0 y=0.1 x=0.1",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 851,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン2",
-                        "ColorTo",
-                        "time=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 852,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン2",
-                        "ScaleTo",
-                        "time=0 y=0.1 x=0.1",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 853,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン3",
-                        "ColorTo",
-                        "time=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 854,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン3",
-                        "ScaleTo",
-                        "time=0 y=0.1 x=0.1",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 855,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 856,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "ScaleTo",
+                        "time=0 y=0.1 x=0.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 857,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン2",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 858,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン2",
+                        "ScaleTo",
+                        "time=0 y=0.1 x=0.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 859,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン3",
+                        "ColorTo",
+                        "time=0 color=black",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 860,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン3",
+                        "ScaleTo",
+                        "time=0 y=0.1 x=0.1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 861,
                     "strings": [
                         "",
                         "Tween",
@@ -12927,7 +13012,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 856,
+                    "rowIndex": 862,
                     "strings": [
                         "",
                         "Tween",
@@ -12943,7 +13028,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 857,
+                    "rowIndex": 863,
                     "strings": [
                         "",
                         "Tween",
@@ -12959,7 +13044,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 858,
+                    "rowIndex": 864,
                     "strings": [
                         "",
                         "Tween",
@@ -12975,7 +13060,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 859,
+                    "rowIndex": 865,
                     "strings": [
                         "",
                         "Se",
@@ -12985,65 +13070,167 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 860,
+                    "rowIndex": 866,
                     "strings": [
                         "",
                         "Sprite",
-                        "斬撃_01"
+                        "斬撃4_01",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 861,
+                    "rowIndex": 867,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "斬撃4_02",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 868,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_02",
                         "ColorTo",
-                        "time=0 alpha=0"
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 862,
+                    "rowIndex": 869,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_02",
                         "ScaleTo",
-                        "time=0 x=0 y=0 z=90"
+                        "time=0 x=0 y=0 z=90",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 863,
+                    "rowIndex": 870,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_02",
                         "MoveTo",
-                        "time=0 x=-100 y=-100"
+                        "time=0 x=-100 y=-100",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 864,
+                    "rowIndex": 871,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_02",
                         "RotateTo",
-                        "time=0 x=0.8 y=0.8 z=0"
+                        "time=0 x=0.8 y=0.8 z=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 865,
+                    "rowIndex": 872,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_01",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 873,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_01",
+                        "ScaleTo",
+                        "time=0 x=0 y=0 z=90",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 874,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_01",
+                        "MoveTo",
+                        "time=0 x=-100 y=-100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 875,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_01",
+                        "RotateTo",
+                        "time=0 x=0.8 y=0.8 z=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 876,
                     "strings": [
                         "",
                         "Wait",
@@ -13059,11 +13246,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 866,
+                    "rowIndex": 877,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_01",
                         "ScaleTo",
                         "time=1 x=4.5 y=3 z=4",
                         "",
@@ -13075,11 +13262,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 867,
+                    "rowIndex": 878,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_01",
                         "ColorTo",
                         "time=1 color=green alpha=0.8",
                         "",
@@ -13091,11 +13278,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 868,
+                    "rowIndex": 879,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_01",
                         "RotateBy",
                         "time=1 x=0 y=0.8 z=-9",
                         "",
@@ -13107,7 +13294,55 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 869,
+                    "rowIndex": 880,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_02",
+                        "ScaleTo",
+                        "time=1 x=4.3 y=2.8 z=3.8",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 881,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_02",
+                        "ColorTo",
+                        "time=1 color=black alpha=0.8",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 882,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_02",
+                        "RotateBy",
+                        "time=1 x=0 y=0.8 z=-9",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 883,
                     "strings": [
                         "",
                         "Se",
@@ -13123,7 +13358,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 870,
+                    "rowIndex": 884,
                     "strings": [
                         "",
                         "Tween",
@@ -13139,7 +13374,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 871,
+                    "rowIndex": 885,
                     "strings": [
                         "",
                         "Tween",
@@ -13155,7 +13390,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 872,
+                    "rowIndex": 886,
                     "strings": [
                         "",
                         "Tween",
@@ -13171,7 +13406,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 873,
+                    "rowIndex": 887,
                     "strings": [
                         "",
                         "Tween",
@@ -13187,7 +13422,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 874,
+                    "rowIndex": 888,
                     "strings": [
                         "",
                         "Tween",
@@ -13203,7 +13438,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 875,
+                    "rowIndex": 889,
                     "strings": [
                         "",
                         "Tween",
@@ -13215,13 +13450,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 876,
+                    "rowIndex": 890,
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃4_01",
                         "ColorTo",
-                        "time=0.8 color=white alpha=0",
+                        "time=0.8 alpha=0",
                         "",
                         "",
                         "",
@@ -13231,7 +13466,23 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 877,
+                    "rowIndex": 891,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_02",
+                        "ColorTo",
+                        "time=0.8 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 892,
                     "strings": [
                         "",
                         "",
@@ -13248,7 +13499,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 878,
+                    "rowIndex": 893,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -13269,7 +13520,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 879,
+                    "rowIndex": 894,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -13290,7 +13541,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 880,
+                    "rowIndex": 895,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -13311,7 +13562,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 881,
+                    "rowIndex": 896,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -13332,7 +13583,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 882,
+                    "rowIndex": 897,
                     "strings": [
                         "",
                         "Tween",
@@ -13344,7 +13595,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 883,
+                    "rowIndex": 898,
                     "strings": [
                         "",
                         "Wait",
@@ -13359,7 +13610,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 884,
+                    "rowIndex": 899,
                     "strings": [
                         "",
                         "",
@@ -13380,7 +13631,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 885,
+                    "rowIndex": 900,
                     "strings": [
                         "",
                         "",
@@ -13397,7 +13648,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 886,
+                    "rowIndex": 901,
                     "strings": [
                         "",
                         "Se",
@@ -13407,7 +13658,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 887,
+                    "rowIndex": 902,
                     "strings": [
                         "",
                         "Sprite",
@@ -13423,7 +13674,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 888,
+                    "rowIndex": 903,
                     "strings": [
                         "",
                         "Tween",
@@ -13439,7 +13690,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 889,
+                    "rowIndex": 904,
                     "strings": [
                         "",
                         "Tween",
@@ -13455,7 +13706,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 890,
+                    "rowIndex": 905,
                     "strings": [
                         "",
                         "Tween",
@@ -13471,7 +13722,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 891,
+                    "rowIndex": 906,
                     "strings": [
                         "",
                         "Tween",
@@ -13487,7 +13738,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 892,
+                    "rowIndex": 907,
                     "strings": [
                         "",
                         "Tween",
@@ -13503,7 +13754,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 893,
+                    "rowIndex": 908,
                     "strings": [
                         "",
                         "",
@@ -13520,7 +13771,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 894,
+                    "rowIndex": 909,
                     "strings": [
                         "",
                         "Sprite",
@@ -13536,7 +13787,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 895,
+                    "rowIndex": 910,
                     "strings": [
                         "",
                         "Tween",
@@ -13552,7 +13803,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 896,
+                    "rowIndex": 911,
                     "strings": [
                         "",
                         "Tween",
@@ -13568,7 +13819,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 897,
+                    "rowIndex": 912,
                     "strings": [
                         "",
                         "Tween",
@@ -13584,7 +13835,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 898,
+                    "rowIndex": 913,
                     "strings": [
                         "",
                         "Tween",
@@ -13600,7 +13851,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 899,
+                    "rowIndex": 914,
                     "strings": [
                         "",
                         "Tween",
@@ -13616,7 +13867,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 900,
+                    "rowIndex": 915,
                     "strings": [
                         "",
                         "",
@@ -13633,7 +13884,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 901,
+                    "rowIndex": 916,
                     "strings": [
                         "",
                         "Tween",
@@ -13645,7 +13896,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 902,
+                    "rowIndex": 917,
                     "strings": [
                         "",
                         "Tween",
@@ -13657,7 +13908,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 903,
+                    "rowIndex": 918,
                     "strings": [
                         "",
                         "Wait",
@@ -13672,7 +13923,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 904,
+                    "rowIndex": 919,
                     "strings": [
                         "",
                         "Tween",
@@ -13684,7 +13935,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 905,
+                    "rowIndex": 920,
                     "strings": [
                         "",
                         "Wait",
@@ -13699,7 +13950,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 906,
+                    "rowIndex": 921,
                     "strings": [
                         "",
                         "",
@@ -13720,7 +13971,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 907,
+                    "rowIndex": 922,
                     "strings": [
                         "",
                         "Set",
@@ -13733,7 +13984,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 908,
+                    "rowIndex": 923,
                     "strings": [
                         "",
                         "Set",
@@ -13746,7 +13997,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 909,
+                    "rowIndex": 924,
                     "strings": [
                         "",
                         "",
@@ -13765,7 +14016,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 910,
+                    "rowIndex": 925,
                     "strings": [
                         "",
                         "",
@@ -13782,7 +14033,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 911,
+                    "rowIndex": 926,
                     "strings": [
                         "",
                         "",
@@ -13793,7 +14044,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 912,
+                    "rowIndex": 927,
                     "strings": [
                         "",
                         "",
@@ -13812,7 +14063,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 913,
+                    "rowIndex": 928,
                     "strings": [
                         "",
                         "Tween",
@@ -13828,7 +14079,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 914,
+                    "rowIndex": 929,
                     "strings": [
                         "",
                         "Tween",
@@ -13844,7 +14095,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 915,
+                    "rowIndex": 930,
                     "strings": [
                         "",
                         "BgEvent",
@@ -13857,7 +14108,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 916,
+                    "rowIndex": 931,
                     "strings": [
                         "",
                         "",
@@ -13879,7 +14130,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 917,
+                    "rowIndex": 932,
                     "strings": [
                         "",
                         "",
@@ -13896,7 +14147,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 918,
+                    "rowIndex": 933,
                     "strings": [
                         "",
                         "",
@@ -13918,7 +14169,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 919,
+                    "rowIndex": 934,
                     "strings": [
                         "",
                         "",
@@ -13935,7 +14186,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 920,
+                    "rowIndex": 935,
                     "strings": [
                         "",
                         "",
@@ -13952,7 +14203,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 921,
+                    "rowIndex": 936,
                     "strings": [
                         "",
                         "",
@@ -13971,7 +14222,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 922,
+                    "rowIndex": 937,
                     "strings": [
                         "",
                         "",
@@ -13990,7 +14241,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 923,
+                    "rowIndex": 938,
                     "strings": [
                         "",
                         "",
@@ -14009,7 +14260,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 924,
+                    "rowIndex": 939,
                     "strings": [
                         "",
                         "",
@@ -14026,7 +14277,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 925,
+                    "rowIndex": 940,
                     "strings": [
                         "",
                         "",
@@ -14045,7 +14296,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 926,
+                    "rowIndex": 941,
                     "strings": [
                         "",
                         "BgEventOff",
@@ -14058,7 +14309,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 927,
+                    "rowIndex": 942,
                     "strings": [
                         "",
                         "Se",
@@ -14068,7 +14319,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 928,
+                    "rowIndex": 943,
                     "strings": [
                         "",
                         "Bg",
@@ -14079,7 +14330,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 929,
+                    "rowIndex": 944,
                     "strings": [
                         "",
                         "",
@@ -14098,7 +14349,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 930,
+                    "rowIndex": 945,
                     "strings": [
                         "",
                         "",
@@ -14119,7 +14370,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 931,
+                    "rowIndex": 946,
                     "strings": [
                         "",
                         "Set",
@@ -14132,7 +14383,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 932,
+                    "rowIndex": 947,
                     "strings": [
                         "",
                         "Set",
@@ -14145,7 +14396,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 933,
+                    "rowIndex": 948,
                     "strings": [
                         "",
                         "",
@@ -14164,7 +14415,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 934,
+                    "rowIndex": 949,
                     "strings": [
                         "",
                         "ImageEffect",
@@ -14180,7 +14431,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 935,
+                    "rowIndex": 950,
                     "strings": [
                         "",
                         "",
@@ -14197,7 +14448,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 936,
+                    "rowIndex": 951,
                     "strings": [
                         "",
                         "",
@@ -14214,7 +14465,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 937,
+                    "rowIndex": 952,
                     "strings": [
                         "",
                         "Tween",
@@ -14230,7 +14481,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 938,
+                    "rowIndex": 953,
                     "strings": [
                         "",
                         "Tween",
@@ -14246,7 +14497,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 939,
+                    "rowIndex": 954,
                     "strings": [
                         "",
                         "",
@@ -14265,7 +14516,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 940,
+                    "rowIndex": 955,
                     "strings": [
                         "",
                         "StopSound",
@@ -14286,7 +14537,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 941,
+                    "rowIndex": 956,
                     "strings": [
                         "",
                         "FadeOut",
@@ -14307,7 +14558,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 942,
+                    "rowIndex": 957,
                     "strings": [
                         "",
                         "Wait",
@@ -14328,7 +14579,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 943,
+                    "rowIndex": 958,
                     "strings": [
                         "",
                         "LayerReset",
@@ -14351,7 +14602,7 @@
             ],
             "name": "Assets/AdvScene/ScenarioExcel/main/1000/100000Nml.xlsx:100000Nml",
             "type": 1,
-            "textLength": 28606,
+            "textLength": 29039,
             "headerRow": 0,
             "entityIndexTbl": [],
             "entityDataList": []

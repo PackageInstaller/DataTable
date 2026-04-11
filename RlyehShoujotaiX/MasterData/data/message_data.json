@@ -986,6 +986,41 @@
             "message": "直前の取引が残っています。\r\n5分ほど時間をおいて再度お試しください。"
         },
         {
+            "id": "COMMON_VIPRANK_TITLE",
+            "title": "",
+            "message": "継承者ランク"
+        },
+        {
+            "id": "COMMON_CAN_USE",
+            "title": "",
+            "message": "使用可"
+        },
+        {
+            "id": "COMMON_CHALLENGE_COUNT_RECOVERY_POPUP_MESSAGE",
+            "title": "",
+            "message": "回復する挑戦回数を選択してください。"
+        },
+        {
+            "id": "COMMON_CHALLENGE_REMAIN_RECOVERY_COUNT",
+            "title": "",
+            "message": "本日の残り回復可能回数 <color=#FF4C45>{0}</color=#FF4C45>回"
+        },
+        {
+            "id": "COMMON_CHALLENGE_NOT_OVER_RECOVERY",
+            "title": "",
+            "message": "最大値を超えての回復はできません"
+        },
+        {
+            "id": "ITEM_SELECT_LIST",
+            "title": "",
+            "message": "リストから選択してください"
+        },
+        {
+            "id": "LONG_PRESS_CHECK_DETAIL",
+            "title": "",
+            "message": "<color=#D4D200>長押しで詳細を確認できます</color>"
+        },
+        {
             "id": "LOGIN_BONUS_CHECK",
             "title": "",
             "message": "原石をあと<space=1em>{0}<space=1em>使用すると\r\n<size=25>{1}</size>\r\n<line-height=60%>※原石の仕様数は当月１日午前４時から\r\n翌月１日午前３時59分までの数です。"
@@ -5138,12 +5173,7 @@
         {
             "id": "SERIAL_CODE_WARNING",
             "title": "",
-            "message": "・<indent=1em>1つのシリアルコードによる特典入手は1回限りとなります。</indent>\r\n・<indent=1em>特典は、メールに送られます。</indent>\r\n・<indent=1em>一定時間内に無効なシリアルコードを5回連続で入力した場合、\r\n1時間入力ができなくなります。</indent>"
-        },
-        {
-            "id": "SERIAL_CODE_INPUT",
-            "title": "シリアルコード入力",
-            "message": "シリアルコードを入力してください。"
+            "message": "・<indent=1em>1つのシリアルコードによる特典入手は1回限りとなります。</indent>\r\n・<indent=1em>一定時間内に無効なシリアルコードを5回連続で入力した場合、\r\n1時間入力ができなくなります。</indent>"
         },
         {
             "id": "SERIAL_CODE_INPUT_NO_VALUE",
@@ -5151,29 +5181,9 @@
             "message": "半角英数字で入力してください。"
         },
         {
-            "id": "SERIAL_CODE_INPUT_WARNING",
-            "title": "",
-            "message": "半角英数字で入力してください。"
-        },
-        {
-            "id": "SERIAL_CODE_CAMPAIGN_NAME_FORMAT",
-            "title": "",
-            "message": "【{0}】"
-        },
-        {
-            "id": "SERIAL_CODE_SUCCESS_SINGLE_REWARD",
-            "title": "確認",
-            "message": "特典をメールに送りました。"
-        },
-        {
-            "id": "SERIAL_CODE_SUCCESS_MULTI_REWARDS",
-            "title": "確認",
-            "message": "下記特典をメールに送りました。"
-        },
-        {
             "id": "SERIAL_CODE_FAILURE_INVALID_INPUT",
             "title": "確認",
-            "message": "シリアルコードの入力に失敗しました。\r\nシリアルコードをご確認の上、\r\n再度入力を行ってください。"
+            "message": "入力されたシリアルコードは正しくありません。"
         },
         {
             "id": "SERIAL_CODE_FAILURE_ALREADY_USED",
@@ -5183,17 +5193,12 @@
         {
             "id": "SERIAL_CODE_FAILURE_RESTRICTED",
             "title": "確認",
-            "message": "一定時間内に複数回入力が失敗したため、\r\n現在シリアルコードの入力を制限しています。\r\n時間をおいてから再度入力をお試しください。"
-        },
-        {
-            "id": "SERIAL_CODE_FAILURE_COUNT_OVER",
-            "title": "確認",
-            "message": "【{0}】\r\nの特典は入手済みのため、\r\n特典を入手することができませんでした。"
+            "message": "時間をおいてから再度入力をお試しください。"
         },
         {
             "id": "SERIAL_CODE_FAILURE_EXPIRED",
             "title": "確認",
-            "message": "入力したシリアルコードの\r\n有効期限が切れています。\r\n特典を入手することができませんでした。"
+            "message": "入力したシリアルコードの有効期限が切れています。"
         },
         {
             "id": "MOVIE_LINK_HEADLINE",
@@ -5744,6 +5749,11 @@
             "id": "PROFILE_FORMATION",
             "title": "",
             "message": "編成"
+        },
+        {
+            "id": "PROFILE_INPUT_SERIAL_CODE_BUTTON",
+            "title": "",
+            "message": "シリアルコード入力"
         },
         {
             "id": "GUILD_MANAGE_LEADER_ONLY_TOAST",

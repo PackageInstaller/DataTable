@@ -208,7 +208,7 @@
             "rarity": 21041,
             "val_cap": 9999999,
             "text": "選択したアーティファクト(低グレード)を入手可能",
-            "sort_priority": 0
+            "sort_priority": 30000
         },
         {
             "item_id": "item.select_artifactbox.grade_Middle",
@@ -216,7 +216,7 @@
             "rarity": 5460529,
             "val_cap": 9999999,
             "text": "選択したアーティファクト(中グレード)を入手可能",
-            "sort_priority": 0
+            "sort_priority": 30010
         },
         {
             "item_id": "item.select_artifactbox.grade_High",
@@ -224,7 +224,7 @@
             "rarity": 1397969457,
             "val_cap": 9999999,
             "text": "選択したアーティファクト(高グレード)を入手可能",
-            "sort_priority": 0
+            "sort_priority": 30020
         },
         {
             "item_id": "item.unit_skin.2_1",
@@ -320,7 +320,7 @@
             "rarity": 21041,
             "val_cap": 9999999,
             "text": "選択した魔晶Ⅰを入手可能",
-            "sort_priority": 0
+            "sort_priority": 30100
         },
         {
             "item_id": "item.select_equipbox.grade_2",
@@ -328,7 +328,7 @@
             "rarity": 21041,
             "val_cap": 9999999,
             "text": "選択した魔晶Ⅱを入手可能",
-            "sort_priority": 0
+            "sort_priority": 30110
         },
         {
             "item_id": "item.select_equipbox.grade_3",
@@ -336,23 +336,23 @@
             "rarity": 21041,
             "val_cap": 9999999,
             "text": "選択した魔晶Ⅲを入手可能",
-            "sort_priority": 0
+            "sort_priority": 30120
         },
         {
             "item_id": "item.select_equipbox.grade_4",
             "display_name": "魔晶Ⅳ選択BOX",
-            "rarity": 21041,
+            "rarity": 5460529,
             "val_cap": 9999999,
             "text": "選択した魔晶Ⅳを入手可能",
-            "sort_priority": 0
+            "sort_priority": 30130
         },
         {
             "item_id": "item.select_equipbox.grade_5",
             "display_name": "魔晶Ⅴ選択BOX",
-            "rarity": 21041,
+            "rarity": 5460529,
             "val_cap": 9999999,
             "text": "選択した魔晶Ⅴを入手可能",
-            "sort_priority": 0
+            "sort_priority": 30140
         },
         {
             "item_id": "item.engraving.vitality",
@@ -409,6 +409,54 @@
             "val_cap": 99999999,
             "text": "【瓦解】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
             "sort_priority": 41200
+        },
+        {
+            "item_id": "item.lottery_potential.crystal_r",
+            "display_name": "ランダム☆1潜在結晶BOX",
+            "rarity": 21041,
+            "val_cap": 9999999,
+            "text": "☆1キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個入手できる\r\n<color=#ff6600>どのクラス用の潜在結晶が出るかはランダム</color>",
+            "sort_priority": 31000
+        },
+        {
+            "item_id": "item.lottery_potential.crystal_hr",
+            "display_name": "ランダム☆2潜在結晶BOX",
+            "rarity": 5460529,
+            "val_cap": 9999999,
+            "text": "☆2キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個入手できる\r\n<color=#ff6600>どのクラス用の潜在結晶が出るかはランダム</color>",
+            "sort_priority": 31010
+        },
+        {
+            "item_id": "item.lottery_potential.crystal_sr",
+            "display_name": "ランダム☆3潜在結晶BOX",
+            "rarity": 1397969457,
+            "val_cap": 9999999,
+            "text": "☆3キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個入手できる\r\n<color=#ff6600>どのクラス用の潜在結晶が出るかはランダム</color>",
+            "sort_priority": 31020
+        },
+        {
+            "item_id": "item.select_unit.tdfes1",
+            "display_name": "☆3選択券（第七回超TD祭り）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n・石造都市ルルイエ\r\n・【バイコーン娘】ヴァリナ\r\n・ホルテウス",
+            "sort_priority": 90000
+        },
+        {
+            "item_id": "item.select_potential.crystal_hr",
+            "display_name": "選択☆2潜在結晶BOX",
+            "rarity": 5460529,
+            "val_cap": 9999999,
+            "text": "☆2キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個選択して入手できる",
+            "sort_priority": 32010
+        },
+        {
+            "item_id": "item.select_potential.crystal_sr",
+            "display_name": "選択☆3潜在結晶BOX",
+            "rarity": 1397969457,
+            "val_cap": 9999999,
+            "text": "☆3キャラの潜在覚醒ポイントを\r\n1増加させる潜在結晶を1個選択して入手できる\r\n",
+            "sort_priority": 32020
         }
     ]
 }

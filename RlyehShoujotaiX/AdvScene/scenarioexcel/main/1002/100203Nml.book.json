@@ -588,7 +588,7 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "四角_04",
+                        "斬撃6_04",
                         "",
                         "",
                         "",
@@ -604,9 +604,9 @@
                     "strings": [
                         "",
                         "Set",
-                        "四角_04",
+                        "斬撃6_04",
                         "Color",
-                        "#ca5d3e80",
+                        "#ca5d3eFF",
                         "",
                         "",
                         "",
@@ -620,7 +620,7 @@
                     "strings": [
                         "",
                         "Set",
-                        "四角_04",
+                        "斬撃6_04",
                         "Rotate",
                         "",
                         "",
@@ -636,9 +636,9 @@
                     "strings": [
                         "",
                         "Set",
-                        "四角_04",
+                        "斬撃6_04",
                         "Scale",
-                        "0.1",
+                        "-0.1",
                         "20",
                         "",
                         "",
@@ -652,9 +652,9 @@
                     "strings": [
                         "",
                         "Set",
-                        "四角_04",
+                        "斬撃6_04",
                         "Move",
-                        "300",
+                        "-150",
                         "-200",
                         "",
                         "",
@@ -668,9 +668,13 @@
                     "strings": [
                         "",
                         "Tween",
-                        "四角_04",
+                        "斬撃6_04",
                         "ScaleTo",
-                        "time=1 x=0.4 y=30"
+                        "time=0.4 x=-2 y=3",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -739,7 +743,7 @@
                     "strings": [
                         "",
                         "SpriteOff",
-                        "四角_04"
+                        "斬撃6_04"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -1990,7 +1994,7 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "グラデ_01",
+                        "斬撃3_01",
                         "",
                         "レイヤー_四者四様1スプライト線1",
                         "",
@@ -2006,9 +2010,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_01",
+                        "斬撃3_01",
                         "ColorTo",
-                        "time=0 color=#cde6c7 alpha=1",
+                        "time=0 color=#ffff00 alpha=1",
                         "",
                         "",
                         "",
@@ -2022,9 +2026,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_01",
+                        "斬撃3_01",
                         "MoveTo",
-                        "time=0 x=170",
+                        "time=0 x=0",
                         "",
                         "",
                         "",
@@ -2038,7 +2042,7 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_01",
+                        "斬撃3_01",
                         "ScaleTo",
                         "time=0 y=0 x=2",
                         "",
@@ -2054,7 +2058,7 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "グラデ_02",
+                        "斬撃3_02",
                         "",
                         "レイヤー_四者四様1スプライト線2",
                         "",
@@ -2070,9 +2074,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_02",
+                        "斬撃3_02",
                         "ColorTo",
-                        "time=0 color=#ffff00 alpha=1",
+                        "time=0 color=#ffffff alpha=1",
                         "",
                         "",
                         "",
@@ -2086,9 +2090,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_02",
+                        "斬撃3_02",
                         "ScaleTo",
-                        "time=0 y=0 x=-2",
+                        "time=0 y=0 x=2",
                         "",
                         "",
                         "",
@@ -2102,9 +2106,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_02",
+                        "斬撃3_02",
                         "MoveTo",
-                        "time=0 x=-170",
+                        "time=0 x=0",
                         "",
                         "",
                         "",
@@ -2118,7 +2122,7 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "グラデ_03",
+                        "斬撃3_03",
                         "",
                         "レイヤー_四者四様1スプライト線1",
                         "",
@@ -2134,9 +2138,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_03",
+                        "斬撃3_03",
                         "ColorTo",
-                        "time=0 color=#cde6c7 alpha=1",
+                        "time=0 color=#ffff00 alpha=1",
                         "",
                         "",
                         "",
@@ -2150,9 +2154,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_03",
-                        "MoveTo",
-                        "time=0 x=170",
+                        "斬撃3_03",
+                        "ScaleTo",
+                        "time=0 y=0 x=2",
                         "",
                         "",
                         "",
@@ -2166,9 +2170,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_03",
-                        "ScaleTo",
-                        "time=0 y=0 x=2",
+                        "斬撃3_03",
+                        "MoveBy",
+                        "time=0 x=300",
                         "",
                         "",
                         "",
@@ -2181,10 +2185,10 @@
                     "rowIndex": 136,
                     "strings": [
                         "",
-                        "Tween",
-                        "グラデ_03",
-                        "MoveBy",
-                        "time=0 x=270",
+                        "Sprite",
+                        "斬撃3_04",
+                        "",
+                        "レイヤー_四者四様1スプライト線2",
                         "",
                         "",
                         "",
@@ -2197,10 +2201,10 @@
                     "rowIndex": 137,
                     "strings": [
                         "",
-                        "Sprite",
-                        "グラデ_04",
-                        "",
-                        "レイヤー_四者四様1スプライト線2",
+                        "Tween",
+                        "斬撃3_04",
+                        "ColorTo",
+                        "time=0 color=#ffffff alpha=1",
                         "",
                         "",
                         "",
@@ -2214,9 +2218,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_04",
-                        "ColorTo",
-                        "time=0 color=#ffff00 alpha=1",
+                        "斬撃3_04",
+                        "ScaleTo",
+                        "time=0 y=0 x=2",
                         "",
                         "",
                         "",
@@ -2230,9 +2234,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_04",
-                        "ScaleTo",
-                        "time=0 y=0 x=-2",
+                        "斬撃3_04",
+                        "MoveBy",
+                        "time=0 x=300",
                         "",
                         "",
                         "",
@@ -2245,10 +2249,10 @@
                     "rowIndex": 140,
                     "strings": [
                         "",
-                        "Tween",
-                        "グラデ_04",
-                        "MoveTo",
-                        "time=0 x=-170",
+                        "Sprite",
+                        "斬撃3_06",
+                        "",
+                        "レイヤー_四者四様3スプライト線1",
                         "",
                         "",
                         "",
@@ -2262,9 +2266,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_04",
-                        "MoveBy",
-                        "time=0 x=270",
+                        "斬撃3_06",
+                        "ColorTo",
+                        "time=0 color=#ffff00 alpha=1",
                         "",
                         "",
                         "",
@@ -2277,10 +2281,10 @@
                     "rowIndex": 142,
                     "strings": [
                         "",
-                        "Sprite",
-                        "グラデ_06",
-                        "",
-                        "レイヤー_四者四様3スプライト線1",
+                        "Tween",
+                        "斬撃3_06",
+                        "ScaleTo",
+                        "time=0 y=0 x=2",
                         "",
                         "",
                         "",
@@ -2294,9 +2298,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_06",
-                        "ColorTo",
-                        "time=0 color=#cde6c7 alpha=1",
+                        "斬撃3_06",
+                        "MoveBy",
+                        "time=0 x=-300",
                         "",
                         "",
                         "",
@@ -2309,10 +2313,10 @@
                     "rowIndex": 144,
                     "strings": [
                         "",
-                        "Tween",
-                        "グラデ_06",
-                        "MoveTo",
-                        "time=0 x=170",
+                        "Sprite",
+                        "斬撃3_07",
+                        "",
+                        "レイヤー_四者四様3スプライト線2",
                         "",
                         "",
                         "",
@@ -2326,9 +2330,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_06",
-                        "ScaleTo",
-                        "time=0 y=0 x=2",
+                        "斬撃3_07",
+                        "ColorTo",
+                        "time=0 color=#ffffff alpha=1",
                         "",
                         "",
                         "",
@@ -2342,9 +2346,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_06",
-                        "MoveBy",
-                        "time=0 x=-270",
+                        "斬撃3_07",
+                        "ScaleTo",
+                        "time=0 y=0 x=-2",
                         "",
                         "",
                         "",
@@ -2357,10 +2361,10 @@
                     "rowIndex": 147,
                     "strings": [
                         "",
-                        "Sprite",
-                        "グラデ_07",
-                        "",
-                        "レイヤー_四者四様3スプライト線2",
+                        "Tween",
+                        "斬撃3_07",
+                        "MoveBy",
+                        "time=0 x=-300",
                         "",
                         "",
                         "",
@@ -2374,9 +2378,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_07",
-                        "ColorTo",
-                        "time=0 color=#ffff00 alpha=1",
+                        "斬撃3_01",
+                        "ScaleTo",
+                        "time=0.8 y=10 x=2",
                         "",
                         "",
                         "",
@@ -2390,9 +2394,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_07",
+                        "斬撃3_02",
                         "ScaleTo",
-                        "time=0 y=0 x=-2",
+                        "time=0.8 y=-10 x=1",
                         "",
                         "",
                         "",
@@ -2406,9 +2410,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_07",
-                        "MoveTo",
-                        "time=0 x=-170",
+                        "斬撃3_03",
+                        "ScaleTo",
+                        "time=0.8 y=10 x=2",
                         "",
                         "",
                         "",
@@ -2422,9 +2426,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_07",
-                        "MoveBy",
-                        "time=0 x=-270",
+                        "斬撃3_04",
+                        "ScaleTo",
+                        "time=0.8 y=-10 x=1",
                         "",
                         "",
                         "",
@@ -2438,7 +2442,7 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_01",
+                        "斬撃3_06",
                         "ScaleTo",
                         "time=0.8 y=10 x=2",
                         "",
@@ -2454,9 +2458,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "グラデ_02",
+                        "斬撃3_07",
                         "ScaleTo",
-                        "time=0.8 y=-10 x=-2",
+                        "time=0.8 y=10 x=1",
                         "",
                         "",
                         "",
@@ -2467,70 +2471,6 @@
                 },
                 {
                     "rowIndex": 154,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "グラデ_03",
-                        "ScaleTo",
-                        "time=0.8 y=10 x=2",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 155,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "グラデ_04",
-                        "ScaleTo",
-                        "time=0.8 y=-10 x=-2",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 156,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "グラデ_06",
-                        "ScaleTo",
-                        "time=0.8 y=10 x=2",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 157,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "グラデ_07",
-                        "ScaleTo",
-                        "time=0.8 y=10 x=-2",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 158,
                     "strings": [
                         "",
                         "Wait",
@@ -2545,11 +2485,75 @@
                     "isCommentOut": 0
                 },
                 {
+                    "rowIndex": 155,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "斬撃3_01",
+                        "",
+                        "time=0.8 x=10",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 156,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "斬撃3_02",
+                        "",
+                        "time=0.8 x=10",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 157,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "斬撃3_03",
+                        "",
+                        "time=0.8 x=10",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 158,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "斬撃3_04",
+                        "",
+                        "time=0.8 x=10",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
                     "rowIndex": 159,
                     "strings": [
                         "",
                         "Shake",
-                        "グラデ_01",
+                        "斬撃3_06",
                         "",
                         "time=0.8 x=10",
                         "",
@@ -2565,7 +2569,7 @@
                     "strings": [
                         "",
                         "Shake",
-                        "グラデ_02",
+                        "斬撃3_07",
                         "",
                         "time=0.8 x=10",
                         "",
@@ -2580,70 +2584,6 @@
                     "rowIndex": 161,
                     "strings": [
                         "",
-                        "Shake",
-                        "グラデ_03",
-                        "",
-                        "time=0.8 x=10",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 162,
-                    "strings": [
-                        "",
-                        "Shake",
-                        "グラデ_04",
-                        "",
-                        "time=0.8 x=10",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 163,
-                    "strings": [
-                        "",
-                        "Shake",
-                        "グラデ_06",
-                        "",
-                        "time=0.8 x=10",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 164,
-                    "strings": [
-                        "",
-                        "Shake",
-                        "グラデ_07",
-                        "",
-                        "time=0.8 x=10",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 165,
-                    "strings": [
-                        "",
                         "Se",
                         "SE_魔法_雷"
                     ],
@@ -2651,7 +2591,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 166,
+                    "rowIndex": 162,
                     "strings": [
                         "",
                         "",
@@ -2668,11 +2608,51 @@
                     "isCommentOut": 0
                 },
                 {
+                    "rowIndex": 163,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "斬撃3_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 164,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "斬撃3_02"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 165,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "斬撃3_03"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 166,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "斬撃3_04"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
                     "rowIndex": 167,
                     "strings": [
                         "",
                         "SpriteOff",
-                        "グラデ_01"
+                        "斬撃3_06"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -2682,63 +2662,13 @@
                     "strings": [
                         "",
                         "SpriteOff",
-                        "グラデ_02"
+                        "斬撃3_07"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
                     "rowIndex": 169,
-                    "strings": [
-                        "",
-                        "SpriteOff",
-                        "グラデ_03"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 170,
-                    "strings": [
-                        "",
-                        "SpriteOff",
-                        "グラデ_04"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 171,
-                    "strings": [
-                        "",
-                        "SpriteOff",
-                        "グラデ_05"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 172,
-                    "strings": [
-                        "",
-                        "SpriteOff",
-                        "グラデ_06"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 173,
-                    "strings": [
-                        "",
-                        "SpriteOff",
-                        "グラデ_07"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 174,
                     "strings": [
                         "",
                         "",
@@ -2755,7 +2685,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 175,
+                    "rowIndex": 170,
                     "strings": [
                         "",
                         "",
@@ -2776,7 +2706,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 176,
+                    "rowIndex": 171,
                     "strings": [
                         "",
                         "",
@@ -2793,7 +2723,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 177,
+                    "rowIndex": 172,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -2814,7 +2744,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 178,
+                    "rowIndex": 173,
                     "strings": [
                         "",
                         "Set",
@@ -2827,7 +2757,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 179,
+                    "rowIndex": 174,
                     "strings": [
                         "",
                         "Set",
@@ -2840,7 +2770,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 180,
+                    "rowIndex": 175,
                     "strings": [
                         "",
                         "",
@@ -2861,7 +2791,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 181,
+                    "rowIndex": 176,
                     "strings": [
                         "",
                         "Tween",
@@ -2877,7 +2807,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 182,
+                    "rowIndex": 177,
                     "strings": [
                         "",
                         "Tween",
@@ -2893,7 +2823,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 183,
+                    "rowIndex": 178,
                     "strings": [
                         "",
                         "",
@@ -2912,7 +2842,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 184,
+                    "rowIndex": 179,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -2933,7 +2863,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 185,
+                    "rowIndex": 180,
                     "strings": [
                         "",
                         "Tween",
@@ -2945,7 +2875,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 186,
+                    "rowIndex": 181,
                     "strings": [
                         "",
                         "Se",
@@ -2955,95 +2885,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 187,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "斬撃_01",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 188,
-                    "strings": [
-                        "",
-                        "Set",
-                        "斬撃_01",
-                        "Color",
-                        "#00b35f80",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 189,
-                    "strings": [
-                        "",
-                        "Set",
-                        "斬撃_01",
-                        "Scale",
-                        "0.5",
-                        "20",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 190,
-                    "strings": [
-                        "",
-                        "Set",
-                        "斬撃_01",
-                        "Move",
-                        "-700",
-                        "-200",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 191,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "斬撃_01",
-                        "ScaleTo",
-                        "time=1 x=-1 y=6"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 192,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "斬撃_01",
-                        "MoveBy",
-                        "time=1 x=300"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 193,
+                    "rowIndex": 182,
                     "strings": [
                         "",
                         "Wait",
@@ -3058,15 +2900,15 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 194,
+                    "rowIndex": 183,
                     "strings": [
                         "",
                         "",
                         "アスタリーゼ",
                         "Emt2_Ang",
-                        "layer_右",
-                        "",
-                        "",
+                        "レイヤー_四者四様1キャラ",
+                        "300",
+                        "-200",
                         "0.3",
                         "Add",
                         "",
@@ -3079,7 +2921,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 195,
+                    "rowIndex": 184,
                     "strings": [
                         "",
                         "",
@@ -3100,7 +2942,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 196,
+                    "rowIndex": 185,
                     "strings": [
                         "",
                         "Tween",
@@ -3116,7 +2958,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 197,
+                    "rowIndex": 186,
                     "strings": [
                         "",
                         "Tween",
@@ -3132,7 +2974,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 198,
+                    "rowIndex": 187,
                     "strings": [
                         "",
                         "",
@@ -3151,7 +2993,182 @@
                     "isCommentOut": 0
                 },
                 {
+                    "rowIndex": 188,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "斬撃2_01",
+                        "",
+                        "レイヤー_マスク全画面下"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 189,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_01",
+                        "Scale",
+                        "0.1",
+                        "0.1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 190,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_01",
+                        "Color",
+                        "#00FF00"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 191,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_01",
+                        "Rot",
+                        "",
+                        "",
+                        "",
+                        "-90"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 192,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_01",
+                        "Pos",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 193,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "斬撃2_02",
+                        "",
+                        "レイヤー_マスク全画面"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 194,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_02",
+                        "Scale",
+                        "0.09",
+                        "0.09"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 195,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_02",
+                        "Color",
+                        "#000000"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 196,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_01",
+                        "Rot",
+                        "",
+                        "",
+                        "",
+                        "-90"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 197,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃2_02",
+                        "Pos",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 198,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃2_01",
+                        "ScaleTo",
+                        "time=0.4 x=2 y=2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
                     "rowIndex": 199,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃2_02",
+                        "ScaleTo",
+                        "time=0.4 x=1.8 y=1.8",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 200,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 201,
                     "strings": [
                         "",
                         "Se",
@@ -3161,17 +3178,19 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 200,
+                    "rowIndex": 202,
                     "strings": [
                         "",
                         "Sprite",
-                        "ヘキサ_01"
+                        "ヘキサ_01",
+                        "",
+                        "レイヤー_四者四様5スプライト線2"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 201,
+                    "rowIndex": 203,
                     "strings": [
                         "",
                         "Set",
@@ -3183,7 +3202,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 202,
+                    "rowIndex": 204,
                     "strings": [
                         "",
                         "Set",
@@ -3196,17 +3215,19 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 203,
+                    "rowIndex": 205,
                     "strings": [
                         "",
                         "Sprite",
-                        "ヘキサ_02"
+                        "ヘキサ_02",
+                        "",
+                        "レイヤー_四者四様5スプライト線3"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 204,
+                    "rowIndex": 206,
                     "strings": [
                         "",
                         "Set",
@@ -3218,7 +3239,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 205,
+                    "rowIndex": 207,
                     "strings": [
                         "",
                         "Set",
@@ -3231,17 +3252,19 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 206,
+                    "rowIndex": 208,
                     "strings": [
                         "",
                         "Sprite",
-                        "ヘキサ_03"
+                        "ヘキサ_03",
+                        "",
+                        "レイヤー_四者四様5スプライト線1"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 207,
+                    "rowIndex": 209,
                     "strings": [
                         "",
                         "Set",
@@ -3253,7 +3276,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 208,
+                    "rowIndex": 210,
                     "strings": [
                         "",
                         "Set",
@@ -3266,17 +3289,19 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 209,
+                    "rowIndex": 211,
                     "strings": [
                         "",
                         "Sprite",
-                        "ヘキサ_04"
+                        "ヘキサ_04",
+                        "",
+                        "レイヤー_四者四様4スプライト線1"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 210,
+                    "rowIndex": 212,
                     "strings": [
                         "",
                         "Set",
@@ -3288,7 +3313,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 211,
+                    "rowIndex": 213,
                     "strings": [
                         "",
                         "Set",
@@ -3301,17 +3326,19 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 212,
+                    "rowIndex": 214,
                     "strings": [
                         "",
                         "Sprite",
-                        "ヘキサ_05"
+                        "ヘキサ_05",
+                        "",
+                        "レイヤー_四者四様4スプライト線1"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 213,
+                    "rowIndex": 215,
                     "strings": [
                         "",
                         "Set",
@@ -3323,7 +3350,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 214,
+                    "rowIndex": 216,
                     "strings": [
                         "",
                         "Set",
@@ -3336,7 +3363,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 215,
+                    "rowIndex": 217,
                     "strings": [
                         "",
                         "Tween",
@@ -3348,7 +3375,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 216,
+                    "rowIndex": 218,
                     "strings": [
                         "",
                         "Tween",
@@ -3360,7 +3387,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 217,
+                    "rowIndex": 219,
                     "strings": [
                         "",
                         "Tween",
@@ -3372,7 +3399,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 218,
+                    "rowIndex": 220,
                     "strings": [
                         "",
                         "Tween",
@@ -3384,7 +3411,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 219,
+                    "rowIndex": 221,
                     "strings": [
                         "",
                         "Tween",
@@ -3396,7 +3423,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 220,
+                    "rowIndex": 222,
                     "strings": [
                         "",
                         "Wait",
@@ -3411,11 +3438,90 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 221,
+                    "rowIndex": 223,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃2_01",
+                        "ScaleTo",
+                        "time=0.2 x=100 y=100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 224,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃2_01",
+                        "ColorTo",
+                        "time=0.2 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 225,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃2_02",
+                        "ScaleTo",
+                        "time=0.2 x=99.5 y=99.5",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 226,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃2_02",
+                        "ColorTo",
+                        "time=0.2 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 227,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 228,
                     "strings": [
                         "",
                         "FadeOut",
-                        "#c5423af1",
+                        "yellow",
                         "",
                         "",
                         "",
@@ -3427,7 +3533,22 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 222,
+                    "rowIndex": 229,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 230,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3437,7 +3558,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 223,
+                    "rowIndex": 231,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3447,7 +3568,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 224,
+                    "rowIndex": 232,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3457,7 +3578,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 225,
+                    "rowIndex": 233,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3467,7 +3588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 226,
+                    "rowIndex": 234,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3477,7 +3598,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 227,
+                    "rowIndex": 235,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3487,7 +3608,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 228,
+                    "rowIndex": 236,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3508,7 +3629,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 229,
+                    "rowIndex": 237,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3529,11 +3650,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 230,
+                    "rowIndex": 238,
                     "strings": [
                         "",
                         "FadeIn",
-                        "#ffff00",
+                        "yellow",
                         "",
                         "",
                         "",
@@ -3545,12 +3666,12 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 231,
+                    "rowIndex": 239,
                     "strings": [
                         "",
                         "",
                         "アスタリーゼ",
-                        "Emt9_Ama",
+                        "Emt10_Est",
                         "layer_中",
                         "",
                         "",
@@ -3566,7 +3687,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 232,
+                    "rowIndex": 240,
                     "strings": [
                         "",
                         "",
@@ -3587,7 +3708,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 233,
+                    "rowIndex": 241,
                     "strings": [
                         "",
                         "",
@@ -3608,7 +3729,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 234,
+                    "rowIndex": 242,
                     "strings": [
                         "",
                         "",
@@ -3627,7 +3748,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 235,
+                    "rowIndex": 243,
                     "strings": [
                         "",
                         "Tween",
@@ -3643,7 +3764,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 236,
+                    "rowIndex": 244,
                     "strings": [
                         "",
                         "",
@@ -3662,7 +3783,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 237,
+                    "rowIndex": 245,
                     "strings": [
                         "",
                         "Tween",
@@ -3674,7 +3795,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 238,
+                    "rowIndex": 246,
                     "strings": [
                         "",
                         "",
@@ -3691,7 +3812,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 239,
+                    "rowIndex": 247,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3712,7 +3833,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 240,
+                    "rowIndex": 248,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3733,7 +3854,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 241,
+                    "rowIndex": 249,
                     "strings": [
                         "",
                         "",
@@ -3754,7 +3875,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 242,
+                    "rowIndex": 250,
                     "strings": [
                         "",
                         "",
@@ -3775,7 +3896,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 243,
+                    "rowIndex": 251,
                     "strings": [
                         "",
                         "",
@@ -3796,7 +3917,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 244,
+                    "rowIndex": 252,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3817,7 +3938,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 245,
+                    "rowIndex": 253,
                     "strings": [
                         "",
                         "Wait",
@@ -3832,7 +3953,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 246,
+                    "rowIndex": 254,
                     "strings": [
                         "",
                         "",
@@ -3853,7 +3974,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 247,
+                    "rowIndex": 255,
                     "strings": [
                         "",
                         "Tween",
@@ -3869,7 +3990,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 248,
+                    "rowIndex": 256,
                     "strings": [
                         "",
                         "Tween",
@@ -3885,7 +4006,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 249,
+                    "rowIndex": 257,
                     "strings": [
                         "",
                         "",
@@ -3904,7 +4025,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 250,
+                    "rowIndex": 258,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3925,7 +4046,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 251,
+                    "rowIndex": 259,
                     "strings": [
                         "",
                         "",
@@ -3942,7 +4063,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 252,
+                    "rowIndex": 260,
                     "strings": [
                         "",
                         "Tween",
@@ -3954,7 +4075,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 253,
+                    "rowIndex": 261,
                     "strings": [
                         "",
                         "Se",
@@ -3964,110 +4085,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 254,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "斬撃_01",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 255,
-                    "strings": [
-                        "",
-                        "Set",
-                        "斬撃_01",
-                        "Color",
-                        "#00b35f80",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 256,
-                    "strings": [
-                        "",
-                        "Set",
-                        "斬撃_01",
-                        "Scale",
-                        "0.5",
-                        "20",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 257,
-                    "strings": [
-                        "",
-                        "Set",
-                        "斬撃_01",
-                        "Move",
-                        "-700",
-                        "-200",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 258,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "斬撃_01",
-                        "ScaleTo",
-                        "time=1 x=-1 y=6"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 259,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "斬撃_01",
-                        "MoveBy",
-                        "time=1 x=750"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 260,
-                    "strings": [
-                        "",
-                        "Wait",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "1"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 261,
+                    "rowIndex": 262,
                     "strings": [
                         "",
                         "",
@@ -4088,39 +4106,145 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 262,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "ScaleTo",
-                        "time=0 x=1.4 y=1.4",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 263,
                     "strings": [
                         "",
-                        "Tween",
+                        "Set",
                         "ネオン",
-                        "MoveTo",
-                        "time=0 x=0 y=-400",
-                        "",
-                        "",
-                        "",
-                        "Add"
+                        "Scale",
+                        "1.4",
+                        "1.4"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
                     "rowIndex": 264,
+                    "strings": [
+                        "",
+                        "Set",
+                        "ネオン",
+                        "Move",
+                        "-750",
+                        "-200"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 265,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "斬撃6_01",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 266,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃6_01",
+                        "Color",
+                        "#00b35fFF",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 267,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃6_01",
+                        "Scale",
+                        "0.5",
+                        "20",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 268,
+                    "strings": [
+                        "",
+                        "Set",
+                        "斬撃6_01",
+                        "Move",
+                        "-700",
+                        "-200",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 269,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃6_01",
+                        "ScaleTo",
+                        "time=1 x=-1 y=6",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 270,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃6_01",
+                        "MoveBy",
+                        "time=1 x=750",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 271,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "MoveTo",
+                        "time=0.2 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 272,
                     "strings": [
                         "",
                         "",
@@ -4139,17 +4263,17 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 265,
+                    "rowIndex": 273,
                     "strings": [
                         "",
                         "SpriteOff",
-                        "斬撃_01"
+                        "斬撃6_01"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 266,
+                    "rowIndex": 274,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -4170,7 +4294,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 267,
+                    "rowIndex": 275,
                     "strings": [
                         "",
                         "Tween",
@@ -4182,7 +4306,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 268,
+                    "rowIndex": 276,
                     "strings": [
                         "",
                         "",
@@ -4203,7 +4327,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 269,
+                    "rowIndex": 277,
                     "strings": [
                         "",
                         "",
@@ -4224,7 +4348,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 270,
+                    "rowIndex": 278,
                     "strings": [
                         "",
                         "",
@@ -4245,7 +4369,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 271,
+                    "rowIndex": 279,
                     "strings": [
                         "",
                         "",
@@ -4266,7 +4390,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 272,
+                    "rowIndex": 280,
                     "strings": [
                         "",
                         "Tween",
@@ -4278,7 +4402,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 273,
+                    "rowIndex": 281,
                     "strings": [
                         "",
                         "Tween",
@@ -4290,7 +4414,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 274,
+                    "rowIndex": 282,
                     "strings": [
                         "",
                         "Wait",
@@ -4305,7 +4429,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 275,
+                    "rowIndex": 283,
                     "strings": [
                         "",
                         "Tween",
@@ -4321,7 +4445,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 276,
+                    "rowIndex": 284,
                     "strings": [
                         "",
                         "Tween",
@@ -4337,7 +4461,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 277,
+                    "rowIndex": 285,
                     "strings": [
                         "",
                         "Tween",
@@ -4353,7 +4477,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 278,
+                    "rowIndex": 286,
                     "strings": [
                         "",
                         "Tween",
@@ -4369,7 +4493,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 279,
+                    "rowIndex": 287,
                     "strings": [
                         "",
                         "Se",
@@ -4379,7 +4503,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 280,
+                    "rowIndex": 288,
                     "strings": [
                         "",
                         "Wait",
@@ -4394,7 +4518,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 281,
+                    "rowIndex": 289,
                     "strings": [
                         "",
                         "",
@@ -4413,7 +4537,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 282,
+                    "rowIndex": 290,
                     "strings": [
                         "",
                         "",
@@ -4430,7 +4554,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 283,
+                    "rowIndex": 291,
                     "strings": [
                         "",
                         "",
@@ -4447,7 +4571,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 284,
+                    "rowIndex": 292,
                     "strings": [
                         "",
                         "",
@@ -4466,7 +4590,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 285,
+                    "rowIndex": 293,
                     "strings": [
                         "",
                         "",
@@ -4485,7 +4609,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 286,
+                    "rowIndex": 294,
                     "strings": [
                         "",
                         "",
@@ -4502,7 +4626,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 287,
+                    "rowIndex": 295,
                     "strings": [
                         "",
                         "",
@@ -4521,7 +4645,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 288,
+                    "rowIndex": 296,
                     "strings": [
                         "",
                         "",
@@ -4542,7 +4666,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 289,
+                    "rowIndex": 297,
                     "strings": [
                         "",
                         "",
@@ -4561,7 +4685,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 290,
+                    "rowIndex": 298,
                     "strings": [
                         "",
                         "",
@@ -4580,7 +4704,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 291,
+                    "rowIndex": 299,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -4601,7 +4725,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 292,
+                    "rowIndex": 300,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -4622,7 +4746,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 293,
+                    "rowIndex": 301,
                     "strings": [
                         "",
                         "Tween",
@@ -4634,7 +4758,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 294,
+                    "rowIndex": 302,
                     "strings": [
                         "",
                         "Wait",
@@ -4649,7 +4773,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 295,
+                    "rowIndex": 303,
                     "strings": [
                         "",
                         "",
@@ -4670,7 +4794,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 296,
+                    "rowIndex": 304,
                     "strings": [
                         "",
                         "Tween",
@@ -4686,7 +4810,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 297,
+                    "rowIndex": 305,
                     "strings": [
                         "",
                         "Tween",
@@ -4702,7 +4826,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 298,
+                    "rowIndex": 306,
                     "strings": [
                         "",
                         "",
@@ -4723,7 +4847,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 299,
+                    "rowIndex": 307,
                     "strings": [
                         "",
                         "",
@@ -4744,7 +4868,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 300,
+                    "rowIndex": 308,
                     "strings": [
                         "",
                         "Tween",
@@ -4760,7 +4884,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 301,
+                    "rowIndex": 309,
                     "strings": [
                         "",
                         "Tween",
@@ -4776,7 +4900,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 302,
+                    "rowIndex": 310,
                     "strings": [
                         "",
                         "Tween",
@@ -4792,7 +4916,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 303,
+                    "rowIndex": 311,
                     "strings": [
                         "",
                         "Tween",
@@ -4808,139 +4932,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 304,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "アスタリーゼ",
-                        "ColorTo",
-                        "time=0 alpha=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 305,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "アスタリーゼ2",
-                        "ColorTo",
-                        "time=0 alpha=0 color=black",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 306,
-                    "strings": [
-                        "",
-                        "Wait",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.6"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 307,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "BG",
-                        "MoveTo",
-                        "time=0.8 x=150",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 308,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ネオン",
-                        "MoveBy",
-                        "time=0.8 x=80",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 309,
-                    "strings": [
-                        "",
-                        "Wait",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "1"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 310,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "アスタリーゼ",
-                        "MoveBy",
-                        "time=0.8 x=100",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 311,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "アスタリーゼ2",
-                        "MoveBy",
-                        "time=0.8 x=-100",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 312,
                     "strings": [
                         "",
                         "Tween",
                         "アスタリーゼ",
                         "ColorTo",
-                        "time=0.8 alpha=1 color=white",
+                        "time=0 alpha=0 color=black",
                         "",
                         "",
                         "",
@@ -4956,7 +4954,7 @@
                         "Tween",
                         "アスタリーゼ2",
                         "ColorTo",
-                        "time=0.8 alpha=1 color=white",
+                        "time=0 alpha=0 color=black",
                         "",
                         "",
                         "",
@@ -4969,6 +4967,132 @@
                     "rowIndex": 314,
                     "strings": [
                         "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 315,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "BG",
+                        "MoveTo",
+                        "time=0.8 x=150",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 316,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ネオン",
+                        "MoveBy",
+                        "time=0.8 x=80",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 317,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 318,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アスタリーゼ",
+                        "MoveBy",
+                        "time=0.8 x=100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 319,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アスタリーゼ2",
+                        "MoveBy",
+                        "time=0.8 x=-100",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 320,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アスタリーゼ",
+                        "ColorTo",
+                        "time=0.8 alpha=1 color=white",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 321,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "アスタリーゼ2",
+                        "ColorTo",
+                        "time=0.8 alpha=1 color=white",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 322,
+                    "strings": [
+                        "",
                         "Se",
                         "SE_攻撃_斬撃_短剣"
                     ],
@@ -4976,7 +5100,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 315,
+                    "rowIndex": 323,
                     "strings": [
                         "",
                         "",
@@ -4995,7 +5119,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 316,
+                    "rowIndex": 324,
                     "strings": [
                         "",
                         "Shake",
@@ -5011,7 +5135,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 317,
+                    "rowIndex": 325,
                     "strings": [
                         "",
                         "",
@@ -5030,7 +5154,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 318,
+                    "rowIndex": 326,
                     "strings": [
                         "",
                         "Tween",
@@ -5042,7 +5166,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 319,
+                    "rowIndex": 327,
                     "strings": [
                         "",
                         "Tween",
@@ -5054,7 +5178,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 320,
+                    "rowIndex": 328,
                     "strings": [
                         "",
                         "",
@@ -5071,7 +5195,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 321,
+                    "rowIndex": 329,
                     "strings": [
                         "",
                         "",
@@ -5088,7 +5212,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 322,
+                    "rowIndex": 330,
                     "strings": [
                         "",
                         "",
@@ -5109,7 +5233,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 323,
+                    "rowIndex": 331,
                     "strings": [
                         "",
                         "",
@@ -5128,7 +5252,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 324,
+                    "rowIndex": 332,
                     "strings": [
                         "",
                         "",
@@ -5145,7 +5269,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 325,
+                    "rowIndex": 333,
                     "strings": [
                         "",
                         "",
@@ -5164,7 +5288,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 326,
+                    "rowIndex": 334,
                     "strings": [
                         "",
                         "",
@@ -5183,7 +5307,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 327,
+                    "rowIndex": 335,
                     "strings": [
                         "",
                         "",
@@ -5200,7 +5324,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 328,
+                    "rowIndex": 336,
                     "strings": [
                         "",
                         "",
@@ -5219,7 +5343,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 329,
+                    "rowIndex": 337,
                     "strings": [
                         "",
                         "",
@@ -5238,7 +5362,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 330,
+                    "rowIndex": 338,
                     "strings": [
                         "",
                         "",
@@ -5257,7 +5381,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 331,
+                    "rowIndex": 339,
                     "strings": [
                         "",
                         "",
@@ -5274,7 +5398,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 332,
+                    "rowIndex": 340,
                     "strings": [
                         "",
                         "",
@@ -5293,7 +5417,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 333,
+                    "rowIndex": 341,
                     "strings": [
                         "",
                         "",
@@ -5310,7 +5434,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 334,
+                    "rowIndex": 342,
                     "strings": [
                         "",
                         "",
@@ -5329,7 +5453,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 335,
+                    "rowIndex": 343,
                     "strings": [
                         "",
                         "",
@@ -5346,7 +5470,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 336,
+                    "rowIndex": 344,
                     "strings": [
                         "",
                         "",
@@ -5365,7 +5489,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 337,
+                    "rowIndex": 345,
                     "strings": [
                         "",
                         "",
@@ -5384,7 +5508,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 338,
+                    "rowIndex": 346,
                     "strings": [
                         "",
                         "",
@@ -5403,7 +5527,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 339,
+                    "rowIndex": 347,
                     "strings": [
                         "",
                         "",
@@ -5422,7 +5546,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 340,
+                    "rowIndex": 348,
                     "strings": [
                         "",
                         "",
@@ -5439,7 +5563,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 341,
+                    "rowIndex": 349,
                     "strings": [
                         "",
                         "",
@@ -5458,7 +5582,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 342,
+                    "rowIndex": 350,
                     "strings": [
                         "",
                         "",
@@ -5475,7 +5599,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 343,
+                    "rowIndex": 351,
                     "strings": [
                         "",
                         "",
@@ -5494,7 +5618,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 344,
+                    "rowIndex": 352,
                     "strings": [
                         "",
                         "",
@@ -5513,7 +5637,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 345,
+                    "rowIndex": 353,
                     "strings": [
                         "",
                         "",
@@ -5530,7 +5654,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 346,
+                    "rowIndex": 354,
                     "strings": [
                         "",
                         "",
@@ -5549,7 +5673,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 347,
+                    "rowIndex": 355,
                     "strings": [
                         "",
                         "",
@@ -5566,7 +5690,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 348,
+                    "rowIndex": 356,
                     "strings": [
                         "",
                         "",
@@ -5585,7 +5709,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 349,
+                    "rowIndex": 357,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -5606,7 +5730,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 350,
+                    "rowIndex": 358,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -5627,7 +5751,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 351,
+                    "rowIndex": 359,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -5648,7 +5772,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 352,
+                    "rowIndex": 360,
                     "strings": [
                         "",
                         "Sprite",
@@ -5664,7 +5788,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 353,
+                    "rowIndex": 361,
                     "strings": [
                         "",
                         "Set",
@@ -5680,7 +5804,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 354,
+                    "rowIndex": 362,
                     "strings": [
                         "",
                         "Set",
@@ -5696,139 +5820,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 355,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "四角_22",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 356,
-                    "strings": [
-                        "",
-                        "Set",
-                        "四角_22",
-                        "Move",
-                        "200",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 357,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "四角_23",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 358,
-                    "strings": [
-                        "",
-                        "Set",
-                        "四角_23",
-                        "Move",
-                        "-200",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 359,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "四角_24",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 360,
-                    "strings": [
-                        "",
-                        "Set",
-                        "四角_24",
-                        "Move",
-                        "300",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 361,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "四角_25",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 362,
-                    "strings": [
-                        "",
-                        "Set",
-                        "四角_25",
-                        "Move",
-                        "400",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 363,
                     "strings": [
                         "",
                         "Sprite",
-                        "四角_26",
+                        "四角_22",
                         "",
                         "",
                         "",
@@ -5844,9 +5840,9 @@
                     "strings": [
                         "",
                         "Set",
-                        "四角_26",
+                        "四角_22",
                         "Move",
-                        "-400",
+                        "200",
                         "",
                         "",
                         "",
@@ -5860,7 +5856,7 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "四角_27",
+                        "四角_23",
                         "",
                         "",
                         "",
@@ -5876,9 +5872,9 @@
                     "strings": [
                         "",
                         "Set",
-                        "四角_27",
+                        "四角_23",
                         "Move",
-                        "500",
+                        "-200",
                         "",
                         "",
                         "",
@@ -5892,7 +5888,7 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "四角_28",
+                        "四角_24",
                         "",
                         "",
                         "",
@@ -5908,6 +5904,134 @@
                     "strings": [
                         "",
                         "Set",
+                        "四角_24",
+                        "Move",
+                        "300",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 369,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_25",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 370,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_25",
+                        "Move",
+                        "400",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 371,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_26",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 372,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_26",
+                        "Move",
+                        "-400",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 373,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_27",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 374,
+                    "strings": [
+                        "",
+                        "Set",
+                        "四角_27",
+                        "Move",
+                        "500",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 375,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "四角_28",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 376,
+                    "strings": [
+                        "",
+                        "Set",
                         "四角_22",
                         "Color",
                         "#999900",
@@ -5920,7 +6044,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 369,
+                    "rowIndex": 377,
                     "strings": [
                         "",
                         "Set",
@@ -5936,7 +6060,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 370,
+                    "rowIndex": 378,
                     "strings": [
                         "",
                         "Set",
@@ -5952,7 +6076,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 371,
+                    "rowIndex": 379,
                     "strings": [
                         "",
                         "Set",
@@ -5968,7 +6092,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 372,
+                    "rowIndex": 380,
                     "strings": [
                         "",
                         "Set",
@@ -5984,7 +6108,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 373,
+                    "rowIndex": 381,
                     "strings": [
                         "",
                         "Set",
@@ -6000,7 +6124,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 374,
+                    "rowIndex": 382,
                     "strings": [
                         "",
                         "Set",
@@ -6016,7 +6140,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 375,
+                    "rowIndex": 383,
                     "strings": [
                         "",
                         "Set",
@@ -6032,7 +6156,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 376,
+                    "rowIndex": 384,
                     "strings": [
                         "",
                         "Tween",
@@ -6048,7 +6172,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 377,
+                    "rowIndex": 385,
                     "strings": [
                         "",
                         "Tween",
@@ -6064,7 +6188,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 378,
+                    "rowIndex": 386,
                     "strings": [
                         "",
                         "Tween",
@@ -6080,7 +6204,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 379,
+                    "rowIndex": 387,
                     "strings": [
                         "",
                         "Tween",
@@ -6096,7 +6220,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 380,
+                    "rowIndex": 388,
                     "strings": [
                         "",
                         "Tween",
@@ -6112,7 +6236,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 381,
+                    "rowIndex": 389,
                     "strings": [
                         "",
                         "Tween",
@@ -6128,7 +6252,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 382,
+                    "rowIndex": 390,
                     "strings": [
                         "",
                         "Tween",
@@ -6144,7 +6268,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 383,
+                    "rowIndex": 391,
                     "strings": [
                         "",
                         "Tween",
@@ -6160,7 +6284,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 384,
+                    "rowIndex": 392,
                     "strings": [
                         "",
                         "Tween",
@@ -6176,7 +6300,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 385,
+                    "rowIndex": 393,
                     "strings": [
                         "",
                         "Tween",
@@ -6192,7 +6316,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 386,
+                    "rowIndex": 394,
                     "strings": [
                         "",
                         "Tween",
@@ -6208,7 +6332,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 387,
+                    "rowIndex": 395,
                     "strings": [
                         "",
                         "Tween",
@@ -6224,7 +6348,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 388,
+                    "rowIndex": 396,
                     "strings": [
                         "",
                         "Tween",
@@ -6240,7 +6364,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 389,
+                    "rowIndex": 397,
                     "strings": [
                         "",
                         "Tween",
@@ -6256,7 +6380,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 390,
+                    "rowIndex": 398,
                     "strings": [
                         "",
                         "Tween",
@@ -6272,7 +6396,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 391,
+                    "rowIndex": 399,
                     "strings": [
                         "",
                         "Tween",
@@ -6288,7 +6412,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 392,
+                    "rowIndex": 400,
                     "strings": [
                         "",
                         "Tween",
@@ -6304,7 +6428,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 393,
+                    "rowIndex": 401,
                     "strings": [
                         "",
                         "Tween",
@@ -6320,7 +6444,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 394,
+                    "rowIndex": 402,
                     "strings": [
                         "",
                         "Tween",
@@ -6336,7 +6460,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 395,
+                    "rowIndex": 403,
                     "strings": [
                         "",
                         "Tween",
@@ -6352,7 +6476,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 396,
+                    "rowIndex": 404,
                     "strings": [
                         "",
                         "Tween",
@@ -6368,7 +6492,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 397,
+                    "rowIndex": 405,
                     "strings": [
                         "",
                         "Tween",
@@ -6384,7 +6508,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 398,
+                    "rowIndex": 406,
                     "strings": [
                         "",
                         "Tween",
@@ -6400,7 +6524,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 399,
+                    "rowIndex": 407,
                     "strings": [
                         "",
                         "Tween",
@@ -6416,7 +6540,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 400,
+                    "rowIndex": 408,
                     "strings": [
                         "",
                         "Tween",
@@ -6432,7 +6556,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 401,
+                    "rowIndex": 409,
                     "strings": [
                         "",
                         "Tween",
@@ -6448,7 +6572,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 402,
+                    "rowIndex": 410,
                     "strings": [
                         "",
                         "Tween",
@@ -6464,7 +6588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 403,
+                    "rowIndex": 411,
                     "strings": [
                         "",
                         "Tween",
@@ -6480,7 +6604,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 404,
+                    "rowIndex": 412,
                     "strings": [
                         "",
                         "Tween",
@@ -6496,7 +6620,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 405,
+                    "rowIndex": 413,
                     "strings": [
                         "",
                         "Tween",
@@ -6512,7 +6636,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 406,
+                    "rowIndex": 414,
                     "strings": [
                         "",
                         "Tween",
@@ -6528,7 +6652,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 407,
+                    "rowIndex": 415,
                     "strings": [
                         "",
                         "Tween",
@@ -6544,7 +6668,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 408,
+                    "rowIndex": 416,
                     "strings": [
                         "",
                         "Bg",
@@ -6559,7 +6683,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 409,
+                    "rowIndex": 417,
                     "strings": [
                         "",
                         "ImageEffect",
@@ -6575,7 +6699,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 410,
+                    "rowIndex": 418,
                     "strings": [
                         "",
                         "Set",
@@ -6588,7 +6712,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 411,
+                    "rowIndex": 419,
                     "strings": [
                         "",
                         "Set",
@@ -6601,7 +6725,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 412,
+                    "rowIndex": 420,
                     "strings": [
                         "",
                         "",
@@ -6618,7 +6742,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 413,
+                    "rowIndex": 421,
                     "strings": [
                         "",
                         "ImageEffectOff",
@@ -6634,7 +6758,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 414,
+                    "rowIndex": 422,
                     "strings": [
                         "",
                         "Bg",
@@ -6649,7 +6773,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 415,
+                    "rowIndex": 423,
                     "strings": [
                         "",
                         "Set",
@@ -6661,7 +6785,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 416,
+                    "rowIndex": 424,
                     "strings": [
                         "",
                         "Set",
@@ -6673,7 +6797,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 417,
+                    "rowIndex": 425,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6689,7 +6813,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 418,
+                    "rowIndex": 426,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6705,7 +6829,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 419,
+                    "rowIndex": 427,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6721,7 +6845,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 420,
+                    "rowIndex": 428,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6737,7 +6861,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 421,
+                    "rowIndex": 429,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6753,7 +6877,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 422,
+                    "rowIndex": 430,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6769,7 +6893,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 423,
+                    "rowIndex": 431,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6785,7 +6909,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 424,
+                    "rowIndex": 432,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -6801,7 +6925,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 425,
+                    "rowIndex": 433,
                     "strings": [
                         "",
                         "",
@@ -6818,7 +6942,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 426,
+                    "rowIndex": 434,
                     "strings": [
                         "",
                         "",
@@ -6835,7 +6959,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 427,
+                    "rowIndex": 435,
                     "strings": [
                         "",
                         "",
@@ -6852,7 +6976,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 428,
+                    "rowIndex": 436,
                     "strings": [
                         "",
                         "",
@@ -6869,7 +6993,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 429,
+                    "rowIndex": 437,
                     "strings": [
                         "",
                         "",
@@ -6890,7 +7014,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 430,
+                    "rowIndex": 438,
                     "strings": [
                         "",
                         "Tween",
@@ -6906,7 +7030,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 431,
+                    "rowIndex": 439,
                     "strings": [
                         "",
                         "Tween",
@@ -6922,7 +7046,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 432,
+                    "rowIndex": 440,
                     "strings": [
                         "",
                         "",
@@ -6941,7 +7065,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 433,
+                    "rowIndex": 441,
                     "strings": [
                         "",
                         "",
@@ -6960,7 +7084,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 434,
+                    "rowIndex": 442,
                     "strings": [
                         "",
                         "",
@@ -6979,7 +7103,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 435,
+                    "rowIndex": 443,
                     "strings": [
                         "",
                         "",
@@ -6996,7 +7120,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 436,
+                    "rowIndex": 444,
                     "strings": [
                         "",
                         "",
@@ -7015,7 +7139,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 437,
+                    "rowIndex": 445,
                     "strings": [
                         "",
                         "",
@@ -7034,7 +7158,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 438,
+                    "rowIndex": 446,
                     "strings": [
                         "",
                         "",
@@ -7053,7 +7177,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 439,
+                    "rowIndex": 447,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -7074,7 +7198,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 440,
+                    "rowIndex": 448,
                     "strings": [
                         "",
                         "",
@@ -7095,7 +7219,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 441,
+                    "rowIndex": 449,
                     "strings": [
                         "",
                         "",
@@ -7116,7 +7240,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 442,
+                    "rowIndex": 450,
                     "strings": [
                         "",
                         "Tween",
@@ -7132,7 +7256,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 443,
+                    "rowIndex": 451,
                     "strings": [
                         "",
                         "Tween",
@@ -7148,7 +7272,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 444,
+                    "rowIndex": 452,
                     "strings": [
                         "",
                         "",
@@ -7167,7 +7291,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 445,
+                    "rowIndex": 453,
                     "strings": [
                         "",
                         "",
@@ -7186,7 +7310,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 446,
+                    "rowIndex": 454,
                     "strings": [
                         "",
                         "",
@@ -7205,7 +7329,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 447,
+                    "rowIndex": 455,
                     "strings": [
                         "",
                         "",
@@ -7224,7 +7348,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 448,
+                    "rowIndex": 456,
                     "strings": [
                         "",
                         "",
@@ -7243,7 +7367,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 449,
+                    "rowIndex": 457,
                     "strings": [
                         "",
                         "",
@@ -7260,7 +7384,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 450,
+                    "rowIndex": 458,
                     "strings": [
                         "",
                         "",
@@ -7279,7 +7403,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 451,
+                    "rowIndex": 459,
                     "strings": [
                         "",
                         "",
@@ -7298,7 +7422,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 452,
+                    "rowIndex": 460,
                     "strings": [
                         "",
                         "",
@@ -7315,7 +7439,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 453,
+                    "rowIndex": 461,
                     "strings": [
                         "",
                         "",
@@ -7334,7 +7458,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 454,
+                    "rowIndex": 462,
                     "strings": [
                         "",
                         "",
@@ -7353,7 +7477,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 455,
+                    "rowIndex": 463,
                     "strings": [
                         "",
                         "StopSound",
@@ -7363,7 +7487,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 456,
+                    "rowIndex": 464,
                     "strings": [
                         "",
                         "",
@@ -7380,7 +7504,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 457,
+                    "rowIndex": 465,
                     "strings": [
                         "",
                         "",
@@ -7397,7 +7521,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 458,
+                    "rowIndex": 466,
                     "strings": [
                         "",
                         "",
@@ -7414,7 +7538,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 459,
+                    "rowIndex": 467,
                     "strings": [
                         "",
                         "",
@@ -7431,7 +7555,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 460,
+                    "rowIndex": 468,
                     "strings": [
                         "",
                         "",
@@ -7448,7 +7572,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 461,
+                    "rowIndex": 469,
                     "strings": [
                         "",
                         "Bgm",
@@ -7458,7 +7582,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 462,
+                    "rowIndex": 470,
                     "strings": [
                         "",
                         "",
@@ -7477,7 +7601,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 463,
+                    "rowIndex": 471,
                     "strings": [
                         "",
                         "",
@@ -7496,7 +7620,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 464,
+                    "rowIndex": 472,
                     "strings": [
                         "",
                         "",
@@ -7513,7 +7637,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 465,
+                    "rowIndex": 473,
                     "strings": [
                         "",
                         "",
@@ -7530,7 +7654,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 466,
+                    "rowIndex": 474,
                     "strings": [
                         "",
                         "",
@@ -7549,7 +7673,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 467,
+                    "rowIndex": 475,
                     "strings": [
                         "",
                         "",
@@ -7568,7 +7692,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 468,
+                    "rowIndex": 476,
                     "strings": [
                         "",
                         "",
@@ -7587,7 +7711,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 469,
+                    "rowIndex": 477,
                     "strings": [
                         "",
                         "",
@@ -7604,7 +7728,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 470,
+                    "rowIndex": 478,
                     "strings": [
                         "",
                         "",
@@ -7623,7 +7747,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 471,
+                    "rowIndex": 479,
                     "strings": [
                         "",
                         "",
@@ -7642,7 +7766,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 472,
+                    "rowIndex": 480,
                     "strings": [
                         "",
                         "",
@@ -7659,7 +7783,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 473,
+                    "rowIndex": 481,
                     "strings": [
                         "",
                         "",
@@ -7676,7 +7800,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 474,
+                    "rowIndex": 482,
                     "strings": [
                         "",
                         "",
@@ -7695,7 +7819,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 475,
+                    "rowIndex": 483,
                     "strings": [
                         "",
                         "",
@@ -7714,7 +7838,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 476,
+                    "rowIndex": 484,
                     "strings": [
                         "",
                         "",
@@ -7731,7 +7855,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 477,
+                    "rowIndex": 485,
                     "strings": [
                         "",
                         "",
@@ -7748,7 +7872,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 478,
+                    "rowIndex": 486,
                     "strings": [
                         "",
                         "",
@@ -7767,7 +7891,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 479,
+                    "rowIndex": 487,
                     "strings": [
                         "",
                         "",
@@ -7786,7 +7910,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 480,
+                    "rowIndex": 488,
                     "strings": [
                         "",
                         "",
@@ -7803,7 +7927,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 481,
+                    "rowIndex": 489,
                     "strings": [
                         "",
                         "",
@@ -7820,7 +7944,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 482,
+                    "rowIndex": 490,
                     "strings": [
                         "",
                         "",
@@ -7837,7 +7961,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 483,
+                    "rowIndex": 491,
                     "strings": [
                         "",
                         "",
@@ -7854,7 +7978,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 484,
+                    "rowIndex": 492,
                     "strings": [
                         "",
                         "",
@@ -7871,7 +7995,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 485,
+                    "rowIndex": 493,
                     "strings": [
                         "",
                         "",
@@ -7888,7 +8012,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 486,
+                    "rowIndex": 494,
                     "strings": [
                         "",
                         "",
@@ -7907,7 +8031,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 487,
+                    "rowIndex": 495,
                     "strings": [
                         "",
                         "",
@@ -7924,7 +8048,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 488,
+                    "rowIndex": 496,
                     "strings": [
                         "",
                         "Sprite",
@@ -7940,7 +8064,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 489,
+                    "rowIndex": 497,
                     "strings": [
                         "",
                         "Tween",
@@ -7956,7 +8080,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 490,
+                    "rowIndex": 498,
                     "strings": [
                         "",
                         "Tween",
@@ -7972,7 +8096,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 491,
+                    "rowIndex": 499,
                     "strings": [
                         "",
                         "Tween",
@@ -7988,7 +8112,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 492,
+                    "rowIndex": 500,
                     "strings": [
                         "",
                         "Sprite",
@@ -8004,7 +8128,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 493,
+                    "rowIndex": 501,
                     "strings": [
                         "",
                         "Tween",
@@ -8020,7 +8144,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 494,
+                    "rowIndex": 502,
                     "strings": [
                         "",
                         "Tween",
@@ -8036,7 +8160,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 495,
+                    "rowIndex": 503,
                     "strings": [
                         "",
                         "Tween",
@@ -8052,7 +8176,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 496,
+                    "rowIndex": 504,
                     "strings": [
                         "",
                         "Sprite",
@@ -8068,7 +8192,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 497,
+                    "rowIndex": 505,
                     "strings": [
                         "",
                         "Tween",
@@ -8084,7 +8208,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 498,
+                    "rowIndex": 506,
                     "strings": [
                         "",
                         "Tween",
@@ -8100,7 +8224,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 499,
+                    "rowIndex": 507,
                     "strings": [
                         "",
                         "Tween",
@@ -8116,7 +8240,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 500,
+                    "rowIndex": 508,
                     "strings": [
                         "",
                         "Tween",
@@ -8132,7 +8256,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 501,
+                    "rowIndex": 509,
                     "strings": [
                         "",
                         "",
@@ -8149,7 +8273,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 502,
+                    "rowIndex": 510,
                     "strings": [
                         "",
                         "",
@@ -8166,7 +8290,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 503,
+                    "rowIndex": 511,
                     "strings": [
                         "",
                         "",
@@ -8183,7 +8307,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 504,
+                    "rowIndex": 512,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -8204,7 +8328,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 505,
+                    "rowIndex": 513,
                     "strings": [
                         "",
                         "Tween",
@@ -8220,7 +8344,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 506,
+                    "rowIndex": 514,
                     "strings": [
                         "",
                         "",
@@ -8237,7 +8361,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 507,
+                    "rowIndex": 515,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -8258,7 +8382,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 508,
+                    "rowIndex": 516,
                     "strings": [
                         "",
                         "",
@@ -8275,7 +8399,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 509,
+                    "rowIndex": 517,
                     "strings": [
                         "",
                         "",
@@ -8292,7 +8416,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 510,
+                    "rowIndex": 518,
                     "strings": [
                         "",
                         "",
@@ -8309,7 +8433,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 511,
+                    "rowIndex": 519,
                     "strings": [
                         "",
                         "",
@@ -8326,7 +8450,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 512,
+                    "rowIndex": 520,
                     "strings": [
                         "",
                         "",
@@ -8347,7 +8471,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 513,
+                    "rowIndex": 521,
                     "strings": [
                         "",
                         "",
@@ -8368,7 +8492,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 514,
+                    "rowIndex": 522,
                     "strings": [
                         "",
                         "Tween",
@@ -8384,7 +8508,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 515,
+                    "rowIndex": 523,
                     "strings": [
                         "",
                         "Tween",
@@ -8400,7 +8524,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 516,
+                    "rowIndex": 524,
                     "strings": [
                         "",
                         "Tween",
@@ -8416,7 +8540,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 517,
+                    "rowIndex": 525,
                     "strings": [
                         "",
                         "",
@@ -8435,7 +8559,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 518,
+                    "rowIndex": 526,
                     "strings": [
                         "",
                         "Tween",
@@ -8451,7 +8575,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 519,
+                    "rowIndex": 527,
                     "strings": [
                         "",
                         "Tween",
@@ -8467,7 +8591,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 520,
+                    "rowIndex": 528,
                     "strings": [
                         "",
                         "Tween",
@@ -8483,7 +8607,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 521,
+                    "rowIndex": 529,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8493,7 +8617,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 522,
+                    "rowIndex": 530,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8503,7 +8627,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 523,
+                    "rowIndex": 531,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -8513,7 +8637,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 524,
+                    "rowIndex": 532,
                     "strings": [
                         "",
                         "",
@@ -8527,164 +8651,6 @@
                         "ふぅ……お待たせいたしました、アスタリーゼ様。\nルルイエ内部に直接道を繋げるとは、流石のご手腕です。",
                         "",
                         "Main/1002/vo_main_1002_234"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 525,
-                    "strings": [
-                        "",
-                        "CharacterOff",
-                        "トレイラ",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.2",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 526,
-                    "strings": [
-                        "",
-                        "",
-                        "アスタリーゼ",
-                        "",
-                        "layer_左",
-                        "",
-                        "",
-                        "0.3",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 527,
-                    "strings": [
-                        "",
-                        "",
-                        "アスタリーゼ",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "いえ、よくわたくしの意図を理解しました、ノイシス。",
-                        "",
-                        "Main/1002/vo_main_1002_235"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 528,
-                    "strings": [
-                        "",
-                        "",
-                        "トレイラ",
-                        "",
-                        "layer_右",
-                        "",
-                        "",
-                        "0.3",
-                        "",
-                        "あ、あの……それで、私はここで何をすれば？",
-                        "",
-                        "Main/1002/vo_main_1002_236",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 529,
-                    "strings": [
-                        "",
-                        "",
-                        "アスタリーゼ",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "あなたは、何も考えずわたくしの指示に従えば良いのですよ、トレイラ。",
-                        "",
-                        "Main/1002/vo_main_1002_237"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 530,
-                    "strings": [
-                        "",
-                        "",
-                        "トレイラ",
-                        "Emt3_Gla",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "そ、そうですよね。\n分かっています……うぇひひ。",
-                        "",
-                        "Main/1002/vo_main_1002_238"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 531,
-                    "strings": [
-                        "",
-                        "",
-                        "主人公",
-                        "<Off>",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "これが、カルコサの……魔女の仲間たち。"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 532,
-                    "strings": [
-                        "",
-                        "CharacterOff",
-                        "アスタリーゼ",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.2",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -8715,9 +8681,9 @@
                     "strings": [
                         "",
                         "",
-                        "リフル",
-                        "Emt2_Ang",
-                        "layer_中",
+                        "アスタリーゼ",
+                        "",
+                        "layer_左",
                         "",
                         "",
                         "0.3",
@@ -8735,6 +8701,164 @@
                     "rowIndex": 535,
                     "strings": [
                         "",
+                        "",
+                        "アスタリーゼ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "いえ、よくわたくしの意図を理解しました、ノイシス。",
+                        "",
+                        "Main/1002/vo_main_1002_235"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 536,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "",
+                        "layer_右",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "あ、あの……それで、私はここで何をすれば？",
+                        "",
+                        "Main/1002/vo_main_1002_236",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 537,
+                    "strings": [
+                        "",
+                        "",
+                        "アスタリーゼ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あなたは、何も考えずわたくしの指示に従えば良いのですよ、トレイラ。",
+                        "",
+                        "Main/1002/vo_main_1002_237"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 538,
+                    "strings": [
+                        "",
+                        "",
+                        "トレイラ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そ、そうですよね。\n分かっています……うぇひひ。",
+                        "",
+                        "Main/1002/vo_main_1002_238"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 539,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "<Off>",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これが、カルコサの……魔女の仲間たち。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 540,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "アスタリーゼ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 541,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "トレイラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 542,
+                    "strings": [
+                        "",
+                        "",
+                        "リフル",
+                        "Emt2_Ang",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 543,
+                    "strings": [
+                        "",
                         "Tween",
                         "リフル",
                         "ScaleTo",
@@ -8744,7 +8868,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 536,
+                    "rowIndex": 544,
                     "strings": [
                         "",
                         "Tween",
@@ -8756,7 +8880,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 537,
+                    "rowIndex": 545,
                     "strings": [
                         "",
                         "",
@@ -8775,7 +8899,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 538,
+                    "rowIndex": 546,
                     "strings": [
                         "",
                         "",
@@ -8794,7 +8918,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 539,
+                    "rowIndex": 547,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -8815,7 +8939,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 540,
+                    "rowIndex": 548,
                     "strings": [
                         "",
                         "",
@@ -8836,7 +8960,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 541,
+                    "rowIndex": 549,
                     "strings": [
                         "",
                         "",
@@ -8857,7 +8981,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 542,
+                    "rowIndex": 550,
                     "strings": [
                         "",
                         "",
@@ -8876,7 +9000,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 543,
+                    "rowIndex": 551,
                     "strings": [
                         "",
                         "",
@@ -8895,7 +9019,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 544,
+                    "rowIndex": 552,
                     "strings": [
                         "",
                         "",
@@ -8914,7 +9038,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 545,
+                    "rowIndex": 553,
                     "strings": [
                         "",
                         "StopSound",
@@ -8935,7 +9059,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 546,
+                    "rowIndex": 554,
                     "strings": [
                         "",
                         "FadeOut",
@@ -8956,7 +9080,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 547,
+                    "rowIndex": 555,
                     "strings": [
                         "",
                         "Wait",
@@ -8977,7 +9101,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 548,
+                    "rowIndex": 556,
                     "strings": [
                         "",
                         "LayerReset",
@@ -9000,7 +9124,7 @@
             ],
             "name": "Assets/AdvScene/ScenarioExcel/main/1002/100203Nml.xlsx:100203Nml",
             "type": 1,
-            "textLength": 18814,
+            "textLength": 19065,
             "headerRow": 0,
             "entityIndexTbl": [],
             "entityDataList": []

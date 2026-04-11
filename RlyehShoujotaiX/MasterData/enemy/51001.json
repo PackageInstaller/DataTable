@@ -29,7 +29,9 @@
     "drawOrder": 0,
     "isRangedMeleeAttack": 1,
     "subAttack": 0,
-    "abilityIds": [],
+    "abilityIds": [
+        51001
+    ],
     "attackRange": 45,
     "targetNum": 1,
     "attackSpeed": 100,
@@ -65,5 +67,6 @@
     "attackIntervalResistance": 0,
     "invalidDamageReaction": 0,
     "directionLock": 0,
-    "skin": 0
+    "skin": 0,
+    "threatRank": 3
 }

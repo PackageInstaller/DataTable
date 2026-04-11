@@ -32,6 +32,32 @@
                     ]
                 }
             ]
+        },
+        {
+            "category": 1,
+            "eventId": 2,
+            "effectDatas": [
+                {
+                    "effectType": 1,
+                    "targetDatas": [
+                        {
+                            "effectValue": 70,
+                            "targetUnitIds": [
+                                42,
+                                43,
+                                44,
+                                45
+                            ]
+                        },
+                        {
+                            "effectValue": 30,
+                            "targetUnitIds": [
+                                46
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

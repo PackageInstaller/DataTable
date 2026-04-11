@@ -2767,10 +2767,11 @@
                     "rowIndex": 153,
                     "strings": [
                         "",
-                        "Tween",
+                        "Set",
                         "ネオン",
-                        "ScaleTo",
-                        "time=0 x=1.4 y=1.4"
+                        "Scale",
+                        "1.4",
+                        "1.4"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -2779,10 +2780,11 @@
                     "rowIndex": 154,
                     "strings": [
                         "",
-                        "Tween",
+                        "Set",
                         "ネオン",
-                        "MoveBy",
-                        "time=0 x=0 y=-300"
+                        "Move",
+                        "0",
+                        "-200"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -2833,7 +2835,7 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "斬撃_01",
+                        "斬撃6_01",
                         "",
                         "",
                         "",
@@ -2849,7 +2851,7 @@
                     "strings": [
                         "",
                         "Set",
-                        "斬撃_01",
+                        "斬撃6_01",
                         "Color",
                         "#028760",
                         "",
@@ -2865,7 +2867,7 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃6_01",
                         "ScaleTo",
                         "time=0 x=0.5 y=20",
                         "",
@@ -2881,7 +2883,7 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃6_01",
                         "MoveTo",
                         "time=0 x=-500 y=-500",
                         "",
@@ -2897,7 +2899,7 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃6_01",
                         "ScaleTo",
                         "time=0.1 x=-1 y=6",
                         "",
@@ -2913,7 +2915,7 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
+                        "斬撃6_01",
                         "MoveBy",
                         "time=0.1 x=750",
                         "",
@@ -2946,7 +2948,7 @@
                     "strings": [
                         "",
                         "SpriteOff",
-                        "斬撃_01"
+                        "斬撃6_01"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -3085,11 +3087,11 @@
                     "strings": [
                         "",
                         "Sprite",
-                        "四角_04",
+                        "斬撃3_06",
                         "",
+                        "レイヤー2_スプライト上51",
                         "",
-                        "",
-                        "",
+                        "2000",
                         "",
                         "Add"
                     ],
@@ -3100,10 +3102,10 @@
                     "rowIndex": 174,
                     "strings": [
                         "",
-                        "Set",
-                        "四角_04",
-                        "Color",
-                        "#dccb1880",
+                        "Tween",
+                        "斬撃3_06",
+                        "RotateTo",
+                        "time=0 z=-15",
                         "",
                         "",
                         "",
@@ -3117,9 +3119,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "四角_04",
-                        "RotateTo",
-                        "time=0 z=-30",
+                        "斬撃3_06",
+                        "ColorTo",
+                        "time=0 color=#ffff00 alpha=1",
                         "",
                         "",
                         "",
@@ -3133,9 +3135,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "四角_04",
+                        "斬撃3_06",
                         "ScaleTo",
-                        "time=0 x=0.1 y=20",
+                        "time=0 y=0 x=2",
                         "",
                         "",
                         "",
@@ -3149,9 +3151,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "四角_04",
-                        "MoveTo",
-                        "time=0 x=-300 y=-200",
+                        "斬撃3_06",
+                        "MoveBy",
+                        "time=0 x=-300",
                         "",
                         "",
                         "",
@@ -3164,16 +3166,116 @@
                     "rowIndex": 178,
                     "strings": [
                         "",
-                        "Tween",
-                        "四角_04",
-                        "ScaleTo",
-                        "time=1 x=0.4 y=30"
+                        "Sprite",
+                        "斬撃3_07",
+                        "",
+                        "レイヤー2_スプライト上52",
+                        "",
+                        "2000",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
                     "rowIndex": 179,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃3_07",
+                        "RotateTo",
+                        "time=0 z=-15",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 180,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃3_07",
+                        "ColorTo",
+                        "time=0 color=#ffffff alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 181,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃3_07",
+                        "ScaleTo",
+                        "time=0 y=0 x=-2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 182,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃3_07",
+                        "MoveBy",
+                        "time=0 x=-300",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 183,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃3_06",
+                        "ScaleTo",
+                        "time=0.4 y=3 x=2",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 184,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃3_07",
+                        "ScaleTo",
+                        "time=0.4 y=3 x=1.8",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 185,
                     "strings": [
                         "",
                         "",
@@ -3192,17 +3294,27 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 180,
+                    "rowIndex": 186,
                     "strings": [
                         "",
                         "SpriteOff",
-                        "四角_04"
+                        "斬撃3_06"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 181,
+                    "rowIndex": 187,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "斬撃3_07"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 188,
                     "strings": [
                         "",
                         "Sprite",
@@ -3218,7 +3330,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 182,
+                    "rowIndex": 189,
                     "strings": [
                         "",
                         "Set",
@@ -3234,7 +3346,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 183,
+                    "rowIndex": 190,
                     "strings": [
                         "",
                         "Tween",
@@ -3250,7 +3362,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 184,
+                    "rowIndex": 191,
                     "strings": [
                         "",
                         "Tween",
@@ -3266,7 +3378,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 185,
+                    "rowIndex": 192,
                     "strings": [
                         "",
                         "Tween",
@@ -3278,7 +3390,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 186,
+                    "rowIndex": 193,
                     "strings": [
                         "",
                         "Se",
@@ -3288,7 +3400,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 187,
+                    "rowIndex": 194,
                     "strings": [
                         "",
                         "",
@@ -3305,7 +3417,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 188,
+                    "rowIndex": 195,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3326,7 +3438,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 189,
+                    "rowIndex": 196,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3347,7 +3459,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 190,
+                    "rowIndex": 197,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3357,7 +3469,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 191,
+                    "rowIndex": 198,
                     "strings": [
                         "",
                         "",
@@ -3376,7 +3488,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 192,
+                    "rowIndex": 199,
                     "strings": [
                         "",
                         "",
@@ -3393,7 +3505,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 193,
+                    "rowIndex": 200,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -3403,7 +3515,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 194,
+                    "rowIndex": 201,
                     "strings": [
                         "",
                         "Tween",
@@ -3415,7 +3527,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 195,
+                    "rowIndex": 202,
                     "strings": [
                         "",
                         "Wait",
@@ -3430,7 +3542,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 196,
+                    "rowIndex": 203,
                     "strings": [
                         "",
                         "",
@@ -3451,7 +3563,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 197,
+                    "rowIndex": 204,
                     "strings": [
                         "",
                         "Tween",
@@ -3467,7 +3579,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 198,
+                    "rowIndex": 205,
                     "strings": [
                         "",
                         "Tween",
@@ -3483,7 +3595,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 199,
+                    "rowIndex": 206,
                     "strings": [
                         "",
                         "Tween",
@@ -3499,7 +3611,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 200,
+                    "rowIndex": 207,
                     "strings": [
                         "",
                         "",
@@ -3518,7 +3630,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 201,
+                    "rowIndex": 208,
                     "strings": [
                         "",
                         "",
@@ -3539,7 +3651,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 202,
+                    "rowIndex": 209,
                     "strings": [
                         "",
                         "",
@@ -3558,7 +3670,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 203,
+                    "rowIndex": 210,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3579,7 +3691,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 204,
+                    "rowIndex": 211,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -3600,7 +3712,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 205,
+                    "rowIndex": 212,
                     "strings": [
                         "",
                         "Wait",
@@ -3615,13 +3727,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 206,
+                    "rowIndex": 213,
                     "strings": [
                         "",
                         "",
                         "ムルミィ・ゾォム",
                         "Emt7_Sad",
-                        "layer_左2",
+                        "layer_右220",
                         "",
                         "",
                         "0.3",
@@ -3636,29 +3748,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 207,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ムルミィ・ゾォム",
-                        "MoveTo",
-                        "time=0 x=-350 y=-100",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 208,
+                    "rowIndex": 214,
                     "strings": [
                         "",
                         "",
                         "ユラナ・ゾッタ",
                         "Emt7_Sad",
-                        "レイヤー2_キャラ50",
+                        "layer_左",
                         "",
                         "",
                         "0.3",
@@ -3673,23 +3769,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 209,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ユラナ・ゾッタ",
-                        "MoveBy",
-                        "time=0 x=50 y=-100",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 210,
+                    "rowIndex": 215,
                     "strings": [
                         "",
                         "",
@@ -3710,76 +3790,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 211,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "ノーティア・ゾーノ",
-                        "MoveTo",
-                        "time=0 x=100 y=-100",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 212,
-                    "strings": [
-                        "",
-                        "",
-                        "リフル",
-                        "Emt5_Sur",
-                        "layer_中2",
-                        "",
-                        "",
-                        "0.3",
-                        "Add",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 213,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "リフル",
-                        "ScaleTo",
-                        "time=0 x=1 y=1",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 214,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "リフル",
-                        "MoveTo",
-                        "time=0 x=320 y=-100",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 215,
+                    "rowIndex": 216,
                     "strings": [
                         "",
                         "",
@@ -3798,7 +3809,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 216,
+                    "rowIndex": 217,
                     "strings": [
                         "",
                         "",
@@ -3817,32 +3828,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 217,
-                    "strings": [
-                        "",
-                        "CharacterOff",
-                        "リフル",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.2",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 218,
                     "strings": [
                         "",
                         "CharacterOff",
-                        "ノーティア・ゾーノ",
+                        "リフル",
                         "",
                         "",
                         "",
@@ -3863,7 +3853,7 @@
                     "strings": [
                         "",
                         "CharacterOff",
-                        "ユラナ・ゾッタ",
+                        "ノーティア・ゾーノ",
                         "",
                         "",
                         "",
@@ -3884,7 +3874,7 @@
                     "strings": [
                         "",
                         "CharacterOff",
-                        "ムルミィ・ゾォム",
+                        "ユラナ・ゾッタ",
                         "",
                         "",
                         "",
@@ -3904,6 +3894,27 @@
                     "rowIndex": 221,
                     "strings": [
                         "",
+                        "CharacterOff",
+                        "ムルミィ・ゾォム",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 222,
+                    "strings": [
+                        "",
                         "Tween",
                         "BG",
                         "MoveTo",
@@ -3913,7 +3924,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 222,
+                    "rowIndex": 223,
                     "strings": [
                         "",
                         "",
@@ -3934,7 +3945,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 223,
+                    "rowIndex": 224,
                     "strings": [
                         "",
                         "",
@@ -3955,7 +3966,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 224,
+                    "rowIndex": 225,
                     "strings": [
                         "",
                         "",
@@ -3974,7 +3985,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 225,
+                    "rowIndex": 226,
                     "strings": [
                         "",
                         "",
@@ -3993,7 +4004,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 226,
+                    "rowIndex": 227,
                     "strings": [
                         "",
                         "",
@@ -4012,7 +4023,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 227,
+                    "rowIndex": 228,
                     "strings": [
                         "",
                         "",
@@ -4031,7 +4042,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 228,
+                    "rowIndex": 229,
                     "strings": [
                         "",
                         "",
@@ -4048,32 +4059,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 229,
-                    "strings": [
-                        "",
-                        "CharacterOff",
-                        "ノイシス",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.2",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 230,
                     "strings": [
                         "",
                         "CharacterOff",
-                        "トレイラ",
+                        "ノイシス",
                         "",
                         "",
                         "",
@@ -4093,6 +4083,27 @@
                     "rowIndex": 231,
                     "strings": [
                         "",
+                        "CharacterOff",
+                        "トレイラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 232,
+                    "strings": [
+                        "",
                         "Tween",
                         "BG",
                         "MoveTo",
@@ -4102,7 +4113,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 232,
+                    "rowIndex": 233,
                     "strings": [
                         "",
                         "",
@@ -4123,7 +4134,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 233,
+                    "rowIndex": 234,
                     "strings": [
                         "",
                         "",
@@ -4144,7 +4155,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 234,
+                    "rowIndex": 235,
                     "strings": [
                         "",
                         "",
@@ -4163,7 +4174,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 235,
+                    "rowIndex": 236,
                     "strings": [
                         "",
                         "",
@@ -4182,7 +4193,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 236,
+                    "rowIndex": 237,
                     "strings": [
                         "",
                         "",
@@ -4201,32 +4212,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 237,
-                    "strings": [
-                        "",
-                        "CharacterOff",
-                        "ノーティア・ゾーノ",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.2",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 238,
                     "strings": [
                         "",
                         "CharacterOff",
-                        "リフル",
+                        "ノーティア・ゾーノ",
                         "",
                         "",
                         "",
@@ -4246,6 +4236,27 @@
                     "rowIndex": 239,
                     "strings": [
                         "",
+                        "CharacterOff",
+                        "リフル",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 240,
+                    "strings": [
+                        "",
                         "Tween",
                         "BG",
                         "MoveTo",
@@ -4255,7 +4266,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 240,
+                    "rowIndex": 241,
                     "strings": [
                         "",
                         "",
@@ -4276,7 +4287,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 241,
+                    "rowIndex": 242,
                     "strings": [
                         "",
                         "",
@@ -4297,7 +4308,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 242,
+                    "rowIndex": 243,
                     "strings": [
                         "",
                         "",
@@ -4316,7 +4327,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 243,
+                    "rowIndex": 244,
                     "strings": [
                         "",
                         "",
@@ -4335,7 +4346,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 244,
+                    "rowIndex": 245,
                     "strings": [
                         "",
                         "",
@@ -4356,7 +4367,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 245,
+                    "rowIndex": 246,
                     "strings": [
                         "",
                         "",
@@ -4375,7 +4386,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 246,
+                    "rowIndex": 247,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -4396,7 +4407,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 247,
+                    "rowIndex": 248,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -4417,7 +4428,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 248,
+                    "rowIndex": 249,
                     "strings": [
                         "",
                         "Tween",
@@ -4433,7 +4444,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 249,
+                    "rowIndex": 250,
                     "strings": [
                         "",
                         "Sprite",
@@ -4449,7 +4460,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 250,
+                    "rowIndex": 251,
                     "strings": [
                         "",
                         "Sprite",
@@ -4465,7 +4476,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 251,
+                    "rowIndex": 252,
                     "strings": [
                         "",
                         "Tween",
@@ -4481,7 +4492,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 252,
+                    "rowIndex": 253,
                     "strings": [
                         "",
                         "Tween",
@@ -4497,7 +4508,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 253,
+                    "rowIndex": 254,
                     "strings": [
                         "",
                         "Tween",
@@ -4513,7 +4524,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 254,
+                    "rowIndex": 255,
                     "strings": [
                         "",
                         "Tween",
@@ -4529,7 +4540,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 255,
+                    "rowIndex": 256,
                     "strings": [
                         "",
                         "Tween",
@@ -4545,7 +4556,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 256,
+                    "rowIndex": 257,
                     "strings": [
                         "",
                         "Tween",
@@ -4561,7 +4572,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 257,
+                    "rowIndex": 258,
                     "strings": [
                         "",
                         "Tween",
@@ -4577,7 +4588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 258,
+                    "rowIndex": 259,
                     "strings": [
                         "",
                         "Tween",
@@ -4593,7 +4604,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 259,
+                    "rowIndex": 260,
                     "strings": [
                         "",
                         "Tween",
@@ -4609,7 +4620,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 260,
+                    "rowIndex": 261,
                     "strings": [
                         "",
                         "Tween",
@@ -4625,7 +4636,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 261,
+                    "rowIndex": 262,
                     "strings": [
                         "",
                         "Tween",
@@ -4641,7 +4652,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 262,
+                    "rowIndex": 263,
                     "strings": [
                         "",
                         "Wait",
@@ -4656,7 +4667,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 263,
+                    "rowIndex": 264,
                     "strings": [
                         "",
                         "",
@@ -4677,7 +4688,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 264,
+                    "rowIndex": 265,
                     "strings": [
                         "",
                         "Tween",
@@ -4693,7 +4704,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 265,
+                    "rowIndex": 266,
                     "strings": [
                         "",
                         "Tween",
@@ -4709,7 +4720,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 266,
+                    "rowIndex": 267,
                     "strings": [
                         "",
                         "",
@@ -4728,7 +4739,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 267,
+                    "rowIndex": 268,
                     "strings": [
                         "",
                         "",
@@ -4747,7 +4758,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 268,
+                    "rowIndex": 269,
                     "strings": [
                         "",
                         "",
@@ -4766,7 +4777,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 269,
+                    "rowIndex": 270,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -4787,7 +4798,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 270,
+                    "rowIndex": 271,
                     "strings": [
                         "",
                         "Se",
@@ -4797,7 +4808,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 271,
+                    "rowIndex": 272,
                     "strings": [
                         "",
                         "Tween",
@@ -4813,7 +4824,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 272,
+                    "rowIndex": 273,
                     "strings": [
                         "",
                         "Tween",
@@ -4829,7 +4840,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 273,
+                    "rowIndex": 274,
                     "strings": [
                         "",
                         "Tween",
@@ -4845,7 +4856,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 274,
+                    "rowIndex": 275,
                     "strings": [
                         "",
                         "Tween",
@@ -4861,7 +4872,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 275,
+                    "rowIndex": 276,
                     "strings": [
                         "",
                         "",
@@ -4878,7 +4889,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 276,
+                    "rowIndex": 277,
                     "strings": [
                         "",
                         "",
@@ -4899,14 +4910,14 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 277,
+                    "rowIndex": 278,
                     "strings": [
                         "",
                         "",
                         "リフル",
                         "",
                         "layer_右",
-                        "",
+                        "-100",
                         "",
                         "0.3",
                         "",
@@ -4920,7 +4931,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 278,
+                    "rowIndex": 279,
                     "strings": [
                         "",
                         "Sprite",
@@ -4936,29 +4947,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 279,
+                    "rowIndex": 280,
                     "strings": [
                         "",
                         "Set",
                         "グラデ_01",
                         "Color",
                         "#713c8080",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 280,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "グラデ_01",
-                        "ScaleTo",
-                        "time=0 x=15 y=0",
                         "",
                         "",
                         "",
@@ -4974,7 +4969,7 @@
                         "Tween",
                         "グラデ_01",
                         "ScaleTo",
-                        "time=1 x=15 y=30",
+                        "time=0 x=15 y=0",
                         "",
                         "",
                         "",
@@ -4985,6 +4980,22 @@
                 },
                 {
                     "rowIndex": 282,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_01",
+                        "ScaleTo",
+                        "time=1 x=15 y=30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 283,
                     "strings": [
                         "",
                         "Sprite",
@@ -5000,29 +5011,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 283,
+                    "rowIndex": 284,
                     "strings": [
                         "",
                         "Set",
                         "グラデ_02",
                         "Color",
                         "#713c8080",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 284,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "グラデ_02",
-                        "ScaleTo",
-                        "time=0 x=15 y=0",
                         "",
                         "",
                         "",
@@ -5038,13 +5033,29 @@
                         "Tween",
                         "グラデ_02",
                         "ScaleTo",
-                        "time=1 x=15 y=-30"
+                        "time=0 x=15 y=0",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
                     "rowIndex": 286,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_02",
+                        "ScaleTo",
+                        "time=1 x=15 y=-30"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 287,
                     "strings": [
                         "",
                         "Sprite",
@@ -5060,29 +5071,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 287,
+                    "rowIndex": 288,
                     "strings": [
                         "",
                         "Set",
                         "グラデ_03",
                         "Color",
                         "#713c8080",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 288,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "グラデ_03",
-                        "ScaleTo",
-                        "time=0 x=15 y=0",
                         "",
                         "",
                         "",
@@ -5098,7 +5093,7 @@
                         "Tween",
                         "グラデ_03",
                         "ScaleTo",
-                        "time=1 x=15 y=30",
+                        "time=0 x=15 y=0",
                         "",
                         "",
                         "",
@@ -5109,6 +5104,22 @@
                 },
                 {
                     "rowIndex": 290,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "グラデ_03",
+                        "ScaleTo",
+                        "time=1 x=15 y=30",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 291,
                     "strings": [
                         "",
                         "Sprite",
@@ -5124,7 +5135,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 291,
+                    "rowIndex": 292,
                     "strings": [
                         "",
                         "Set",
@@ -5140,7 +5151,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 292,
+                    "rowIndex": 293,
                     "strings": [
                         "",
                         "Tween",
@@ -5156,7 +5167,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 293,
+                    "rowIndex": 294,
                     "strings": [
                         "",
                         "Tween",
@@ -5168,29 +5179,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 294,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "斬撃_01",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 295,
                     "strings": [
                         "",
-                        "Set",
-                        "斬撃_01",
-                        "Color",
-                        "#713c80",
+                        "Sprite",
+                        "斬撃4_01",
+                        "",
+                        "",
                         "",
                         "",
                         "",
@@ -5203,10 +5198,10 @@
                     "rowIndex": 296,
                     "strings": [
                         "",
-                        "Tween",
-                        "斬撃_01",
-                        "ScaleTo",
-                        "time=0 x=-0.5 y=1",
+                        "Set",
+                        "斬撃4_01",
+                        "Color",
+                        "#713c80",
                         "",
                         "",
                         "",
@@ -5220,9 +5215,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
-                        "MoveTo",
-                        "time=0 x=300",
+                        "斬撃4_01",
+                        "ScaleTo",
+                        "time=0 x=-0.5 y=1",
                         "",
                         "",
                         "",
@@ -5236,21 +5231,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_01",
-                        "ScaleTo",
-                        "time=1 x=1 y=1"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 299,
-                    "strings": [
-                        "",
-                        "Sprite",
-                        "斬撃_02",
-                        "",
-                        "",
+                        "斬撃4_01",
+                        "MoveTo",
+                        "time=0 x=300",
                         "",
                         "",
                         "",
@@ -5260,14 +5243,26 @@
                     "isCommentOut": 0
                 },
                 {
+                    "rowIndex": 299,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_01",
+                        "ScaleTo",
+                        "time=0.4 x=1 y=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
                     "rowIndex": 300,
                     "strings": [
                         "",
-                        "Set",
-                        "斬撃_02",
-                        "Color",
-                        "#713c80",
+                        "Sprite",
+                        "斬撃4_02",
                         "",
+                        "",
+                        "50",
                         "",
                         "",
                         "Add"
@@ -5280,9 +5275,9 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_02",
-                        "ScaleTo",
-                        "time=0 x=0.5 y=1",
+                        "斬撃4_02",
+                        "RotateTo",
+                        "time=0 z=30",
                         "",
                         "",
                         "",
@@ -5295,10 +5290,10 @@
                     "rowIndex": 302,
                     "strings": [
                         "",
-                        "Tween",
-                        "斬撃_02",
-                        "MoveTo",
-                        "time=0 x=200",
+                        "Set",
+                        "斬撃4_02",
+                        "Color",
+                        "#713c80",
                         "",
                         "",
                         "",
@@ -5312,15 +5307,47 @@
                     "strings": [
                         "",
                         "Tween",
-                        "斬撃_02",
+                        "斬撃4_02",
                         "ScaleTo",
-                        "time=1 x=-1 y=1"
+                        "time=0 x=0.5 y=1",
+                        "",
+                        "",
+                        "",
+                        "Add"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
                     "rowIndex": 304,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_02",
+                        "MoveTo",
+                        "time=0 x=200",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 305,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "斬撃4_02",
+                        "ScaleTo",
+                        "time=0.4 x=1 y=1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 306,
                     "strings": [
                         "",
                         "Se",
@@ -5330,7 +5357,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 305,
+                    "rowIndex": 307,
                     "strings": [
                         "",
                         "",
@@ -5349,7 +5376,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 306,
+                    "rowIndex": 308,
                     "strings": [
                         "",
                         "FadeOut",
@@ -5363,31 +5390,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 307,
-                    "strings": [
-                        "",
-                        "SpriteOff",
-                        "斬撃_01"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 308,
-                    "strings": [
-                        "",
-                        "SpriteOff",
-                        "斬撃_02"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 309,
                     "strings": [
                         "",
                         "SpriteOff",
-                        "グラデ_01"
+                        "斬撃4_01"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -5397,7 +5404,7 @@
                     "strings": [
                         "",
                         "SpriteOff",
-                        "グラデ_02"
+                        "斬撃4_02"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -5407,7 +5414,7 @@
                     "strings": [
                         "",
                         "SpriteOff",
-                        "グラデ_03"
+                        "グラデ_01"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
@@ -5417,13 +5424,33 @@
                     "strings": [
                         "",
                         "SpriteOff",
-                        "グラデ_04"
+                        "グラデ_02"
                     ],
                     "isEmpty": 0,
                     "isCommentOut": 0
                 },
                 {
                     "rowIndex": 313,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "グラデ_03"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 314,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "グラデ_04"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 315,
                     "strings": [
                         "",
                         "Wait",
@@ -5438,7 +5465,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 314,
+                    "rowIndex": 316,
                     "strings": [
                         "",
                         "FadeIn",
@@ -5452,7 +5479,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 315,
+                    "rowIndex": 317,
                     "strings": [
                         "",
                         "",
@@ -5471,7 +5498,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 316,
+                    "rowIndex": 318,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -5492,7 +5519,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 317,
+                    "rowIndex": 319,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -5513,7 +5540,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 318,
+                    "rowIndex": 320,
                     "strings": [
                         "",
                         "Tween",
@@ -5529,7 +5556,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 319,
+                    "rowIndex": 321,
                     "strings": [
                         "",
                         "Tween",
@@ -5545,7 +5572,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 320,
+                    "rowIndex": 322,
                     "strings": [
                         "",
                         "Tween",
@@ -5561,7 +5588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 321,
+                    "rowIndex": 323,
                     "strings": [
                         "",
                         "",
@@ -5582,7 +5609,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 322,
+                    "rowIndex": 324,
                     "strings": [
                         "",
                         "Tween",
@@ -5598,7 +5625,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 323,
+                    "rowIndex": 325,
                     "strings": [
                         "",
                         "Tween",
@@ -5614,7 +5641,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 324,
+                    "rowIndex": 326,
                     "strings": [
                         "",
                         "Tween",
@@ -5630,7 +5657,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 325,
+                    "rowIndex": 327,
                     "strings": [
                         "",
                         "Sprite",
@@ -5642,7 +5669,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 326,
+                    "rowIndex": 328,
                     "strings": [
                         "",
                         "Sprite",
@@ -5654,7 +5681,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 327,
+                    "rowIndex": 329,
                     "strings": [
                         "",
                         "Tween",
@@ -5670,7 +5697,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 328,
+                    "rowIndex": 330,
                     "strings": [
                         "",
                         "Tween",
@@ -5686,45 +5713,13 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 329,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "丸4_03",
-                        "ColorTo",
-                        "time=0 color=#713c80 alpha=0.8",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 330,
-                    "strings": [
-                        "",
-                        "Tween",
-                        "丸4_04",
-                        "ColorTo",
-                        "time=0 color=#713c80 alpha=0.8",
-                        "",
-                        "",
-                        "",
-                        "Add"
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 331,
                     "strings": [
                         "",
                         "Tween",
                         "丸4_03",
-                        "MoveTo",
-                        "time=0 y=-330",
+                        "ColorTo",
+                        "time=0 color=#713c80 alpha=0.8",
                         "",
                         "",
                         "",
@@ -5739,6 +5734,22 @@
                         "",
                         "Tween",
                         "丸4_04",
+                        "ColorTo",
+                        "time=0 color=#713c80 alpha=0.8",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 333,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "丸4_03",
                         "MoveTo",
                         "time=0 y=-330",
                         "",
@@ -5750,7 +5761,23 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 333,
+                    "rowIndex": 334,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "丸4_04",
+                        "MoveTo",
+                        "time=0 y=-330",
+                        "",
+                        "",
+                        "",
+                        "Add"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 335,
                     "strings": [
                         "",
                         "Tween",
@@ -5766,7 +5793,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 334,
+                    "rowIndex": 336,
                     "strings": [
                         "",
                         "Tween",
@@ -5782,7 +5809,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 335,
+                    "rowIndex": 337,
                     "strings": [
                         "",
                         "Wait",
@@ -5798,7 +5825,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 336,
+                    "rowIndex": 338,
                     "strings": [
                         "",
                         "Se",
@@ -5808,7 +5835,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 337,
+                    "rowIndex": 339,
                     "strings": [
                         "",
                         "",
@@ -5825,7 +5852,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 338,
+                    "rowIndex": 340,
                     "strings": [
                         "",
                         "Sprite",
@@ -5841,7 +5868,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 339,
+                    "rowIndex": 341,
                     "strings": [
                         "",
                         "Sprite",
@@ -5857,7 +5884,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 340,
+                    "rowIndex": 342,
                     "strings": [
                         "",
                         "Set",
@@ -5873,7 +5900,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 341,
+                    "rowIndex": 343,
                     "strings": [
                         "",
                         "Tween",
@@ -5889,7 +5916,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 342,
+                    "rowIndex": 344,
                     "strings": [
                         "",
                         "Tween",
@@ -5905,7 +5932,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 343,
+                    "rowIndex": 345,
                     "strings": [
                         "",
                         "Tween",
@@ -5921,7 +5948,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 344,
+                    "rowIndex": 346,
                     "strings": [
                         "",
                         "Set",
@@ -5937,7 +5964,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 345,
+                    "rowIndex": 347,
                     "strings": [
                         "",
                         "Tween",
@@ -5953,7 +5980,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 346,
+                    "rowIndex": 348,
                     "strings": [
                         "",
                         "Sprite",
@@ -5969,7 +5996,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 347,
+                    "rowIndex": 349,
                     "strings": [
                         "",
                         "Tween",
@@ -5985,7 +6012,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 348,
+                    "rowIndex": 350,
                     "strings": [
                         "",
                         "Set",
@@ -6001,7 +6028,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 349,
+                    "rowIndex": 351,
                     "strings": [
                         "",
                         "Tween",
@@ -6017,7 +6044,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 350,
+                    "rowIndex": 352,
                     "strings": [
                         "",
                         "Sprite",
@@ -6033,7 +6060,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 351,
+                    "rowIndex": 353,
                     "strings": [
                         "",
                         "Tween",
@@ -6049,7 +6076,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 352,
+                    "rowIndex": 354,
                     "strings": [
                         "",
                         "Set",
@@ -6065,7 +6092,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 353,
+                    "rowIndex": 355,
                     "strings": [
                         "",
                         "Tween",
@@ -6081,7 +6108,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 354,
+                    "rowIndex": 356,
                     "strings": [
                         "",
                         "Sprite",
@@ -6097,7 +6124,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 355,
+                    "rowIndex": 357,
                     "strings": [
                         "",
                         "Tween",
@@ -6113,7 +6140,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 356,
+                    "rowIndex": 358,
                     "strings": [
                         "",
                         "Set",
@@ -6129,7 +6156,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 357,
+                    "rowIndex": 359,
                     "strings": [
                         "",
                         "Tween",
@@ -6145,7 +6172,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 358,
+                    "rowIndex": 360,
                     "strings": [
                         "",
                         "Sprite",
@@ -6161,7 +6188,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 359,
+                    "rowIndex": 361,
                     "strings": [
                         "",
                         "Tween",
@@ -6177,7 +6204,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 360,
+                    "rowIndex": 362,
                     "strings": [
                         "",
                         "Set",
@@ -6193,7 +6220,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 361,
+                    "rowIndex": 363,
                     "strings": [
                         "",
                         "Tween",
@@ -6209,7 +6236,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 362,
+                    "rowIndex": 364,
                     "strings": [
                         "",
                         "Sprite",
@@ -6225,7 +6252,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 363,
+                    "rowIndex": 365,
                     "strings": [
                         "",
                         "Tween",
@@ -6241,7 +6268,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 364,
+                    "rowIndex": 366,
                     "strings": [
                         "",
                         "Set",
@@ -6257,7 +6284,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 365,
+                    "rowIndex": 367,
                     "strings": [
                         "",
                         "Tween",
@@ -6273,7 +6300,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 366,
+                    "rowIndex": 368,
                     "strings": [
                         "",
                         "Sprite",
@@ -6289,7 +6316,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 367,
+                    "rowIndex": 369,
                     "strings": [
                         "",
                         "Tween",
@@ -6305,7 +6332,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 368,
+                    "rowIndex": 370,
                     "strings": [
                         "",
                         "Set",
@@ -6321,7 +6348,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 369,
+                    "rowIndex": 371,
                     "strings": [
                         "",
                         "Tween",
@@ -6337,7 +6364,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 370,
+                    "rowIndex": 372,
                     "strings": [
                         "",
                         "Sprite",
@@ -6353,7 +6380,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 371,
+                    "rowIndex": 373,
                     "strings": [
                         "",
                         "Tween",
@@ -6369,7 +6396,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 372,
+                    "rowIndex": 374,
                     "strings": [
                         "",
                         "Set",
@@ -6385,7 +6412,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 373,
+                    "rowIndex": 375,
                     "strings": [
                         "",
                         "Tween",
@@ -6401,7 +6428,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 374,
+                    "rowIndex": 376,
                     "strings": [
                         "",
                         "Sprite",
@@ -6417,7 +6444,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 375,
+                    "rowIndex": 377,
                     "strings": [
                         "",
                         "Tween",
@@ -6433,7 +6460,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 376,
+                    "rowIndex": 378,
                     "strings": [
                         "",
                         "Set",
@@ -6449,7 +6476,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 377,
+                    "rowIndex": 379,
                     "strings": [
                         "",
                         "Tween",
@@ -6465,7 +6492,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 378,
+                    "rowIndex": 380,
                     "strings": [
                         "",
                         "Sprite",
@@ -6481,7 +6508,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 379,
+                    "rowIndex": 381,
                     "strings": [
                         "",
                         "Tween",
@@ -6497,7 +6524,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 380,
+                    "rowIndex": 382,
                     "strings": [
                         "",
                         "Set",
@@ -6513,7 +6540,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 381,
+                    "rowIndex": 383,
                     "strings": [
                         "",
                         "Tween",
@@ -6529,7 +6556,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 382,
+                    "rowIndex": 384,
                     "strings": [
                         "",
                         "Sprite",
@@ -6545,7 +6572,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 383,
+                    "rowIndex": 385,
                     "strings": [
                         "",
                         "Tween",
@@ -6561,7 +6588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 384,
+                    "rowIndex": 386,
                     "strings": [
                         "",
                         "Set",
@@ -6577,7 +6604,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 385,
+                    "rowIndex": 387,
                     "strings": [
                         "",
                         "Tween",
@@ -6593,7 +6620,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 386,
+                    "rowIndex": 388,
                     "strings": [
                         "",
                         "Sprite",
@@ -6609,7 +6636,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 387,
+                    "rowIndex": 389,
                     "strings": [
                         "",
                         "Tween",
@@ -6625,7 +6652,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 388,
+                    "rowIndex": 390,
                     "strings": [
                         "",
                         "Set",
@@ -6641,7 +6668,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 389,
+                    "rowIndex": 391,
                     "strings": [
                         "",
                         "Tween",
@@ -6657,7 +6684,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 390,
+                    "rowIndex": 392,
                     "strings": [
                         "",
                         "Sprite",
@@ -6673,7 +6700,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 391,
+                    "rowIndex": 393,
                     "strings": [
                         "",
                         "Tween",
@@ -6689,7 +6716,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 392,
+                    "rowIndex": 394,
                     "strings": [
                         "",
                         "Set",
@@ -6705,7 +6732,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 393,
+                    "rowIndex": 395,
                     "strings": [
                         "",
                         "Tween",
@@ -6721,7 +6748,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 394,
+                    "rowIndex": 396,
                     "strings": [
                         "",
                         "Sprite",
@@ -6737,7 +6764,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 395,
+                    "rowIndex": 397,
                     "strings": [
                         "",
                         "Tween",
@@ -6753,7 +6780,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 396,
+                    "rowIndex": 398,
                     "strings": [
                         "",
                         "Set",
@@ -6769,7 +6796,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 397,
+                    "rowIndex": 399,
                     "strings": [
                         "",
                         "Tween",
@@ -6785,7 +6812,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 398,
+                    "rowIndex": 400,
                     "strings": [
                         "",
                         "Sprite",
@@ -6801,7 +6828,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 399,
+                    "rowIndex": 401,
                     "strings": [
                         "",
                         "Tween",
@@ -6817,7 +6844,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 400,
+                    "rowIndex": 402,
                     "strings": [
                         "",
                         "Set",
@@ -6833,7 +6860,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 401,
+                    "rowIndex": 403,
                     "strings": [
                         "",
                         "Tween",
@@ -6849,7 +6876,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 402,
+                    "rowIndex": 404,
                     "strings": [
                         "",
                         "Sprite",
@@ -6865,7 +6892,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 403,
+                    "rowIndex": 405,
                     "strings": [
                         "",
                         "Tween",
@@ -6881,7 +6908,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 404,
+                    "rowIndex": 406,
                     "strings": [
                         "",
                         "Set",
@@ -6897,7 +6924,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 405,
+                    "rowIndex": 407,
                     "strings": [
                         "",
                         "Tween",
@@ -6913,7 +6940,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 406,
+                    "rowIndex": 408,
                     "strings": [
                         "",
                         "Sprite",
@@ -6929,7 +6956,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 407,
+                    "rowIndex": 409,
                     "strings": [
                         "",
                         "Tween",
@@ -6945,7 +6972,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 408,
+                    "rowIndex": 410,
                     "strings": [
                         "",
                         "Set",
@@ -6961,7 +6988,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 409,
+                    "rowIndex": 411,
                     "strings": [
                         "",
                         "Tween",
@@ -6977,7 +7004,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 410,
+                    "rowIndex": 412,
                     "strings": [
                         "",
                         "Sprite",
@@ -6993,7 +7020,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 411,
+                    "rowIndex": 413,
                     "strings": [
                         "",
                         "Tween",
@@ -7009,7 +7036,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 412,
+                    "rowIndex": 414,
                     "strings": [
                         "",
                         "Set",
@@ -7025,7 +7052,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 413,
+                    "rowIndex": 415,
                     "strings": [
                         "",
                         "Tween",
@@ -7041,7 +7068,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 414,
+                    "rowIndex": 416,
                     "strings": [
                         "",
                         "Sprite",
@@ -7057,7 +7084,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 415,
+                    "rowIndex": 417,
                     "strings": [
                         "",
                         "Tween",
@@ -7073,7 +7100,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 416,
+                    "rowIndex": 418,
                     "strings": [
                         "",
                         "Set",
@@ -7089,7 +7116,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 417,
+                    "rowIndex": 419,
                     "strings": [
                         "",
                         "Tween",
@@ -7105,7 +7132,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 418,
+                    "rowIndex": 420,
                     "strings": [
                         "",
                         "Sprite",
@@ -7121,7 +7148,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 419,
+                    "rowIndex": 421,
                     "strings": [
                         "",
                         "Tween",
@@ -7137,7 +7164,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 420,
+                    "rowIndex": 422,
                     "strings": [
                         "",
                         "Set",
@@ -7153,7 +7180,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 421,
+                    "rowIndex": 423,
                     "strings": [
                         "",
                         "Tween",
@@ -7169,7 +7196,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 422,
+                    "rowIndex": 424,
                     "strings": [
                         "",
                         "Sprite",
@@ -7185,7 +7212,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 423,
+                    "rowIndex": 425,
                     "strings": [
                         "",
                         "Tween",
@@ -7201,7 +7228,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 424,
+                    "rowIndex": 426,
                     "strings": [
                         "",
                         "Set",
@@ -7217,7 +7244,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 425,
+                    "rowIndex": 427,
                     "strings": [
                         "",
                         "Tween",
@@ -7233,7 +7260,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 426,
+                    "rowIndex": 428,
                     "strings": [
                         "",
                         "Sprite",
@@ -7249,7 +7276,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 427,
+                    "rowIndex": 429,
                     "strings": [
                         "",
                         "Tween",
@@ -7265,7 +7292,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 428,
+                    "rowIndex": 430,
                     "strings": [
                         "",
                         "Set",
@@ -7281,7 +7308,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 429,
+                    "rowIndex": 431,
                     "strings": [
                         "",
                         "Tween",
@@ -7297,7 +7324,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 430,
+                    "rowIndex": 432,
                     "strings": [
                         "",
                         "Sprite",
@@ -7313,7 +7340,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 431,
+                    "rowIndex": 433,
                     "strings": [
                         "",
                         "Tween",
@@ -7329,7 +7356,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 432,
+                    "rowIndex": 434,
                     "strings": [
                         "",
                         "Set",
@@ -7345,7 +7372,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 433,
+                    "rowIndex": 435,
                     "strings": [
                         "",
                         "Tween",
@@ -7361,7 +7388,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 434,
+                    "rowIndex": 436,
                     "strings": [
                         "",
                         "Sprite",
@@ -7377,7 +7404,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 435,
+                    "rowIndex": 437,
                     "strings": [
                         "",
                         "Tween",
@@ -7393,7 +7420,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 436,
+                    "rowIndex": 438,
                     "strings": [
                         "",
                         "Set",
@@ -7409,7 +7436,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 437,
+                    "rowIndex": 439,
                     "strings": [
                         "",
                         "Tween",
@@ -7425,7 +7452,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 438,
+                    "rowIndex": 440,
                     "strings": [
                         "",
                         "Sprite",
@@ -7441,7 +7468,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 439,
+                    "rowIndex": 441,
                     "strings": [
                         "",
                         "Tween",
@@ -7457,7 +7484,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 440,
+                    "rowIndex": 442,
                     "strings": [
                         "",
                         "Set",
@@ -7473,7 +7500,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 441,
+                    "rowIndex": 443,
                     "strings": [
                         "",
                         "Tween",
@@ -7489,7 +7516,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 442,
+                    "rowIndex": 444,
                     "strings": [
                         "",
                         "Sprite",
@@ -7505,7 +7532,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 443,
+                    "rowIndex": 445,
                     "strings": [
                         "",
                         "Tween",
@@ -7521,7 +7548,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 444,
+                    "rowIndex": 446,
                     "strings": [
                         "",
                         "Set",
@@ -7537,7 +7564,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 445,
+                    "rowIndex": 447,
                     "strings": [
                         "",
                         "Tween",
@@ -7553,7 +7580,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 446,
+                    "rowIndex": 448,
                     "strings": [
                         "",
                         "Sprite",
@@ -7569,7 +7596,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 447,
+                    "rowIndex": 449,
                     "strings": [
                         "",
                         "Tween",
@@ -7585,7 +7612,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 448,
+                    "rowIndex": 450,
                     "strings": [
                         "",
                         "Set",
@@ -7601,7 +7628,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 449,
+                    "rowIndex": 451,
                     "strings": [
                         "",
                         "Tween",
@@ -7617,7 +7644,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 450,
+                    "rowIndex": 452,
                     "strings": [
                         "",
                         "Sprite",
@@ -7633,7 +7660,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 451,
+                    "rowIndex": 453,
                     "strings": [
                         "",
                         "Tween",
@@ -7649,7 +7676,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 452,
+                    "rowIndex": 454,
                     "strings": [
                         "",
                         "Set",
@@ -7665,7 +7692,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 453,
+                    "rowIndex": 455,
                     "strings": [
                         "",
                         "Tween",
@@ -7681,7 +7708,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 454,
+                    "rowIndex": 456,
                     "strings": [
                         "",
                         "Sprite",
@@ -7697,7 +7724,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 455,
+                    "rowIndex": 457,
                     "strings": [
                         "",
                         "Tween",
@@ -7713,7 +7740,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 456,
+                    "rowIndex": 458,
                     "strings": [
                         "",
                         "Set",
@@ -7729,7 +7756,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 457,
+                    "rowIndex": 459,
                     "strings": [
                         "",
                         "Tween",
@@ -7745,7 +7772,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 458,
+                    "rowIndex": 460,
                     "strings": [
                         "",
                         "Sprite",
@@ -7761,7 +7788,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 459,
+                    "rowIndex": 461,
                     "strings": [
                         "",
                         "Tween",
@@ -7777,7 +7804,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 460,
+                    "rowIndex": 462,
                     "strings": [
                         "",
                         "Set",
@@ -7793,7 +7820,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 461,
+                    "rowIndex": 463,
                     "strings": [
                         "",
                         "Tween",
@@ -7809,7 +7836,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 462,
+                    "rowIndex": 464,
                     "strings": [
                         "",
                         "Sprite",
@@ -7825,7 +7852,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 463,
+                    "rowIndex": 465,
                     "strings": [
                         "",
                         "Tween",
@@ -7841,7 +7868,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 464,
+                    "rowIndex": 466,
                     "strings": [
                         "",
                         "Set",
@@ -7857,7 +7884,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 465,
+                    "rowIndex": 467,
                     "strings": [
                         "",
                         "Tween",
@@ -7873,7 +7900,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 466,
+                    "rowIndex": 468,
                     "strings": [
                         "",
                         "Sprite",
@@ -7889,7 +7916,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 467,
+                    "rowIndex": 469,
                     "strings": [
                         "",
                         "Tween",
@@ -7905,7 +7932,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 468,
+                    "rowIndex": 470,
                     "strings": [
                         "",
                         "Set",
@@ -7921,7 +7948,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 469,
+                    "rowIndex": 471,
                     "strings": [
                         "",
                         "Tween",
@@ -7937,7 +7964,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 470,
+                    "rowIndex": 472,
                     "strings": [
                         "",
                         "Sprite",
@@ -7953,7 +7980,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 471,
+                    "rowIndex": 473,
                     "strings": [
                         "",
                         "Tween",
@@ -7969,7 +7996,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 472,
+                    "rowIndex": 474,
                     "strings": [
                         "",
                         "Set",
@@ -7985,7 +8012,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 473,
+                    "rowIndex": 475,
                     "strings": [
                         "",
                         "Tween",
@@ -8001,7 +8028,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 474,
+                    "rowIndex": 476,
                     "strings": [
                         "",
                         "Sprite",
@@ -8017,7 +8044,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 475,
+                    "rowIndex": 477,
                     "strings": [
                         "",
                         "Tween",
@@ -8033,7 +8060,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 476,
+                    "rowIndex": 478,
                     "strings": [
                         "",
                         "Set",
@@ -8049,7 +8076,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 477,
+                    "rowIndex": 479,
                     "strings": [
                         "",
                         "Tween",
@@ -8065,7 +8092,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 478,
+                    "rowIndex": 480,
                     "strings": [
                         "",
                         "Sprite",
@@ -8081,7 +8108,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 479,
+                    "rowIndex": 481,
                     "strings": [
                         "",
                         "Tween",
@@ -8097,7 +8124,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 480,
+                    "rowIndex": 482,
                     "strings": [
                         "",
                         "Set",
@@ -8113,7 +8140,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 481,
+                    "rowIndex": 483,
                     "strings": [
                         "",
                         "Tween",
@@ -8129,7 +8156,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 482,
+                    "rowIndex": 484,
                     "strings": [
                         "",
                         "Sprite",
@@ -8145,7 +8172,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 483,
+                    "rowIndex": 485,
                     "strings": [
                         "",
                         "Tween",
@@ -8161,7 +8188,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 484,
+                    "rowIndex": 486,
                     "strings": [
                         "",
                         "Set",
@@ -8177,7 +8204,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 485,
+                    "rowIndex": 487,
                     "strings": [
                         "",
                         "Tween",
@@ -8193,7 +8220,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 486,
+                    "rowIndex": 488,
                     "strings": [
                         "",
                         "Sprite",
@@ -8209,7 +8236,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 487,
+                    "rowIndex": 489,
                     "strings": [
                         "",
                         "Tween",
@@ -8225,7 +8252,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 488,
+                    "rowIndex": 490,
                     "strings": [
                         "",
                         "Set",
@@ -8241,7 +8268,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 489,
+                    "rowIndex": 491,
                     "strings": [
                         "",
                         "Tween",
@@ -8257,7 +8284,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 490,
+                    "rowIndex": 492,
                     "strings": [
                         "",
                         "Sprite",
@@ -8273,7 +8300,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 491,
+                    "rowIndex": 493,
                     "strings": [
                         "",
                         "Sprite",
@@ -8289,7 +8316,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 492,
+                    "rowIndex": 494,
                     "strings": [
                         "",
                         "Set",
@@ -8305,7 +8332,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 493,
+                    "rowIndex": 495,
                     "strings": [
                         "",
                         "Tween",
@@ -8321,7 +8348,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 494,
+                    "rowIndex": 496,
                     "strings": [
                         "",
                         "Tween",
@@ -8337,7 +8364,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 495,
+                    "rowIndex": 497,
                     "strings": [
                         "",
                         "Tween",
@@ -8353,7 +8380,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 496,
+                    "rowIndex": 498,
                     "strings": [
                         "",
                         "Set",
@@ -8369,7 +8396,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 497,
+                    "rowIndex": 499,
                     "strings": [
                         "",
                         "Tween",
@@ -8385,7 +8412,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 498,
+                    "rowIndex": 500,
                     "strings": [
                         "",
                         "Sprite",
@@ -8401,7 +8428,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 499,
+                    "rowIndex": 501,
                     "strings": [
                         "",
                         "Tween",
@@ -8417,7 +8444,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 500,
+                    "rowIndex": 502,
                     "strings": [
                         "",
                         "Set",
@@ -8433,7 +8460,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 501,
+                    "rowIndex": 503,
                     "strings": [
                         "",
                         "Tween",
@@ -8449,7 +8476,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 502,
+                    "rowIndex": 504,
                     "strings": [
                         "",
                         "Sprite",
@@ -8465,7 +8492,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 503,
+                    "rowIndex": 505,
                     "strings": [
                         "",
                         "Tween",
@@ -8481,7 +8508,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 504,
+                    "rowIndex": 506,
                     "strings": [
                         "",
                         "Set",
@@ -8497,7 +8524,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 505,
+                    "rowIndex": 507,
                     "strings": [
                         "",
                         "Tween",
@@ -8513,7 +8540,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 506,
+                    "rowIndex": 508,
                     "strings": [
                         "",
                         "Sprite",
@@ -8529,7 +8556,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 507,
+                    "rowIndex": 509,
                     "strings": [
                         "",
                         "Tween",
@@ -8545,7 +8572,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 508,
+                    "rowIndex": 510,
                     "strings": [
                         "",
                         "Set",
@@ -8561,7 +8588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 509,
+                    "rowIndex": 511,
                     "strings": [
                         "",
                         "Tween",
@@ -8577,7 +8604,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 510,
+                    "rowIndex": 512,
                     "strings": [
                         "",
                         "Sprite",
@@ -8593,7 +8620,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 511,
+                    "rowIndex": 513,
                     "strings": [
                         "",
                         "Tween",
@@ -8609,7 +8636,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 512,
+                    "rowIndex": 514,
                     "strings": [
                         "",
                         "Set",
@@ -8625,7 +8652,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 513,
+                    "rowIndex": 515,
                     "strings": [
                         "",
                         "Tween",
@@ -8641,7 +8668,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 514,
+                    "rowIndex": 516,
                     "strings": [
                         "",
                         "Sprite",
@@ -8657,7 +8684,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 515,
+                    "rowIndex": 517,
                     "strings": [
                         "",
                         "Tween",
@@ -8673,7 +8700,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 516,
+                    "rowIndex": 518,
                     "strings": [
                         "",
                         "Set",
@@ -8689,7 +8716,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 517,
+                    "rowIndex": 519,
                     "strings": [
                         "",
                         "Tween",
@@ -8705,7 +8732,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 518,
+                    "rowIndex": 520,
                     "strings": [
                         "",
                         "Sprite",
@@ -8721,7 +8748,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 519,
+                    "rowIndex": 521,
                     "strings": [
                         "",
                         "Tween",
@@ -8737,7 +8764,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 520,
+                    "rowIndex": 522,
                     "strings": [
                         "",
                         "Set",
@@ -8753,7 +8780,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 521,
+                    "rowIndex": 523,
                     "strings": [
                         "",
                         "Tween",
@@ -8769,7 +8796,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 522,
+                    "rowIndex": 524,
                     "strings": [
                         "",
                         "Sprite",
@@ -8785,7 +8812,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 523,
+                    "rowIndex": 525,
                     "strings": [
                         "",
                         "Tween",
@@ -8801,7 +8828,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 524,
+                    "rowIndex": 526,
                     "strings": [
                         "",
                         "Set",
@@ -8817,7 +8844,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 525,
+                    "rowIndex": 527,
                     "strings": [
                         "",
                         "Tween",
@@ -8833,7 +8860,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 526,
+                    "rowIndex": 528,
                     "strings": [
                         "",
                         "Sprite",
@@ -8849,7 +8876,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 527,
+                    "rowIndex": 529,
                     "strings": [
                         "",
                         "Tween",
@@ -8865,7 +8892,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 528,
+                    "rowIndex": 530,
                     "strings": [
                         "",
                         "Set",
@@ -8881,7 +8908,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 529,
+                    "rowIndex": 531,
                     "strings": [
                         "",
                         "Tween",
@@ -8897,7 +8924,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 530,
+                    "rowIndex": 532,
                     "strings": [
                         "",
                         "Sprite",
@@ -8913,7 +8940,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 531,
+                    "rowIndex": 533,
                     "strings": [
                         "",
                         "Tween",
@@ -8929,7 +8956,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 532,
+                    "rowIndex": 534,
                     "strings": [
                         "",
                         "Set",
@@ -8945,7 +8972,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 533,
+                    "rowIndex": 535,
                     "strings": [
                         "",
                         "Tween",
@@ -8961,7 +8988,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 534,
+                    "rowIndex": 536,
                     "strings": [
                         "",
                         "Sprite",
@@ -8977,7 +9004,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 535,
+                    "rowIndex": 537,
                     "strings": [
                         "",
                         "Tween",
@@ -8993,7 +9020,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 536,
+                    "rowIndex": 538,
                     "strings": [
                         "",
                         "Set",
@@ -9009,7 +9036,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 537,
+                    "rowIndex": 539,
                     "strings": [
                         "",
                         "Tween",
@@ -9025,7 +9052,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 538,
+                    "rowIndex": 540,
                     "strings": [
                         "",
                         "Sprite",
@@ -9041,7 +9068,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 539,
+                    "rowIndex": 541,
                     "strings": [
                         "",
                         "Tween",
@@ -9057,7 +9084,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 540,
+                    "rowIndex": 542,
                     "strings": [
                         "",
                         "Set",
@@ -9073,7 +9100,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 541,
+                    "rowIndex": 543,
                     "strings": [
                         "",
                         "Tween",
@@ -9089,7 +9116,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 542,
+                    "rowIndex": 544,
                     "strings": [
                         "",
                         "Sprite",
@@ -9105,7 +9132,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 543,
+                    "rowIndex": 545,
                     "strings": [
                         "",
                         "Tween",
@@ -9121,7 +9148,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 544,
+                    "rowIndex": 546,
                     "strings": [
                         "",
                         "Set",
@@ -9137,7 +9164,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 545,
+                    "rowIndex": 547,
                     "strings": [
                         "",
                         "Tween",
@@ -9153,7 +9180,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 546,
+                    "rowIndex": 548,
                     "strings": [
                         "",
                         "Sprite",
@@ -9169,7 +9196,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 547,
+                    "rowIndex": 549,
                     "strings": [
                         "",
                         "Tween",
@@ -9185,7 +9212,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 548,
+                    "rowIndex": 550,
                     "strings": [
                         "",
                         "Set",
@@ -9201,7 +9228,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 549,
+                    "rowIndex": 551,
                     "strings": [
                         "",
                         "Tween",
@@ -9217,7 +9244,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 550,
+                    "rowIndex": 552,
                     "strings": [
                         "",
                         "Sprite",
@@ -9233,7 +9260,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 551,
+                    "rowIndex": 553,
                     "strings": [
                         "",
                         "Tween",
@@ -9249,7 +9276,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 552,
+                    "rowIndex": 554,
                     "strings": [
                         "",
                         "Set",
@@ -9265,7 +9292,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 553,
+                    "rowIndex": 555,
                     "strings": [
                         "",
                         "Tween",
@@ -9281,7 +9308,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 554,
+                    "rowIndex": 556,
                     "strings": [
                         "",
                         "Sprite",
@@ -9297,7 +9324,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 555,
+                    "rowIndex": 557,
                     "strings": [
                         "",
                         "Tween",
@@ -9313,7 +9340,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 556,
+                    "rowIndex": 558,
                     "strings": [
                         "",
                         "Set",
@@ -9329,7 +9356,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 557,
+                    "rowIndex": 559,
                     "strings": [
                         "",
                         "Tween",
@@ -9345,7 +9372,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 558,
+                    "rowIndex": 560,
                     "strings": [
                         "",
                         "Sprite",
@@ -9361,7 +9388,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 559,
+                    "rowIndex": 561,
                     "strings": [
                         "",
                         "Tween",
@@ -9377,7 +9404,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 560,
+                    "rowIndex": 562,
                     "strings": [
                         "",
                         "Set",
@@ -9393,7 +9420,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 561,
+                    "rowIndex": 563,
                     "strings": [
                         "",
                         "Tween",
@@ -9409,7 +9436,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 562,
+                    "rowIndex": 564,
                     "strings": [
                         "",
                         "Sprite",
@@ -9425,7 +9452,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 563,
+                    "rowIndex": 565,
                     "strings": [
                         "",
                         "Tween",
@@ -9441,7 +9468,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 564,
+                    "rowIndex": 566,
                     "strings": [
                         "",
                         "Set",
@@ -9457,7 +9484,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 565,
+                    "rowIndex": 567,
                     "strings": [
                         "",
                         "Tween",
@@ -9473,7 +9500,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 566,
+                    "rowIndex": 568,
                     "strings": [
                         "",
                         "Tween",
@@ -9489,7 +9516,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 567,
+                    "rowIndex": 569,
                     "strings": [
                         "",
                         "Tween",
@@ -9505,7 +9532,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 568,
+                    "rowIndex": 570,
                     "strings": [
                         "",
                         "Tween",
@@ -9521,7 +9548,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 569,
+                    "rowIndex": 571,
                     "strings": [
                         "",
                         "Tween",
@@ -9537,7 +9564,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 570,
+                    "rowIndex": 572,
                     "strings": [
                         "",
                         "Tween",
@@ -9553,7 +9580,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 571,
+                    "rowIndex": 573,
                     "strings": [
                         "",
                         "Tween",
@@ -9569,7 +9596,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 572,
+                    "rowIndex": 574,
                     "strings": [
                         "",
                         "Tween",
@@ -9585,7 +9612,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 573,
+                    "rowIndex": 575,
                     "strings": [
                         "",
                         "Tween",
@@ -9601,7 +9628,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 574,
+                    "rowIndex": 576,
                     "strings": [
                         "",
                         "Tween",
@@ -9617,7 +9644,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 575,
+                    "rowIndex": 577,
                     "strings": [
                         "",
                         "Tween",
@@ -9633,7 +9660,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 576,
+                    "rowIndex": 578,
                     "strings": [
                         "",
                         "Tween",
@@ -9649,7 +9676,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 577,
+                    "rowIndex": 579,
                     "strings": [
                         "",
                         "Tween",
@@ -9665,7 +9692,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 578,
+                    "rowIndex": 580,
                     "strings": [
                         "",
                         "Tween",
@@ -9681,7 +9708,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 579,
+                    "rowIndex": 581,
                     "strings": [
                         "",
                         "Tween",
@@ -9697,7 +9724,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 580,
+                    "rowIndex": 582,
                     "strings": [
                         "",
                         "Tween",
@@ -9713,7 +9740,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 581,
+                    "rowIndex": 583,
                     "strings": [
                         "",
                         "Tween",
@@ -9729,7 +9756,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 582,
+                    "rowIndex": 584,
                     "strings": [
                         "",
                         "Tween",
@@ -9745,7 +9772,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 583,
+                    "rowIndex": 585,
                     "strings": [
                         "",
                         "Tween",
@@ -9761,7 +9788,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 584,
+                    "rowIndex": 586,
                     "strings": [
                         "",
                         "Tween",
@@ -9777,7 +9804,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 585,
+                    "rowIndex": 587,
                     "strings": [
                         "",
                         "Tween",
@@ -9793,7 +9820,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 586,
+                    "rowIndex": 588,
                     "strings": [
                         "",
                         "Tween",
@@ -9809,7 +9836,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 587,
+                    "rowIndex": 589,
                     "strings": [
                         "",
                         "Tween",
@@ -9825,7 +9852,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 588,
+                    "rowIndex": 590,
                     "strings": [
                         "",
                         "Tween",
@@ -9841,7 +9868,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 589,
+                    "rowIndex": 591,
                     "strings": [
                         "",
                         "Tween",
@@ -9857,7 +9884,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 590,
+                    "rowIndex": 592,
                     "strings": [
                         "",
                         "Tween",
@@ -9873,7 +9900,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 591,
+                    "rowIndex": 593,
                     "strings": [
                         "",
                         "Tween",
@@ -9889,7 +9916,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 592,
+                    "rowIndex": 594,
                     "strings": [
                         "",
                         "Tween",
@@ -9905,7 +9932,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 593,
+                    "rowIndex": 595,
                     "strings": [
                         "",
                         "Tween",
@@ -9921,7 +9948,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 594,
+                    "rowIndex": 596,
                     "strings": [
                         "",
                         "Tween",
@@ -9937,7 +9964,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 595,
+                    "rowIndex": 597,
                     "strings": [
                         "",
                         "Tween",
@@ -9953,7 +9980,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 596,
+                    "rowIndex": 598,
                     "strings": [
                         "",
                         "Tween",
@@ -9969,7 +9996,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 597,
+                    "rowIndex": 599,
                     "strings": [
                         "",
                         "Tween",
@@ -9985,7 +10012,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 598,
+                    "rowIndex": 600,
                     "strings": [
                         "",
                         "Tween",
@@ -10001,7 +10028,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 599,
+                    "rowIndex": 601,
                     "strings": [
                         "",
                         "Tween",
@@ -10017,7 +10044,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 600,
+                    "rowIndex": 602,
                     "strings": [
                         "",
                         "Tween",
@@ -10033,7 +10060,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 601,
+                    "rowIndex": 603,
                     "strings": [
                         "",
                         "Tween",
@@ -10049,7 +10076,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 602,
+                    "rowIndex": 604,
                     "strings": [
                         "",
                         "Tween",
@@ -10065,7 +10092,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 603,
+                    "rowIndex": 605,
                     "strings": [
                         "",
                         "Tween",
@@ -10081,7 +10108,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 604,
+                    "rowIndex": 606,
                     "strings": [
                         "",
                         "Tween",
@@ -10097,7 +10124,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 605,
+                    "rowIndex": 607,
                     "strings": [
                         "",
                         "Tween",
@@ -10113,7 +10140,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 606,
+                    "rowIndex": 608,
                     "strings": [
                         "",
                         "Tween",
@@ -10129,7 +10156,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 607,
+                    "rowIndex": 609,
                     "strings": [
                         "",
                         "Tween",
@@ -10145,7 +10172,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 608,
+                    "rowIndex": 610,
                     "strings": [
                         "",
                         "Tween",
@@ -10161,7 +10188,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 609,
+                    "rowIndex": 611,
                     "strings": [
                         "",
                         "Tween",
@@ -10177,7 +10204,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 610,
+                    "rowIndex": 612,
                     "strings": [
                         "",
                         "Tween",
@@ -10193,7 +10220,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 611,
+                    "rowIndex": 613,
                     "strings": [
                         "",
                         "Tween",
@@ -10209,7 +10236,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 612,
+                    "rowIndex": 614,
                     "strings": [
                         "",
                         "Tween",
@@ -10225,7 +10252,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 613,
+                    "rowIndex": 615,
                     "strings": [
                         "",
                         "Tween",
@@ -10241,7 +10268,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 614,
+                    "rowIndex": 616,
                     "strings": [
                         "",
                         "Tween",
@@ -10257,7 +10284,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 615,
+                    "rowIndex": 617,
                     "strings": [
                         "",
                         "Tween",
@@ -10273,7 +10300,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 616,
+                    "rowIndex": 618,
                     "strings": [
                         "",
                         "Tween",
@@ -10289,7 +10316,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 617,
+                    "rowIndex": 619,
                     "strings": [
                         "",
                         "Tween",
@@ -10305,7 +10332,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 618,
+                    "rowIndex": 620,
                     "strings": [
                         "",
                         "Tween",
@@ -10321,7 +10348,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 619,
+                    "rowIndex": 621,
                     "strings": [
                         "",
                         "Tween",
@@ -10337,7 +10364,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 620,
+                    "rowIndex": 622,
                     "strings": [
                         "",
                         "Tween",
@@ -10353,7 +10380,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 621,
+                    "rowIndex": 623,
                     "strings": [
                         "",
                         "Tween",
@@ -10369,7 +10396,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 622,
+                    "rowIndex": 624,
                     "strings": [
                         "",
                         "Tween",
@@ -10385,7 +10412,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 623,
+                    "rowIndex": 625,
                     "strings": [
                         "",
                         "Tween",
@@ -10401,7 +10428,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 624,
+                    "rowIndex": 626,
                     "strings": [
                         "",
                         "Tween",
@@ -10417,7 +10444,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 625,
+                    "rowIndex": 627,
                     "strings": [
                         "",
                         "Tween",
@@ -10433,7 +10460,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 626,
+                    "rowIndex": 628,
                     "strings": [
                         "",
                         "Tween",
@@ -10449,7 +10476,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 627,
+                    "rowIndex": 629,
                     "strings": [
                         "",
                         "Tween",
@@ -10465,7 +10492,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 628,
+                    "rowIndex": 630,
                     "strings": [
                         "",
                         "Tween",
@@ -10481,7 +10508,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 629,
+                    "rowIndex": 631,
                     "strings": [
                         "",
                         "Tween",
@@ -10497,7 +10524,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 630,
+                    "rowIndex": 632,
                     "strings": [
                         "",
                         "Tween",
@@ -10513,7 +10540,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 631,
+                    "rowIndex": 633,
                     "strings": [
                         "",
                         "Tween",
@@ -10529,7 +10556,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 632,
+                    "rowIndex": 634,
                     "strings": [
                         "",
                         "Tween",
@@ -10545,7 +10572,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 633,
+                    "rowIndex": 635,
                     "strings": [
                         "",
                         "Tween",
@@ -10561,7 +10588,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 634,
+                    "rowIndex": 636,
                     "strings": [
                         "",
                         "Tween",
@@ -10577,7 +10604,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 635,
+                    "rowIndex": 637,
                     "strings": [
                         "",
                         "Tween",
@@ -10593,7 +10620,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 636,
+                    "rowIndex": 638,
                     "strings": [
                         "",
                         "Tween",
@@ -10609,7 +10636,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 637,
+                    "rowIndex": 639,
                     "strings": [
                         "",
                         "Tween",
@@ -10625,7 +10652,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 638,
+                    "rowIndex": 640,
                     "strings": [
                         "",
                         "Tween",
@@ -10641,7 +10668,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 639,
+                    "rowIndex": 641,
                     "strings": [
                         "",
                         "Tween",
@@ -10657,7 +10684,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 640,
+                    "rowIndex": 642,
                     "strings": [
                         "",
                         "Tween",
@@ -10673,7 +10700,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 641,
+                    "rowIndex": 643,
                     "strings": [
                         "",
                         "Tween",
@@ -10689,7 +10716,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 642,
+                    "rowIndex": 644,
                     "strings": [
                         "",
                         "Tween",
@@ -10705,7 +10732,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 643,
+                    "rowIndex": 645,
                     "strings": [
                         "",
                         "Tween",
@@ -10721,7 +10748,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 644,
+                    "rowIndex": 646,
                     "strings": [
                         "",
                         "Tween",
@@ -10737,7 +10764,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 645,
+                    "rowIndex": 647,
                     "strings": [
                         "",
                         "Tween",
@@ -10753,7 +10780,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 646,
+                    "rowIndex": 648,
                     "strings": [
                         "",
                         "Tween",
@@ -10769,7 +10796,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 647,
+                    "rowIndex": 649,
                     "strings": [
                         "",
                         "Tween",
@@ -10785,7 +10812,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 648,
+                    "rowIndex": 650,
                     "strings": [
                         "",
                         "Tween",
@@ -10801,7 +10828,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 649,
+                    "rowIndex": 651,
                     "strings": [
                         "",
                         "Tween",
@@ -10817,7 +10844,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 650,
+                    "rowIndex": 652,
                     "strings": [
                         "",
                         "Tween",
@@ -10833,7 +10860,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 651,
+                    "rowIndex": 653,
                     "strings": [
                         "",
                         "Tween",
@@ -10849,7 +10876,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 652,
+                    "rowIndex": 654,
                     "strings": [
                         "",
                         "Tween",
@@ -10865,7 +10892,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 653,
+                    "rowIndex": 655,
                     "strings": [
                         "",
                         "Tween",
@@ -10881,7 +10908,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 654,
+                    "rowIndex": 656,
                     "strings": [
                         "",
                         "Tween",
@@ -10897,7 +10924,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 655,
+                    "rowIndex": 657,
                     "strings": [
                         "",
                         "Tween",
@@ -10913,7 +10940,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 656,
+                    "rowIndex": 658,
                     "strings": [
                         "",
                         "Tween",
@@ -10929,7 +10956,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 657,
+                    "rowIndex": 659,
                     "strings": [
                         "",
                         "Tween",
@@ -10945,7 +10972,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 658,
+                    "rowIndex": 660,
                     "strings": [
                         "",
                         "Tween",
@@ -10961,7 +10988,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 659,
+                    "rowIndex": 661,
                     "strings": [
                         "",
                         "Tween",
@@ -10977,7 +11004,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 660,
+                    "rowIndex": 662,
                     "strings": [
                         "",
                         "Tween",
@@ -10993,7 +11020,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 661,
+                    "rowIndex": 663,
                     "strings": [
                         "",
                         "Tween",
@@ -11009,7 +11036,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 662,
+                    "rowIndex": 664,
                     "strings": [
                         "",
                         "Tween",
@@ -11025,7 +11052,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 663,
+                    "rowIndex": 665,
                     "strings": [
                         "",
                         "Tween",
@@ -11041,7 +11068,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 664,
+                    "rowIndex": 666,
                     "strings": [
                         "",
                         "Tween",
@@ -11057,7 +11084,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 665,
+                    "rowIndex": 667,
                     "strings": [
                         "",
                         "Tween",
@@ -11073,7 +11100,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 666,
+                    "rowIndex": 668,
                     "strings": [
                         "",
                         "Tween",
@@ -11089,7 +11116,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 667,
+                    "rowIndex": 669,
                     "strings": [
                         "",
                         "Tween",
@@ -11105,7 +11132,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 668,
+                    "rowIndex": 670,
                     "strings": [
                         "",
                         "Tween",
@@ -11121,7 +11148,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 669,
+                    "rowIndex": 671,
                     "strings": [
                         "",
                         "Tween",
@@ -11137,7 +11164,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 670,
+                    "rowIndex": 672,
                     "strings": [
                         "",
                         "Tween",
@@ -11153,7 +11180,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 671,
+                    "rowIndex": 673,
                     "strings": [
                         "",
                         "Tween",
@@ -11169,7 +11196,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 672,
+                    "rowIndex": 674,
                     "strings": [
                         "",
                         "Tween",
@@ -11185,7 +11212,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 673,
+                    "rowIndex": 675,
                     "strings": [
                         "",
                         "Tween",
@@ -11201,7 +11228,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 674,
+                    "rowIndex": 676,
                     "strings": [
                         "",
                         "Tween",
@@ -11217,7 +11244,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 675,
+                    "rowIndex": 677,
                     "strings": [
                         "",
                         "Tween",
@@ -11233,7 +11260,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 676,
+                    "rowIndex": 678,
                     "strings": [
                         "",
                         "Tween",
@@ -11249,7 +11276,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 677,
+                    "rowIndex": 679,
                     "strings": [
                         "",
                         "Tween",
@@ -11265,7 +11292,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 678,
+                    "rowIndex": 680,
                     "strings": [
                         "",
                         "Tween",
@@ -11281,7 +11308,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 679,
+                    "rowIndex": 681,
                     "strings": [
                         "",
                         "Tween",
@@ -11297,7 +11324,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 680,
+                    "rowIndex": 682,
                     "strings": [
                         "",
                         "",
@@ -11314,7 +11341,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 681,
+                    "rowIndex": 683,
                     "strings": [
                         "",
                         "",
@@ -11333,7 +11360,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 682,
+                    "rowIndex": 684,
                     "strings": [
                         "",
                         "",
@@ -11352,7 +11379,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 683,
+                    "rowIndex": 685,
                     "strings": [
                         "",
                         "",
@@ -11371,7 +11398,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 684,
+                    "rowIndex": 686,
                     "strings": [
                         "",
                         "Se",
@@ -11381,7 +11408,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 685,
+                    "rowIndex": 687,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -11391,7 +11418,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 686,
+                    "rowIndex": 688,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -11401,7 +11428,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 687,
+                    "rowIndex": 689,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -11422,7 +11449,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 688,
+                    "rowIndex": 690,
                     "strings": [
                         "",
                         "Wait",
@@ -11437,7 +11464,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 689,
+                    "rowIndex": 691,
                     "strings": [
                         "",
                         "Tween",
@@ -11453,7 +11480,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 690,
+                    "rowIndex": 692,
                     "strings": [
                         "",
                         "Tween",
@@ -11469,7 +11496,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 691,
+                    "rowIndex": 693,
                     "strings": [
                         "",
                         "Wait",
@@ -11484,7 +11511,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 692,
+                    "rowIndex": 694,
                     "strings": [
                         "",
                         "Sprite",
@@ -11496,7 +11523,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 693,
+                    "rowIndex": 695,
                     "strings": [
                         "",
                         "Set",
@@ -11508,7 +11535,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 694,
+                    "rowIndex": 696,
                     "strings": [
                         "",
                         "Tween",
@@ -11520,7 +11547,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 695,
+                    "rowIndex": 697,
                     "strings": [
                         "",
                         "Tween",
@@ -11532,7 +11559,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 696,
+                    "rowIndex": 698,
                     "strings": [
                         "",
                         "Sprite",
@@ -11542,7 +11569,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 697,
+                    "rowIndex": 699,
                     "strings": [
                         "",
                         "Set",
@@ -11554,7 +11581,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 698,
+                    "rowIndex": 700,
                     "strings": [
                         "",
                         "Tween",
@@ -11566,7 +11593,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 699,
+                    "rowIndex": 701,
                     "strings": [
                         "",
                         "Tween",
@@ -11578,7 +11605,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 700,
+                    "rowIndex": 702,
                     "strings": [
                         "",
                         "Sprite",
@@ -11588,7 +11615,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 701,
+                    "rowIndex": 703,
                     "strings": [
                         "",
                         "Set",
@@ -11600,7 +11627,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 702,
+                    "rowIndex": 704,
                     "strings": [
                         "",
                         "Tween",
@@ -11612,7 +11639,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 703,
+                    "rowIndex": 705,
                     "strings": [
                         "",
                         "Tween",
@@ -11624,7 +11651,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 704,
+                    "rowIndex": 706,
                     "strings": [
                         "",
                         "Tween",
@@ -11640,7 +11667,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 705,
+                    "rowIndex": 707,
                     "strings": [
                         "",
                         "Tween",
@@ -11656,7 +11683,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 706,
+                    "rowIndex": 708,
                     "strings": [
                         "",
                         "",
@@ -11675,7 +11702,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 707,
+                    "rowIndex": 709,
                     "strings": [
                         "",
                         "",
@@ -11694,7 +11721,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 708,
+                    "rowIndex": 710,
                     "strings": [
                         "",
                         "Se",
@@ -11704,7 +11731,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 709,
+                    "rowIndex": 711,
                     "strings": [
                         "",
                         "Tween",
@@ -11720,7 +11747,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 710,
+                    "rowIndex": 712,
                     "strings": [
                         "",
                         "Tween",
@@ -11736,7 +11763,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 711,
+                    "rowIndex": 713,
                     "strings": [
                         "",
                         "Tween",
@@ -11752,7 +11779,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 712,
+                    "rowIndex": 714,
                     "strings": [
                         "",
                         "",
@@ -11771,7 +11798,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 713,
+                    "rowIndex": 715,
                     "strings": [
                         "",
                         "",
@@ -11790,7 +11817,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 714,
+                    "rowIndex": 716,
                     "strings": [
                         "",
                         "",
@@ -11809,7 +11836,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 715,
+                    "rowIndex": 717,
                     "strings": [
                         "",
                         "",
@@ -11826,7 +11853,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 716,
+                    "rowIndex": 718,
                     "strings": [
                         "",
                         "",
@@ -11843,7 +11870,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 717,
+                    "rowIndex": 719,
                     "strings": [
                         "",
                         "",
@@ -11862,7 +11889,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 718,
+                    "rowIndex": 720,
                     "strings": [
                         "",
                         "",
@@ -11881,7 +11908,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 719,
+                    "rowIndex": 721,
                     "strings": [
                         "",
                         "",
@@ -11900,7 +11927,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 720,
+                    "rowIndex": 722,
                     "strings": [
                         "",
                         "Se",
@@ -11910,7 +11937,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 721,
+                    "rowIndex": 723,
                     "strings": [
                         "",
                         "Tween",
@@ -11926,7 +11953,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 722,
+                    "rowIndex": 724,
                     "strings": [
                         "",
                         "Tween",
@@ -11942,7 +11969,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 723,
+                    "rowIndex": 725,
                     "strings": [
                         "",
                         "Tween",
@@ -11958,7 +11985,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 724,
+                    "rowIndex": 726,
                     "strings": [
                         "",
                         "",
@@ -11977,7 +12004,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 725,
+                    "rowIndex": 727,
                     "strings": [
                         "",
                         "",
@@ -11999,7 +12026,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 726,
+                    "rowIndex": 728,
                     "strings": [
                         "",
                         "",
@@ -12016,7 +12043,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 727,
+                    "rowIndex": 729,
                     "strings": [
                         "",
                         "Se",
@@ -12026,7 +12053,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 728,
+                    "rowIndex": 730,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -12036,7 +12063,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 729,
+                    "rowIndex": 731,
                     "strings": [
                         "",
                         "SpriteOff",
@@ -12046,7 +12073,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 730,
+                    "rowIndex": 732,
                     "strings": [
                         "",
                         "Tween",
@@ -12062,7 +12089,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 731,
+                    "rowIndex": 733,
                     "strings": [
                         "",
                         "",
@@ -12081,7 +12108,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 732,
+                    "rowIndex": 734,
                     "strings": [
                         "",
                         "",
@@ -12098,7 +12125,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 733,
+                    "rowIndex": 735,
                     "strings": [
                         "",
                         "",
@@ -12115,7 +12142,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 734,
+                    "rowIndex": 736,
                     "strings": [
                         "",
                         "Tween",
@@ -12131,7 +12158,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 735,
+                    "rowIndex": 737,
                     "strings": [
                         "",
                         "Tween",
@@ -12147,7 +12174,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 736,
+                    "rowIndex": 738,
                     "strings": [
                         "",
                         "Tween",
@@ -12163,7 +12190,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 737,
+                    "rowIndex": 739,
                     "strings": [
                         "",
                         "",
@@ -12184,7 +12211,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 738,
+                    "rowIndex": 740,
                     "strings": [
                         "",
                         "",
@@ -12201,7 +12228,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 739,
+                    "rowIndex": 741,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12222,7 +12249,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 740,
+                    "rowIndex": 742,
                     "strings": [
                         "",
                         "Se",
@@ -12232,7 +12259,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 741,
+                    "rowIndex": 743,
                     "strings": [
                         "",
                         "Shake",
@@ -12248,7 +12275,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 742,
+                    "rowIndex": 744,
                     "strings": [
                         "",
                         "",
@@ -12269,7 +12296,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 743,
+                    "rowIndex": 745,
                     "strings": [
                         "",
                         "",
@@ -12286,7 +12313,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 744,
+                    "rowIndex": 746,
                     "strings": [
                         "",
                         "",
@@ -12307,7 +12334,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 745,
+                    "rowIndex": 747,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12328,7 +12355,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 746,
+                    "rowIndex": 748,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12349,7 +12376,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 747,
+                    "rowIndex": 749,
                     "strings": [
                         "",
                         "StopSound",
@@ -12359,7 +12386,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 748,
+                    "rowIndex": 750,
                     "strings": [
                         "",
                         "Se",
@@ -12369,7 +12396,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 749,
+                    "rowIndex": 751,
                     "strings": [
                         "",
                         "Shake",
@@ -12385,7 +12412,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 750,
+                    "rowIndex": 752,
                     "strings": [
                         "",
                         "",
@@ -12402,7 +12429,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 751,
+                    "rowIndex": 753,
                     "strings": [
                         "",
                         "",
@@ -12419,7 +12446,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 752,
+                    "rowIndex": 754,
                     "strings": [
                         "",
                         "",
@@ -12440,7 +12467,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 753,
+                    "rowIndex": 755,
                     "strings": [
                         "",
                         "Tween",
@@ -12456,7 +12483,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 754,
+                    "rowIndex": 756,
                     "strings": [
                         "",
                         "Tween",
@@ -12472,7 +12499,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 755,
+                    "rowIndex": 757,
                     "strings": [
                         "",
                         "",
@@ -12491,7 +12518,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 756,
+                    "rowIndex": 758,
                     "strings": [
                         "",
                         "",
@@ -12508,7 +12535,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 757,
+                    "rowIndex": 759,
                     "strings": [
                         "",
                         "",
@@ -12527,7 +12554,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 758,
+                    "rowIndex": 760,
                     "strings": [
                         "",
                         "",
@@ -12544,7 +12571,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 759,
+                    "rowIndex": 761,
                     "strings": [
                         "",
                         "",
@@ -12563,7 +12590,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 760,
+                    "rowIndex": 762,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12584,7 +12611,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 761,
+                    "rowIndex": 763,
                     "strings": [
                         "",
                         "Tween",
@@ -12600,7 +12627,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 762,
+                    "rowIndex": 764,
                     "strings": [
                         "",
                         "Tween",
@@ -12616,7 +12643,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 763,
+                    "rowIndex": 765,
                     "strings": [
                         "",
                         "",
@@ -12637,7 +12664,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 764,
+                    "rowIndex": 766,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -12658,7 +12685,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 765,
+                    "rowIndex": 767,
                     "strings": [
                         "",
                         "Tween",
@@ -12674,7 +12701,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 766,
+                    "rowIndex": 768,
                     "strings": [
                         "",
                         "Wait",
@@ -12689,7 +12716,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 767,
+                    "rowIndex": 769,
                     "strings": [
                         "",
                         "",
@@ -12710,7 +12737,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 768,
+                    "rowIndex": 770,
                     "strings": [
                         "",
                         "",
@@ -12731,7 +12758,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 769,
+                    "rowIndex": 771,
                     "strings": [
                         "",
                         "",
@@ -12752,7 +12779,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 770,
+                    "rowIndex": 772,
                     "strings": [
                         "",
                         "Tween",
@@ -12768,7 +12795,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 771,
+                    "rowIndex": 773,
                     "strings": [
                         "",
                         "Tween",
@@ -12784,7 +12811,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 772,
+                    "rowIndex": 774,
                     "strings": [
                         "",
                         "Tween",
@@ -12800,7 +12827,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 773,
+                    "rowIndex": 775,
                     "strings": [
                         "",
                         "",
@@ -12819,7 +12846,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 774,
+                    "rowIndex": 776,
                     "strings": [
                         "",
                         "",
@@ -12838,7 +12865,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 775,
+                    "rowIndex": 777,
                     "strings": [
                         "",
                         "",
@@ -12857,7 +12884,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 776,
+                    "rowIndex": 778,
                     "strings": [
                         "",
                         "",
@@ -12876,7 +12903,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 777,
+                    "rowIndex": 779,
                     "strings": [
                         "",
                         "",
@@ -12893,53 +12920,11 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 778,
-                    "strings": [
-                        "",
-                        "CharacterOff",
-                        "アスタリーゼ",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.2",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
-                    "rowIndex": 779,
-                    "strings": [
-                        "",
-                        "CharacterOff",
-                        "ノイシス",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "0.2",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
-                    "isEmpty": 0,
-                    "isCommentOut": 0
-                },
-                {
                     "rowIndex": 780,
                     "strings": [
                         "",
                         "CharacterOff",
-                        "トレイラ",
+                        "アスタリーゼ",
                         "",
                         "",
                         "",
@@ -12959,6 +12944,48 @@
                     "rowIndex": 781,
                     "strings": [
                         "",
+                        "CharacterOff",
+                        "ノイシス",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 782,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "トレイラ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 783,
+                    "strings": [
+                        "",
                         "Tween",
                         "BG",
                         "ScaleTo",
@@ -12968,7 +12995,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 782,
+                    "rowIndex": 784,
                     "strings": [
                         "",
                         "Tween",
@@ -12980,7 +13007,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 783,
+                    "rowIndex": 785,
                     "strings": [
                         "",
                         "",
@@ -13001,7 +13028,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 784,
+                    "rowIndex": 786,
                     "strings": [
                         "",
                         "",
@@ -13018,7 +13045,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 785,
+                    "rowIndex": 787,
                     "strings": [
                         "",
                         "",
@@ -13037,7 +13064,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 786,
+                    "rowIndex": 788,
                     "strings": [
                         "",
                         "",
@@ -13054,7 +13081,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 787,
+                    "rowIndex": 789,
                     "strings": [
                         "",
                         "",
@@ -13073,7 +13100,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 788,
+                    "rowIndex": 790,
                     "strings": [
                         "",
                         "",
@@ -13092,7 +13119,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 789,
+                    "rowIndex": 791,
                     "strings": [
                         "",
                         "CharacterOff",
@@ -13113,7 +13140,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 790,
+                    "rowIndex": 792,
                     "strings": [
                         "",
                         "",
@@ -13134,7 +13161,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 791,
+                    "rowIndex": 793,
                     "strings": [
                         "",
                         "",
@@ -13151,7 +13178,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 792,
+                    "rowIndex": 794,
                     "strings": [
                         "",
                         "",
@@ -13172,7 +13199,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 793,
+                    "rowIndex": 795,
                     "strings": [
                         "",
                         "",
@@ -13189,7 +13216,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 794,
+                    "rowIndex": 796,
                     "strings": [
                         "",
                         "",
@@ -13206,7 +13233,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 795,
+                    "rowIndex": 797,
                     "strings": [
                         "",
                         "StopSound",
@@ -13227,7 +13254,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 796,
+                    "rowIndex": 798,
                     "strings": [
                         "",
                         "FadeOut",
@@ -13248,7 +13275,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 797,
+                    "rowIndex": 799,
                     "strings": [
                         "",
                         "Wait",
@@ -13269,7 +13296,7 @@
                     "isCommentOut": 0
                 },
                 {
-                    "rowIndex": 798,
+                    "rowIndex": 800,
                     "strings": [
                         "",
                         "LayerReset",
@@ -13292,7 +13319,7 @@
             ],
             "name": "Assets/AdvScene/ScenarioExcel/main/1002/100205Nml.xlsx:100205Nml",
             "type": 1,
-            "textLength": 28085,
+            "textLength": 28175,
             "headerRow": 0,
             "entityIndexTbl": [],
             "entityDataList": []

@@ -563,8 +563,18 @@
         {
             "effectId": 10041,
             "effect": "ef_10041",
-            "se": 20026,
+            "se": 20022,
             "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 100041,
+            "effect": "ef_10041",
+            "se": 20022,
+            "targetBone": 2,
             "attach": 1,
             "drawSize": 100,
             "preload": 0,
@@ -664,7 +674,7 @@
             "effectId": 10051,
             "effect": "ef_10051",
             "se": 20010,
-            "targetBone": 1,
+            "targetBone": 3,
             "attach": 0,
             "drawSize": 100,
             "preload": 0,
@@ -1053,7 +1063,7 @@
         {
             "effectId": 10089,
             "effect": "ef_10089",
-            "se": 0,
+            "se": 20013,
             "targetBone": 2,
             "attach": 0,
             "drawSize": 100,
@@ -1197,6 +1207,16 @@
             "targetBone": 2,
             "attach": 0,
             "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 100103,
+            "effect": "ef_10103",
+            "se": 20017,
+            "targetBone": 2,
+            "attach": 0,
+            "drawSize": 200,
             "preload": 0,
             "damageDelay": 0
         },
@@ -1456,6 +1476,96 @@
             "se": 0,
             "targetBone": 3,
             "attach": 0,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10129,
+            "effect": "ef_10129",
+            "se": 20023,
+            "targetBone": 2,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 10
+        },
+        {
+            "effectId": 10130,
+            "effect": "ef_10130",
+            "se": 20012,
+            "targetBone": 3,
+            "attach": 0,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10131,
+            "effect": "ef_10131",
+            "se": 20009,
+            "targetBone": 2,
+            "attach": 0,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10132,
+            "effect": "ef_10132",
+            "se": 20008,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10133,
+            "effect": "ef_10133",
+            "se": 0,
+            "targetBone": 2,
+            "attach": 0,
+            "drawSize": 200,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10134,
+            "effect": "ef_10134",
+            "se": 20013,
+            "targetBone": 2,
+            "attach": 0,
+            "drawSize": 80,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10135,
+            "effect": "ef_10135",
+            "se": 20013,
+            "targetBone": 2,
+            "attach": 0,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10136,
+            "effect": "ef_10136",
+            "se": 20027,
+            "targetBone": 3,
+            "attach": 0,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 10142,
+            "effect": "ef_10142",
+            "se": 20013,
+            "targetBone": 3,
+            "attach": 1,
             "drawSize": 100,
             "preload": 0,
             "damageDelay": 0
@@ -2161,6 +2271,46 @@
             "damageDelay": 0
         },
         {
+            "effectId": 20072,
+            "effect": "ef_20072",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 20073,
+            "effect": "ef_20073",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 20074,
+            "effect": "ef_20074",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 20081,
+            "effect": "ef_20081",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
             "effectId": 40001,
             "effect": "ef_40001",
             "se": 0,
@@ -2205,6 +2355,96 @@
             "effect": "ef_90001",
             "se": 0,
             "targetBone": 2,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40016,
+            "effect": "ef_40016",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 70,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40017,
+            "effect": "ef_40017",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 70,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40009,
+            "effect": "ef_40009",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40010,
+            "effect": "ef_40010",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40011,
+            "effect": "ef_40011",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40012,
+            "effect": "ef_40012",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40013,
+            "effect": "ef_40013",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40014,
+            "effect": "ef_40014",
+            "se": 0,
+            "targetBone": 3,
+            "attach": 1,
+            "drawSize": 100,
+            "preload": 0,
+            "damageDelay": 0
+        },
+        {
+            "effectId": 40015,
+            "effect": "ef_40015",
+            "se": 0,
+            "targetBone": 3,
             "attach": 1,
             "drawSize": 100,
             "preload": 0,

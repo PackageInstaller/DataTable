@@ -545,6 +545,7 @@ def main() -> None:
                 f"[bold green]已从 {extracted_count} 个剧情包导出 AdvScene 到 {advscene_out_dir}[/bold green]"
             )
 
+    # 如果需要下载全资产，取消这几行注释即可
     # if other_tasks:
     #     console.print(f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]")
     #     fails = run_download_workers(other_tasks, "正在下载其他资产...")
