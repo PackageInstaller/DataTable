@@ -385,7 +385,7 @@ def scan_scenarios_for_r18_voices(adv_dir: Path) -> Set[str]:
     if not character_adv_dir.exists():
         return voice_md5s
 
-    console.print("[magenta]正在扫描 R18 剧情文件以获取专用语音...[/magenta]")
+    console.print("[magenta]正在扫描 R18 剧情文件以获取语音...[/magenta]")
     count = 0
     for root, _, files in os.walk(character_adv_dir):
         for f in files:
@@ -416,48 +416,46 @@ def scan_scenarios_for_r18_voices(adv_dir: Path) -> Set[str]:
 def scan_masterdata_for_resource_ids(
     master_dir: Path,
 ) -> Tuple[Set[int], Dict[int, Set[int]]]:
-    """扫描MasterData中unit和enemy数据获取角色资源ID。返回(resource_ids, {resource_id: {skin_ids}})。"""
+    """扫描 MasterData 中 unit 和 enemy 数据获取角色资源 ID。返回(resource_ids, {resource_id: {skin_ids}})。"""
     resource_ids: Set[int] = set()
     skin_ids_map: Dict[int, Set[int]] = {}
 
     if not master_dir.exists():
         return resource_ids, skin_ids_map
 
+    # 扫描 unit 目录
     unit_dir = master_dir / "unit"
     if unit_dir.exists():
-        try:
-            for f in unit_dir.glob("*.json"):
-                try:
-                    with open(f, "r", encoding="utf-8") as file:
-                        data = json.load(file)
-                        resource_id = data.get("resource")
-                        if isinstance(resource_id, int) and resource_id > 0:
-                            resource_ids.add(resource_id)
-                            if resource_id not in skin_ids_map:
-                                skin_ids_map[resource_id] = set()
-                            skin_ids_map[resource_id].add(0)
-                except Exception:
-                    pass
-        except Exception:
-            pass
+        for f in unit_dir.glob("*.json"):
+            try:
+                with open(f, "r", encoding="utf-8") as file:
+                    data = json.load(file)
+                    # 提取 resource 字段
+                    resource_id = data.get("resource")
+                    if isinstance(resource_id, int) and resource_id > 0:
+                        resource_ids.add(resource_id)
+                        if resource_id not in skin_ids_map:
+                            skin_ids_map[resource_id] = {0, 1}  # 默认探测 0 和 1
+                        
+            except Exception:
+                pass
 
+    # 扫描 enemy 目录
     enemy_dir = master_dir / "enemy"
     if enemy_dir.exists():
-        try:
-            for f in enemy_dir.glob("*.json"):
-                try:
-                    with open(f, "r", encoding="utf-8") as file:
-                        data = json.load(file)
-                        resource_id = data.get("resource")
-                        if isinstance(resource_id, int) and resource_id > 0:
-                            resource_ids.add(resource_id)
-                            if resource_id not in skin_ids_map:
-                                skin_ids_map[resource_id] = set()
-                except Exception:
-                    pass
-        except Exception:
-            pass
+        for f in enemy_dir.glob("*.json"):
+            try:
+                with open(f, "r", encoding="utf-8") as file:
+                    data = json.load(file)
+                    resource_id = data.get("resource")
+                    if isinstance(resource_id, int) and resource_id > 0:
+                        resource_ids.add(resource_id)
+                        if resource_id not in skin_ids_map:
+                            skin_ids_map[resource_id] = {0}
+            except Exception:
+                pass
 
+    # 额外扫描 R18 单元关联
     story_data_path = master_dir / "data" / "story_data_unit.json"
     if story_data_path.exists():
         try:
@@ -472,9 +470,9 @@ def scan_masterdata_for_resource_ids(
                                 rid = int(rid_str)
                                 resource_ids.add(rid)
                                 if rid not in skin_ids_map:
-                                    skin_ids_map[rid] = {0}
-        except Exception as e:
-            console.print(f"[yellow]读取 story_data_unit.json 失败: {e}[/yellow]")
+                                    skin_ids_map[rid] = {0, 1}
+        except Exception:
+            pass
 
     return resource_ids, skin_ids_map
 
@@ -487,7 +485,7 @@ def scan_chapter_config_for_textures(adv_dir: Path) -> Set[str]:
         return texture_md5s
 
     console.print(
-        "[magenta]正在从 config.chapter.json 全量解析绘图资源列表...[/magenta]"
+        "[magenta]正在解析spine列表...[/magenta]"
     )
     try:
         with open(config_path, "r", encoding="utf-8") as f:
@@ -812,6 +810,12 @@ def main() -> None:
         target_audio_files |= r18_voice_md5s
 
     target_texture_files = scan_chapter_config_for_textures(advscene_out_dir)
+    for rid in resource_ids:
+        skins = skin_ids_map.get(rid, {0, 1})
+        for skin_id in skins:
+            asset_name = f"advscene-texture-character-chr_poses-pose_{rid}_{skin_id}-pose_{rid}_{skin_id}"
+            target_texture_files.add(f"{get_md5_string(asset_name)}.bytes")
+
     target_advscene_all_files = (
         target_advscene_files | target_audio_files | target_texture_files
     )
