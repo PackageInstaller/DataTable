@@ -50,8 +50,18 @@ master_file_names = {
 }
 
 
+ASSET_MAPPING: Dict[str, str] = {}
+
+
 def get_md5_string(source: str) -> str:
     return hashlib.md5(source.encode("utf-8")).hexdigest()
+
+
+def register_asset(name: str) -> str:
+    """计算 MD5 并记录到全局映射表中"""
+    md5 = get_md5_string(name)
+    ASSET_MAPPING[name] = md5
+    return md5
 
 
 def base_key(src: str) -> bytes:
@@ -216,55 +226,7 @@ def extract_advscene_data(bundle_data: bytes, output_base_dir: str) -> None:
 
 
 def extract_audio_data(bundle_data: bytes, output_dir: str) -> int:
-    """从音频AssetBundle中提取AudioClip资源，按 container path 保存"""
-    try:
-        import UnityPy
-        from UnityPy.enums import ClassIDType
-    except ImportError:
-        return 0
-
-    try:
-        env = UnityPy.load(bundle_data)
-    except Exception as e:
-        return 0
-
-    count = 0
-    base_rel_path = ""
-    if env.container:
-        first_container_path = list(env.container.keys())[0]
-        base_rel_path = os.path.splitext(first_container_path)[0]
-
-    for obj in env.objects:
-        try:
-            if obj.type == ClassIDType.AudioClip:
-                clip = obj.read()
-
-                name = (
-                    getattr(clip, "name", "")
-                    or getattr(clip, "m_Name", "")
-                    or f"AudioClip_{obj.path_id}"
-                )
-                final_rel = base_rel_path if base_rel_path else name
-                if base_rel_path and name and name not in base_rel_path:
-                    final_rel = f"{base_rel_path}_{name}"
-                if hasattr(clip, "samples") and clip.samples:
-                    for sample_name, audio_data in clip.samples.items():
-                        ext = os.path.splitext(sample_name)[1]
-                        if not ext:
-                            ext = ".wav"
-                        out_path = os.path.join(output_dir, f"{final_rel}{ext}")
-                        ensure_dir(out_path)
-                        with open(out_path, "wb") as f:
-                            f.write(audio_data)
-                        count += 1
-        except Exception as e:
-            pass
-
-    return count
-
-
-def extract_spine_data(bundle_data: bytes, output_dir: str) -> int:
-    """从纹理AssetBundle中提取Texture2D资源及Spine相关文件 (.skel, .atlas, .json)，按 container path 保存"""
+    """从音频AssetBundle中提取AudioClip资源，路径按 container 目录，名按 m_Name 保存"""
     try:
         import UnityPy
         from UnityPy.enums import ClassIDType
@@ -277,11 +239,55 @@ def extract_spine_data(bundle_data: bytes, output_dir: str) -> int:
         return 0
 
     count = 0
-    base_rel_path = ""
     container_dir = ""
     if env.container:
         first_container_path = list(env.container.keys())[0]
-        base_rel_path = os.path.splitext(first_container_path)[0]
+        container_dir = os.path.dirname(first_container_path)
+
+    for obj in env.objects:
+        try:
+            if obj.type == ClassIDType.AudioClip:
+                clip = obj.read()
+                name = (
+                    getattr(clip, "name", "")
+                    or getattr(clip, "m_Name", "")
+                    or f"AudioClip_{obj.path_id}"
+                )
+                final_rel = os.path.join(container_dir, name) if container_dir else name
+
+                if hasattr(clip, "samples") and clip.samples:
+                    for sample_name, audio_data in clip.samples.items():
+                        ext = os.path.splitext(sample_name)[1]
+                        if not ext:
+                            ext = ".wav"
+                        out_path = os.path.join(output_dir, f"{final_rel}{ext}")
+                        ensure_dir(out_path)
+                        with open(out_path, "wb") as f:
+                            f.write(audio_data)
+                        count += 1
+        except Exception:
+            pass
+
+    return count
+
+
+def extract_spine_data(bundle_data: bytes, output_dir: str) -> int:
+    """从纹理Bundle中提取资源，路径按 container 目录，名按 m_Name 保存"""
+    try:
+        import UnityPy
+        from UnityPy.enums import ClassIDType
+    except ImportError:
+        return 0
+
+    try:
+        env = UnityPy.load(bundle_data)
+    except Exception:
+        return 0
+
+    count = 0
+    container_dir = ""
+    if env.container:
+        first_container_path = list(env.container.keys())[0]
         container_dir = os.path.dirname(first_container_path)
 
     for obj in env.objects:
@@ -293,11 +299,7 @@ def extract_spine_data(bundle_data: bytes, output_dir: str) -> int:
                     or getattr(data, "name", "")
                     or f"Texture_{obj.path_id}"
                 )
-
-                final_rel = base_rel_path if base_rel_path else name
-                if base_rel_path and name and name not in base_rel_path:
-                    if not base_rel_path.endswith(name):
-                        final_rel = f"{base_rel_path}_{name}"
+                final_rel = os.path.join(container_dir, name) if container_dir else name
 
                 try:
                     image = data.image
@@ -331,11 +333,8 @@ def extract_spine_data(bundle_data: bytes, output_dir: str) -> int:
                                 content_bytes = content.encode("utf-8", "ignore")
                         else:
                             content_bytes = content
-
-                        if container_dir:
-                            out_path = os.path.join(output_dir, container_dir, name)
-                        else:
-                            out_path = os.path.join(output_dir, name)
+                        final_rel = os.path.join(container_dir, name) if container_dir else name
+                        out_path = os.path.join(output_dir, final_rel)
 
                         ensure_dir(out_path)
                         with open(out_path, "wb") as f:
@@ -401,7 +400,7 @@ def scan_scenarios_for_r18_voices(adv_dir: Path) -> Set[str]:
                                     if voice_path and "Character/" in voice_path:
                                         asset_name = f"advscene-sound-voice-{voice_path.lower().replace('/', '-')}"
                                         voice_md5s.add(
-                                            f"{get_md5_string(asset_name)}.bytes"
+                                            f"{register_asset(asset_name)}.bytes"
                                         )
                     count += 1
                 except Exception:
@@ -516,7 +515,7 @@ def scan_chapter_config_for_textures(adv_dir: Path) -> Set[str]:
                     asset_name = (
                         f"advscene-texture-character-{clean_path.replace('/', '-')}"
                     )
-                    texture_md5s.add(f"{get_md5_string(asset_name)}.bytes")
+                    texture_md5s.add(f"{register_asset(asset_name)}.bytes")
 
     except Exception as e:
         console.print(f"[red]解析 config.chapter.json 失败: {e}[/red]")
@@ -713,6 +712,15 @@ def main() -> None:
         except Exception as e:
             console.print(f"[yellow]解析本地 ablist.json 失败: {e}[/yellow]")
 
+    extraction_state_path = SCRIPT_DIR / "extraction_state.json"
+    extraction_state: Dict[str, str] = {}
+    if extraction_state_path.exists():
+        try:
+            with open(extraction_state_path, "r", encoding="utf-8") as f:
+                extraction_state = json.load(f)
+        except:
+            pass
+
     seen_paths: set = set()
     master_info_list: List[Tuple[str, str, int]] = []
     other_asset_infos: List[Tuple[str, str, str, int, str]] = []
@@ -787,23 +795,23 @@ def main() -> None:
     target_advscene_files: Set[str] = set()
     for sn in scenario_names:
         asset_name = f"advscene-scenarioexcel-{sn.lower()}.book"
-        target_advscene_files.add(f"{get_md5_string(asset_name)}.bytes")
+        target_advscene_files.add(f"{register_asset(asset_name)}.bytes")
     for fixed_name in FIXED_ADVSCENE_ASSETS:
-        target_advscene_files.add(f"{get_md5_string(fixed_name)}.bytes")
+        target_advscene_files.add(f"{register_asset(fixed_name)}.bytes")
 
     resource_ids, skin_ids_map = scan_masterdata_for_resource_ids(masterdata_out_dir)
     console.print(f"[cyan]共查找到 {len(resource_ids)} 个角色资源。[/cyan]")
     target_audio_files: Set[str] = set()
     for rid in resource_ids:
         asset_name = f"advscene-sound-bgm-bgm_{rid}"
-        target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+        target_audio_files.add(f"{register_asset(asset_name)}.bytes")
         asset_name = f"advscene-sound-se-se_{rid}"
-        target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+        target_audio_files.add(f"{register_asset(asset_name)}.bytes")
         asset_name = f"advscene-sound-ambience-amb_{rid}"
-        target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+        target_audio_files.add(f"{register_asset(asset_name)}.bytes")
         for voice_id in range(100):
             asset_name = f"advscene-sound-voice-character-ch_{rid}-general-vo_general_{rid}_{voice_id:03d}"
-            target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+            target_audio_files.add(f"{register_asset(asset_name)}.bytes")
 
     r18_voice_md5s = scan_scenarios_for_r18_voices(advscene_out_dir)
     if r18_voice_md5s:
@@ -814,33 +822,51 @@ def main() -> None:
         skins = skin_ids_map.get(rid, {0, 1})
         for skin_id in skins:
             asset_name = f"advscene-texture-character-chr_poses-pose_{rid}_{skin_id}-pose_{rid}_{skin_id}"
-            target_texture_files.add(f"{get_md5_string(asset_name)}.bytes")
+            target_texture_files.add(f"{register_asset(asset_name)}.bytes")
 
     target_advscene_all_files = (
         target_advscene_files | target_audio_files | target_texture_files
     )
 
+    if ASSET_MAPPING:
+        mapping_path = SCRIPT_DIR / "asset_mapping.json"
+        try:
+            with open(mapping_path, "w", encoding="utf-8") as f:
+                json.dump(ASSET_MAPPING, f, ensure_ascii=False, indent=4)
+        except Exception as e:
+            console.print(f"[yellow]保存资产映射失败: {e}[/yellow]")
+
+    extraction_state_path = SCRIPT_DIR / "extraction_state.json"
+    
     advscene_tasks = [
         t for t in other_asset_infos if Path(t[4]).name in target_advscene_all_files
     ]
     other_tasks = [
         t for t in other_asset_infos if Path(t[4]).name not in target_advscene_all_files
     ]
-    files_to_extract = [
-        str(output_dir / a.get("path"))
-        for a in assets
-        if a.get("path") and Path(a["path"]).name in target_advscene_files
-    ]
-    audio_files_to_download = [
-        str(output_dir / a.get("path"))
-        for a in assets
-        if a.get("path") and Path(a["path"]).name in target_audio_files
-    ]
-    texture_files_to_download = [
-        str(output_dir / a.get("path"))
-        for a in assets
-        if a.get("path") and Path(a["path"]).name in target_texture_files
-    ]
+    files_to_extract_meta = []
+    for a in assets:
+        rp = a.get("path")
+        if not rp: continue
+        name = Path(rp).name
+        if name in target_advscene_files:
+            files_to_extract_meta.append((str(output_dir / rp), rp, a.get("hash", "")))
+
+    audio_files_to_extract_meta = []
+    for a in assets:
+        rp = a.get("path")
+        if not rp: continue
+        name = Path(rp).name
+        if name in target_audio_files:
+            audio_files_to_extract_meta.append((str(output_dir / rp), rp, a.get("hash", "")))
+
+    texture_files_to_extract_meta = []
+    for a in assets:
+        rp = a.get("path")
+        if not rp: continue
+        name = Path(rp).name
+        if name in target_texture_files:
+            texture_files_to_extract_meta.append((str(output_dir / rp), rp, a.get("hash", "")))
 
     if advscene_tasks:
         console.print(f"[cyan]正在下载 {len(advscene_tasks)} 个剧情包...[/cyan]")
@@ -849,45 +875,63 @@ def main() -> None:
             console.print(f"[yellow]失败 {len(fails)} 个剧情文件[/yellow]")
 
     extracted_count = 0
-    if files_to_extract:
+    if files_to_extract_meta:
         console.print(
-            f"[cyan]开始从 {len(files_to_extract)} 份剧情包提取 AdvScene...[/cyan]"
+            f"[cyan]开始从 {len(files_to_extract_meta)} 份剧情包提取 AdvScene...[/cyan]"
         )
-        for file_path in files_to_extract:
+        for file_path, rel_path, current_hash in files_to_extract_meta:
+            if extraction_state.get(rel_path) == current_hash:
+                continue
             if os.path.exists(file_path):
-                with open(file_path, "rb") as bf:
-                    extract_advscene_data(bf.read(), str(advscene_out_dir))
-                extracted_count += 1
+                try:
+                    with open(file_path, "rb") as bf:
+                        extract_advscene_data(bf.read(), str(advscene_out_dir))
+                    extracted_count += 1
+                    extraction_state[rel_path] = current_hash
+                except:
+                    pass
         if extracted_count > 0:
             console.print(
-                f"[bold green]已导出 {extracted_count} 个剧情包的 AdvScene[/bold green]"
+                f"[bold green]已从 {extracted_count} 个包提取 AdvScene (跳过已完成项)[/bold green]"
             )
 
     audio_out_dir = SCRIPT_DIR / "Audio"
     audio_extracted_count = 0
-    if audio_files_to_download:
-        console.print(f"[cyan]开始处理 {len(audio_files_to_download)} 个音频...[/cyan]")
+    if audio_files_to_extract_meta:
+        console.print(f"[cyan]开始处理音频资产包...[/cyan]")
 
-        for i, file_path in enumerate(audio_files_to_download):
+        skip_audio_count = 0
+        for i, (file_path, rel_path, current_hash) in enumerate(audio_files_to_extract_meta):
+            if extraction_state.get(rel_path) == current_hash:
+                skip_audio_count += 1
+                continue
             if os.path.exists(file_path):
                 try:
                     with open(file_path, "rb") as f:
                         count = extract_audio_data(f.read(), str(audio_out_dir))
                         if count:
                             audio_extracted_count += count
+                    extraction_state[rel_path] = current_hash
                 except Exception as e:
                     console.print(f"[dim red]处理音频 {file_path} 异常: {e}[/dim red]")
-        console.print(
-            f"[bold green]音频处理完成：解包 {audio_extracted_count} 个[/bold green]"
-        )
+        if skip_audio_count > 0:
+            console.print(f"[dim]跳过 {skip_audio_count} 个已提取的音频包[/dim]")
+        if audio_extracted_count > 0:
+            console.print(
+                f"[bold green]音频处理完成：新增解包 {audio_extracted_count} 个[/bold green]"
+            )
     spine_out_dir = SCRIPT_DIR / "Spine"
     spine_extracted_count = 0
-    if texture_files_to_download:
+    if texture_files_to_extract_meta:
         console.print(
-            f"[cyan]开始处理 {len(texture_files_to_download)} 个spine...[/cyan]"
+            f"[cyan]开始处理 Spine 资产包...[/cyan]"
         )
 
-        for i, file_path in enumerate(texture_files_to_download):
+        skip_spine_count = 0
+        for i, (file_path, rel_path, current_hash) in enumerate(texture_files_to_extract_meta):
+            if extraction_state.get(rel_path) == current_hash:
+                skip_spine_count += 1
+                continue
             if os.path.exists(file_path):
                 try:
                     count = 0
@@ -895,15 +939,17 @@ def main() -> None:
                         count = extract_spine_data(f.read(), str(spine_out_dir))
                         if count:
                             spine_extracted_count += count
-
+                    extraction_state[rel_path] = current_hash
                 except Exception as e:
                     console.print(
                         f"[dim red]处理spine包 {file_path} 异常: {e}[/dim red]"
                     )
-
-        console.print(
-            f"[bold green]spine处理完成：解包 {spine_extracted_count} 个[/bold green]"
-        )
+        if skip_spine_count > 0:
+            console.print(f"[dim]跳过 {skip_spine_count} 个已提取的 Spine 包[/dim]")
+        if spine_extracted_count > 0:
+            console.print(
+                f"[bold green]Spine 处理完成：新增解包 {spine_extracted_count} 个[/bold green]"
+            )
     if other_tasks:
         console.print(f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]")
         fails = run_download_workers(other_tasks, "正在下载其他资产...")
@@ -917,6 +963,17 @@ def main() -> None:
     ensure_dir(str(old_catalog_path))
     with open(old_catalog_path, "wb") as f:
         f.write(catalog_bytes)
+    if ASSET_MAPPING:
+        mapping_path = SCRIPT_DIR / "asset_mapping.json"
+        with open(mapping_path, "w", encoding="utf-8") as f:
+            json.dump(ASSET_MAPPING, f, ensure_ascii=False, indent=4)
+        console.print(f"[bold green]所有资产映射关系已保存至: {mapping_path}[/bold green]")
+        
+    if extraction_state:
+        with open(extraction_state_path, "w", encoding="utf-8") as f:
+            json.dump(extraction_state, f, ensure_ascii=False, indent=4)
+        console.print(f"[bold green]所有提取状态已更新至: {extraction_state_path}[/bold green]")
+
     sess.close()
 
 
