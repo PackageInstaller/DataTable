@@ -5,9 +5,11 @@ import lz4.block
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 
-KEY_B64 = "BlEcgPYXGZBIpdWu19FxRqFZ4n1Z561HDQI3AbElBL8="
+# https://contents.techcronoss.techcross.co.jp/master/1.4.101.0/all.ebin 
+# 1.4.101.0是版本号，版本号，解密密钥从rpc/ws里面获取，是一个msgpack,自己反序列化就行
+KEY_B64 = "Q98sMqj5IydFQFS+V74FTZEb/CBgEx1WuCgluE2cRSU="
 IV_B64 = "gdAHZpuTubM/VsuK14uJdA=="
-INPUT_FILE = "master.bin"
+INPUT_FILE = "all.ebin"
 OUTPUT_FILE = "master.json"
 
 
