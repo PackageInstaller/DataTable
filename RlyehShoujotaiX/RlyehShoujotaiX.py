@@ -37,7 +37,7 @@ DEFAULT_OUTPUT_DIR = "Assets"
 
 FIXED_ADVSCENE_ASSETS = {
     "advscene-scenariochapter-config.chapter",  # AdvScene/ScenarioChapter/config.chapter.asset
-    "advscene-scenarioexcel-option.book",       # AdvScene/ScenarioExcel/option.book.asset
+    "advscene-scenarioexcel-option.book",  # AdvScene/ScenarioExcel/option.book.asset
 }
 
 master_file_names = {
@@ -215,6 +215,140 @@ def extract_advscene_data(bundle_data: bytes, output_base_dir: str) -> None:
     #     )
 
 
+def extract_audio_data(bundle_data: bytes, output_dir: str) -> int:
+    """从音频AssetBundle中提取AudioClip资源，按 container path 保存"""
+    try:
+        import UnityPy
+        from UnityPy.enums import ClassIDType
+    except ImportError:
+        return 0
+
+    try:
+        env = UnityPy.load(bundle_data)
+    except Exception as e:
+        return 0
+
+    count = 0
+    base_rel_path = ""
+    if env.container:
+        first_container_path = list(env.container.keys())[0]
+        base_rel_path = os.path.splitext(first_container_path)[0]
+
+    for obj in env.objects:
+        try:
+            if obj.type == ClassIDType.AudioClip:
+                clip = obj.read()
+
+                name = (
+                    getattr(clip, "name", "")
+                    or getattr(clip, "m_Name", "")
+                    or f"AudioClip_{obj.path_id}"
+                )
+                final_rel = base_rel_path if base_rel_path else name
+                if base_rel_path and name and name not in base_rel_path:
+                    final_rel = f"{base_rel_path}_{name}"
+                if hasattr(clip, "samples") and clip.samples:
+                    for sample_name, audio_data in clip.samples.items():
+                        ext = os.path.splitext(sample_name)[1]
+                        if not ext:
+                            ext = ".wav"
+                        out_path = os.path.join(output_dir, f"{final_rel}{ext}")
+                        ensure_dir(out_path)
+                        with open(out_path, "wb") as f:
+                            f.write(audio_data)
+                        count += 1
+        except Exception as e:
+            pass
+
+    return count
+
+
+def extract_spine_data(bundle_data: bytes, output_dir: str) -> int:
+    """从纹理AssetBundle中提取Texture2D资源及Spine相关文件 (.skel, .atlas, .json)，按 container path 保存"""
+    try:
+        import UnityPy
+        from UnityPy.enums import ClassIDType
+    except ImportError:
+        return 0
+
+    try:
+        env = UnityPy.load(bundle_data)
+    except Exception:
+        return 0
+
+    count = 0
+    base_rel_path = ""
+    container_dir = ""
+    if env.container:
+        first_container_path = list(env.container.keys())[0]
+        base_rel_path = os.path.splitext(first_container_path)[0]
+        container_dir = os.path.dirname(first_container_path)
+
+    for obj in env.objects:
+        try:
+            if obj.type == ClassIDType.Texture2D:
+                data = obj.read()
+                name = (
+                    getattr(data, "m_Name", "")
+                    or getattr(data, "name", "")
+                    or f"Texture_{obj.path_id}"
+                )
+
+                final_rel = base_rel_path if base_rel_path else name
+                if base_rel_path and name and name not in base_rel_path:
+                    if not base_rel_path.endswith(name):
+                        final_rel = f"{base_rel_path}_{name}"
+
+                try:
+                    image = data.image
+                    if image:
+                        out_path = os.path.join(output_dir, f"{final_rel}.png")
+                        ensure_dir(out_path)
+                        image.save(out_path)
+                        count += 1
+                except Exception:
+                    pass
+
+            elif obj.type == ClassIDType.TextAsset:
+                try:
+                    data = obj.read()
+                    name = (
+                        getattr(data, "m_Name", "")
+                        or getattr(data, "name", "")
+                        or f"TextAsset_{obj.path_id}"
+                    )
+                    content = getattr(data, "m_Script", None)
+                    if content is None:
+                        content = getattr(data, "script", None)
+
+                    if content is not None:
+                        if isinstance(content, str):
+                            try:
+                                content_bytes = content.encode(
+                                    "utf-8", "surrogateescape"
+                                )
+                            except Exception:
+                                content_bytes = content.encode("utf-8", "ignore")
+                        else:
+                            content_bytes = content
+
+                        if container_dir:
+                            out_path = os.path.join(output_dir, container_dir, name)
+                        else:
+                            out_path = os.path.join(output_dir, name)
+
+                        ensure_dir(out_path)
+                        with open(out_path, "wb") as f:
+                            f.write(content_bytes)
+                        count += 1
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+    return count
+
+
 def scan_masterdata_for_scenario_names(master_dir: Path) -> Set[str]:
     scenario_names: Set[str] = {"option"}
     if not master_dir.exists():
@@ -242,6 +376,153 @@ def scan_masterdata_for_scenario_names(master_dir: Path) -> Set[str]:
             except Exception:
                 pass
     return scenario_names
+
+
+def scan_scenarios_for_r18_voices(adv_dir: Path) -> Set[str]:
+    """扫描已解压的剧情文件，提取 R18 语音资源路径并转换为资产名称 MD5"""
+    voice_md5s = set()
+    character_adv_dir = adv_dir / "scenarioexcel" / "character"
+    if not character_adv_dir.exists():
+        return voice_md5s
+
+    console.print("[magenta]正在扫描 R18 剧情文件以获取专用语音...[/magenta]")
+    count = 0
+    for root, _, files in os.walk(character_adv_dir):
+        for f in files:
+            if f.lower().endswith("_r18.book.json"):
+                try:
+                    with open(os.path.join(root, f), "r", encoding="utf-8") as file:
+                        data = json.load(file)
+                        for grid in data.get("importGridList", []):
+                            for row in grid.get("rows", []):
+                                s = row.get("strings", [])
+                                if len(s) > 11:
+                                    voice_path = s[11]
+                                    if voice_path and "Character/" in voice_path:
+                                        asset_name = f"advscene-sound-voice-{voice_path.lower().replace('/', '-')}"
+                                        voice_md5s.add(
+                                            f"{get_md5_string(asset_name)}.bytes"
+                                        )
+                    count += 1
+                except Exception:
+                    pass
+    if count > 0:
+        console.print(
+            f"[green]已分析 {count} 个 R18 剧情文件，共定位 {len(voice_md5s)} 条语音[/green]"
+        )
+    return voice_md5s
+
+
+def scan_masterdata_for_resource_ids(
+    master_dir: Path,
+) -> Tuple[Set[int], Dict[int, Set[int]]]:
+    """扫描MasterData中unit和enemy数据获取角色资源ID。返回(resource_ids, {resource_id: {skin_ids}})。"""
+    resource_ids: Set[int] = set()
+    skin_ids_map: Dict[int, Set[int]] = {}
+
+    if not master_dir.exists():
+        return resource_ids, skin_ids_map
+
+    unit_dir = master_dir / "unit"
+    if unit_dir.exists():
+        try:
+            for f in unit_dir.glob("*.json"):
+                try:
+                    with open(f, "r", encoding="utf-8") as file:
+                        data = json.load(file)
+                        resource_id = data.get("resource")
+                        if isinstance(resource_id, int) and resource_id > 0:
+                            resource_ids.add(resource_id)
+                            if resource_id not in skin_ids_map:
+                                skin_ids_map[resource_id] = set()
+                            skin_ids_map[resource_id].add(0)
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+    enemy_dir = master_dir / "enemy"
+    if enemy_dir.exists():
+        try:
+            for f in enemy_dir.glob("*.json"):
+                try:
+                    with open(f, "r", encoding="utf-8") as file:
+                        data = json.load(file)
+                        resource_id = data.get("resource")
+                        if isinstance(resource_id, int) and resource_id > 0:
+                            resource_ids.add(resource_id)
+                            if resource_id not in skin_ids_map:
+                                skin_ids_map[resource_id] = set()
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+    story_data_path = master_dir / "data" / "story_data_unit.json"
+    if story_data_path.exists():
+        try:
+            with open(story_data_path, "r", encoding="utf-8") as f:
+                story_data = json.load(f)
+                for record in story_data.get("records", []):
+                    if record.get("r18") == 1:
+                        sn = record.get("scenario_name", "")
+                        if sn and "_" in sn:
+                            rid_str = sn.split("A")[0]
+                            if rid_str.isdigit():
+                                rid = int(rid_str)
+                                resource_ids.add(rid)
+                                if rid not in skin_ids_map:
+                                    skin_ids_map[rid] = {0}
+        except Exception as e:
+            console.print(f"[yellow]读取 story_data_unit.json 失败: {e}[/yellow]")
+
+    return resource_ids, skin_ids_map
+
+
+def scan_chapter_config_for_textures(adv_dir: Path) -> Set[str]:
+    """解析 config.chapter.json，根据每一行的 FileName 字段生成资产 MD5"""
+    texture_md5s = set()
+    config_path = adv_dir / "scenariochapter" / "config.chapter.json"
+    if not config_path.exists():
+        return texture_md5s
+
+    console.print(
+        "[magenta]正在从 config.chapter.json 全量解析绘图资源列表...[/magenta]"
+    )
+    try:
+        with open(config_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        for sheet in data.get("settingList", []):
+            rows = sheet.get("rows", [])
+            if not rows:
+                continue
+
+            # 第一行是表头
+            headers = rows[0].get("strings", [])
+            try:
+                file_name_idx = headers.index("FileName")
+            except ValueError:
+                continue
+
+            for row in rows[1:]:
+                strings = row.get("strings", [])
+                if len(strings) > file_name_idx:
+                    file_path = strings[file_name_idx]
+                    if not file_path or not isinstance(file_path, str):
+                        continue
+                    clean_path = file_path.lower()
+                    if clean_path.endswith(".prefab"):
+                        clean_path = clean_path[:-7]
+
+                    asset_name = (
+                        f"advscene-texture-character-{clean_path.replace('/', '-')}"
+                    )
+                    texture_md5s.add(f"{get_md5_string(asset_name)}.bytes")
+
+    except Exception as e:
+        console.print(f"[red]解析 config.chapter.json 失败: {e}[/red]")
+    return texture_md5s
 
 
 @contextlib.contextmanager
@@ -512,16 +793,49 @@ def main() -> None:
     for fixed_name in FIXED_ADVSCENE_ASSETS:
         target_advscene_files.add(f"{get_md5_string(fixed_name)}.bytes")
 
+    resource_ids, skin_ids_map = scan_masterdata_for_resource_ids(masterdata_out_dir)
+    console.print(f"[cyan]共查找到 {len(resource_ids)} 个角色资源。[/cyan]")
+    target_audio_files: Set[str] = set()
+    for rid in resource_ids:
+        asset_name = f"advscene-sound-bgm-bgm_{rid}"
+        target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+        asset_name = f"advscene-sound-se-se_{rid}"
+        target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+        asset_name = f"advscene-sound-ambience-amb_{rid}"
+        target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+        for voice_id in range(100):
+            asset_name = f"advscene-sound-voice-character-ch_{rid}-general-vo_general_{rid}_{voice_id:03d}"
+            target_audio_files.add(f"{get_md5_string(asset_name)}.bytes")
+
+    r18_voice_md5s = scan_scenarios_for_r18_voices(advscene_out_dir)
+    if r18_voice_md5s:
+        target_audio_files |= r18_voice_md5s
+
+    target_texture_files = scan_chapter_config_for_textures(advscene_out_dir)
+    target_advscene_all_files = (
+        target_advscene_files | target_audio_files | target_texture_files
+    )
+
     advscene_tasks = [
-        t for t in other_asset_infos if Path(t[4]).name in target_advscene_files
+        t for t in other_asset_infos if Path(t[4]).name in target_advscene_all_files
     ]
     other_tasks = [
-        t for t in other_asset_infos if Path(t[4]).name not in target_advscene_files
+        t for t in other_asset_infos if Path(t[4]).name not in target_advscene_all_files
     ]
     files_to_extract = [
         str(output_dir / a.get("path"))
         for a in assets
         if a.get("path") and Path(a["path"]).name in target_advscene_files
+    ]
+    audio_files_to_download = [
+        str(output_dir / a.get("path"))
+        for a in assets
+        if a.get("path") and Path(a["path"]).name in target_audio_files
+    ]
+    texture_files_to_download = [
+        str(output_dir / a.get("path"))
+        for a in assets
+        if a.get("path") and Path(a["path"]).name in target_texture_files
     ]
 
     if advscene_tasks:
@@ -542,17 +856,59 @@ def main() -> None:
                 extracted_count += 1
         if extracted_count > 0:
             console.print(
-                f"[bold green]已从 {extracted_count} 个剧情包导出 AdvScene 到 {advscene_out_dir}[/bold green]"
+                f"[bold green]已导出 {extracted_count} 个剧情包的 AdvScene[/bold green]"
             )
 
-    # 如果需要下载全资产，取消这几行注释即可
-    # if other_tasks:
-    #     console.print(f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]")
-    #     fails = run_download_workers(other_tasks, "正在下载其他资产...")
-    #     if fails:
-    #         console.print(f"[yellow]失败 {len(fails)} 个文件[/yellow]")
+    audio_out_dir = SCRIPT_DIR / "Audio"
+    audio_extracted_count = 0
+    if audio_files_to_download:
+        console.print(f"[cyan]开始处理 {len(audio_files_to_download)} 个音频...[/cyan]")
+
+        for i, file_path in enumerate(audio_files_to_download):
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, "rb") as f:
+                        count = extract_audio_data(f.read(), str(audio_out_dir))
+                        if count:
+                            audio_extracted_count += count
+                except Exception as e:
+                    console.print(f"[dim red]处理音频 {file_path} 异常: {e}[/dim red]")
+        console.print(
+            f"[bold green]音频处理完成：解包 {audio_extracted_count} 个[/bold green]"
+        )
+    spine_out_dir = SCRIPT_DIR / "Spine"
+    spine_extracted_count = 0
+    if texture_files_to_download:
+        console.print(
+            f"[cyan]开始处理 {len(texture_files_to_download)} 个spine...[/cyan]"
+        )
+
+        for i, file_path in enumerate(texture_files_to_download):
+            if os.path.exists(file_path):
+                try:
+                    count = 0
+                    with open(file_path, "rb") as f:
+                        count = extract_spine_data(f.read(), str(spine_out_dir))
+                        if count:
+                            spine_extracted_count += count
+
+                except Exception as e:
+                    console.print(
+                        f"[dim red]处理spine包 {file_path} 异常: {e}[/dim red]"
+                    )
+
+        console.print(
+            f"[bold green]spine处理完成：解包 {spine_extracted_count} 个[/bold green]"
+        )
+    if other_tasks:
+        console.print(f"[cyan]正在下载 {len(other_tasks)} 个其他资产...[/cyan]")
+        fails = run_download_workers(other_tasks, "正在下载其他资产...")
+        if fails:
+            console.print(
+                f"[yellow]提示：有 {len(fails)} 个非目标资产下载失败[/yellow]"
+            )
     elif not master_bytes_list and not advscene_tasks:
-        console.print("[green]所有资源已是最新，无需下载。[/green]")
+        console.print("[green]所有目标资源已是最新，无需下载。[/green]")
 
     ensure_dir(str(old_catalog_path))
     with open(old_catalog_path, "wb") as f:
