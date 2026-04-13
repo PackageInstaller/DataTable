@@ -3924,6 +3924,70 @@
                     "activeData": []
                 }
             ]
+        },
+        {
+            "id": 20047,
+            "rarity": 0,
+            "name": "偽りの快楽",
+            "kana": "",
+            "text": "回避率+[0,0,0]％\r\n攻撃した相手の現在耐久が10%以下の場合、中確率で<color=yellow><link=\"即死\">即死</link></color>させる",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 90,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 26,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 519,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 2000,
+                            "num": [
+                                10
+                            ],
+                            "option": [
+                                "<="
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

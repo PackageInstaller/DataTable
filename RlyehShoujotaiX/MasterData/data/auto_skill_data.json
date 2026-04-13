@@ -7996,6 +7996,149 @@
             ]
         },
         {
+            "id": 47,
+            "iconId": 2,
+            "name": "神経の暴走",
+            "text": "次回攻撃時のみ攻撃力+[0,0,0]%、範囲魔法攻撃を行い、5秒間動きを<color=yellow><link=\"停止\">停止</link></color>させる",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 150,
+            "maxFirstCoolTime": 90,
+            "minCoolTime": 210,
+            "maxCoolTime": 150,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 2
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                400
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                600
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 501,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20034
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
             "id": 40001,
             "iconId": 40001,
             "name": "クトゥルフ",

@@ -17199,6 +17199,1382 @@
             "sendInboxMessage": "",
             "sort_priority": 0,
             "foldable_tag": 0
+        },
+        {
+            "id": 90000,
+            "text": "闘技場に5回挑戦する",
+            "separated_text": [
+                "闘技場に5回挑戦する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 106,
+            "target": "",
+            "count": 5,
+            "counterName": "90000",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 29,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_potential.crystal_hr",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90000
+        },
+        {
+            "id": 90001,
+            "text": "闘技場に10回挑戦する",
+            "separated_text": [
+                "闘技場に10回挑戦する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 106,
+            "target": "",
+            "count": 10,
+            "counterName": "90000",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 29,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_potential.crystal_hr",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90000
+        },
+        {
+            "id": 90002,
+            "text": "闘技場に15回挑戦する",
+            "separated_text": [
+                "闘技場に15回挑戦する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 106,
+            "target": "",
+            "count": 15,
+            "counterName": "90000",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 29,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_potential.crystal_sr",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90000
+        },
+        {
+            "id": 90003,
+            "text": "メインストーリーを3回クリア",
+            "separated_text": [
+                "メインストーリーを3回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 3,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90004,
+            "text": "メインストーリーを6回クリア",
+            "separated_text": [
+                "メインストーリーを6回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 6,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90005,
+            "text": "メインストーリーを9回クリア",
+            "separated_text": [
+                "メインストーリーを9回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 9,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90006,
+            "text": "メインストーリーを12回クリア",
+            "separated_text": [
+                "メインストーリーを12回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 12,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90007,
+            "text": "メインストーリーを15回クリア",
+            "separated_text": [
+                "メインストーリーを15回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 15,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90008,
+            "text": "メインストーリーを18回クリア",
+            "separated_text": [
+                "メインストーリーを18回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 18,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90009,
+            "text": "メインストーリーを21回クリア",
+            "separated_text": [
+                "メインストーリーを21回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 21,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90010,
+            "text": "メインストーリーを24回クリア",
+            "separated_text": [
+                "メインストーリーを24回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 24,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90011,
+            "text": "メインストーリーを27回クリア",
+            "separated_text": [
+                "メインストーリーを27回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 27,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90012,
+            "text": "メインストーリーを30回クリア",
+            "separated_text": [
+                "メインストーリーを30回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "ノーマルストーリー",
+            "count": 30,
+            "counterName": "90003",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ticket",
+                        "m_walletName": "gacha_common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90003
+        },
+        {
+            "id": 90013,
+            "text": "派遣を5回実行する",
+            "separated_text": [
+                "派遣を5回実行する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 107,
+            "target": "",
+            "count": 5,
+            "counterName": "90013",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 30,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90013
+        },
+        {
+            "id": 90014,
+            "text": "派遣を10回実行する",
+            "separated_text": [
+                "派遣を10回実行する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 107,
+            "target": "",
+            "count": 10,
+            "counterName": "90013",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 30,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90013
+        },
+        {
+            "id": 90015,
+            "text": "派遣を15回実行する",
+            "separated_text": [
+                "派遣を15回実行する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 107,
+            "target": "",
+            "count": 15,
+            "counterName": "90013",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 30,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90013
+        },
+        {
+            "id": 90016,
+            "text": "派遣を20回実行する",
+            "separated_text": [
+                "派遣を20回実行する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 107,
+            "target": "",
+            "count": 20,
+            "counterName": "90013",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 30,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.engraving_mutate.common",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90013
+        },
+        {
+            "id": 90017,
+            "text": "高速バトルを1回行う",
+            "separated_text": [
+                "高速バトルを1回行う"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 103,
+            "target": "",
+            "count": 1,
+            "counterName": "90017",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_SSR",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90017
+        },
+        {
+            "id": 90018,
+            "text": "高速バトルを2回行う",
+            "separated_text": [
+                "高速バトルを2回行う"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 103,
+            "target": "",
+            "count": 2,
+            "counterName": "90017",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_SSR",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90017
+        },
+        {
+            "id": 90019,
+            "text": "高速バトルを3回行う",
+            "separated_text": [
+                "高速バトルを3回行う"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 103,
+            "target": "",
+            "count": 3,
+            "counterName": "90017",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_SSR",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90017
+        },
+        {
+            "id": 90020,
+            "text": "高速バトルを4回行う",
+            "separated_text": [
+                "高速バトルを4回行う"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 103,
+            "target": "",
+            "count": 4,
+            "counterName": "90017",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_SSR",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90017
+        },
+        {
+            "id": 90021,
+            "text": "高速バトルを5回行う",
+            "separated_text": [
+                "高速バトルを5回行う"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 103,
+            "target": "",
+            "count": 5,
+            "counterName": "90017",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.lottery_fragment.unit_faction_SSR",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90017
+        },
+        {
+            "id": 90022,
+            "text": "残響シアターを5回クリア",
+            "separated_text": [
+                "残響シアターを5回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "特殊クエスト",
+            "count": 5,
+            "counterName": "90022",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 28,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "m_f",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90022
+        },
+        {
+            "id": 90023,
+            "text": "残響シアターを10回クリア",
+            "separated_text": [
+                "残響シアターを10回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "特殊クエスト",
+            "count": 10,
+            "counterName": "90022",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 28,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "m_f",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90022
+        },
+        {
+            "id": 90024,
+            "text": "残響シアターを15回クリア",
+            "separated_text": [
+                "残響シアターを15回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "特殊クエスト",
+            "count": 15,
+            "counterName": "90022",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 28,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "m_f",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90022
+        },
+        {
+            "id": 90025,
+            "text": "残響シアターを20回クリア",
+            "separated_text": [
+                "残響シアターを20回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "特殊クエスト",
+            "count": 20,
+            "counterName": "90022",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 28,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "ugift",
+                        "m_walletName": "m_f",
+                        "m_count": 2
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90022
+        },
+        {
+            "id": 90026,
+            "text": "試練の祭壇を3回クリア",
+            "separated_text": [
+                "試練の祭壇を3回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "討伐クエスト",
+            "count": 3,
+            "counterName": "90026",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 26,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "artifact",
+                        "m_walletName": "28",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90026
+        },
+        {
+            "id": 90027,
+            "text": "試練の祭壇を6回クリア",
+            "separated_text": [
+                "試練の祭壇を6回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "討伐クエスト",
+            "count": 6,
+            "counterName": "90026",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 26,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "artifact",
+                        "m_walletName": "28",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90026
+        },
+        {
+            "id": 90028,
+            "text": "試練の祭壇を9回クリア",
+            "separated_text": [
+                "試練の祭壇を9回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "討伐クエスト",
+            "count": 9,
+            "counterName": "90026",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 26,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "artifact",
+                        "m_walletName": "28",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90026
+        },
+        {
+            "id": 90029,
+            "text": "試練の祭壇を12回クリア",
+            "separated_text": [
+                "試練の祭壇を12回クリア"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 4,
+            "target": "討伐クエスト",
+            "count": 12,
+            "counterName": "90026",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 26,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "artifact",
+                        "m_walletName": "28",
+                        "m_count": 1
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90026
+        },
+        {
+            "id": 90030,
+            "text": "放置報酬を1回受取る",
+            "separated_text": [
+                "放置報酬を1回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 1,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90031,
+            "text": "放置報酬を2回受取る",
+            "separated_text": [
+                "放置報酬を2回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 2,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90032,
+            "text": "放置報酬を3回受取る",
+            "separated_text": [
+                "放置報酬を3回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 3,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90033,
+            "text": "放置報酬を4回受取る",
+            "separated_text": [
+                "放置報酬を4回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 4,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90034,
+            "text": "放置報酬を5回受取る",
+            "separated_text": [
+                "放置報酬を5回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 5,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90035,
+            "text": "放置報酬を6回受取る",
+            "separated_text": [
+                "放置報酬を6回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 6,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90036,
+            "text": "放置報酬を7回受取る",
+            "separated_text": [
+                "放置報酬を7回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 7,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90037,
+            "text": "放置報酬を8回受取る",
+            "separated_text": [
+                "放置報酬を8回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 8,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90038,
+            "text": "放置報酬を9回受取る",
+            "separated_text": [
+                "放置報酬を9回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 9,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90039,
+            "text": "放置報酬を10回受取る",
+            "separated_text": [
+                "放置報酬を10回受取る"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 104,
+            "target": "",
+            "count": 10,
+            "counterName": "90030",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 7,
+            "transition_value": 1,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "item",
+                        "m_walletName": "item.ticket.quest_skip",
+                        "m_count": 3
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90030
+        },
+        {
+            "id": 90040,
+            "text": "ミニゲームに1回挑戦する",
+            "separated_text": [
+                "ミニゲームに1回挑戦する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 142,
+            "target": "",
+            "count": 1,
+            "counterName": "90040",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 35,
+            "transition_value": 0,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "explore_pt",
+                        "m_count": 5000
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90040
+        },
+        {
+            "id": 90041,
+            "text": "ミニゲームに3回挑戦する",
+            "separated_text": [
+                "ミニゲームに3回挑戦する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 142,
+            "target": "",
+            "count": 3,
+            "counterName": "90040",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 35,
+            "transition_value": 0,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "explore_pt",
+                        "m_count": 5000
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90040
+        },
+        {
+            "id": 90042,
+            "text": "ミニゲームに5回挑戦する",
+            "separated_text": [
+                "ミニゲームに5回挑戦する"
+            ],
+            "category": 14,
+            "category_collective": 0,
+            "condition": 142,
+            "target": "",
+            "count": 5,
+            "counterName": "90040",
+            "loop": 0,
+            "disclosureMission": 0,
+            "startDate": "2026/4/13 12:00",
+            "endDate": "2026/4/17 11:00",
+            "transition": 35,
+            "transition_value": 0,
+            "rewardtable": {
+                "m_rewards": [
+                    {
+                        "m_walletCategory": "point",
+                        "m_walletName": "explore_pt",
+                        "m_count": 5000
+                    }
+                ]
+            },
+            "sendInbox": 0,
+            "sendInboxMessage": "",
+            "sort_priority": 0,
+            "foldable_tag": 90040
         }
     ]
 }

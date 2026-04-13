@@ -1,6 +1,7 @@
 """
 https://otogi-rest.otogi-frontier.com/api/UGachas
 卡池视频需要带上token get获取,这里就不放了
+Assets/chara/standimagelarge
 """
 
 import json, os, re, gzip, shutil, time
@@ -187,7 +188,7 @@ def main():
     download_masterdata()
     patch_names, size_map = download_patch_list(ver)
     # 这里注释了资产只保留了数据表，有需要下载资产的自己取消注释
-    # download_assets(sorted(set(download_webgl_manifest() + patch_names)), size_map)
+    download_assets(sorted(set(download_webgl_manifest() + patch_names)), size_map)
 
 if __name__ == "__main__":
     main()
