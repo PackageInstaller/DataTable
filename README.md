@@ -35,3 +35,4 @@
 |    SakunaHinuka    |    天穗手游    |            日服 Json            |
 |  RlyehShoujotaiX  |      邪神      |            Dmm Json            |
 |  KalpaOfUniverse  |     天地劫     |            国服 Json            |
+|      DotAbyss      |      渊深      |            DMM Json            |
