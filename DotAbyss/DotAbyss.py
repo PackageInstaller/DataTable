@@ -235,7 +235,12 @@ class AbyssDownloader:
                 self.download_queue.task_done()
                 continue
                 
-            dest_path = os.path.join("Assets", primary_key)
+            file_name = primary_key
+            for ext in [".usm", ".awb"]:
+                if ext in file_name:
+                    file_name = file_name.split(ext)[0] + ext
+                    break
+            dest_path = os.path.join("downloads", file_name)
             
             ok = self.download_file(url, dest_path, expected_size=size)
             if ok:
@@ -252,20 +257,15 @@ class AbyssDownloader:
             return
             
         versions = info.get("versions", {})
-        self.asset_ver = versions.get("AssetVersionAndroidDmmR18Preregist")
+        self.asset_ver = versions.get("AssetVersionWebDmmR18Preregist")
         self.master_ver = versions.get("resourcePreregist", "4")
-        client_ver = versions.get("ClientVersionAndroidDmmR18Preregist", "1.0.0")
+        client_ver = versions.get("ClientVersionWebDmmR18Preregist", "1.0.0")
         self.client_ver_prefix = client_ver.split('.')[0]
-        
-        if not self.asset_ver:
-            console.print("[red][-] 未能在响应中找到 AssetVersionAndroidDmmR18Preregist[/red]")
-            return
-            
         console.print(f"[blue][*] 资产版本: {self.asset_ver}, 数据表版本: {self.master_ver}, 客户端前缀: {self.client_ver_prefix}[/blue]")
         if not self.handle_master_data():
             console.print("[yellow][!] Master Data 处理失败，将跳过数据表任务。[/yellow]")
 
-        self.base_url = f"https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/resources/android_preregist/r18/aas/{self.asset_ver}/aa"
+        self.base_url = f"https://preregist.abyss-prod-r18.dotabyss.dmmgames.com/resources/webgl_preregist/r18/aas/{self.asset_ver}/aa"
         hash_url = f"{self.base_url}/catalog_{self.client_ver_prefix}.hash"
         bin_url = f"{self.base_url}/catalog_{self.client_ver_prefix}.bin"
         
