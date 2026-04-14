@@ -242,11 +242,15 @@ class AbyssDownloader:
                     break
             dest_path = os.path.join("downloads", file_name)
             
-            ok = self.download_file(url, dest_path, expected_size=size)
-            if ok:
-                self.progress.advance(task_id)
-            else:
-                # console.print(f"[yellow][!] 跳过文件: {primary_key}[/yellow]")
+            try:
+                ok = self.download_file(url, dest_path, expected_size=size)
+                if ok:
+                    self.progress.advance(task_id)
+                else:
+                    # console.print(f"[yellow][!] 跳过文件: {primary_key}[/yellow]")
+                    self.progress.advance(task_id)
+            except Exception as e:
+                console.print(f"[red][!] 下载失败 ({primary_key}): {e}[/red]")
                 self.progress.advance(task_id)
                 
             self.download_queue.task_done()
@@ -285,6 +289,7 @@ class AbyssDownloader:
                 if old_hash == current_hash:
                     console.print("[yellow][*] Catalog 已经是最新，跳过。[/yellow]")
                     updated = False
+                    return
         
         bin_path = f"catalog_{self.client_ver_prefix}.bin"
         if not os.path.exists(bin_path) or updated:
@@ -304,12 +309,32 @@ class AbyssDownloader:
             console.print(f"[red][-] 解析 Catalog 失败: {e}[/red]")
             return
 
+        download_tasks = []
+        seen_dest_paths = set()
+        
         for asset in assets:
-            self.download_queue.put((asset['internal_id'], asset['primary_key'], asset['bundle_size']))
+            internal_id = asset['internal_id']
+            primary_key = asset['primary_key']
+            size = asset['bundle_size']
             
-        total_assets = len(assets)
+            # 提前计算目标路径用于去重
+            file_name = primary_key
+            for ext in [".usm", ".awb"]:
+                if ext in file_name:
+                    file_name = file_name.split(ext)[0] + ext
+                    break
+            dest_path = os.path.join("downloads", file_name)
+            
+            if dest_path not in seen_dest_paths:
+                seen_dest_paths.add(dest_path)
+                download_tasks.append((internal_id, primary_key, size))
+            
+        total_tasks = len(download_tasks)
+        for task in download_tasks:
+            self.download_queue.put(task)
+            
         with self.progress:
-            task_id = self.progress.add_task("[cyan]正在同步资源...[/cyan]", total=total_assets)
+            task_id = self.progress.add_task("[cyan]正在同步资源...[/cyan]", total=total_tasks)
             
             threads = []
             for _ in range(self.threads):
