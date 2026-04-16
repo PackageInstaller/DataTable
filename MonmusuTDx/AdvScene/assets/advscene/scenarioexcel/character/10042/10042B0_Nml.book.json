@@ -1,0 +1,1822 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2195584510539435343
+  },
+  "m_Name": "10042B0_Nml.book",
+  "importVersion": 0,
+  "importGridList": [
+    {
+      "rows": [
+        {
+          "rowIndex": 0,
+          "strings": [
+            "",
+            "Command",
+            "Arg1",
+            "Arg2",
+            "Arg3",
+            "Arg4",
+            "Arg5",
+            "Arg6",
+            "WaitType",
+            "Text",
+            "PageCtrl",
+            "Voice",
+            "WindowType"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 1,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 2,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 3,
+          "strings": [
+            "",
+            "Bg",
+            "背景_湖畔",
+            "",
+            "layer_背景",
+            "",
+            "",
+            "0.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 4,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1014",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 5,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 6,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 7,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "パステノさんに看病してもらってから数日後。\nすっかり元気になった僕は、\n彼女が住む泉のほとりを訪れていた。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 8,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "この２つの野草は、よく似ていますけれども、\nこちらは薬草、こちらは毒草です。\n葉っぱの付け根の膨らみをよく確認してくださいね。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_001",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 9,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ふむふむ、なるほど……勉強になります。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 10,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "パステノさんが指示した草の特徴を目に焼き付ける。\n今日は彼女に頼んで、薬や応急処置の方法について\n教えてもらっているのだ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 11,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そろそろ休憩にしましょうか。\nご主人様は素直で呑み込みが早いので、\nとても教え甲斐がありますね。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_002",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 12,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "いえいえ、パステノさんの教え方がいいからですよ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 13,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt4_Enj",
+            "layer_中",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 14,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_喜び_1",
+            "漫符_喜び①",
+            "layer_中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 15,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_喜び_2",
+            "漫符_喜び②",
+            "layer_中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 16,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_喜び_3",
+            "漫符_喜び①",
+            "layer_中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 17,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 18,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 19,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 20,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "MoveBy",
+            "time=0 x=-9990 y=383",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 21,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "MoveBy",
+            "time=0 x=-10000 y=403",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 22,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "MoveBy",
+            "time=0 x=-9980 y=383",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 23,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 24,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 25,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 26,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "RotateTo",
+            "time=0 z=20",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 27,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "ScaleTo",
+            "time=0 x=0.7 y=0.7",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 28,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "RotateTo",
+            "time=0 z=-30",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 29,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "ScaleTo",
+            "time=0 x=0.82 y=0.82",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 30,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 31,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 32,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 33,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_喜び_1",
+            "",
+            "",
+            "",
+            "",
+            "0.15",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 34,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 35,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 36,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_喜び_2",
+            "",
+            "",
+            "",
+            "",
+            "0.15",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 37,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 38,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 39,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 40,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_喜び_3",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 41,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt4_Enj",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ふふふ、褒めても何もでませんよ？\nでも、ご主人様の言うことですから、\n素直にお褒めの言葉としていただいておきますね。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_003",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 42,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "パステノさんは謙遜しているが、彼女は知識が豊富なだけでなく、\nこちらの理解度に合わせた言葉遣いや順序で説明してくれる。\n話を聞く側への気配りが行き届いているのだ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 43,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そういえば、今日はなぜ私のところへ？\nもちろん頼ってくださるのは嬉しいですれども、\n薬の準備や手当はご主人様のお仕事ではないでしょう？",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_004",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 44,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "それはそうですけど、こういう知識や技術を持っている人って、\n１人でも多い方がいいじゃないですか。\n僕は少しでも皆の役に立ちたいですし……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 45,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "いつもモンスター娘たちの体に気を遣っている\nパステノさんの負担を減らしたい……とは、\nさすがに気恥ずかしくて言えなかった。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 46,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt6_Sur",
+            "layer_中",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 47,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_びっくり",
+            "漫符_びっくり",
+            "layer_中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 48,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 49,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり",
+            "MoveBy",
+            "time=0 x=-10010 y=390",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 50,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり",
+            "MoveBy",
+            "time=0 x=-30 y=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 51,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり",
+            "ScaleTo",
+            "time=0 x=0.25 y=0.25",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 52,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 53,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 54,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり",
+            "ScaleTo",
+            "time=0.15 x=0.75 y=0.75",
+            "easeOutBack",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 55,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり",
+            "MoveBy",
+            "time=0.15 x=0 y=80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 56,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 57,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_びっくり",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 58,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "まぁ、それは立派な心掛けです！\nご主人様は、もしかしたらお医者様に\n向いているかもしれませんね。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_005",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 59,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "さすがにそれはどうでしょう？\nお医者さんって言ったら、それこそパステノさんは……。\nそういえば、パステノさんはなぜ薬や治療の勉強を？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 60,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ふと思いついた疑問を投げかけてみる。\n癒しの力を持つモンスター娘であれば、\nある程度の傷や不調は回復できるはずなのだ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 61,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そうですね……たしかに戦う時には私のような\n癒しの力を持つ者は治療に専念することになります。\n緊急の事態では、回復速度と精度が重要ですから。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_006",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 62,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt2_Ang",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "だけど、日常的な生活や、万が一の大規模な事故が起きた時、\n正しい知識と技術を持っていれば、私のような力がない子でも\n仲間を助けることができますよね？",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_007",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 63,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "たしかに。僕が今日パステノさんから\nいろいろ教えてもらっているのも、\nまさにそういった理由ですからね。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 64,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "僕の言葉にパステノさんは嬉しそうに頷く。\nやはり、この人は心の底から島の仲間たちの\nことを大切に想っているのだ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 65,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt10_Sad",
+            "layer_中",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 66,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_ため息(左へ)",
+            "漫符_ため息左",
+            "layer_中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 67,
+          "strings": [
+            "",
+            "Tween",
+            "spr_ため息(左へ)",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 68,
+          "strings": [
+            "",
+            "Tween",
+            "spr_ため息(左へ)",
+            "MoveBy",
+            "time=0 x=-9980 y=340",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 69,
+          "strings": [
+            "",
+            "Tween",
+            "spr_ため息(左へ)",
+            "MoveBy",
+            "time=0 x=-30 y=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 70,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.02",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 71,
+          "strings": [
+            "",
+            "Tween",
+            "spr_ため息(左へ)",
+            "ColorTo",
+            "time=0.3 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 72,
+          "strings": [
+            "",
+            "Tween",
+            "spr_ため息(左へ)",
+            "ScaleFrom",
+            "time=0.6 x=0.2 y=0.2",
+            "easeOutExpo",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 73,
+          "strings": [
+            "",
+            "Tween",
+            "spr_ため息(左へ)",
+            "MoveBy",
+            "time=0.6 x=-20 y=-15",
+            "easeOutExpo",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 74,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_ため息(左へ)",
+            "",
+            "",
+            "",
+            "",
+            "0.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 75,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ただ、私の知識はまだまだ足りないですし、技術も未熟です。\nですから、もし島が落ち着いて、モンスター娘と\n人間が平和に暮らせるようになったら……。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_008",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 76,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt7_Ama",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "島の外に出て、人間のお医者さんからも\nいろいろ学んでみたい……って思うんです。\nあはは……私って、変わっていますよね。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_009",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 77,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "照れたように笑うパステノさん。\nたしかに彼女のように人間に混じって生活しようと\n思うモンスター娘は少ないかもしれない。だが――。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 78,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "そんなことありません！\n僕はパステノさんのこと、応援しますよ。\n実現させるために何でも協力します！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 79,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ご主人様……。\nふふっ、ありがとうございます。\nなんだか元気が出てきてしまいました。",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_010",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 80,
+          "strings": [
+            "",
+            "Se",
+            "SE動作_衣擦れ"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 81,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 82,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 83,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt8_Shy",
+            "layer_BU中",
+            "",
+            "-30",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 84,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "パステノさんはそう言って僕に近づくと、\nそっと腕を絡めてくる。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 85,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt9_Est",
+            "layer_BU中",
+            "",
+            "-30",
+            "0.3",
+            "",
+            "でも……やっぱり私１人だと不安なので、\nご主人様にも一緒に来てもらいましょうか。\nご主人様がお医者さんになって、私が助手もいいですね♪",
+            "",
+            "ch_10042/R18/10042B0_10042_Nml/10042B0_10042_011",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 86,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "えっ、いや……あの。\nはい……考えておきます……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 87,
+          "strings": [
+            "",
+            "",
+            "パステノ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "-30",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 88,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "顔を赤くする僕を見て、パステノさんはくすくすと笑う。\n僕は唇を尖らせつつも、ちょっと真面目に\n「そんな未来もいいかもしれない……」と考えるのであった。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 89,
+          "strings": [
+            "",
+            "StopSound",
+            "All",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 90,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 91,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 92,
+          "strings": [
+            "",
+            "LayerReset",
+            "レイヤー_マスク全画面",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        }
+      ],
+      "name": "Assets/AdvScene/ScenarioExcel/character/10042/10042B0_Nml.xlsx:10042B0_Nml",
+      "type": 1,
+      "textLength": 4160,
+      "headerRow": 0,
+      "entityIndexTbl": [],
+      "entityDataList": []
+    }
+  ]
+}

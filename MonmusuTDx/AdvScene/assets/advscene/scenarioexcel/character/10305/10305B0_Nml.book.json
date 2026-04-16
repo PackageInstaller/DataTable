@@ -1,0 +1,1161 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2195584510539435343
+  },
+  "m_Name": "10305B0_Nml.book",
+  "importVersion": 0,
+  "importGridList": [
+    {
+      "rows": [
+        {
+          "rowIndex": 0,
+          "strings": [
+            "",
+            "Command",
+            "Arg1",
+            "Arg2",
+            "Arg3",
+            "Arg4",
+            "Arg5",
+            "Arg6",
+            "WaitType",
+            "Text",
+            "PageCtrl",
+            "Voice",
+            "WindowType",
+            "Arg7"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 1,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 2,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 3,
+          "strings": [
+            "",
+            "Bg",
+            "背景_洞窟(夜)",
+            "",
+            "layer_背景",
+            "",
+            "",
+            "0.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 4,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1014",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 5,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 6,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 7,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "とある日の夜。\n巡回中に悲鳴を聞いた僕は、現場へと急行した。\n怪しい気配の漂う、暗い洞窟の奥へと足を進める。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 8,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "たしかに悲鳴はこの奥から……。\nあの聞き取れない独特な声は、もしかして――うわっ！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 9,
+          "strings": [
+            "",
+            "Se",
+            "SEコミカル_ピューン",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 10,
+          "strings": [
+            "",
+            "",
+            "パープロープ",
+            "Emt6_Sur",
+            "layer_中",
+            "-300",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 11,
+          "strings": [
+            "",
+            "Tween",
+            "パープロープ",
+            "MoveBy",
+            "time=0.6 x=600",
+            "linear"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 12,
+          "strings": [
+            "",
+            "Tween",
+            "パープロープ",
+            "ColorTo",
+            "time=0.3 alpha=0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 13,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 14,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 15,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "洞窟からパープロープさんが矢のように飛び出してきた。\nそのまま振り返ることもなく、走り去ってしまう。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 16,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt10_Sad",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "チッ、あともう少しだったのに……、\n逃げられちゃった……だよぉ。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_001",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 17,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "あれ？　ご主人？\nこんなところで一体……なにを、だよぉ？",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_002",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 18,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "チュピナさんこそ、パープロープさんと何かあったんですか？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 19,
+          "strings": [
+            "",
+            "Tween",
+            "チュピナ",
+            "PunchPosition",
+            "time=2.6 x=30",
+            "linear",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 20,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt7_Ama",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "何かって……ナニかあったし、\n無かったのかもしれないんだよぉ。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_003",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 21,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "チュピナさんの視線は泳いでいた。\n僕の方をまったく見ようともしない。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 22,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "……本当ですか？\n僕、ココに来る前に悲鳴のような声を聞いたんですけど？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 23,
+          "strings": [
+            "",
+            "Tween",
+            "チュピナ",
+            "ShakePosition",
+            "time=0.6 x=6 y=6",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 24,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt5_Sca",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そ、それは……うぅ、ちょっとした事情があるんだよぉ……。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_004",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 25,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "なにか困ったことがあるなら、僕に話してください。\n力になれるかもしれませんよ？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 26,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt10_Sad",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "うーん……。\nたしかに、ご主人ならあたしの願いも叶うかも……だよぉ？",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_005",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 27,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt10_Sad",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ご主人は、あたしがどうして、\nゲシュペンス島に住んでるか知ってる……だよぉ？",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_006",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 28,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "はい。\n宇宙船が故障して、ゲシュペンス島に不時着したんですよね？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 29,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そうだよぉ。\nそれ以来、あたしはひとりで、\nコソコソ隠れながら暮らしてたんだよぉ。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_007",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 30,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt10_Sad",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ずーっとひとりだったからぁ……、\nそろそろ、あたしも子孫を残そうかと思って――。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_008",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 31,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt10_Sad",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "パープロープと無理やり繁殖しようとしたんだけどぉ……\nあと少しのところで逃げられちゃったんだよぉ。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_009",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 32,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "事情は分かりましたが……、\nむ、無理矢理はよくないですよ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 33,
+          "strings": [
+            "",
+            "Tween",
+            "チュピナ",
+            "PunchPosition",
+            "time=2.6 x=30",
+            "linear",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 34,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt8_Shy",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "だってぇ、早く子孫を残したかったんだよぉ。\nあたしだって、いつ誰かに狩られちゃうか分からないんだし……。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_010",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 35,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "チュピナさんはそう言って、寂し気に目を細めた。\nエイリアンハンターだけあって、その言葉に重みがある。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 36,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt8_Shy",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "あたしだって無理やりはよくないのはわかってるけど……、\nできるだけ早く子どもが欲しかったんだよぉ……。",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_011",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 37,
+          "strings": [
+            "",
+            "Tween",
+            "チュピナ",
+            "MoveBy",
+            "time=0.15 y=20",
+            "easeOutQuad",
+            "pingPong=4",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 38,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "あっ、そうだよぉ！\nご主人の血と遺伝子を貰えば良いんだよぉ！",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_012",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 39,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "パープロープたちにも目をつけられてるんだから、\n遺伝子も……きっと優秀なはず……だよぉ♪",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_013",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 40,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "チュピナさんの目が怪しい光を帯び始める。\nなんだか寒気がして、背筋を冷たい汗が伝う。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 41,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt9_Est",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ご主人……。\n遺伝子貰っちゃってもいい……だよぉ？",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_014",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 42,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ちょっ、ちょっと待って下さい！\n血は選んで、許可を得てから飲んでるんでしたよね！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 43,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt9_Est",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そうだよぉ。\nだから、あたし、ちゃんとご主人を選んだんだよぉ♪",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_015",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 44,
+          "strings": [
+            "",
+            "Tween",
+            "チュピナ",
+            "MoveBy",
+            "time=0.15 y=20",
+            "easeOutQuad",
+            "pingPong=4",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 45,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt9_Est",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ご主人となら、\n顔も頭も優秀な、凄腕のエイリアンハンターを作れるんだよぉ♪",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_016",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 46,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "チュピナさんの目は完全に僕をロックオンしている。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 47,
+          "strings": [
+            "",
+            "Shake",
+            "MessageWindow",
+            "",
+            "time=0.3 x=20 y=-16",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 48,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ちっ、チュピナさんのお相手は僕が探しますからっ！\n今はちょっと待って下さいっ！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 49,
+          "strings": [
+            "",
+            "",
+            "チュピナ",
+            "Emt6_Sur",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "あっ、逃げたっ！？\n逃がさないんだよぉ、ご主人っ！",
+            "",
+            "ch_10305/R18/10305B0_10305_Nml/10305B0_10305_017",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 50,
+          "strings": [
+            "",
+            "Se",
+            "SE動作_足音_ダッシュ",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 51,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 52,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 53,
+          "strings": [
+            "",
+            "Tween",
+            "BG",
+            "MoveBy",
+            "time=6 x=300",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 54,
+          "strings": [
+            "",
+            "Tween",
+            "BG",
+            "ColorTo",
+            "time=0.4 alpha=0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 55,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 56,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "さっきのパープロープさんのように出口に向かって走る。\nもはや遺伝子ハンターとなった彼女から、\n僕は必死で逃げ出すのだった。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 57,
+          "strings": [
+            "",
+            "StopSound",
+            "All",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 58,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 59,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 60,
+          "strings": [
+            "",
+            "LayerReset",
+            "レイヤー_マスク全画面",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        }
+      ],
+      "name": "Assets/AdvScene/ScenarioExcel/character/10305/10305B0_Nml.xlsx:10305B0_Nml",
+      "type": 1,
+      "textLength": 3185,
+      "headerRow": 0,
+      "entityIndexTbl": [],
+      "entityDataList": []
+    }
+  ]
+}

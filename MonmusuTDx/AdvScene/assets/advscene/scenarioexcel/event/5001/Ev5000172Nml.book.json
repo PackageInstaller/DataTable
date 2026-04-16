@@ -1,0 +1,1639 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2195584510539435343
+  },
+  "m_Name": "Ev5000172Nml.book",
+  "importVersion": 0,
+  "importGridList": [
+    {
+      "rows": [
+        {
+          "rowIndex": 0,
+          "strings": [
+            "",
+            "Command",
+            "Arg1",
+            "Arg2",
+            "Arg3",
+            "Arg4",
+            "Arg5",
+            "Arg6",
+            "WaitType",
+            "Text",
+            "PageCtrl",
+            "Voice",
+            "WindowType",
+            "Arg7"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 1,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 2,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 3,
+          "strings": [
+            "",
+            "Bg",
+            "背景_闇の森",
+            "",
+            "layer_背景",
+            "",
+            "",
+            "0.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 4,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1020",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 5,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 6,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 7,
+          "strings": [
+            "",
+            "Param",
+            "en9014=\"悪役女騎士\""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 8,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "Emt5_Sca",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 9,
+          "strings": [
+            "",
+            "Tween",
+            "女騎士",
+            "ScaleTo",
+            "time=0 x=1.1 y=1.1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 10,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "Emt5_Sca",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ぐあ",
+            "Next",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 11,
+          "strings": [
+            "",
+            "Tween",
+            "女騎士",
+            "ShakePosition",
+            "time=0.4 x=20",
+            "",
+            "",
+            "",
+            "Add"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 12,
+          "strings": [
+            "",
+            "Tween",
+            "女騎士",
+            "ScaleTo",
+            "time=0.2 x=1 y=1",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 13,
+          "strings": [
+            "",
+            "Se",
+            "SE攻撃_打撃02",
+            "",
+            "0.5",
+            "",
+            "",
+            "",
+            "Add"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 14,
+          "strings": [
+            "",
+            "Se",
+            "SE魔法_闇波02",
+            "",
+            "1",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 15,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "Emt5_Sca",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ああああっ！？\nなぜ、<interval=0.4>勝てない……！？<interval=0.4>\n正義はこちらにあるはずなのに……！！",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 16,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 17,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 18,
+          "strings": [
+            "",
+            "",
+            "ディフォーラ",
+            "Emt2_Ang",
+            "layer_右中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 19,
+          "strings": [
+            "",
+            "",
+            "アメリ",
+            "Emt1_Nor",
+            "layer_左中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 20,
+          "strings": [
+            "",
+            "Tween",
+            "アメリ",
+            "ShakePosition",
+            "time=0.2 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 21,
+          "strings": [
+            "",
+            "Se",
+            "SEコミカル_ムニュ"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 22,
+          "strings": [
+            "",
+            "",
+            "アメリ",
+            "Emt1_Nor",
+            "layer_左中",
+            "",
+            "",
+            "0.3",
+            "",
+            "正義……？<interval=0.4>　ただの怨念では？<interval=0.4>\n世界への恨みともいえますが。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 23,
+          "strings": [
+            "",
+            "Tween",
+            "ディフォーラ",
+            "MoveBy",
+            "time=0.1 y=20",
+            "easeOutQuint",
+            "pingPong=2",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 24,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_マス進行"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 25,
+          "strings": [
+            "",
+            "",
+            "ディフォーラ",
+            "Emt3_Gla",
+            "layer_右中",
+            "",
+            "",
+            "0.3",
+            "",
+            "恨めしい、という気持ちであれば、\n私達アンデッドに勝てるはずも無いでしょう。<interval=0.4>\nなんといっても本業ですからね。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 26,
+          "strings": [
+            "",
+            "Shake",
+            "MessageWindow",
+            "",
+            "time=0.3 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 27,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ぐ……<interval=0.4>恨み……<interval=0.4>恨みですって……！？<interval=0.4>\nこ",
+            "Next"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 28,
+          "strings": [
+            "",
+            "Se",
+            "SE動作_風切り音"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 29,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "れは、そんな幼稚なものではありません……。\nこれは全ての魂を幸福へ導くための、<interval=0.4>聖戦……！！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 30,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 31,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 32,
+          "strings": [
+            "",
+            "",
+            "ペロロス",
+            "Emt1_Nor",
+            "layer_左",
+            "-100",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 33,
+          "strings": [
+            "",
+            "",
+            "ヴェラートゥ",
+            "Emt10_Sad",
+            "layer_右",
+            "100",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 34,
+          "strings": [
+            "",
+            "",
+            "バロウ",
+            "Emt2_Ang",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 35,
+          "strings": [
+            "",
+            "Tween",
+            "バロウ",
+            "ShakePosition",
+            "time=0.2 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 36,
+          "strings": [
+            "",
+            "",
+            "バロウ",
+            "Emt2_Ang",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ただの、理不尽な現実への怒りよね。<interval=0.4>\nその感情を全て否定するつもりはないけれど、\n聖戦なんて高尚なものじゃ決して無いわ。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 37,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_マス進行"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 38,
+          "strings": [
+            "",
+            "",
+            "ペロロス",
+            "Emt7_Ama",
+            "layer_左",
+            "",
+            "",
+            "0.3",
+            "",
+            "聖なるものは、確かにワタクシ達にとって天敵。<interval=0.4>\nけれど、恨みであればただの力比べでしかありません。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 39,
+          "strings": [
+            "",
+            "Tween",
+            "ヴェラートゥ",
+            "ShakePosition",
+            "time=0.2 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 40,
+          "strings": [
+            "",
+            "",
+            "ヴェラートゥ",
+            "Emt1_Nor",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "たかだか人間一生分の感情……。<interval=0.4>\n張り合えると思っているなんて、<interval=0.4>\nな",
+            "Next",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 41,
+          "strings": [
+            "",
+            "Tween",
+            "ヴェラートゥ",
+            "MoveBy",
+            "time=0.3 y=-30",
+            "swing",
+            "pingPong=2",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 42,
+          "strings": [
+            "",
+            "",
+            "ヴェラートゥ",
+            "Emt4_Enj",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "んておこがましいのかしら。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 43,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 44,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 45,
+          "strings": [
+            "",
+            "StopSound",
+            "Bgm,Se,Ambience",
+            "",
+            "",
+            "",
+            "",
+            "2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 46,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 47,
+          "strings": [
+            "",
+            "Tween",
+            "女騎士",
+            "MoveBy",
+            "time=0.1 y=20",
+            "easeOutQuint",
+            "pingPong=4",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 48,
+          "strings": [
+            "",
+            "Se",
+            "SE魔法_火炎02",
+            "",
+            "0.4"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 49,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "ぐ……黙りなさい……！　<interval=0.4>高いところから見下すな……！\nこのアンデッド如きが……！　死に損ないが……！<interval=0.8>\n固有名詞を持ったレギュラー陣が……！！",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 50,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "Emt10_Sad",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "恵まれた者達は無自覚に弱者を傷つける……。<interval=0.4>\nだから必要なんです……！<interval=0.4>\n弱者が救済される、<interval=0.4>異世界転生が……ッ！！！",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 51,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1012"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 52,
+          "strings": [
+            "",
+            "Se",
+            "SE魔法_大地03",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 53,
+          "strings": [
+            "",
+            "Tween",
+            "女騎士",
+            "MoveBy",
+            "time=0.1 y=50",
+            "easeOutQuint",
+            "pingPong=4",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 54,
+          "strings": [
+            "",
+            "",
+            "女騎士",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 55,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "女騎士の体から、すさまじい量の怨念が溢れ出す。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 56,
+          "strings": [
+            "",
+            "",
+            "騎士Ａ",
+            "Emt1_Nor",
+            "layer_左中奥",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 57,
+          "strings": [
+            "",
+            "",
+            "騎士Ｂ",
+            "Emt1_Nor",
+            "layer_右中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 58,
+          "strings": [
+            "",
+            "Tween",
+            "騎士Ａ",
+            "ShakePosition",
+            "time=0.2 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 59,
+          "strings": [
+            "",
+            "Tween",
+            "騎士Ｂ",
+            "ShakePosition",
+            "time=0.2 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 60,
+          "strings": [
+            "",
+            "",
+            "聖騎士",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "そうだ……ネームド連中に踏みにじられてたまるか……！！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 61,
+          "strings": [
+            "",
+            "Se",
+            "SE魔法_大地03",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 62,
+          "strings": [
+            "",
+            "Se",
+            "SE魔法_闇波02",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 63,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "さらに、取り巻きの聖騎士達も呼応し、\n怨念が集まって、膨れ上がり――、\nそして、何か巨大な物を形作っていく。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 64,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 65,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 66,
+          "strings": [
+            "",
+            "",
+            "リコ",
+            "Emt2_Ang",
+            "layer_左",
+            "-150",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 67,
+          "strings": [
+            "",
+            "",
+            "ダルシー",
+            "Emt6_Sur",
+            "layer_右",
+            "150",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 68,
+          "strings": [
+            "",
+            "",
+            "マギー",
+            "Emt6_Sur",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 69,
+          "strings": [
+            "",
+            "Tween",
+            "マギー",
+            "ShakePosition",
+            "time=0.2 y=40",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 70,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_クリック01"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 71,
+          "strings": [
+            "",
+            "",
+            "マギー",
+            "Emt6_Sur",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "な、<interval=0.4>なにアレ！？",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 72,
+          "strings": [
+            "",
+            "",
+            "リコ",
+            "Emt10_Sad",
+            "layer_左",
+            "",
+            "",
+            "0.3",
+            "",
+            "まさか、溢れ出した負の感情が、\n新たな死霊を生み出そうとしているというのか？<interval=0.4>\nまるで――。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 73,
+          "strings": [
+            "",
+            "",
+            "ダルシー",
+            "Emt2_Ang",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "生き霊……。\nでも、私とは根本的に違う気がする。<interval=0.4>\nう",
+            "Next",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 74,
+          "strings": [
+            "",
+            "Se",
+            "SEコミカル_ムニュ"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 75,
+          "strings": [
+            "",
+            "Tween",
+            "ダルシー",
+            "ShakePosition",
+            "time=0.2 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 76,
+          "strings": [
+            "",
+            "",
+            "ダルシー",
+            "Emt7_Ama",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "～ん、上手く言葉に出来ないけど……。",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 77,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 78,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 79,
+          "strings": [
+            "",
+            "",
+            "プラチナ",
+            "Emt1_Nor",
+            "layer_左中",
+            "250",
+            "",
+            "0.3",
+            "",
+            "なんにせよ、放っておくわけにはいきますまい。<interval=0.4>\n今の状態では攻撃は効きそうにありませぬが……！",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 80,
+          "strings": [
+            "",
+            "Tween",
+            "プラチナ",
+            "MoveBy",
+            "time=0.3 x=-250",
+            "",
+            "",
+            "",
+            "Add"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 81,
+          "strings": [
+            "",
+            "",
+            "リコ",
+            "Emt1_Nor",
+            "layer_右中",
+            "",
+            "",
+            "0.3",
+            "",
+            "いずれ具現化するはずだ。<interval=0.4>\n一旦距離を取り、形になったところを叩く……。\nそれでいいな、ご主人クン？",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 82,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "は、<interval=0.4>は",
+            "Next"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 83,
+          "strings": [
+            "",
+            "Shake",
+            "MessageWindow",
+            "",
+            "time=0.3 x=20",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 84,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "い……あんなもの、放っておけません！<interval=0.4>\nアンデッドの集落も、この島も、\nみんなで守りましょう！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 85,
+          "strings": [
+            "",
+            "StopSound",
+            "All",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 86,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 87,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 88,
+          "strings": [
+            "",
+            "LayerReset",
+            "レイヤー_マスク全画面",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        }
+      ],
+      "name": "Assets/AdvScene/ScenarioExcel/event/5001/Ev5000172Nml.xlsx:Ev5000172Nml",
+      "type": 1,
+      "textLength": 3121,
+      "headerRow": 0,
+      "entityIndexTbl": [],
+      "entityDataList": []
+    }
+  ]
+}

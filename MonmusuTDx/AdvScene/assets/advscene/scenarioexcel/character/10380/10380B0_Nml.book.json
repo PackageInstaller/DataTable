@@ -1,0 +1,1244 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2195584510539435343
+  },
+  "m_Name": "10380B0_Nml.book",
+  "importVersion": 0,
+  "importGridList": [
+    {
+      "rows": [
+        {
+          "rowIndex": 0,
+          "strings": [
+            "",
+            "Command",
+            "Arg1",
+            "Arg2",
+            "Arg3",
+            "Arg4",
+            "Arg5",
+            "Arg6",
+            "WaitType",
+            "Text",
+            "PageCtrl",
+            "Voice",
+            "WindowType",
+            "Arg7"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 1,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 2,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 3,
+          "strings": [
+            "",
+            "Bg",
+            "背景_主人公の部屋",
+            "",
+            "layer_背景",
+            "",
+            "",
+            "0.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 4,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1014",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 5,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 6,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 7,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "その日、僕の部屋で待っていたのは、ニクスさんだった。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 8,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "ご主人くん……おかえり、待ってた。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_001",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 9,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "？　あれ、ニクスさん？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 10,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "彼女はぴしっと背筋を伸ばし、",
+            "Br"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 11,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 12,
+          "strings": [
+            "",
+            "Se",
+            "SEコミカル_キラーン"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 13,
+          "strings": [
+            "",
+            "Tween",
+            "ニクス",
+            "MoveBy",
+            "time=0.4 y=-50",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 14,
+          "strings": [
+            "",
+            "Tween",
+            "ニクス",
+            "ScaleTo",
+            "time=0.4 x=1.2 y=1.2",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 15,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "真剣な表情でこちらに向き直ると、突然言い出した。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 16,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "ご主人くんって、この島では王なんだね。\n至高の存在なんだって聞いた。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_002",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 17,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt10_Sad",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "私……知らなくて……失礼だったかも。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_003",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 18,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "え？　いや、ちょっと待ってください？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 19,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "だから……その……ちゃんと謝る。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_004",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 20,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt10_Sad",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "えっと、この間は無礼な言い方をして、\n本当に申しわけ？　ありませんでした。\nどうかお許しを……えっと、王様。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_005",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 21,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "そう言いながら、ニクスさんは両手を胸の前で交差させ、",
+            "Br"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 22,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_キャンセル"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 23,
+          "strings": [
+            "",
+            "Tween",
+            "ニクス",
+            "MoveBy",
+            "time=0.8 y=-60",
+            "",
+            "pingPong=2",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 24,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "深々とお辞儀してきた。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 25,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "これで、いいかな？\nこうやって謝るんだよって教えてもらったんだけど。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_006",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 26,
+          "strings": [
+            "",
+            "Shake",
+            "MessageWindow",
+            "",
+            "time=0.3 x=20 y=-16",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 27,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ちょっ、ちょっと待ってください！？\nそんな話、誰から聞いたんですか！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 28,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt7_Ama",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "誰って……島にいるモンスター娘はみんなそう言ってるよ。\nご主人くん尊い、至高の存在、まぶしい――。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_007",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 29,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt8_Shy",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "かわいい、ヤバい、\n隙があれば我が物にしたい、貪りたい……って。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_008",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 30,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "後半、明らかに怪しすぎますがえっと……、\n僕は別に王様とかじゃないので……。\n本当に普段通りでいいんですよ？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 31,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt7_Ama",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "そう……？　でも……ご主人くんって、\n島ではすごい存在なんだって、\nクロミやタンタルに教えてもらったの。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_009",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 32,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "……あのあたりの方が教えたんですか……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 33,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ニクスさんは真剣な顔で続けた。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 34,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_スターゲット"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 35,
+          "strings": [
+            "",
+            "",
+            "クロミ",
+            "Emt4_Enj",
+            "layer_左中奥",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 36,
+          "strings": [
+            "",
+            "Tween",
+            "クロミ",
+            "ColorTo",
+            "time=0 alpha=0.6",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 37,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "クロミはね、すごく夜魔らしいモンスター娘で、\n私、ちょっと憧れてるの。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_010",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 38,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "気高くて、強くて、\n夜魔の誇りをちゃんと持ってて――。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_011",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 39,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "頭の中はどうやって獲物を狩ろうと、\n常に考えていて……すごいと思う。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_012",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 40,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "あ、あはは……クロミさんって、\nそういう感じでしたっけ……？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 41,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_クリック01",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 42,
+          "strings": [
+            "",
+            "",
+            "クロミ",
+            "Emt6_Sur",
+            "layer_左中奥",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 43,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt3_Gla",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "すごく勉強になったの。マナの扱い方とか、\n見つめ方とか……あと、触れ方とか、音の立て方とか……。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_013",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 44,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "なんだか話がどんどん不穏になっていく気がした。\nここで、何に触れるんですか、などと、",
+            "Br"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 45,
+          "strings": [
+            "",
+            "CharacterOff",
+            "クロミ",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 46,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "決してツッコんではいけない。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 47,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_スターゲット"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 48,
+          "strings": [
+            "",
+            "",
+            "タンタル",
+            "Emt4_Enj",
+            "layer_左中奥",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 49,
+          "strings": [
+            "",
+            "Tween",
+            "タンタル",
+            "ColorTo",
+            "time=0 alpha=0.6",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 50,
+          "strings": [
+            "",
+            "Tween",
+            "タンタル",
+            "MoveBy",
+            "time=0 y=50",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 51,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt8_Shy",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "タンタルにもいっぱい教えてもらったの。\n夜魔としての呼吸の仕方とか、姿勢とか……あと、\n耳元で囁く時の声のトーンまで。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_014",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 52,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_LVUP",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 53,
+          "strings": [
+            "",
+            "",
+            "タンタル",
+            "Emt3_Gla",
+            "layer_左中奥",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 54,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "なんでそんなに細かく……？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 55,
+          "strings": [
+            "",
+            "CharacterOff",
+            "タンタル",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 56,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "でも、私、すごく自然にできるの。\n身体が覚えてる感じ……きっと、本能なんだと思う。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_015",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 57,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt8_Shy",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "……ちょっとだけ、怖いくらいに。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_016",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 58,
+          "strings": [
+            "",
+            "Tween",
+            "ニクス",
+            "MoveBy",
+            "time=0.1 y=50",
+            "easeOutQuint",
+            "pingPong=2",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 59,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ニクスさんはそう言って、胸の前で手を組み、\n真っ直ぐこちらを見てきた。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 60,
+          "strings": [
+            "",
+            "",
+            "ニクス",
+            "Emt4_Enj",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "話してて、すごく勉強になった。\nさっそく実践してみようと思うの。",
+            "",
+            "ch_10380/R18/10380B0_10380_Nml/10380B0_10380_017",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 61,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "その笑顔は純粋で、どこか危うくて、いろいろ誤解が\n含まれているような気もするけれど。僕はその笑顔を見て、\nクロミさんの真実（？）は黙っておくことにしたのだった。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 62,
+          "strings": [
+            "",
+            "StopSound",
+            "All",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 63,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 64,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 65,
+          "strings": [
+            "",
+            "LayerReset",
+            "レイヤー_マスク全画面",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        }
+      ],
+      "name": "Assets/AdvScene/ScenarioExcel/character/10380/10380B0_Nml.xlsx:10380B0_Nml",
+      "type": 1,
+      "textLength": 3051,
+      "headerRow": 0,
+      "entityIndexTbl": [],
+      "entityDataList": []
+    }
+  ]
+}

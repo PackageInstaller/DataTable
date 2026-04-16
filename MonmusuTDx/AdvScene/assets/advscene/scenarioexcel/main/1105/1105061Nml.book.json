@@ -1,0 +1,5492 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2195584510539435343
+  },
+  "m_Name": "1105061Nml.book",
+  "importVersion": 0,
+  "importGridList": [
+    {
+      "rows": [
+        {
+          "rowIndex": 0,
+          "strings": [
+            "",
+            "Command",
+            "Arg1",
+            "Arg2",
+            "Arg3",
+            "Arg4",
+            "Arg5",
+            "Arg6",
+            "WaitType",
+            "Text",
+            "PageCtrl",
+            "Voice",
+            "WindowType"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 1,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 2,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 3,
+          "strings": [
+            "",
+            "Bg",
+            "背景_溶岩",
+            "",
+            "レイヤー_背景",
+            "",
+            "",
+            "0.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 4,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1006",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 5,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 6,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 7,
+          "strings": [
+            "",
+            "",
+            "ロッティ",
+            "Emt5_Sca",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ば、馬鹿な……私の頭脳の粋を集めた、\n完璧な劣化モンスター娘軍団が敗れるだなんてじゃん……。",
+            "",
+            "en_40125/Main/1105/1105_40125_090",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 8,
+          "strings": [
+            "",
+            "",
+            "スズ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "いや、完璧に劣化してんだから、普通に負けるでしょ、そりゃ。",
+            "",
+            "ch_10022/Main/1105/1105_10022_091"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 9,
+          "strings": [
+            "",
+            "Tween",
+            "ロッティ",
+            "PunchPosition",
+            "time=0.5 y=30",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 10,
+          "strings": [
+            "",
+            "",
+            "ロッティ",
+            "Emt2_Ang",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "くそう！\n次はボコボコにしてやるじゃん！\n覚えてろじゃんー！！",
+            "",
+            "en_40125/Main/1105/1105_40125_092",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 11,
+          "strings": [
+            "",
+            "Se",
+            "SEコミカル_ピューン",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 12,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 13,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 14,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "あ、逃げていきました……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 15,
+          "strings": [
+            "",
+            "StopSound",
+            "Bgm,Se,Ambience",
+            "",
+            "",
+            "",
+            "",
+            "2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 16,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 17,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 18,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 19,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "Emt10_Sad",
+            "layer_右中",
+            "70",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 20,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "Emt2_Ang",
+            "layer_左中",
+            "-50",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 21,
+          "strings": [
+            "",
+            "",
+            "　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "主人公たちがロッティと激戦を繰り広げていた頃。\n騎士団本隊の後方では、\nミミック娘・アスタが、悲痛な叫びを上げていた。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 22,
+          "strings": [
+            "",
+            "Bg",
+            "背景_溶岩",
+            "",
+            "layer_背景",
+            "",
+            "",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 23,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 24,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.8"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 25,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1017",
+            "",
+            "1",
+            "",
+            "0",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 26,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "Emt10_Sad",
+            "layer_右中",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 27,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_1",
+            "漫符_焦り",
+            "layer_右中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 28,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_2",
+            "漫符_焦り",
+            "layer_右中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 29,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_3",
+            "漫符_焦り",
+            "layer_右中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 30,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 31,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 32,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 33,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 34,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 35,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 36,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0 x=45 y=-50",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 37,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0 x=45 y=-50",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 38,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0 x=45 y=-50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 39,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 40,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 41,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_3",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 42,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 43,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 44,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_2",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 45,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 46,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 47,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_1",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 48,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "Emt10_Sad",
+            "layer_右中",
+            "70",
+            "",
+            "0.3",
+            "",
+            "助けて、シルバ！　私、もうダメよ……！！\nもう無理よ、無理なの、無理なのよおおお！！",
+            "",
+            "ch_10029/Main/1105/1105_10029_093",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 49,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "Emt2_Ang",
+            "layer_左中",
+            "-50",
+            "",
+            "0.3",
+            "",
+            "どうした―――――――アスタ―――？",
+            "",
+            "ch_10016/Main/1105/1105_10016_094",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 50,
+          "strings": [
+            "",
+            "StopSound",
+            "Bgm,Se,Ambience",
+            "",
+            "",
+            "",
+            "",
+            "2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 51,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "Emt10_Sad",
+            "layer_右中",
+            "70",
+            "",
+            "0.3",
+            "",
+            "食事が……食事が……！！",
+            "",
+            "ch_10029/Main/1105/1105_10029_095",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 52,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "Emt10_Sad",
+            "layer_左中",
+            "-50",
+            "",
+            "0.3",
+            "",
+            "出して―――――もらえないの――――――――――か？",
+            "",
+            "ch_10016/Main/1105/1105_10016_096",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 53,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 54,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 55,
+          "strings": [
+            "",
+            "BgEvent",
+            "囚われのアスタとシルバ",
+            "",
+            "layer_挿絵",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 56,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 57,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1016",
+            "",
+            "1",
+            "",
+            "0",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 58,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "この辺は暑いからざるそばが良いって言ったのに……言ったのに……！！　冷製ジェノベーゼが……冷製ジェノベーゼが……冷製ジェノベーゼなんていうものが出てきたのよおおおおおお！！",
+            "",
+            "ch_10029/Main/1105/1105_10029_097"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 59,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "―――そう――――――――――――――――――――――か。",
+            "",
+            "ch_10016/Main/1105/1105_10016_098"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 60,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 61,
+          "strings": [
+            "",
+            "",
+            "　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "それが、戦いが始まって間もなくの朝のことだった。\nそうして、戦いも終盤に近づいた昼すぎ……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 62,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 63,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "助けて！！　助けて、シルバ！　シルバあああああ！！\n食事が……食事が……！",
+            "",
+            "ch_10029/Main/1105/1105_10029_100"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 64,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "―――――お前はいつも――――――――\nメシの―――話をしている―――――――――――――な？",
+            "",
+            "ch_10016/Main/1105/1105_10016_101"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 65,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "今日はさっぱりもやしポン酢炒めが良いって言ったのに……言ったのに……！！　鰻蒲焼きチャーハンとサーロインすき焼きうどんセットふかひれ点心付きが……出てきたのよおおおおおお……！！",
+            "",
+            "ch_10029/Main/1105/1105_10029_102"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 66,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "クドめだ――――――――――――――――――――な――\n――――あと――お前―――それ――――食い過ぎ――――だ。\n全部食べ―――――――――ちゃってるじゃない―――――か。",
+            "",
+            "ch_10016/Main/1105/1105_10016_103"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 67,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "このままじゃケーキが、ケーキなどが、ケーキなどなどが……。\nデザートにケーキビュッフェが出てしまうわあああああ！！",
+            "",
+            "ch_10029/Main/1105/1105_10029_104"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 68,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "―――――――お前さて―――――は―――\nエンジョイしているな―――――人質生活――を―――――――。",
+            "",
+            "ch_10016/Main/1105/1105_10016_105"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 69,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 70,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 71,
+          "strings": [
+            "",
+            "BgEventOff"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 72,
+          "strings": [
+            "",
+            "BgOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 73,
+          "strings": [
+            "",
+            "Bg",
+            "背景_溶岩",
+            "",
+            "",
+            "",
+            "",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 74,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 75,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 76,
+          "strings": [
+            "",
+            "",
+            "マイナード",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "おい、お前たち、何をしているか！\n出撃だ、遅れるな！",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 77,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 78,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 79,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "Emt1_Nor",
+            "layer_右中",
+            "70",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 80,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "Emt2_Ang",
+            "layer_左中",
+            "-50",
+            "",
+            "0.3",
+            "",
+            "――――――了解。",
+            "",
+            "ch_10016/Main/1105/1105_10016_106",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 81,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "Emt1_Nor",
+            "layer_右中",
+            "70",
+            "",
+            "0.3",
+            "",
+            "え？　私も？",
+            "",
+            "ch_10029/Main/1105/1105_10029_107",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 82,
+          "strings": [
+            "",
+            "StopSound",
+            "Bgm,Se,Ambience",
+            "",
+            "",
+            "",
+            "",
+            "2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 83,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 84,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 85,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 86,
+          "strings": [
+            "",
+            "",
+            "　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ロッティとモンスター娘コピー軍団を退けたものの、\n息つく暇もなく、主人公たちの前に現れたのは……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 87,
+          "strings": [
+            "",
+            "Bg",
+            "背景_溶岩",
+            "",
+            "layer_背景",
+            "",
+            "",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 88,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 89,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.8"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 90,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1004",
+            "",
+            "1",
+            "",
+            "0",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 91,
+          "strings": [
+            "",
+            "",
+            "マイナード",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ラシオン騎士団、第１騎士隊長マイナード様だ！\n今日こそ、貴様らを叩きのめしてくれるわ！！",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 92,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 93,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 94,
+          "strings": [
+            "",
+            "",
+            "スズ",
+            "Emt6_Sur",
+            "layer_左中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 95,
+          "strings": [
+            "",
+            "",
+            "リン",
+            "Emt6_Sur",
+            "layer_右中",
+            "",
+            "",
+            "0.3",
+            "",
+            "だれ……？",
+            "",
+            "ch_10006/Main/1105/1105_10006_108",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 96,
+          "strings": [
+            "",
+            "",
+            "スズ",
+            "Emt6_Sur",
+            "layer_左中",
+            "",
+            "",
+            "0.3",
+            "",
+            "え、だれ……？",
+            "",
+            "ch_10022/Main/1105/1105_10022_109",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 97,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "すみません、僕も覚えがなくて……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 98,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 99,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 100,
+          "strings": [
+            "",
+            "",
+            "マイナード",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 101,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_怒り",
+            "漫符_怒り",
+            "layer_中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 102,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 103,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "MoveBy",
+            "time=0 x=-9980 y=420",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 104,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "MoveBy",
+            "time=0 x=0 y=50",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 105,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.02",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 106,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ScaleTo",
+            "time=0 x=0.4 y=0.4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 107,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 108,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ScaleTo",
+            "time=0.4 x=0.7 y=0.7",
+            "easeOutElastic",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 109,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 110,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_怒り",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 111,
+          "strings": [
+            "",
+            "",
+            "マイナード",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "きぃさぁまぁらぁっ！！　貴様らのせいで、\nこのワシがどれだけ苦渋を……ええい、もういい！\n貴様らはここでこやつらにやられて果てるのだからな！",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 112,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "こやつら？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 113,
+          "strings": [
+            "",
+            "",
+            "マイナード",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ゆけい、モンスター娘使い！！",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 114,
+          "strings": [
+            "",
+            "StopSound",
+            "Bgm,Se,Ambience",
+            "",
+            "",
+            "",
+            "",
+            "2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 115,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 116,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 117,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 118,
+          "strings": [
+            "",
+            "",
+            "メイジー",
+            "Emt7_Ama",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 119,
+          "strings": [
+            "",
+            "",
+            "カミラ",
+            "Emt7_Ama",
+            "layer_左",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 120,
+          "strings": [
+            "",
+            "",
+            "メイジー",
+            "Emt7_Ama",
+            "layer_右",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 121,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_1",
+            "漫符_焦り",
+            "layer_右",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 122,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_2",
+            "漫符_焦り",
+            "layer_右",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 123,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_3",
+            "漫符_焦り",
+            "layer_右",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 124,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 125,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 126,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 127,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 128,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 129,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 130,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 131,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 132,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 133,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 134,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 135,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_3",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 136,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 137,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 138,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_2",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 139,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 140,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 141,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_1",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 142,
+          "strings": [
+            "",
+            "",
+            "メイジー",
+            "Emt7_Ama",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "え？　私らっすか？\n私ら、いつからモンスター娘使いになったんすか？",
+            "",
+            "en_40113/Main/1105/1105_40113_110",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 143,
+          "strings": [
+            "",
+            "",
+            "カミラ",
+            "Emt7_Ama",
+            "layer_左",
+            "",
+            "",
+            "0.3",
+            "",
+            "使い……というほど、使ってはいませんよね。\nねえ、エロイーズさん？",
+            "",
+            "en_40114/Main/1105/1105_40114_111",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 144,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "…………。",
+            "",
+            "en_40112/Main/1105/1105_40112_112",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 145,
+          "strings": [
+            "",
+            "",
+            "カミラ",
+            "Emt10_Sad",
+            "layer_左",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 146,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_1",
+            "漫符_焦り",
+            "layer_左",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 147,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_2",
+            "漫符_焦り",
+            "layer_左",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 148,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_焦り_3",
+            "漫符_焦り",
+            "layer_左",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 149,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 150,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 151,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 152,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 153,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 154,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0 x=-9950 y=390",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 155,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 156,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 157,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 158,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 159,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_3",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 160,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_3",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 161,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 162,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_2",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 163,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_2",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 164,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 165,
+          "strings": [
+            "",
+            "Tween",
+            "spr_焦り_1",
+            "MoveBy",
+            "time=0.13 x=0 y=45",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 166,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_焦り_1",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 167,
+          "strings": [
+            "",
+            "",
+            "カミラ",
+            "Emt10_Sad",
+            "layer_左",
+            "",
+            "",
+            "0.3",
+            "",
+            "エロイーズさん……？",
+            "",
+            "en_40114/Main/1105/1105_40114_113",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 168,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "モンスター娘使い……ふふん、モンスター娘使い、ね。\nいいじゃないか。",
+            "",
+            "en_40112/Main/1105/1105_40112_114",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 169,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1011"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 170,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt3_Gla",
+            "layer_中前",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 171,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_喜び_1",
+            "漫符_喜び①",
+            "layer_中前",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 172,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_喜び_2",
+            "漫符_喜び②",
+            "layer_中前",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 173,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_喜び_3",
+            "漫符_喜び①",
+            "layer_中前",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 174,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 175,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 176,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 177,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "MoveBy",
+            "time=0 x=-9990 y=383",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 178,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "MoveBy",
+            "time=0 x=-10000 y=403",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 179,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "MoveBy",
+            "time=0 x=-9980 y=383",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 180,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "MoveBy",
+            "time=0 x=-20 y=-80",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 181,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "MoveBy",
+            "time=0 x=-20 y=-80",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 182,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "MoveBy",
+            "time=0 x=-20 y=-80",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 183,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "RotateTo",
+            "time=0 z=20",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 184,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "ScaleTo",
+            "time=0 x=0.7 y=0.7",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 185,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "RotateTo",
+            "time=0 z=-30",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 186,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "ScaleTo",
+            "time=0 x=0.82 y=0.82",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 187,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 188,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_1",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 189,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 190,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_喜び_1",
+            "",
+            "",
+            "",
+            "",
+            "0.15",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 191,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_2",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 192,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 193,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_喜び_2",
+            "",
+            "",
+            "",
+            "",
+            "0.15",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 194,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 195,
+          "strings": [
+            "",
+            "Tween",
+            "spr_喜び_3",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 196,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.1",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 197,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_喜び_3",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 198,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt3_Gla",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "モンスター娘を良いように扱えるのは、\nアンタだけじゃないのさ、少年！！\nこのアタシにも、その力は――知識は――、血は流れているのさ！",
+            "",
+            "en_40112/Main/1105/1105_40112_115",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 199,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "血……？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 200,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt3_Gla",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "そうさね！\n聞いて驚きな、このアタシは、アンタらがありがたがっている\nこの島の創世記の少年……その、末裔なのさ！！",
+            "",
+            "en_40112/Main/1105/1105_40112_116",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 201,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 202,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 203,
+          "strings": [
+            "",
+            "",
+            "ビビ神",
+            "Emt6_Sur",
+            "layer_ビビ神b_中",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 204,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_びっくり疑問",
+            "漫符_びっくり疑問",
+            "layer_ビビ神b_中",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 205,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 206,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "MoveBy",
+            "time=0 x=-10010 y=390",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 207,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "MoveBy",
+            "time=0 x=-10 y=20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 208,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ScaleTo",
+            "time=0 x=0.25 y=0.25",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 209,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 210,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 211,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ScaleTo",
+            "time=0.15 x=0.75 y=0.75",
+            "easeOutBack",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 212,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "MoveBy",
+            "time=0.15 x=0 y=80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 213,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 214,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_びっくり疑問",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 215,
+          "strings": [
+            "",
+            "",
+            "ビビ神",
+            "Emt6_Sur",
+            "layer_ビビ神b_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "なんですって！？",
+            "",
+            "ch_30005/Main/1105/1105_30005_117",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 216,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 217,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 218,
+          "strings": [
+            "",
+            "",
+            "スズ",
+            "Emt7_Ama",
+            "layer_左中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 219,
+          "strings": [
+            "",
+            "",
+            "クロミ",
+            "Emt1_Nor",
+            "layer_右中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そんなありがたがってましたっけ？",
+            "",
+            "ch_10021/Main/1105/1105_10021_118",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 220,
+          "strings": [
+            "",
+            "",
+            "スズ",
+            "Emt7_Ama",
+            "layer_左中",
+            "",
+            "",
+            "0.3",
+            "",
+            "それほどでもないような……。",
+            "",
+            "ch_10022/Main/1105/1105_10022_119",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 221,
+          "strings": [
+            "",
+            "",
+            "ビビ神",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "不信心な！",
+            "",
+            "ch_30005/Main/1105/1105_30005_120"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 222,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 223,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 224,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt1_Nor",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 225,
+          "strings": [
+            "",
+            "",
+            "メイジー",
+            "Emt6_Sur",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 226,
+          "strings": [
+            "",
+            "",
+            "カミラ",
+            "Emt6_Sur",
+            "layer_左",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 227,
+          "strings": [
+            "",
+            "",
+            "メイジー",
+            "Emt6_Sur",
+            "layer_右",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 228,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_びっくり疑問",
+            "漫符_びっくり疑問",
+            "layer_右",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 229,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 230,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "MoveBy",
+            "time=0 x=-10010 y=390",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 231,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "MoveBy",
+            "time=0 x=0 y=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 232,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ScaleTo",
+            "time=0 x=0.25 y=0.25",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 233,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.01",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 234,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 235,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "ScaleTo",
+            "time=0.15 x=0.75 y=0.75",
+            "easeOutBack",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 236,
+          "strings": [
+            "",
+            "Tween",
+            "spr_びっくり疑問",
+            "MoveBy",
+            "time=0.15 x=0 y=80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 237,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 238,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_びっくり疑問",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 239,
+          "strings": [
+            "",
+            "",
+            "メイジー",
+            "Emt6_Sur",
+            "layer_右",
+            "",
+            "",
+            "0.3",
+            "",
+            "ていうか、えええええっ！？\nエロイーズさまに、そんな設定が！？",
+            "",
+            "en_40113/Main/1105/1105_40113_121",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 240,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 241,
+          "strings": [
+            "",
+            "Sprite",
+            "spr_怒り",
+            "漫符_怒り",
+            "layer_中前",
+            "10000",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 242,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 243,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "MoveBy",
+            "time=0 x=-9980 y=420",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 244,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "MoveBy",
+            "time=0 x=-20 y=-80",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 245,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.02",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 246,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ScaleTo",
+            "time=0 x=0.4 y=0.4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 247,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 248,
+          "strings": [
+            "",
+            "Tween",
+            "spr_怒り",
+            "ScaleTo",
+            "time=0.4 x=0.7 y=0.7",
+            "easeOutElastic",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 249,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 250,
+          "strings": [
+            "",
+            "SpriteOff",
+            "spr_怒り",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 251,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt2_Ang",
+            "layer_中前",
+            "",
+            "",
+            "0.3",
+            "",
+            "設定言うな。",
+            "",
+            "en_40112/Main/1105/1105_40112_122",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 252,
+          "strings": [
+            "",
+            "Tween",
+            "カミラ",
+            "PunchPosition",
+            "time=0.5 y=30",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 253,
+          "strings": [
+            "",
+            "",
+            "カミラ",
+            "Emt6_Sur",
+            "layer_左",
+            "",
+            "",
+            "0.3",
+            "",
+            "そんな！　そんなことが！！\nそれで、古代のことに関して造詣が深かったり、\nモンスター娘と交渉できたりしたんですね！？",
+            "",
+            "en_40114/Main/1105/1105_40114_123",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 254,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 255,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 256,
+          "strings": [
+            "",
+            "",
+            "マイナード",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そんな馬鹿な！！\n一介の傭兵だと聞いていたが、そんな力を持っていたとは！！\n貴様、それを隠していたな！？",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 257,
+          "strings": [
+            "",
+            "",
+            "セレン",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "味方のが驚いてるじゃん……。",
+            "",
+            "ch_10023/Main/1105/1105_10023_124"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 258,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 259,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 260,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "……敵を欺くには、味方を死ぬほど欺くのさ。\nそれはともかく、創世記に記されていない、創世記の少年の伝説にとって不都合な真実も口伝で残されているのさ、我が一族にはね！",
+            "",
+            "en_40112/Main/1105/1105_40112_125",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 261,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "不都合な……真実？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 262,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そう！　たとえば……。",
+            "Br",
+            "en_40112/Main/1105/1105_40112_126",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 263,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 264,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 265,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ミノタウロス娘！ ミミック娘！　",
+            "Next"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 266,
+          "strings": [
+            "",
+            "",
+            "シルバ",
+            "Emt1_Nor",
+            "layer_左中",
+            "-50",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 267,
+          "strings": [
+            "",
+            "",
+            "アスタ",
+            "Emt1_Nor",
+            "layer_右中",
+            "70",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 268,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 269,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 270,
+          "strings": [
+            "",
+            "",
+            "フェルミ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 271,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "<Off>",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "そして、ハーピー娘！\n連中を叩きのめしておしまい！！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 272,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "フェルミさん！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 273,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 274,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "　",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 275,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "この３種族は、創世記には書かれていない、\n少年を裏切ったモンスター娘の末裔なのさ！",
+            "",
+            "en_40112/Main/1105/1105_40112_127",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 276,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "な、なんですって！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 277,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt2_Ang",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "少年を神格化したい連中にとっては、\nそんなことを創世記に書く訳にはいかなかったんだろうねえ。",
+            "",
+            "en_40112/Main/1105/1105_40112_128",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 278,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt3_Gla",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "本能レベル、遺伝子レベルで少年への反抗心が刻まれている\nこのモンスター娘たちを知っているアタシなればこそ！\n懐柔工作を試み、成功させられたって訳よ！",
+            "",
+            "en_40112/Main/1105/1105_40112_129",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 279,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "では、フェルミさんは！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 280,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt1_Nor",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ハーピー娘にはスパイをさせていたのさ。\nそっちは偵察に出しているつもりだったかもしれないけど、\nこちらには情報は筒抜けだったよ！",
+            "",
+            "en_40112/Main/1105/1105_40112_130",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 281,
+          "strings": [
+            "",
+            "",
+            "主人公　",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "そんな……！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 282,
+          "strings": [
+            "",
+            "Tween",
+            "エロイーズ",
+            "PunchPosition",
+            "time=0.5 y=30",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 283,
+          "strings": [
+            "",
+            "",
+            "エロイーズ",
+            "Emt2_Ang",
+            "layer_中",
+            "",
+            "",
+            "0.3",
+            "",
+            "さあ！\n信じていたモンスター娘たちの手で、あの世へお行き！！",
+            "",
+            "en_40112/Main/1105/1105_40112_131",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 284,
+          "strings": [
+            "",
+            "StopSound",
+            "All",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 285,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 286,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 287,
+          "strings": [
+            "",
+            "LayerReset",
+            "レイヤー_マスク全画面",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        }
+      ],
+      "name": "Assets/AdvScene/ScenarioExcel/main/1105/1105061Nml.xlsx:1105061Nml",
+      "type": 1,
+      "textLength": 10158,
+      "headerRow": 0,
+      "entityIndexTbl": [],
+      "entityDataList": []
+    }
+  ]
+}

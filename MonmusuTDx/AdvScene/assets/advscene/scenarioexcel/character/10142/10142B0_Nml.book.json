@@ -1,0 +1,1299 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2195584510539435343
+  },
+  "m_Name": "10142B0_Nml.book",
+  "importVersion": 0,
+  "importGridList": [
+    {
+      "rows": [
+        {
+          "rowIndex": 0,
+          "strings": [
+            "",
+            "Command",
+            "Arg1",
+            "Arg2",
+            "Arg3",
+            "Arg4",
+            "Arg5",
+            "Arg6",
+            "WaitType",
+            "Text",
+            "PageCtrl",
+            "Voice",
+            "WindowType"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 1,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "0.2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 2,
+          "strings": [
+            "",
+            "SpriteOff",
+            "マスク黒帯上",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 3,
+          "strings": [
+            "",
+            "SpriteOff",
+            "マスク黒帯下",
+            "",
+            "",
+            "",
+            "",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 4,
+          "strings": [
+            "",
+            "Sprite",
+            "マスク黒帯上",
+            "漫符_ブラック",
+            "レイヤー_マスク全画面下",
+            "3000",
+            "880",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 5,
+          "strings": [
+            "",
+            "Sprite",
+            "マスク黒帯下",
+            "漫符_ブラック",
+            "レイヤー_マスク全画面下",
+            "3000",
+            "-820",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 6,
+          "strings": [
+            "",
+            "Tween",
+            "マスク黒帯上",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 7,
+          "strings": [
+            "",
+            "Tween",
+            "マスク黒帯下",
+            "ColorTo",
+            "time=0 alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 8,
+          "strings": [
+            "",
+            "Tween",
+            "マスク黒帯上",
+            "MoveTo",
+            "time=0 x=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 9,
+          "strings": [
+            "",
+            "Tween",
+            "マスク黒帯下",
+            "MoveTo",
+            "time=0 x=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 10,
+          "strings": [
+            "",
+            "Tween",
+            "レイヤー_マスク全画面下",
+            "MoveBy",
+            "time=0 y=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 11,
+          "strings": [
+            "",
+            "Tween",
+            "マスク黒帯上",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 12,
+          "strings": [
+            "",
+            "Tween",
+            "マスク黒帯下",
+            "ColorTo",
+            "time=0 alpha=1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 13,
+          "strings": [
+            "",
+            "Bg",
+            "背景_リゾート海岸(夜)",
+            "",
+            "レイヤー_背景",
+            "750",
+            "-345",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 14,
+          "strings": [
+            "",
+            "Tween",
+            "BG",
+            "ScaleTo",
+            "time=0 x=2.5 y=2.5"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 15,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.3"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 16,
+          "strings": [
+            "",
+            "Ambience",
+            "SE環境_波音",
+            "TRUE",
+            "0.8",
+            "",
+            "0",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 17,
+          "strings": [
+            "",
+            "FadeIn",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 18,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.4"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 19,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "-2000",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 20,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Next",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 21,
+          "strings": [
+            "",
+            "Tween",
+            "ヌイ",
+            "ColorTo",
+            "time=0 color=#DDE4FF alpha=0",
+            "",
+            "",
+            "",
+            "Add",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 22,
+          "strings": [
+            "",
+            "Tween",
+            "ヌイ",
+            "MoveTo",
+            "time=0 y=-200",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 23,
+          "strings": [
+            "",
+            "Tween",
+            "ヌイ",
+            "MoveTo",
+            "time=0 x=-128 y=-52 islocal=true"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 24,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ヌイさんに教えて貰った釣りにハマった僕は、\n浜辺にある船を借りて海釣りにやってきたのだが……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 25,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "……うう、どうしよう……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 26,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "日もくれて周囲は真っ暗になっている。\n沖に流されてしまい浜辺まで帰れず、\nついには方向も分からなくなってしまった。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 27,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "うう、こんな事になるなんて……。\nどうしよう……ぐすっ……あれ？　光……？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 28,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ふと水平線から、暗い海の上に何か明るい光が見える。\n……そして、その中からヌイさんが現れた。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 29,
+          "strings": [
+            "",
+            "StopSound",
+            "Se,Ambience",
+            "",
+            "",
+            "",
+            "",
+            "1.2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 30,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1014",
+            "",
+            "1",
+            "",
+            "0",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 31,
+          "strings": [
+            "",
+            "Tween",
+            "ヌイ",
+            "ColorTo",
+            "time=0.4 alpha=1",
+            "",
+            "",
+            "",
+            "NoWait"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 32,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt1_Nor",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "おう、そこの船に乗っとる奴、大丈夫ね！？\nまったく、こぎゃん暗か海で船ば出すとは馬鹿な奴ばい。\nこんまま遭難して、どっかに行ったっちゃ……。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_001",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 33,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ん？　ありゃ、大将じゃなかね。\nどぎゃんしたとや？　こぎゃん場所で船になんか乗りんさって。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_002",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 34,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ヌイさんは、火の玉を浮かべて辺りを照らしながら、\n僕の元へとやってきた。\n暗い海では、その光はとても綺麗で安心する。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 35,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ぬ、ヌイさん！　助かりました！\n……実は、昼から釣りをしてたら流されて、\n気づいたらこんな場所に……！"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 36,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt1_Nor",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ああ、なるほどなぁ。まあ、潮の流れば言うんは、\n気まぐれやったり複雑やったりするけんな。\n近場で大丈夫とか安心したらいかんばい？",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_003",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 37,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "優しく怒られて、僕はちゃんと反省をする。\nふと気になって、ヌイさんに聞いてみた。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 38,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "でも、それならどうしてここに……？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 39,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "ああ、船がちらっと見えて気になったけん、\n様子ば見に来たったい。\nたまにおるったいね。こぎゃんして流さるる釣り人とか。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_004",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 40,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "そぎゃん時には、あたいがこうして、海の見回りばして、\n浜辺まで案内することにしとるったい。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_005",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 41,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "そ、そうなんですか。\nなら……すいません、案内をお願いします。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 42,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "僕の船の上に乗り込んで、漕ぎ始めるヌイさん。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 43,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "まあ、ここからならそこまで遠くなかけん。\nこっが外洋近くまで流されよったら、ちょっと大変やったばい。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_006",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 44,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "……危なかったんだ……本当にありがとうございます。\nいつも、こうして見回りを？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 45,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "いつもじゃなかばってん、夜中ん海は危なかけんな。\nそぎゃんところで、危険なことに合う奴がおらんか、\n定期的に見回っとるったい。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_007",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 46,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "なんてことのないように答えるが、それはとても立派なことだ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 47,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "……凄いです、ヌイさん。\n立派ですよ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 48,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt3_Gla",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "気が向いた時やけん、そぎゃん言われることでもなかばい。\nまあ、海が荒れとる時よりも、こぎゃんか平和なくらいん方が、\n潮ん流れなんて知らんような奴が流されるけんなぁ。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_008",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 49,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "海はえずかところもあるばってん、よか場所たい。\nやけん、好かんごつなってほしくなかけんな。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_009",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 50,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "海が嫌いになってほしくない。\n普段こそトラブルメーカーだけども、\nヌイさんの優しさと懐の深さを感じる。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 51,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "大将も、海ば好かんごつなってほしくなかばい。\nちゃんと、気いつくっと海は優しくてよか場所やけん。",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_010",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 52,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "はい、大丈夫です。\nヌイさんのおかげで……海は、好きですよ。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 53,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt8_Shy",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "あたいのおかげ？　別に、あたいは何もしとらんて……。\nまあよかたい！　大将が海ば好きって\n言うてくれさるんなら何よりばい！",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_011",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 54,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "笑顔でそういうヌイさんに、僕も笑顔を浮かべる。\n暗い夜の海に彼女の明るさは、まるで灯台のように輝いて……。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 55,
+          "strings": [
+            "",
+            "StopSound",
+            "Bgm",
+            "",
+            "",
+            "",
+            "",
+            "1.2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 56,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt4_Enj",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "……ん？　あれは……大物ばい！？　大将！\nあれはだご大物ばい！？　\nあたいでん、なかなかお目にかかれんとよ！",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_012",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 57,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "えっ？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 58,
+          "strings": [
+            "",
+            "Se",
+            "SE機能_スキルUP",
+            "",
+            "1"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 59,
+          "strings": [
+            "",
+            "Bgm",
+            "BGM_1016",
+            "",
+            "1",
+            "",
+            "0",
+            "0"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 60,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt3_Gla",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "こら……うんにゃ、こっからなら、追っかけても大丈夫やろ！\n大将ん船には釣り道具ばあっけん、これなら、\nあん大物ば釣れるつたい！",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_013",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 61,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "あの、ヌイさん！？　沖に帰るんじゃ……！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 62,
+          "strings": [
+            "",
+            "",
+            "ヌイ",
+            "Emt3_Gla",
+            "layer_BU中",
+            "",
+            "",
+            "0.3",
+            "",
+            "だご大物ば見たばってん、そぎゃんもん見逃して帰るとは\n女が廃るばい！　さあ、大将！　釣り竿の準備ばして、いくばい！\nワクワクしてきた！　いくぞー！",
+            "",
+            "ch_10142/R18/10142B0_10142_Nml/10142B0_10142_014",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 63,
+          "strings": [
+            "",
+            "CharacterOff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 64,
+          "strings": [
+            "",
+            "",
+            "主人公",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "ヌイさぁん！？"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 65,
+          "strings": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "……大物を見つけて舵を切るヌイさんに、\n僕は尊敬したことをちょっとだけ後悔するのだった。"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 66,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.2"
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 67,
+          "strings": [
+            "",
+            "StopSound",
+            "All",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 68,
+          "strings": [
+            "",
+            "FadeOut",
+            "#000000",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 69,
+          "strings": [
+            "",
+            "Wait",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1.5",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        },
+        {
+          "rowIndex": 70,
+          "strings": [
+            "",
+            "LayerReset",
+            "レイヤー_マスク全画面",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "isEmpty": 0,
+          "isCommentOut": 0
+        }
+      ],
+      "name": "Assets/AdvScene/ScenarioExcel/character/10142/10142B0_Nml.xlsx:10142B0_Nml",
+      "type": 1,
+      "textLength": 3432,
+      "headerRow": 0,
+      "entityIndexTbl": [],
+      "entityDataList": []
+    }
+  ]
+}
