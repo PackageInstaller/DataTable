@@ -1,0 +1,182 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -4865915360507517356
+  },
+  "m_Name": "wild_hunt_last_entry_loop_buff",
+  "table": [
+    {
+      "id": 1,
+      "secret_category_id": 1,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "敵のHP・攻撃力・物理魔法防御力が増加！",
+      "buffParam": {
+        "buffType": 1,
+        "buffParam": 100
+      }
+    },
+    {
+      "id": 2,
+      "secret_category_id": 1,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "",
+      "buffParam": {
+        "buffType": 6,
+        "buffParam": 20
+      }
+    },
+    {
+      "id": 3,
+      "secret_category_id": 1,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "",
+      "buffParam": {
+        "buffType": 11,
+        "buffParam": 20
+      }
+    },
+    {
+      "id": 4,
+      "secret_category_id": 1,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "",
+      "buffParam": {
+        "buffType": 16,
+        "buffParam": 20
+      }
+    },
+    {
+      "id": 5,
+      "secret_category_id": 2,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "敵のHP・攻撃力・物理魔法防御力が増加！",
+      "buffParam": {
+        "buffType": 1,
+        "buffParam": 100
+      }
+    },
+    {
+      "id": 6,
+      "secret_category_id": 2,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "",
+      "buffParam": {
+        "buffType": 6,
+        "buffParam": 20
+      }
+    },
+    {
+      "id": 7,
+      "secret_category_id": 2,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "",
+      "buffParam": {
+        "buffType": 11,
+        "buffParam": 20
+      }
+    },
+    {
+      "id": 8,
+      "secret_category_id": 2,
+      "value1": 100,
+      "condition1": 3,
+      "logicalOperator": 0,
+      "value2": 0,
+      "condition2": 0,
+      "text": "",
+      "buffParam": {
+        "buffType": 16,
+        "buffParam": 20
+      }
+    },
+    {
+      "id": 9,
+      "secret_category_id": -1,
+      "value1": 1,
+      "condition1": 6,
+      "logicalOperator": 1,
+      "value2": 2,
+      "condition2": 3,
+      "text": "敵のHP・攻撃力・物理魔法防御力が増加！",
+      "buffParam": {
+        "buffType": 1,
+        "buffParam": 130
+      }
+    },
+    {
+      "id": 10,
+      "secret_category_id": -1,
+      "value1": 1,
+      "condition1": 6,
+      "logicalOperator": 1,
+      "value2": 2,
+      "condition2": 3,
+      "text": "",
+      "buffParam": {
+        "buffType": 6,
+        "buffParam": 15
+      }
+    },
+    {
+      "id": 11,
+      "secret_category_id": -1,
+      "value1": 1,
+      "condition1": 6,
+      "logicalOperator": 1,
+      "value2": 2,
+      "condition2": 3,
+      "text": "",
+      "buffParam": {
+        "buffType": 11,
+        "buffParam": 25
+      }
+    },
+    {
+      "id": 12,
+      "secret_category_id": -1,
+      "value1": 1,
+      "condition1": 6,
+      "logicalOperator": 1,
+      "value2": 2,
+      "condition2": 3,
+      "text": "",
+      "buffParam": {
+        "buffType": 16,
+        "buffParam": 25
+      }
+    }
+  ]
+}

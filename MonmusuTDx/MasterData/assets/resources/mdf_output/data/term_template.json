@@ -1,0 +1,64 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -8233807571931059550
+  },
+  "m_Name": "term_template",
+  "templates": [
+    {
+      "id": "test",
+      "termType": "every_week",
+      "startDay": 0,
+      "endDay": 0,
+      "startDayOfWeek": 6,
+      "endDayOfWeek": 0,
+      "startTime": "15:00:00",
+      "endTime": "14:59:59"
+    },
+    {
+      "id": "test2",
+      "termType": "every_week",
+      "startDay": 0,
+      "endDay": 0,
+      "startDayOfWeek": 5,
+      "endDayOfWeek": 6,
+      "startTime": "15:00:00",
+      "endTime": "13:59:59"
+    },
+    {
+      "id": "Friday_Sunday",
+      "termType": "every_week",
+      "startDay": 0,
+      "endDay": 0,
+      "startDayOfWeek": 5,
+      "endDayOfWeek": 0,
+      "startTime": "12:00:00",
+      "endTime": "23:59:59"
+    },
+    {
+      "id": "Wednesday_Tuesday",
+      "termType": "every_week",
+      "startDay": 0,
+      "endDay": 0,
+      "startDayOfWeek": 3,
+      "endDayOfWeek": 2,
+      "startTime": "12:00:00",
+      "endTime": "11:59:59"
+    },
+    {
+      "id": "Friday_Monday",
+      "termType": "every_week",
+      "startDay": 0,
+      "endDay": 0,
+      "startDayOfWeek": 5,
+      "endDayOfWeek": 1,
+      "startTime": "12:00:00",
+      "endTime": "23:59:59"
+    }
+  ]
+}

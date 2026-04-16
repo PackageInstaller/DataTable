@@ -1,0 +1,50 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -1403880350972735807
+  },
+  "m_Name": "wild_hunt_next_wave_trigger_condition",
+  "table": [
+    {
+      "id": 1,
+      "secret_category_id": 1,
+      "normal_wild_hunt_threshold": 90,
+      "fever_wild_hunt_threshold": 90,
+      "warning_level_1": 40,
+      "warning_level_2": 30,
+      "warning_level_3": 20,
+      "offset_score_up_fly_text": 0.5,
+      "kill_count_up_duration": 0.5,
+      "kill_count_scale_duration": 0.10000000149011612
+    },
+    {
+      "id": 2,
+      "secret_category_id": 2,
+      "normal_wild_hunt_threshold": 90,
+      "fever_wild_hunt_threshold": 90,
+      "warning_level_1": 40,
+      "warning_level_2": 30,
+      "warning_level_3": 20,
+      "offset_score_up_fly_text": 0.5,
+      "kill_count_up_duration": 0.5,
+      "kill_count_scale_duration": 0.10000000149011612
+    },
+    {
+      "id": 3,
+      "secret_category_id": -1,
+      "normal_wild_hunt_threshold": 90,
+      "fever_wild_hunt_threshold": 90,
+      "warning_level_1": 40,
+      "warning_level_2": 30,
+      "warning_level_3": 20,
+      "offset_score_up_fly_text": 0.5,
+      "kill_count_up_duration": 0.5,
+      "kill_count_scale_duration": 0.10000000149011612
+    }
+  ]
+}

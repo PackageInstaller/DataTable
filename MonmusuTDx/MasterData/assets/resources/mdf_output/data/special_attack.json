@@ -1,0 +1,89 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -7290526485060875973
+  },
+  "m_Name": "special_attack",
+  "table": [
+    {
+      "id": 1,
+      "type": 1,
+      "posX": 0,
+      "posY": 0,
+      "blastShape": 0,
+      "blastRange": 0,
+      "blastBreadth": 0,
+      "blastRotate": 0,
+      "highestPoint": 0,
+      "landEffect": 10022,
+      "blastEffect": 0,
+      "landHitType": 3,
+      "blastHitType": 0
+    },
+    {
+      "id": 2,
+      "type": 2,
+      "posX": 0,
+      "posY": 0,
+      "blastShape": 1,
+      "blastRange": 180,
+      "blastBreadth": 0,
+      "blastRotate": 0,
+      "highestPoint": 0,
+      "landEffect": 10013,
+      "blastEffect": 10014,
+      "landHitType": 3,
+      "blastHitType": 3
+    },
+    {
+      "id": 3,
+      "type": 3,
+      "posX": -150,
+      "posY": 0,
+      "blastShape": 3,
+      "blastRange": 140,
+      "blastBreadth": 100,
+      "blastRotate": 0,
+      "highestPoint": 0,
+      "landEffect": 10013,
+      "blastEffect": 10014,
+      "landHitType": 3,
+      "blastHitType": 3
+    },
+    {
+      "id": 4,
+      "type": 4,
+      "posX": 0,
+      "posY": 0,
+      "blastShape": 4,
+      "blastRange": 250,
+      "blastBreadth": 0,
+      "blastRotate": 45,
+      "highestPoint": 0,
+      "landEffect": 10013,
+      "blastEffect": 10014,
+      "landHitType": 3,
+      "blastHitType": 3
+    },
+    {
+      "id": 10000,
+      "type": 3,
+      "posX": 50,
+      "posY": 30,
+      "blastShape": 3,
+      "blastRange": 100,
+      "blastBreadth": 30,
+      "blastRotate": 0,
+      "highestPoint": 0,
+      "landEffect": 0,
+      "blastEffect": 10001,
+      "landHitType": 0,
+      "blastHitType": 1
+    }
+  ]
+}

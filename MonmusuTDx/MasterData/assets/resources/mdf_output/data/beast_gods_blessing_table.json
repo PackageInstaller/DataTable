@@ -1,0 +1,35 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5453279415753437632
+  },
+  "m_Name": "beast_gods_blessing_table",
+  "table": [
+    {
+      "id": 1,
+      "blessing_type": "敵弱体",
+      "effects": "1,2",
+      "effect_array": [
+        1,
+        2
+      ],
+      "effect_duration": 7200,
+      "shop_id": 10000
+    },
+    {
+      "id": 2,
+      "blessing_type": "初期コスト増加",
+      "effects": "3",
+      "effect_array": [
+        3
+      ],
+      "effect_duration": 7200,
+      "shop_id": 10001
+    }
+  ]
+}

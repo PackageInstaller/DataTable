@@ -1,11 +1,16 @@
 import os
 import time
+import json
 import argparse
 import threading
 import requests
 import hashlib
 from queue import Queue
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, Tuple, List
+
+import UnityPy
+from UnityPy.enums import ClassIDType
+
 from rich.console import Console
 from rich.progress import (
     Progress,
@@ -17,13 +22,18 @@ from rich.progress import (
 )
 
 MAX_THREADS = 32
-ASSET_ROOT = "Asset"
-UPDATE_ROOT = "AssetUpdate"
+ASSETS_ROOT = "Assets"
 TABLES_ROOT = "MasterData"
-TABLES_UPDATE_ROOT = "MasterUpdate"
 APP_INFO_URL = "https://api.store.games.dmm.com/freeapp/688044"
 VERSION_API = "https://gapi.game-monmusu-td.net/api/asset_bundle/version"
-UNITY_HEADER = b"\x55\x6e\x69\x74\x79"
+MASTER_FILE_NAMES = {
+    "a4a197b8ff3816f0ddf353ead4768c80.bytes",  # MdF_Output/Data
+    "75e09e20429de1372f375685aa4386b3.bytes",  # MdF_Output/Bomcard
+    "2c4638ec28d824dfc4992d2f2b492c1f.bytes",  # MdF_Output/UnitClass
+    "94840ed598854fe89a08f12ceb25fd1e.bytes",  # MdF_Output/UnitCard
+    "6ccdbcdbe6ce4a57abcd31247745c242.bytes",  # MdF_Output/EnemyData
+}
+
 console = Console()
 
 
@@ -49,32 +59,47 @@ def xor_stream(data: bytes, key: bytes) -> bytes:
     return bytes(out)
 
 
-def decrypt_table_file(src_path: str, dest_path: str) -> bool:
-    try:
-        FIRST32 = base_key("KYSSTMDL")
-        FULL64 = FIRST32 + FIRST32[::-1]
-
-        with open(src_path, "rb") as f:
-            enc_data = f.read()
-
-        dec_data = xor_stream(enc_data, FULL64)
-
-        ensure_dir(dest_path)
-        with open(dest_path, "wb") as f:
-            f.write(dec_data)
-        return True
-    except Exception as e:
-        console.print(f"[red]解密文件失败 {src_path}: {e}[/red]")
-        return False
+def decrypt_table_data(enc_data: bytes) -> bytes:
+    FIRST32 = base_key("KYSSTMDL")
+    FULL64 = FIRST32 + FIRST32[::-1]
+    return xor_stream(enc_data, FULL64)
 
 
-def is_unity_file(file_path: str) -> bool:
-    try:
-        with open(file_path, "rb") as f:
-            header = f.read(5)
-        return header == UNITY_HEADER
-    except Exception:
-        return False
+def extract_master_data_to_json(decrypted_bytes: bytes, output_dir: str) -> List[str]:
+    extracted_names = []
+    env = UnityPy.load(decrypted_bytes)
+    container_map = {}
+
+    for container_path, obj in env.container.items():
+        container_map[obj.path_id] = container_path
+
+    for obj in env.objects:
+        if obj.type == ClassIDType.MonoBehaviour:
+            try:
+                data = obj.read()
+                name = getattr(data, "m_Name", getattr(data, "name", ""))
+                if not name:
+                    name = f"Unnamed_{obj.path_id}"
+                container_path = container_map.get(obj.path_id)
+                if container_path:
+                    rel_dir = os.path.dirname(container_path.replace("\\", "/")).lstrip(
+                        "/"
+                    )
+                    target_dir = os.path.normpath(os.path.join(output_dir, rel_dir))
+                else:
+                    target_dir = output_dir
+
+                os.makedirs(target_dir, exist_ok=True)
+                tree = obj.read_typetree()
+                out_path = os.path.join(target_dir, f"{name}.json")
+                with open(out_path, "w", encoding="utf-8") as f:
+                    json.dump(tree, f, ensure_ascii=False, indent=2)
+
+                extracted_names.append(name)
+            except Exception:
+                pass
+
+    return extracted_names
 
 
 def get_app_version_name(session: requests.Session) -> str | None:
@@ -104,57 +129,67 @@ def ensure_dir(fp: str) -> None:
     os.makedirs(os.path.dirname(fp), exist_ok=True)
 
 
-def process_downloaded_file(src_path: str, asset_path: str, is_update: bool) -> None:
-    if not is_unity_file(src_path):
-        if is_update:
-            dest_path = os.path.join(TABLES_UPDATE_ROOT, asset_path)
-        else:
-            dest_path = os.path.join(TABLES_ROOT, asset_path)
-
-        if decrypt_table_file(src_path, dest_path):
-            console.print(f"[blue]已解密数据表: {asset_path}[/blue]")
-
-
 def download_one(
     session: requests.Session,
     asset: Dict[str, Any],
     base_url: str,
     dest_path: str,
     expect_size: int,
-    is_update: bool = False,
+    is_master: bool = False,
     retries: int = 10,
-) -> Tuple[bool, str]:
+) -> Tuple[bool, str, bool]:
     url = f"{base_url}/{asset['hash']}{asset['path']}"
     for attempt in range(retries + 1):
         try:
-            resp = session.get(url, stream=True, timeout=20)
-            resp.raise_for_status()
+            if is_master:
+                resp = session.get(url, timeout=20)
+                resp.raise_for_status()
+                content = resp.content
 
-            ensure_dir(dest_path)
-            with open(dest_path, "wb") as fp:
-                for chunk in resp.iter_content(8192):
-                    fp.write(chunk)
+                if len(content) != expect_size:
+                    raise ValueError(f"文件大小不符 {len(content)} ≠ {expect_size}")
+                ensure_dir(dest_path)
+                with open(dest_path, "wb") as f:
+                    f.write(content)
+                dec_data = decrypt_table_data(content)
+                extract_master_data_to_json(dec_data, TABLES_ROOT)
 
-            real_size = os.path.getsize(dest_path)
-            if real_size != expect_size:
-                os.remove(dest_path)
-                raise ValueError(f"文件大小不符 {real_size} ≠ {expect_size}")
+                return True, f"", True
 
-            process_downloaded_file(dest_path, asset["path"], is_update)
-            return True, "完成"
+            else:
+                resp = session.get(url, stream=True, timeout=20)
+                resp.raise_for_status()
+
+                iterator = resp.iter_content(8192)
+                try:
+                    first_chunk = next(iterator)
+                except StopIteration:
+                    first_chunk = b""
+
+                ensure_dir(dest_path)
+                with open(dest_path, "wb") as fp:
+                    fp.write(first_chunk)
+                    for chunk in iterator:
+                        fp.write(chunk)
+
+                real_size = os.path.getsize(dest_path)
+                if real_size != expect_size:
+                    os.remove(dest_path)
+                    raise ValueError(f"文件大小不符 {real_size} ≠ {expect_size}")
+
+                return True, "完成", False
         except Exception as e:
             if attempt < retries:
                 time.sleep(1)
             else:
-                return False, str(e)
-    return False, "未知错误"
+                return False, str(e), False
+    return False, "未知错误", False
 
 
 def worker(
     q: Queue,
     base_url: str,
     progress: Progress,
-    task_id,
     lock: threading.Lock,
     download_failures: dict,
 ):
@@ -163,15 +198,18 @@ def worker(
         item = q.get()
         if item is None:
             break
-        asset, dest, size, is_update = item
-        ok, msg = download_one(sess, asset, base_url, dest, size, is_update)
+
+        asset, dest, size, is_master, task_id = item
+        ok, msg, actually_master = download_one(
+            sess, asset, base_url, dest, size, is_master
+        )
+
         with lock:
-            status = "[green][/green]" if ok else "[red]✗[/red]"
-            console.print(f"{status} {asset['path']}  {msg}")
             if not ok:
                 url = f"{base_url}/{asset['hash']}{asset['path']}"
                 console.print(f"  下载链接: {url}")
                 download_failures[asset["path"]] = url
+
             progress.advance(task_id)
         q.task_done()
     sess.close()
@@ -179,7 +217,7 @@ def worker(
 
 def main():
     ap = argparse.ArgumentParser(
-        description="MonmusuTDx 资源全自动下载 / 增量更新",
+        description="MonmusuTDx 资源全自动下载 / 表格导出",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     ap.add_argument("-t", "--threads", type=int, default=MAX_THREADS, help="下载线程数")
@@ -218,67 +256,59 @@ def main():
         f"[bold yellow]资产基准版本：ver_{base_ver}[/bold yellow]"
     )
 
-    os.makedirs(ASSET_ROOT, exist_ok=True)
-    os.makedirs(UPDATE_ROOT, exist_ok=True)
+    os.makedirs(ASSETS_ROOT, exist_ok=True)
     os.makedirs(TABLES_ROOT, exist_ok=True)
-    os.makedirs(TABLES_UPDATE_ROOT, exist_ok=True)
 
     processed_files = set()
-    processed_tasks = set()
-    tasks = []
+    master_tasks = []
+    normal_tasks = []
+
     for asset in assets:
         asset_path = asset["path"]
         if asset_path in processed_files:
             continue
         processed_files.add(asset_path)
 
-        local_path = os.path.join(ASSET_ROOT, asset_path)
         remote_size = int(asset["size"])
+        local_path = os.path.join(ASSETS_ROOT, asset_path)
+        is_master = asset_path in MASTER_FILE_NAMES
 
         if args.force or not os.path.exists(local_path):
-            task_key = (asset_path, False)
-            if task_key not in processed_tasks:
-                tasks.append((asset, local_path, remote_size, False))
-                processed_tasks.add(task_key)
-            continue
+            task_tuple = (asset, local_path, remote_size, is_master)
+            if is_master:
+                master_tasks.append(task_tuple)
+            else:
+                normal_tasks.append(task_tuple)
+        else:
+            try:
+                local_size = os.path.getsize(local_path)
+            except OSError:
+                local_size = -1
 
-        try:
-            local_size = os.path.getsize(local_path)
-        except OSError:
-            local_size = -1
+            if local_size != remote_size:
+                task_tuple = (asset, local_path, remote_size, is_master)
+                if is_master:
+                    master_tasks.append(task_tuple)
+                else:
+                    normal_tasks.append(task_tuple)
 
-        if local_size != remote_size:
-            upd_path = os.path.join(UPDATE_ROOT, asset_path)
-            if not args.force and os.path.exists(upd_path):
-                try:
-                    upd_size = os.path.getsize(upd_path)
-                    if upd_size == remote_size:
-                        continue
-                except OSError:
-                    pass
+    total_master = len(master_tasks)
+    total_normal = len(normal_tasks)
+    total = total_master + total_normal
 
-            task_key = (asset_path, True)
-            if task_key not in processed_tasks:
-                tasks.append((asset, upd_path, remote_size, True))
-                processed_tasks.add(task_key)
-
-    total = len(tasks)
     if total == 0:
         console.print("[green]所有资源已是最新，无需下载。[/green]")
         return
 
     console.print(
-        f"[cyan]共需下载 {total} 个文件，线程数：{min(args.threads, total)}[/cyan]"
+        f"[cyan]共需下载 {total} 个文件 (数据表: {total_master}, 其他资产: {total_normal})，线程数：{min(args.threads, total)}[/cyan]"
     )
 
     download_failures = {}
-
     q: Queue = Queue()
-    for t in tasks:
-        q.put(t)
-
     lock = threading.Lock()
     workers = []
+
     progress = Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -291,18 +321,32 @@ def main():
     )
 
     with progress:
-        task_id = progress.add_task("[cyan]正在下载...[/cyan]", total=total)
-
-        for _ in range(min(args.threads, total)):
+        num_threads = min(args.threads, total)
+        for _ in range(num_threads):
             t = threading.Thread(
                 target=worker,
-                args=(q, base_url, progress, task_id, lock, download_failures),
+                args=(q, base_url, progress, lock, download_failures),
                 daemon=True,
             )
             t.start()
             workers.append(t)
 
-        q.join()
+        if total_master > 0:
+            task_id_master = progress.add_task(
+                "[magenta]正在下载数据表...[/magenta]", total=total_master
+            )
+            for t in master_tasks:
+                q.put((*t, task_id_master))
+            q.join()
+
+        if total_normal > 0:
+            task_id_normal = progress.add_task(
+                "[cyan]正在下载其他资产...[/cyan]", total=total_normal
+            )
+            for t in normal_tasks:
+                q.put((*t, task_id_normal))
+            q.join()
+
         for _ in workers:
             q.put(None)
         for t in workers:
@@ -310,15 +354,10 @@ def main():
 
     console.print("[bold green]全部下载完成！[/bold green]")
 
-    failed_files = []
-    for asset_path in processed_files:
-        local_path = os.path.join(ASSET_ROOT, asset_path)
-        upd_path = os.path.join(UPDATE_ROOT, asset_path)
-
-        if os.path.exists(upd_path):
-            console.print(f"[blue]更新文件: {asset_path}[/blue]")
-        elif not os.path.exists(local_path) or asset_path in download_failures:
-            failed_files.append(asset_path)
+    if download_failures:
+        console.print("\n[red]以下文件下载失败：[/red]")
+        for f_path, f_url in download_failures.items():
+            console.print(f"[red]{f_path} : {f_url}[/red]")
 
 
 if __name__ == "__main__":

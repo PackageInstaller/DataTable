@@ -1,0 +1,292 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 2750923204387818082
+  },
+  "m_Name": "story_data_group",
+  "table": [
+    {
+      "id": 1,
+      "story_category": 11,
+      "story_id": "1",
+      "title": "テスト1",
+      "chapter_name": "Main",
+      "scenario_name": "1100011Nml",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 1,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "units": [
+        {
+          "id": 22,
+          "level": 10
+        },
+        {
+          "id": 11,
+          "level": 10
+        }
+      ],
+      "chapter_id": 1001,
+      "need_quest_id": 0
+    },
+    {
+      "id": 2,
+      "story_category": 11,
+      "story_id": "1",
+      "title": "テスト2",
+      "chapter_name": "Main",
+      "scenario_name": "1100012Nml",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 2,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "units": [],
+      "chapter_id": 1001,
+      "need_quest_id": 0
+    },
+    {
+      "id": 3,
+      "story_category": 11,
+      "story_id": "3",
+      "title": "テスト3",
+      "chapter_name": "character",
+      "scenario_name": "10006A0_Nml",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 3,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "units": [
+        {
+          "id": 22,
+          "level": 15
+        },
+        {
+          "id": 11,
+          "level": 15
+        }
+      ],
+      "chapter_id": 1001,
+      "need_quest_id": 10100
+    },
+    {
+      "id": 4,
+      "story_category": 11,
+      "story_id": "3",
+      "title": "テスト4",
+      "chapter_name": "character",
+      "scenario_name": "10006A1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 4,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "units": [],
+      "chapter_id": 1001,
+      "need_quest_id": 0
+    },
+    {
+      "id": 5,
+      "story_category": 11,
+      "story_id": "5",
+      "title": "テスト5",
+      "chapter_name": "character",
+      "scenario_name": "10006B0_Nml",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 5,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "gold",
+            "m_count": 5000
+          }
+        ]
+      },
+      "units": [
+        {
+          "id": 22,
+          "level": 10
+        }
+      ],
+      "chapter_id": 1002,
+      "need_quest_id": 10201
+    },
+    {
+      "id": 6,
+      "story_category": 11,
+      "story_id": "5",
+      "title": "テスト6",
+      "chapter_name": "character",
+      "scenario_name": "10006B1_R18",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 6,
+      "r18": 1,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "units": [],
+      "chapter_id": 1002,
+      "need_quest_id": 0
+    },
+    {
+      "id": 7,
+      "story_category": 11,
+      "story_id": "6",
+      "title": "テスト7",
+      "chapter_name": "main",
+      "scenario_name": "1100021Nml",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 7,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "units": [
+        {
+          "id": 22,
+          "level": 15
+        },
+        {
+          "id": 1,
+          "level": 15
+        },
+        {
+          "id": 3,
+          "level": 15
+        },
+        {
+          "id": 4,
+          "level": 15
+        },
+        {
+          "id": 5,
+          "level": 15
+        }
+      ],
+      "chapter_id": 1003,
+      "need_quest_id": 0
+    },
+    {
+      "id": 8,
+      "story_category": 11,
+      "story_id": "7",
+      "title": "テスト8",
+      "chapter_name": "main",
+      "scenario_name": "1100051Nml",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 8,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "point",
+            "m_walletName": "free_coin",
+            "m_count": 50
+          }
+        ]
+      },
+      "units": [
+        {
+          "id": 26,
+          "level": 10
+        },
+        {
+          "id": 27,
+          "level": 10
+        }
+      ],
+      "chapter_id": 1004,
+      "need_quest_id": 0
+    },
+    {
+      "id": 9,
+      "story_category": 11,
+      "story_id": "7",
+      "title": "テスト9",
+      "chapter_name": "main",
+      "scenario_name": "1100052Nml",
+      "next_id": 0,
+      "next_view_id": 0,
+      "view_priority": 9,
+      "r18": 0,
+      "always": 1,
+      "rewardtable": {
+        "m_rewards": [
+          {
+            "m_walletCategory": "",
+            "m_walletName": "",
+            "m_count": 0
+          }
+        ]
+      },
+      "units": [],
+      "chapter_id": 1004,
+      "need_quest_id": 0
+    }
+  ]
+}
