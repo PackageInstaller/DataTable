@@ -1,5 +1,6 @@
 {
   "m_accessories": [],
+  "m_armors": [],
   "m_weapons": [
     {
       "id": 11010110,
@@ -187,6 +188,42 @@
       "name": "神託の書",
       "weapon_type": 1070,
       "group_no": 702,
+      "rank": 1,
+      "rarity": 1,
+      "up_parameter_type": 2,
+      "basic_parameter": 210,
+      "min_parameter": 0,
+      "max_parameter": 90,
+      "lottery_interval": 1,
+      "base_power": 100,
+      "mileage": 1,
+      "flavor_text": "フレーバーテキスト",
+      "mana_type": 3
+    },
+    {
+      "id": 18010110,
+      "asset_id": "41081001",
+      "name": "採掘師のツルハシ",
+      "weapon_type": 1080,
+      "group_no": 801,
+      "rank": 1,
+      "rarity": 1,
+      "up_parameter_type": 2,
+      "basic_parameter": 210,
+      "min_parameter": 0,
+      "max_parameter": 90,
+      "lottery_interval": 1,
+      "base_power": 100,
+      "mileage": 1,
+      "flavor_text": "フレーバーテキスト",
+      "mana_type": 2
+    },
+    {
+      "id": 18020110,
+      "asset_id": "41081002",
+      "name": "名工の黒ツルハシ",
+      "weapon_type": 1080,
+      "group_no": 802,
       "rank": 1,
       "rarity": 1,
       "up_parameter_type": 2,
@@ -398,6 +435,42 @@
       "mana_type": 3
     },
     {
+      "id": 18010120,
+      "asset_id": "41081001",
+      "name": "採掘師のツルハシ",
+      "weapon_type": 1080,
+      "group_no": 801,
+      "rank": 1,
+      "rarity": 2,
+      "up_parameter_type": 2,
+      "basic_parameter": 263,
+      "min_parameter": 0,
+      "max_parameter": 112,
+      "lottery_interval": 1,
+      "base_power": 200,
+      "mileage": 3,
+      "flavor_text": "フレーバーテキスト",
+      "mana_type": 2
+    },
+    {
+      "id": 18020120,
+      "asset_id": "41081002",
+      "name": "名工の黒ツルハシ",
+      "weapon_type": 1080,
+      "group_no": 802,
+      "rank": 1,
+      "rarity": 2,
+      "up_parameter_type": 2,
+      "basic_parameter": 263,
+      "min_parameter": 0,
+      "max_parameter": 112,
+      "lottery_interval": 1,
+      "base_power": 200,
+      "mileage": 3,
+      "flavor_text": "フレーバーテキスト",
+      "mana_type": 3
+    },
+    {
       "id": 11010130,
       "asset_id": "41011001",
       "name": "兵士の剣",
@@ -583,6 +656,42 @@
       "name": "神託の書",
       "weapon_type": 1070,
       "group_no": 702,
+      "rank": 1,
+      "rarity": 3,
+      "up_parameter_type": 2,
+      "basic_parameter": 315,
+      "min_parameter": 0,
+      "max_parameter": 135,
+      "lottery_interval": 1,
+      "base_power": 300,
+      "mileage": 10,
+      "flavor_text": "フレーバーテキスト",
+      "mana_type": 3
+    },
+    {
+      "id": 18010130,
+      "asset_id": "41081001",
+      "name": "採掘師のツルハシ",
+      "weapon_type": 1080,
+      "group_no": 801,
+      "rank": 1,
+      "rarity": 3,
+      "up_parameter_type": 2,
+      "basic_parameter": 315,
+      "min_parameter": 0,
+      "max_parameter": 135,
+      "lottery_interval": 1,
+      "base_power": 300,
+      "mileage": 10,
+      "flavor_text": "フレーバーテキスト",
+      "mana_type": 2
+    },
+    {
+      "id": 18020130,
+      "asset_id": "41081002",
+      "name": "名工の黒ツルハシ",
+      "weapon_type": 1080,
+      "group_no": 802,
       "rank": 1,
       "rarity": 3,
       "up_parameter_type": 2,
@@ -924,13 +1033,24 @@
     },
     {
       "id": 3,
+      "m_character_id": 1300032,
+      "asset_id": "106301000",
+      "title": "えっちを教えて！",
+      "r18_release_category": 0,
+      "r18_release_value": 0,
+      "is_ntr": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2030-12-31 23:59:59"
+    },
+    {
+      "id": 4,
       "m_character_id": 1200003,
       "asset_id": "100301000",
       "title": "",
       "r18_release_category": 0,
       "r18_release_value": 0,
       "is_ntr": 0,
-      "begin_at": "2026-04-21 5:00:00",
+      "begin_at": "2026-05-01 5:00:00",
       "end_at": "2030-12-31 23:59:59"
     },
     {
@@ -957,13 +1077,24 @@
     },
     {
       "id": 9,
+      "m_character_id": 1300032,
+      "asset_id": "106301000",
+      "title": "気持ちいいところを教えて！",
+      "r18_release_category": 0,
+      "r18_release_value": 0,
+      "is_ntr": 1,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2030-12-31 23:59:59"
+    },
+    {
+      "id": 10,
       "m_character_id": 1200003,
       "asset_id": "100301000",
       "title": "",
       "r18_release_category": 0,
       "r18_release_value": 0,
       "is_ntr": 1,
-      "begin_at": "2026-04-21 5:00:00",
+      "begin_at": "2026-05-01 5:00:00",
       "end_at": "2030-12-31 23:59:59"
     }
   ],
@@ -1282,6 +1413,15 @@
       "begin_at": "2026-01-25 4:00:00",
       "end_at": "2026-04-21 4:59:59",
       "asset_id": "Earth"
+    },
+    {
+      "id": 2,
+      "keep_slot": 3,
+      "acquire_count": 1,
+      "efficiency_bonus": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-05-01 4:59:59",
+      "asset_id": "Water"
     }
   ],
   "m_preregist_idle_exploration_rewards": [
@@ -1392,6 +1532,276 @@
       "weight": 50,
       "begin_at": "2000-01-01 0:00:00",
       "end_at": "2026-04-21 4:59:59"
+    },
+    {
+      "id": 13,
+      "content_type": 70,
+      "content_id": 18010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 14,
+      "content_type": 70,
+      "content_id": 11010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 15,
+      "content_type": 70,
+      "content_id": 15010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 16,
+      "content_type": 70,
+      "content_id": 16010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 17,
+      "content_type": 70,
+      "content_id": 17010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 18,
+      "content_type": 70,
+      "content_id": 18010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 19,
+      "content_type": 70,
+      "content_id": 11010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 20,
+      "content_type": 70,
+      "content_id": 15010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 21,
+      "content_type": 70,
+      "content_id": 16010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 22,
+      "content_type": 70,
+      "content_id": 17010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 23,
+      "content_type": 70,
+      "content_id": 18010130,
+      "amount": 1,
+      "weight": 200,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 24,
+      "content_type": 70,
+      "content_id": 11010130,
+      "amount": 1,
+      "weight": 25,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 25,
+      "content_type": 70,
+      "content_id": 15010130,
+      "amount": 1,
+      "weight": 25,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 26,
+      "content_type": 70,
+      "content_id": 16010130,
+      "amount": 1,
+      "weight": 25,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 27,
+      "content_type": 70,
+      "content_id": 17010130,
+      "amount": 1,
+      "weight": 25,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 28,
+      "content_type": 70,
+      "content_id": 18010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 29,
+      "content_type": 70,
+      "content_id": 11010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 30,
+      "content_type": 70,
+      "content_id": 15010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 31,
+      "content_type": 70,
+      "content_id": 16010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 32,
+      "content_type": 70,
+      "content_id": 17010110,
+      "amount": 1,
+      "weight": 1540,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 33,
+      "content_type": 70,
+      "content_id": 18010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 34,
+      "content_type": 70,
+      "content_id": 11010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 35,
+      "content_type": 70,
+      "content_id": 15010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 36,
+      "content_type": 70,
+      "content_id": 16010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 37,
+      "content_type": 70,
+      "content_id": 17010120,
+      "amount": 1,
+      "weight": 400,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 38,
+      "content_type": 70,
+      "content_id": 18010130,
+      "amount": 1,
+      "weight": 60,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 39,
+      "content_type": 70,
+      "content_id": 11010130,
+      "amount": 1,
+      "weight": 60,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 40,
+      "content_type": 70,
+      "content_id": 15010130,
+      "amount": 1,
+      "weight": 60,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 41,
+      "content_type": 70,
+      "content_id": 16010130,
+      "amount": 1,
+      "weight": 60,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
+    },
+    {
+      "id": 42,
+      "content_type": 70,
+      "content_id": 17010130,
+      "amount": 1,
+      "weight": 60,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-05 4:59:59"
     }
   ],
   "m_preregist_gachas": [
@@ -1509,6 +1919,230 @@
       "is_pickup": 0,
       "begin_at": "2000-01-01 0:00:00",
       "end_at": "2026-04-21 4:59:59"
+    },
+    {
+      "id": 16,
+      "m_character_id": 1100001,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 17,
+      "m_character_id": 1100002,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 18,
+      "m_character_id": 1100008,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 19,
+      "m_character_id": 1100009,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 20,
+      "m_character_id": 1100012,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 21,
+      "m_character_id": 1200002,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 22,
+      "m_character_id": 1200003,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 23,
+      "m_character_id": 1200011,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 24,
+      "m_character_id": 1200013,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 25,
+      "m_character_id": 1200015,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 26,
+      "m_character_id": 1200016,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 27,
+      "m_character_id": 1300003,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 28,
+      "m_character_id": 1300019,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 29,
+      "m_character_id": 1300026,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 30,
+      "m_character_id": 1300031,
+      "is_pickup": 0,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 31,
+      "m_character_id": 1300032,
+      "is_pickup": 1,
+      "begin_at": "2026-04-21 5:00:00",
+      "end_at": "2026-04-28 4:59:59"
+    },
+    {
+      "id": 32,
+      "m_character_id": 1100001,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 33,
+      "m_character_id": 1100002,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 34,
+      "m_character_id": 1100008,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 35,
+      "m_character_id": 1100009,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 36,
+      "m_character_id": 1100012,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 37,
+      "m_character_id": 1200002,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 38,
+      "m_character_id": 1200003,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 39,
+      "m_character_id": 1200011,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 40,
+      "m_character_id": 1200013,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 41,
+      "m_character_id": 1200015,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 42,
+      "m_character_id": 1200016,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 43,
+      "m_character_id": 1300003,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 44,
+      "m_character_id": 1300019,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 45,
+      "m_character_id": 1300026,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 46,
+      "m_character_id": 1300031,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
+    },
+    {
+      "id": 47,
+      "m_character_id": 1300032,
+      "is_pickup": 0,
+      "begin_at": "2026-04-28 5:00:00",
+      "end_at": "2026-05-01 4:59:59"
     }
   ],
   "m_items": [
@@ -3176,6 +3810,5 @@
       "birthday": 108,
       "catchphrase": "小鳥さんたちって、いつも自由に\n飛んでて楽しそうですね♪"
     }
-  ],
-  "m_armors": []
+  ]
 }
