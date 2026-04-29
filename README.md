@@ -2,7 +2,7 @@
 
 |        名字        |      游戏      |              说明              |
 | :----------------: | :------------: | :-----------------------------: |
-|    AlchemyStars    |    白夜极光    |    台服 Lua，需要自己反编译    |
+|    AlchemyStars    |    白夜极光    |           国际服 Lua           |
 |    AnchorPanic    |    锚点降临    |            国服 Lua            |
 |   AngelicaAsterR   |    当归紫苑    | Dmm Json，带数据表自动检查更新 |
 |      EverSoul      |    永恒灵魂    | 国际服 + 日服 Json，会定期上传 |
